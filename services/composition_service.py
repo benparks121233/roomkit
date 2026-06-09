@@ -36,6 +36,7 @@ def allocate_budget(
     room_preset: str,
     taxonomy: RoomTaxonomy,
     run_id: str = "",
+    required_override: list[str] | None = None,
 ) -> SlotPlan:
     """Allocate target_budget across slots according to weights.  Pure, no LLM.
 
@@ -53,14 +54,17 @@ def allocate_budget(
       6. Build Slot objects from taxonomy data + computed budgets.
 
     Args:
-        slot_weights:  Proposed weight per slot id (0 < weight ≤ 1.0 each).
-                       Need not be normalized.  Need not include all required
-                       slots — missing required ones are injected.
-        target_budget: Budget ceiling in USD.  Must be > 0.
-        room_preset:   Key from taxonomy.room_presets (e.g. "bedroom").
-        taxonomy:      Loaded RoomTaxonomy — authoritative slot definitions.
-        run_id:        Optional; threaded from RoomRequest when called by
-                       plan_composition().  Defaults to "" for standalone use.
+        slot_weights:      Proposed weight per slot id (0 < weight ≤ 1.0 each).
+                           Need not be normalized.  Need not include all required
+                           slots — missing required ones are injected.
+        target_budget:     Budget ceiling in USD.  Must be > 0.
+        room_preset:       Key from taxonomy.room_presets (e.g. "bedroom").
+        taxonomy:          Loaded RoomTaxonomy — authoritative slot definitions.
+        run_id:            Optional; threaded from RoomRequest when called by
+                           plan_composition().  Defaults to "" for standalone use.
+        required_override: If provided, use this list of slot ids as the required
+                           set instead of taxonomy.room_presets[preset].required_slots.
+                           Used by fit_slots_to_budget for have/need logic.
 
     Returns:
         SlotPlan where total_allocated <= target_budget always.
@@ -78,7 +82,10 @@ def allocate_budget(
     if target_budget <= 0:
         raise ValueError(f"target_budget must be > 0, got {target_budget}")
 
-    required_slot_ids = taxonomy.room_presets[room_preset].required_slots
+    required_slot_ids = (
+        required_override if required_override is not None
+        else taxonomy.room_presets[room_preset].required_slots
+    )
 
     # --- Step 1: Build effective weight dict ---------------------------------
     # Start with the caller's proposals and inject any missing required slots.
@@ -139,34 +146,38 @@ def fit_slots_to_budget(
     taxonomy: RoomTaxonomy,
     budget_policies: BudgetPolicies,
     run_id: str = "",
+    already_have: set[str] | None = None,
+    must_have: set[str] | None = None,
 ) -> SlotPlan:
     """Return a feasible SlotPlan, dropping optional slots if needed.
 
-    Algorithm:
-      1. Build the full set of active slots (required + any optionals in
-         slot_weights), sorted optionals by default_budget_weight ascending.
-      2. Compute the feasibility floor for the current active set:
-           floor = max(sum_active_weights, 1.0) × minimum_room_multiplier
-         If target_budget >= floor, the set is feasible → delegate to
-         allocate_budget() and return.
-      3. Otherwise, drop the lowest-weight optional slot and repeat step 2.
-      4. If all optionals have been dropped and required-only is still
-         infeasible, return SlotPlan(is_feasible=False, ...) with:
-           - slots set to the required slots at allocated_budget=0.0
-           - minimum_viable_budget = max(sum_req_weights, 1.0) × multiplier
+    Supports per-request customization via already_have / must_have:
+      - already_have: slots the user owns.  Never sourced, never counted
+        toward feasibility/budget.  Recorded on the plan with owned=True
+        and allocated_budget=0 for render/coherence.
+      - must_have: slots promoted to required.  Never dropped during the
+        optional-dropping loop.
 
-    The returned plan always satisfies:
-      - total_allocated <= target_budget  (when is_feasible=True)
-      - is_feasible=False with an honest minimum_viable_budget  (otherwise)
+    Algorithm:
+      1. Compute effective_required = (preset_required - already_have) | must_have.
+      2. Build weight dict for sourced slots only (excluding already_have).
+      3. Feasibility floor is computed against sourced active weights.
+      4. Drop non-required, non-must_have optionals (lowest weight first)
+         until feasible.
+      5. If still infeasible after dropping all droppable optionals, return
+         is_feasible=False with MVB based on effective_required.
+      6. On feasibility, delegate to allocate_budget(), then append owned
+         slots at $0.
 
     Args:
-        slot_weights:    Proposed weight per slot id.  Optional slots are
-                         identified via taxonomy.slot_by_id().optional.
+        slot_weights:    Proposed weight per slot id.
         target_budget:   Budget ceiling in USD.  Must be > 0.
         room_preset:     Key from taxonomy.room_presets.
         taxonomy:        Loaded RoomTaxonomy.
         budget_policies: Loaded BudgetPolicies (provides minimum_room_multiplier).
         run_id:          Optional; threaded from RoomRequest.
+        already_have:    Slot ids the user already owns (excluded from sourcing).
+        must_have:       Slot ids forced into the effective required set.
 
     Returns:
         SlotPlan — is_feasible=True and total<=budget, or is_feasible=False.
@@ -182,26 +193,34 @@ def fit_slots_to_budget(
     if target_budget <= 0:
         raise ValueError(f"target_budget must be > 0, got {target_budget}")
 
-    multiplier = budget_policies.minimum_room_multiplier
-    required_ids = set(taxonomy.room_presets[room_preset].required_slots)
+    already_have = already_have or set()
+    must_have = must_have or set()
 
-    # Build full weight dict: required slots (injected if absent) + optionals.
+    multiplier = budget_policies.minimum_room_multiplier
+    preset_required = set(taxonomy.room_presets[room_preset].required_slots)
+
+    # Effective required: preset required minus owned, plus must-have.
+    effective_required = (preset_required - already_have) | must_have
+
+    # Build weight dict for SOURCED slots only (exclude already_have entirely).
     weights: dict[str, float] = {}
-    for slot_id in required_ids:
-        weights[slot_id] = slot_weights.get(slot_id, taxonomy.slot_by_id(slot_id).default_budget_weight)
+    for slot_id in effective_required:
+        if slot_id not in already_have:
+            weights[slot_id] = slot_weights.get(
+                slot_id, taxonomy.slot_by_id(slot_id).default_budget_weight
+            )
     for slot_id, w in slot_weights.items():
-        if slot_id not in required_ids:
+        if slot_id not in effective_required and slot_id not in already_have:
             weights[slot_id] = w  # optional extra slots from caller
 
-    # Collect optional slot definitions sorted ascending by default_budget_weight
-    # (lowest-weight optionals dropped first).
-    def _optional_defs_ascending(active: dict[str, float]) -> list[SlotDefinition]:
-        optional_slots = [
+    # Droppable optionals: sourced slots that are NOT in effective_required.
+    def _droppable_defs_ascending(active: dict[str, float]) -> list[SlotDefinition]:
+        droppable = [
             taxonomy.slot_by_id(sid)
             for sid in active
-            if sid not in required_ids
+            if sid not in effective_required
         ]
-        return sorted(optional_slots, key=lambda s: s.default_budget_weight)
+        return sorted(droppable, key=lambda s: s.default_budget_weight)
 
     # Drop optionals until feasible or none left.
     active = dict(weights)
@@ -209,39 +228,67 @@ def fit_slots_to_budget(
         total_w = sum(active.values())
         floor = max(total_w, 1.0) * multiplier
         if target_budget >= floor:
-            # Feasible — delegate all budget math to allocate_budget().
-            return allocate_budget(active, target_budget, room_preset, taxonomy, run_id=run_id)
+            # Feasible — delegate budget math to allocate_budget().
+            plan = allocate_budget(
+                active, target_budget, room_preset, taxonomy,
+                run_id=run_id,
+                required_override=list(effective_required),
+            )
+            # Append owned slots at $0 for render/coherence.
+            owned_slots = _build_owned_slots(already_have, taxonomy)
+            if owned_slots:
+                plan = plan.model_copy(update={"slots": plan.slots + owned_slots})
+            return plan
 
-        optionals = _optional_defs_ascending(active)
-        if not optionals:
+        droppable = _droppable_defs_ascending(active)
+        if not droppable:
             break  # Nothing left to drop — infeasible.
 
-        # Drop the cheapest optional and retry.
-        active.pop(optionals[0].id)
+        # Drop the cheapest droppable optional and retry.
+        active.pop(droppable[0].id)
 
-    # Required-only is still infeasible.
+    # Effective-required-only is still infeasible.
     req_weight_sum = sum(
-        taxonomy.slot_by_id(sid).default_budget_weight for sid in required_ids
+        taxonomy.slot_by_id(sid).default_budget_weight
+        for sid in effective_required
     )
     mvb = max(req_weight_sum, 1.0) * multiplier
 
-    required_slots = [
+    infeasible_slots = [
         Slot(
             slot_id=sid,
             allocated_budget=0.0,
             required_specs=list(taxonomy.slot_by_id(sid).required_specs),
-            optional=False,
+            optional=sid not in effective_required,
         )
-        for sid in sorted(required_ids)
+        for sid in sorted(effective_required)
     ]
+    # Include owned slots on infeasible plans too (for display).
+    infeasible_slots.extend(_build_owned_slots(already_have, taxonomy))
+
     return SlotPlan(
         run_id=run_id,
         room_preset=room_preset,
         target_budget=target_budget,
-        slots=required_slots,
+        slots=infeasible_slots,
         is_feasible=False,
         minimum_viable_budget=mvb,
     )
+
+
+def _build_owned_slots(already_have: set[str], taxonomy: RoomTaxonomy) -> list[Slot]:
+    """Build Slot objects for user-owned items: $0 budget, owned=True."""
+    slots = []
+    for sid in sorted(already_have):
+        slot_def = taxonomy.slot_by_id(sid)
+        slots.append(Slot(
+            slot_id=sid,
+            allocated_budget=0.0,
+            required_specs=list(slot_def.required_specs),
+            optional=slot_def.optional,
+            owned=True,
+        ))
+    return slots
 
 
 def plan_composition(
@@ -287,6 +334,8 @@ def plan_composition(
     return fit_slots_to_budget(
         weights, target_budget, room_preset, taxonomy, budget_policies,
         run_id=run_id,
+        already_have=set(room_request.already_have),
+        must_have=set(room_request.must_have),
     )
 
 

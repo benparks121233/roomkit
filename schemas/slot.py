@@ -10,3 +10,7 @@ class Slot(BaseModel):
     allocated_budget: float
     required_specs: list[str]
     optional: bool
+    # True when the user already owns this item.  Owned slots are recorded
+    # on the plan for render/coherence but are never sourced; their
+    # allocated_budget is always 0.0.
+    owned: bool = False

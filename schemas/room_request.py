@@ -44,5 +44,13 @@ class RoomRequest(BaseModel):
     # Structured Q&A answers keyed by question id.  Empty dict if no Q&A.
     qa_answers: dict[str, str] = {}
 
+    # Slot ids the user already owns — composition will mark these as present
+    # but not source them.  Validated against the taxonomy in intake_service.
+    already_have: list[str] = []
+
+    # Slot ids the user explicitly wants included, even if normally optional
+    # for the room preset.  Validated against the taxonomy in intake_service.
+    must_have: list[str] = []
+
     # Timestamp set by intake_service at parse time (UTC).
     created_at: datetime
