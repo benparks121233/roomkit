@@ -58,6 +58,15 @@ class FreshnessPolicies(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# Budget policies
+# ---------------------------------------------------------------------------
+
+class BudgetPolicies(BaseModel):
+    version: int
+    minimum_room_multiplier: float
+
+
+# ---------------------------------------------------------------------------
 # Loaders
 # ---------------------------------------------------------------------------
 
@@ -122,3 +131,13 @@ def load_freshness_policies(path: Path | None = None) -> FreshnessPolicies:
         return FreshnessPolicies.model_validate(data)
     except Exception as exc:
         raise ValueError(f"Invalid freshness policies in {path}: {exc}") from exc
+
+
+def load_budget_policies(path: Path | None = None) -> BudgetPolicies:
+    """Load and validate context/budget_policies.yaml."""
+    path = path or _CONTEXT_DIR / "budget_policies.yaml"
+    data = _load_yaml(path)
+    try:
+        return BudgetPolicies.model_validate(data)
+    except Exception as exc:
+        raise ValueError(f"Invalid budget policies in {path}: {exc}") from exc

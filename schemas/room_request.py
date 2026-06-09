@@ -1,10 +1,48 @@
 # schemas/room_request.py
-# Owns: validated intake output — the contract between intake_service and the pipeline.
-# Missing fields are null, never guessed. Stage 3: add fields.
+# Owns: the validated intake output — the contract between intake_service
+# and everything downstream in the pipeline.
+#
+# Design rules:
+#   - Missing fields are None, never guessed. parse_intake() enforces this.
+#   - No business validation lives here (budget > 0, room_type membership).
+#     That belongs in services/intake_service.py so errors are explicit and testable.
+#   - Downstream services read room_type and budget from this object;
+#     they must not re-validate or re-parse raw input.
+
+from __future__ import annotations
+
+from datetime import datetime
+from typing import Optional
 
 from pydantic import BaseModel
 
 
 class RoomRequest(BaseModel):
-    # Stage 3: run_id, room_type, dimensions, photo_url, budget, style_hints, bed_size, etc.
-    pass
+    # Identity — assigned by intake_service, unique per call.
+    run_id: str
+
+    # Room — None if the user did not supply or the value was unrecognisable.
+    # room_type is validated against taxonomy presets in intake_service; if
+    # supplied and unknown it is rejected before this object is created.
+    room_type: Optional[str] = None
+
+    # Spatial input — exactly one of these is expected, but neither is required
+    # by the schema so a partial intake can still be logged.
+    dimensions: Optional[str] = None       # e.g. "12x14", "10 x 12 ft"
+    photo_url: Optional[str] = None        # storage URL / path of uploaded photo
+
+    # Budget — None if not supplied.  Values ≤ 0 are rejected by intake_service
+    # before this object is created, so any non-None value here is positive.
+    budget: Optional[float] = None
+
+    # Spec hints surfaced by Q&A — None if not mentioned.
+    bed_size: Optional[str] = None         # e.g. "queen", "king" (bedroom only)
+
+    # Style — free-form text from Q&A; interpreted by style_service in Stage 4.
+    style_description: Optional[str] = None
+
+    # Structured Q&A answers keyed by question id.  Empty dict if no Q&A.
+    qa_answers: dict[str, str] = {}
+
+    # Timestamp set by intake_service at parse time (UTC).
+    created_at: datetime

@@ -1,0 +1,20 @@
+version: 1
+
+# Minimum viable budget multiplier.
+#
+# Each slot's floor cost = default_budget_weight × minimum_room_multiplier.
+# A plan is feasible only when every required slot's allocation meets its floor.
+#
+# Feasibility condition (after any normalization):
+#   budget >= max(sum_active_weights, 1.0) × minimum_room_multiplier
+#
+# Practical meaning: this is the minimum meaningful budget for any room.
+# At exactly this budget, every required slot receives its proportional floor.
+# Below it, at least one required slot cannot be sourced meaningfully.
+#
+# Derived minimums at default multiplier of $500:
+#   bedroom  (required weight sum 0.66): MVB = $500
+#   living_room (required weight sum 0.80): MVB = $500
+#
+# Adjust this value as real sourcing data informs actual slot minimums.
+minimum_room_multiplier: 500.0
