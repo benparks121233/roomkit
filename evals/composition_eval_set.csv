@@ -1,0 +1,7 @@
+fixture_id,room_type,budget,style,expected_required_slots,expected_on_budget,expected_all_specs_present,expected_all_links_valid,notes
+eval_001,bedroom,1500,warm_minimalist,"bed_frame,bedding,rug,lighting,wall_art,accent",true,true,true,Baseline bedroom — most common case
+eval_002,living_room,1500,cozy_maximalist,"sofa,rug,lighting,tv,wall_art,accent",true,true,true,Baseline living room
+eval_003,bedroom,400,warm_minimalist,"bed_frame,bedding,rug,lighting,wall_art,accent",true,true,true,Tiny budget — every slot must still be filled and on budget
+eval_004,living_room,6000,mid_century_modern,"sofa,rug,lighting,tv,wall_art,accent",true,true,true,Oversized budget — must not exceed even with high weights
+eval_005,bedroom,800,industrial_urban,"bed_frame,bedding,rug,lighting,wall_art,accent",true,true,true,Studio-style bedroom mid budget
+eval_006,bedroom,1200,mid_century_modern,"bedding,rug,lighting,wall_art,accent",true,true,true,Partial composition — user is keeping their bed; bed_frame excluded

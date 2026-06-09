@@ -1,0 +1,36 @@
+version: 1
+
+# Named style profiles. The LLM maps user Q&A answers to one of these.
+# style_service.py loads this file; prompts/interpret_style.md references it.
+# Add new profiles here; do not embed style definitions inside prompts.
+
+profiles:
+  - id: warm_minimalist
+    display_name: Warm Minimalist
+    keywords: [natural wood, linen, neutral tones, clean lines, cozy simplicity]
+    color_palette: [cream, warm white, light oak, terracotta accent]
+    mood: calm, grounded, uncluttered
+
+  - id: mid_century_modern
+    display_name: Mid-Century Modern
+    keywords: [walnut, tapered legs, muted mustard, olive, geometric patterns]
+    color_palette: [walnut, mustard, olive green, cream, burnt orange accent]
+    mood: retro, sophisticated, intentional
+
+  - id: cozy_maximalist
+    display_name: Cozy Maximalist
+    keywords: [layered textiles, jewel tones, eclectic art, mixed patterns, plush]
+    color_palette: [deep teal, burgundy, gold, forest green, warm white]
+    mood: rich, welcoming, expressive
+
+  - id: modern_coastal
+    display_name: Modern Coastal
+    keywords: [whitewash, rattan, sea glass tones, linen, natural textures]
+    color_palette: [white, soft blue, sand, natural rattan, seafoam accent]
+    mood: airy, relaxed, fresh
+
+  - id: industrial_urban
+    display_name: Industrial Urban
+    keywords: [exposed metal, dark wood, concrete tones, Edison bulbs, raw edges]
+    color_palette: [charcoal, dark walnut, steel grey, black, warm amber accent]
+    mood: edgy, modern, utilitarian

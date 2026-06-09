@@ -1,0 +1,31 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "services": [
+    {
+      "name": "web",
+      "source": { "root": "." },
+      "build": { "builder": "nixpacks" },
+      "deploy": {
+        "startCommand": "uvicorn app.main:app --host 0.0.0.0 --port $PORT",
+        "healthcheckPath": "/health"
+      }
+    },
+    {
+      "name": "worker",
+      "source": { "root": "." },
+      "build": { "builder": "nixpacks" },
+      "deploy": {
+        "startCommand": "python -m services.refresh_worker"
+      }
+    },
+    {
+      "name": "cron",
+      "source": { "root": "." },
+      "build": { "builder": "nixpacks" },
+      "deploy": {
+        "cronSchedule": "0 */6 * * *",
+        "startCommand": "python -m services.refresh_worker"
+      }
+    }
+  ]
+}

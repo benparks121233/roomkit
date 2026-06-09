@@ -1,0 +1,53 @@
+version: 1
+country_scope: US
+
+slots:
+  - id: wall_art
+    optional: true
+    default_budget_weight: 0.08
+    required_specs: []
+
+  - id: bedding
+    optional: true
+    default_budget_weight: 0.10
+    required_specs: [bed_size]
+
+  - id: rug
+    optional: true
+    default_budget_weight: 0.12
+    required_specs: [dimensions]
+
+  - id: lighting
+    optional: true
+    default_budget_weight: 0.08
+    required_specs: []
+
+  - id: tv
+    optional: true
+    default_budget_weight: 0.18
+    required_specs: [screen_size]
+
+  - id: sofa
+    optional: true
+    default_budget_weight: 0.28
+    required_specs: []
+
+  - id: bed_frame
+    optional: true
+    default_budget_weight: 0.22
+    required_specs: [bed_size]
+
+  - id: accent
+    optional: true
+    default_budget_weight: 0.06
+    required_specs: []
+
+room_presets:
+  bedroom:
+    required_slots: [bed_frame, bedding, rug, lighting, wall_art, accent]
+  living_room:
+    required_slots: [sofa, rug, lighting, tv, wall_art, accent]
+
+budget_rules:
+  total_must_not_exceed: target_budget
+  per_slot_overflow_flag: true

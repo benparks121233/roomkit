@@ -1,0 +1,2 @@
+# data/snapshots/ — runtime product/price snapshots (supplement to Supabase DB).
+# Primary store is the DB; local files here are for dev/test use only.

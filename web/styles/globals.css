@@ -1,0 +1,17 @@
+/* web/styles/globals.css
+   Global styles — extend in Stage 9 when building the result board and share card. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #fafaf8;
+  color: #1a1a1a;
+  line-height: 1.5;
+}

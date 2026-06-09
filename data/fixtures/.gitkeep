@@ -1,0 +1,3 @@
+# data/fixtures/ — static product fixtures for tests.
+# No live affiliate calls in tests; all sourcing tests use fixtures from here.
+# Stage 6: add fixture JSON files (one per slot category).

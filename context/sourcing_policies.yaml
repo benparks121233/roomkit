@@ -1,0 +1,31 @@
+version: 1
+
+# Sourcing adapter selection and channel sequencing.
+# The SourcingAdapter interface (services/sourcing/base.py) is frozen —
+# swapping adapters here never requires touching the pipeline.
+
+default_adapter: amazon
+
+adapters:
+  amazon:
+    class: services.sourcing.amazon_adapter.AmazonAdapter
+    enabled: true
+    mode: curated        # curated (v1) | pa_api | product_data_api
+    notes: >
+      v1 uses a curated product list with SiteStripe affiliate links.
+      When PA-API access is granted (~10 qualifying sales) or a paid
+      product-data API (Rainforest/Canopy) is available, swap mode
+      without changing the interface.
+
+  temu:
+    class: services.sourcing.temu_adapter.TemuAdapter
+    enabled: false
+    mode: paid_scraper_api
+    notes: >
+      Post-loop opt-in budget tier. Not implemented in v1.
+      Enable only after consumer loop is validated and a
+      paid Temu scraper API is in place.
+
+# Fallback: if the primary adapter returns zero candidates for a slot,
+# the slot is marked as null with reason "no_candidate" — never silently skipped.
+fallback_on_no_candidates: null

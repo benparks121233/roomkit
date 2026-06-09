@@ -1,0 +1,14 @@
+version: 1
+
+# Price freshness: re-validate a snapshot's price before showing it if older than this.
+price_freshness_hours: 24
+
+# Link check: verify link is live before displaying any product to a user.
+link_check_on_display: true
+
+# Cron schedule for the refresh worker (runs in the Railway cron service).
+# Every 6 hours. Must run under a lock — see services/refresh_worker.py.
+refresh_cron: "0 */6 * * *"
+
+# Warn / trigger refresh on a re-opened design older than one week.
+stale_design_warn_hours: 168

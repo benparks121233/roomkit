@@ -1,0 +1,32 @@
+version: 1
+
+# Per-slot required specs. A product missing any required spec for its slot
+# is rejected by validators/spec_rules.py before it can reach the user.
+
+bedding:
+  required: [bed_size]
+  valid_bed_size: [twin, full, queen, king]
+
+bed_frame:
+  required: [bed_size]
+  valid_bed_size: [twin, full, queen, king]
+
+tv:
+  required: [screen_size]
+  # screen_size is a string, e.g. "55 inch", "65 inch"
+
+rug:
+  required: [dimensions]
+  # dimensions is a string, e.g. "5x8", "8x10"
+
+wall_art:
+  required: []
+
+lighting:
+  required: []
+
+sofa:
+  required: []
+
+accent:
+  required: []
