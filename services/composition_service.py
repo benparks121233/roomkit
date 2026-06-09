@@ -1,25 +1,33 @@
 # services/composition_service.py
 # Owns: planning which slots to fill and how to split the budget across them.
 #
-# Two functions, two pieces:
-#   allocate_budget() — Piece 1 (this file).  Pure math, no LLM.
-#     Takes proposed slot weights and returns a SlotPlan where the sum of
-#     allocated budgets never exceeds target_budget.
-#
-#   plan_composition() — Piece 2 (not yet implemented).
-#     Calls the LLM (plan_composition.md) to propose slot weights, then
-#     delegates to allocate_budget() for the deterministic math.
+# Three public functions, three pieces:
+#   allocate_budget()      — Piece 1.  Pure math, no LLM.
+#   fit_slots_to_budget()  — Piece 2.  Pure math (optional-dropping + feasibility).
+#   plan_composition()     — Piece 3.  LLM proposes weights → fit_slots_to_budget().
 #
 # The deterministic/LLM split is structural: business-rule math lives in
-# allocate_budget(), LLM creativity lives in the prompt.  Budget enforcement
-# is never delegated to the prompt.
+# allocate_budget() and fit_slots_to_budget(); LLM creativity lives in the
+# prompt.  Budget enforcement is never delegated to the prompt.
 
 from __future__ import annotations
 
+import json
+import re
+from pathlib import Path
+
+import anthropic
+
+from schemas.room_request import RoomRequest
 from schemas.room_taxonomy import RoomTaxonomy, SlotDefinition
 from schemas.slot import Slot
 from schemas.slot_plan import SlotPlan
-from services.config_loader import BudgetPolicies
+from schemas.style_profile import StyleProfile
+from services.config_loader import BudgetPolicies, load_budget_policies, load_room_taxonomy
+
+_PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
+_LLM_MODEL = "claude-sonnet-4-6"
+_LLM_MAX_TOKENS = 512
 
 
 def allocate_budget(
@@ -236,11 +244,207 @@ def fit_slots_to_budget(
     )
 
 
-def plan_composition(style_profile, target_budget: float, room_preset: str) -> SlotPlan:
-    """Map a StyleProfile + budget to a SlotPlan via LLM.  Piece 2: not yet implemented.
+def plan_composition(
+    room_request: RoomRequest,
+    style_profile: StyleProfile,
+) -> SlotPlan:
+    """Map a RoomRequest + StyleProfile to a SlotPlan via LLM.
 
-    Will call prompts/plan_composition.md with the style profile to propose
-    slot weights, then delegate to allocate_budget() for all budget math.
-    The LLM never enforces the budget ceiling — allocate_budget() does.
+    The LLM proposes slot budget *weights* only.  All dollar math, feasibility
+    checks, optional-dropping, and budget clamping live in fit_slots_to_budget().
+
+    Recovery on bad LLM output:
+      - Unparseable JSON → fall back to taxonomy default weights.
+      - Hallucinated slot ids → silently dropped.
+      - Missing required slots → injected by fit_slots_to_budget().
+      - Weights summing to anything → normalization handles it.
+      - Any exception → taxonomy defaults, never raise.
+
+    Args:
+        room_request:  Validated intake; provides run_id, budget, room_type.
+        style_profile: Validated style; used in the prompt for style-guided weights.
+
+    Returns:
+        SlotPlan (always).  is_feasible may be False if budget is too low.
     """
-    raise NotImplementedError("Stage 5 Piece 2: LLM weight proposal not yet implemented")
+    taxonomy = load_room_taxonomy()
+    budget_policies = load_budget_policies()
+
+    room_preset = room_request.room_type or "bedroom"
+    target_budget = room_request.budget or 1000.0
+    run_id = room_request.run_id
+
+    system_prompt, user_message = _build_composition_prompts(
+        room_preset, target_budget, style_profile, taxonomy,
+    )
+
+    try:
+        raw = _call_composition_llm(system_prompt, user_message)
+        weights = _parse_weight_proposal(raw, room_preset, taxonomy)
+    except Exception:
+        weights = _taxonomy_default_weights(room_preset, taxonomy)
+
+    return fit_slots_to_budget(
+        weights, target_budget, room_preset, taxonomy, budget_policies,
+        run_id=run_id,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Private helpers — LLM isolation + prompt building
+# ---------------------------------------------------------------------------
+
+def _call_composition_llm(system_prompt: str, user_message: str) -> str:
+    """Send a request to the Anthropic API and return the raw text.
+
+    Isolated here so tests can patch
+    services.composition_service._call_composition_llm without importing
+    or instantiating the Anthropic client.
+    """
+    client = anthropic.Anthropic()
+    message = client.messages.create(
+        model=_LLM_MODEL,
+        max_tokens=_LLM_MAX_TOKENS,
+        system=system_prompt,
+        messages=[{"role": "user", "content": user_message}],
+    )
+    return message.content[0].text
+
+
+def _build_composition_prompts(
+    room_preset: str,
+    target_budget: float,
+    style_profile: StyleProfile,
+    taxonomy: RoomTaxonomy,
+) -> tuple[str, str]:
+    """Load plan_composition.md, substitute variables, return (system, user)."""
+    template_text = (_PROMPTS_DIR / "plan_composition.md").read_text()
+
+    required_ids = taxonomy.room_presets[room_preset].required_slots
+    all_ids = taxonomy.slot_ids()
+
+    # Build a human-readable slot catalogue.
+    slot_lines = []
+    for slot_def in taxonomy.slots:
+        slot_lines.append(
+            f"- id: {slot_def.id}  "
+            f"default_weight: {slot_def.default_budget_weight}  "
+            f"required_specs: {slot_def.required_specs}"
+        )
+    slot_definitions = "\n".join(slot_lines)
+
+    # Style profile summary for the prompt.
+    style_summary = (
+        f"style_name: {style_profile.style_name}\n"
+        f"keywords: {', '.join(style_profile.keywords)}\n"
+        f"color_palette: {', '.join(style_profile.color_palette)}\n"
+        f"mood: {style_profile.mood}"
+    )
+
+    optional_ids = sorted(all_ids - set(required_ids))
+
+    rendered = (
+        template_text
+        .replace("{{slot_definitions}}", slot_definitions)
+        .replace("{{style_profile}}", style_summary)
+        .replace("{{room_preset}}", room_preset)
+        .replace("{{target_budget}}", f"{target_budget:.2f}")
+        .replace("{{required_slots}}", ", ".join(required_ids))
+        .replace("{{optional_slots}}", ", ".join(optional_ids) if optional_ids else "(none)")
+        .replace("{{style_name}}", style_profile.style_name)
+    )
+
+    # Strip leading comment lines (file header).
+    lines = rendered.split("\n")
+    first_content = next(
+        (i for i, line in enumerate(lines) if line.strip() and not line.startswith("#")),
+        0,
+    )
+    rendered = "\n".join(lines[first_content:])
+
+    # Split into sections on lines that are exactly '---'.
+    raw_sections = re.split(r"(?m)^---$", rendered)
+
+    system_parts: list[str] = []
+    user_part = ""
+
+    for raw in raw_sections:
+        section = raw.strip()
+        if not section:
+            continue
+        if section.startswith("## System"):
+            body = section.split("\n", 1)[1].strip() if "\n" in section else ""
+            system_parts.append(body)
+        elif section.startswith("## User"):
+            user_part = section.split("\n", 1)[1].strip() if "\n" in section else ""
+        elif section.startswith("## Output schema"):
+            system_parts.append(section)
+
+    return "\n\n".join(system_parts), user_part
+
+
+def _parse_weight_proposal(
+    raw: str,
+    room_preset: str,
+    taxonomy: RoomTaxonomy,
+) -> dict[str, float]:
+    """Parse the LLM JSON response into a clean {slot_id: weight} dict.
+
+    Recovery rules:
+      - Slot ids not in the taxonomy are silently dropped.
+      - Non-numeric or non-positive weights are dropped.
+      - If nothing usable remains, returns taxonomy defaults.
+    """
+    data = _extract_composition_json(raw)
+    raw_weights = data.get("slot_weights", {})
+    if not isinstance(raw_weights, dict):
+        return _taxonomy_default_weights(room_preset, taxonomy)
+
+    valid_ids = taxonomy.slot_ids()
+    cleaned: dict[str, float] = {}
+    for slot_id, weight in raw_weights.items():
+        if slot_id not in valid_ids:
+            continue  # hallucinated slot — drop
+        try:
+            w = float(weight)
+        except (TypeError, ValueError):
+            continue
+        if w > 0:
+            cleaned[slot_id] = w
+
+    if not cleaned:
+        return _taxonomy_default_weights(room_preset, taxonomy)
+
+    # Pre-normalize if sum > 1.0.  The LLM's absolute weight scale is
+    # arbitrary; only the relative proportions matter.  Without this,
+    # inflated weights (e.g. sum=3.0) would inflate the feasibility floor
+    # in fit_slots_to_budget(), causing a plan to appear infeasible when
+    # normalization would have handled it fine.
+    total = sum(cleaned.values())
+    if total > 1.0:
+        cleaned = {sid: w / total for sid, w in cleaned.items()}
+
+    return cleaned
+
+
+def _extract_composition_json(text: str) -> dict:
+    """Extract a JSON object from the LLM response, handling code fences."""
+    text = text.strip()
+    if text.startswith("```"):
+        first_newline = text.find("\n")
+        if first_newline != -1:
+            text = text[first_newline + 1:]
+        if text.rstrip().endswith("```"):
+            text = text.rstrip()[:-3]
+    return json.loads(text.strip())
+
+
+def _taxonomy_default_weights(
+    room_preset: str, taxonomy: RoomTaxonomy,
+) -> dict[str, float]:
+    """Return the taxonomy default_budget_weight for every required slot."""
+    required_ids = taxonomy.room_presets[room_preset].required_slots
+    return {
+        sid: taxonomy.slot_by_id(sid).default_budget_weight
+        for sid in required_ids
+    }
