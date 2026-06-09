@@ -26,6 +26,28 @@ def validate_required_slots(
     return True, None
 
 
+def validate_feasibility(slot_plan: SlotPlan) -> tuple[bool, str | None]:
+    """Return (True, None) if the plan is buildable (is_feasible=True).
+
+    This gate must be called before passing a SlotPlan to sourcing or selection.
+    An infeasible plan has slots at allocated_budget=0.0; sourcing into them would
+    produce a price_band of (0, 0) and silently return nonsense candidates.
+
+    Returns:
+        (True, None)                                    — plan is buildable
+        (False, "plan_infeasible:<mvb>")                — is_feasible=False;
+            <mvb> is the minimum_viable_budget rounded to 2 dp, or "unknown"
+            if minimum_viable_budget was not set.
+    """
+    if not slot_plan.is_feasible:
+        if slot_plan.minimum_viable_budget is not None:
+            mvb = f"{slot_plan.minimum_viable_budget:.2f}"
+        else:
+            mvb = "unknown"
+        return False, f"plan_infeasible:{mvb}"
+    return True, None
+
+
 def validate_no_duplicate_slots(slot_plan: SlotPlan) -> tuple[bool, str | None]:
     """Return (True, None) if every slot_id in the plan is unique.
 

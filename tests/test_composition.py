@@ -401,21 +401,8 @@ def test_fit_budget_drops_optional_when_tight():
     assert plan.total_allocated <= 550.0
 
 
-def test_fit_budget_drops_lowest_weight_optional_first():
-    """When multiple optionals are present, the lightest is dropped first."""
-    # Add two optionals: tv(0.18) and a lighter one (accent-extra at 0.05).
-    # We label them as extra keys not in required_ids.
-    # Taxonomy must know these slots. Since taxonomy only has defined slots,
-    # we can only use real slot ids. Use 'tv'(0.18) and 'wall_art' as-is,
-    # but wall_art IS required for bedroom. We cannot use it as optional.
-    #
-    # Realistic approach: two separate weight values for tv; instead, use
-    # living_room where sofa is required and tv is required too — no free
-    # optionals unless we pass extra slots not in required list.
-    #
-    # For bedroom, only tv is a known non-required slot available in the
-    # taxonomy. We can't test multi-optional dropping without faking.
-    # Test: with a single optional (tv), verify it's the one dropped.
+def test_fit_budget_drops_sole_optional_when_required_floor_is_still_met():
+    """With a single heavy optional, it is dropped and the required set fits."""
     heavy_weights = {
         "bed_frame": 0.22,
         "bedding":   0.10,
@@ -433,6 +420,41 @@ def test_fit_budget_drops_lowest_weight_optional_first():
     assert "tv" not in slot_ids
     for sid in _BEDROOM_REQ_IDS:
         assert sid in slot_ids
+
+
+def test_fit_budget_drops_cheapest_optional_first_when_multiple_present():
+    """With two optionals (tv=0.18, sofa=0.28), the cheaper tv is dropped first.
+
+    Bedroom non-required slots in the taxonomy: tv (0.18) and sofa (0.28).
+    Weights: required(0.66) + tv(0.18) + sofa(0.28) → total_w=1.12
+    floor = 1.12 × 500 = $560.
+    Budget $540 < $560 → drop cheapest optional (tv, not sofa).
+    After dropping tv: total_w = 0.66 + 0.28 = 0.94 → floor = max(0.94,1.0)×500 = $500.
+    $540 >= $500 → feasible. sofa must be in the plan; tv must not.
+
+    If the sort order were reversed (sofa dropped first), sofa would be absent and
+    tv would be present — opposite of the asserted outcome.
+    """
+    weights = {
+        "bed_frame": 0.22,
+        "bedding":   0.10,
+        "rug":       0.12,
+        "lighting":  0.08,
+        "wall_art":  0.08,
+        "accent":    0.06,
+        "tv":        0.18,   # optional, lighter → dropped first
+        "sofa":      0.28,   # optional, heavier → kept
+    }
+    # total_w = 1.12, floor = $560 → need to drop one optional at $540.
+    plan = fit_slots_to_budget(weights, 540.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
+
+    assert plan.is_feasible is True
+    slot_ids = {s.slot_id for s in plan.slots}
+    assert "tv" not in slot_ids, "tv (cheaper optional) should have been dropped first"
+    assert "sofa" in slot_ids, "sofa (more expensive optional) should have been kept"
+    for sid in _BEDROOM_REQ_IDS:
+        assert sid in slot_ids
+    assert plan.total_allocated <= 540.0
 
 
 # --- Infeasible: budget below required-floor sum ----------------------------
