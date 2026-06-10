@@ -75,7 +75,7 @@ _TEXTURE_SUFFIX = (
 # ---------------------------------------------------------------------------
 
 IMAGES: list[tuple[str, str]] = [
-    # ── CORE (6) — full-room wide, decor-rich world-building, bedroom ─────
+    # ── CORE (9) — full-room wide, decor-rich world-building, bedroom ─────
     (
         "bedroom/core_cottagecore.jpg",
         "A richly styled cottagecore bedroom that transports you into a pastoral "
@@ -129,19 +129,6 @@ IMAGES: list[tuple[str, str]] = [
         "natural sunlight fills the room. " + _ROOM_WIDE_SUFFIX,
     ),
     (
-        "bedroom/core_grandmillennial.jpg",
-        "A richly styled grandmillennial bedroom that transports you into "
-        "modern-classic charm. Bold chintz floral wallpaper in blue and pink "
-        "covers the walls. An upholstered headboard in a coordinating stripe "
-        "pattern. Needlepoint and toile throw pillows layered on the bed. A "
-        "skirted table lamp with a pleated shade on the antique dark wood "
-        "nightstand. A gallery wall of small gilt-framed watercolors and "
-        "silhouette portraits. A bone china teacup on a stack of art books on "
-        "the dresser. A monogrammed hand towel draped over a chair. Scalloped-"
-        "edge curtains with tassel tiebacks. Blue, pink, cream, and dark wood "
-        "tones. Warm, diffused window light. " + _ROOM_WIDE_SUFFIX,
-    ),
-    (
         "bedroom/core_industrial.jpg",
         "A richly styled industrial bedroom that transports you into a "
         "converted loft space. Exposed red brick wall behind the bed. Black "
@@ -154,6 +141,67 @@ IMAGES: list[tuple[str, str]] = [
         "style task lamp on a reclaimed wood nightstand. Charcoal, warm "
         "leather brown, black metal, and amber tones. Directional warm light "
         "from the Edison bulbs. " + _ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "bedroom/core_quiet_luxury.jpg",
+        "A richly styled quiet luxury bedroom that transports you into "
+        "understated old-money elegance. A cream upholstered bed with perfectly "
+        "pressed ivory linen sheets and a cashmere throw folded at the foot. "
+        "Marble-topped nightstand with a small arrangement of fresh white "
+        "orchids in a fluted glass vase, a pair of coffee-table books, and a "
+        "gold-rimmed water glass. A large gilt-framed mirror leans against "
+        "the wall reflecting soft light. Tailored linen armchair in warm cream. "
+        "Brushed brass floor lamp with a linen shade. A marble tray with a "
+        "single candle and a small ceramic dish. Cream, ivory, warm gold, and "
+        "soft stone tones — nothing loud, everything exquisite. Serene, diffused "
+        "natural light through floor-length sheer curtains. " + _ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "bedroom/core_sports_den.jpg",
+        "A richly styled sports den bedroom — clearly a BEDROOM with a large bed "
+        "and upholstered headboard as the focal point. Dark charcoal walls. The "
+        "bed has dark grey linen bedding with a cognac leather bolster pillow. "
+        "Above the headboard, two framed abstract athletic action art prints in "
+        "painterly brushstrokes showing dynamic human figures in motion (NO real "
+        "team logos, NO readable text, NO jersey numbers). To one side, a "
+        "leather accent bench at the foot of the bed. A small brass and glass "
+        "cart with crystal tumblers and a brass tray. An abstract geometric "
+        "neon light sculpture on the wall glowing warm amber (NO letters, NO "
+        "words — just an angular abstract shape). Dark walnut nightstand with a "
+        "brass trophy, stacked books, and a vintage clock. Warm low ambient "
+        "lighting from recessed spots and the neon glow. Dark charcoal, cognac "
+        "leather, warm amber, and brass tones throughout. " + _ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "bedroom/core_city_modern.jpg",
+        "A richly styled city modern bedroom that transports you into a sleek "
+        "high-rise apartment. Floor-to-ceiling glass windows reveal a glittering "
+        "city skyline at dusk. The room is polished monochrome — charcoal and "
+        "white — with ONE bold accent: a large abstract painting in deep cobalt "
+        "blue above the bed. Clean-lined low platform bed with crisp white "
+        "bedding and a single charcoal throw. A polished chrome and glass side "
+        "table holds an architectural sculpture and a coffee-table book. Sleek "
+        "modern floor lamp in brushed steel. A statement designer chair in "
+        "charcoal wool. Polished dark wood floors with a subtle grey area rug. "
+        "Everything has sheen — glass, chrome, polished surfaces. Distinct from "
+        "industrial: no exposed brick, no concrete, no raw textures. Refined "
+        "urban sophistication. Warm dusk light from the skyline blends with "
+        "soft interior lighting. " + _ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "bedroom/core_ski_lodge.jpg",
+        "A richly styled ski lodge bedroom that transports you into a cozy "
+        "alpine retreat. Exposed timber ceiling beams with warm honey-toned "
+        "knotty wood. A stone fireplace with a low crackling fire in the corner. "
+        "The bed has layered plaid wool blankets, a chunky cable-knit throw, and "
+        "a faux fur accent draped across the foot. Heavy curtains frame a large "
+        "window revealing a snowy mountain landscape. A pair of rustic antler "
+        "wall sconces cast warm amber light. Reclaimed wood nightstand with a "
+        "ceramic mug, a worn paperback, and a small lantern. A thick sheepskin "
+        "rug on wide-plank dark wood floors. Warm honey wood, cream wool, "
+        "charcoal plaid, and stone tones. Rugged mountain warmth — distinct from "
+        "cottagecore (no florals, no dainty, no garden). Warm firelight and "
+        "amber lamp glow. " + _ROOM_WIDE_SUFFIX,
     ),
 
     # ── MOOD (6) — decor-rich vignette corners, bedroom ───────────────────
@@ -362,6 +410,37 @@ IMAGES: list[tuple[str, str]] = [
         "Macro close-up showing a split composition: rough distressed wood on "
         "the left meeting polished brass metal on the right, a clear contrast "
         "of raw and refined in one frame. " + _TEXTURE_SUFFIX,
+    ),
+    # ── SHAPE (3) — decor-rich room shots, shared/room-agnostic ──────────
+    (
+        "shape_straight.jpg",
+        "A richly styled modern bedroom emphasizing STRAIGHT LINES and "
+        "GEOMETRIC SHAPES. Rectangular platform bed with a crisp upholstered "
+        "headboard, angular nightstands, a square-framed mirror, grid-pattern "
+        "shelving, and structured rectangular throw pillows. Everything is "
+        "intentionally rectilinear — no curves anywhere. Warm neutral palette, "
+        "layered with books, candles, and small objects on the shelves. "
+        + _ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "shape_curved.jpg",
+        "A richly styled bedroom emphasizing SOFT CURVES and ARCHES. An "
+        "arched upholstered headboard, round nightstand, oval mirror, curved "
+        "table lamp with a mushroom shade, an arched doorway or niche in the "
+        "wall, and rounded throw pillows. Every piece is deliberately organic "
+        "and rounded — no sharp right angles. Warm neutral palette, styled "
+        "with trailing plants, ceramic vases, and stacked books. "
+        + _ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "shape_mixed.jpg",
+        "A richly styled bedroom showing a DELIBERATE MIX of straight lines "
+        "and soft curves. Rectangular bed frame with an arched headboard, "
+        "angular bookshelf next to a round side table, square window with "
+        "billowing curtains, geometric art above an oval mirror. The tension "
+        "between sharp and soft is the point. Warm neutral palette, layered "
+        "with plants, books, candles, and ceramics. "
+        + _ROOM_WIDE_SUFFIX,
     ),
 ]
 

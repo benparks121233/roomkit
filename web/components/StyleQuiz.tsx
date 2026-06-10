@@ -1,15 +1,17 @@
 "use client";
 
-// Intake questionnaire — visual narrowing: wide room → vignette → color → macro → macro.
-// STYLE (Q1-Q7): core → mood → palette → materials → texture (conditional) → shape → density
-// BRIDGE (Q8): transition card
-// INTERESTS (Q9-Q11): categories → sub-options → free text
+// Unified intake wizard — every field is a paginated step.
 //
-// Q1-Q3 images are room-specific (/quiz/{roomType}/core_*.jpg, mood_*.jpg, palette_*.jpg).
-// Q4-Q5 images are shared (/quiz/material_*.jpg, texture_*.jpg).
+// SETUP: room_type → bed_size (bedroom only) → budget
+// STYLE: core → mood → palette → materials → shape → density
+// INTERESTS: bridge → categories → sub-options
+// FINISH: ownership → free text → submit
+//
+// Q1-Q3 style images are room-specific (/quiz/{roomType}/core_*.jpg, etc.).
+// Q4-Q5 images are shared (/quiz/material_*.jpg, shape_*.jpg).
 // Missing images fall back to color swatches.
 //
-// Assembles a QuizOutput object; style.description feeds the existing /design API.
+// Assembles a QuizOutput + intake fields; page.tsx builds the DesignRequest.
 
 import Image from "next/image";
 import { useState } from "react";
@@ -24,7 +26,6 @@ export interface QuizOutput {
     mood: string;
     palette: string;
     materials: string[];
-    texture: string;
     shape: string;
     density: string;
     description: string;
@@ -32,12 +33,22 @@ export interface QuizOutput {
   interests: { category: string; tags: string[] }[];
 }
 
+export interface IntakeResult {
+  roomType: string;
+  bedSize: string;
+  budget: number;
+  fullRoom: boolean;
+  wants: string[];
+  quiz: QuizOutput;
+  summary: string;
+}
+
 interface QuizOption {
   key: string;
   label: string;
   description?: string;
   swatches: string[];
-  image?: string;       // filename only, e.g. "core_japandi.jpg" — prefix built at render
+  image?: string;       // filename only — prefix built at render
   icon?: string;        // emoji for interest chips
 }
 
@@ -50,12 +61,47 @@ interface QuizStepDef {
   selectMode: SelectMode;
   maxSelect?: number;
   options: QuizOption[];
-  layout?: "cards" | "chips" | "text-cards" | "bridge" | "textarea";
-  imageDir?: "room" | "shared"; // "room" = /quiz/{roomType}/, "shared" = /quiz/
+  layout?: "cards" | "chips" | "icon-cards" | "select-cards" | "bridge" | "textarea" | "budget" | "scope";
+  imageDir?: "room" | "shared";
 }
 
 // ---------------------------------------------------------------------------
-// Quiz data — STYLE questions
+// Step definitions — SETUP
+// ---------------------------------------------------------------------------
+
+const ROOM_TYPES = ["bedroom", "living_room"];
+const BED_SIZES = ["twin", "full", "queen", "king"];
+
+const Q_ROOM_TYPE: QuizStepDef = {
+  id: "room_type",
+  question: "What room are we designing?",
+  selectMode: "single",
+  layout: "select-cards",
+  options: [
+    { key: "bedroom",     label: "Bedroom",     swatches: [] },
+    { key: "living_room", label: "Living Room",  swatches: [] },
+  ],
+};
+
+const Q_BED_SIZE: QuizStepDef = {
+  id: "bed_size",
+  question: "What size bed?",
+  selectMode: "single",
+  layout: "select-cards",
+  options: BED_SIZES.map((s) => ({ key: s, label: s.charAt(0).toUpperCase() + s.slice(1), swatches: [] })),
+};
+
+const Q_BUDGET: QuizStepDef = {
+  id: "budget",
+  question: "What\u2019s your budget?",
+  hint: "Don\u2019t worry \u2014 we\u2019ll work with whatever you set.",
+  selectMode: "single",
+  layout: "budget",
+  options: [],
+};
+
+// ---------------------------------------------------------------------------
+// Step definitions — STYLE questions
 // ---------------------------------------------------------------------------
 
 const Q_CORE: QuizStepDef = {
@@ -65,15 +111,15 @@ const Q_CORE: QuizStepDef = {
   layout: "cards",
   imageDir: "room",
   options: [
-    { key: "cottagecore",   label: "Cottagecore",   description: "Soft florals, vintage wood, pastoral warmth",        swatches: ["#F5F0E8", "#D4A9A1"], image: "core_cottagecore.jpg" },
-    { key: "dark_academia", label: "Dark Academia", description: "Rich wood, leather, deep tones, scholarly warmth",   swatches: ["#3B2F2F", "#8B6F47"], image: "core_dark_academia.jpg" },
-    { key: "japandi",       label: "Japandi",       description: "Minimal wood, clean lines, calm intentionality",     swatches: ["#E8E2D8", "#B8A99A"], image: "core_japandi.jpg" },
-    { key: "coastal",       label: "Coastal",       description: "White, rattan, blue accents, breezy natural light",  swatches: ["#FFFFFF", "#A8C4B8"], image: "core_coastal.jpg" },
-    { key: "industrial",    label: "Industrial",    description: "Exposed metal, concrete, dark wood, raw utility",    swatches: ["#3A3A3A", "#6B6B6B"], image: "core_industrial.jpg" },
-    { key: "quiet_luxury",  label: "Quiet Luxury",  description: "Cream, marble, brass, understated old-money calm",   swatches: ["#F5F0E8", "#C4A882"], image: "core_quiet_luxury.jpg" },
-    { key: "sports_den",    label: "Sports Den",    description: "Dark leather, warm glow, bar cart, lounge energy",   swatches: ["#2A2A2A", "#8B6F47"], image: "core_sports_den.jpg" },
-    { key: "city_modern",   label: "City Modern",   description: "Sleek high-rise, glass, monochrome, one bold accent", swatches: ["#3A3A3A", "#FFFFFF"], image: "core_city_modern.jpg" },
-    { key: "ski_lodge",     label: "Ski Lodge",     description: "Stone hearth, timber beams, wool, faux fur, alpine warmth", swatches: ["#8B6F47", "#D4B896"], image: "core_ski_lodge.jpg" },
+    { key: "cottagecore",   label: "Cottagecore",   description: "Soft + vintage",     swatches: ["#F5F0E8", "#D4A9A1"], image: "core_cottagecore.jpg" },
+    { key: "dark_academia", label: "Dark Academia", description: "Moody + scholarly",  swatches: ["#3B2F2F", "#8B6F47"], image: "core_dark_academia.jpg" },
+    { key: "japandi",       label: "Japandi",       description: "Calm + minimal",     swatches: ["#E8E2D8", "#B8A99A"], image: "core_japandi.jpg" },
+    { key: "coastal",       label: "Coastal",       description: "Breezy + light",     swatches: ["#FFFFFF", "#A8C4B8"], image: "core_coastal.jpg" },
+    { key: "industrial",    label: "Industrial",    description: "Raw + rugged",       swatches: ["#3A3A3A", "#6B6B6B"], image: "core_industrial.jpg" },
+    { key: "quiet_luxury",  label: "Quiet Luxury",  description: "Polished + serene",  swatches: ["#F5F0E8", "#C4A882"], image: "core_quiet_luxury.jpg" },
+    { key: "sports_den",    label: "Sports Den",    description: "Dark + loungey",     swatches: ["#2A2A2A", "#8B6F47"], image: "core_sports_den.jpg" },
+    { key: "city_modern",   label: "City Modern",   description: "Sleek + urban",      swatches: ["#3A3A3A", "#FFFFFF"], image: "core_city_modern.jpg" },
+    { key: "ski_lodge",     label: "Ski Lodge",     description: "Cozy + alpine",      swatches: ["#8B6F47", "#D4B896"], image: "core_ski_lodge.jpg" },
   ],
 };
 
@@ -84,23 +130,25 @@ const Q_MOOD: QuizStepDef = {
   layout: "cards",
   imageDir: "room",
   options: [
-    { key: "soft_still",       label: "Soft & Still",       description: "Quiet, contemplative, low-energy calm",  swatches: ["#E8E2D8", "#D4CFC6"], image: "mood_soft_still.jpg" },
-    { key: "bright_airy",      label: "Bright & Airy",      description: "Light-filled, cheerful, uplifting",      swatches: ["#FFFFFF", "#F5F0E8"], image: "mood_bright_airy.jpg" },
-    { key: "warm_cozy",        label: "Warm & Cozy",        description: "Intimate, enveloping, inviting warmth",  swatches: ["#C4A882", "#8B6F47"], image: "mood_warm_cozy.jpg" },
-    { key: "bold_confident",   label: "Bold & Confident",   description: "Saturated, decisive, statement-making",  swatches: ["#8B1A2B", "#C89B3C"], image: "mood_bold_confident.jpg" },
-    { key: "moody_deep",       label: "Moody & Deep",       description: "Dark, atmospheric, rich depth",          swatches: ["#2A2A2A", "#4A3A2A"], image: "mood_moody_deep.jpg" },
-    { key: "playful_eclectic", label: "Playful & Eclectic", description: "Vibrant energy, mixed patterns, fun",    swatches: ["#C67B5C", "#6B7C4E"], image: "mood_playful_eclectic.jpg" },
+    { key: "soft_still",       label: "Soft & Still",        swatches: ["#E8E2D8", "#D4CFC6"], image: "mood_soft_still.jpg" },
+    { key: "bright_airy",      label: "Bright & Airy",       swatches: ["#FFFFFF", "#F5F0E8"], image: "mood_bright_airy.jpg" },
+    { key: "warm_cozy",        label: "Warm & Cozy",         swatches: ["#C4A882", "#8B6F47"], image: "mood_warm_cozy.jpg" },
+    { key: "bold_confident",   label: "Bold & Confident",    swatches: ["#8B1A2B", "#C89B3C"], image: "mood_bold_confident.jpg" },
+    { key: "moody_deep",       label: "Moody & Deep",        swatches: ["#2A2A2A", "#4A3A2A"], image: "mood_moody_deep.jpg" },
+    { key: "playful_eclectic", label: "Playful & Eclectic",  swatches: ["#C67B5C", "#6B7C4E"], image: "mood_playful_eclectic.jpg" },
   ],
 };
 
-// Mood ordering by core — best-fit first
 const MOOD_ORDER: Record<string, string[]> = {
-  cottagecore:     ["warm_cozy", "soft_still", "bright_airy", "playful_eclectic", "bold_confident", "moody_deep"],
-  dark_academia:   ["moody_deep", "warm_cozy", "bold_confident", "soft_still", "playful_eclectic", "bright_airy"],
-  japandi:         ["soft_still", "bright_airy", "warm_cozy", "moody_deep", "bold_confident", "playful_eclectic"],
-  coastal:         ["bright_airy", "soft_still", "warm_cozy", "playful_eclectic", "bold_confident", "moody_deep"],
-  grandmillennial: ["warm_cozy", "bold_confident", "playful_eclectic", "soft_still", "bright_airy", "moody_deep"],
-  industrial:      ["moody_deep", "bold_confident", "warm_cozy", "playful_eclectic", "soft_still", "bright_airy"],
+  cottagecore:   ["warm_cozy", "soft_still", "bright_airy", "playful_eclectic", "bold_confident", "moody_deep"],
+  dark_academia: ["moody_deep", "warm_cozy", "bold_confident", "soft_still", "playful_eclectic", "bright_airy"],
+  japandi:       ["soft_still", "bright_airy", "warm_cozy", "moody_deep", "bold_confident", "playful_eclectic"],
+  coastal:       ["bright_airy", "soft_still", "warm_cozy", "playful_eclectic", "bold_confident", "moody_deep"],
+  industrial:    ["moody_deep", "bold_confident", "warm_cozy", "playful_eclectic", "soft_still", "bright_airy"],
+  quiet_luxury:  ["soft_still", "warm_cozy", "bold_confident", "bright_airy", "moody_deep", "playful_eclectic"],
+  sports_den:    ["moody_deep", "bold_confident", "warm_cozy", "playful_eclectic", "soft_still", "bright_airy"],
+  city_modern:   ["bold_confident", "moody_deep", "bright_airy", "soft_still", "warm_cozy", "playful_eclectic"],
+  ski_lodge:     ["warm_cozy", "soft_still", "moody_deep", "bright_airy", "bold_confident", "playful_eclectic"],
 };
 
 const Q_PALETTE: QuizStepDef = {
@@ -119,14 +167,16 @@ const Q_PALETTE: QuizStepDef = {
   ],
 };
 
-// Palette ordering by core — best-fit first
 const PALETTE_ORDER: Record<string, string[]> = {
-  cottagecore:     ["blush_sage", "warm_neutrals", "coastal_soft", "earthy_rich", "jewel_tones", "dark_moody"],
-  dark_academia:   ["dark_moody", "earthy_rich", "jewel_tones", "warm_neutrals", "blush_sage", "coastal_soft"],
-  japandi:         ["warm_neutrals", "coastal_soft", "blush_sage", "dark_moody", "earthy_rich", "jewel_tones"],
-  coastal:         ["coastal_soft", "warm_neutrals", "blush_sage", "earthy_rich", "jewel_tones", "dark_moody"],
-  grandmillennial: ["blush_sage", "jewel_tones", "warm_neutrals", "earthy_rich", "coastal_soft", "dark_moody"],
-  industrial:      ["dark_moody", "earthy_rich", "warm_neutrals", "jewel_tones", "coastal_soft", "blush_sage"],
+  cottagecore:   ["blush_sage", "warm_neutrals", "coastal_soft", "earthy_rich", "jewel_tones", "dark_moody"],
+  dark_academia: ["dark_moody", "earthy_rich", "jewel_tones", "warm_neutrals", "blush_sage", "coastal_soft"],
+  japandi:       ["warm_neutrals", "coastal_soft", "blush_sage", "dark_moody", "earthy_rich", "jewel_tones"],
+  coastal:       ["coastal_soft", "warm_neutrals", "blush_sage", "earthy_rich", "jewel_tones", "dark_moody"],
+  industrial:    ["dark_moody", "earthy_rich", "warm_neutrals", "jewel_tones", "coastal_soft", "blush_sage"],
+  quiet_luxury:  ["warm_neutrals", "blush_sage", "coastal_soft", "earthy_rich", "dark_moody", "jewel_tones"],
+  sports_den:    ["dark_moody", "earthy_rich", "jewel_tones", "warm_neutrals", "coastal_soft", "blush_sage"],
+  city_modern:   ["dark_moody", "warm_neutrals", "coastal_soft", "jewel_tones", "earthy_rich", "blush_sage"],
+  ski_lodge:     ["earthy_rich", "warm_neutrals", "dark_moody", "blush_sage", "jewel_tones", "coastal_soft"],
 };
 
 const Q_MATERIALS: QuizStepDef = {
@@ -138,51 +188,11 @@ const Q_MATERIALS: QuizStepDef = {
   layout: "cards",
   imageDir: "shared",
   options: [
-    { key: "wood_linen",     label: "Natural Wood & Linen", swatches: ["#D4B896"], image: "material_wood_linen.jpg" },
-    { key: "walnut_leather", label: "Walnut & Leather",     swatches: ["#5E4B3B"], image: "material_walnut_leather.jpg" },
-    { key: "velvet_brass",   label: "Velvet & Brass",       swatches: ["#8B1A2B"], image: "material_velvet_brass.jpg" },
-    { key: "rattan_cotton",  label: "Rattan & Cotton",      swatches: ["#D4C5A9"], image: "material_rattan_cotton.jpg" },
-    { key: "metal_concrete", label: "Metal & Concrete",     swatches: ["#7A7A7A"], image: "material_metal_concrete.jpg" },
-  ],
-};
-
-// Texture options by core group
-const TEXTURE_CALM_AIRY: QuizStepDef = {
-  id: "texture",
-  question: "How do you feel about texture?",
-  selectMode: "single",
-  layout: "cards",
-  imageDir: "shared",
-  options: [
-    { key: "sheer_light",  label: "Light and sheer",  description: "Linen curtains, cotton throws",   swatches: ["#F5F0E8"], image: "texture_sheer_light.jpg" },
-    { key: "soft_nubby",   label: "Soft and nubby",   description: "Boucle, chunky knits",            swatches: ["#E8E0D4"], image: "texture_soft_nubby.jpg" },
-    { key: "smooth_clean", label: "Smooth and clean",  description: "Flat weaves, matte surfaces",     swatches: ["#D4D0CA"], image: "texture_smooth_clean.jpg" },
-  ],
-};
-
-const TEXTURE_RETRO_RICH: QuizStepDef = {
-  id: "texture",
-  question: "What kind of texture are you into?",
-  selectMode: "single",
-  layout: "cards",
-  imageDir: "shared",
-  options: [
-    { key: "rich_tactile",     label: "Rich and tactile",     description: "Velvet, tufting, deep pile",      swatches: ["#5E4B3B"], image: "texture_rich_tactile.jpg" },
-    { key: "woven_layered",    label: "Woven and layered",    description: "Kilims, macrame, mixed textiles", swatches: ["#C89B3C"], image: "texture_woven_layered.jpg" },
-    { key: "polished_refined", label: "Polished and refined", description: "Leather, lacquer, silk",          swatches: ["#8B1A2B"], image: "texture_polished_refined.jpg" },
-  ],
-};
-
-const TEXTURE_EDGY: QuizStepDef = {
-  id: "texture",
-  question: "What\u2019s your texture?",
-  selectMode: "single",
-  layout: "cards",
-  imageDir: "shared",
-  options: [
-    { key: "raw_industrial", label: "Raw and industrial", description: "Exposed metal, concrete, distressed wood", swatches: ["#6B6B6B"], image: "texture_raw_industrial.jpg" },
-    { key: "sleek_minimal",  label: "Sleek and minimal",  description: "Matte black, flat surfaces, clean edges", swatches: ["#3A3A3A"], image: "texture_sleek_minimal.jpg" },
-    { key: "mixed_grit",     label: "Mixed grit",         description: "Some rough, some polished",               swatches: ["#5E4B3B"], image: "texture_mixed_grit.jpg" },
+    { key: "wood_linen",     label: "Wood & Linen",    swatches: ["#D4B896"], image: "material_wood_linen.jpg" },
+    { key: "walnut_leather", label: "Walnut & Leather", swatches: ["#5E4B3B"], image: "material_walnut_leather.jpg" },
+    { key: "velvet_brass",   label: "Velvet & Brass",   swatches: ["#8B1A2B"], image: "material_velvet_brass.jpg" },
+    { key: "rattan_cotton",  label: "Rattan & Cotton",  swatches: ["#D4C5A9"], image: "material_rattan_cotton.jpg" },
+    { key: "metal_concrete", label: "Metal & Concrete", swatches: ["#7A7A7A"], image: "material_metal_concrete.jpg" },
   ],
 };
 
@@ -190,11 +200,12 @@ const Q_SHAPE: QuizStepDef = {
   id: "shape",
   question: "Straight lines or soft curves?",
   selectMode: "single",
-  layout: "text-cards",
+  layout: "cards",
+  imageDir: "shared",
   options: [
-    { key: "clean_straight", label: "Clean, straight lines",     swatches: [] },
-    { key: "organic_curved", label: "Organic curves and arches", swatches: [] },
-    { key: "mixed",          label: "A mix of both",             swatches: [] },
+    { key: "clean_straight", label: "Straight lines",  swatches: ["#E8E2D8"], image: "shape_straight.jpg" },
+    { key: "organic_curved", label: "Curves + arches", swatches: ["#E8E2D8"], image: "shape_curved.jpg" },
+    { key: "mixed",          label: "A mix of both",   swatches: ["#E8E2D8"], image: "shape_mixed.jpg" },
   ],
 };
 
@@ -202,18 +213,22 @@ const Q_DENSITY: QuizStepDef = {
   id: "density",
   question: "How much stuff do you want in the room?",
   selectMode: "single",
-  layout: "text-cards",
+  layout: "icon-cards",
   options: [
-    { key: "minimal",  label: "Keep it minimal", description: "Just the essentials, lots of breathing room", swatches: [] },
-    { key: "balanced", label: "Balanced",         description: "A full room, but not cluttered",              swatches: [] },
-    { key: "layered",  label: "Layer it up",      description: "I like a lived-in, collected feel",           swatches: [] },
+    { key: "minimal",  label: "Minimal",   description: "Just the essentials", swatches: [] },
+    { key: "balanced", label: "Balanced",   description: "Full but not cluttered", swatches: [] },
+    { key: "layered",  label: "Layered",    description: "Lived-in, collected", swatches: [] },
   ],
 };
 
+// ---------------------------------------------------------------------------
+// Step definitions — INTERESTS
+// ---------------------------------------------------------------------------
+
 const Q_BRIDGE: QuizStepDef = {
   id: "bridge",
-  question: "Almost done \u2014 tell us what you\u2019re into.",
-  hint: "These don\u2019t affect your furniture \u2014 they\u2019ll help us pick art, prints, and decor that actually feel like you.",
+  question: "Almost done \u2014 tell us what you're into.",
+  hint: "These don't affect your furniture \u2014 they'll help us pick art, prints, and decor that actually feel like you.",
   selectMode: "single",
   layout: "bridge",
   options: [],
@@ -221,7 +236,7 @@ const Q_BRIDGE: QuizStepDef = {
 
 const Q_INTERESTS: QuizStepDef = {
   id: "interests",
-  question: "Pick anything that\u2019s your thing.",
+  question: "Pick anything that's your thing.",
   selectMode: "multi",
   layout: "chips",
   options: [
@@ -235,7 +250,6 @@ const Q_INTERESTS: QuizStepDef = {
   ],
 };
 
-// Interest sub-options per category
 interface SubOption { label: string; tag: string }
 
 const INTEREST_SUBS: Record<string, SubOption[]> = {
@@ -289,6 +303,18 @@ const Q_SUBS: QuizStepDef = {
   options: [],
 };
 
+// ---------------------------------------------------------------------------
+// Step definitions — FINISH
+// ---------------------------------------------------------------------------
+
+const Q_SCOPE: QuizStepDef = {
+  id: "scope",
+  question: "How much of the room do you need?",
+  selectMode: "single",
+  layout: "scope",
+  options: [],
+};
+
 const Q_FREETEXT: QuizStepDef = {
   id: "freetext",
   question: "Anything else we should know?",
@@ -299,16 +325,46 @@ const Q_FREETEXT: QuizStepDef = {
 };
 
 // ---------------------------------------------------------------------------
-// Style description assembly — grammatical full sentences
+// Ownership groups — mirrors slot_taxonomy.yaml
+// ---------------------------------------------------------------------------
+
+interface OwnershipGroup {
+  label: string;
+  items: string[];
+}
+
+const ROOM_OWNERSHIP_GROUPS: Record<string, OwnershipGroup[]> = {
+  bedroom: [
+    { label: "Bed",        items: ["bed_frame", "mattress", "sheets", "comforter", "pillows"] },
+    { label: "Storage",    items: ["nightstand", "dresser"] },
+    { label: "Lighting",   items: ["ceiling_light", "table_lamp", "floor_lamp"] },
+    { label: "Decor",      items: ["wall_art", "plants", "mirror"] },
+    { label: "Soft Goods", items: ["rug", "curtains", "throw_blanket"] },
+  ],
+  living_room: [
+    { label: "Seating",       items: ["sofa", "armchair", "ottoman"] },
+    { label: "Entertainment", items: ["tv", "tv_stand", "sound_bar"] },
+    { label: "Tables",        items: ["coffee_table", "side_table"] },
+    { label: "Lighting",      items: ["ceiling_light", "floor_lamp", "table_lamp"] },
+    { label: "Decor",         items: ["wall_art", "plants", "mirror", "bookshelf"] },
+    { label: "Soft Goods",    items: ["rug", "curtains", "throw_pillows", "throw_blanket"] },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Style description assembly
 // ---------------------------------------------------------------------------
 
 const CORE_PHRASES: Record<string, string> = {
-  cottagecore:     "cottagecore",
-  dark_academia:   "dark academia",
-  japandi:         "japandi",
-  coastal:         "coastal",
-  grandmillennial: "grandmillennial",
-  industrial:      "industrial",
+  cottagecore:   "cottagecore",
+  dark_academia: "dark academia",
+  japandi:       "japandi",
+  coastal:       "coastal",
+  industrial:    "industrial",
+  quiet_luxury:  "quiet luxury",
+  sports_den:    "sports den",
+  city_modern:   "city modern",
+  ski_lodge:     "ski lodge",
 };
 
 const MOOD_PHRASES: Record<string, string> = {
@@ -337,18 +393,6 @@ const PALETTE_PHRASES: Record<string, string> = {
   blush_sage:    "in soft blush and sage with dusty pink, green, and cream",
 };
 
-const TEXTURE_PHRASES: Record<string, string> = {
-  sheer_light:      "I like light, sheer textures \u2014 linen curtains, cotton throws.",
-  soft_nubby:       "I\u2019m drawn to soft, nubby textures like boucle and chunky knits.",
-  smooth_clean:     "I prefer smooth, clean surfaces \u2014 flat weaves and matte finishes.",
-  rich_tactile:     "I love rich, tactile textures \u2014 velvet, tufting, deep pile.",
-  woven_layered:    "I like woven, layered textiles \u2014 kilims, macrame, mixed patterns.",
-  polished_refined: "I prefer polished finishes \u2014 leather, lacquer, silk.",
-  raw_industrial:   "I like raw textures \u2014 exposed metal, concrete, distressed wood.",
-  sleek_minimal:    "I prefer sleek, minimal surfaces \u2014 matte black, clean edges.",
-  mixed_grit:       "I like a mix of rough and polished textures.",
-};
-
 const SHAPE_PHRASES: Record<string, string> = {
   clean_straight: "I lean toward clean, straight lines.",
   organic_curved: "I prefer organic curves and arches.",
@@ -367,7 +411,6 @@ function assembleDescription(
   mood: string,
   materials: string[],
   palette: string,
-  texture: string,
   shape: string,
   density: string,
   freeText: string,
@@ -376,24 +419,22 @@ function assembleDescription(
   const moodPhrase = MOOD_PHRASES[mood] ?? mood;
   const matPhrase = materials.map((m) => MATERIAL_PHRASES[m] ?? m).join(" and ");
   const palPhrase = PALETTE_PHRASES[palette] ?? palette;
-  const texSentence = TEXTURE_PHRASES[texture] ?? "";
   const shapeSentence = SHAPE_PHRASES[shape] ?? "";
   const densSentence = DENSITY_PHRASES[density] ?? "";
 
   const roomLabel = roomType.replace(/_/g, " ");
   let desc = `I want a ${corePhrase} ${roomLabel} \u2014 ${moodPhrase}, ${palPhrase}.`;
-  if (matPhrase) desc += ` I\u2019m drawn to ${matPhrase}.`;
-  if (texSentence) desc += ` ${texSentence}`;
+  if (matPhrase) desc += ` I'm drawn to ${matPhrase}.`;
   if (shapeSentence) desc += ` ${shapeSentence}`;
   if (densSentence) desc += ` ${densSentence}`;
   if (freeText.trim()) desc += ` ${freeText.trim()}`;
   return desc;
 }
 
-// Summary labels for the completion pill
 const CORE_LABELS: Record<string, string> = {
   cottagecore: "Cottagecore", dark_academia: "Dark Academia", japandi: "Japandi",
-  coastal: "Coastal", grandmillennial: "Grandmillennial", industrial: "Industrial",
+  coastal: "Coastal", industrial: "Industrial", quiet_luxury: "Quiet Luxury",
+  sports_den: "Sports Den", city_modern: "City Modern", ski_lodge: "Ski Lodge",
 };
 
 const MOOD_LABELS: Record<string, string> = {
@@ -475,10 +516,30 @@ function SwatchFallback({ colors }: { colors: string[] }) {
 }
 
 // ---------------------------------------------------------------------------
-// Text card (no image, just label + optional description)
+// Density icon — abstract dots: sparse / medium / dense
 // ---------------------------------------------------------------------------
 
-function TextCard({
+function DensityIcon({ density }: { density: string }) {
+  const dots: [number, number][] =
+    density === "minimal"
+      ? [[50, 35], [30, 65], [70, 65]]
+      : density === "balanced"
+        ? [[50, 20], [25, 45], [75, 45], [35, 70], [65, 70]]
+        : /* layered */ [[50, 15], [25, 35], [75, 35], [15, 55], [50, 55], [85, 55], [30, 75], [60, 75], [80, 70]];
+  return (
+    <svg viewBox="0 0 100 100" className="density-icon" aria-hidden="true">
+      {dots.map(([cx, cy], i) => (
+        <circle key={i} cx={cx} cy={cy} r="6" fill="currentColor" opacity="0.55" />
+      ))}
+    </svg>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Icon card (density)
+// ---------------------------------------------------------------------------
+
+function IconCard({
   option,
   selected,
   onClick,
@@ -490,13 +551,38 @@ function TextCard({
   return (
     <button
       type="button"
-      className={`quiz-option ${selected ? "selected" : ""}`}
+      className={`quiz-icon-card ${selected ? "selected" : ""}`}
       onClick={onClick}
     >
-      <span className="quiz-option-label">{option.label}</span>
+      <DensityIcon density={option.key} />
+      <span className="quiz-icon-card-label">{option.label}</span>
       {option.description && (
-        <span className="quiz-option-desc">{option.description}</span>
+        <span className="quiz-icon-card-desc">{option.description}</span>
       )}
+    </button>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Select card (room type, bed size — text-only option in a grid)
+// ---------------------------------------------------------------------------
+
+function SelectCard({
+  option,
+  selected,
+  onClick,
+}: {
+  option: QuizOption;
+  selected: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className={`quiz-select-card ${selected ? "selected" : ""}`}
+      onClick={onClick}
+    >
+      <span className="quiz-select-card-label">{option.label}</span>
     </button>
   );
 }
@@ -506,46 +592,43 @@ function TextCard({
 // ---------------------------------------------------------------------------
 
 interface Props {
-  roomType: string;
-  onComplete: (output: QuizOutput, summary: string) => void;
+  onComplete: (result: IntakeResult) => void;
 }
 
-export default function StyleQuiz({ roomType, onComplete }: Props) {
-  // Style answers
+export default function StyleQuiz({ onComplete }: Props) {
+  // Setup state
+  const [roomType, setRoomType] = useState("bedroom");
+  const [bedSize, setBedSize] = useState("queen");
+  const [budget, setBudget] = useState(1500);
+  const [fullRoom, setFullRoom] = useState(true);
+  const [wants, setWants] = useState<string[]>([]);
+
+  // Style state
   const [core, setCore] = useState("");
   const [mood, setMood] = useState("");
   const [palette, setPalette] = useState("");
   const [materials, setMaterials] = useState<string[]>([]);
-  const [texture, setTexture] = useState("");
   const [shape, setShape] = useState("");
   const [density, setDensity] = useState("");
 
-  // Interest answers
+  // Interest state
   const [interests, setInterests] = useState<string[]>([]);
   const [interestTags, setInterestTags] = useState<Record<string, string[]>>({});
   const [freeText, setFreeText] = useState("");
 
   const [stepIndex, setStepIndex] = useState(0);
 
-  // Build steps array dynamically (texture depends on core)
+  // Build step list — bed_size only for bedroom
   function getSteps(): QuizStepDef[] {
-    let textureStep = TEXTURE_CALM_AIRY;
-    if (core === "dark_academia" || core === "grandmillennial") textureStep = TEXTURE_RETRO_RICH;
-    else if (core === "industrial") textureStep = TEXTURE_EDGY;
-
-    return [
-      Q_CORE,         // 0
-      Q_MOOD,         // 1 — reordered by core
-      Q_PALETTE,      // 2 — reordered by core
-      Q_MATERIALS,    // 3
-      textureStep,    // 4 — conditional options
-      Q_SHAPE,        // 5
-      Q_DENSITY,      // 6
-      Q_BRIDGE,       // 7
-      Q_INTERESTS,    // 8
-      Q_SUBS,         // 9
-      Q_FREETEXT,     // 10
-    ];
+    const steps: QuizStepDef[] = [Q_ROOM_TYPE];
+    if (roomType === "bedroom") steps.push(Q_BED_SIZE);
+    steps.push(
+      Q_BUDGET,
+      Q_CORE, Q_MOOD, Q_PALETTE, Q_MATERIALS, Q_SHAPE, Q_DENSITY,
+      Q_BRIDGE, Q_INTERESTS, Q_SUBS,
+      Q_SCOPE, Q_FREETEXT,
+    );
+    return steps;
   }
 
   const steps = getSteps();
@@ -569,21 +652,21 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
     return step.options;
   }
 
-  // Image path prefix based on step type
   function getImagePrefix(step: QuizStepDef): string {
     if (step.imageDir === "room") return `/quiz/${roomType}/`;
     return "/quiz/";
   }
 
-  // --- Selection getters/setters by step id ---
+  // --- Selection getters/setters ---
 
   function getSelection(id: string): string | string[] {
     switch (id) {
+      case "room_type": return roomType;
+      case "bed_size": return bedSize;
       case "core": return core;
       case "mood": return mood;
       case "palette": return palette;
       case "materials": return materials;
-      case "texture": return texture;
       case "shape": return shape;
       case "density": return density;
       case "interests": return interests;
@@ -593,6 +676,13 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
 
   function toggleSelection(id: string, key: string, maxSelect?: number) {
     switch (id) {
+      case "room_type":
+        if (key !== roomType) {
+          setRoomType(key);
+          setWants([]); // groups differ per room
+        }
+        break;
+      case "bed_size": setBedSize(key); break;
       case "core": setCore(key); break;
       case "mood": setMood(key); break;
       case "palette": setPalette(key); break;
@@ -603,7 +693,6 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
           return [...prev, key];
         });
         break;
-      case "texture": setTexture(key); break;
       case "shape": setShape(key); break;
       case "density": setDensity(key); break;
       case "interests":
@@ -617,6 +706,22 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
   function isSelected(id: string, key: string): boolean {
     const sel = getSelection(id);
     return Array.isArray(sel) ? sel.includes(key) : sel === key;
+  }
+
+  // Wants chip toggles (partial room mode)
+  function toggleWant(item: string) {
+    setWants((prev) =>
+      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item],
+    );
+  }
+
+  function toggleWantGroup(items: string[]) {
+    const allSelected = items.every((i) => wants.includes(i));
+    if (allSelected) {
+      setWants((prev) => prev.filter((i) => !items.includes(i)));
+    } else {
+      setWants((prev) => Array.from(new Set([...prev, ...items])));
+    }
   }
 
   // Interest sub-tag toggling
@@ -634,16 +739,19 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
 
   function canAdvance(): boolean {
     switch (current.id) {
+      case "room_type": return roomType !== "";
+      case "bed_size": return bedSize !== "";
+      case "budget": return true;
       case "core": return core !== "";
       case "mood": return mood !== "";
       case "palette": return palette !== "";
       case "materials": return materials.length > 0;
-      case "texture": return texture !== "";
       case "shape": return shape !== "";
       case "density": return density !== "";
       case "bridge": return true;
       case "interests": return true;
       case "interest_details": return true;
+      case "scope": return fullRoom || wants.length > 0;
       case "freetext": return true;
       default: return true;
     }
@@ -651,30 +759,30 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
 
   function handleNext() {
     if (stepIndex < totalSteps - 1) {
-      // If moving past core, clear texture (it depends on core)
-      if (current.id === "core") {
-        setTexture("");
-      }
       setStepIndex(stepIndex + 1);
     } else {
-      // Final step — assemble output
+      // Final step — assemble and submit
       const description = assembleDescription(
-        core, roomType, mood, materials, palette, texture, shape, density, freeText,
+        core, roomType, mood, materials, palette, shape, density, freeText,
       );
       const summary = buildSummary(core, mood, palette);
-
       const interestOutput = interests.map((cat) => ({
         category: cat,
         tags: interestTags[cat] ?? [],
       }));
 
-      onComplete(
-        {
-          style: { core, mood, palette, materials, texture, shape, density, description },
+      onComplete({
+        roomType,
+        bedSize,
+        budget,
+        fullRoom,
+        wants,
+        quiz: {
+          style: { core, mood, palette, materials, shape, density, description },
           interests: interestOutput,
         },
         summary,
-      );
+      });
     }
   }
 
@@ -682,23 +790,107 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
     if (stepIndex > 0) setStepIndex(stepIndex - 1);
   }
 
-  // --- Render helpers ---
+  // --- Render ---
 
   const options = getOrderedOptions(current);
   const imagePrefix = getImagePrefix(current);
 
-  function renderOptions() {
+  function renderStep() {
+    // Bridge — no options
     if (current.layout === "bridge") {
       return null;
     }
 
+    // Budget slider
+    if (current.layout === "budget") {
+      return (
+        <div className="budget-step">
+          <div className="budget-display">${budget.toLocaleString()}</div>
+          <input
+            type="range"
+            min={200}
+            max={5000}
+            step={50}
+            value={budget}
+            onChange={(e) => setBudget(Number(e.target.value))}
+            className="budget-slider"
+          />
+          <div className="budget-range-labels">
+            <span>$200</span>
+            <span>$5,000</span>
+          </div>
+        </div>
+      );
+    }
+
+    // Scope — hero choice + conditional picker
+    if (current.layout === "scope") {
+      const groups = ROOM_OWNERSHIP_GROUPS[roomType] ?? [];
+      return (
+        <div className="scope-step">
+          <div className="scope-choice-grid">
+            <button
+              type="button"
+              className={`scope-choice-card primary ${fullRoom ? "selected" : ""}`}
+              onClick={() => { setFullRoom(true); setWants([]); }}
+            >
+              <span className="scope-choice-label">Design my whole room</span>
+              <span className="scope-choice-desc">We'll source everything from scratch.</span>
+            </button>
+            <button
+              type="button"
+              className={`scope-choice-card ${!fullRoom ? "selected" : ""}`}
+              onClick={() => setFullRoom(false)}
+            >
+              <span className="scope-choice-label">I just need a few pieces</span>
+              <span className="scope-choice-desc">Pick the items you want us to find.</span>
+            </button>
+          </div>
+
+          {!fullRoom && (
+            <div className="scope-picker">
+              <p className="scope-picker-label">What are you looking for?</p>
+              <div className="ownership-groups">
+                {groups.map((group) => (
+                  <div key={group.label} className="ownership-section">
+                    <span
+                      className="ownership-section-label"
+                      onClick={() => toggleWantGroup(group.items)}
+                    >
+                      {group.label}
+                    </span>
+                    <div className="ownership-chips">
+                      {group.items.map((item) => (
+                        <button
+                          key={item}
+                          type="button"
+                          className={`ownership-chip ${wants.includes(item) ? "selected" : ""}`}
+                          onClick={() => toggleWant(item)}
+                        >
+                          <svg className="chip-check" viewBox="0 0 14 14" fill="none">
+                            <path d="M2.5 7.5L5.5 10.5L11.5 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                          {item.replace(/_/g, " ")}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Free text
     if (current.layout === "textarea") {
       return (
         <textarea
           className="quiz-textarea"
           value={freeText}
           onChange={(e) => setFreeText(e.target.value)}
-          placeholder="A color you love, a piece you\u2019re building around, anything..."
+          placeholder="A color you love, a piece you're building around, anything..."
           rows={3}
         />
       );
@@ -757,12 +949,28 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
       );
     }
 
-    // Text cards (shape, density)
-    if (current.layout === "text-cards") {
+    // Select cards (room type, bed size)
+    if (current.layout === "select-cards") {
       return (
-        <div className="quiz-options">
+        <div className="quiz-select-grid">
           {options.map((opt) => (
-            <TextCard
+            <SelectCard
+              key={opt.key}
+              option={opt}
+              selected={isSelected(current.id, opt.key)}
+              onClick={() => toggleSelection(current.id, opt.key)}
+            />
+          ))}
+        </div>
+      );
+    }
+
+    // Icon cards (density)
+    if (current.layout === "icon-cards") {
+      return (
+        <div className="quiz-icon-card-grid">
+          {options.map((opt) => (
+            <IconCard
               key={opt.key}
               option={opt}
               selected={isSelected(current.id, opt.key)}
@@ -773,7 +981,7 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
       );
     }
 
-    // Image cards (core, mood, palette, materials, texture)
+    // Image cards (core, mood, palette, materials, shape)
     return (
       <div className="quiz-card-grid">
         {options.map((opt) => (
@@ -794,7 +1002,6 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
 
   return (
     <div className="quiz-container">
-      {/* Progress bar */}
       <div className="quiz-progress">
         <div className="quiz-progress-track">
           <div className="quiz-progress-fill" style={{ width: `${progressPct}%` }} />
@@ -805,9 +1012,8 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
       <h2 className="quiz-question">{current.question}</h2>
       {current.hint && <p className="quiz-hint">{current.hint}</p>}
 
-      {renderOptions()}
+      {renderStep()}
 
-      {/* Nav */}
       <div className="quiz-nav">
         {stepIndex > 0 && (
           <button type="button" className="quiz-btn quiz-btn-back" onClick={handleBack}>
@@ -816,11 +1022,11 @@ export default function StyleQuiz({ roomType, onComplete }: Props) {
         )}
         <button
           type="button"
-          className="quiz-btn quiz-btn-next"
+          className={`quiz-btn ${isLastStep ? "quiz-btn-submit" : "quiz-btn-next"}`}
           disabled={!canAdvance()}
           onClick={handleNext}
         >
-          {isLastStep ? "Done" : "Next"}
+          {isLastStep ? "Design my room" : "Next"}
         </button>
       </div>
     </div>

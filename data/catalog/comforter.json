@@ -684,7 +684,7 @@
   {
     "product_id": "B0835C2BXV",
     "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, Full/Queen, All-Season",
-    "normalized_price": 26.13,
+    "normalized_price": 25.42,
     "buy_url": "https://www.amazon.com/dp/B0835C2BXV",
     "specs": {
       "bed_size": "full"
@@ -1185,6 +1185,1766 @@
       "bed_size": "queen"
     },
     "image_url": "https://m.media-amazon.com/images/I/91D+IOraZdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZHSKB1Y",
+    "name": "NTBAY Twin Comforter Set with Sheets, 5 Pieces Soft and Breathable Bedding Set, Bed in a Bag, Down Alternative Comforter Set Solid Color All Season, Kids Bedding Set, Navy Blue",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZHSKB1Y",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/719QfyPm2fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DLLKTL18",
+    "name": "TAIMIT Twin Size Comforter Set - 5 Pieces, Bed in a Bag Bedding Sets with All Season Soft Quilted Warm Fluffy Reversible Comforter,Flat Sheet,Fitted Sheet,1 Pillow Shams,1 Pillowcases,Black",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DLLKTL18",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61wucwAy1TL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B074HCPCZT",
+    "name": "Bare Home Bed-in-A-Bag 5 Piece Comforter & Sheet Set - Twin XL - Goose Down Alternative - Ultra-Soft 1800 Premium Bedding Set (Twin XL, Grey/Light Grey)",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B074HCPCZT",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61SX+7PhZ2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q5MSQQM",
+    "name": "Bare Home Comforter Set - Twin Extra Long Size - Ultra-Soft - Goose Down Alternative - Premium 1800 Series - All Season Warmth (Twin/Twin XL, Grey)",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B00Q5MSQQM",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RuMB66VNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073RJBJT7",
+    "name": "Sweet Home Collection 5 Piece Comforter Set Bag Solid Color All Season Soft Down Alternative Blanket & Luxurious Microfiber Bed Sheets, Gray, Twin",
+    "normalized_price": 30.68,
+    "buy_url": "https://www.amazon.com/dp/B073RJBJT7",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817FtkJ3mCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BC97TP8W",
+    "name": "Love's cabin Twin Comforter Set Black, 5 Pieces Twin Bed in a Bag, All Season Bedding Sets with 1 Comforter, 1 Flat Sheet, 1 Fitted Sheet, 1 Pillowcase and 1 Pillow Sham | Soft",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B0BC97TP8W",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hrJcCLbKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B074DYPM6C",
+    "name": "Twin Comforter Set 2 Piece Grey by Utopia Bedding, Comforters Twin Size, Bedding Comforters Sets, Down Alternative Soft Bed Set, 1 Comforter (64 x 88 inches) 1 Pillow Shams (20 x 26 inches)\"",
+    "normalized_price": 20.87,
+    "buy_url": "https://www.amazon.com/dp/B074DYPM6C",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81OdIPJEy8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BLVG474Z",
+    "name": "HEVUMYI Twin Comforter Set - 5-Piece All Season Bed in a Bag Twin, Ultra Soft Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases, Pillow Shams, Dark Grey",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0BLVG474Z",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816UXElzggL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01947QQCU",
+    "name": "Amazon Basics Twin/Twin XL Comforter Set with Sheets, 5-Piece Blue Calvin Striped Bedding, Lightweight Microfiber Bed-in-a-Bag, Machine Washable",
+    "normalized_price": 38.0,
+    "buy_url": "https://www.amazon.com/dp/B01947QQCU",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZKLDzd7FL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DKZ7GLDG",
+    "name": "Twin Comforter Set White - Bed in a Bag Queen Size 5 Pieces - Down Alternative Duvet Insert - Soft, Lightweight Comforter Bedding Set with Flat Sheet, Fitted Sheet, Pillowcases & Shams for All Seasons",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0DKZ7GLDG",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gRVuwUnlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNJBQM3L",
+    "name": "HYMOKEGE Black Twin Comforter Set Seersucker 5 Pieces, All Season Luxury Bed in a Bag for Bedroom, Bedding Set with Comforters, Sheets, Pillowcase & Sham",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0BNJBQM3L",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81DIB7HUz5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09NLKKWJK",
+    "name": "Litanika Twin/Twin XL Comforter Set Black White Grey - 2 Pieces Gray Twin Extra Long Size Lightweight Bedding Set, All Season Down Alternative Comforter",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B09NLKKWJK",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pFX-OrE3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZCS6HZH",
+    "name": "CozyLux Twin Comforter Set Black, 5 Pieces Bed in a Bag Twin Comforter Set with Sheets, All Season Bedding Sets with Down Alternative Comforter, Fitted Sheet, Flat Sheet, Pillow Sham and Pillowcase",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZCS6HZH",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71b3kXfEjSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQGWKD8T",
+    "name": "JOLLYVOGUE Twin Comforter Set, Ultra-Soft Bed in a Bag Twin Size 5 Pieces, Oeko-TEX Certified Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams, Black",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQGWKD8T",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71u5T+HrmOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CT3HJF2F",
+    "name": "Utopia Bedding Grey Kids Comforter Set with 2 Pillow Shams, 3 Piece Soft Microfiber Twin Bed Comforter with Pillow Shams, Printed Kids Bedding for Boys and Girls, Lightweight, Breathable,Easy Care",
+    "normalized_price": 20.6,
+    "buy_url": "https://www.amazon.com/dp/B0CT3HJF2F",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71QXMQQiRDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLDVF4N6",
+    "name": "Love's cabin Beige Twin/Twin XL Comforter Set, 2-Piece Prewashed Bed Set with 1 Comforter (66 x 90 in) & 1 Pillowcase, Lightweight & Breathable for All Seasons",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLDVF4N6",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FTMftop2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QTF1WPF",
+    "name": "Sweet Home Collection 5 Piece Comforter Set Bag Solid Color All Season Soft Down Alternative Blanket & Luxurious Microfiber Bed Sheets, Pale Pink, Twin",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B07QTF1WPF",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81q8kG4dVJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0857HVHYN",
+    "name": "Utopia Bedding Unicorn Kids Comforter Set with 2 Pillow Shams, 3 Piece Soft Microfiber Twin Bed Comforter with Pillow Shams, Printed Kids Bedding for Boys and Girls, Lightweight, Breathable,Easy Care",
+    "normalized_price": 23.08,
+    "buy_url": "https://www.amazon.com/dp/B0857HVHYN",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810K3FlAMCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR26NT3N",
+    "name": "CozyLux Twin/Twin XL Comforter Set Olive Green - 270GSM Box Stitched Bedding Set for College Dorm & Back to School, Lightweight All Season for Teen Boys, Girls, 2 Pcs with Comforter and Pillow Sham",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0GR26NT3N",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ccp2AVgiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJJRM95X",
+    "name": "WRENSONGE Twin/Twin XL Comforter Set- 5 Pieces Sage Green Bed in a Bag, All Season Twin Bedding Sets with 1 Fitted Sheet, 1 Flat Sheet, 1 Pillow Sham and 1 Pillowcase",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJJRM95X",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81b5hHQUhmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVYPSTX7",
+    "name": "WeCozy Polka Dot Comforter Set Twin Size, 5 Pieces Butterfly Ruffle Bedding Set for Girls, Bed in a Bag with 1 Ruffle Pillowcase & 1 Sham",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVYPSTX7",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71jDhodrhJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08FRJVZ4H",
+    "name": "Amazon Basics 5-Piece Lightweight Microfiber Comforter Set with Sheets, Bed-in-a-Bag, Gray Calvin Striped Bedding, Twin/Twin XL",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B08FRJVZ4H",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/917rDGGPzXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08FRJMC6M",
+    "name": "Amazon Basics 5-Piece Lightweight Microfiber Comforter Bedding Set with Sheet, Twin XL, Blue Stripe, Bed-in-a-Bag",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B08FRJMC6M",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81C92ZLZikL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4DX4RYS",
+    "name": "Zzlpp Twin Comforter Set 5 Pieces, Olive Green Seersucker Bed in a Bag with Comforter and Sheets, All Season Bedding Sets with 1 Comforter, 1 Pillow Sham, 1 Pillowcase, 1 Flat Sheet, 1 Fitted Sheet",
+    "normalized_price": 38.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4DX4RYS",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817ekZ6dV3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08LDG6F17",
+    "name": "Love's cabin Twin Quilt Set Blue Bedspreads - Soft Bed Summer Lightweight Bedspread Comforter - Modern Style Coin Pattern Coverlet for All Season - 2 Pieces (1 Quilt, 1 Pillow Sham)",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B08LDG6F17",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91rbRjfsNlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CF4FLY91",
+    "name": "Bedsure Tufted Boho Comforter Set Twin Size - Beige Boho Bed Set, GentleSoft\u2122 2 Pieces Farmhouse-Style Embroidery Bedding, Gifts for Woman, Soft Jacquard Kids' Twin Comforter for All Seasons",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B0CF4FLY91",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ebhFDGZqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09VT1L5JK",
+    "name": "Bedsure Twin XL Comforter Set Pink - Dorm Room Essentials for Girls, Extra Long Twin XL Bedding Set with Sheets, All Season Down Alternative Comforter with Sheets, Pillowcase & Sham",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B09VT1L5JK",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817bvqIu4OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C9SCCGZH",
+    "name": "KAKIJUMN 5 Piece Bed in a Bag Stripe Comforter Set Twin Size, White Grey Blue Striped Comforter and Sheet Set, All Season Soft Microfiber Complete Bedding Set(Light Blue,Twin)",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0C9SCCGZH",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FG4z5eE6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00S1TC3V6",
+    "name": "Utopia Bedding Twin Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Twin Size 64 x 88 inches",
+    "normalized_price": 22.59,
+    "buy_url": "https://www.amazon.com/dp/B00S1TC3V6",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813dSy5zzWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07YKMNXDH",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Twin Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, White, Twin 88 x 68 Inches",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B07YKMNXDH",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sNr0fMpxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B071S1B8P4",
+    "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, Twin, Light",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B071S1B8P4",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71EwvyC4A1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B072J3R1KH",
+    "name": "Twin Size, White Alternative Down Comforter - Warm, Lightweight & Breathable Hotel Quality Bedding Set for Men, Women, Kids and Teens - All Season Oversized Cooling Microfiber Duvet Insert Comforter",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B072J3R1KH",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rk8FubxPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09PYPYCTC",
+    "name": "Duvet Insert Cotton Comforter Twin Size White Down Alternative Duvet Insert 100% Cotton Shell Quilted Fluffy Comforter Lightweight All Season 4 Corner Tabs Durable Breathable Noiseless",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B09PYPYCTC",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91D+IOraZdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CMN2H2S",
+    "name": "ViscoSoft Twin/Twin XL Comforter - Cloud-Soft Down Alternative Duvet Insert, All Season Cooling Lightweight Reversible Quilted Blanket for Dorm & Guest Bed, Oeko-TEX Certified, White",
+    "normalized_price": 34.5,
+    "buy_url": "https://www.amazon.com/dp/B07CMN2H2S",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61SzkB9DTGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B075GGR33G",
+    "name": "EASELAND Twin Size Down Alternative Comforter - Quilted Duvet Insert for All Seasons, Soft Lightweight with Corner Tabs, Summer Winter Warm Bedding, White 64\u00d788 Inches",
+    "normalized_price": 37.9,
+    "buy_url": "https://www.amazon.com/dp/B075GGR33G",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B-k6LdYnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01JPECQF8",
+    "name": "Utopia Bedding Comforter Twin Size 64 x 88 Inches, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable",
+    "normalized_price": 22.89,
+    "buy_url": "https://www.amazon.com/dp/B01JPECQF8",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LCTp2OHnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07D32BKMD",
+    "name": "Modern Threads Down Alternative Reversible Comforter Deep Blue/Silver Twin",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B07D32BKMD",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HQCKr9FKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07N7SJT7K",
+    "name": "Utopia Bedding Comforters Twin Size, All Season Duvet Insert, Down Alternative Twin Comforter with Corner Tabs, Machine Washable Bed Comforter 64 x 88 Inches (White)",
+    "normalized_price": 24.89,
+    "buy_url": "https://www.amazon.com/dp/B07N7SJT7K",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FUM7BUI2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0127883ME",
+    "name": "Madison Park Windom Down Alternative Blanket, Premium 3M Scotchgard Moisture Wicking Treatment, Lightweight and Soft Bed Cover For All Season, Satin Trim, White Twin",
+    "normalized_price": 28.79,
+    "buy_url": "https://www.amazon.com/dp/B0127883ME",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51-Q9Q4+sGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08QVBY9N5",
+    "name": "HYLEORY All Season Twin Size Bed Comforter - Cooling Goose Down Alternative Quilted Duvet Insert with Corner Tabs - Winter Warm - Machine Washable - White",
+    "normalized_price": 27.54,
+    "buy_url": "https://www.amazon.com/dp/B08QVBY9N5",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71n49zmgtFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B091CNY3HV",
+    "name": "DOWNCOOL Comforters Twin Size, Duvet Insert, White All Season Duvet, Lightweight Quilt, Down Alternative Hotel Comforter with Corner Tabs (White, Twin 64x88 Inches)",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B091CNY3HV",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/712UffLy73L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XXSS4JP",
+    "name": "Cosybay Down Alternative Comforter (Blue/Grey, Twin) - All Season Soft Quilted Twin Size Bed Comforter - Duvet Insert with Corner Tabs -Winter Summer Warm Fluffy, 64x88 inches",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B07XXSS4JP",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KCXpRem4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00O2EN4K8",
+    "name": "KingLinen White Down Alternative Comforter Duvet Insert Twin",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B00O2EN4K8",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/7147tXIgPUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0863D8RVZ",
+    "name": "100% Cotton Cover Down Alternative Comforter Twin - Ultra-Soft Skin-Friendly Breathable Fluffy Microfiber Duvet, All Season Bed Comforter Duvet Insert (68x90, White)",
+    "normalized_price": 55.9,
+    "buy_url": "https://www.amazon.com/dp/B0863D8RVZ",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51zJAOX6hrS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B008N2KT0S",
+    "name": "HOSPITOLOGY PRODUCTS White Comforter Twin Hypoallergenic Duvet Insert Microfiber All Season Goose Down Alternative Quilted - Corner Loops - Box Stitched - Washable - 64\" W x 86\" L",
+    "normalized_price": 41.0,
+    "buy_url": "https://www.amazon.com/dp/B008N2KT0S",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hPOM+Tp1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B098RSKGFN",
+    "name": "Serta Down Illusion Lightweight Hypoallergenic Down Alternative Comforter with Corner Loops, Twin/Twin XL, White",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B098RSKGFN",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81rgz1aKGiS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DMQZCLBN",
+    "name": "Comforter Twin Size - All Season Down Alternative - Premium Soft Microfiber - White, 88\" x 64\"",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0DMQZCLBN",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61uPZK-zd-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PSH6MV3",
+    "name": "Homelike Moment Twin Comforter Duvet Insert- Grey Down Alternative Bed Comforter Twin Size, Lightweight Bedding Comforters Quilted Soft All Season Reversible Dark Gray/Light Grey",
+    "normalized_price": 28.49,
+    "buy_url": "https://www.amazon.com/dp/B07PSH6MV3",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71jwim7N3YL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07C5P6FJY",
+    "name": "COHOME Twin/Twin XL Size Cooling Comforter, All-Season Quilted Down Alternative Duvet Insert, Luxury Hotel GentleSoft Comforter with Anti-Clump Tech & 8 Tabs - Reversible - White 64x88 inches",
+    "normalized_price": 35.92,
+    "buy_url": "https://www.amazon.com/dp/B07C5P6FJY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Or-wTToUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01N9GVWQ5",
+    "name": "Bare Home Comforter - Reversible Colors - Goose Down Alternative - Ultra-Soft - Premium 1800 Series - All Season Warmth - Bedding Comforter (Twin/Twin XL, Grey/Light Grey)",
+    "normalized_price": 48.4,
+    "buy_url": "https://www.amazon.com/dp/B01N9GVWQ5",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71J4btg+W-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SYHJ3KN",
+    "name": "Cozynight Twin Size Down Alternative Comforter-White Comforters Duvet Insert with Corner Tabs-Breathable Box Stitched Reversible Comforter (68x86 inches)",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B07SYHJ3KN",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61s08PZ4DlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082XK5KD3",
+    "name": "Bare Home Comforter Set - Ultra-Soft - Goose Down Alternative - Premium 1800 Series - All Season Warmth (Twin/Twin XL, White)",
+    "normalized_price": 49.43,
+    "buy_url": "https://www.amazon.com/dp/B082XK5KD3",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81S+-A8HjjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRRQKJYY",
+    "name": "Comforters Twin Size, All Season Quilted Bed Comforter, Ultra-Soft Down Alternative Duvet Insert with 4 Tabs, Lightweight Bedding Blanket - Machine Washable, Black",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRRQKJYY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81zQYt8w9TL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073F2X28R",
+    "name": "L LOVSOUL Down Alternative Twin Comforter Duvet Insert,All Season Duvet Insert with Corner Tabs,White Comforter Twin 68x90Inches",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B073F2X28R",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Z6Xb8GosL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CBPQ6XHK",
+    "name": "Monbix Full Size Comforter Sets- 7 Pieces Beige Bed in a Bag Full Size Bedding Sets with Comforters, All Seasons Comforter with Sheets, Pillowcases & Shams",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CBPQ6XHK",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81uw2e6qF3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQR972P2",
+    "name": "Bedsure Full Size Comforter Sets - Beige Soft Bedding for All Seasons, Cationic Dyed Bed Set, 3 Pieces, 1 Full Size Comforter (82\"x86\") and 2 Pillow Shams (20\"x26\"+2\")",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0BQR972P2",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LpNalpwyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJJRHGGB",
+    "name": "WRENSONGE Full Size Comforter Sets- 7 Pieces Sage Green Bed in a Bag Full Size Bedding Sets with Fitted Sheet, Flat Sheet, 2 Pillow Shams, 2 Pillowcases",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJJRHGGB",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sr25G6sXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DM63Z2BK",
+    "name": "MUXHOMO 7 Pieces Full Comforter Set, Soft Bed in a Bag Full Size, All Season Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Shams, Beige",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DM63Z2BK",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71LmKW1KMBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C5XQ1RC3",
+    "name": "Andency Comforter Full Size Set, Beige Boho Cream Soft Warm Tufted Neutral Bedding Comforter Sets for Full Size Bed, 3 Pieces Aesthetic Chevron Farmhouse Cute Bohemian Textured Bedding Set",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0C5XQ1RC3",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819bLByeJAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C5DLRBWS",
+    "name": "HYMOKEGE Beige Full Size Comforter Sets Seersucker 7 Pieces, All Season Luxury Bed in a Bag for Bedroom, Bedding Set with Comforters, Sheets, Pillowcases & Shams",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B0C5DLRBWS",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Ex8NAeY5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CL4XPZKD",
+    "name": "Bedsure Full Size Comforter Set Beige, Boho Tufted Bed Set, Checkered Farmhouse-Style Distressed Vintage Bedding, 3 Pieces, 1 Plaid Geometric Comforter and 2 Pillow Shams",
+    "normalized_price": 53.54,
+    "buy_url": "https://www.amazon.com/dp/B0CL4XPZKD",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91SLh849ZYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DW3MH2XQ",
+    "name": "MUXHOMO 7 Pieces Full Comforter Set, Seersucker Bed in a Bag Full Size, All Season Luxury Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Shams, Beige",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DW3MH2XQ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/712hJA2o5RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX77HQF3",
+    "name": "Sasttie Full Size Comforter Set, 7-Piece Bed in a Bag Double, Pintuck Bedding Set for All Season, Includes Comforter, Flat Sheet, Fitted Sheet, Pillowcases and Pillowshams, Beige",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX77HQF3",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Vgg0bz+4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CF4GFB2L",
+    "name": "Bedsure Tufted Boho Comforter Set Full Size - Beige Boho Bed Set, GentleSoft\u2122 3 Pieces Farmhouse-Style Embroidery Bedding, Gifts for Woman, Soft Jacquard Kids' Full Comforter for All Seasons",
+    "normalized_price": 57.99,
+    "buy_url": "https://www.amazon.com/dp/B0CF4GFB2L",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91fgUwNk09L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BKPMVJ34",
+    "name": "Litanika Full Size Comforter Sets Beige, 3 Pieces Lightweight Bedding Comforter Sets, Down Alternative Comforter Fluffy Bed Set Gift Choice",
+    "normalized_price": 31.34,
+    "buy_url": "https://www.amazon.com/dp/B0BKPMVJ34",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71boDc65eZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2MQJ17Z",
+    "name": "HYMOKEGE Beige Oversized Queen Comforter Set Seersucker 7 Pieces, All Season Luxury Bed in a Bag for Bedroom, Bedding Set with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2MQJ17Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81hmUU5glXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBHFYXQ4",
+    "name": "BEDELITE Fleece Full Comforter Set -Super Soft & Warm Fluffy Cream White Bedding, Luxury Fuzzy Heavy Bed Set for All Season with 2 Pillow Cases",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DBHFYXQ4",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71DHGM135CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CL6CPYVW",
+    "name": "ROSGONIA Comforter Full Size for Girls Boys Teens Beige, 3pcs (1 Boho Comforter & 2 Pillowcases), Lightweight Dorm Bedding Soft All Season Bed Set",
+    "normalized_price": 26.74,
+    "buy_url": "https://www.amazon.com/dp/B0CL6CPYVW",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71yTC5NPJXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1BTW35H",
+    "name": "Litanika Beige Full Comforter Set, 3 Pieces Cream Tufted Boho Farmhouse Bedding Comforter Sets, Lightweight Fluffy Comforter Bed Set for All Season (79x90In Comforter and 2 Pillowcases)",
+    "normalized_price": 36.98,
+    "buy_url": "https://www.amazon.com/dp/B0D1BTW35H",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/811B5R0d4DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKSP8F21",
+    "name": "Geniospin Brown Full Comforter Set - 7 Pieces Comforter Full Size, Solid Bedding Set for All Season, Textured Bed in a Bag with Sheets",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKSP8F21",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91p+boqkamL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B092VC93Y6",
+    "name": "Andency Comforter Full Size Set White, 3 Pieces Ruffle Farmhouse Shabby Chic Gift Full Comforter Set, Soft Lightweight Fluffy All Season Room Decor Bed Set for Girls Women Teens Daughter",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B092VC93Y6",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71DLXLfhdCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL6N4WSL",
+    "name": "BLOOMHAVEN Full Comforter Set - 7 Pieces Autumn Leaf Bedding Sets for All Seasons, Lightweight Breathable Bed in a Bag Full with Revesible Farmhouse Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FL6N4WSL",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91DWdEgMUQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9PDXGP2",
+    "name": "Wake In Cloud - Striped Comforter Set, Ticking Stripe Vertical Pinstripe Neutral Farmhouse Pattern Printed, Soft Lightweight Bedding, 3 Pieces, Light Brown White, Full Size",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9PDXGP2",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CJ4QBk8vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPDMGB93",
+    "name": "Paxrac Earthy Brown Comforter Full Size, Neutral 3 Pieces Comforter Set, Lightweight Solid Bedding Set, All Seasons Soft Fluffy Full Comforter Set (80x90In Comforter & 2 Pillowcases)",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0CPDMGB93",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81MXW09MTlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYCGP3PQ",
+    "name": "Sasttie Full Size Comforter Set, 7-Piece Bed in a Bag Double, Pintuck Bedding Set for All Season, Includes Comforter, Flat Sheet, Fitted Sheet, Pillowcases and Pillowshams, Linen",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FYCGP3PQ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81zymVRyxKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07NZPHQ1B",
+    "name": "Utopia Bedding Full Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Full Size 82 x 86 inches",
+    "normalized_price": 24.79,
+    "buy_url": "https://www.amazon.com/dp/B07NZPHQ1B",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813dSy5zzWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087YZZLVS",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Full Size, All Season Duvet, GentleSoft Down Alternative Bedding Blanket, with 8 Tabs, Gifts for Women/Men, White, Full 86 x 82 Inches",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B087YZZLVS",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ldQXxsogL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PQJNTBT",
+    "name": "Utopia Bedding Comforter Full Size 82 x 86 Inches White, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable",
+    "normalized_price": 24.59,
+    "buy_url": "https://www.amazon.com/dp/B07PQJNTBT",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71tZL1DRjCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XXTGKPJ",
+    "name": "Cosybay Down Alternative Comforter (Blue/Grey, Full) - All Season Soft Quilted Full Size Bed Comforter - Duvet Insert with Corner Tabs -Winter Summer Warm Fluffy, 82x86 inches",
+    "normalized_price": 28.11,
+    "buy_url": "https://www.amazon.com/dp/B07XXTGKPJ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KCXpRem4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PYPCJRY",
+    "name": "EASELAND Full Size Down Alternative Comforter - Quilted Duvet Insert for All Seasons, Soft Lightweight with Corner Tabs, Summer Winter Warm Bedding, White 82\u00d786 Inches",
+    "normalized_price": 39.9,
+    "buy_url": "https://www.amazon.com/dp/B07PYPCJRY",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B-k6LdYnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09WRJ8TWM",
+    "name": "Utopia Bedding Comforters Full Size, All Season Duvet Insert, Down Alternative Full Comforter with Corner Tabs, Machine Washable Bed Comforter 82 x 86 Inches (White)",
+    "normalized_price": 23.74,
+    "buy_url": "https://www.amazon.com/dp/B09WRJ8TWM",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FUM7BUI2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SYZHD9R",
+    "name": "Cozynight Down Alternative Comforter-All Season Full Comforters Duvet Insert with Corner Tabs-Lightweight Breathable Reversible White Comforter 82x86 inches",
+    "normalized_price": 39.89,
+    "buy_url": "https://www.amazon.com/dp/B07SYZHD9R",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61s08PZ4DlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CMCG133",
+    "name": "ViscoSoft Full Comforter - Cloud-Soft Down Alternative Duvet Insert, All Season Cooling Lightweight Reversible Quilted Blanket for Dorm & Guest Bed, Oeko-TEX Certified, Light/Dark Gray",
+    "normalized_price": 41.95,
+    "buy_url": "https://www.amazon.com/dp/B07CMCG133",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Pggn4vj+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBLTPNZ4",
+    "name": "Litanika Comforter Full Size Set Sage Green, 3 Pieces Lightweight Bed Set, Solid Bedding Comforters Sets, Soft All Season Down Alternative Quilt Blanket",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBLTPNZ4",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KTea2mRML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08R8PN1XP",
+    "name": "HYLEORY All Season Full Size Bed Comforter - Cooling Down Alternative Quilted Duvet Insert with Corner Tabs - Winter Warm - Machine Washable - Dark Grey",
+    "normalized_price": 31.48,
+    "buy_url": "https://www.amazon.com/dp/B08R8PN1XP",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711sskBJ5JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08D3T6WZ4",
+    "name": "TEXARTIST Premium 2100 Series Full Comforter All Season Breathable Grey Comforter Soft 4D Spiral Fiber Quilted Down Alternative Duvet with Corner Tabs Luxury Hotel Style (82\"x86\")",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B08D3T6WZ4",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dg35SWd9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07MLCVLFJ",
+    "name": "Full Size, White Alternative Down Comforter - Warm, Lightweight & Breathable Hotel Quality Bedding Set for Men, Women, Kids and Teens - All Season Oversized Cooling Microfiber Duvet Insert Comforter",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B07MLCVLFJ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rk8FubxPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2B258P6",
+    "name": "COHOME Full Size Cooling Comforter, All-Season Quilted Down Alternative Duvet Insert, Luxury Hotel Breathable GentleSoft Comforter with Anti-Clump Tech & 8 Tab - Reversible - Navy Blue 82\"x86\"",
+    "normalized_price": 33.91,
+    "buy_url": "https://www.amazon.com/dp/B0G2B258P6",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Pvxy4vD0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07T6HHXWN",
+    "name": "Cozynight Soft Comforter Full Size Duvet Insert-Lightweight Down Alternative Comforter with Corner Tabs- Breathable Machine Washable Diamond Stitching (White,82\"x86\")",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B07T6HHXWN",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61vq4mqgoVS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08JY58R3D",
+    "name": "Decroom Lightweight Full Comforter Set with 2 Pillow Sham - 3 Pieces Set - Quilted Down Alternative Comforter/Duvet Insert for All Season - Blue/Grey - Full Size",
+    "normalized_price": 28.25,
+    "buy_url": "https://www.amazon.com/dp/B08JY58R3D",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71bPTsZ1y4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCJN9QYH",
+    "name": "CozyLux Full Size Comforter Set Oatmeal, 3 Pieces Lightweight Down Alternative Quilted Bedding Sets, All Season Soft Breathable Solid Comforter with 2 Pillowcases, Luxury Bed Set Gift for Home",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCJN9QYH",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Pn1QNMQkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C7Q6T5W3",
+    "name": "MUXHOMO Beige Full Comforter Sets, All Season Ultra Soft Down Alternative Bedding - 3 Piece Lightweight Bed Set Includes 1 Comforter (82\"x86\") and 2 Pillow Shams (20\"x26\")",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0C7Q6T5W3",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Tg0Dem0nL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D78WSGV8",
+    "name": "JOLLYVOGUE Full Comforter Set, Ultra-Soft Bed in a Bag Full Size 7 Pieces, Oeko-TEX Certified Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams, Black",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0D78WSGV8",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/6166mDkpgWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DMQYTTNS",
+    "name": "Comforter Full Size - All Season Down Alternative - Premium Soft Microfiber - White, 86\" x 82\"",
+    "normalized_price": 24.58,
+    "buy_url": "https://www.amazon.com/dp/B0DMQYTTNS",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61uPZK-zd-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q7OFOYK",
+    "name": "Amazon Basics Soft Comforter Blanket, Reversible Lightweight Microfiber All Season, Warm Bed Comforter, Full/Queen, Chocolate/Khaki",
+    "normalized_price": 21.07,
+    "buy_url": "https://www.amazon.com/dp/B00Q7OFOYK",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZRVLVFyxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08WPJXNVJ",
+    "name": "Sweet Home Collection Down Alternative Comforter All Season Warmth Luxurious Plush Loft Microfiber Fill Duvet Insert Bedding, Full, Pale Pink",
+    "normalized_price": 31.25,
+    "buy_url": "https://www.amazon.com/dp/B08WPJXNVJ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Hiwbze0xL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNQTKVPH",
+    "name": "CozyLux Full Size Comforter Sets White, 7 Pieces Seersucker Textured Luxury Bed in a Bag, All Seasons Soft Bedding Sets with Down Alternative Comforter, Sheets, Pillowcases & Shams, Home Gift",
+    "normalized_price": 46.39,
+    "buy_url": "https://www.amazon.com/dp/B0BNQTKVPH",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xcL-Lv2mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1YB9G9V",
+    "name": "Full/Queen Size Comforter - Luxury Goose Down Alternative Comforter Duvet Insert - Ultra Soft Hypoallergenic Bedding - with Corner Tabs - Hotel Dorm",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1YB9G9V",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Ys72nXTwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0060BSQJK",
+    "name": "KingLinen White Down Alternative Comforter Duvet Insert with Conner Tabs Full/Queen",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0060BSQJK",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61FWyYk3lkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP4K5HD9",
+    "name": "CozyLux Full Size Comforter Sets - 270GSM Blush Pink Bedding Sets for All Seasons, 3 Pieces Box Stitched Bed Set with 1 Down Alternative Comforter and 2 Pillow Shams, Soft, Lightweight, Breathable",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP4K5HD9",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mPI63Yj3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFLDDQ37",
+    "name": "CozyLux Full Size Comforter Set, 3 Pieces Heathered Blue Luxury Full Size Bedding Sets, Breathable Lightweight Down Alternative Comforter with 2 Pillow Shams, All Seasons Bed Set Gift for Home",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0CFLDDQ37",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gS9Yd6gML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGLPC42G",
+    "name": "Bedsure King Comforter Set, Beige Soft Prewashed Bedding for All Seasons, 3 Pieces GentleSoft\u2122 Bed Set, 1 Lightweight Comforter (104\"x90\") and 2 Pillowcases (20\"x36\")",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGLPC42G",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gvtcBEHeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C5XQVYXK",
+    "name": "Andency King Size Comforter Set Beige, Boho Cream Soft Warm Tufted Neutral Bedding Comforter Sets for King Size Bed, 3 Pieces Aesthetic Chevron Farmhouse Cute Bohemian Textured Bedding Set",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0C5XQVYXK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819bLByeJAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B49LHNZ2",
+    "name": "Bedsure King Size Comforter Set - Beige King Comforter Set, Soft Bedding for All Seasons, Cationic Dyed Bedding Set, 3 Pieces, 1 Comforter (104\"x90\") and 2 Pillow Shams (20\"x36\"+2\")",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0B49LHNZ2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QIJcx2jIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CL4VPXQ5",
+    "name": "Bedsure King Size Comforter Set Beige, Boho Tufted Bed Set, Checkered Farmhouse-Style Distressed Vintage Bedding, 3 Pieces, 1 Plaid Geometric Comforter and 2 Pillow Shams",
+    "normalized_price": 63.99,
+    "buy_url": "https://www.amazon.com/dp/B0CL4VPXQ5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91SLh849ZYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKX5T192",
+    "name": "Zzlpp King Size Comforter Set 7 Pieces, Beige Tufted Bed in a Bag with Comforter and Sheets, All Season Boho Bedding Sets with 1 Comforter, 2 Pillow Shams, 2 Pillowcases, 1 Flat Sheet, 1 Fitted Sheet",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B0CKX5T192",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81jNxZEDrML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CD76QM24",
+    "name": "Bedsure Tufted Boho Comforter Set King Size - Beige Boho Bed Set, GentleSoft\u2122 3 Pieces Farmhouse-Style Embroidery Bedding, Gifts for Woman, Soft Jacquard Kids' King Comforter for All Seasons",
+    "normalized_price": 58.99,
+    "buy_url": "https://www.amazon.com/dp/B0CD76QM24",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91fgUwNk09L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CYT3K28T",
+    "name": "Bedsure Oversized King Comforter Set, Beige Soft Prewashed Bedding for All Seasons, 3 Pieces GentleSoft\u2122 Bed Set, 1 Lightweight Comforter (120\"x98\") and 2 Pillowcases (20\"x36\")",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0CYT3K28T",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gvtcBEHeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DW3MHKFX",
+    "name": "MUXHOMO 7 Pieces King Comforter Set, Seersucker Bed in a Bag King Size, All Season Luxury Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Shams, Beige",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B0DW3MHKFX",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71lHOb3SIYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZ99PBW7",
+    "name": "WRENSONGE King Size Comforter Set, 7 Pieces Soft Light Oatmeal Bed in a Bag King with Fitted Sheet, Flat Sheet, 2 Pillow Shams, and 2 Pillowcases- Warm Bedding Set for All Season",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZ99PBW7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71j2w4w2PDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCXYCBPR",
+    "name": "Litanika King Size Comforter Set with Sheets Beige - 7 Pieces Bed in a Bag King Chevron Tufted Boho Luxury Bedding Sets with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0CCXYCBPR",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gM42GyzlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DM62FKP6",
+    "name": "MUXHOMO 7 Pieces King Comforter Set, Soft Bed in a Bag King Size, All Season Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Shams, Beige",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B0DM62FKP6",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mfAKi82vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGV4SWGW",
+    "name": "Litanika King Size Comforter Set Beige, 3 Pieces Cream Tufted Boho Farmhouse Bedding Comforter Sets, Lightweight Fluffy Comforter Bed Set for All Season (104x90In Comforter and 2 Pillowcases)",
+    "normalized_price": 34.98,
+    "buy_url": "https://www.amazon.com/dp/B0CGV4SWGW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/811B5R0d4DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CBPPJX53",
+    "name": "Monbix King Size Comforter Set - 7 Pieces Bed in a Bag King, Apricot Beige King Bedding Sets with Comforter, All Seasons Comforter Bed Set with Sheets, Pillowcases & Shams",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CBPPJX53",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fIxIhAeBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLLDHP7B",
+    "name": "PHF Ultra Soft Waffle Weave Comforter Set King Size, 3 Pieces Lightweight Breathable Comfy Bedding Set, Comfy Textured 1 Comforter with 2 Pillow Shams, Linen",
+    "normalized_price": 66.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLLDHP7B",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Yn9h7Yr8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DS4HPTJH",
+    "name": "BLOOMHAVEN King Comforter Set - 7 Pieces Ruffle Sage Green Bedding Sets, Shabby Chic Farmhouse Bed in a Bag King with Ruffle Comforter, Floral Sheets, Pillowcases & Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DS4HPTJH",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Qzl04NzgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCMWY2TM",
+    "name": "CozyLux King Size Comforter Set Oatmeal, 3 Pieces Lightweight Down Alternative Quilted Bedding Sets, Gray All Season Soft Breathable Solid Comforter with 2 Pillowcases, Luxury Bed Set Gift for Home",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCMWY2TM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Pn1QNMQkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRP4NB2D",
+    "name": "Monbix King Size Comforter Set - 7 Pieces Bed in a Bag King, Raw Umber King Bedding Sets with Comforter, All Seasons Comforter Bed Set with Sheets, Pillowcases & Shams",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRP4NB2D",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81tVfA-OBSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BDVHPKWB",
+    "name": "ROSGONIA King Size Comforter Set Oatmeal, 3pcs (1 Boho Comforter & 2 Pillowcases), All Season Bedding Soft Lightweight Bedspread Blanket Quilt",
+    "normalized_price": 38.79,
+    "buy_url": "https://www.amazon.com/dp/B0BDVHPKWB",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B9oxqmyOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPDN2667",
+    "name": "Paxrac Earthy Brown Comforter King Size, Neutral 3 Pieces Comforter Set, Lightweight Solid Bedding Set, All Seasons Soft Fluffy King Comforter Set (104x90In Comforter & 2 Pillowcases)",
+    "normalized_price": 40.99,
+    "buy_url": "https://www.amazon.com/dp/B0CPDN2667",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81MXW09MTlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX789MBW",
+    "name": "Sasttie King Size Comforter Set, 7-Piece Bed in a Bag, Pintuck Bedding Set for All Season, Includes Comforter, Flat Sheet, Fitted Sheet, Pillowcases and Pillowshams, Beige",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX789MBW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Vgg0bz+4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GP1985G6",
+    "name": "Madison Park 5-Piece Farmhouse Comforter Set with Ruching & Lace Trim, Soft Chambray Bedding, Includes Comforter and 2 Decorative Pillows, King, Neutral",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0GP1985G6",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yO-PWedpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJ6WWZP2",
+    "name": "WDCOZY Beige King Size Quilt Bedding Sets with 2 Pillow Shams, Neutral Lightweight Soft Bedspread Coverlet, Quilted Blanket Thin Comforter Bed Cover for All Season, 3 Pieces, 104x90 inches",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DJ6WWZP2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Vj1MSRN6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDKZ5TJK",
+    "name": "Bedsure King Size Comforter Set - 7 Pieces Light Beige King Bedding Set for All Seasons, Boho Contrasting Design Bed in a Bag with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDKZ5TJK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91QgmvO4EhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKP72ZMR",
+    "name": "Andency California King Comforter Set Beige, Boho Cal King Cream Soft Warm Tufted Neutral Bedding Comforter Sets, 3 Pieces Cali King Aesthetic Chevron Farmhouse Cute Bohemian Textured Bedding Set",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0CKP72ZMR",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819bLByeJAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSKBS8GW",
+    "name": "PHF Soft Waffle Comforter Set King Size- Comfy Breathable Waffle Weave Comforter with 2 Pillow Shams, 3 Pieces Less Snagging Lightweight Textured Bedding Set for All Season, Natural/Linen",
+    "normalized_price": 66.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSKBS8GW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+CbCdhZ8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4D7ZYMM",
+    "name": "Andency King Size Comforter Set Beige, 3 Pieces Boho King Bedding Comforter Set Cream, All Season Soft Lightweight Tufted Textured Down Alternative Comforter Fluffy Bed Set",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4D7ZYMM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81SvxB8KIrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFMFLCQ9",
+    "name": "Bedsure Boho Tufted Beige Comforter King Size, GentleSoft\u2122 3 Pieces Boho Farmhouse-Style Decor Bedding, Arch Bedding for All Seasons, 1 Bed Comforter, 2 Pillow Shams, 104x90 Inches",
+    "normalized_price": 68.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFMFLCQ9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91W9ZyZhT-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3Q9DJ3P",
+    "name": "CozyLux King Size Comforter Set Beige - 7 Pieces Bed in a Bag King, Luxury Soft Bed Set for All Seasons, Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B0D3Q9DJ3P",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81UCJ9eRRgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F217XCCG",
+    "name": "Bedsure King Comforter Set - Natural Bed Set, 3 Pieces Cute Floral Bedding, 1 Soft Botanical Flowers Comforter and 2 Pillow Shams",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0F217XCCG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ZGRW8A8zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6YMCP9T",
+    "name": "Andency Oversized King Comforter Set 120x98 Beige, Boho Oversize King Cream Soft Warm Tufted Neutral Bedding Comforter Sets, 3 Pieces Aesthetic Chevron Farmhouse Cute Bohemian Textured Bedding Set",
+    "normalized_price": 67.99,
+    "buy_url": "https://www.amazon.com/dp/B0D6YMCP9T",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819bLByeJAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01DE29JW0",
+    "name": "Utopia Bedding King Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters King Size 90 x 102 inches",
+    "normalized_price": 34.09,
+    "buy_url": "https://www.amazon.com/dp/B01DE29JW0",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813dSy5zzWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07YKLXB3Y",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters King Size, All Season Duvet, GentleSoft Down Alternative Bedding Blanket, with 8 Tabs, Gifts for Women/Men, White, King 90 x 102 Inches",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B07YKLXB3Y",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dtvJt9zKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B098RF5VW9",
+    "name": "Serta Down Illusion All Season Hypoallergenic Down Alternative Comforter with Corner Loops, King/Cal King, White",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B098RF5VW9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819Xqm5Se7S._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CWRQVK2",
+    "name": "EASELAND King Size Down Alternative Comforter - Quilted Duvet Insert for All Seasons, Soft Lightweight with Corner Tabs, Summer Winter Warm Bedding, White 90x102 Inches",
+    "normalized_price": 43.9,
+    "buy_url": "https://www.amazon.com/dp/B07CWRQVK2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61t-vSJPl1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01LX5UR58",
+    "name": "Down Alternative Comforter King Size - Fluffy Duvet Insert - Premium Plush All Season - Luxury Breathable Hotel Cooling Comforter - King, White, 104x86 inches - Comes Compressed Packaging",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B01LX5UR58",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61+zesh2YuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01JPECPZE",
+    "name": "Utopia Bedding White Comforter King Size, Duvet Insert, Down Alternative Comforter",
+    "normalized_price": 34.89,
+    "buy_url": "https://www.amazon.com/dp/B01JPECPZE",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8165xvhYdJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07C5PHY7V",
+    "name": "COHOME King Size Cooling Comforter, All-Season Quilted Down Alternative Duvet Insert, Luxury Hotel Breathable GentleSoft Comforter with Anti-Clump Tech & 8 Tab - Reversible - White 92 x 102 inches",
+    "normalized_price": 42.92,
+    "buy_url": "https://www.amazon.com/dp/B07C5PHY7V",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Or-wTToUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLLDLDSV",
+    "name": "Olive + Crate Cooling Down Alternative Comforter - Hypoallergenic King Size Duvet Insert Lightweight - All Seasons Plush Design Bamboo Comforter - 100% Bamboo Viscose Outer Cover - White 102\"x90\"",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLLDLDSV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/717JQeRp43L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00VGR534O",
+    "name": "Linenspa White Down Alternative Comforter and Duvet Insert, for King Size Bed \u2013 All-Season Comforter with Box Stitch and 8 Duvet Loops \u2013 Bedding for Kids, Teens, and Adults",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B00VGR534O",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Smh6me7CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTGF44JD",
+    "name": "Bedsure Comforters King Size Duvet Insert, Quilted Down Alternative Bedding, Ultra Soft Lightweight Comforter Blanket for Bed, with 8 Tabs, Machine Washable, 90x102 in, White",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B0CTGF44JD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81waNqjPEuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073F1JHQG",
+    "name": "L LOVSOUL Down Alternative Comforter King Size Duvet Insert,All Season Duvet Insert with Corner Tabs,White Comforter King 106x90Inches",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B073F1JHQG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Z6Xb8GosL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0919WDKW5",
+    "name": "HYLEORY All-Season King Size Bed Comforter - Cooling Goose Down Alternative Quilted Duvet Insert with Corner Tabs - Winter Warm - Machine Washable - White",
+    "normalized_price": 35.67,
+    "buy_url": "https://www.amazon.com/dp/B0919WDKW5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71n49zmgtFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B071NTZ7TW",
+    "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, King, Light White",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B071NTZ7TW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71q-QpZdqqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09CQ97W8B",
+    "name": "UGG Danielle Comforter Duvet Insert Cooling Lightweight Down Alternative Hypoallergenic Washable Quilted Fluffy Comforter Blanket Corner Tabs for Duvet Cover, King/California King, Bright White",
+    "normalized_price": 128.6,
+    "buy_url": "https://www.amazon.com/dp/B09CQ97W8B",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Ly0Kt3Y3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0127887VG",
+    "name": "Madison Park Windom Down Alternative Blanket, Premium 3M Scotchgard Moisture Wicking Treatment, Lightweight and Soft Bed Cover For All Season, Satin Trim, White King",
+    "normalized_price": 42.29,
+    "buy_url": "https://www.amazon.com/dp/B0127887VG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51-Q9Q4+sGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07V4CZXGW",
+    "name": "ACCURATEX Duvet Insert King Comforter - 400GSM Fluffy Down Alternative Fill Hotel Collection Heavyweight Comforter,Soft Warm Thick Duvet for Winter, 8 Corner Tabs - Machine Washable,White,104x90",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B07V4CZXGW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61DxLP8K6NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08D3W7TFM",
+    "name": "TEXARTIST Premium 2100 Series King Comforter All Season Breathable Grey Comforter Soft 4D Spiral Fiber Quilted Lightweight Down Alternative Duvet Insert with Corner Tabs Hotel Summer Style (90\"x102\")",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B08D3W7TFM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dg35SWd9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01L17N5SE",
+    "name": "King Size, White Alternative Down Comforter - Warm, Lightweight & Breathable Hotel Quality Bedding Set for Men, Women, Kids and Teens - All Season Oversized Cooling Microfiber Duvet Insert Comforter",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B01L17N5SE",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rk8FubxPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D93QVFJL",
+    "name": "Bedsure Comforter King Size - King Comforter for All Season, Ultra-Soft Quilted Down Alternative Comforters Prewashed Duvet Insert, Blanket for Bed with 4 Tabs, Machine Washabl, Linen, 90x102 in",
+    "normalized_price": 44.98,
+    "buy_url": "https://www.amazon.com/dp/B0D93QVFJL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91IISLvl9KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06W9H9BK5",
+    "name": "Southshore Fine Living, Inc. King Size Down Alternative Comforter, Oversized Cal King Comforter Only, Hotel Bedding, All Season Comforters, Wrinkle Free Bedding, Duvet Insert, Dark Taupe Comforters",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B06W9H9BK5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/814bjXXi2LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBLSP6BD",
+    "name": "Litanika King Size Comforter Set, 3 Pieces Lightweight Solid Comforter King Size, All Season Fluffy Down Alternative Comforter Bed Set Quilt Blanket, Sage Green, King",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBLSP6BD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KTea2mRML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01I2ZDXBW",
+    "name": "Utopia Bedding Comforters King Size, All Season Duvet Insert, Down Alternative King Comforter with Corner Tabs, Machine Washable Bed Comforter 90 x 102 Inches (White)",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B01I2ZDXBW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FUM7BUI2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBLKCTJH",
+    "name": "DOWNCOOL Feather Comforter King Size, 100% Cotton Cover Ultra Soft Fluffy Duvet Insert King, All Season Luxurious Hotel Bedding Comforters with Corner Tabs, White 106\"x90\"",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0DBLKCTJH",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Un-MUM7WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CN757JZ",
+    "name": "ViscoSoft King Comforter - Cloud-Soft Down Alternative Duvet Insert, All Season Cooling Lightweight Reversible Quilted Blanket for Bedroom & Guest Room, Oeko-TEX Certified, Light/Dark Gray",
+    "normalized_price": 49.95,
+    "buy_url": "https://www.amazon.com/dp/B07CN757JZ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Pggn4vj+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QB9MLFM",
+    "name": "Royal Hotel Bedding 300 Thread Count Oversized King Size Down-Alternative Comforter, Overfilled Duvet Insert 100% Cotton Shell - 100% Down-Alternative Fill 750FP - 100Oz - Solid White, Oversized King",
+    "normalized_price": 114.99,
+    "buy_url": "https://www.amazon.com/dp/B07QB9MLFM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71d1fUOYMEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0863D46RV",
+    "name": "100% Cotton Cover Down Alternative Comforter King Size- Cloud Bed Comforter for All Season, Breathable White Duvet, Ultra-Soft Duvet Insert (106x90)",
+    "normalized_price": 75.0,
+    "buy_url": "https://www.amazon.com/dp/B0863D46RV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51tvKVvg3hS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CR4HZL5",
+    "name": "CozyLux King Size Comforter Set Dark Grey - 7 Pieces Bed in a Bag King, Luxury Soft Bed Set for All Seasons, Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B08CR4HZL5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81h5lBDrl2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QY6SZR7",
+    "name": "Cozynight Soft King Size Comforter Duvet Insert-Lightweight Down Alternative Comforter with Corner Tabs- Breathable & Machine Washable Diamond Stitching\uff08King,106\u201dX92\u201d \uff09",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B07QY6SZR7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Ipfwmb2mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GK9BGZPB",
+    "name": "CozyLux Comforters King Size Duvet Insert White, All Season Quilted Bed Comforter, Box Stitched Down Alternative Duvet with 8 Corner Tabs, Gifts for Women Men, 102 x 90 Inches (White)",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0GK9BGZPB",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71NQn6c5QAL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

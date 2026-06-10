@@ -12,10 +12,14 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
+import time
 from pathlib import Path
 
 import anthropic
+
+logger = logging.getLogger(__name__)
 
 from schemas.product import Product
 from schemas.slot import Slot
@@ -24,6 +28,8 @@ from schemas.style_profile import StyleProfile
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-sonnet-4-6"
 _LLM_MAX_TOKENS = 256
+_RETRY_MAX = 3
+_RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 
 
 # ---------------------------------------------------------------------------
@@ -83,15 +89,28 @@ def select_product(
 # ---------------------------------------------------------------------------
 
 def _call_selection_llm(system_prompt: str, user_message: str) -> str:
-    """Send a request to the Anthropic API.  Isolated for test patching."""
+    """Send a request to the Anthropic API.  Isolated for test patching.
+
+    Retries up to ``_RETRY_MAX`` times on 429 (rate-limit) or 529
+    (overloaded) responses with exponential backoff.
+    """
     client = anthropic.Anthropic()
-    message = client.messages.create(
-        model=_LLM_MODEL,
-        max_tokens=_LLM_MAX_TOKENS,
-        system=system_prompt,
-        messages=[{"role": "user", "content": user_message}],
-    )
-    return message.content[0].text
+    for attempt in range(_RETRY_MAX):
+        try:
+            message = client.messages.create(
+                model=_LLM_MODEL,
+                max_tokens=_LLM_MAX_TOKENS,
+                system=system_prompt,
+                messages=[{"role": "user", "content": user_message}],
+            )
+            return message.content[0].text
+        except anthropic.RateLimitError:
+            if attempt == _RETRY_MAX - 1:
+                raise
+            wait = _RETRY_BACKOFF_BASE * (2 ** attempt)
+            logger.warning("Selection LLM rate-limited, retrying in %.1fs", wait)
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
 
 
 def _build_selection_prompts(

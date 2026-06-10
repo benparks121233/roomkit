@@ -22,5 +22,45 @@
     "buy_url": "https://www.amazon.com/dp/B00Q7EPSHK",
     "specs": {"bed_size": "king"},
     "image_url": "https://m.media-amazon.com/images/I/zinus-green-tea-king.jpg"
+  },
+  {
+    "product_id": "MT-004",
+    "name": "Zinus Green Tea Memory Foam Mattress – Twin 10\"",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B00Q7EPSHT",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-green-tea-twin.jpg"
+  },
+  {
+    "product_id": "MT-005",
+    "name": "Linenspa 8 Inch Hybrid Mattress – Twin",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B01IU6RJYT",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/linenspa-hybrid-twin.jpg"
+  },
+  {
+    "product_id": "MT-006",
+    "name": "Zinus Green Tea Memory Foam Mattress – Full 12\"",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B00Q7EPSHF",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-green-tea-full.jpg"
+  },
+  {
+    "product_id": "MT-007",
+    "name": "Linenspa 8 Inch Hybrid Mattress – Full",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B01IU6RJYF",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/linenspa-hybrid-full.jpg"
+  },
+  {
+    "product_id": "MT-008",
+    "name": "Linenspa 8 Inch Hybrid Mattress – King",
+    "normalized_price": 259.99,
+    "buy_url": "https://www.amazon.com/dp/B01IU6RJYK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/linenspa-hybrid-king.jpg"
   }
 ]

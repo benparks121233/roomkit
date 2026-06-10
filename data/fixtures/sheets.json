@@ -22,5 +22,45 @@
     "buy_url": "https://www.amazon.com/dp/B00NLLKNRK",
     "specs": {"bed_size": "king"},
     "image_url": "https://m.media-amazon.com/images/I/mellanni-sheets-sand.jpg"
+  },
+  {
+    "product_id": "SH-004",
+    "name": "Mellanni Twin Sheet Set – Brushed Microfiber, Gray",
+    "normalized_price": 24.97,
+    "buy_url": "https://www.amazon.com/dp/B00NLLKNRT",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/mellanni-sheets-gray.jpg"
+  },
+  {
+    "product_id": "SH-005",
+    "name": "CGK Unlimited Twin Sheet Set – 4 Piece, White",
+    "normalized_price": 22.99,
+    "buy_url": "https://www.amazon.com/dp/B07BFNPNRT",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/cgk-sheets-twin-white.jpg"
+  },
+  {
+    "product_id": "SH-006",
+    "name": "Mellanni Full Sheet Set – Brushed Microfiber, Ivory",
+    "normalized_price": 29.97,
+    "buy_url": "https://www.amazon.com/dp/B00NLLKNRF",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/mellanni-sheets-ivory.jpg"
+  },
+  {
+    "product_id": "SH-007",
+    "name": "CGK Unlimited Full Sheet Set – 6 Piece, Cream",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B07BFNPNRF",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/cgk-sheets-full-cream.jpg"
+  },
+  {
+    "product_id": "SH-008",
+    "name": "CGK Unlimited King Sheet Set – 6 Piece, Taupe",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B07BFNPNRK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/cgk-sheets-king-taupe.jpg"
   }
 ]

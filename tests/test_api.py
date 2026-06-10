@@ -189,30 +189,88 @@ class TestCreateDesign:
 
 
 # ---------------------------------------------------------------------------
+# bed_size spec matching — bed-group slots require bed_size
+# ---------------------------------------------------------------------------
+
+class TestBedSizeSpecFlow:
+    """Verify bed_size flows from DesignRequest → spec_hints → candidate
+    filtering for every valid size.  Fixtures must have products for all
+    four sizes or these tests will catch the gap."""
+
+    BED_SLOT_IDS = {"bed_frame", "mattress", "sheets", "comforter"}
+
+    @_patch_llms
+    @pytest.mark.parametrize("size", ["twin", "full", "queen", "king"])
+    def test_bed_slots_filled_for_every_size(self, _s, _c, _sel, size):
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "bed_size": size,
+        })
+        data = resp.json()
+        for slot in data["slots"]:
+            if slot["slot_id"] in self.BED_SLOT_IDS:
+                assert slot["product"] is not None, (
+                    f"Slot {slot['slot_id']} has no product when bed_size='{size}'"
+                )
+
+    @_patch_llms
+    def test_bed_size_with_full_room_true(self, _s, _c, _sel):
+        """bed_size must survive the full_room=True path."""
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "bed_size": "queen",
+            "full_room": True,
+        })
+        data = resp.json()
+        bed_slot = next(s for s in data["slots"] if s["slot_id"] == "bed_frame")
+        assert bed_slot["product"] is not None, "bed_frame empty with full_room + bed_size"
+
+    @_patch_llms
+    def test_bed_size_with_partial_room_wants_bed(self, _s, _c, _sel):
+        """bed_size must survive the full_room=False path for wanted bed slots."""
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "bed_size": "queen",
+            "full_room": False,
+            "wants": ["bed_frame", "rug"],
+        })
+        data = resp.json()
+        bed_slot = next(s for s in data["slots"] if s["slot_id"] == "bed_frame")
+        assert bed_slot["product"] is not None, "bed_frame empty with wants + bed_size"
+        assert bed_slot["owned"] is False
+
+
+# ---------------------------------------------------------------------------
 # Owned slots
 # ---------------------------------------------------------------------------
 
 class TestOwnedSlots:
 
     @_patch_llms
-    def test_owned_slot_has_null_reason_owned(self, _s, _c, _sel):
+    def test_partial_room_owned_slot_has_null_reason(self, _s, _c, _sel):
         resp = client.post("/design", json={
             "room_type": "bedroom",
             "budget": 1500,
-            "already_have": ["bed_frame"],
+            "full_room": False,
+            "wants": ["nightstand", "rug"],
         })
         data = resp.json()
+        # bed_frame is NOT in wants → treated as owned
         bed_slot = next(s for s in data["slots"] if s["slot_id"] == "bed_frame")
         assert bed_slot["owned"] is True
         assert bed_slot["product"] is None
         assert bed_slot["null_reason"] == "owned"
 
     @_patch_llms
-    def test_owned_slot_gets_zero_budget(self, _s, _c, _sel):
+    def test_partial_room_owned_slot_gets_zero_budget(self, _s, _c, _sel):
         resp = client.post("/design", json={
             "room_type": "bedroom",
             "budget": 1500,
-            "already_have": ["bed_frame"],
+            "full_room": False,
+            "wants": ["nightstand", "rug"],
         })
         data = resp.json()
         bed_slot = next(s for s in data["slots"] if s["slot_id"] == "bed_frame")

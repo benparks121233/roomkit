@@ -14,8 +14,8 @@ export interface DesignRequest {
   style_description: string;
   bed_size?: string | null;
   qa_answers?: Record<string, string>;
-  already_have?: string[];
-  must_have?: string[];
+  full_room?: boolean;
+  wants?: string[];
 }
 
 export interface ProductResult {
@@ -63,7 +63,6 @@ export interface QuizStyleOutput {
   mood: string;
   palette: string;
   materials: string[];
-  texture: string;
   shape: string;
   density: string;
   description: string;

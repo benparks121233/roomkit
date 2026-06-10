@@ -30,5 +30,37 @@
     "buy_url": "https://www.amazon.com/dp/B0BR4Q6WH7",
     "specs": {"bed_size": "full"},
     "image_url": "https://m.media-amazon.com/images/I/allewie-full.jpg"
+  },
+  {
+    "product_id": "BF-005",
+    "name": "Zinus Wen Wood Platform Bed Frame – Twin",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B078RK12VT",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-wen-twin.jpg"
+  },
+  {
+    "product_id": "BF-006",
+    "name": "Sweetcrispy Metal Platform Bed Frame – Twin",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1XTJM3T",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/sweetcrispy-twin.jpg"
+  },
+  {
+    "product_id": "BF-007",
+    "name": "Sweetcrispy Metal Platform Bed Frame – Full",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1XTJM3F",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/sweetcrispy-full.jpg"
+  },
+  {
+    "product_id": "BF-008",
+    "name": "Sweetcrispy Metal Platform Bed Frame – King",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1XTJM3K",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/sweetcrispy-king.jpg"
   }
 ]

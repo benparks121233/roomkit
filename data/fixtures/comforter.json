@@ -22,5 +22,45 @@
     "buy_url": "https://www.amazon.com/dp/B00NBYH7QK",
     "specs": {"bed_size": "king"},
     "image_url": "https://m.media-amazon.com/images/I/utopia-comforter-ivory.jpg"
+  },
+  {
+    "product_id": "CM-004",
+    "name": "Utopia Bedding Twin Comforter Set – All Season, Gray",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B00NBYH7QT",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-comforter-gray.jpg"
+  },
+  {
+    "product_id": "CM-005",
+    "name": "Bedsure Twin Comforter Set – Sage Green",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B07WG4VLZT",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-comforter-sage-twin.jpg"
+  },
+  {
+    "product_id": "CM-006",
+    "name": "Utopia Bedding Full Comforter Set – All Season, White",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B00NBYH7QF",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-comforter-white-full.jpg"
+  },
+  {
+    "product_id": "CM-007",
+    "name": "Bedsure Full Comforter Set – Warm Taupe",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B07WG4VLZF",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-comforter-taupe-full.jpg"
+  },
+  {
+    "product_id": "CM-008",
+    "name": "Bedsure King Comforter Set – Ivory",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B07WG4VLZK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-comforter-ivory-king.jpg"
   }
 ]

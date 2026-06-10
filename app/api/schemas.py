@@ -14,8 +14,8 @@ class DesignRequest(BaseModel):
     style_description: str = ""
     bed_size: str | None = None
     qa_answers: dict[str, str] = {}
-    already_have: list[str] = []
-    must_have: list[str] = []
+    full_room: bool = True
+    wants: list[str] = []
 
 
 class ProductResult(BaseModel):

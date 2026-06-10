@@ -73,32 +73,29 @@ def parse_intake(raw_input: dict) -> RoomRequest:
     style_description: str | None = raw_input.get("style_description") or None
     qa_answers: dict[str, str] = dict(raw_input.get("qa_answers") or {})
 
-    # --- Validate already_have / must_have -----------------------------
-    # Both are optional lists of slot ids.  Every id must exist in the
-    # taxonomy.  A slot id appearing in both lists is a contradiction.
-    valid_slot_ids = taxonomy.slot_ids()
-    already_have: list[str] = list(raw_input.get("already_have") or [])
-    must_have: list[str] = list(raw_input.get("must_have") or [])
+    # --- Translate full_room / wants → internal already_have / must_have --
+    # full_room=True  → source all preset slots (already_have=[], must_have=[])
+    # full_room=False  → source only `wants` slots; everything else is "owned"
+    full_room: bool = raw_input.get("full_room", True)
+    wants: list[str] = list(raw_input.get("wants") or [])
 
-    for sid in already_have:
-        if sid not in valid_slot_ids:
-            raise ValueError(
-                f"Unknown slot id '{sid}' in already_have. "
-                f"Valid slot ids: {sorted(valid_slot_ids)}"
-            )
-    for sid in must_have:
-        if sid not in valid_slot_ids:
-            raise ValueError(
-                f"Unknown slot id '{sid}' in must_have. "
-                f"Valid slot ids: {sorted(valid_slot_ids)}"
-            )
-
-    overlap = set(already_have) & set(must_have)
-    if overlap:
-        raise ValueError(
-            f"Slot ids appear in both already_have and must_have: "
-            f"{sorted(overlap)}. A slot cannot be both owned and requested."
-        )
+    if full_room:
+        already_have: list[str] = []
+        must_have: list[str] = []
+    else:
+        # Validate wants against the room preset's slot ids
+        preset = taxonomy.room_presets.get(room_type or "bedroom")
+        preset_slot_ids = preset.all_items() if preset else set()
+        for sid in wants:
+            if sid not in preset_slot_ids:
+                raise ValueError(
+                    f"Unknown slot id '{sid}' in wants. "
+                    f"Valid slot ids for {room_type}: {sorted(preset_slot_ids)}"
+                )
+        # Invert: everything NOT in wants is "already owned" (skipped)
+        already_have = sorted(preset_slot_ids - set(wants))
+        # Wants become must_have so they're never dropped
+        must_have = list(wants)
 
     return RoomRequest(
         run_id=str(uuid.uuid4()),

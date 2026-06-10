@@ -40,22 +40,47 @@ from services.sourcing.catalog_cache import merge_cache, read_cache  # noqa: E40
 # Goal: 2-3 style variants per slot so the LLM has diverse candidates.
 
 BEDROOM_QUERIES: list[tuple[str, str]] = [
-    # bed_frame — 3 style variants
+    # bed_frame — 3 style variants × 4 sizes
+    ("bed_frame", "wood platform twin bed frame"),
+    ("bed_frame", "upholstered twin bed frame"),
+    ("bed_frame", "metal twin bed frame"),
+    ("bed_frame", "wood platform full bed frame"),
+    ("bed_frame", "upholstered full bed frame"),
+    ("bed_frame", "metal full bed frame"),
     ("bed_frame", "wood platform queen bed frame"),
     ("bed_frame", "upholstered queen bed frame"),
     ("bed_frame", "metal queen bed frame"),
-    # mattress — 2 variants
+    ("bed_frame", "wood platform king bed frame"),
+    ("bed_frame", "upholstered king bed frame"),
+    ("bed_frame", "metal king bed frame"),
+    # mattress — 2 variants × 4 sizes
+    ("mattress", "twin memory foam mattress"),
+    ("mattress", "twin hybrid mattress"),
+    ("mattress", "full memory foam mattress"),
+    ("mattress", "full hybrid mattress"),
     ("mattress", "queen memory foam mattress"),
     ("mattress", "queen hybrid mattress"),
-    # sheets — 3 variants
+    ("mattress", "king memory foam mattress"),
+    ("mattress", "king hybrid mattress"),
+    # sheets — 2 variants × 4 sizes
+    ("sheets", "twin cotton sheet set"),
+    ("sheets", "twin microfiber sheet set"),
+    ("sheets", "full cotton sheet set"),
+    ("sheets", "full microfiber sheet set"),
     ("sheets", "queen cotton sheet set"),
     ("sheets", "queen linen sheet set"),
-    ("sheets", "queen microfiber sheet set"),
-    # comforter — 3 variants
+    ("sheets", "king cotton sheet set"),
+    ("sheets", "king linen sheet set"),
+    # comforter — 2 variants × 4 sizes
+    ("comforter", "twin comforter set neutral"),
+    ("comforter", "twin down alternative comforter"),
+    ("comforter", "full comforter set neutral"),
+    ("comforter", "full down alternative comforter"),
     ("comforter", "queen comforter set neutral"),
-    ("comforter", "queen duvet insert white"),
     ("comforter", "queen down alternative comforter"),
-    # pillows — 2 variants
+    ("comforter", "king comforter set neutral"),
+    ("comforter", "king down alternative comforter"),
+    # pillows — 2 variants (no size spec required)
     ("pillows", "bed pillows queen size 2 pack"),
     ("pillows", "down alternative pillows queen"),
     # nightstand — 3 variants
@@ -98,7 +123,7 @@ BEDROOM_QUERIES: list[tuple[str, str]] = [
 ]
 
 DEFAULT_LIMIT = 40
-DEFAULT_MAX_REQUESTS = 60
+DEFAULT_MAX_REQUESTS = 80
 
 
 # ---------------------------------------------------------------------------

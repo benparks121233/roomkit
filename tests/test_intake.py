@@ -12,11 +12,16 @@
 #   - budget missing → None (partial request allowed).
 #   - Each call produces a unique run_id.
 #   - created_at is a UTC datetime.
+#   - full_room / wants → already_have / must_have translation.
 
 import pytest
 
 from schemas.room_request import RoomRequest
 from services.intake_service import parse_intake
+from services.config_loader import load_room_taxonomy
+
+TAXONOMY = load_room_taxonomy()
+BEDROOM_ALL_SLOTS = TAXONOMY.room_presets["bedroom"].all_items()
 
 # ---------------------------------------------------------------------------
 # Happy-path tests
@@ -130,71 +135,103 @@ def test_unknown_room_type_partial_match_raises():
 
 
 # ---------------------------------------------------------------------------
-# already_have / must_have tests
+# full_room / wants → already_have / must_have translation
 # ---------------------------------------------------------------------------
 
-def test_already_have_parsed_correctly():
+def test_full_room_true_sources_all_slots():
+    """full_room=True (default) → already_have=[], must_have=[]."""
     result = parse_intake({
         "room_type": "bedroom",
         "budget": 1500.0,
-        "already_have": ["bed_frame", "rug"],
+        "full_room": True,
     })
-    assert result.already_have == ["bed_frame", "rug"]
-
-
-def test_must_have_parsed_correctly():
-    result = parse_intake({
-        "room_type": "bedroom",
-        "budget": 1500.0,
-        "must_have": ["tv"],
-    })
-    assert result.must_have == ["tv"]
-
-
-def test_both_have_and_need_parsed():
-    result = parse_intake({
-        "room_type": "bedroom",
-        "budget": 1500.0,
-        "already_have": ["bed_frame"],
-        "must_have": ["tv"],
-    })
-    assert result.already_have == ["bed_frame"]
-    assert result.must_have == ["tv"]
-
-
-def test_already_have_defaults_to_empty_list():
-    result = parse_intake({"room_type": "bedroom", "budget": 800.0})
     assert result.already_have == []
-
-
-def test_must_have_defaults_to_empty_list():
-    result = parse_intake({"room_type": "bedroom", "budget": 800.0})
     assert result.must_have == []
 
 
-def test_unknown_slot_id_in_already_have_raises():
-    with pytest.raises(ValueError, match="already_have"):
+def test_full_room_defaults_to_true():
+    """Omitting full_room defaults to True → source everything."""
+    result = parse_intake({
+        "room_type": "bedroom",
+        "budget": 1500.0,
+    })
+    assert result.already_have == []
+    assert result.must_have == []
+
+
+def test_full_room_false_with_wants():
+    """full_room=False with wants → already_have = all - wants, must_have = wants."""
+    result = parse_intake({
+        "room_type": "bedroom",
+        "budget": 1500.0,
+        "full_room": False,
+        "wants": ["nightstand", "rug"],
+    })
+    # Wanted slots are in must_have
+    assert set(result.must_have) == {"nightstand", "rug"}
+    # Everything else is in already_have
+    assert set(result.already_have) == BEDROOM_ALL_SLOTS - {"nightstand", "rug"}
+    # No overlap
+    assert set(result.already_have) & set(result.must_have) == set()
+
+
+def test_full_room_false_empty_wants():
+    """full_room=False with empty wants → all slots owned, nothing sourced."""
+    result = parse_intake({
+        "room_type": "bedroom",
+        "budget": 1500.0,
+        "full_room": False,
+        "wants": [],
+    })
+    assert set(result.already_have) == BEDROOM_ALL_SLOTS
+    assert result.must_have == []
+
+
+def test_unknown_slot_in_wants_raises():
+    """Invalid slot id in wants raises ValueError."""
+    with pytest.raises(ValueError, match="wants"):
         parse_intake({
             "room_type": "bedroom",
             "budget": 1000.0,
-            "already_have": ["magic_chair"],
+            "full_room": False,
+            "wants": ["magic_chair"],
         })
 
 
-def test_unknown_slot_id_in_must_have_raises():
-    with pytest.raises(ValueError, match="must_have"):
-        parse_intake({
-            "room_type": "bedroom",
-            "budget": 1000.0,
-            "must_have": ["magic_chair"],
-        })
+def test_wants_ignored_when_full_room_true():
+    """When full_room=True, wants list is ignored."""
+    result = parse_intake({
+        "room_type": "bedroom",
+        "budget": 1500.0,
+        "full_room": True,
+        "wants": ["nightstand"],
+    })
+    assert result.already_have == []
+    assert result.must_have == []
 
 
-def test_same_id_in_both_lists_raises():
-    with pytest.raises(ValueError, match="both"):
-        parse_intake({
-            "room_type": "bedroom",
-            "budget": 1000.0,
-            "already_have": ["bed_frame"],
-            "must_have": ["bed_frame"],
-        })
+# ---------------------------------------------------------------------------
+# bed_size survives full_room/wants translation
+# ---------------------------------------------------------------------------
+
+def test_bed_size_survives_full_room_true():
+    """bed_size must not be dropped by the full_room/wants path."""
+    result = parse_intake({
+        "room_type": "bedroom",
+        "budget": 1500.0,
+        "bed_size": "queen",
+        "full_room": True,
+    })
+    assert result.bed_size == "queen"
+
+
+def test_bed_size_survives_full_room_false():
+    """bed_size must not be dropped when full_room=False with wants."""
+    result = parse_intake({
+        "room_type": "bedroom",
+        "budget": 1500.0,
+        "bed_size": "king",
+        "full_room": False,
+        "wants": ["bed_frame", "mattress"],
+    })
+    assert result.bed_size == "king"

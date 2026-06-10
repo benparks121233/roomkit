@@ -177,7 +177,7 @@ h1, h2, h3 {
 .quiz-container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-4);
 }
 
 /* Progress bar (replaces dots for 10-step flow) */
@@ -212,17 +212,17 @@ h1, h2, h3 {
 
 .quiz-question {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   text-align: center;
   color: var(--color-text);
 }
 
 .quiz-hint {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
-  margin-top: calc(-1 * var(--space-4));
-  line-height: 1.5;
+  margin-top: calc(-1 * var(--space-3));
+  line-height: 1.4;
 }
 
 /* Image cards — grid of visual option cards with swatch fallback */
@@ -230,14 +230,14 @@ h1, h2, h3 {
 .quiz-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .quiz-card {
   display: flex;
   flex-direction: column;
   border: 1.5px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--color-surface);
   cursor: pointer;
@@ -257,28 +257,29 @@ h1, h2, h3 {
 }
 
 .quiz-card-visual {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--color-surface-muted);
 }
 
 .quiz-card-body {
-  padding: var(--space-3);
+  padding: var(--space-2);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .quiz-card-label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--color-text);
+  line-height: 1.2;
 }
 
 .quiz-card-desc {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   color: var(--color-text-secondary);
-  line-height: 1.35;
+  line-height: 1.2;
 }
 
 /* Swatch fallbacks inside image cards */
@@ -349,6 +350,195 @@ h1, h2, h3 {
   color: var(--color-text-secondary);
 }
 
+/* Select cards (room type, bed size — text-only option grid) */
+
+.quiz-select-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.quiz-select-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6) var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.quiz-select-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-select-card.selected {
+  border-color: var(--color-accent);
+  background: #F8F6F2;
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.quiz-select-card-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Budget step (slider + big number display) */
+
+.budget-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+}
+
+.budget-display {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.budget-slider {
+  width: 100%;
+  accent-color: var(--color-accent);
+  height: 6px;
+}
+
+.budget-range-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Scope step (full room vs. few pieces) */
+
+.scope-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.scope-choice-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.scope-choice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-4) var(--space-6);
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  user-select: none;
+  text-align: left;
+}
+
+.scope-choice-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.scope-choice-card.selected {
+  border-color: var(--color-accent);
+  background: #F8F6F2;
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.scope-choice-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.scope-choice-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+.scope-picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.scope-picker-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+}
+
+/* Icon cards (density — abstract icon + text) */
+
+.quiz-icon-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.quiz-icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3);
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  user-select: none;
+  text-align: center;
+}
+
+.quiz-icon-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-icon-card.selected {
+  border-color: var(--color-accent);
+  background: #F8F6F2;
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.density-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-text-secondary);
+}
+
+.quiz-icon-card.selected .density-icon {
+  color: var(--color-text);
+}
+
+.quiz-icon-card-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.quiz-icon-card-desc {
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+  line-height: 1.3;
+}
+
 /* Quiz free text */
 
 .quiz-textarea {
@@ -416,6 +606,24 @@ h1, h2, h3 {
 }
 
 .quiz-btn-next:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.quiz-btn-submit {
+  background: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-surface);
+  margin-left: auto;
+  padding: var(--space-3) var(--space-8);
+}
+
+.quiz-btn-submit:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.quiz-btn-submit:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }

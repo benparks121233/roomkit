@@ -4,13 +4,19 @@
 # Business logic lives in services/ and validators/, not here.
 #
 # Timeout note: POST /design makes ~17 real LLM calls (1 style + 1 composition
-# + ~15 selection) and can take 60-90s.  uvicorn has no default request timeout,
-# so this works out of the box.  The Next.js fetch in Piece 2 must set a
-# matching timeout (120s) and show an honest loading state.
+# + ~15 selection).  Selection calls run in parallel via ThreadPoolExecutor,
+# so wall time is ~10-15s rather than 60-90s.  The Next.js fetch in Piece 2
+# must still set a generous timeout (120s) for safety.
 
 from __future__ import annotations
 
+import logging
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from fastapi import APIRouter, HTTPException
+
+logger = logging.getLogger(__name__)
 
 from app.api.schemas import (
     DesignRequest,
@@ -70,13 +76,17 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             gate_error=gate_error,
         )
 
-    # 5. Sourcing + selection — one LLM call per non-owned slot.
+    # 5. Sourcing + selection — parallel LLM calls for non-owned slots.
     adapter = AmazonAdapter()
     slot_results: list[SlotResult] = []
 
-    for slot in sorted(slot_plan.slots, key=lambda s: s.slot_id):
+    # Owned slots don't need LLM calls — collect them immediately.
+    owned_results: list[SlotResult] = []
+    sourceable_slots: list[object] = []  # (slot, candidates) pairs
+
+    for slot in slot_plan.slots:
         if slot.owned:
-            slot_results.append(SlotResult(
+            owned_results.append(SlotResult(
                 slot_id=slot.slot_id,
                 allocated_budget=slot.allocated_budget,
                 owned=True,
@@ -85,7 +95,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             ))
             continue
 
-        # Build spec hints for the adapter.
+        # Build spec hints and fetch candidates (local file reads, fast).
         spec_hints: dict[str, str] = {}
         if "bed_size" in slot.required_specs and room_request.bed_size:
             spec_hints["bed_size"] = room_request.bed_size
@@ -96,11 +106,34 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             (0.0, slot.allocated_budget),
             spec_hints,
         )
+        sourceable_slots.append((slot, candidates))
 
-        product, reason = select_product(slot, style_profile, candidates)
+    # Fire all selection LLM calls in parallel.
+    selection_results: dict[str, tuple[object, str | None]] = {}
+    t0 = time.monotonic()
 
+    with ThreadPoolExecutor(max_workers=len(sourceable_slots) or 1) as pool:
+        futures = {
+            pool.submit(select_product, slot, style_profile, cands): slot.slot_id
+            for slot, cands in sourceable_slots
+        }
+        for future in as_completed(futures):
+            sid = futures[future]
+            selection_results[sid] = future.result()
+
+    elapsed = time.monotonic() - t0
+    logger.info(
+        "Selected %d slots in %.1fs (parallel)",
+        len(sourceable_slots),
+        elapsed,
+    )
+
+    # Build SlotResults for sourceable slots.
+    sourceable_results: list[SlotResult] = []
+    for slot, _cands in sourceable_slots:
+        product, reason = selection_results[slot.slot_id]
         if product:
-            slot_results.append(SlotResult(
+            sourceable_results.append(SlotResult(
                 slot_id=slot.slot_id,
                 allocated_budget=slot.allocated_budget,
                 owned=False,
@@ -115,13 +148,19 @@ async def create_design(req: DesignRequest) -> DesignResponse:
                 null_reason=None,
             ))
         else:
-            slot_results.append(SlotResult(
+            sourceable_results.append(SlotResult(
                 slot_id=slot.slot_id,
                 allocated_budget=slot.allocated_budget,
                 owned=False,
                 product=None,
                 null_reason=reason or "no_candidate",
             ))
+
+    # Merge and sort by slot_id for deterministic output order.
+    slot_results = sorted(
+        owned_results + sourceable_results,
+        key=lambda s: s.slot_id,
+    )
 
     # 6. Assemble response and store.
     response = _build_response(
