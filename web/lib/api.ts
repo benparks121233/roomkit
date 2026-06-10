@@ -1,24 +1,125 @@
 // web/lib/api.ts
 // Typed fetch client for all FastAPI endpoints.
 // All API calls go through this module — never raw fetch in components.
-// Stage 3/9: add typed request/response interfaces as endpoints are implemented.
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
-// Stage 3/9: implement typed wrappers
-export async function createDesign(_request: unknown): Promise<{ run_id: string }> {
-  // POST /design
-  throw new Error("Stage 3/9: implement createDesign");
+// ---------------------------------------------------------------------------
+// Types — mirrors app/api/schemas.py
+// ---------------------------------------------------------------------------
+
+export interface DesignRequest {
+  room_type: string;
+  budget: number;
+  style_description: string;
+  bed_size?: string | null;
+  qa_answers?: Record<string, string>;
+  already_have?: string[];
+  must_have?: string[];
 }
 
-export async function getDesign(_runId: string): Promise<unknown> {
-  // GET /design/{run_id}
-  throw new Error("Stage 9: implement getDesign");
+export interface ProductResult {
+  product_id: string;
+  name: string;
+  normalized_price: number;
+  image_url: string;
+  buy_url: string;
+  fit_reason: string;
 }
 
-export async function recordClick(_event: unknown): Promise<void> {
-  // POST /click
-  throw new Error("Stage 10: implement recordClick");
+export interface SlotResult {
+  slot_id: string;
+  allocated_budget: number;
+  owned: boolean;
+  product: ProductResult | null;
+  null_reason: string | null; // "owned" | "no_candidate" | "no_spec_match" | "llm_error"
+}
+
+export interface StyleResult {
+  style_name: string;
+  keywords: string[];
+  mood: string;
+  confidence: number;
+  fallback: boolean;
+}
+
+export interface DesignResponse {
+  run_id: string;
+  room_type: string;
+  style: StyleResult;
+  target_budget: number;
+  total_spent: number;
+  is_feasible: boolean;
+  slots: SlotResult[];
+}
+
+// ---------------------------------------------------------------------------
+// Quiz output — captured by the intake questionnaire, consumed by future
+// personalization pipeline. Only style.description is wired to the API today.
+// ---------------------------------------------------------------------------
+
+export interface QuizStyleOutput {
+  core: string;
+  mood: string;
+  palette: string;
+  materials: string[];
+  texture: string;
+  shape: string;
+  density: string;
+  description: string;
+}
+
+export interface QuizInterest {
+  category: string;
+  tags: string[];
+}
+
+export interface QuizOutput {
+  style: QuizStyleOutput;
+  interests: QuizInterest[];
+}
+
+// ---------------------------------------------------------------------------
+// API calls
+// ---------------------------------------------------------------------------
+
+/**
+ * POST /design — runs the full pipeline (~17 LLM calls, 60-90s).
+ * Timeout set to 120s to match backend reality.
+ */
+export async function createDesign(request: DesignRequest): Promise<DesignResponse> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 120_000);
+
+  try {
+    const res = await fetch(`${API_BASE}/design`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal: controller.signal,
+    });
+
+    if (!res.ok) {
+      const body = await res.json().catch(() => null);
+      throw new Error(body?.detail ?? `API error ${res.status}`);
+    }
+
+    return (await res.json()) as DesignResponse;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+/**
+ * GET /design/{run_id} — retrieve a saved board.
+ */
+export async function getDesign(runId: string): Promise<DesignResponse> {
+  const res = await fetch(`${API_BASE}/design/${runId}`);
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.detail ?? `API error ${res.status}`);
+  }
+  return (await res.json()) as DesignResponse;
 }
 
 export { API_BASE };

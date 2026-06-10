@@ -1,28 +1,193 @@
 # app/api/routes.py
-# All HTTP route handlers.
-# Owns: request parsing, delegating to services, returning responses.
-# Business logic never lives here — it belongs in services/ and validators/.
-# Stage 1: stub endpoints that return 501 until the pipeline is wired.
+# HTTP route handlers for the RoomKit API.
+# Owns: request parsing, delegating to services, assembling responses.
+# Business logic lives in services/ and validators/, not here.
+#
+# Timeout note: POST /design makes ~17 real LLM calls (1 style + 1 composition
+# + ~15 selection) and can take 60-90s.  uvicorn has no default request timeout,
+# so this works out of the box.  The Next.js fetch in Piece 2 must set a
+# matching timeout (120s) and show an honest loading state.
 
-from fastapi import APIRouter
+from __future__ import annotations
+
+from fastapi import APIRouter, HTTPException
+
+from app.api.schemas import (
+    DesignRequest,
+    DesignResponse,
+    ProductResult,
+    SlotResult,
+    StyleResult,
+)
+from services.composition_gate import validate_composition
+from services.composition_service import plan_composition
+from services.intake_service import parse_intake
+from services.selection_service import select_product
+from services.sourcing.amazon_adapter import AmazonAdapter
+from services.style_service import interpret_style
 
 router = APIRouter()
 
-
-@router.post("/design")
-async def create_design(request: dict) -> dict:
-    # Stage 3+: parse RoomRequest, run intake → style → composition →
-    # sourcing → selection → snapshot → validate → render → assemble.
-    raise NotImplementedError("Stage 3: implement design pipeline")
+# ---------------------------------------------------------------------------
+# In-memory design storage (v1 — ephemeral, lives as long as uvicorn process)
+# ---------------------------------------------------------------------------
+_designs: dict[str, DesignResponse] = {}
 
 
-@router.get("/design/{run_id}")
-async def get_design(run_id: str) -> dict:
-    # Stage 8+: load design from DB, verify snapshot freshness, return board.
-    raise NotImplementedError("Stage 8: implement design retrieval")
+# ---------------------------------------------------------------------------
+# POST /design — run the full pipeline
+# ---------------------------------------------------------------------------
 
+@router.post("/design", response_model=DesignResponse)
+async def create_design(req: DesignRequest) -> DesignResponse:
+    """Run the full RoomKit pipeline and return a shoppable board.
+
+    This makes real LLM calls (~17 total) and can take 60-90 seconds.
+    """
+    # 1. Intake — validate and produce a RoomRequest.
+    try:
+        room_request = parse_intake(req.model_dump())
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc))
+
+    # 2. Style interpretation — real LLM call.
+    style_profile = interpret_style(room_request)
+
+    # 3. Composition — real LLM call for weight proposal, deterministic budget math.
+    slot_plan = plan_composition(room_request, style_profile)
+
+    # 4. Composition gate — deterministic validation.
+    slot_plan, gate_error = validate_composition(slot_plan)
+    if gate_error:
+        # Return the response with is_feasible=False rather than a hard error,
+        # so the UI can show a meaningful message.
+        return _build_response(
+            room_request.run_id,
+            room_request.room_type or "bedroom",
+            style_profile,
+            slot_plan,
+            slots_results=[],
+            gate_error=gate_error,
+        )
+
+    # 5. Sourcing + selection — one LLM call per non-owned slot.
+    adapter = AmazonAdapter()
+    slot_results: list[SlotResult] = []
+
+    for slot in sorted(slot_plan.slots, key=lambda s: s.slot_id):
+        if slot.owned:
+            slot_results.append(SlotResult(
+                slot_id=slot.slot_id,
+                allocated_budget=slot.allocated_budget,
+                owned=True,
+                product=None,
+                null_reason="owned",
+            ))
+            continue
+
+        # Build spec hints for the adapter.
+        spec_hints: dict[str, str] = {}
+        if "bed_size" in slot.required_specs and room_request.bed_size:
+            spec_hints["bed_size"] = room_request.bed_size
+
+        candidates = adapter.fetch_candidates(
+            slot.slot_id,
+            style_profile.keywords,
+            (0.0, slot.allocated_budget),
+            spec_hints,
+        )
+
+        product, reason = select_product(slot, style_profile, candidates)
+
+        if product:
+            slot_results.append(SlotResult(
+                slot_id=slot.slot_id,
+                allocated_budget=slot.allocated_budget,
+                owned=False,
+                product=ProductResult(
+                    product_id=product.product_id,
+                    name=product.name,
+                    normalized_price=product.normalized_price,
+                    image_url=product.image_url,
+                    buy_url=product.buy_url,
+                    fit_reason=reason or "style_match",
+                ),
+                null_reason=None,
+            ))
+        else:
+            slot_results.append(SlotResult(
+                slot_id=slot.slot_id,
+                allocated_budget=slot.allocated_budget,
+                owned=False,
+                product=None,
+                null_reason=reason or "no_candidate",
+            ))
+
+    # 6. Assemble response and store.
+    response = _build_response(
+        room_request.run_id,
+        room_request.room_type or "bedroom",
+        style_profile,
+        slot_plan,
+        slots_results=slot_results,
+    )
+    _designs[response.run_id] = response
+    return response
+
+
+# ---------------------------------------------------------------------------
+# GET /design/{run_id} — retrieve a saved board
+# ---------------------------------------------------------------------------
+
+@router.get("/design/{run_id}", response_model=DesignResponse)
+async def get_design(run_id: str) -> DesignResponse:
+    """Re-fetch a previously generated design board."""
+    if run_id not in _designs:
+        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+    return _designs[run_id]
+
+
+# ---------------------------------------------------------------------------
+# POST /click — stub for later
+# ---------------------------------------------------------------------------
 
 @router.post("/click")
 async def record_click(event: dict) -> dict:
-    # Stage 10: log click event (run_id, slot_id, product_id, source).
     raise NotImplementedError("Stage 10: implement click logging")
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _build_response(
+    run_id: str,
+    room_type: str,
+    style_profile: object,
+    slot_plan: object,
+    *,
+    slots_results: list[SlotResult],
+    gate_error: str | None = None,
+) -> DesignResponse:
+    """Assemble a DesignResponse from pipeline outputs."""
+    total_spent = sum(
+        s.product.normalized_price
+        for s in slots_results
+        if s.product is not None
+    )
+
+    return DesignResponse(
+        run_id=run_id,
+        room_type=room_type,
+        style=StyleResult(
+            style_name=style_profile.style_name,  # type: ignore[attr-defined]
+            keywords=style_profile.keywords,  # type: ignore[attr-defined]
+            mood=style_profile.mood,  # type: ignore[attr-defined]
+            confidence=style_profile.confidence,  # type: ignore[attr-defined]
+            fallback=style_profile.fallback,  # type: ignore[attr-defined]
+        ),
+        target_budget=slot_plan.target_budget,  # type: ignore[attr-defined]
+        total_spent=total_spent,
+        is_feasible=slot_plan.is_feasible if not gate_error else False,  # type: ignore[attr-defined]
+        slots=slots_results,
+    )

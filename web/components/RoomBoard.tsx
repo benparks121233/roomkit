@@ -1,10 +1,7 @@
 // web/components/RoomBoard.tsx
-// Full result board: render image on top, then the per-slot ProductCard grid,
-// with a BudgetMeter showing running total vs. target.
-// Reads from the Design snapshot — never from live product data.
-// Stage 9: implement.
+// Re-export note: the board layout is now in app/result/[run_id]/page.tsx directly.
+// This file kept for future extraction if the board becomes reusable (share page, etc).
 
 export default function RoomBoard({ runId }: { runId: string }) {
-  // Stage 9: fetch Design from GET /design/{runId}, render image + cards + meter
-  return <div>RoomBoard for run {runId} — Stage 9</div>;
+  return <div>RoomBoard for run {runId} — see result page</div>;
 }
