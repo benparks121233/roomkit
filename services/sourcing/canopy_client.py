@@ -18,6 +18,9 @@ import os
 from typing import Any
 
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 _BASE_URL = "https://rest.canopyapi.co"
 
@@ -75,7 +78,6 @@ class CanopyClient:
         url = f"{_BASE_URL}{path}"
         headers = {
             "API-KEY": self._api_key,
-            "Content-Type": "application/json",
         }
         resp = requests.get(url, headers=headers, params=params, timeout=30)
         resp.raise_for_status()

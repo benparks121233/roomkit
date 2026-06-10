@@ -26,6 +26,8 @@ AFFILIATE_TAG = "roomkitai-20"
 # Sample Canopy API response data (matches real Canopy shape)
 # ---------------------------------------------------------------------------
 
+# URLs deliberately use the messy /sspa/click and ?ref= forms that Canopy
+# actually returns — our mapper must ignore these and build clean /dp/{asin} URLs.
 CANOPY_SEARCH_RESPONSE = {
     "data": {
         "amazonProductSearchResults": {
@@ -33,7 +35,7 @@ CANOPY_SEARCH_RESPONSE = {
                 "results": [
                     {
                         "title": "Solid Wood Queen Platform Bed Frame",
-                        "url": "https://www.amazon.com/dp/B09TEST001",
+                        "url": "https://www.amazon.com/sspa/click?ie=UTF8&sp_csd=d2lkZ2V0&ref=B09TEST001",
                         "asin": "B09TEST001",
                         "price": {"value": 189.99, "currency": "USD",
                                   "display": "$189.99", "symbol": "$"},
@@ -44,7 +46,7 @@ CANOPY_SEARCH_RESPONSE = {
                     },
                     {
                         "title": "King Size Metal Bed Frame with Headboard",
-                        "url": "https://www.amazon.com/dp/B09TEST002",
+                        "url": "https://www.amazon.com/dp/B09TEST002?ref=sr_1_2&qid=1234",
                         "asin": "B09TEST002",
                         "price": {"value": 129.99, "currency": "USD",
                                   "display": "$129.99", "symbol": "$"},
@@ -55,7 +57,7 @@ CANOPY_SEARCH_RESPONSE = {
                     },
                     {
                         "title": "Budget Twin Bed Frame",
-                        "url": "https://www.amazon.com/dp/B09TEST003",
+                        "url": "https://www.amazon.com/dp/B09TEST003?ref=sr_1_3",
                         "asin": "B09TEST003",
                         "price": {"value": 69.99, "currency": "USD",
                                   "display": "$69.99", "symbol": "$"},
@@ -74,7 +76,7 @@ CANOPY_PRODUCT_RESPONSE = {
     "data": {
         "amazonProduct": {
             "title": "Solid Wood Queen Platform Bed Frame",
-            "url": "https://www.amazon.com/dp/B09TEST001",
+            "url": "https://www.amazon.com/dp/B09TEST001?ref=dp_prsubs_1",
             "asin": "B09TEST001",
             "price": {"value": 189.99, "currency": "USD",
                       "display": "$189.99", "symbol": "$"},
@@ -146,7 +148,23 @@ class TestCanopyClient:
         # Verify correct URL and headers.
         mock_get.assert_called_once()
         call_kwargs = mock_get.call_args
-        assert "API-KEY" in call_kwargs.kwargs.get("headers", call_kwargs[1].get("headers", {}))
+        headers = call_kwargs.kwargs.get("headers", call_kwargs[1].get("headers", {}))
+        assert "API-KEY" in headers
+
+    def test_no_content_type_header(self):
+        """GET requests must NOT send Content-Type — Canopy 500s on it."""
+        client = CanopyClient(api_key="test-key")
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = CANOPY_SEARCH_RESPONSE
+        mock_resp.raise_for_status = MagicMock()
+
+        with patch("requests.get", return_value=mock_resp) as mock_get:
+            client.search_products("bed frame")
+
+        headers = mock_get.call_args.kwargs.get(
+            "headers", mock_get.call_args[1].get("headers", {}),
+        )
+        assert "Content-Type" not in headers
 
     def test_search_products_with_price_filters(self):
         client = CanopyClient(api_key="test-key")
@@ -267,6 +285,23 @@ class TestAdapterCacheHit:
                 f"buy_url missing affiliate tag: {p.buy_url}"
             )
 
+    def test_cache_hit_buy_url_is_clean_tagged_form(self, tmp_path: Path):
+        """Every buy_url must be https://www.amazon.com/dp/{asin}?tag=roomkitai-20."""
+        write_cache("bed_frame", CACHED_BED_FRAMES, catalog_dir=tmp_path)
+        adapter = AmazonAdapter(catalog_dir=tmp_path)
+
+        results = adapter.fetch_candidates(
+            "bed_frame", ["modern"], (0.0, 500.0), {},
+        )
+        for p in results:
+            assert p.buy_url.startswith("https://www.amazon.com/dp/"), (
+                f"buy_url not clean /dp/ form: {p.buy_url}"
+            )
+            assert f"tag={AFFILIATE_TAG}" in p.buy_url
+            # No extra junk params from Canopy.
+            assert "ref=" not in p.buy_url
+            assert "sspa" not in p.buy_url
+
     def test_cache_hit_skips_fixtures(self, tmp_path: Path):
         """If cache exists, fixtures dir is never read."""
         catalog_dir = tmp_path / "catalog"
@@ -384,6 +419,13 @@ class TestCanopyProductMapping:
         assert mapped["image_url"] == "https://m.media-amazon.com/images/I/test1.jpg"
         assert mapped["source"] == "canopy"
 
+    def test_buy_url_is_clean_asin_url_not_raw_response_url(self):
+        """Mapper must build /dp/{asin} URL, ignoring messy /sspa/click URL."""
+        raw = _first_canopy_result()
+        assert "/sspa/click" in raw["url"]  # confirm test data is messy
+        mapped = self.map_product("bed_frame", raw)
+        assert mapped["buy_url"] == "https://www.amazon.com/dp/B09TEST001"
+
     def test_extracts_bed_size_spec(self):
         raw = _first_canopy_result()
         mapped = self.map_product("bed_frame", raw)
@@ -403,5 +445,6 @@ class TestCanopyProductMapping:
         }
         mapped = self.map_product("wall_art", raw)
         assert mapped["product_id"] == "B09MINIMAL"
+        assert mapped["buy_url"] == "https://www.amazon.com/dp/B09MINIMAL"
         assert mapped["image_url"] == ""
         assert mapped["source"] == "canopy"

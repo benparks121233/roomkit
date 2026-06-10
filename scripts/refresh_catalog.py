@@ -30,8 +30,12 @@ from pathlib import Path
 # Ensure project root is on sys.path for imports.
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from services.sourcing.canopy_client import CanopyClient
-from services.sourcing.catalog_cache import write_cache
+from dotenv import load_dotenv  # noqa: E402
+
+from services.sourcing.canopy_client import CanopyClient  # noqa: E402
+from services.sourcing.catalog_cache import write_cache  # noqa: E402
+
+load_dotenv()
 
 # ---------------------------------------------------------------------------
 # Spec extraction from title / feature bullets
@@ -111,11 +115,14 @@ def map_canopy_product(slot_id: str, raw: dict) -> dict:
     title = raw.get("title", "")
     bullets = raw.get("featureBullets", []) or []
 
+    asin = raw.get("asin", "")
+    clean_url = f"https://www.amazon.com/dp/{asin}" if asin else raw.get("url", "")
+
     return {
-        "product_id": raw.get("asin", ""),
+        "product_id": asin,
         "name": title,
         "normalized_price": float(price_val),
-        "buy_url": raw.get("url", ""),
+        "buy_url": clean_url,
         "specs": extract_specs(slot_id, title, bullets),
         "image_url": raw.get("mainImageUrl", ""),
         "source": "canopy",
