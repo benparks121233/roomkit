@@ -14,3 +14,4 @@ class Slot(BaseModel):
     # on the plan for render/coherence but are never sourced; their
     # allocated_budget is always 0.0.
     owned: bool = False
+    max_quantity: int = 1  # >1 enables multi-select (e.g. wall_art: 6)

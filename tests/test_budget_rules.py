@@ -1,14 +1,10 @@
 # tests/test_budget_rules.py
-# Tests for validators/budget_rules.validate_budget() — Stage 5.
-# validate_selection_total() is Stage 8 and not tested here.
+# Tests for validators/budget_rules — budget validation gates.
 #
 # Coverage:
-#   - Total exactly at budget passes.
-#   - Total $0.01 over budget fails with "over_budget" reason.
-#   - Total well under budget passes.
-#   - Zero-slot plan (total = 0) passes for any positive budget.
-#   - Reason string carries the delta when over budget.
+#   - validate_budget: total exactly at budget, one-cent-over, under, zero-slot.
 #   - Plans produced by allocate_budget() always pass validate_budget().
+#   - max_quantity threading: taxonomy values flow through to Slot objects.
 
 from __future__ import annotations
 
@@ -125,3 +121,35 @@ def test_allocate_budget_plans_always_pass_validate_budget():
                 f"validate_budget failed for budget={budget}, "
                 f"weights_sum={sum(weights.values()):.2f}: {reason}"
             )
+
+
+# ---------------------------------------------------------------------------
+# max_quantity threading: taxonomy → Slot
+# ---------------------------------------------------------------------------
+
+def test_allocate_budget_carries_max_quantity():
+    """Slots built by allocate_budget() carry max_quantity from taxonomy."""
+    preset = TAXONOMY.room_presets["bedroom"]
+    default_w = preset.flatten_weights()
+    plan = allocate_budget(default_w, 1500.0, "bedroom", TAXONOMY)
+
+    slot_map = {s.slot_id: s for s in plan.slots}
+
+    # Multi-select decor slots.
+    assert slot_map["wall_art"].max_quantity == 6
+    assert slot_map["plants"].max_quantity == 3
+    assert slot_map["throw_blanket"].max_quantity == 2
+
+    # Single-select slots default to 1.
+    assert slot_map["bed_frame"].max_quantity == 1
+    assert slot_map["rug"].max_quantity == 1
+    assert slot_map["ceiling_light"].max_quantity == 1
+
+
+def test_taxonomy_max_quantity_defaults_to_one():
+    """Items without explicit max_quantity in YAML default to 1."""
+    for item_id, item_def in TAXONOMY.items.items():
+        if item_id in ("wall_art", "plants", "throw_blanket"):
+            assert item_def.max_quantity > 1, f"{item_id} should be multi-select"
+        else:
+            assert item_def.max_quantity == 1, f"{item_id} should default to 1"

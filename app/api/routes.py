@@ -23,7 +23,10 @@ from app.api.schemas import (
     DesignResponse,
     ProductResult,
     SlotResult,
+    SlotValidationResult,
     StyleResult,
+    ValidateSelectionsRequest,
+    ValidateSelectionsResponse,
 )
 from services.composition_gate import validate_composition
 from services.composition_service import plan_composition
@@ -31,6 +34,7 @@ from services.intake_service import parse_intake
 from services.selection_service import select_products, pick_count_for_slot
 from services.sourcing.amazon_adapter import AmazonAdapter
 from services.style_service import interpret_style
+from validators.budget_rules import validate_pool_spend
 
 router = APIRouter()
 
@@ -90,6 +94,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
                 slot_id=slot.slot_id,
                 allocated_budget=slot.allocated_budget,
                 owned=True,
+                max_quantity=slot.max_quantity,
                 product=None,
                 null_reason="owned",
             ))
@@ -157,6 +162,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
                 slot_id=slot.slot_id,
                 allocated_budget=slot.allocated_budget,
                 owned=False,
+                max_quantity=slot.max_quantity,
                 product=ProductResult(
                     product_id=primary.product_id,
                     name=primary.name,
@@ -173,6 +179,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
                 slot_id=slot.slot_id,
                 allocated_budget=slot.allocated_budget,
                 owned=False,
+                max_quantity=slot.max_quantity,
                 product=None,
                 alternatives=[],
                 null_reason=null_reason or "no_candidate",
@@ -206,6 +213,106 @@ async def get_design(run_id: str) -> DesignResponse:
     if run_id not in _designs:
         raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
     return _designs[run_id]
+
+
+# ---------------------------------------------------------------------------
+# POST /design/{run_id}/validate-selections — multi-select pool check
+# ---------------------------------------------------------------------------
+
+@router.post(
+    "/design/{run_id}/validate-selections",
+    response_model=ValidateSelectionsResponse,
+)
+async def validate_selections(
+    run_id: str,
+    req: ValidateSelectionsRequest,
+) -> ValidateSelectionsResponse:
+    """Validate user's product selections against per-slot pool budgets.
+
+    Prices are looked up from the stored design — the client sends only
+    product_ids, never prices.  Unknown or tampered product_ids are rejected.
+    """
+    if run_id not in _designs:
+        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+    design = _designs[run_id]
+
+    # Build product price lookup from the stored design (source of truth).
+    # Keys: (slot_id, product_id) → price.  Includes primary + alternatives.
+    price_lookup: dict[tuple[str, str], float] = {}
+    slot_map: dict[str, SlotResult] = {}
+    for slot in design.slots:
+        slot_map[slot.slot_id] = slot
+        if slot.product:
+            price_lookup[(slot.slot_id, slot.product.product_id)] = (
+                slot.product.normalized_price
+            )
+        for alt in slot.alternatives:
+            price_lookup[(slot.slot_id, alt.product_id)] = alt.normalized_price
+
+    # Rebuild a lightweight SlotPlan for the validator.
+    from schemas.slot import Slot
+    from schemas.slot_plan import SlotPlan
+
+    validator_slots = [
+        Slot(
+            slot_id=s.slot_id,
+            allocated_budget=s.allocated_budget,
+            required_specs=[],
+            optional=False,
+            max_quantity=s.max_quantity,
+        )
+        for s in design.slots
+    ]
+    slot_plan = SlotPlan(
+        run_id=run_id,
+        room_preset=design.room_type,
+        target_budget=design.target_budget,
+        slots=validator_slots,
+    )
+
+    # Resolve product_ids to server-side prices.  Reject unknown ids.
+    slot_results: list[SlotValidationResult] = []
+    resolved: dict[str, list[float]] = {}
+
+    for sel in req.selections:
+        unknown_ids = [
+            pid for pid in sel.selected_product_ids
+            if (sel.slot_id, pid) not in price_lookup
+        ]
+        if unknown_ids:
+            slot_results.append(SlotValidationResult(
+                slot_id=sel.slot_id,
+                valid=False,
+                total=0.0,
+                reason=f"unknown_product:{','.join(unknown_ids)}",
+            ))
+            continue
+        resolved[sel.slot_id] = [
+            price_lookup[(sel.slot_id, pid)]
+            for pid in sel.selected_product_ids
+        ]
+
+    # If any slots had unknown products, short-circuit with those errors.
+    if slot_results:
+        return ValidateSelectionsResponse(
+            valid=False,
+            total_spent=0.0,
+            slots=slot_results,
+        )
+
+    # Run the pool validator on resolved prices.
+    all_valid, total_spent, per_slot = validate_pool_spend(resolved, slot_plan)
+
+    return ValidateSelectionsResponse(
+        valid=all_valid,
+        total_spent=total_spent,
+        slots=[
+            SlotValidationResult(
+                slot_id=sid, valid=ok, total=slot_total, reason=reason,
+            )
+            for sid, ok, slot_total, reason in per_slot
+        ],
+    )
 
 
 # ---------------------------------------------------------------------------

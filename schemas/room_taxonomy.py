@@ -13,10 +13,11 @@ from pydantic import BaseModel, field_validator
 
 
 class ItemDefinition(BaseModel):
-    """One item in the flat registry: id + required specs only.
+    """One item in the flat registry: id + required specs + multi-select cap.
     Budget weight info lives in GroupItem within each room preset."""
 
     required_specs: list[str]
+    max_quantity: int = 1  # >1 enables multi-select (e.g. gallery wall)
 
 
 class GroupItem(BaseModel):

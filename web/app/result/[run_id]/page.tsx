@@ -2,19 +2,23 @@
 
 // Result page — two-phase experience:
 //   Phase 1: Guided slot-by-slot selection (pick from alternatives)
-//   Phase 2: Final room page (real product cards + budget meter + swap)
+//            Single-select slots: pick one, auto-advance.
+//            Multi-select slots (wall_art/plants/throw_blanket): pick up to N,
+//            pool meter tracks budget, Done button advances.
+//   Phase 2: Final room page (product cards + budget meter + swap/gallery)
 //
 // Slot ordering follows taxonomy groups so the room "builds" naturally:
 //   Bedroom: bed → storage → lighting → decor → soft_goods
 //   Living room: seating → entertainment → tables → lighting → decor → soft_goods
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
-import { getDesign } from "@/lib/api";
+import { getDesign, validateSelections } from "@/lib/api";
 import type { DesignResponse, ProductResult, SlotResult } from "@/lib/api";
 import SlotPicker from "@/components/SlotPicker";
 import ProductCard from "@/components/ProductCard";
 import BudgetMeter from "@/components/BudgetMeter";
+import Image from "next/image";
 
 // ---------------------------------------------------------------------------
 // Taxonomy group ordering — mirrors slot_taxonomy.yaml
@@ -48,13 +52,11 @@ const ROOM_GROUPS: Record<string, GroupDef[]> = {
   living_room: LIVING_ROOM_GROUPS,
 };
 
-/** Get all slot IDs in taxonomy group order for a room type. */
 function getOrderedSlotIds(roomType: string): string[] {
   const groups = ROOM_GROUPS[roomType] ?? BEDROOM_GROUPS;
   return groups.flatMap((g) => g.slotIds);
 }
 
-/** Find which group a slot belongs to. */
 function getGroupForSlot(slotId: string, roomType: string): GroupDef | null {
   const groups = ROOM_GROUPS[roomType] ?? BEDROOM_GROUPS;
   return groups.find((g) => g.slotIds.includes(slotId)) ?? null;
@@ -64,11 +66,13 @@ function getGroupForSlot(slotId: string, roomType: string): GroupDef | null {
 // Helpers
 // ---------------------------------------------------------------------------
 
-/** Build the full choices list for a slot: rank-1 product + alternatives. */
 function getChoicesForSlot(slot: SlotResult): ProductResult[] {
   if (!slot.product) return [];
-  // Rank-1 first, then alternatives (already rank-ordered from backend).
   return [slot.product, ...slot.alternatives];
+}
+
+function upgradeAmazonImage(url: string): string {
+  return url.replace(/\._AC_[A-Z]{2}\d+_\./, "._AC_SL800_.");
 }
 
 // ---------------------------------------------------------------------------
@@ -82,10 +86,12 @@ export default function ResultPage() {
   const [design, setDesign] = useState<DesignResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // Selection state
+  // Selection state — always arrays (length 1 for single-select slots)
   const [phase, setPhase] = useState<"selecting" | "complete">("selecting");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selections, setSelections] = useState<Record<string, ProductResult>>({});
+  const [selections, setSelections] = useState<Record<string, ProductResult[]>>({});
+  const [validationError, setValidationError] = useState<string | null>(null);
+  const validationRan = useRef(false);
 
   // Fetch design
   useEffect(() => {
@@ -101,45 +107,47 @@ export default function ResultPage() {
   const activeSlotIds = useMemo(() => {
     if (!design) return [];
     const ordered = getOrderedSlotIds(design.room_type);
-    const slotMap = new Map(design.slots.map((s) => [s.slot_id, s]));
+    const sMap = new Map(design.slots.map((s) => [s.slot_id, s]));
     return ordered.filter((id) => {
-      const slot = slotMap.get(id);
+      const slot = sMap.get(id);
       return slot && slot.product !== null;
     });
   }, [design]);
 
-  // Slot lookup map
   const slotMap = useMemo(() => {
     if (!design) return new Map<string, SlotResult>();
     return new Map(design.slots.map((s) => [s.slot_id, s]));
   }, [design]);
 
-  // Initialize selections with rank-1 products once design loads
-  useEffect(() => {
-    if (!design || activeSlotIds.length === 0) return;
-    const initial: Record<string, ProductResult> = {};
-    for (const id of activeSlotIds) {
-      const slot = slotMap.get(id);
-      if (slot?.product) {
-        initial[id] = slot.product;
+  // Fill rank-1 defaults for un-visited slots (called on skip or flow completion)
+  const fillDefaults = useCallback(
+    (prev: Record<string, ProductResult[]>) => {
+      const filled = { ...prev };
+      for (const id of activeSlotIds) {
+        if (filled[id] && filled[id].length > 0) continue;
+        const slot = slotMap.get(id);
+        if (slot?.product) {
+          filled[id] = [slot.product];
+        }
       }
-    }
-    setSelections(initial);
-  }, [design, activeSlotIds, slotMap]);
+      return filled;
+    },
+    [activeSlotIds, slotMap],
+  );
 
-  // Compute live total from selections
+  // Compute live total from all selections
   const totalSpent = useMemo(() => {
-    return Object.values(selections).reduce(
-      (sum, p) => sum + p.normalized_price,
-      0,
-    );
+    return Object.values(selections)
+      .flat()
+      .reduce((sum, p) => sum + p.normalized_price, 0);
   }, [selections]);
 
   // Current slot in guided flow
   const currentSlotId = activeSlotIds[currentIndex] ?? null;
   const currentSlot = currentSlotId ? slotMap.get(currentSlotId) ?? null : null;
+  const isMultiSelect = (currentSlot?.max_quantity ?? 1) > 1;
 
-  // Group transition: is this slot the first in its group?
+  // Group transition
   const currentGroup = currentSlotId && design
     ? getGroupForSlot(currentSlotId, design.room_type)
     : null;
@@ -149,32 +157,108 @@ export default function ResultPage() {
     : null;
   const isNewGroup = currentGroup && currentGroup.key !== prevGroup?.key;
 
-  // Pick handler for guided selection
-  const handlePick = useCallback(
-    (product: ProductResult) => {
-      if (!currentSlotId) return;
-      setSelections((prev) => ({ ...prev, [currentSlotId]: product }));
+  // Pool spent for current multi-select slot
+  const currentPoolSpent = useMemo(() => {
+    if (!currentSlotId) return 0;
+    return (selections[currentSlotId] ?? []).reduce(
+      (sum, p) => sum + p.normalized_price, 0,
+    );
+  }, [currentSlotId, selections]);
 
-      // Auto-advance after brief delay
-      setTimeout(() => {
-        const next = currentIndex + 1;
-        if (next >= activeSlotIds.length) {
-          setPhase("complete");
-        } else {
-          setCurrentIndex(next);
-        }
-      }, 400);
+  // Scroll to top on slot change or phase change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentIndex, phase]);
+
+  // Advance to next slot (fills rank-1 defaults for un-visited slots on completion)
+  const advanceToNext = useCallback(() => {
+    const next = currentIndex + 1;
+    if (next >= activeSlotIds.length) {
+      setSelections((prev) => fillDefaults(prev));
+      setPhase("complete");
+    } else {
+      setCurrentIndex(next);
+    }
+  }, [currentIndex, activeSlotIds, fillDefaults]);
+
+  // Toggle handler for guided selection (works for both single and multi)
+  const handleToggle = useCallback(
+    (product: ProductResult) => {
+      if (!currentSlotId || !currentSlot) return;
+      const maxQty = currentSlot.max_quantity ?? 1;
+
+      if (maxQty === 1) {
+        // Single-select: replace and auto-advance
+        setSelections((prev) => ({ ...prev, [currentSlotId]: [product] }));
+        setTimeout(advanceToNext, 400);
+      } else {
+        // Multi-select: toggle on/off
+        setSelections((prev) => {
+          const current = prev[currentSlotId] ?? [];
+          const exists = current.some(
+            (p) => p.product_id === product.product_id,
+          );
+          if (exists) {
+            // Remove
+            return {
+              ...prev,
+              [currentSlotId]: current.filter(
+                (p) => p.product_id !== product.product_id,
+              ),
+            };
+          }
+          // Add (if under cap and pool)
+          if (current.length >= maxQty) return prev;
+          const pool = currentSlot.allocated_budget;
+          const spent = current.reduce((s, p) => s + p.normalized_price, 0);
+          if (spent + product.normalized_price > pool) return prev;
+          return { ...prev, [currentSlotId]: [...current, product] };
+        });
+      }
     },
-    [currentSlotId, currentIndex, activeSlotIds],
+    [currentSlotId, currentSlot, advanceToNext],
   );
 
-  // Swap handler for final page
+  // Done handler for multi-select
+  const handleDone = useCallback(() => {
+    advanceToNext();
+  }, [advanceToNext]);
+
+  // Swap handler for final page (single-select slots)
   const handleSwap = useCallback(
     (slotId: string, product: ProductResult) => {
-      setSelections((prev) => ({ ...prev, [slotId]: product }));
+      setSelections((prev) => ({ ...prev, [slotId]: [product] }));
     },
     [],
   );
+
+  // Server-side validation on phase transition to "complete"
+  useEffect(() => {
+    if (phase !== "complete" || !runId || validationRan.current) return;
+    validationRan.current = true;
+
+    const selectionPayload = Object.entries(selections).map(
+      ([slotId, products]) => ({
+        slot_id: slotId,
+        selected_product_ids: products.map((p) => p.product_id),
+      }),
+    );
+
+    validateSelections(runId, selectionPayload)
+      .then((resp) => {
+        if (!resp.valid) {
+          const reasons = resp.slots
+            .filter((s) => !s.valid)
+            .map((s) => `${s.slot_id}: ${s.reason}`)
+            .join(", ");
+          setValidationError(`Server validation failed: ${reasons}`);
+        }
+      })
+      .catch((err) => {
+        // Don't block the UI — log but allow viewing results
+        console.error("Selection validation failed:", err);
+      });
+  }, [phase, runId, selections]);
 
   // --- Error state ---
   if (error) {
@@ -210,6 +294,8 @@ export default function ResultPage() {
     const progress = activeSlotIds.length > 0
       ? currentIndex / activeSlotIds.length
       : 0;
+    const currentSelections = selections[currentSlotId!] ?? [];
+    const selectedIds = currentSelections.map((p) => p.product_id);
 
     return (
       <main className="result-page">
@@ -218,7 +304,10 @@ export default function ResultPage() {
           <button
             type="button"
             className="skip-to-results-btn"
-            onClick={() => setPhase("complete")}
+            onClick={() => {
+              setSelections((prev) => fillDefaults(prev));
+              setPhase("complete");
+            }}
           >
             Skip to results
           </button>
@@ -238,7 +327,6 @@ export default function ResultPage() {
                     style={{ width: `${progress * 100}%` }}
                   />
                 </div>
-                {/* Show dots for placed pieces */}
                 <div className="scene-placed-dots">
                   {activeSlotIds.map((id, i) => (
                     <div
@@ -265,8 +353,12 @@ export default function ResultPage() {
             <SlotPicker
               slotId={currentSlotId!}
               choices={choices}
-              selectedId={selections[currentSlotId!]?.product_id ?? null}
-              onPick={handlePick}
+              selectedIds={selectedIds}
+              maxQuantity={currentSlot.max_quantity ?? 1}
+              poolBudget={currentSlot.allocated_budget}
+              poolSpent={currentPoolSpent}
+              onToggle={handleToggle}
+              onDone={handleDone}
             />
           </div>
         </div>
@@ -277,18 +369,13 @@ export default function ResultPage() {
   // --- Phase 2: Final room page ---
   const groups = ROOM_GROUPS[design.room_type] ?? BEDROOM_GROUPS;
 
-  // All slots including empty/owned, for the final grouped grid
-  const allSlotMap = slotMap;
-
   return (
     <main className="result-page">
-      {/* Sticky header */}
       <div className="result-sticky-header">
         <a href="/" className="result-wordmark">RoomKit</a>
         <a href="/" className="new-design-btn">+ New design</a>
       </div>
 
-      {/* Hero */}
       <div className="result-hero">
         <h1>Your {design.room_type.replace(/_/g, " ")}</h1>
         <div className="style-badge">
@@ -305,12 +392,16 @@ export default function ResultPage() {
         </div>
       )}
 
+      {validationError && (
+        <div className="warning-banner">{validationError}</div>
+      )}
+
       <BudgetMeter total={totalSpent} target={design.target_budget} />
 
       {/* Grouped product grid */}
       {groups.map((group) => {
         const groupSlots = group.slotIds
-          .map((id) => allSlotMap.get(id))
+          .map((id) => slotMap.get(id))
           .filter((s): s is SlotResult => s !== undefined);
 
         if (groupSlots.length === 0) return null;
@@ -320,9 +411,46 @@ export default function ResultPage() {
             <h3 className="room-group-label">{group.label}</h3>
             <div className="product-grid">
               {groupSlots.map((slot) => {
-                const activeProduct = selections[slot.slot_id] ?? slot.product;
-                // Build alternatives list: all choices except the active one
+                const isMulti = (slot.max_quantity ?? 1) > 1;
+                const slotSelections = selections[slot.slot_id] ?? [];
                 const allChoices = getChoicesForSlot(slot);
+
+                if (isMulti && slotSelections.length > 0) {
+                  // Multi-select gallery
+                  return (
+                    <MultiSelectGallery
+                      key={slot.slot_id}
+                      slot={slot}
+                      selected={slotSelections}
+                      allChoices={allChoices}
+                      onRemove={(pid) => {
+                        setSelections((prev) => ({
+                          ...prev,
+                          [slot.slot_id]: (prev[slot.slot_id] ?? []).filter(
+                            (p) => p.product_id !== pid,
+                          ),
+                        }));
+                      }}
+                      onAdd={(product) => {
+                        setSelections((prev) => {
+                          const current = prev[slot.slot_id] ?? [];
+                          if (current.length >= slot.max_quantity) return prev;
+                          const spent = current.reduce(
+                            (s, p) => s + p.normalized_price, 0,
+                          );
+                          if (spent + product.normalized_price > slot.allocated_budget) return prev;
+                          return {
+                            ...prev,
+                            [slot.slot_id]: [...current, product],
+                          };
+                        });
+                      }}
+                    />
+                  );
+                }
+
+                // Single-select card (existing behavior)
+                const activeProduct = slotSelections[0] ?? slot.product;
                 const alternatives = allChoices.filter(
                   (p) => p.product_id !== activeProduct?.product_id,
                 );
@@ -346,5 +474,164 @@ export default function ResultPage() {
         );
       })}
     </main>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Multi-select gallery for final page
+// ---------------------------------------------------------------------------
+
+function MultiSelectGallery({
+  slot,
+  selected,
+  allChoices,
+  onRemove,
+  onAdd,
+}: {
+  slot: SlotResult;
+  selected: ProductResult[];
+  allChoices: ProductResult[];
+  onRemove: (productId: string) => void;
+  onAdd: (product: ProductResult) => void;
+}) {
+  const [showAddTray, setShowAddTray] = useState(false);
+  const label = slot.slot_id.replace(/_/g, " ");
+  const poolSpent = selected.reduce((s, p) => s + p.normalized_price, 0);
+  const remaining = slot.allocated_budget - poolSpent;
+  const atCap = selected.length >= slot.max_quantity;
+  const selectedIds = new Set(selected.map((p) => p.product_id));
+  const addable = allChoices.filter(
+    (p) => !selectedIds.has(p.product_id) && p.normalized_price <= remaining,
+  );
+
+  return (
+    <div className="multi-gallery">
+      <div className="multi-gallery-header">
+        <p className="card-slot">{label}</p>
+        <p className="multi-gallery-pool">
+          ${poolSpent.toFixed(2)} / ${slot.allocated_budget.toFixed(2)}
+          <span className="multi-gallery-count">
+            {" "}· {selected.length}/{slot.max_quantity}
+          </span>
+        </p>
+      </div>
+
+      <div className="multi-gallery-grid">
+        {selected.map((product) => (
+          <GalleryItem
+            key={product.product_id}
+            product={product}
+            onRemove={() => onRemove(product.product_id)}
+          />
+        ))}
+      </div>
+
+      {/* Add more button */}
+      {!atCap && addable.length > 0 && (
+        <>
+          <button
+            type="button"
+            className="multi-gallery-add-btn"
+            onClick={() => setShowAddTray((prev) => !prev)}
+          >
+            {showAddTray ? "Hide options" : `+ Add more ${label}`}
+          </button>
+
+          {showAddTray && (
+            <div className="multi-gallery-add-tray">
+              {addable.map((product) => (
+                <AddableThumb
+                  key={product.product_id}
+                  product={product}
+                  onAdd={() => {
+                    onAdd(product);
+                  }}
+                />
+              ))}
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+function GalleryItem({
+  product,
+  onRemove,
+}: {
+  product: ProductResult;
+  onRemove: () => void;
+}) {
+  const [imgErr, setImgErr] = useState(false);
+  const showImg = product.image_url && !imgErr;
+
+  return (
+    <div className="gallery-item">
+      <div className="gallery-item-image">
+        {showImg ? (
+          <Image
+            src={upgradeAmazonImage(product.image_url)}
+            alt={product.name}
+            width={400}
+            height={400}
+            sizes="(max-width: 768px) 30vw, 160px"
+            style={{ objectFit: "contain", width: "100%", height: "100%" }}
+            onError={() => setImgErr(true)}
+          />
+        ) : (
+          <div className="gallery-item-placeholder" />
+        )}
+        <button
+          type="button"
+          className="gallery-item-remove"
+          onClick={onRemove}
+          aria-label={`Remove ${product.name}`}
+        >
+          ×
+        </button>
+      </div>
+      <p className="gallery-item-name">{product.name}</p>
+      <p className="gallery-item-price">${product.normalized_price.toFixed(2)}</p>
+      <a
+        href={product.buy_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="gallery-item-buy"
+      >
+        Buy
+      </a>
+    </div>
+  );
+}
+
+function AddableThumb({
+  product,
+  onAdd,
+}: {
+  product: ProductResult;
+  onAdd: () => void;
+}) {
+  const [imgErr, setImgErr] = useState(false);
+  const showImg = product.image_url && !imgErr;
+
+  return (
+    <button type="button" className="addable-thumb" onClick={onAdd}>
+      <div className="addable-thumb-image">
+        {showImg ? (
+          <Image
+            src={upgradeAmazonImage(product.image_url)}
+            alt={product.name}
+            width={120}
+            height={120}
+            style={{ objectFit: "contain", width: "100%", height: "100%" }}
+            onError={() => setImgErr(true)}
+          />
+        ) : (
+          <div className="addable-thumb-placeholder" />
+        )}
+      </div>
+      <p className="addable-thumb-price">${product.normalized_price.toFixed(2)}</p>
+    </button>
   );
 }

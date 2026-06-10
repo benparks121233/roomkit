@@ -231,6 +231,7 @@ def allocate_budget(
             allocated_budget=budget,
             required_specs=list(item_def.required_specs),
             optional=slot_id not in required_set,
+            max_quantity=item_def.max_quantity,
         ))
 
     return SlotPlan(
@@ -364,6 +365,7 @@ def fit_slots_to_budget(
             allocated_budget=0.0,
             required_specs=list(taxonomy.item_by_id(sid).required_specs),
             optional=sid not in effective_required,
+            max_quantity=taxonomy.item_by_id(sid).max_quantity,
         )
         for sid in sorted(effective_required)
     ]
@@ -391,6 +393,7 @@ def _build_owned_slots(already_have: set[str], taxonomy: RoomTaxonomy) -> list[S
             required_specs=list(item_def.required_specs),
             optional=True,  # owned slots are not sourced
             owned=True,
+            max_quantity=item_def.max_quantity,
         ))
     return slots
 

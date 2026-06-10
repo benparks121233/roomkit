@@ -599,7 +599,7 @@ export default function StyleQuiz({ onComplete }: Props) {
   // Setup state
   const [roomType, setRoomType] = useState("bedroom");
   const [bedSize, setBedSize] = useState("queen");
-  const [budget, setBudget] = useState(1500);
+  const [budget, setBudget] = useState(2500);
   const [fullRoom, setFullRoom] = useState(true);
   const [wants, setWants] = useState<string[]>([]);
 
@@ -808,15 +808,15 @@ export default function StyleQuiz({ onComplete }: Props) {
           <div className="budget-display">${budget.toLocaleString()}</div>
           <input
             type="range"
-            min={200}
+            min={20}
             max={5000}
-            step={50}
+            step={10}
             value={budget}
             onChange={(e) => setBudget(Number(e.target.value))}
             className="budget-slider"
           />
           <div className="budget-range-labels">
-            <span>$200</span>
+            <span>$20</span>
             <span>$5,000</span>
           </div>
         </div>

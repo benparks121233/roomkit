@@ -33,6 +33,7 @@ export interface SlotResult {
   slot_id: string;
   allocated_budget: number;
   owned: boolean;
+  max_quantity: number; // >1 enables multi-select (e.g. wall_art: 6)
   product: ProductResult | null;
   alternatives: ProductResult[];
   null_reason: string | null; // "owned" | "no_candidate" | "no_spec_match" | "llm_error"
@@ -122,6 +123,48 @@ export async function getDesign(runId: string): Promise<DesignResponse> {
     throw new Error(body?.detail ?? `API error ${res.status}`);
   }
   return (await res.json()) as DesignResponse;
+}
+
+// ---------------------------------------------------------------------------
+// Selection validation (multi-select pool spend check)
+// ---------------------------------------------------------------------------
+
+export interface SlotSelection {
+  slot_id: string;
+  selected_product_ids: string[];
+}
+
+export interface SlotValidationResult {
+  slot_id: string;
+  valid: boolean;
+  total: number;
+  reason: string | null;
+}
+
+export interface ValidateSelectionsResponse {
+  valid: boolean;
+  total_spent: number;
+  slots: SlotValidationResult[];
+}
+
+/**
+ * POST /design/{run_id}/validate-selections — server-side pool spend check.
+ * Prices are looked up from the stored design; client sends only product_ids.
+ */
+export async function validateSelections(
+  runId: string,
+  selections: SlotSelection[],
+): Promise<ValidateSelectionsResponse> {
+  const res = await fetch(`${API_BASE}/design/${runId}/validate-selections`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ selections }),
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.detail ?? `Validation error ${res.status}`);
+  }
+  return (await res.json()) as ValidateSelectionsResponse;
 }
 
 export { API_BASE };

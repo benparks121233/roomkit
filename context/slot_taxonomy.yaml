@@ -56,8 +56,10 @@ items:
   # Decor
   wall_art:
     required_specs: []
+    max_quantity: 6
   plants:
     required_specs: []
+    max_quantity: 3
   mirror:
     required_specs: []
   bookshelf:
@@ -70,6 +72,7 @@ items:
     required_specs: []
   throw_blanket:
     required_specs: []
+    max_quantity: 2
   throw_pillows:
     required_specs: []
 
@@ -77,13 +80,13 @@ room_presets:
   bedroom:
     groups:
       bed:
-        budget_weight: 0.40
+        budget_weight: 0.36
         items:
-          bed_frame:    { required: true,  sub_weight: 0.45 }
-          mattress:     { required: true,  sub_weight: 0.35 }
-          sheets:       { required: true,  sub_weight: 0.08 }
+          bed_frame:    { required: true,  sub_weight: 0.37 }
+          mattress:     { required: true,  sub_weight: 0.34 }
+          sheets:       { required: true,  sub_weight: 0.14 }
           comforter:    { required: true,  sub_weight: 0.08 }
-          pillows:      { required: true,  sub_weight: 0.04 }
+          pillows:      { required: true,  sub_weight: 0.07 }
       storage:
         budget_weight: 0.15
         items:
@@ -96,17 +99,17 @@ room_presets:
           table_lamp:    { required: false, sub_weight: 0.35 }
           floor_lamp:    { required: false, sub_weight: 0.25 }
       decor:
-        budget_weight: 0.10
+        budget_weight: 0.18
         items:
-          wall_art:     { required: true,  sub_weight: 0.40 }
-          plants:       { required: false, sub_weight: 0.30 }
-          mirror:       { required: false, sub_weight: 0.30 }
+          wall_art:     { required: true,  sub_weight: 0.75 }
+          plants:       { required: false, sub_weight: 0.15 }
+          mirror:       { required: false, sub_weight: 0.10 }
       soft_goods:
-        budget_weight: 0.23
+        budget_weight: 0.19
         items:
-          rug:             { required: true,  sub_weight: 0.45 }
-          curtains:        { required: false, sub_weight: 0.30 }
-          throw_blanket:   { required: false, sub_weight: 0.25 }
+          rug:             { required: true,  sub_weight: 0.40 }
+          curtains:        { required: false, sub_weight: 0.32 }
+          throw_blanket:   { required: false, sub_weight: 0.28 }
 
   living_room:
     groups:

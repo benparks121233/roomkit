@@ -35,6 +35,7 @@ class SlotResult(BaseModel):
     slot_id: str
     allocated_budget: float
     owned: bool
+    max_quantity: int = 1  # >1 enables multi-select (e.g. wall_art: 6)
     product: ProductResult | None = None
     alternatives: list[ProductResult] = []
     null_reason: str | None = None  # "owned" | "no_candidate" | "no_spec_match" | "llm_error"
@@ -58,3 +59,33 @@ class DesignResponse(BaseModel):
     total_spent: float
     is_feasible: bool
     slots: list[SlotResult]
+
+
+# ---------------------------------------------------------------------------
+# Selection validation (multi-select pool spend check)
+# ---------------------------------------------------------------------------
+
+class SlotSelection(BaseModel):
+    """User's product picks for one slot."""
+    slot_id: str
+    selected_product_ids: list[str]
+
+
+class ValidateSelectionsRequest(BaseModel):
+    """Input to POST /design/{run_id}/validate-selections."""
+    selections: list[SlotSelection]
+
+
+class SlotValidationResult(BaseModel):
+    """Per-slot validation outcome."""
+    slot_id: str
+    valid: bool
+    total: float = 0.0
+    reason: str | None = None  # "over_pool" | "exceeds_max_quantity" | "unknown_product"
+
+
+class ValidateSelectionsResponse(BaseModel):
+    """Output of POST /design/{run_id}/validate-selections."""
+    valid: bool
+    total_spent: float
+    slots: list[SlotValidationResult]

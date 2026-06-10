@@ -27,7 +27,7 @@ from schemas.style_profile import StyleProfile
 
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-haiku-4-5-20251001"
-_LLM_MAX_TOKENS = 768
+_LLM_MAX_TOKENS = 2048  # sized for 18-pick slots (wall_art); ~65 tokens/pick + JSON structure
 _RETRY_MAX = 3
 _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 

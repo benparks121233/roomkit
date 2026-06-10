@@ -413,3 +413,111 @@ class TestGetDesign:
     def test_get_unknown_returns_404(self):
         resp = client.get("/design/nonexistent-id")
         assert resp.status_code == 404
+
+
+# ---------------------------------------------------------------------------
+# POST /design/{run_id}/validate-selections — pool spend validation
+# ---------------------------------------------------------------------------
+
+class TestValidateSelections:
+
+    @_patch_llms
+    def test_valid_single_select(self, _s, _c, _sel):
+        """Single-select slot with one valid product_id passes."""
+        post = client.post("/design", json={"room_type": "bedroom", "budget": 1500})
+        run_id = post.json()["run_id"]
+        # Pick one product from bed_frame slot.
+        bed = next(s for s in post.json()["slots"] if s["slot_id"] == "bed_frame")
+        if not bed["product"]:
+            pytest.skip("bed_frame has no product in this run")
+        resp = client.post(f"/design/{run_id}/validate-selections", json={
+            "selections": [
+                {"slot_id": "bed_frame", "selected_product_ids": [bed["product"]["product_id"]]},
+            ],
+        })
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data["valid"] is True
+
+    @_patch_llms
+    def test_tampered_product_id_rejected(self, _s, _c, _sel):
+        """A product_id not in the stored design is rejected (security gate)."""
+        post = client.post("/design", json={"room_type": "bedroom", "budget": 1500})
+        run_id = post.json()["run_id"]
+        resp = client.post(f"/design/{run_id}/validate-selections", json={
+            "selections": [
+                {"slot_id": "bed_frame", "selected_product_ids": ["FAKE-TAMPERED-999"]},
+            ],
+        })
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data["valid"] is False
+        assert any("unknown_product" in (s.get("reason") or "") for s in data["slots"])
+
+    @_patch_llms
+    def test_over_pool_rejected(self, _s, _c, _sel):
+        """Selecting items whose sum exceeds the pool budget fails."""
+        post = client.post("/design", json={"room_type": "bedroom", "budget": 1500})
+        run_id = post.json()["run_id"]
+        # Find a slot where we can construct an over-pool selection.
+        # Use bed_frame (max_quantity=1): pick its product, then directly
+        # validate via the pool_spend validator with an inflated price list.
+        # But for the endpoint test, we need to use real product_ids.
+        # Strategy: find any slot with product + alternatives where
+        # picking all of them exceeds the pool.
+        for slot in post.json()["slots"]:
+            if not slot["product"] or not slot["alternatives"]:
+                continue
+            all_picks = [slot["product"]] + slot["alternatives"]
+            total_price = sum(p["normalized_price"] for p in all_picks)
+            if total_price > slot["allocated_budget"] and len(all_picks) <= slot["max_quantity"]:
+                # This slot has enough picks within max_quantity that bust the pool.
+                pids = [p["product_id"] for p in all_picks]
+                resp = client.post(f"/design/{run_id}/validate-selections", json={
+                    "selections": [
+                        {"slot_id": slot["slot_id"], "selected_product_ids": pids},
+                    ],
+                })
+                data = resp.json()
+                assert data["valid"] is False
+                return
+        # If no slot naturally exceeds pool, test the validator directly instead.
+        # This covers the logic even if mock data is too cheap.
+        from schemas.slot import Slot
+        from schemas.slot_plan import SlotPlan
+        from validators.budget_rules import validate_pool_spend
+        plan = SlotPlan(
+            run_id="test", room_preset="bedroom", target_budget=100.0,
+            slots=[Slot(slot_id="x", allocated_budget=10.0,
+                        required_specs=[], optional=False, max_quantity=6)],
+        )
+        ok, _, _ = validate_pool_spend({"x": [5.0, 5.0, 5.0]}, plan)
+        assert ok is False  # 15 > 10
+
+    @_patch_llms
+    def test_max_quantity_field_in_response(self, _s, _c, _sel):
+        """SlotResult carries max_quantity from taxonomy."""
+        resp = client.post("/design", json={"room_type": "bedroom", "budget": 1500})
+        slots = {s["slot_id"]: s for s in resp.json()["slots"]}
+        assert slots["wall_art"]["max_quantity"] == 6
+        assert slots["plants"]["max_quantity"] == 3
+        assert slots["throw_blanket"]["max_quantity"] == 2
+        assert slots["bed_frame"]["max_quantity"] == 1
+
+    def test_validate_unknown_run_id_returns_404(self):
+        resp = client.post("/design/nonexistent/validate-selections", json={
+            "selections": [],
+        })
+        assert resp.status_code == 404
+
+    @_patch_llms
+    def test_empty_selections_valid(self, _s, _c, _sel):
+        """Empty selections list is vacuously valid."""
+        post = client.post("/design", json={"room_type": "bedroom", "budget": 1500})
+        run_id = post.json()["run_id"]
+        resp = client.post(f"/design/{run_id}/validate-selections", json={
+            "selections": [],
+        })
+        data = resp.json()
+        assert data["valid"] is True
+        assert data["total_spent"] == 0.0

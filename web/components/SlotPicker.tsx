@@ -1,7 +1,8 @@
 "use client";
 
 // SlotPicker — "Choose your [slot]" card grid for the guided selection flow.
-// Shows all alternatives (including the rank-1 default) as tappable photo cards.
+// Supports single-select (max_quantity=1) and multi-select (max_quantity>1).
+// Multi-select shows a pool meter, toggles items on/off, and has a Done button.
 
 import Image from "next/image";
 import { useState } from "react";
@@ -15,35 +16,106 @@ interface SlotPickerProps {
   slotId: string;
   /** All choosable products for this slot (rank-1 first, then alternatives). */
   choices: ProductResult[];
-  /** Currently selected product_id (highlighted). */
-  selectedId: string | null;
-  onPick: (product: ProductResult) => void;
+  /** Currently selected product_ids (multi-select: array, single: length 0-1). */
+  selectedIds: string[];
+  /** Max items user can pick (1 = single-select). */
+  maxQuantity: number;
+  /** Pool budget for this slot (allocated_budget). */
+  poolBudget: number;
+  /** Sum of prices of currently selected items. */
+  poolSpent: number;
+  /** Called when user toggles a product on/off. */
+  onToggle: (product: ProductResult) => void;
+  /** Called when user clicks Done (multi-select only). */
+  onDone?: () => void;
 }
 
 export default function SlotPicker({
   slotId,
   choices,
-  selectedId,
-  onPick,
+  selectedIds,
+  maxQuantity,
+  poolBudget,
+  poolSpent,
+  onToggle,
+  onDone,
 }: SlotPickerProps) {
   const label = slotId.replace(/_/g, " ");
+  const isMulti = maxQuantity > 1;
+  const remaining = poolBudget - poolSpent;
+  const atCap = selectedIds.length >= maxQuantity;
+  const selectedSet = new Set(selectedIds);
 
   return (
     <div className="slot-picker">
       <h2 className="slot-picker-question">
-        Choose your <span className="slot-picker-slot">{label}</span>
+        {isMulti ? (
+          <>
+            Pick up to {maxQuantity}{" "}
+            <span className="slot-picker-slot">{label}</span>
+          </>
+        ) : (
+          <>
+            Choose your{" "}
+            <span className="slot-picker-slot">{label}</span>
+          </>
+        )}
       </h2>
 
+      {/* Pool meter — multi-select only */}
+      {isMulti && (
+        <div className="pool-meter">
+          <div className="pool-meter-bar">
+            <div
+              className="pool-meter-fill"
+              style={{ width: `${Math.min(100, (poolSpent / poolBudget) * 100)}%` }}
+            />
+          </div>
+          <p className="pool-meter-label">
+            ${poolSpent.toFixed(2)} of ${poolBudget.toFixed(2)} used
+            {selectedIds.length > 0 && (
+              <span className="pool-meter-count">
+                {" "}· {selectedIds.length}/{maxQuantity} selected
+              </span>
+            )}
+          </p>
+        </div>
+      )}
+
       <div className="slot-picker-grid">
-        {choices.map((product) => (
-          <PickerCard
-            key={product.product_id}
-            product={product}
-            isSelected={product.product_id === selectedId}
-            onPick={onPick}
-          />
-        ))}
+        {choices.map((product) => {
+          const isSelected = selectedSet.has(product.product_id);
+          // Disable if: not selected AND (at cap OR adding would exceed pool)
+          const wouldExceedPool = !isSelected && product.normalized_price > remaining;
+          // Single-select: never disable (clicking replaces selection)
+          // Multi-select: disable if at cap or would exceed pool
+          const disabled = isMulti && !isSelected && (atCap || wouldExceedPool);
+
+          return (
+            <PickerCard
+              key={product.product_id}
+              product={product}
+              isSelected={isSelected}
+              disabled={disabled}
+              onToggle={onToggle}
+            />
+          );
+        })}
       </div>
+
+      {/* Done button — multi-select only */}
+      {isMulti && (
+        <button
+          type="button"
+          className="slot-picker-done"
+          onClick={onDone}
+          disabled={selectedIds.length === 0}
+        >
+          {selectedIds.length === 0
+            ? "Select at least one"
+            : `Done — ${selectedIds.length} ${label} selected`}
+        </button>
+      )}
     </div>
   );
 }
@@ -55,11 +127,13 @@ export default function SlotPicker({
 function PickerCard({
   product,
   isSelected,
-  onPick,
+  disabled,
+  onToggle,
 }: {
   product: ProductResult;
   isSelected: boolean;
-  onPick: (product: ProductResult) => void;
+  disabled: boolean;
+  onToggle: (product: ProductResult) => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const showImage = product.image_url && !imgError;
@@ -67,8 +141,9 @@ function PickerCard({
   return (
     <button
       type="button"
-      className={`picker-card${isSelected ? " selected" : ""}`}
-      onClick={() => onPick(product)}
+      className={`picker-card${isSelected ? " selected" : ""}${disabled ? " disabled" : ""}`}
+      onClick={() => !disabled && onToggle(product)}
+      aria-disabled={disabled}
     >
       <div className="picker-card-image">
         {showImage ? (
