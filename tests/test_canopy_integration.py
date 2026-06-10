@@ -436,6 +436,13 @@ class TestCanopyProductMapping:
         mapped = self.map_product("bed_frame", raw)
         assert mapped == {}
 
+    def test_skips_product_with_null_price(self):
+        """Canopy sometimes returns price: null — must not crash."""
+        raw = {"title": "Null Price Item", "asin": "B000", "url": "http://x",
+               "price": None}
+        mapped = self.map_product("bed_frame", raw)
+        assert mapped == {}
+
     def test_handles_missing_optional_fields(self):
         raw = {
             "asin": "B09MINIMAL",

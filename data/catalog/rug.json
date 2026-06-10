@@ -55,17 +55,6 @@
     "source": "canopy"
   },
   {
-    "product_id": "B0CYQFQXB4",
-    "name": "Shag Area Rugs for Bedroom Living Room,5X8 Ultra Soft Fluffy Area Rugs for Dorm, Indoor Carpet Nursery Rugs for Kids Room Home Decor,Tie-Dye Grey",
-    "normalized_price": 26.69,
-    "buy_url": "https://www.amazon.com/dp/B0CYQFQXB4",
-    "specs": {
-      "dimensions": "5x8"
-    },
-    "image_url": "https://m.media-amazon.com/images/I/71LTzl6OZEL._AC_UL320_.jpg",
-    "source": "canopy"
-  },
-  {
     "product_id": "B0CZ738DMY",
     "name": "Area Rug Living Room Rugs - 5x8 Abstract Large Soft Indoor Washable Rug Neutral Modern Low Pile Carpet for Bedroom Dining Room Farmhouse Home Office - Beige Blue",
     "normalized_price": 59.36,
@@ -85,17 +74,6 @@
       "dimensions": "5x8"
     },
     "image_url": "https://m.media-amazon.com/images/I/81dIropQt7L._AC_UL320_.jpg",
-    "source": "canopy"
-  },
-  {
-    "product_id": "B0F7XGVSQX",
-    "name": "Valenrug Washable Rugs 5x8 - Stain Resistant 5x8 Area Rugs for Living Room, Non Slip Backing Printed Rugs for Bedroom, Folable Machine Washable Area Rug (5'x8', Beige)",
-    "normalized_price": 69.99,
-    "buy_url": "https://www.amazon.com/dp/B0F7XGVSQX",
-    "specs": {
-      "dimensions": "5x8"
-    },
-    "image_url": "https://m.media-amazon.com/images/I/81LB0i+BufL._AC_UL320_.jpg",
     "source": "canopy"
   },
   {
@@ -140,17 +118,6 @@
       "dimensions": "5x7"
     },
     "image_url": "https://m.media-amazon.com/images/I/91NhLeGF1vL._AC_UL320_.jpg",
-    "source": "canopy"
-  },
-  {
-    "product_id": "B0CZ8Y6X2F",
-    "name": "UERMEI 5x8 Area Rug Living Room Rugs - Washable Neutral Modern Abstract Soft Thin Large Rug Indoor Floor No Slip Rug Carpet for Bedroom Under Dining Table Home Office Decor - Brown Grey",
-    "normalized_price": 69.99,
-    "buy_url": "https://www.amazon.com/dp/B0CZ8Y6X2F",
-    "specs": {
-      "dimensions": "5x8"
-    },
-    "image_url": "https://m.media-amazon.com/images/I/91JNumv0cgL._AC_UL320_.jpg",
     "source": "canopy"
   },
   {
@@ -215,6 +182,720 @@
     "buy_url": "https://www.amazon.com/dp/B088CR3TRY",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/A15j5xWO6NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2SF7HM4",
+    "name": "Hand-Tufted Wool Rectangle Area Rug \u2013 Soft Premium Wool Carpet for Living Room, Bedroom & Home D\u00e9cor \u2013 5X8 ft| Milano Green \u2013 Durable, Non-Slip Backing, Handcrafted Rug",
+    "normalized_price": 295.0,
+    "buy_url": "https://www.amazon.com/dp/B0G2SF7HM4",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51OoWTVERfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BLZBYW52",
+    "name": "Restoration and Renovation Handmade Floral Adeline Beige/Blue Tulips Traditional Crafted Wool Area Rug for Living Room Bedroom and Kitchen (Charcoal Blue-Gray, 5' x 8')",
+    "normalized_price": 285.0,
+    "buy_url": "https://www.amazon.com/dp/B0BLZBYW52",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91VnRCCIIJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07BV3SSHL",
+    "name": "SAFAVIEH Aspen Collection 5' x 8' Moss/Ivory APN601W Handmade Traditional Wool Area Rug",
+    "normalized_price": 123.0,
+    "buy_url": "https://www.amazon.com/dp/B07BV3SSHL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1Coj0F16tL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01M1DHO4T",
+    "name": "SAFAVIEH Area Rug 5x8 - Natura Collection - Ivory, Handmade Wool Blend, Textured Design, Ideal for Living Room, Bedroom, Dining Space (NAT620A)",
+    "normalized_price": 115.0,
+    "buy_url": "https://www.amazon.com/dp/B01M1DHO4T",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91CUVNDL3rL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B000OVB9SC",
+    "name": "SAFAVIEH Area Rug 5x8 - Heritage Collection - Red, Handmade Wool, Traditional Oriental Medallion Design, Ideal for Living Room, Bedroom, Dining Space (HG625A)",
+    "normalized_price": 159.0,
+    "buy_url": "https://www.amazon.com/dp/B000OVB9SC",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91O9chk-R4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0771GDKVS",
+    "name": "SAFAVIEH Trace Collection Area Rug - 5' x 8', Ivory, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (TRC101C)",
+    "normalized_price": 95.84,
+    "buy_url": "https://www.amazon.com/dp/B0771GDKVS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91IUGEtQSYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01B9HUBH4",
+    "name": "SAFAVIEH Blossom Collection 5' x 8' Navy / Multi BLM402A Handmade Premium Wool Area Rug",
+    "normalized_price": 170.39,
+    "buy_url": "https://www.amazon.com/dp/B01B9HUBH4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1wBu6G6grL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082LJ5PYS",
+    "name": "SAFAVIEH Capri Collection Area Rug - 5' x 8', Ivory & Blue, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (CPR208A)",
+    "normalized_price": 101.0,
+    "buy_url": "https://www.amazon.com/dp/B082LJ5PYS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1utNA4jf0S._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07JHHLGVV",
+    "name": "SAFAVIEH Natura Collection Area Rug - 5' x 8', Ivory, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (NAT450A)",
+    "normalized_price": 119.0,
+    "buy_url": "https://www.amazon.com/dp/B07JHHLGVV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91sNVT4BPoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07HBKS8S4",
+    "name": "SAFAVIEH Abstract Collection Area Rug - 5' x 8', Dark Blue & Rust, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (ABT468C)",
+    "normalized_price": 168.68,
+    "buy_url": "https://www.amazon.com/dp/B07HBKS8S4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1FlvAoAHZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073HMNDTY",
+    "name": "SAFAVIEH Abstract Collection Area Rug - 5' x 8', Ivory & Beige, Handmade Wool & Viscose, Ideal for High Traffic Areas in Living Room, Bedroom (ABT141D)",
+    "normalized_price": 84.22,
+    "buy_url": "https://www.amazon.com/dp/B073HMNDTY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1tU8SpbkgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0771SVYB8",
+    "name": "SAFAVIEH Natura Collection Area Rug - 5' x 8', Ivory, Handmade Solid Wool, Ideal for High Traffic Areas in Living Room, Bedroom (NAT801A)",
+    "normalized_price": 104.0,
+    "buy_url": "https://www.amazon.com/dp/B0771SVYB8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91uG4wznV2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07JJDS9XP",
+    "name": "SAFAVIEH Dip Dye Collection 5' x 8' Navy Blue DDY151N Handmade Premium Wool Area Rug",
+    "normalized_price": 146.74,
+    "buy_url": "https://www.amazon.com/dp/B07JJDS9XP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71H79FlQtwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07F8B6QL4",
+    "name": "SAFAVIEH Blossom Collection 5' x 8' Sage / Ivory BLM702W Handmade Premium Wool Area Rug",
+    "normalized_price": 181.49,
+    "buy_url": "https://www.amazon.com/dp/B07F8B6QL4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1Wtq90tf-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SQGHVQ4",
+    "name": "SAFAVIEH Abstract Collection Area Rug - 5' x 8', Ivory & Blue, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (ABT340M)",
+    "normalized_price": 99.74,
+    "buy_url": "https://www.amazon.com/dp/B07SQGHVQ4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91BEsKg8k+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5VDSX54",
+    "name": "Allen Home Wool Area Rug 5' x 8' - Charcoal Modern Bright Decorative Carpet - Area Rugs Suitable for Living Room, Dining Room, Bedroom - 100% Wool & Cotton Backing - Baxter Collection",
+    "normalized_price": 359.0,
+    "buy_url": "https://www.amazon.com/dp/B0D5VDSX54",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A11cFmH34cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4N7L8MF",
+    "name": "Handmade Wool Area Rug with Capsule Design \u2013 Non-Slip Natural Cotton Backing \u2013 Anti-Skid Carpet for Living Room and Bedroom (Multi B, 5' x 8')",
+    "normalized_price": 314.0,
+    "buy_url": "https://www.amazon.com/dp/B0F4N7L8MF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/719F1PNYKwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CK2LKTN8",
+    "name": "Allen Home Traditional Capitola Wool Area Rugs by Allen Home - Durable - 100% Wool, Hand Tufted - Living Room, Dining Room, Bedroom, and Entryway Area Rugs - 5\u2019 x 8\u2019 - Capitola Rust",
+    "normalized_price": 359.0,
+    "buy_url": "https://www.amazon.com/dp/B0CK2LKTN8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81nNpuhpd0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1X2RQYF",
+    "name": "Hand Tufted Oushak Wool Area Rugs - Pastel Ushak Area Carpets Suitable for Living Room, Luxury Wool Crafted Non- Slip Bedroom Rug, Carpet for Living Room and Hall (Size - 5 X 8 feet)",
+    "normalized_price": 355.0,
+    "buy_url": "https://www.amazon.com/dp/B0H1X2RQYF",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/714hLPnCYLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B003F0YUTE",
+    "name": "SAFAVIEH Heritage Collection Area Rug - 5' x 8', Multi & Burgundy, Handmade Traditional Oriental Wool, Ideal for High Traffic Areas in Living Room, Bedroom (HG911A)",
+    "normalized_price": 182.42,
+    "buy_url": "https://www.amazon.com/dp/B003F0YUTE",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1NmYejZQRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07FJCC4KQ",
+    "name": "SAFAVIEH Blossom Collection 5' x 8' Blue/Ivory BLM114M Handmade Premium Wool Area Rug",
+    "normalized_price": 132.0,
+    "buy_url": "https://www.amazon.com/dp/B07FJCC4KQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1vDHUXlWhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07VK26DMR",
+    "name": "SAFAVIEH Natura Collection Area Rug - 5' x 8', Ivory, Handmade Moroccan Boho Wool Fringe, Ideal for High Traffic Areas in Living Room, Bedroom (NAT852B)",
+    "normalized_price": 130.0,
+    "buy_url": "https://www.amazon.com/dp/B07VK26DMR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91-iR8dn0sL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQ53LJYR",
+    "name": "SAFAVIEH Abstract Collection Area Rug - 5' x 8', Grey & Ivory, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (ABT478F)",
+    "normalized_price": 115.0,
+    "buy_url": "https://www.amazon.com/dp/B0BQ53LJYR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/916MRKGHxYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8QTMPXR",
+    "name": "Restoration and Renovation Handmade Textured Wool Rug | Thick, Loop Pile Area Rugs for Living Room, Bedroom & Decor | 100% Wool with Cotton Backing | Durable Modern Carpet (Olive Green, 5' x 8')",
+    "normalized_price": 321.0,
+    "buy_url": "https://www.amazon.com/dp/B0F8QTMPXR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81upqFXFxfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09643N2C2",
+    "name": "SAFAVIEH Area Rug 5x8 - Metro Collection - Natural & Ivory, Handmade Wool, Ideal for Living Room, Bedroom, Dining Space (MET998A)",
+    "normalized_price": 167.0,
+    "buy_url": "https://www.amazon.com/dp/B09643N2C2",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91UoiRt+4eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJRRB5N4",
+    "name": "5' x 8' Jute & Wool Area Rug Handwoven Mini Check Pattern with 4-Inch Border \u2013 Natural Farmhouse Living Room, Dining & Bedroom Rug, Neutral Flatweave Indoor D\u00e9cor (5' x 8')",
+    "normalized_price": 93.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJRRB5N4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91Qg7bRPXzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073HFFQB2",
+    "name": "SAFAVIEH Natura Collection Area Rug - 5' x 8', Beige & Ivory, Handmade Moroccan Boho Tribal Wool & Cotton, Ideal for High Traffic Areas in Living Room, Bedroom (NAT102B)",
+    "normalized_price": 148.0,
+    "buy_url": "https://www.amazon.com/dp/B073HFFQB2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1jsTCVhXTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073HCMT1Z",
+    "name": "SAFAVIEH Natura Collection Area Rug - 5' x 8', Camel & Grey, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (NAT503C)",
+    "normalized_price": 101.0,
+    "buy_url": "https://www.amazon.com/dp/B073HCMT1Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1JHX5BuB7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0771S1FQ3",
+    "name": "SAFAVIEH Trace Collection Area Rug - 5' x 8', Blue & Ivory, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (TRC103B)",
+    "normalized_price": 149.79,
+    "buy_url": "https://www.amazon.com/dp/B0771S1FQ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1UCfpaYWQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0771FD9NX",
+    "name": "SAFAVIEH Aspen Collection Area Rug - 5' x 8', Blue & Rust, Handmade Boho Wool, Ideal for High Traffic Areas in Living Room, Bedroom (APN312A)",
+    "normalized_price": 170.69,
+    "buy_url": "https://www.amazon.com/dp/B0771FD9NX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1rnaz9hfeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DWSLN4N9",
+    "name": "Srugn Washable Area Rug for Living, Bedroom & Dining Room, Ultra Soft Faux Wool Retro Large Carpet, Non-Slip/Shedding Low Pile Vintage Print for Home Office Decor, Beige Ivory Cream Brown Camel, 5x7",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0DWSLN4N9",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81akG6kYlsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08D6XNWB4",
+    "name": "SAFAVIEH Fifth Avenue Collection 5' x 8' Beige/Ivory FTV121B Handmade Modern Abstract Wool Area Rug",
+    "normalized_price": 131.0,
+    "buy_url": "https://www.amazon.com/dp/B08D6XNWB4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1tfzCVMx7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZSGL8TD",
+    "name": "SAFAVIEH Ebony Collection Area Rug - 5' x 8', Green, Handmade Wool, Ideal for The Living Room, Bedroom, Dining Room (EBN750Y-5)",
+    "normalized_price": 140.14,
+    "buy_url": "https://www.amazon.com/dp/B0CZSGL8TD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/917+gPguHrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09XVM4PT6",
+    "name": "SAFAVIEH Area Rug 5x8 - Natura Collection - Beige & Ivory, Handmade Wool Blend, Raised Textured Pile, Ideal for Living Room, Bedroom, Dining Space (NAT182B)",
+    "normalized_price": 193.56,
+    "buy_url": "https://www.amazon.com/dp/B09XVM4PT6",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91BzGQBK3AL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQCX6TCJ",
+    "name": "Traditional Handmade Wool Area Rug \u2013 Oriental Medallion Floral Pattern, Vintage Classic Bordered \u2013 Thick Plush Pile Decorative Carpet for Living Room Bedroom Dining Room (Red Multi, 5' x 8')",
+    "normalized_price": 335.0,
+    "buy_url": "https://www.amazon.com/dp/B0GQCX6TCJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91LxbLKfyQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00CLMAIFC",
+    "name": "SAFAVIEH Antiquity Collection 5' x 8' Grey Blue / Beige AT822A Handmade Traditional Oriental Premium Wool Area Rug",
+    "normalized_price": 135.84,
+    "buy_url": "https://www.amazon.com/dp/B00CLMAIFC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91lORUoTuDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01LZRZ4GX",
+    "name": "SAFAVIEH Heritage Collection Area Rug - 5' x 8', Camel & Blue, Handmade Traditional Oriental Wool, Ideal for High Traffic Areas in Living Room, Bedroom (HG653A)",
+    "normalized_price": 176.24,
+    "buy_url": "https://www.amazon.com/dp/B01LZRZ4GX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1UD1In7m2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07JJWFNZ3",
+    "name": "SAFAVIEH Dip Dye Collection Area Rug - 5' x 8', Light Blue & Ivory, Handmade Wool, Ideal for High Traffic Areas in Living Room, Bedroom (DDY901L)",
+    "normalized_price": 117.0,
+    "buy_url": "https://www.amazon.com/dp/B07JJWFNZ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91jKp2kXvnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBSYW9Q3",
+    "name": "RELEANY Washable Area Rugs 5'x8' Non-Slip Modern Abstract Soft for Living Room Entryway Bedroom Nursery, Print Pattern, Blue Grey Navy Gray",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBSYW9Q3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81SDDp-XvYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXXNQ2DM",
+    "name": "Yinhua Modern Geometric 5x8 Area Rug, Patchwork Brown Rugs for Living Room Washable Abstract Area Rug Non Slip, Low Pile Bedroom Rugs Stain Resistant, Mid Century Carpet for Dining Room, Office",
+    "normalized_price": 44.64,
+    "buy_url": "https://www.amazon.com/dp/B0FXXNQ2DM",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81W9JVFl+ML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9BKDKMJ",
+    "name": "DEXI Washable Area Rug for Living Room 5x8, Modern Abstract Soft Indoor Large Rugs, Stain Resistant Low Pile Carpet with Non Slip Backing for Dining Bedroom Office, Blue",
+    "normalized_price": 59.49,
+    "buy_url": "https://www.amazon.com/dp/B0D9BKDKMJ",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81KiNMqrBDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBV69CND",
+    "name": "Large Area Rugs for Living Room Bedroom, 5 x 8 Ft Non-Slip Modern Area Rug, Soft Thickened Memory Foam Rug, Comfy Minimalist Indoor Carpet for Boys Girls Room Nursery Dorm Home Decor, Black",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B0DBV69CND",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81daTLGADlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CNJXHJHK",
+    "name": "famibay 5x8 Area Rug, Abstract Washable Rugs for Living Room Low Pile Neutral Area Rug for Bedroom Aesthetic Non Slip Rubber Backed Carpet Rugs for Living Room Bedroom Dining Room(Beige/Camel)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CNJXHJHK",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iA7ZlUsmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00SI0SPTM",
+    "name": "Unique Loom Jardin Collection Colorful, Vibrant, Abstract, Modern Area Rug (5' 0 x 8' 0 Rectangular, Multi/ Blue)",
+    "normalized_price": 104.99,
+    "buy_url": "https://www.amazon.com/dp/B00SI0SPTM",
+    "specs": {
+      "dimensions": "0x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91y+4+fJ9XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BS5P6HLM",
+    "name": "nuLOOM 5' x 8' Cozy Plush Area Rug, Machine Washable, Non-Slip, Soft Fluffy Shag Carpet for Living Room Bedroom Kids Room Nursery Home Decor, Jeni Beige",
+    "normalized_price": 155.06,
+    "buy_url": "https://www.amazon.com/dp/B0BS5P6HLM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91uSkt88nPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZSHWWN2",
+    "name": "JONATHAN Y Nordby High-Low Arch Striped Ivory/Cream Indoor/Outdoor Area Rug, 5x8, Modern, Contemporary, Geometric, Bohemian, Bedroom, Kitchen, Living Room, Non Shedding (SCN104B-5)",
+    "normalized_price": 63.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZSHWWN2",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/919eyTKZayL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01M5AU5DH",
+    "name": "SUPERIOR Indoor Area Rug, Jute Backed, Modern Geometric Patchwork Floor Decor for Bedroom, Office, Living Room, Entryway, Hardwood Floors, Rockwood Collection, 5' x 8', Slate",
+    "normalized_price": 98.73,
+    "buy_url": "https://www.amazon.com/dp/B01M5AU5DH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91kxqduLlZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLFLWV4D",
+    "name": "JONATHAN Y Khalil Modern Berber Stripe Cream/Gray Indoor Area Rug, 5x8, Contemporary, Bohemian, Easy-Cleaning for Living Room, Bedroom, Kitchen, Pet Friendly, Non-Shedding (MOH207C-5)",
+    "normalized_price": 78.07,
+    "buy_url": "https://www.amazon.com/dp/B0CLFLWV4D",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OYWprW3vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CS9QK2B8",
+    "name": "Nakagishi 5x8 Area Rug Living Room: Washable Boho Large Neutral Soft Farmhouse Rugs Stain Resistant Modern Indoor Floor Non-Slip Carpet for Bedroom Nursery Kids Playroom Office Dining Room Dorm- Gray",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0CS9QK2B8",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81rnlm7HiML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01N75RGXQ",
+    "name": "Unique Loom Barista Collection Modern, Abstract, Vintage, Distressed, Urban, Geometric, Rustic, Warm Colors Area Rug (5' 0 x 8' 0 Rectangular, Multi/Beige)",
+    "normalized_price": 73.0,
+    "buy_url": "https://www.amazon.com/dp/B01N75RGXQ",
+    "specs": {
+      "dimensions": "0x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81smPRq9TiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CWK4JXMM",
+    "name": "famibay 5x8 Area Rug, Abstract Washable Rugs for Living Room Low Pile Neutral Area Rug for Bedroom Aesthetic Non Slip Rubber Backed Carpet Rugs for Living Room Bedroom Dining Room(Beige/Camel)",
+    "normalized_price": 38.99,
+    "buy_url": "https://www.amazon.com/dp/B0CWK4JXMM",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81SGmzN50OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJXZ84ZP",
+    "name": "BLISSA Washable 5x8 Area Rug - Soft Modern Throw Rugs for Living Room Non-Slip Ultra-Thin Black White Lines Borderd Abstract Carpet for Bedroom Dining Room Rugs for Under Table Nursery Room Decor",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJXZ84ZP",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vXxWpGmTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZFPW9WZ",
+    "name": "JONATHAN Y Hallie High-Low Curve Ivory/Cream Indoor/Outdoor Area Rug, 5x8, Minimalist, Pet Friendly, Non-Shedding, Stain Resistant, Hose-Washable for Backyard, Patio, Porch (SCN100B-5)",
+    "normalized_price": 81.77,
+    "buy_url": "https://www.amazon.com/dp/B0BZFPW9WZ",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91tniJJGmkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B081D7M5TY",
+    "name": "JONATHAN Y Khalil Modern Berber Stripe Cream/Black Indoor Area Rug, 5x8, Contemporary, Bohemian, Easy-Cleaning for Living Room, Bedroom, Kitchen, Pet Friendly, Non-Shedding (MOH207A-5)",
+    "normalized_price": 89.59,
+    "buy_url": "https://www.amazon.com/dp/B081D7M5TY",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/A11jstaHiEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9H6Q9NT",
+    "name": "FlyDOIT Modern Geometric Patchwork Area Rug, 5x8 Grey Large Rugs for Living Room, Rockwood Collection Indoor Rugs for Bedroom, Throw Carpet Floor Decor for Entryway Dining Room Office Nursery",
+    "normalized_price": 63.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9H6Q9NT",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81t8gPxzt1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTMHZ9H1",
+    "name": "5x8 Ft Tie-Dyed Grey Fluffy Area Rugs, Pet-Friendly & Easy Care Ultra Soft Shag Carpet with Non-Slip Backing, Modern Fuzzy Plush Rug for Living Room, Bedroom & Playroom Decor",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0GTMHZ9H1",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-gkv9LoDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DF28528J",
+    "name": "DMOYEST Area Rug Living Room Rugs - 5x8 Washable Large Soft Indoor Neutral Modern Abstract Low Pile Rug Carpet for Bedroom Dining Room Farmhouse Home Office - Grey Brown",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DF28528J",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91VVlyRMznL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8Z1GZ45",
+    "name": "Vaukki 5x8 Area Rug for Living Room, Non Slip Washable 3D Bubble Living Room Rug, High Low Pile Hexagon Floor Mat for Bedroom, Modern Soft Fluffy Carpet for Dining Room, Office and Nursery, Beige",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0G8Z1GZ45",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81GCJIAbDbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQDDMHZL",
+    "name": "TWINNIS Indoor Modern Area Rug, 5x8 Geometric Patchwork Style Washable Large Rugs for Living Room Bedroom Hardwood Floors, Non Shedding Non Anti Backing Soft Carpet Home Floor Decor, Black",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQDDMHZL",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71U8A2pKLAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07T94Q186",
+    "name": "JONATHAN Y Boho Vintage Diamond Cream/Gray Indoor Area Rug 5X8 ft, Moroccan Hype for Living Room, Bedroom, Kitchen, Office, Easy-Cleaning, High Traffic, Pet-Friendly, Non-Shedding (MOH101B-5)",
+    "normalized_price": 67.0,
+    "buy_url": "https://www.amazon.com/dp/B07T94Q186",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/A1pwi+ja6YL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTF996Q4",
+    "name": "Merelax 5x8 Geometric Rug for Livingroom Bedroom - Washable Non-Slip Abstract Multi-Color Area Rug, Indoor Floor Carpet Low Pile Soft Rug for Dining Room, Mudroom, Modern Aesthetic Decor, Light Tan",
+    "normalized_price": 54.98,
+    "buy_url": "https://www.amazon.com/dp/B0GTF996Q4",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CmDdcaNPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF212Q3S",
+    "name": "Soalmost 5x8 Area Rugs Beige Low Pile Indoor Washable Trendy Faded Style Rugs for Bedroom Living Room Dining Room Foldable Non-Slip Thin Print Home Office Mat",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0GF212Q3S",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91uPbnOti4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCZPYH7F",
+    "name": "Abani Cream and Black Swirl Area Rug | 5\" x 8\" Beige Carpet with Wave Pattern | Modern Rug for Living Room, Bedroom and Office | Nuevo Collection",
+    "normalized_price": 116.0,
+    "buy_url": "https://www.amazon.com/dp/B0DCZPYH7F",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91RYEH1Z5eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D94RZP9W",
+    "name": "Abani Neutral Beige Area Rug | 5' x 8' Tan Geometric Carpet with Zen Circle Pattern | Rugs for Living Room, Bedroom, Office",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0D94RZP9W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61e6ssqRAQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FD4RKL2N",
+    "name": "Abani Cream Area Rug - 5'x 8' - Living Room & Bedroom - Textured Weave Design - Indoor Use - Easy to Clean, Stain Resistant, Non-Shedding - Neutral Collection",
+    "normalized_price": 115.0,
+    "buy_url": "https://www.amazon.com/dp/B0FD4RKL2N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/911Az8k-wzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGTSYTJS",
+    "name": "Amearea Large Modern Area Rugs for Bedroom Living Room, 5x8 Feet Black Thickened Memory Foam Rug, Fluffy Indoor Washable Rugs Non Slip Minimalist Carpet for Boys Girls Dorm Nursery Room Decor",
+    "normalized_price": 61.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGTSYTJS",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81J4vKxMnjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTCVXZ17",
+    "name": "Abani Neutral Cream Area Rug 5' x 8' | White Luxury Zen Carpet | Minimalist Ivory Rugs for Bedroom, Living Room and Dining",
+    "normalized_price": 119.0,
+    "buy_url": "https://www.amazon.com/dp/B0CTCVXZ17",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91JJisdZ3BL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CNL2ZQMS",
+    "name": "Abani Nuevo Collection Area Rug - Mid-Century Black & Ivory Arch Knot Design - 5' x 8' - for Living Room, Bedroom & Office",
+    "normalized_price": 91.0,
+    "buy_url": "https://www.amazon.com/dp/B0CNL2ZQMS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/918PQiigH-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DN1MXBGP",
+    "name": "Large Area Rugs,Modern Geometric Patchwork Floor Decor for Bedroom Aesthetic Carpet, Rockwood Collection, Indoor Rugs for Living Room, Dining Room, Nursery, Office, Machine Washable Rug,5x8 Ft Grey",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DN1MXBGP",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81UQBv+cloL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07YXZP8P7",
+    "name": "JONATHAN Y Pele Modern Geometric Dot Shag White/Gray Indoor Area Rug, 5x8, Bohemian, Contemporary, Easy-Cleaning for Living Room, Bedroom, Kitchen, Pet Friendly, Non-Shedding (MOH400A-5)",
+    "normalized_price": 70.0,
+    "buy_url": "https://www.amazon.com/dp/B07YXZP8P7",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91QiuMOApgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07ZLWJZ5T",
+    "name": "JONATHAN Y Tumbling Blocks Gray/White Indoor Area Rug 5x8, Modern,Contemporary,Geometric,Casual, Easy-Cleaning for Living Room,Bedroom,Kitchen,Pet Friendly,Non-Shedding (SEU101F-5)",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B07ZLWJZ5T",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91-tqWjXAcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BJLT95J5",
+    "name": "JONATHAN Y Cole Diamond Trellis Light Gray/White Indoor Area Rug 5x8, Modern,Contemporary,Geometric,Casual, Easy-Cleaning for Living Room,Bedroom,Kitchen,Pet Friendly,Non-Shedding (SEU102G-5)",
+    "normalized_price": 48.35,
+    "buy_url": "https://www.amazon.com/dp/B0BJLT95J5",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/913L4oVqbXL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

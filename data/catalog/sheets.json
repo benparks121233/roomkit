@@ -218,5 +218,729 @@
     },
     "image_url": "https://m.media-amazon.com/images/I/913LDrPZo0L._AC_UL320_.jpg",
     "source": "canopy"
+  },
+  {
+    "product_id": "B09X1P1L9F",
+    "name": "California Design Den Queen Sheet Set - Natural 100% Cotton Sheets Queen Size Bed Set with Deep Pockets, Soft Sateen Weave, Breathable and Durable Bedding (White)",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B09X1P1L9F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81P+oe+9B0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07RY59C3W",
+    "name": "LANE LINEN Queen Sheet Set 100% Organic Cotton GOTS Certified Percale Weave Deep Pocket 4 Piece Soft Breathable Cooling Lightweight All Season Machine Washable Crisp White",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B07RY59C3W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71E2kYSnRwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06XS1P6NG",
+    "name": "California Design Den Soft 100% Cotton Queen Sheet Set, 400 Thread Count Good Housekeeping Award Winner, Silky Smooth Sateen Weave with Deep Pockets, Breathable and Durable Cotton Bedding Set - White",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B06XS1P6NG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71G+CKODHRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08ZM7TT87",
+    "name": "RUVANTI 100% Cotton Percale Sheets Queen Size \u2013 Crisp Cooling Bed Sheets for Hot Sleepers, Deep Pocket 16\u201d, Soft Breathable & Durable Hotel-Style 4 Piece Set, Sweet Pea",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B08ZM7TT87",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Ucf+QG+lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01BTBRWZE",
+    "name": "Amazon Basics 4 Piece Bed Sheet Set, 100% Cotton Jersey, Includes Super Soft, Flat and Fitted Sheets, Pillowcase, Queen, Light Gray, Solid",
+    "normalized_price": 29.97,
+    "buy_url": "https://www.amazon.com/dp/B01BTBRWZE",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91xs8HMvbmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTSZH19S",
+    "name": "Casa Platino Queen Sheets Sets \u2013 100% Cotton Queen Sheets Cooling with 4 Pillowcases, 15\" Deep Pocket Fitted Sheet, Crisp & Smooth Feel, Ultra Soft & Cozy, Fit \u2013 Blue Sky",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0DTSZH19S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91w0UmIqjdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJ11PJQQ",
+    "name": "RUVANTI 100% Cotton Percale Sheets Queen Size \u2013 Crisp Cooling Bed Sheets for Hot Sleepers, Deep Pocket 16\u201d, Soft Breathable & Durable Hotel-Style 4 Piece Set, Aroma",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJ11PJQQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Rp5wEs2IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CZY2ZKT",
+    "name": "LANE LINEN 100% Organic Cotton Sheets Queen Size Bed Set, Machine Wash Eco Friendly Sustainably Produced Cotton Queen Sheet Set, Soft & Comfy Long Stabple Naturally Cooling Sheets\u2013 Mineral",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B08CZY2ZKT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71FJhRFj1BL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B075F8TCF2",
+    "name": "California Design Den Queen Sheet Set - Luxury 600 Thread Count Sateen, 100% Cotton Deep Pocket Queen Sheets with All Around Elastic, Snug Fit, Durable Bedding Set - White",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B075F8TCF2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71blkn0mAdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08HH4DDRP",
+    "name": "Utopia Bedding Queen Sheet Set - Jersey Knit Sheets 4 Piece \u2013 Cotton \u2013 Soft T-Shirt Stretchy Sheets (Heather Light Grey)",
+    "normalized_price": 26.49,
+    "buy_url": "https://www.amazon.com/dp/B08HH4DDRP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/912iDAORrVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVF7KK1K",
+    "name": "100% Egyptian Cotton Queen Size Sheet Set - Naturally Breathable & Durable Winter Comfort, Ultra-Soft Hotel Luxury Comfort with 15\" Deep Pocket Queen Sheets, Silky Sateen Weave - French Blue",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVF7KK1K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817dXT3vOrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZMYN1RB",
+    "name": "LANE LINEN Queen Sheet Set - 450 Thread Count Premium Soft Long Staple 100% Cotton Sheets, Hotel Luxury Sateen Silky Finish, Snug Fit 15\" Deep Pocket, Low Pill, Machine Washable - White",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZMYN1RB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ixrP-KXVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B084X6YHGR",
+    "name": "California Design Den Queen Sheet Set - Soft 100% Organic Cotton Sheets with Deep Pockets, Crisp Percale, Breathable and Durable Bedding Set - White",
+    "normalized_price": 58.99,
+    "buy_url": "https://www.amazon.com/dp/B084X6YHGR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LO-iSgQNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0154ASID6",
+    "name": "Amazon Basics Lightweight Super Soft Breathable Wrinkle-Resistant Microfiber 4-Piece Bed Sheet Set with 14-Inch Deep Pockets, Queen, Bright White, Solid",
+    "normalized_price": 16.98,
+    "buy_url": "https://www.amazon.com/dp/B0154ASID6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61KCbJGpAFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CW61SC1H",
+    "name": "TEXAS LINEN CO. 100% Organic Cotton Sheets Queen Size - 4 PC Organic Cotton Queen Size Percale Weave Sheet Set, Soft, Cooling, Crisp & Breathable, 16\" Deep Pocket Hotel Quality Bedding Set - White",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0CW61SC1H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61nYTkhZwdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFGNNRZ8",
+    "name": "Comfort Spaces 100% Cotton Sheets Queen, Breathable & Ultra Soft Cotton Sheets, Naturally Cool Cotton Bed Sheets with 14\" Elastic Pocket Fits up to 16\" Mattress, All Seasons Sheet Set, Cream 4 Piece",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFGNNRZ8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81GCGb+jtTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DH6WDCYJ",
+    "name": "Eddie Bauer - Queen Sheet Set with Fitted Sheet & Pillowcases, 100% Cotton Percale Bedding, Crisp & Cool, Deep Pocket, Essential Stripe Beige",
+    "normalized_price": 48.63,
+    "buy_url": "https://www.amazon.com/dp/B0DH6WDCYJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71JP-c1PxrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07416ZHN9",
+    "name": "Linen Home 100% Cotton Percale Sheets Queen Size, White, Deep Pocket, 4 Pieces Set - 1 Flat, 1 Deep Pocket Fitted Sheet and 2 Pillowcases, Crisp Cool and Strong Bed Linen",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B07416ZHN9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71UQZkgPa6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FN7DFFHT",
+    "name": "Queen Sheet Set - 6 Piece Sheets Queen Size Bed Set - Breathable & Cooling Hotel Luxury Bedding Set - Soft & Comfy Fully Elasticized 16\" Deep Pocket Queen Sheets (Queen White)",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B0FN7DFFHT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rx6zjeyjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CNX32LLZ",
+    "name": "SONORO KATE 100% Egyptian Cotton Sheets Set - 1000 High Thread Count, Luxury 5-Star Hotel Sateen Bed Sheets, Soft, Breathable Long Staple Sheets, Fit up to 16\" - 4 PC (White,Queen)",
+    "normalized_price": 69.9,
+    "buy_url": "https://www.amazon.com/dp/B0CNX32LLZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61mRoyNKAFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06X9GC2H3",
+    "name": "Queen Size 4 Piece Sheet Set - Comfy Breathable & Cooling Sheets - Hotel Luxury Bed Sheets for Women & Men - Deep Pockets, Easy-Fit, Soft and Wrinkle Free Sheets - Light Grey Oeko-Tex Bed Sheet Set",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B06X9GC2H3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61IttE0BmBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CS9JRP7S",
+    "name": "RUVANTI 100% Cotton Organic Percale Sheets Queen Size \u2013 Crisp Cooling Bed Sheets for Hot Sleepers, Deep Pocket 15\u201d, Soft Peach Finish, Breathable & Durable Hotel-Style 4 Pcs, Daisy Bud",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0CS9JRP7S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91S2YEklVxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQBQ9TZ3",
+    "name": "TEXAS LINEN CO. Egyptian Cotton Sheets Queen Size \u2013 300 Series Cotton Queen Sheet Set (4 PC, White), Soft & Durable, Cooling, 16\" Deep Pocket, Sateen Weave Hotel Bedding Set - Easy Breezin' Collection",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQBQ9TZ3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/617pf6XnycL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06XQ8121F",
+    "name": "Elegant Comfort Best, Softest, Coziest 6-Piece Sheet Sets! - 1500 Premier Hotel Quality Luxurious Wrinkle Resistant 6-Piece Damask Stripe Bed Sheet Set, Queen White",
+    "normalized_price": 22.39,
+    "buy_url": "https://www.amazon.com/dp/B06XQ8121F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/710nbXz084L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BYZV5LL3",
+    "name": "Linen Home Washed Cotton Percale Queen Sheet Set, Silver, Preshrunk, 4 Pieces Sets - 1 Flat, 1 Deep Pocket Fitted Sheet & 2 Envelope Closure Pillowcases, Soft, Cool and Comfortable Bed Linen",
+    "normalized_price": 38.49,
+    "buy_url": "https://www.amazon.com/dp/B0BYZV5LL3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8160Jqz6nLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9WL6KJJ",
+    "name": "Ivellow 100% Egyptian Cotton Sheets Queen Size Set - 1200 Thread Count 6 PC 18\" Deep Pocket Queen Size Bed Sheet Set\uff0cLuxury Soft Breathable Grey Cooling Sheet Sets Durable Hotel Quality Bedding",
+    "normalized_price": 125.28,
+    "buy_url": "https://www.amazon.com/dp/B0F9WL6KJJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71o5EPVIBLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06XWGVZ5R",
+    "name": "SONORO KATE Bed Sheet Set Super Soft Microfiber 1800 Thread Count Luxury Egyptian Sheets 16-Inch Deep Pocket Wrinkle and Hypoallergenic-4 Piece(Queen Dark Grey)",
+    "normalized_price": 26.9,
+    "buy_url": "https://www.amazon.com/dp/B06XWGVZ5R",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/611i1dAzssL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCDZ5J3Q",
+    "name": "Laura Ashley \u2013 Queen Size Sheet Set, Crisp & Lightweight Cotton Percale Bedding with Fitted Sheet and Pillowcases, Floral Room Decor, Deep Pocket, College Dorm Room Essentials (Heirloom Ditzy Yellow)",
+    "normalized_price": 51.32,
+    "buy_url": "https://www.amazon.com/dp/B0DCDZ5J3Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813XmSH8iLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B079WZCN7Q",
+    "name": "CALIFORNIA DESIGN DEN Luxuriously Soft Hotel Quality 600 Thread Count, 100% Cotton Set of 2 Cases, Crisp & Cool White Standard Pillow Cases Fits Standard & Queen Pillows (Bright White)",
+    "normalized_price": 22.99,
+    "buy_url": "https://www.amazon.com/dp/B079WZCN7Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817tghcJ74L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0125Q7KKY",
+    "name": "Queen 6 Piece Sheet Set - Comfy Breathable & Cooling - Ultra Soft Hotel Luxury Bedding Set w/ 8-16 Inch Deep Pockets - 1 Flat & 1 Fitted Sheet & 4 Pillowcases - Cozy, Wrinkle Free & Easy Care - White",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0125Q7KKY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61uOURraalL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZZTZWVK",
+    "name": "TWK 100% Egyptian Long-Staple Cotton Sheets Queen Size, Luxury Hotel Style Deep Pocket with Elastic Reinforced Seams Sheet Set, Soft & Comfy Natural Sheets((White, Queen)",
+    "normalized_price": 89.0,
+    "buy_url": "https://www.amazon.com/dp/B0GZZTZWVK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61vDseIVKUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGM3N1MV",
+    "name": "Royale Linens 300 Thread Count 100% Long Staple Combed Cotton Stripe Sheet Set - 4 Piece Queen Bed Sheets - 1 Fitted, 1 Flat & 2 Pillow cases - Soft Cool & Crisp Sheet Set (Queen, Narrow Stripe White)",
+    "normalized_price": 29.24,
+    "buy_url": "https://www.amazon.com/dp/B0CGM3N1MV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Bz+CqXVdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073CX6S2F",
+    "name": "Threadmill Luxury Queen Sheet Set 800 Thread Count for Queen Size Bed - Hotel White Sateen Queen Bed Sheets, Better Than Egyptian Cotton,4 Pc Solid Soft Breathable Bed Set, Fits 16\" Deep Pocket",
+    "normalized_price": 97.99,
+    "buy_url": "https://www.amazon.com/dp/B073CX6S2F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/715DXRDFS-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08HRRG4KM",
+    "name": "California Design Den 100% Organic Cotton Fitted Sheet Queen Size Only - Percale Queen Deep Pocket Fitted Sheet, Lightweight, Snug-Fit, Crisp, Durable - White",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B08HRRG4KM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81cQkN+YG3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07YK8VTJV",
+    "name": "Bedsure Queen Sheet Set, Cooling Sheets for Queen Size Bed Set, Rayon Derived from Bamboo, PureWoven, Breathable & Soft, Deep Pocket Up to 16 Inches, Hotel Luxury Silky Bedding for Hot Sleepers, White",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B07YK8VTJV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81L2xb5ly6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHCYFKY7",
+    "name": "Bedsure Queen Bed Sheets - Cotton Linen Sheet Set, PureWoven Soft, Breathable & Anti - Pilling, Deep Pocket Queen Fitted Bedsheets Up to 16 Inches, 4 Pieces, Linen",
+    "normalized_price": 75.98,
+    "buy_url": "https://www.amazon.com/dp/B0DHCYFKY7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91eg7pwcHmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJ32KJ42",
+    "name": "4Pcs Organic Linen Sheets Queen Size, 100% French Linen from Normandy, Breathable Natural Linen Queen Sheet Set with 16 Inch Deep Pocket, 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases",
+    "normalized_price": 113.99,
+    "buy_url": "https://www.amazon.com/dp/B0DJ32KJ42",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71c2aa8dmRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG8QQJTS",
+    "name": "LBRO2M 100% Pure Linen Sheet Set Deep Pocket Up to 16\" Bed Sheets Sets, Natural Flax Beddings Soft, Breathable, Comfortable for All Seasons 4 Pcs Sheet Set Queen Size, Linen",
+    "normalized_price": 129.79,
+    "buy_url": "https://www.amazon.com/dp/B0CG8QQJTS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yoMaLz3RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F23BHYXQ",
+    "name": "Bedlifes 100% French Pure Linen Sheets Queen Size Breathable and Cooling Flax Sheet Set Soft Durable and Moisture Wicking 16 Inch Deep Pocket-4 Piece(Queen,Linen)",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0F23BHYXQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sbTSdxJcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6KRRDDR",
+    "name": "100% French Linen Sheets Natural Linen Queen Size Sheets Set, Breathable and Durable for Hot Sleepers, 4 Pcs Bed Sheets with 16 Inch Deep Pocket - 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases",
+    "normalized_price": 107.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6KRRDDR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81SHADMgoWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBWP5DWB",
+    "name": "MEISHANG 100% French Pure Linen Sheets Queen Size - Bed Sheets 4 Piece Sets, Soft Durable Flax Linen, Anti-Tear Breathable Oeko-Tex Certified with 16\" Deep Pocket (Linen)",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBWP5DWB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Kbl0U5s3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCBP5T2Z",
+    "name": "MooMee Bedding Sheet Set 100% Washed Cotton Linen Like Textured Breathable Durable Soft Comfy (Heathered Green, Queen)",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCBP5T2Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Zr2MD7bIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJCC5BSS",
+    "name": "SONORO KATE 100% French Pure Linen Queen Size Sheets, Breathable and Durable Linen Bed Sheets, Anti-Tear, Machine Washable, 16 Inch Deep Pocket - 4 Piece (Natural Linen)",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJCC5BSS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sq4GKxF8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS941YQD",
+    "name": "100% French Pure Linen Sheets Queen Size, Breathable, Soft and Durable Pure Linen Sheets, Anti-Tear Linen Bed Sheets, 16 Inch Deep Pocket - 4 PC (Linen,Queen)",
+    "normalized_price": 109.98,
+    "buy_url": "https://www.amazon.com/dp/B0GS941YQD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZxbpTHLLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06WLHKKBG",
+    "name": "Simple&Opulence Belgian Linen Sheet Set Solid Color - 4 Pieces (1 Flat Sheet, 1 Fitted Sheet & 2 Pillowcases) Natural Flax Cotton Blend Soft Breathable Farmhouse Bedding - Queen Size, Linen/Beige",
+    "normalized_price": 72.24,
+    "buy_url": "https://www.amazon.com/dp/B06WLHKKBG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81zZmsK1rcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BV2HPPT4",
+    "name": "Bedsure Queen Size Sheets - 4 Pieces Soft Queen Sheet Set - Breathable & Cooling - Hotel Luxury - Easy Care Polyester Microfiber Bedding for Kids, Women, Men, Linen",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0BV2HPPT4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gPIceWJeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGQSM3NH",
+    "name": "Bedsure Deep Pocket Queen Sheets - 6 Piece, Prewashed Ultra-Soft Queen Sheet Set, Fits Mattresses Up to 18 Inches Thick, Breathable & Secure Fit, Hotel Luxury Bedding, Linen",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGQSM3NH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81MMX8nSi-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYKWWVW4",
+    "name": "Hearth & Harbor Bed Sheets, Luxury Soft 6 Piece Bed Sheet Set Extra Deep Pocket Fitted Sheets Fits Mattress up to 21\", Double Brushed Bedding Sheets & Pillowcases, Queen, Natrual Linen",
+    "normalized_price": 24.35,
+    "buy_url": "https://www.amazon.com/dp/B0DYKWWVW4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61vSuiqeUEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDVKYYRC",
+    "name": "Brooklinen Luxury Sateen 4 Piece Sheet Set - 100% Cotton Bed Sheets, Soft & Durable Queen Size Sheets Set in Abyss Blue, Oeko-TEX Certified Bedding Set, 1 Fitted Sheet, 1 Flat Sheet, 2 Pillowcases",
+    "normalized_price": 189.0,
+    "buy_url": "https://www.amazon.com/dp/B0DDVKYYRC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71+ayl71ckL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQBV6TFR",
+    "name": "Linen Sheets Queen Size, Cotton Linen Bed Sheets, Breathable, Durable Bed Sets 18\" Deep Pocket(Natural Linen)",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0FQBV6TFR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71n1wFfSwyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGN7F725",
+    "name": "Bedlifes 100% Linen Sheet Set Queen Size 4 Piece - Stone-Washed for Ultra Softness, Oeko-TEX Certified, Breathable, Moisture-Wicking & Durable Bedding with 16\uff02 Deep Pocket\uff08Queen,Linen\uff09",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGN7F725",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Z4EvjrHHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073WD5KPX",
+    "name": "DAPU Pure Linen Sheets Set, 100% French Linen from Normandy, Breathable and Durable for Hot Sleepers, 4 Pcs Queen Size Sheets Set - 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases (Natural Linen, Queen)",
+    "normalized_price": 122.39,
+    "buy_url": "https://www.amazon.com/dp/B073WD5KPX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71TpWmOQGuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00VLE32TK",
+    "name": "Simple&Opulence 100% Pure Linen Sheet Set Queen Size, Natural French Flax Solid Color 4 Pcs Washed Breathable, Farmhouse Bedding (1 Flat Sheet,1 Fitted Sheet,2 Pillowcases)-Embroidery Linen",
+    "normalized_price": 128.99,
+    "buy_url": "https://www.amazon.com/dp/B00VLE32TK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/616RAcBs5wL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G23YJBJY",
+    "name": "Bedsure 100% Washed Cotton Percale Sheets Queen Size - Linen Like Textured 6-Piece Bedsheet Set with 18\" Deep Pocket, Breathable & PureWoven Soft Comfy (Linen Beige, Queen)",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0G23YJBJY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Cxkxdc9WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5B15XHM",
+    "name": "LBRO2M 100% Linen Sheet Set Deep Pocket Fit Up to 19\" Bed Sheets Sets, Natural Flax Beddings Soft, Breathable, Comfortable for All Year Round 4 Pcs Sheet Set (Queen, Linen)",
+    "normalized_price": 116.97,
+    "buy_url": "https://www.amazon.com/dp/B0F5B15XHM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yJixdIrPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BX33VTLQ",
+    "name": "EVERLY Linen Queen Sheets Set, 100% Stonewashed French Linen Bed Sheets Deep Pocket Sheets, 4 Pieces (1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases) Natural Flax Bedding Set-Mossy Green",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0BX33VTLQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yzRr2eRGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZBP1KFV",
+    "name": "100% Pure Linen Sheet Set for Hot Sleepers, Breathable Natural Linen Sheets 4pcs, Bedding Set Deep Pocket Up to 16\" Moisture-Wicking, Softens with Every Wash (Linen Queen)",
+    "normalized_price": 135.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZBP1KFV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81S4yqRGw2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNR9N29H",
+    "name": "LANE LINEN 100% Egyptian Cotton Sheets Queen Size Bed Set \u2013 Naturally Cooling & Breathable Sateen Queen Sheets Set, Long-Staple Cotton for Lasting Softness, Snug Fit 15\" Deep Pocket Fitted - Charcoal",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNR9N29H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/7111MHbLDpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F89Y5PTJ",
+    "name": "ATLINIA 100% Pure Flax Linen Bedding Set - Stone Washed French Linen Fabric Deep Pocket Fitted Sheet Farmhouse Flat Sheet 2 Pillowcases (Natural, Queen)",
+    "normalized_price": 154.99,
+    "buy_url": "https://www.amazon.com/dp/B0F89Y5PTJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81z38RFD8cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKMWZC5Y",
+    "name": "100% Pure Linen Blend Sheets Set, Natural Flax Beddings Soft, Breathable and Durable for Hot Sleepers,Comfortable for All Seasons,Anti-Tear Linen Bed Sheets,18 Inch Deep Pocket - 4 Piece",
+    "normalized_price": 129.0,
+    "buy_url": "https://www.amazon.com/dp/B0GKMWZC5Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71RMwQElF2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGY49FSM",
+    "name": "NSNLGSGC 100% French Linen Sheets Queen Size, 4 Piece Pure Linen Bed Sheet Set, Breathable, Cooling & Durable, Soft Washed Natural Flax Bedding with 16 Inch Deep Pocket, All Season Use(Queen, Linen)",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGY49FSM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Kw73JzSgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01IN54GV2",
+    "name": "Simple&Opulence 100% Linen Sheet Set with Embroidery Washed - 4 Pieces (1 Flat Sheet & 1 Fitted Sheet & 2 Pillowcases) Natural Flax Soft Bedding Breathable Farmhouse - Linen, Queen Size",
+    "normalized_price": 131.99,
+    "buy_url": "https://www.amazon.com/dp/B01IN54GV2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71W8yHjWPcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBR1ZTCV",
+    "name": "100% Linen Sheets Queen Size,Breathable & Durable 4-Piece Bed Flax Sheet Set,Soft All-Season Bedding for Hot Sleepers 16\" Deep Pocket Oeko-TEX Certified,\uff08Queen, Linen\uff09",
+    "normalized_price": 125.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBR1ZTCV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81c0wgRiJ4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BLVBG31W",
+    "name": "TUMEI 100% French Linen Sheets Queen Size, 4-Piece Breathable Natural Linen Queen Sheet Set, 16\" Deep Pocket, Cooling Soft Durable, 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases (Queen, Natural Linen)",
+    "normalized_price": 114.99,
+    "buy_url": "https://www.amazon.com/dp/B0BLVBG31W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81OnDKzvcXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF7GF18L",
+    "name": "SONORO KATE 100% French Linen Flat Sheet, Stone Washed Ultra Soft Breathable Luxury Flat Top Sheet - 1 Piece Linen Flat Sheet Only (Natural Linen,Queen)",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0GF7GF18L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81oGrr7KtIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06VT3576T",
+    "name": "Simple&Opulence Belgian Linen Sheet Set Solid Color - 4 Pieces (1 Flat Sheet, 1 Fitted Sheet & 2 Pillowcases) Natural Flax Cotton Blend Soft Breathable Farmhouse Bedding - Queen Size, White",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B06VT3576T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BhamDTIrL._AC_UL320_.jpg",
+    "source": "canopy"
   }
 ]

@@ -50,3 +50,28 @@ def write_cache(slot_id: str, products: list[dict], catalog_dir: Path | None = N
     with path.open("w") as fh:
         json.dump(products, fh, indent=2)
     return path
+
+
+def merge_cache(
+    slot_id: str,
+    new_products: list[dict],
+    catalog_dir: Path | None = None,
+) -> tuple[int, int]:
+    """Merge new products into existing cache, deduplicating by product_id (ASIN).
+
+    New products with the same product_id as an existing entry replace it
+    (fresher data wins).  Returns (total_after_merge, newly_added_count).
+    """
+    existing = read_cache(slot_id, catalog_dir=catalog_dir) or []
+    existing_by_id = {p["product_id"]: p for p in existing}
+    before_count = len(existing_by_id)
+
+    for product in new_products:
+        pid = product.get("product_id", "")
+        if pid:
+            existing_by_id[pid] = product
+
+    merged = list(existing_by_id.values())
+    write_cache(slot_id, merged, catalog_dir=catalog_dir)
+    newly_added = len(existing_by_id) - before_count
+    return len(merged), newly_added

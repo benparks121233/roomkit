@@ -107,7 +107,7 @@ def map_canopy_product(slot_id: str, raw: dict) -> dict:
     Our cache format:
         {product_id, name, normalized_price, buy_url, specs, image_url, source}
     """
-    price_obj = raw.get("price", {})
+    price_obj = raw.get("price") or {}
     price_val = price_obj.get("value")
     if price_val is None:
         return {}  # skip products with no price

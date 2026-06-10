@@ -218,5 +218,610 @@
     },
     "image_url": "https://m.media-amazon.com/images/I/81Nxcm4LX0L._AC_UL320_.jpg",
     "source": "canopy"
+  },
+  {
+    "product_id": "B0DCWTX86B",
+    "name": "Nectar Classic Hybrid 12\u201d Queen Mattress - Medium Firm - Memory Foam & Innerspring Coils - Cooling Top Layer - Back Pain Relief - Mattress in a Box - 365-Night Trial & Forever Warranty",
+    "normalized_price": 799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DCWTX86B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91y4To6NpDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F635TP3X",
+    "name": "FATHOM Medium Queen Mattress 10 Inch Memory Foam Mattress Queen Size Bed in a Box for Back Pain Relief and Cool Sleep with Gel Foam and Removeable Fiberglass Free Cover, CertiPUR-US Certified",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0F635TP3X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nC9mB07fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DKTCWC8X",
+    "name": "EGOHOME 10 Inch Queen Mattress, Memory Foam Mattress in a Box with Cooling Green Tea Gel, Relieve Pressure with Medium Firm Support, CertiPUR-US Certified, 80''L x 60''W, White",
+    "normalized_price": 209.26,
+    "buy_url": "https://www.amazon.com/dp/B0DKTCWC8X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81p-Taiy2fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSK2VDKG",
+    "name": "Zinus 12 Inch Green Tea Essential Memory Foam Mattress [New Version], Queen, Fiberglass Free, Medium Feel, Breathable Airflow Memory Foam, Certified Safe Foams & Fabric, Mattress in A Box",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSK2VDKG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81fVgBVgNKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GK9D6VMC",
+    "name": "Queen Memory Foam Mattress - 14 Inch Queen Mattress Orthopedic Support for Pressure Relieving, Cool Sleep & Motion Isolation - Assembled in USA, Fiberglass Free, CertiPUR-US Certified",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GK9D6VMC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Pkup4hdJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G13P4Q37",
+    "name": "KOW Queen Mattress, 12 Inch Memory Foam Mattress Queen Size Mattresses in a Box with Washable Removable Cover, Medium Firm, Fiberglass Free, Made in USA & CertiPUR-US Certified",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0G13P4Q37",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71niJyHKRVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZSPSVTL",
+    "name": "Juego 12 Inch Queen Mattress (U.S.Standard)\uff0cQueen Size Hybrid Mattress with Medium Firm Memory Foam and Individual Pocket Springs for Improve Sleep and Pressure Relief, Breathable and Skin-Friendly",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZSPSVTL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71-rFzQmUsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZM2W47F",
+    "name": "Dyonery Queen Size Mattress, 10 Inch Gel Memory Foam, Cooling & Back Pain Relief, Fiberglass Free, CertiPUR-US Certified, Foam Made in USA, Medium",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZM2W47F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91F-hj6GpFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F74T7VRB",
+    "name": "DreamCloud Classic 12\" Queen Mattress - Memory Foam - 365 Night Trial - Back Pain Relief - Fiberglass Free - Forever Warranty - Mattress in a Box - CertiPUR-US\u00ae Certified",
+    "normalized_price": 799.0,
+    "buy_url": "https://www.amazon.com/dp/B0F74T7VRB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81rcNB4fpWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1MVBC7V",
+    "name": "Firm Queen Memory Foam Mattress,14\" Gel-Infused Cooling Mattress,Spinal Support,Pressure Relief & Back Pain Relief,CertiPUR-US Certified,Fiberglass-Free, Motion Isolation,365-Night Trial,60x80",
+    "normalized_price": 399.99,
+    "buy_url": "https://www.amazon.com/dp/B0H1MVBC7V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fFoUgfx9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKYZC93L",
+    "name": "Zinus Green Tea Memory Foam Mattress 12 Inch, Pressure-Relieving Comfort & Full-Body Support, Naturally Fresh, Medium Firm Feel, CertiPUR-US & Oeko-TEX Certified Safe Materials, Queen",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0CKYZC93L",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81F-YW+7cDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFG68ZYJ",
+    "name": "Sleep Innovations Shiloh 14 Inch Green Tea Memory Foam Mattress, Queen Size, Bed in a Box, Medium Feel",
+    "normalized_price": 519.99,
+    "buy_url": "https://www.amazon.com/dp/B0GFG68ZYJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91P71Joln+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLJBF6P6",
+    "name": "Queen Mattress Medium Firm - 14 Inch Memory Foam Hybrid Mattress with Target Support for Spine Alignment, Enhanced Edge",
+    "normalized_price": 629.49,
+    "buy_url": "https://www.amazon.com/dp/B0FLJBF6P6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91NYEadmouL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWNJLSS6",
+    "name": "VKT 12 Inch Mttress Queen Size, Memory Foam Hybrid Mattresses in a Box, Medium Firm, Pocket Springs for Motion Isolation, CertiPUR-US and Oeko TEX Certified",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWNJLSS6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71GAAyXitOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJR8VFTZ",
+    "name": "Gelsea 12 Inch Green Tea Memory Foam Mattress, Queen Memory Foam Mattress in a Box, Gel Infused Foam for Pressure Relief and Cool Sleep, CertiPUR-US Certified, Medium Firm",
+    "normalized_price": 269.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJR8VFTZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+uknapuHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DMBYHV4K",
+    "name": "Best Price Mattress 10 Inch Memory Foam Mattress, Medium Firm, Cooling Gel Infused, Certified Safe Foams & Fabric, Mattress in a Box, Queen",
+    "normalized_price": 172.36,
+    "buy_url": "https://www.amazon.com/dp/B0DMBYHV4K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lQZcc2HbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2HHBN8Z",
+    "name": "Novilla Queen Size Mattress 12 Inch, Queen Memory Foam Mattress with Breathable Comfort Layer & High-Density Base Foam for Pressure Relief & Contouring Support, Motion Isolation & Cooling Comfort",
+    "normalized_price": 188.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2HHBN8Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818+G7GIfVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKYZD1DF",
+    "name": "Zinus 8 Inch Green Tea Cooling Memory Foam Mattress [New Version], Queen, Fiberglass Free, Medium Firmness, Cooling Gel Foam, Certified Safe Foams & Fabric, Mattress in A Box",
+    "normalized_price": 188.0,
+    "buy_url": "https://www.amazon.com/dp/B0CKYZD1DF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81zfqfEWAIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GRN95557",
+    "name": "Queen Mattress 12 Inch, Cooling Gel Memory Foam Mattress Queen Size for Pressure Relief & Cool Fresh Sleep, Queen Size Mattresses with Removable Washable Cover, Edges Support, Medium Firm",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0GRN95557",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818xHBjYNqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJSKY2G1",
+    "name": "Novilla Queen Mattress 12 Inch, Queen Gel Memory Foam Mattress for Spinal Alignment, Responsive Support & Refreshing Sleep Comfort, with Green Tea-Infused Foam, Medium Firm, Mattresses in a Box",
+    "normalized_price": 259.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJSKY2G1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81j2b3ZIGlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GSH5CYTM",
+    "name": "Avenco 10 Inch Queen Mattress with Open-Cell Foam for Breathable Comfort, Gel Memory Foam Queen Size Mattresses with Removable Cover, CertiPUR-US Certified Mattress in a Box",
+    "normalized_price": 198.23,
+    "buy_url": "https://www.amazon.com/dp/B0GSH5CYTM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ORIyoluoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXV2CMHH",
+    "name": "Moccona 12 Inch Queen Size Mattresses, Memory Foam Hybrid Mattress in a Box with Independent Spring, Soft and Comfortable, Pressure Relief, CertiPUR-US Certified, Medium",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXV2CMHH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61+VzF4mafL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTLZ6SMK",
+    "name": "Novilla 12 Inch Queen Mattress, Cooling Queen Hybrid Mattress with Upgraded Individual Coils & Gel Memory Foam, Enhanced Support, Motion Isolation, Pressure Relief, CertiPUR-US",
+    "normalized_price": 234.99,
+    "buy_url": "https://www.amazon.com/dp/B0GTLZ6SMK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ztbRYNqpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GBWZ24W1",
+    "name": "BedStory Firm Queen Mattress 12 Inch, Hotel Collection Hybrid Mattresses with Zoned Lumbar Support, Extra Back & Hip Support, CertiPUR-US, Fiberglass-Free, 365-Night Trial",
+    "normalized_price": 339.99,
+    "buy_url": "https://www.amazon.com/dp/B0GBWZ24W1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ui8zcDS8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FSDD4YV6",
+    "name": "Queen Mattress, 12 Inch Queen Size Hybrid Mattresses in a Box, Medium Feel Foam and Individual Pocket Springs, Fiberglass Free Bed Mattress, Extra Edge Support, Pressure Relief, CertiPUR-US, Blue",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0FSDD4YV6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LceSQixhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQX6R56Z",
+    "name": "Queen Mattress 12 Inch, Cooling Hybrid Bed in a Box, 7-Zones Individual Pocket Spring, Motion Isolation, Targeted Hip/Shoulder/Lumbar Support, Fiberglass-Free, 365-Night Trial, CertiPUR-US",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQX6R56Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71OePTIHy0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHRJZDW3",
+    "name": "Neo Sleep Queen Size Mattress, 12 Inch Hybrid Comfort & Supportive Mattress in a Box, Cooling Gel Memory Foam and Pocket Springs with Pressure Relief, CertiPUR-US Certified, Medium Feel",
+    "normalized_price": 199.98,
+    "buy_url": "https://www.amazon.com/dp/B0GHRJZDW3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81kooe3gnAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKYZNGM8",
+    "name": "Zinus 12 Inch Comfort Support Hybrid Mattress [New Version], Queen, Fiberglass Free, Medium Plush, Motion Isolation, Certified Safe Foams & Fabric, Mattress in A Box",
+    "normalized_price": 264.99,
+    "buy_url": "https://www.amazon.com/dp/B0CKYZNGM8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-OPLyVANL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FT85TCZW",
+    "name": "Novilla 14 Inch Queen Size Mattress,Hybrid Queen Mattress with Gel Memory Foam, Cool-to-Touch Nylon Blend & Pocketed Coils for Adaptive Body Support & Motion Isolation CertiPUR-US Certified",
+    "normalized_price": 296.13,
+    "buy_url": "https://www.amazon.com/dp/B0FT85TCZW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81oV-BzK7IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8GRLX3C",
+    "name": "Queen Mattress 14 Inch, Medium Firm Queen Size Mattress in a Box\uff0cHybrid Mattresses with Gel Foam & Zoned Pocket Springs for Pressure Relief, Motion Isolation | CertiPUR-US Certified",
+    "normalized_price": 239.98,
+    "buy_url": "https://www.amazon.com/dp/B0F8GRLX3C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Edi7C7c1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GV7NVT6N",
+    "name": "Queen Size Mattress 12 Inch Hybrid Mattress in a Box, Memory Foam & Pocket Spring, Medium Firm, Cooling Breathable Silver Thread, Pressure Relief, Motion Isolation, 365-Night Trial",
+    "normalized_price": 446.49,
+    "buy_url": "https://www.amazon.com/dp/B0GV7NVT6N",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81k9V-81rcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCXLGF3Q",
+    "name": "Queen Hybrid Mattress 12 Inch,Made in USA, Bamboo Charcoal Gel Memory Foam & 3-Zone Support for Back Pain, Hypoallergenic & Odorless, Pressure Relief,Motion Isolation, CertiPUR-US,Medium",
+    "normalized_price": 279.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCXLGF3Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FRCGZd7rL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8C6S8YD",
+    "name": "Awara Premier Luxury Hybrid Queen Mattress 12 Inch - Certified Organic Natural Latex - Sustainable New Zealand Wool - Fiberglass-Free - 365-Night Trial",
+    "normalized_price": 1199.0,
+    "buy_url": "https://www.amazon.com/dp/B0F8C6S8YD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71owq+HtnGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZX41VFQ",
+    "name": "14 Inch Hybrid Mattress -Queen Memory Foam & Individual Pocket Springs - Medium Firm Hybird Mattress for Motion Isolation & Pressure Relief - Cool Gel Infused for Hot Sleepers",
+    "normalized_price": 229.0,
+    "buy_url": "https://www.amazon.com/dp/B0GZX41VFQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pG-gNWJ-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FSD939T1",
+    "name": "Queen Size Mattress, 10 Inch Queen Size Hybrid Mattresses in a Box, Medium Feel Foam and Individual Pocket Springs, Fiberglass Free Bed Mattress, Extra Edge Support, Pressure Relief, CertiPUR-US, Blue",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0FSD939T1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LceSQixhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H11SC49R",
+    "name": "Avenco Queen Hybrid Mattress 10 inch, Queen Mattress with Individual Pocket Spring and Gel Memory Foam for Cool Night, Relieve Pressure, Balance Support, CertiPUR-US Mattress in a Box, Medium Firm",
+    "normalized_price": 232.98,
+    "buy_url": "https://www.amazon.com/dp/B0H11SC49R",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81cqwfyv0RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8HWHD49",
+    "name": "MLILY EGOHOME 14''Hybrid Queen Mattress,Memory Foam Pocket Spring Mattress with Cooling Cover,Bed in a Box,CertiPUR-US Certified,Targeted Support Pressure Relief,60''x80''x14'' Black",
+    "normalized_price": 509.99,
+    "buy_url": "https://www.amazon.com/dp/B0C8HWHD49",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81cEPx7Fe2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2VWYC5V",
+    "name": "BedStory Queen Mattress 14 Inch - Firm Hybrid Mattress with Orthopedic Spinal Support for Back Pain - 2.0mm Advanced Pocket Spring and Motion Isolation Technology, CertiPUR-US Certified",
+    "normalized_price": 384.99,
+    "buy_url": "https://www.amazon.com/dp/B0D2VWYC5V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81VHFAx2dqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS9WK8ZL",
+    "name": "Queen Mattress, 10 Inch Ultra Comfort Hybrid Mattresses Queen Size, Foam with Independent Pocket Springs Mattress in a Box Pressure Relief & Supportive, Medium Firm",
+    "normalized_price": 229.99,
+    "buy_url": "https://www.amazon.com/dp/B0GS9WK8ZL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71-+q3R679L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWMYK2Y5",
+    "name": "Queen Size 12 Inch Medium Firm Hybrid Mattress with Cooling Gel Memory Foam, CertiPUR-US Certified Mattress in a Box Pressure Relief Removable Cover No Fiberglass",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWMYK2Y5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+Bt-LO-vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRG4YNGG",
+    "name": "Firm Queen Mattress 14 Inch - Hotel Collection Hybrid Mattress with 7-Zone Support for Spinal Alignment, Extra Back & Hip Support, Fiberglass-Free, CertiPUR-US Certified, 365-Night Trial",
+    "normalized_price": 399.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRG4YNGG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yeVpyKn2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSFYJLLN",
+    "name": "Novilla Queen Mattress, 12 Inch Hybrid Mattress Queen with Comfort Foam,Innerspring Pillow Top Mattresses in a Box, Pressure & Pain Relief, Soft Feel but Supportive",
+    "normalized_price": 225.89,
+    "buy_url": "https://www.amazon.com/dp/B0CSFYJLLN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mz-F1SHAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZ2TGSL5",
+    "name": "Queen Hybrid Mattress 12 Inch in a Box, Cooling Gel Memory Foam & Pocket Springs, Medium Firm, Pressure Relief & Motion Isolation, Extra Edge Support, Fiberglass Free, All Sleep Positions, Pillow Top",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZ2TGSL5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8192Ozu1OrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FT86498C",
+    "name": "Novilla 12 Inch Queen Mattress,Queen Size Hybrid Mattress with Cooling Gel Memory Foam, Pocketed Coils & Cool-Touch Nylon Cover for Motion Isolation & Edge Support CertiPUR-US Certified",
+    "normalized_price": 249.99,
+    "buy_url": "https://www.amazon.com/dp/B0FT86498C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Vnf81kFAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FX3C2ZLW",
+    "name": "12 Inch Hybrid Mattress Queen Size, Medium Firm Queen Mattress in a Box with Gel Memory Foam & Pocket Coils, Motion Isolation, Breathable Cooling Cover, Back Pain Relief & Edge Support, Euro Top",
+    "normalized_price": 179.97,
+    "buy_url": "https://www.amazon.com/dp/B0FX3C2ZLW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91oDeki2dKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F75Q1K1Y",
+    "name": "DreamCloud Classic 12\" Queen Mattress - Luxury Hybrid Gel Memory Foam - 365 Night Trial - Back Pain Relief - Fiberglass Free - Forever Warranty - Mattress in a Box - CertiPUR-US Certified",
+    "normalized_price": 649.0,
+    "buy_url": "https://www.amazon.com/dp/B0F75Q1K1Y",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81AOSdskOSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4L96X9J",
+    "name": "BedStory Firm Queen Size Mattress 14 Inch, Luxury Hybrid Mattress for Back Pain Relief with Zoned Lumbar Support, Cooling Hotel Collection Deep Sleep Mattresses, 365 Nights Trial, 10-Year Warranty",
+    "normalized_price": 399.99,
+    "buy_url": "https://www.amazon.com/dp/B0G4L96X9J",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ui8zcDS8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHHFV32Q",
+    "name": "CH Charme House Queen Mattress 10 Inch Hybrid Mattresses in a Box, Medium Feel Foam and Individual Pocket Springs, Fiberglass Free Mattress, Extra Edge Support, Pressure Relief, CertiPUR-US, Grey",
+    "normalized_price": 183.68,
+    "buy_url": "https://www.amazon.com/dp/B0FHHFV32Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ijSRJKthL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGX5JLK1",
+    "name": "MOOA 12 Inch Queen Mattress - Mattress Hybrid Cooling Gel Memory Foam & Pocket Coils,Medium Firm Mattress in a Box for Ergonomic Spinal Support,Motion Isolation & Edge Support for Side & Back Sleepers",
+    "normalized_price": 212.2,
+    "buy_url": "https://www.amazon.com/dp/B0GGX5JLK1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71NwqjkBXZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FY5RVVQK",
+    "name": "Sleepmax Queen Mattress 14 Inch - Hotel-Collection Hybrid Mattress Pain Relief - Extra Lumbar & Hip Support - Cooling Gel Bed in a Box Spine Alignment - CertiPUR-US, Fiberglass-Free, 365-Night Trial",
+    "normalized_price": 309.99,
+    "buy_url": "https://www.amazon.com/dp/B0FY5RVVQK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-nqe0-hiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX71SSGX",
+    "name": "Queen Mattress,12 Inch Medium Firm Hybrid Queen size Bed Mattress, Memory Foam Mattresses in a Box for Pressure Relief, Individual Pocket Spring-Motion Isolation with Edge Support, CertiPUR-US",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX71SSGX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81psQK54Z-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3W2LYKN",
+    "name": "Ailis Queen Mattress, 12 Inch Queen Hybrid Mattress in a Box, Medium Firm with Upgraded Pocket Springs for Superior Motion Isolation, Strong Edge Support & Breathable Comfort",
+    "normalized_price": 189.04,
+    "buy_url": "https://www.amazon.com/dp/B0G3W2LYKN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rmjIBaXUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFWDL5YN",
+    "name": "BedStory Queen Size Mattress 14 Inch - Extra Firm Hybrid Mattress with Ultra Lumbar Support, Reinforced Edges & Motion Isolation - Fiberglass-Free Colchones Queen, CertiPUR-US",
+    "normalized_price": 384.99,
+    "buy_url": "https://www.amazon.com/dp/B0GFWDL5YN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81E+znIMEjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2YMQ4JQ",
+    "name": "Firm Queen Mattress 14 inch, Cooling Hybrid Mattress in a Box, Luxury Hotel-Collection Design, Enhanced Back & Hip Support for Deep Sleep, Fiberglass-Free & CertiPUR-US, 365-Night Trial",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0H2YMQ4JQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81D2IWXezfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF1VLY4Y",
+    "name": "Queen Mattress, 12 Inch Hybrid Queen Size Mattress in a Box, Medium Firm, Memory Foam & Pocketed Springs, Pressure Relief, CertiPUR-US Certified& Fiberglass Free, Motion Isolation, 365-Night Trial",
+    "normalized_price": 165.99,
+    "buy_url": "https://www.amazon.com/dp/B0GF1VLY4Y",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vvlogZnVL._AC_UL320_.jpg",
+    "source": "canopy"
   }
 ]
