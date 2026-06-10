@@ -30,6 +30,39 @@ from schemas.slot_plan import SlotPlan
 from schemas.style_profile import StyleProfile
 from services.config_loader import BudgetPolicies, load_budget_policies, load_room_taxonomy
 
+# Per-category minimum price floors — derived from the cheapest real product in
+# each category's catalog.  Used by allocate_budget() to ensure every slot gets
+# enough budget to buy at least one item.  Fallback for unknown slots: $15.
+_CATEGORY_PRICE_FLOORS: dict[str, float] = {
+    "armchair": 109.99,
+    "bed_frame": 31.99,
+    "bookshelf": 39.99,
+    "ceiling_light": 9.35,
+    "coffee_table": 59.99,
+    "comforter": 18.99,
+    "curtains": 6.99,
+    "dresser": 19.96,
+    "floor_lamp": 19.99,
+    "mattress": 29.99,
+    "mirror": 14.80,
+    "nightstand": 11.99,
+    "ottoman": 34.99,
+    "pillows": 5.59,
+    "plants": 4.89,
+    "rug": 17.99,
+    "sheets": 9.97,
+    "side_table": 29.99,
+    "sofa": 199.99,
+    "sound_bar": 49.99,
+    "table_lamp": 9.89,
+    "throw_blanket": 8.54,
+    "throw_pillows": 10.99,
+    "tv": 149.99,
+    "tv_stand": 49.99,
+    "wall_art": 2.34,
+}
+_DEFAULT_PRICE_FLOOR = 15.0
+
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-sonnet-4-6"
 _LLM_MAX_TOKENS = 512
@@ -123,18 +156,62 @@ def allocate_budget(
         slot_id: w * target_budget for slot_id, w in weights.items()
     }
 
-    # --- Step 3b: Enforce min_slot_dollars floor ------------------------------
-    # Slots allocated below the minimum get bumped up.  Then scale the whole
-    # set down proportionally so sum(allocated) <= target_budget is preserved.
-    min_slot = taxonomy.budget_rules.min_slot_dollars
-    if min_slot > 0 and len(allocated) > 1:
-        for slot_id in allocated:
-            if allocated[slot_id] < min_slot:
-                allocated[slot_id] = min_slot
-        floor_total = sum(allocated.values())
-        if floor_total > target_budget:
-            scale = target_budget / floor_total
-            allocated = {sid: v * scale for sid, v in allocated.items()}
+    # --- Step 3b: Per-category price floors + optional drop --------------------
+    # Each slot is floored to the cheapest real product in its catalog so it
+    # can always buy *something*.  If scaling to fit the budget pushes an
+    # optional slot back below its floor, drop it (budget goes to others).
+    # Required slots are never dropped — they keep their scaled share.
+    required_set = set(required_slot_ids)
+
+    def _apply_floors(alloc: dict[str, float]) -> dict[str, float]:
+        out = dict(alloc)
+        for sid in out:
+            floor = _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
+            if out[sid] < floor:
+                out[sid] = floor
+        total = sum(out.values())
+        if total > target_budget:
+            # Scale only the headroom above each slot's floor so that
+            # every slot stays at or above its floor after scaling.
+            floor_total = sum(
+                _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
+                for sid in out
+            )
+            headroom_budget = target_budget - floor_total
+            headroom_total = total - floor_total
+            if headroom_total > 0 and headroom_budget > 0:
+                scale = headroom_budget / headroom_total
+                for sid in out:
+                    floor = _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
+                    out[sid] = floor + (out[sid] - floor) * scale
+            else:
+                # Budget can't cover all floors — uniform scale as fallback.
+                scale = target_budget / total
+                out = {sid: v * scale for sid, v in out.items()}
+        return out
+
+    allocated = _apply_floors(allocated)
+
+    # Drop optional slots that fell below their floor after scaling.
+    # Re-apply floors with the freed budget.  Iterate until stable.
+    for _ in range(len(allocated)):
+        to_drop = [
+            sid for sid in allocated
+            if sid not in required_set
+            and allocated[sid] < _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
+        ]
+        if not to_drop:
+            break
+        for sid in to_drop:
+            del allocated[sid]
+        if not allocated:
+            break
+        # Re-normalize weights for remaining slots and re-allocate.
+        remaining_weights = {sid: weights[sid] for sid in allocated}
+        tw = sum(remaining_weights.values())
+        if tw > 0:
+            allocated = {sid: (w / tw) * target_budget for sid, w in remaining_weights.items()}
+            allocated = _apply_floors(allocated)
 
     # --- Step 4: Floating-point clamp ----------------------------------------
     # After normalization the sum should equal target_budget, but IEEE 754
@@ -146,7 +223,6 @@ def allocate_budget(
         allocated = {slot_id: v * scale for slot_id, v in allocated.items()}
 
     # --- Step 5: Build Slot objects ------------------------------------------
-    required_set = set(required_slot_ids)
     slots: list[Slot] = []
     for slot_id, budget in allocated.items():
         item_def = taxonomy.item_by_id(slot_id)

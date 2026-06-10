@@ -27,12 +27,18 @@ from schemas.style_profile import StyleProfile
 
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-haiku-4-5-20251001"
-_LLM_MAX_TOKENS = 512
+_LLM_MAX_TOKENS = 768
 _RETRY_MAX = 3
 _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 
 # Default number of ranked picks to request from the LLM.
-_DEFAULT_PICK_COUNT = 6
+_DEFAULT_PICK_COUNT = 9
+
+# Per-slot overrides for slots that benefit from more options.
+_SLOT_PICK_COUNTS: dict[str, int] = {
+    "wall_art": 18,
+    "plants": 12,
+}
 
 
 # ---------------------------------------------------------------------------
@@ -41,6 +47,11 @@ _DEFAULT_PICK_COUNT = 6
 
 # Decor slots where user interests can influence product selection.
 _INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
+
+
+def pick_count_for_slot(slot_id: str) -> int:
+    """Return the number of ranked picks to request for a given slot."""
+    return _SLOT_PICK_COUNTS.get(slot_id, _DEFAULT_PICK_COUNT)
 
 
 def select_products(

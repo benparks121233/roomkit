@@ -28,7 +28,7 @@ from app.api.schemas import (
 from services.composition_gate import validate_composition
 from services.composition_service import plan_composition
 from services.intake_service import parse_intake
-from services.selection_service import select_products
+from services.selection_service import select_products, pick_count_for_slot
 from services.sourcing.amazon_adapter import AmazonAdapter
 from services.style_service import interpret_style
 
@@ -118,7 +118,10 @@ async def create_design(req: DesignRequest) -> DesignResponse:
 
     with ThreadPoolExecutor(max_workers=len(sourceable_slots) or 1) as pool:
         futures = {
-            pool.submit(select_products, slot, style_profile, cands, interests): slot.slot_id
+            pool.submit(
+                select_products, slot, style_profile, cands, interests,
+                pick_count_for_slot(slot.slot_id),
+            ): slot.slot_id
             for slot, cands in sourceable_slots
         }
         for future in as_completed(futures):
