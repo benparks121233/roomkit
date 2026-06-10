@@ -14,6 +14,8 @@ export interface DesignRequest {
   style_description: string;
   bed_size?: string | null;
   qa_answers?: Record<string, string>;
+  density?: string;
+  interests?: string[];
   full_room?: boolean;
   wants?: string[];
 }

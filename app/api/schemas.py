@@ -14,6 +14,8 @@ class DesignRequest(BaseModel):
     style_description: str = ""
     bed_size: str | None = None
     qa_answers: dict[str, str] = {}
+    density: str = "balanced"
+    interests: list[str] = []
     full_room: bool = True
     wants: list[str] = []
 

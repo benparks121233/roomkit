@@ -306,6 +306,15 @@ def _build_owned_slots(already_have: set[str], taxonomy: RoomTaxonomy) -> list[S
     return slots
 
 
+# Slots dropped per density level.  Only optional slots may appear here.
+# "minimal" drops extra decor/accent items; "balanced"/"layered" keep all.
+_DENSITY_DROP: dict[str, set[str]] = {
+    "minimal": {"floor_lamp", "plants", "mirror", "curtains", "throw_blanket"},
+    "balanced": set(),
+    "layered": set(),
+}
+
+
 def plan_composition(
     room_request: RoomRequest,
     style_profile: StyleProfile,
@@ -346,10 +355,17 @@ def plan_composition(
     except Exception:
         weights = _taxonomy_default_weights(room_preset, taxonomy)
 
+    # Density: treat density-dropped slots as "already owned" so they get
+    # $0 budget and are excluded from sourcing, without touching the LLM
+    # or the budget math.  Only optional slots are in _DENSITY_DROP.
+    density = getattr(room_request, "density", "balanced")
+    density_drops = _DENSITY_DROP.get(density, set())
+    already_have = set(room_request.already_have) | density_drops
+
     return fit_slots_to_budget(
         weights, target_budget, room_preset, taxonomy, budget_policies,
         run_id=run_id,
-        already_have=set(room_request.already_have),
+        already_have=already_have,
         must_have=set(room_request.must_have),
     )
 

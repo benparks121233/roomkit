@@ -44,6 +44,14 @@ class RoomRequest(BaseModel):
     # Structured Q&A answers keyed by question id.  Empty dict if no Q&A.
     qa_answers: dict[str, str] = {}
 
+    # Density preference — controls how many optional slots are included.
+    # "minimal" drops extra decor, "balanced" is default, "layered" keeps all.
+    density: str = "balanced"
+
+    # User interest categories (e.g. "music", "sports", "travel").
+    # Used to personalize decor slot selection prompts.
+    interests: list[str] = []
+
     # Slot ids the user already owns — composition will mark these as present
     # but not source them.  Validated against the taxonomy in intake_service.
     already_have: list[str] = []

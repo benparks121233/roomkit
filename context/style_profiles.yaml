@@ -3,34 +3,67 @@ version: 1
 # Named style profiles. The LLM maps user Q&A answers to one of these.
 # style_service.py loads this file; prompts/interpret_style.md references it.
 # Add new profiles here; do not embed style definitions inside prompts.
+#
+# warm_minimalist is the fallback when the LLM can't make a confident match.
 
 profiles:
+  - id: cottagecore
+    display_name: Cottagecore
+    keywords: [vintage, floral, distressed wood, soft linen, handmade, cozy, pastoral]
+    color_palette: [dusty rose, sage green, cream, warm white, soft blush]
+    mood: gentle, nostalgic, handcrafted
+
+  - id: dark_academia
+    display_name: Dark Academia
+    keywords: [dark walnut, leather-bound, antique brass, rich velvet, scholarly, moody]
+    color_palette: [deep brown, burgundy, forest green, antique gold, espresso]
+    mood: intellectual, atmospheric, richly layered
+
+  - id: japandi
+    display_name: Japandi
+    keywords: [minimalist, zen, matte, ash wood, clean lines, negative space, organic]
+    color_palette: [warm grey, off-white, pale oak, stone, charcoal accent]
+    mood: serene, intentional, quietly refined
+
+  - id: coastal
+    display_name: Coastal
+    keywords: [whitewash, woven rattan, crisp linen, sea glass, driftwood, airy, natural]
+    color_palette: [white, soft blue, sand, seafoam, natural rattan]
+    mood: breezy, relaxed, sun-washed
+
+  - id: industrial
+    display_name: Industrial
+    keywords: [exposed metal, concrete, raw steel, dark wood, Edison bulbs, utilitarian, matte black]
+    color_palette: [charcoal, steel grey, dark walnut, black, warm amber accent]
+    mood: edgy, urban, raw
+
+  - id: quiet_luxury
+    display_name: Quiet Luxury
+    keywords: [cashmere, marble, brushed gold, understated, tailored, bouclé, fine grain]
+    color_palette: [ivory, taupe, champagne, warm grey, soft gold accent]
+    mood: polished, serene, effortlessly refined
+
+  - id: sports_den
+    display_name: Sports Den
+    keywords: [leather, dark tones, masculine, bold, lounge, warm wood, club]
+    color_palette: [deep navy, cognac brown, charcoal, dark green, warm brass]
+    mood: confident, relaxed, den-like
+
+  - id: city_modern
+    display_name: City Modern
+    keywords: [sleek, glass, monochrome, polished chrome, high-contrast, angular, modern]
+    color_palette: [black, white, cool grey, chrome silver, accent cobalt]
+    mood: sharp, metropolitan, curated
+
+  - id: ski_lodge
+    display_name: Ski Lodge
+    keywords: [timber, wool plaid, chunky knit, warm, rustic, hearth, cabin, fur]
+    color_palette: [warm brown, deep red, cream, forest green, burnt orange]
+    mood: warm, inviting, alpine cozy
+
+  # Fallback profile — used when the LLM can't confidently match any above.
   - id: warm_minimalist
     display_name: Warm Minimalist
     keywords: [natural wood, linen, neutral tones, clean lines, cozy simplicity]
     color_palette: [cream, warm white, light oak, terracotta accent]
     mood: calm, grounded, uncluttered
-
-  - id: mid_century_modern
-    display_name: Mid-Century Modern
-    keywords: [walnut, tapered legs, muted mustard, olive, geometric patterns]
-    color_palette: [walnut, mustard, olive green, cream, burnt orange accent]
-    mood: retro, sophisticated, intentional
-
-  - id: cozy_maximalist
-    display_name: Cozy Maximalist
-    keywords: [layered textiles, jewel tones, eclectic art, mixed patterns, plush]
-    color_palette: [deep teal, burgundy, gold, forest green, warm white]
-    mood: rich, welcoming, expressive
-
-  - id: modern_coastal
-    display_name: Modern Coastal
-    keywords: [whitewash, rattan, sea glass tones, linen, natural textures]
-    color_palette: [white, soft blue, sand, natural rattan, seafoam accent]
-    mood: airy, relaxed, fresh
-
-  - id: industrial_urban
-    display_name: Industrial Urban
-    keywords: [exposed metal, dark wood, concrete tones, Edison bulbs, raw edges]
-    color_palette: [charcoal, dark walnut, steel grey, black, warm amber accent]
-    mood: edgy, modern, utilitarian

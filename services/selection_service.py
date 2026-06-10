@@ -26,7 +26,7 @@ from schemas.slot import Slot
 from schemas.style_profile import StyleProfile
 
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
-_LLM_MODEL = "claude-sonnet-4-6"
+_LLM_MODEL = "claude-haiku-4-5-20251001"
 _LLM_MAX_TOKENS = 256
 _RETRY_MAX = 3
 _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
@@ -36,10 +36,15 @@ _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 # Public API
 # ---------------------------------------------------------------------------
 
+# Decor slots where user interests can influence product selection.
+_INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
+
+
 def select_product(
     slot: Slot,
     style_profile: StyleProfile,
     candidates: list[Product],
+    interests: list[str] | None = None,
 ) -> tuple[Product | None, str | None]:
     """Choose the single best product for a slot from the candidate list.
 
@@ -47,6 +52,8 @@ def select_product(
         slot:           The slot to fill (provides slot_id, required_specs, owned).
         style_profile:  User's validated style for the LLM prompt.
         candidates:     Products returned by the sourcing adapter.
+        interests:      User interest categories (e.g. ["music", "travel"]).
+                        Only used for decor slots in _INTEREST_SLOTS.
 
     Returns:
         (Product, fit_reason)   — LLM chose a candidate; product is unmodified.
@@ -72,8 +79,13 @@ def select_product(
     if not valid:
         return None, "no_spec_match"
 
+    # Only pass interests for decor slots where they're relevant.
+    slot_interests = interests if interests and slot.slot_id in _INTEREST_SLOTS else None
+
     # Build prompt and ask the LLM.
-    system_prompt, user_message = _build_selection_prompts(slot, style_profile, valid)
+    system_prompt, user_message = _build_selection_prompts(
+        slot, style_profile, valid, interests=slot_interests,
+    )
 
     try:
         raw = _call_selection_llm(system_prompt, user_message)
@@ -117,6 +129,8 @@ def _build_selection_prompts(
     slot: Slot,
     style_profile: StyleProfile,
     candidates: list[Product],
+    *,
+    interests: list[str] | None = None,
 ) -> tuple[str, str]:
     """Load select_products.md, substitute variables, return (system, user)."""
     template_text = (_PROMPTS_DIR / "select_products.md").read_text()
@@ -124,6 +138,7 @@ def _build_selection_prompts(
     style_summary = (
         f"style_name: {style_profile.style_name}\n"
         f"keywords: {', '.join(style_profile.keywords)}\n"
+        f"color_palette: {', '.join(style_profile.color_palette)}\n"
         f"mood: {style_profile.mood}"
     )
 
@@ -142,6 +157,11 @@ def _build_selection_prompts(
     price_min = 0.0
     price_max = slot.allocated_budget
 
+    # Interest line — only for decor slots with user interests.
+    interests_line = ""
+    if interests:
+        interests_line = f"User interests: {', '.join(interests)}\n"
+
     rendered = (
         template_text
         .replace("{{slot_id}}", slot.slot_id)
@@ -149,6 +169,7 @@ def _build_selection_prompts(
         .replace("{{min_price}}", f"{price_min:.2f}")
         .replace("{{max_price}}", f"{price_max:.2f}")
         .replace("{{required_specs}}", json.dumps(slot.required_specs))
+        .replace("{{interests}}", interests_line)
         .replace("{{candidates_json}}", candidates_json)
     )
 

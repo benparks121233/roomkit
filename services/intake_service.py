@@ -73,6 +73,14 @@ def parse_intake(raw_input: dict) -> RoomRequest:
     style_description: str | None = raw_input.get("style_description") or None
     qa_answers: dict[str, str] = dict(raw_input.get("qa_answers") or {})
 
+    # --- Density (minimal / balanced / layered) ---------------------------
+    density: str = raw_input.get("density", "balanced")
+    if density not in ("minimal", "balanced", "layered"):
+        density = "balanced"
+
+    # --- Interests (e.g. ["music", "sports"]) ----------------------------
+    interests: list[str] = list(raw_input.get("interests") or [])
+
     # --- Translate full_room / wants → internal already_have / must_have --
     # full_room=True  → source all preset slots (already_have=[], must_have=[])
     # full_room=False  → source only `wants` slots; everything else is "owned"
@@ -106,6 +114,8 @@ def parse_intake(raw_input: dict) -> RoomRequest:
         bed_size=bed_size,
         style_description=style_description,
         qa_answers=qa_answers,
+        density=density,
+        interests=interests,
         already_have=already_have,
         must_have=must_have,
         created_at=datetime.now(tz=timezone.utc),

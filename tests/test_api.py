@@ -278,6 +278,96 @@ class TestOwnedSlots:
 
 
 # ---------------------------------------------------------------------------
+# Density — minimal drops optional slots, layered keeps all
+# ---------------------------------------------------------------------------
+
+DENSITY_DROPPED_SLOTS = {"floor_lamp", "plants", "mirror", "curtains", "throw_blanket"}
+
+
+class TestDensity:
+
+    @_patch_llms
+    def test_minimal_drops_optional_decor_slots(self, _s, _c, _sel):
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "density": "minimal",
+        })
+        data = resp.json()
+        sourced_ids = {
+            s["slot_id"] for s in data["slots"]
+            if s["product"] is not None
+        }
+        for dropped in DENSITY_DROPPED_SLOTS:
+            assert dropped not in sourced_ids, (
+                f"Slot {dropped} should be dropped in minimal density"
+            )
+
+    @_patch_llms
+    def test_minimal_marks_dropped_as_owned(self, _s, _c, _sel):
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "density": "minimal",
+        })
+        data = resp.json()
+        for slot in data["slots"]:
+            if slot["slot_id"] in DENSITY_DROPPED_SLOTS:
+                assert slot["owned"] is True
+                assert slot["allocated_budget"] == 0.0
+
+    @_patch_llms
+    def test_balanced_keeps_all_optional_slots(self, _s, _c, _sel):
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "density": "balanced",
+        })
+        data = resp.json()
+        slot_ids = {s["slot_id"] for s in data["slots"]}
+        for kept in DENSITY_DROPPED_SLOTS:
+            assert kept in slot_ids, (
+                f"Slot {kept} should be present in balanced density"
+            )
+
+    @_patch_llms
+    def test_layered_keeps_all_optional_slots(self, _s, _c, _sel):
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "density": "layered",
+        })
+        data = resp.json()
+        slot_ids = {s["slot_id"] for s in data["slots"]}
+        for kept in DENSITY_DROPPED_SLOTS:
+            assert kept in slot_ids, (
+                f"Slot {kept} should be present in layered density"
+            )
+
+    @_patch_llms
+    def test_minimal_has_fewer_sourced_slots_than_layered(self, _s, _c, _sel):
+        resp_min = client.post("/design", json={
+            "room_type": "bedroom", "budget": 1500, "density": "minimal",
+        })
+        resp_lay = client.post("/design", json={
+            "room_type": "bedroom", "budget": 1500, "density": "layered",
+        })
+        sourced_min = [s for s in resp_min.json()["slots"] if s["product"] is not None]
+        sourced_lay = [s for s in resp_lay.json()["slots"] if s["product"] is not None]
+        assert len(sourced_min) < len(sourced_lay)
+
+    @_patch_llms
+    def test_minimal_budget_still_not_exceeded(self, _s, _c, _sel):
+        resp = client.post("/design", json={
+            "room_type": "bedroom",
+            "budget": 1500,
+            "density": "minimal",
+        })
+        data = resp.json()
+        assert data["total_spent"] <= data["target_budget"]
+
+
+# ---------------------------------------------------------------------------
 # Error cases
 # ---------------------------------------------------------------------------
 

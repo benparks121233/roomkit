@@ -60,6 +60,8 @@ export default function IntakePage() {
       budget: result.budget,
       style_description: result.quiz.style.description,
       bed_size: result.roomType === "bedroom" ? result.bedSize : null,
+      density: result.quiz.style.density,
+      interests: result.quiz.interests.map((i) => i.category),
       full_room: result.fullRoom,
       wants: result.wants,
     };

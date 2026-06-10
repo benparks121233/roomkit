@@ -112,9 +112,11 @@ async def create_design(req: DesignRequest) -> DesignResponse:
     selection_results: dict[str, tuple[object, str | None]] = {}
     t0 = time.monotonic()
 
+    interests = room_request.interests
+
     with ThreadPoolExecutor(max_workers=len(sourceable_slots) or 1) as pool:
         futures = {
-            pool.submit(select_product, slot, style_profile, cands): slot.slot_id
+            pool.submit(select_product, slot, style_profile, cands, interests): slot.slot_id
             for slot, cands in sourceable_slots
         }
         for future in as_completed(futures):

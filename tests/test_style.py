@@ -85,42 +85,42 @@ def test_clean_high_confidence_match_returns_correct_profile():
 
 def test_result_carries_llm_keywords_and_palette():
     with patch("services.style_service._call_llm", return_value=_llm_json(
-        style_name="mid_century_modern",
-        keywords=["walnut", "tapered legs", "mustard"],
-        color_palette=["walnut", "mustard", "cream"],
-        mood="retro, sophisticated",
+        style_name="city_modern",
+        keywords=["sleek", "glass", "monochrome"],
+        color_palette=["black", "white", "cool grey"],
+        mood="sharp, metropolitan",
         confidence=0.85,
     )):
         result = interpret_style(_make_request())
 
-    assert result.style_name == "mid_century_modern"
-    assert "walnut" in result.keywords
-    assert "mustard" in result.color_palette
-    assert result.mood == "retro, sophisticated"
+    assert result.style_name == "city_modern"
+    assert "sleek" in result.keywords
+    assert "black" in result.color_palette
+    assert result.mood == "sharp, metropolitan"
 
 
 def test_living_room_request_accepted():
     with patch("services.style_service._call_llm", return_value=_llm_json(
-        style_name="modern_coastal",
+        style_name="coastal",
         confidence=0.88,
     )):
         result = interpret_style(_make_request(room_type="living_room"))
 
-    assert result.style_name == "modern_coastal"
+    assert result.style_name == "coastal"
     assert result.fallback is False
 
 
 def test_qa_answers_do_not_break_prompt_rendering():
     """Verify Q&A answers flow through without errors (prompt rendering)."""
     with patch("services.style_service._call_llm", return_value=_llm_json(
-        style_name="cozy_maximalist",
+        style_name="dark_academia",
         confidence=0.78,
     )):
         result = interpret_style(_make_request(
             qa_answers={"vibe": "rich and layered", "priority": "textiles"},
         ))
 
-    assert result.style_name == "cozy_maximalist"
+    assert result.style_name == "dark_academia"
 
 
 # ---------------------------------------------------------------------------
@@ -130,7 +130,7 @@ def test_qa_answers_do_not_break_prompt_rendering():
 def test_low_confidence_sets_fallback_flag():
     """LLM returns confidence < 0.6 → fallback=True even if LLM said False."""
     with patch("services.style_service._call_llm", return_value=_llm_json(
-        style_name="industrial_urban",
+        style_name="industrial",
         confidence=0.42,
         fallback=False,  # LLM forgot; service must enforce
     )):
@@ -138,7 +138,7 @@ def test_low_confidence_sets_fallback_flag():
 
     assert result.fallback is True
     assert result.confidence == pytest.approx(0.42)
-    assert result.style_name == "industrial_urban"  # kept; only flag is forced
+    assert result.style_name == "industrial"  # kept; only flag is forced
 
 
 def test_low_confidence_already_flagged_by_llm_is_preserved():
@@ -225,24 +225,29 @@ def test_confidence_clamped_below_zero():
 
 def test_json_in_code_fence_is_parsed_correctly():
     """LLM wraps JSON in ```json ... ``` fence → still produces a valid profile."""
-    fenced = "```json\n" + _llm_json(style_name="modern_coastal", confidence=0.80) + "\n```"
+    fenced = "```json\n" + _llm_json(style_name="coastal", confidence=0.80) + "\n```"
     with patch("services.style_service._call_llm", return_value=fenced):
         result = interpret_style(_make_request(room_type="living_room"))
 
-    assert result.style_name == "modern_coastal"
+    assert result.style_name == "coastal"
     assert result.fallback is False
 
 
 # ---------------------------------------------------------------------------
-# All five catalogue profiles are accepted
+# All catalogue profiles are accepted
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("profile_id", [
+    "cottagecore",
+    "dark_academia",
+    "japandi",
+    "coastal",
+    "industrial",
+    "quiet_luxury",
+    "sports_den",
+    "city_modern",
+    "ski_lodge",
     "warm_minimalist",
-    "mid_century_modern",
-    "cozy_maximalist",
-    "modern_coastal",
-    "industrial_urban",
 ])
 def test_all_catalogue_profiles_accepted(profile_id: str):
     with patch("services.style_service._call_llm", return_value=_llm_json(

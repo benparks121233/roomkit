@@ -123,7 +123,7 @@ class TestLoadStyleProfiles:
 
     def test_profile_count(self):
         result = load_style_profiles()
-        assert len(result.profiles) == 5
+        assert len(result.profiles) == 10
 
     def test_warm_minimalist_present(self):
         result = load_style_profiles()

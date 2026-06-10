@@ -20,6 +20,10 @@ Rules:
   reason "no_spec_match".
 - If the candidate list is empty, return null with reason "no_candidate".
 - Do not exceed the price band. Within the band, prefer style fit over price minimization.
+- If user interests are provided, prefer products that reflect those interests
+  (e.g. music fan → vinyl/music-themed art) when a good candidate exists.
+  Style fit takes priority over interests — never pick a clashing product just
+  because it matches an interest.
 
 ---
 
@@ -29,6 +33,7 @@ Slot: {{slot_id}}
 Style profile: {{style_profile_summary}}
 Price band: ${{min_price}} – ${{max_price}}
 Required specs: {{required_specs}}
+{{interests}}
 
 Candidates:
 {{candidates_json}}
