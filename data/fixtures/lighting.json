@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "LT-001",
+    "name": "HAITRAL Bedside Table Lamp Set of 2",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B07JM6TLXY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/haitral-table-lamp.jpg"
+  },
+  {
+    "product_id": "LT-002",
+    "name": "Brightech Maxwell LED Floor Lamp",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B01JBQYMHW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/brightech-maxwell.jpg"
+  },
+  {
+    "product_id": "LT-003",
+    "name": "JONATHAN Y Baird Metal LED Table Lamp",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B07N1WR9KB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/jonathan-y-baird.jpg"
+  }
+]

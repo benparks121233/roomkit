@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "AC-001",
+    "name": "Mkono Macrame Plant Hanger Set of 3",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B07DMRRLHZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/mkono-macrame.jpg"
+  },
+  {
+    "product_id": "AC-002",
+    "name": "Threshold Ceramic Decorative Vase – Cream",
+    "normalized_price": 22.99,
+    "buy_url": "https://www.amazon.com/dp/B0BFNS7XKR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/threshold-vase.jpg"
+  },
+  {
+    "product_id": "AC-003",
+    "name": "Luxspire Decorative Throw Pillow Covers – Set of 2",
+    "normalized_price": 12.99,
+    "buy_url": "https://www.amazon.com/dp/B07R2RQJQ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/luxspire-pillows.jpg"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "SF-001",
+    "name": "Honbay Convertible Sectional Sofa – Grey",
+    "normalized_price": 369.99,
+    "buy_url": "https://www.amazon.com/dp/B088FWN91H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/honbay-sectional-grey.jpg"
+  },
+  {
+    "product_id": "SF-002",
+    "name": "Serta Palisades Upholstered Sofa – Charcoal",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B00HVLUSVS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/serta-palisades.jpg"
+  },
+  {
+    "product_id": "SF-003",
+    "name": "Amazon Basics Upholstered Loveseat – Beige",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0C3T5R8PQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/amazonbasics-loveseat.jpg"
+  }
+]

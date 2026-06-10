@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "TV-001",
+    "name": "TCL 55\" Class S4 4K LED Smart TV",
+    "normalized_price": 249.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZ6GKBKL",
+    "specs": {"screen_size": "55 inch"},
+    "image_url": "https://m.media-amazon.com/images/I/tcl-55-s4.jpg"
+  },
+  {
+    "product_id": "TV-002",
+    "name": "Samsung 65\" Class Crystal UHD 4K",
+    "normalized_price": 449.99,
+    "buy_url": "https://www.amazon.com/dp/B0BX4M2FPN",
+    "specs": {"screen_size": "65 inch"},
+    "image_url": "https://m.media-amazon.com/images/I/samsung-65-crystal.jpg"
+  },
+  {
+    "product_id": "TV-003",
+    "name": "Insignia 42\" Class F20 Series LED HD Smart TV",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0BWGNR9SH",
+    "specs": {"screen_size": "42 inch"},
+    "image_url": "https://m.media-amazon.com/images/I/insignia-42-f20.jpg"
+  }
+]

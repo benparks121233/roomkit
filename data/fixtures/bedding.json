@@ -1,0 +1,34 @@
+[
+  {
+    "product_id": "BD-001",
+    "name": "Bedsure Queen Comforter Set – Warm Beige",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B08DHZGPH7",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-queen-beige.jpg"
+  },
+  {
+    "product_id": "BD-002",
+    "name": "Bedsure King Comforter Set – Charcoal",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B08DHZGPH8",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-king-charcoal.jpg"
+  },
+  {
+    "product_id": "BD-003",
+    "name": "CGK Unlimited Luxury Sheet Set – Queen",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B07G5HJMQR",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/cgk-queen-sheets.jpg"
+  },
+  {
+    "product_id": "BD-004",
+    "name": "Utopia Bedding Full Comforter Set – White",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0C9SQR5Z1",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-full-white.jpg"
+  }
+]

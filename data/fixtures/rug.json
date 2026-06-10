@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "RG-001",
+    "name": "nuLOOM Braided Jute Area Rug – 5x8",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B00BIALOTW",
+    "specs": {"dimensions": "5x8"},
+    "image_url": "https://m.media-amazon.com/images/I/nuloom-jute-5x8.jpg"
+  },
+  {
+    "product_id": "RG-002",
+    "name": "Safavieh Madison Collection – 8x10",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B01GS3R2CO",
+    "specs": {"dimensions": "8x10"},
+    "image_url": "https://m.media-amazon.com/images/I/safavieh-madison-8x10.jpg"
+  },
+  {
+    "product_id": "RG-003",
+    "name": "Artistic Weavers Odelia Area Rug – 5x8",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B07FNHQ4YS",
+    "specs": {"dimensions": "5x8"},
+    "image_url": "https://m.media-amazon.com/images/I/odelia-5x8.jpg"
+  }
+]

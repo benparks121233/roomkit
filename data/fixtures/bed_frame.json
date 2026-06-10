@@ -1,0 +1,34 @@
+[
+  {
+    "product_id": "BF-001",
+    "name": "Zinus Wen Wood Platform Bed Frame – Queen",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B078RK12VX",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-wen-queen.jpg"
+  },
+  {
+    "product_id": "BF-002",
+    "name": "Zinus Wen Wood Platform Bed Frame – King",
+    "normalized_price": 229.99,
+    "buy_url": "https://www.amazon.com/dp/B078RK12VY",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-wen-king.jpg"
+  },
+  {
+    "product_id": "BF-003",
+    "name": "Sweetcrispy Metal Platform Bed Frame – Queen",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1XTJM3Q",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/sweetcrispy-queen.jpg"
+  },
+  {
+    "product_id": "BF-004",
+    "name": "Allewie Upholstered Platform Bed Frame – Full",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0BR4Q6WH7",
+    "specs": {"bed_size": "full"},
+    "image_url": "https://m.media-amazon.com/images/I/allewie-full.jpg"
+  }
+]

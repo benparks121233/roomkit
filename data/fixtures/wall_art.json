@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "WA-001",
+    "name": "Americanflat 3-Piece Abstract Print Set",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B09N8VQ3Y4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/americanflat-abstract.jpg"
+  },
+  {
+    "product_id": "WA-002",
+    "name": "Botanical Canvas Wall Art – Set of 4",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0BM3QKT5R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/botanical-canvas-4.jpg"
+  },
+  {
+    "product_id": "WA-003",
+    "name": "SIGNFORD Framed Canvas Print – Mountain Landscape",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B08KG5Q1BV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/signford-mountain.jpg"
+  }
+]
