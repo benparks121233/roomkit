@@ -1,11 +1,13 @@
 # services/sourcing/amazon_adapter.py
-# Owns: Amazon Associates sourcing via curated fixture data (v1).
-# Later: swap internals to PA-API or a paid product-data API (Rainforest/Canopy)
-# without changing the SourcingAdapter interface.
+# Owns: Amazon sourcing via Canopy API-backed local cache (primary) or
+# hand-curated fixture files (fallback for dev/tests).
 #
-# v1 reads from data/fixtures/<slot_id>.json.  Each fixture file is a JSON
-# array of raw product dicts.  The adapter filters by price_band and
-# required_specs, then injects the affiliate tag into every buy_url.
+# Data flow:
+#   1. Read data/catalog/<slot_id>.json (Canopy-backed cache, written by
+#      scripts/refresh_catalog.py — the ONLY thing that makes live API calls).
+#   2. If cache miss, fall back to data/fixtures/<slot_id>.json (hand fixtures).
+#   3. Filter by price_band and required_specs.
+#   4. Inject affiliate tag into every buy_url.
 #
 # Critical rule: a buy_url without the affiliate tag is a bug.
 
@@ -19,28 +21,37 @@ from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
 from schemas.product import Product
 from services.sourcing.base import SourcingAdapter
+from services.sourcing.catalog_cache import read_cache
 
 _FIXTURES_DIR = Path(__file__).parent.parent.parent / "data" / "fixtures"
+_CATALOG_DIR = Path(__file__).parent.parent.parent / "data" / "catalog"
 
 # Default affiliate tag; overridden via AMAZON_AFFILIATE_TAG env var.
 _DEFAULT_AFFILIATE_TAG = "roomkitai-20"
 
 
 class AmazonAdapter(SourcingAdapter):
-    """Sourcing adapter that reads from curated fixture JSON files.
+    """Sourcing adapter that reads from Canopy cache or fixture files.
 
-    Each file in data/fixtures/ is named <slot_id>.json and contains a JSON
-    array of product dicts.  The adapter:
-      1. Loads the fixture for the requested slot_id.
+    Priority:
+      1. data/catalog/<slot_id>.json — real Amazon data from Canopy API.
+      2. data/fixtures/<slot_id>.json — hand-curated fixture fallback.
+
+    The adapter:
+      1. Loads products from cache (or fixtures on miss).
       2. Filters by price_band (inclusive on both ends).
       3. Filters by required_specs (every required key must be present in the
-         product's specs dict, and the value must match if required_specs
-         specifies a value).
+         product's specs dict, and the value must match if specified).
       4. Injects the affiliate tag into every buy_url.
     """
 
-    def __init__(self, fixtures_dir: Path | None = None) -> None:
+    def __init__(
+        self,
+        fixtures_dir: Path | None = None,
+        catalog_dir: Path | None = None,
+    ) -> None:
         self._fixtures_dir = fixtures_dir or _FIXTURES_DIR
+        self._catalog_dir = catalog_dir or _CATALOG_DIR
         self._affiliate_tag = os.environ.get(
             "AMAZON_AFFILIATE_TAG", _DEFAULT_AFFILIATE_TAG
         )
@@ -52,7 +63,7 @@ class AmazonAdapter(SourcingAdapter):
         price_band: tuple[float, float],
         required_specs: dict,
     ) -> list[Product]:
-        raw_products = self._load_fixture(slot_id)
+        raw_products = self._load_products(slot_id)
         min_price, max_price = price_band
 
         candidates: list[Product] = []
@@ -79,7 +90,7 @@ class AmazonAdapter(SourcingAdapter):
                 normalized_price=price,
                 buy_url=tagged_url,
                 specs=specs,
-                source="amazon",
+                source=raw.get("source", "amazon"),
                 image_url=raw.get("image_url", ""),
                 slot_id=slot_id,
                 fetched_at=now,
@@ -90,6 +101,16 @@ class AmazonAdapter(SourcingAdapter):
     # ------------------------------------------------------------------
     # Private helpers
     # ------------------------------------------------------------------
+
+    def _load_products(self, slot_id: str) -> list[dict]:
+        """Load products: cache first, then fixtures fallback."""
+        # Try Canopy-backed cache.
+        cached = read_cache(slot_id, catalog_dir=self._catalog_dir)
+        if cached is not None:
+            return cached
+
+        # Fall back to hand fixtures.
+        return self._load_fixture(slot_id)
 
     def _load_fixture(self, slot_id: str) -> list[dict]:
         """Load data/fixtures/<slot_id>.json.  Returns [] if file missing."""
