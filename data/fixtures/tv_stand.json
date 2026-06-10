@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "TS-001",
+    "name": "Walker Edison Farmhouse TV Stand – 58\" Barnwood",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B07C4KQK5D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/walker-edison-barnwood.jpg"
+  },
+  {
+    "product_id": "TS-002",
+    "name": "WLIVE Mid-Century Modern TV Stand – 55\" Rustic Oak",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B08DHTPBCZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/wlive-midcentury-oak.jpg"
+  },
+  {
+    "product_id": "TS-003",
+    "name": "Furinno JAYA Simple TV Stand – 48\" Walnut",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B01N4KFFJ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/furinno-jaya-walnut.jpg"
+  }
+]

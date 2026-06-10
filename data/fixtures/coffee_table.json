@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "CF-001",
+    "name": "Walker Edison Rustic Farmhouse Coffee Table – Dark Walnut",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B07B3Y72G5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/walker-edison-coffee.jpg"
+  },
+  {
+    "product_id": "CF-002",
+    "name": "Sauder North Avenue Coffee Table – Charter Oak",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B077KXHYF1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/sauder-north-ave.jpg"
+  },
+  {
+    "product_id": "CF-003",
+    "name": "Round Wood Coffee Table – 36\" Natural",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0BGXG4KYH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/round-coffee-natural.jpg"
+  }
+]

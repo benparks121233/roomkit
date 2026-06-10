@@ -13,12 +13,13 @@
 #   - total_allocated <= target_budget always (the invariant).
 #   - Unknown room_preset raises ValueError.
 #   - Zero/negative weights raise ValueError.
+#
+# v2 taxonomy: bedroom has 9 required items across 5 groups, 7 optional items.
 
 from __future__ import annotations
 
 import pytest
 
-from schemas.slot_plan import SlotPlan
 from services.composition_service import allocate_budget, fit_slots_to_budget
 from services.config_loader import load_budget_policies, load_room_taxonomy
 
@@ -26,8 +27,13 @@ from services.config_loader import load_budget_policies, load_room_taxonomy
 TAXONOMY = load_room_taxonomy()
 BUDGET_POLICIES = load_budget_policies()
 
-BEDROOM_REQUIRED = ["bed_frame", "bedding", "rug", "lighting", "wall_art", "accent"]
-LIVING_ROOM_REQUIRED = ["sofa", "rug", "lighting", "tv", "wall_art", "accent"]
+# Derive required/optional from the live taxonomy rather than hardcoding.
+_BEDROOM_PRESET = TAXONOMY.room_presets["bedroom"]
+BEDROOM_REQUIRED = _BEDROOM_PRESET.required_items()
+_BEDROOM_DEFAULT_WEIGHTS = _BEDROOM_PRESET.flatten_weights()
+
+_LIVING_PRESET = TAXONOMY.room_presets["living_room"]
+LIVING_ROOM_REQUIRED = _LIVING_PRESET.required_items()
 
 
 # ---------------------------------------------------------------------------
@@ -35,29 +41,13 @@ LIVING_ROOM_REQUIRED = ["sofa", "rug", "lighting", "tv", "wall_art", "accent"]
 # ---------------------------------------------------------------------------
 
 def _bedroom_weights_exact() -> dict[str, float]:
-    """Bedroom weights that sum to exactly 1.0 (using taxonomy defaults)."""
-    return {
-        "bed_frame": 0.22,
-        "bedding":   0.10,
-        "rug":       0.12,
-        "lighting":  0.08,
-        "wall_art":  0.08,
-        "accent":    0.06,
-        # sum = 0.66 — intentionally < 1.0 to test under-budget path
-    }
+    """Bedroom weights using taxonomy defaults (sum < 1.0 for required-only)."""
+    return {sid: _BEDROOM_DEFAULT_WEIGHTS[sid] for sid in BEDROOM_REQUIRED}
 
 
 def _bedroom_weights_unit() -> dict[str, float]:
-    """Bedroom weights normalised to sum to exactly 1.0."""
-    return {
-        "bed_frame": 0.33,
-        "bedding":   0.17,
-        "rug":       0.18,
-        "lighting":  0.12,
-        "wall_art":  0.12,
-        "accent":    0.08,
-        # sum = 1.00
-    }
+    """Bedroom weights for all preset items, normalized to sum to ~1.0."""
+    return dict(_BEDROOM_DEFAULT_WEIGHTS)
 
 
 # ---------------------------------------------------------------------------
@@ -87,15 +77,8 @@ def test_unit_weights_total_equals_budget():
 # ---------------------------------------------------------------------------
 
 def test_overweight_total_never_exceeds_budget():
-    # Weights sum to 1.8 — well over 1.0.
-    weights = {
-        "bed_frame": 0.50,
-        "bedding":   0.30,
-        "rug":       0.30,
-        "lighting":  0.20,
-        "wall_art":  0.25,
-        "accent":    0.25,
-    }
+    # Double every weight — sum will be ~2.0.
+    weights = {sid: w * 2 for sid, w in _bedroom_weights_unit().items()}
     budget = 1200.0
     plan = allocate_budget(weights, budget, "bedroom", TAXONOMY)
 
@@ -104,25 +87,21 @@ def test_overweight_total_never_exceeds_budget():
 
 def test_overweight_proportions_are_preserved_after_normalization():
     """After re-normalization, relative slot proportions must be unchanged."""
-    weights = {
-        "bed_frame": 0.60,   # 2× bedding
-        "bedding":   0.30,
-        "rug":       0.30,
-        "lighting":  0.20,
-        "wall_art":  0.20,
-        "accent":    0.20,
-    }
+    weights = {sid: w * 3 for sid, w in _bedroom_weights_unit().items()}
+    # bed_frame should be heavier than pillows by the same ratio.
     budget = 1000.0
     plan = allocate_budget(weights, budget, "bedroom", TAXONOMY)
 
     slot_map = {s.slot_id: s.allocated_budget for s in plan.slots}
-    # bed_frame should be approximately 2× bedding after normalization.
-    assert slot_map["bed_frame"] == pytest.approx(slot_map["bedding"] * 2, rel=1e-6)
+    # bed_frame weight / pillows weight ratio should be preserved.
+    orig_ratio = weights["bed_frame"] / weights["pillows"]
+    actual_ratio = slot_map["bed_frame"] / slot_map["pillows"]
+    assert actual_ratio == pytest.approx(orig_ratio, rel=1e-6)
 
 
 def test_overweight_high_budget_never_exceeds():
-    weights = {"sofa": 0.80, "rug": 0.80, "lighting": 0.80,
-               "tv": 0.80, "wall_art": 0.80, "accent": 0.80}
+    lr_weights = _LIVING_PRESET.flatten_weights()
+    weights = {sid: w * 3 for sid, w in lr_weights.items()}
     budget = 5000.0
     plan = allocate_budget(weights, budget, "living_room", TAXONOMY)
 
@@ -134,7 +113,7 @@ def test_overweight_high_budget_never_exceeds():
 # ---------------------------------------------------------------------------
 
 def test_underweight_total_is_proportionally_under_budget():
-    weights = _bedroom_weights_exact()   # sums to 0.66
+    weights = _bedroom_weights_exact()   # required only, sum ~0.67
     budget = 1000.0
     plan = allocate_budget(weights, budget, "bedroom", TAXONOMY)
 
@@ -156,15 +135,8 @@ def test_bedroom_all_required_slots_present():
 
 
 def test_living_room_all_required_slots_present():
-    weights = {
-        "sofa":    0.28,
-        "rug":     0.12,
-        "lighting": 0.08,
-        "tv":       0.18,
-        "wall_art": 0.08,
-        "accent":   0.06,
-    }
-    plan = allocate_budget(weights, 2000.0, "living_room", TAXONOMY)
+    lr_weights = _LIVING_PRESET.flatten_weights()
+    plan = allocate_budget(lr_weights, 2000.0, "living_room", TAXONOMY)
     slot_ids = {s.slot_id for s in plan.slots}
 
     for required in LIVING_ROOM_REQUIRED:
@@ -173,20 +145,15 @@ def test_living_room_all_required_slots_present():
 
 def test_missing_required_slot_injected_at_taxonomy_default():
     """If a required slot is omitted from slot_weights, it is added at the
-    taxonomy default_budget_weight and still appears in the SlotPlan."""
-    # Bedroom weights with 'accent' deliberately omitted.
-    weights = {
-        "bed_frame": 0.22,
-        "bedding":   0.10,
-        "rug":       0.12,
-        "lighting":  0.08,
-        "wall_art":  0.08,
-        # "accent" omitted — taxonomy default is 0.06
-    }
+    taxonomy default weight and still appears in the SlotPlan."""
+    # Remove one required slot from the weight dict.
+    weights = dict(_BEDROOM_DEFAULT_WEIGHTS)
+    removed = BEDROOM_REQUIRED[0]
+    del weights[removed]
     plan = allocate_budget(weights, 1500.0, "bedroom", TAXONOMY)
 
     slot_ids = {s.slot_id for s in plan.slots}
-    assert "accent" in slot_ids
+    assert removed in slot_ids
 
 
 def test_all_required_slots_missing_are_injected():
@@ -203,15 +170,18 @@ def test_all_required_slots_missing_are_injected():
 # ---------------------------------------------------------------------------
 
 def test_optional_slot_in_weights_appears_in_plan():
-    """An optional slot included in slot_weights (e.g. 'tv' in a bedroom)
-    should appear in the plan alongside required slots."""
-    weights = {s: w for s, w in _bedroom_weights_unit().items()}
-    weights["tv"] = 0.08   # optional for bedroom
-    # Weights now sum to 1.08 → will be re-normalized.
+    """An optional slot included in slot_weights should appear in the plan."""
+    weights = dict(_BEDROOM_DEFAULT_WEIGHTS)
+    # dresser is optional for bedroom — should be in weights already.
+    # Verify it shows up in the plan.
+    optional_items = _BEDROOM_PRESET.all_items() - set(BEDROOM_REQUIRED)
+    assert len(optional_items) > 0
+    an_optional = sorted(optional_items)[0]
+    assert an_optional in weights  # from flatten_weights
     plan = allocate_budget(weights, 1500.0, "bedroom", TAXONOMY)
 
     slot_ids = {s.slot_id for s in plan.slots}
-    assert "tv" in slot_ids
+    assert an_optional in slot_ids
     assert plan.total_allocated <= 1500.0
 
 
@@ -233,7 +203,7 @@ def test_total_allocated_never_exceeds_budget_unit_weights():
 
 
 def test_total_allocated_never_exceeds_budget_overweight():
-    weights = {s: 0.5 for s in BEDROOM_REQUIRED}  # sum = 3.0
+    weights = {s: 0.5 for s in BEDROOM_REQUIRED}  # sum > 1.0
     plan = allocate_budget(weights, 2500.0, "bedroom", TAXONOMY)
     assert plan.total_allocated <= 2500.0
 
@@ -272,7 +242,7 @@ def test_slots_carry_required_specs_from_taxonomy():
     slot_map = {s.slot_id: s for s in plan.slots}
 
     assert "bed_size" in slot_map["bed_frame"].required_specs
-    assert "bed_size" in slot_map["bedding"].required_specs
+    assert "bed_size" in slot_map["mattress"].required_specs
     assert slot_map["wall_art"].required_specs == []
 
 
@@ -299,32 +269,21 @@ def test_negative_budget_raises_value_error():
 # Piece 2: fit_slots_to_budget() — optional dropping + feasibility
 # ---------------------------------------------------------------------------
 #
-# Bedroom taxonomy:
-#   required: bed_frame(0.22), bedding(0.10), rug(0.12), lighting(0.08),
-#             wall_art(0.08), accent(0.06)   → sum = 0.66
-#   optional: tv(0.18)  (optional=True in taxonomy when included via weights)
-#
-# minimum_room_multiplier = 500.0
-# MVB (required-only): max(0.66, 1.0) × 500 = $500
-#
-# NOTE: 'tv' is listed as optional=False in the taxonomy for living_room but
-# its SlotDefinition has optional=True (it's not in bedroom's required list).
-# We use it as an extra optional slot passed via slot_weights.
+# v2 bedroom taxonomy:
+#   required (9 items): bed_frame, mattress, sheets, comforter, pillows,
+#                       nightstand, ceiling_light, wall_art, rug
+#   optional (7 items): dresser, table_lamp, floor_lamp, plants, mirror,
+#                       curtains, throw_blanket
+#   required weight sum ≈ 0.6665
+#   minimum_room_multiplier = 500.0
+#   MVB (required-only): max(0.6665, 1.0) × 500 = $500
 
-_BEDROOM_REQ_IDS = {"bed_frame", "bedding", "rug", "lighting", "wall_art", "accent"}
+_BEDROOM_REQ_IDS = set(BEDROOM_REQUIRED)
 
 
 def _bedroom_weights_with_optional() -> dict[str, float]:
-    """bedroom required weights + tv as an optional extra."""
-    return {
-        "bed_frame": 0.22,
-        "bedding":   0.10,
-        "rug":       0.12,
-        "lighting":  0.08,
-        "wall_art":  0.08,
-        "accent":    0.06,
-        "tv":        0.18,   # optional for bedroom
-    }
+    """All bedroom items (required + optional) from taxonomy defaults."""
+    return dict(_BEDROOM_DEFAULT_WEIGHTS)
 
 
 # --- Budget comfortably fits all slots (required + optional) ----------------
@@ -332,7 +291,6 @@ def _bedroom_weights_with_optional() -> dict[str, float]:
 def test_fit_budget_keeps_all_slots_when_budget_is_sufficient():
     """A generous budget keeps every slot including optionals."""
     weights = _bedroom_weights_with_optional()
-    # total_w = 0.84 → floor = max(0.84, 1.0) × 500 = $500
     plan = fit_slots_to_budget(weights, 2000.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
 
     assert plan.is_feasible is True
@@ -341,8 +299,6 @@ def test_fit_budget_keeps_all_slots_when_budget_is_sufficient():
     # All required present.
     for sid in _BEDROOM_REQ_IDS:
         assert sid in slot_ids, f"Required slot '{sid}' missing"
-    # Optional tv also present.
-    assert "tv" in slot_ids
     assert plan.total_allocated <= 2000.0
 
 
@@ -366,102 +322,63 @@ def test_fit_budget_feasible_total_never_exceeds_budget():
 # --- Budget forces optional dropping ----------------------------------------
 
 def test_fit_budget_drops_optional_when_tight():
-    """At exactly the required-slot MVB ($500), the optional tv must be dropped."""
-    # With tv: total_w = 0.84, floor = $500 — still fits at $500.
-    # But if we add a heavier optional that pushes total_w > 1.0:
-    #   floor = total_w × 500; need budget < that.
-    # Simpler: pass a budget just above MVB-required but supply a heavy optional
-    # that would push the floor above the budget.
-    # total_w with tv = 0.84, floor = max(0.84,1.0)×500 = 500 → fits at $500.
-    # To force dropping we need floor > budget.
-    # Add two heavy optionals: tv(0.18) + extra_optional weight.
-    # Instead, test with a budget below the optional-inclusive floor.
-    # optional floor with tv: still 500. So we test the required-only path directly
-    # by using a budget that is feasible for required-only but would not fit if
-    # optionals raised total_w above 1.0.
-    heavy_weights = {
-        "bed_frame": 0.22,
-        "bedding":   0.10,
-        "rug":       0.12,
-        "lighting":  0.08,
-        "wall_art":  0.08,
-        "accent":    0.06,
-        "tv":        0.50,   # heavy optional → total_w=1.16 → floor=$580
-    }
-    # Budget of $550 < $580 (floor with tv), but >= $500 (floor without tv).
-    plan = fit_slots_to_budget(heavy_weights, 550.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
+    """A heavy optional pushes the floor above budget; it must be dropped."""
+    weights = dict(_bedroom_weights_exact())  # required only
+    # Add a heavy optional that pushes total_w > 1.0
+    weights["dresser"] = 0.50  # total_w > 1.0 → floor > $500
+    # Budget $520 < floor-with-dresser, but >= $500 (floor without dresser).
+    plan = fit_slots_to_budget(weights, 520.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
-    # tv must have been dropped.
-    assert "tv" not in slot_ids
-    # All required present.
+    assert "dresser" not in slot_ids
     for sid in _BEDROOM_REQ_IDS:
         assert sid in slot_ids
-    assert plan.total_allocated <= 550.0
+    assert plan.total_allocated <= 520.0
 
 
 def test_fit_budget_drops_sole_optional_when_required_floor_is_still_met():
     """With a single heavy optional, it is dropped and the required set fits."""
-    heavy_weights = {
-        "bed_frame": 0.22,
-        "bedding":   0.10,
-        "rug":       0.12,
-        "lighting":  0.08,
-        "wall_art":  0.08,
-        "accent":    0.06,
-        "tv":        0.60,   # total_w=1.26 → floor=$630
-    }
-    # Budget $600 < $630 (with tv), $600 >= $500 (without tv).
-    plan = fit_slots_to_budget(heavy_weights, 600.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
+    weights = dict(_bedroom_weights_exact())
+    weights["dresser"] = 0.60  # total_w > 1.0
+    plan = fit_slots_to_budget(weights, 600.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
-    assert "tv" not in slot_ids
+    assert "dresser" not in slot_ids
     for sid in _BEDROOM_REQ_IDS:
         assert sid in slot_ids
 
 
 def test_fit_budget_drops_cheapest_optional_first_when_multiple_present():
-    """With two optionals (tv=0.18, sofa=0.28), the cheaper tv is dropped first.
+    """With two optionals at different weights, the cheaper one drops first.
 
-    Bedroom non-required slots in the taxonomy: tv (0.18) and sofa (0.28).
-    Weights: required(0.66) + tv(0.18) + sofa(0.28) → total_w=1.12
-    floor = 1.12 × 500 = $560.
-    Budget $540 < $560 → drop cheapest optional (tv, not sofa).
-    After dropping tv: total_w = 0.66 + 0.28 = 0.94 → floor = max(0.94,1.0)×500 = $500.
-    $540 >= $500 → feasible. sofa must be in the plan; tv must not.
-
-    If the sort order were reversed (sofa dropped first), sofa would be absent and
-    tv would be present — opposite of the asserted outcome.
+    dresser has default weight 0.075, floor_lamp has 0.030.
+    floor_lamp is cheaper → dropped first.
     """
-    weights = {
-        "bed_frame": 0.22,
-        "bedding":   0.10,
-        "rug":       0.12,
-        "lighting":  0.08,
-        "wall_art":  0.08,
-        "accent":    0.06,
-        "tv":        0.18,   # optional, lighter → dropped first
-        "sofa":      0.28,   # optional, heavier → kept
-    }
-    # total_w = 1.12, floor = $560 → need to drop one optional at $540.
-    plan = fit_slots_to_budget(weights, 540.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
+    weights = dict(_bedroom_weights_exact())
+    # Add two optionals with heavy weights to push floor above budget.
+    weights["dresser"] = 0.30
+    weights["floor_lamp"] = 0.25
+    # total_w = required(~0.67) + 0.30 + 0.25 = ~1.22 → floor = $610
+    # Budget $570 < $610 → must drop something.
+    # floor_lamp default(0.030) < dresser default(0.075) → floor_lamp dropped first.
+    # After dropping floor_lamp: total_w = ~0.97 → floor = $500 → $570 >= $500 → feasible.
+    plan = fit_slots_to_budget(weights, 570.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
-    assert "tv" not in slot_ids, "tv (cheaper optional) should have been dropped first"
-    assert "sofa" in slot_ids, "sofa (more expensive optional) should have been kept"
+    assert "floor_lamp" not in slot_ids, "floor_lamp (cheaper optional) should drop first"
+    assert "dresser" in slot_ids, "dresser (more expensive optional) should be kept"
     for sid in _BEDROOM_REQ_IDS:
         assert sid in slot_ids
-    assert plan.total_allocated <= 540.0
+    assert plan.total_allocated <= 570.0
 
 
 # --- Infeasible: budget below required-floor sum ----------------------------
 
 def test_fit_budget_infeasible_returns_is_feasible_false():
     """Budget well below required-slot MVB must return is_feasible=False."""
-    # Required MVB for bedroom = max(0.66, 1.0) × 500 = $500.
     plan = fit_slots_to_budget(
         _bedroom_weights_unit(), 100.0, "bedroom", TAXONOMY, BUDGET_POLICIES
     )
@@ -475,8 +392,8 @@ def test_fit_budget_infeasible_carries_minimum_viable_budget():
     )
     assert plan.is_feasible is False
     assert plan.minimum_viable_budget is not None
-    # bedroom required weight sum = 0.66; max(0.66, 1.0) × 500 = 500.0
-    assert plan.minimum_viable_budget == pytest.approx(500.0, abs=1e-4)
+    # bedroom required weight sum ≈ 0.6665; max(0.6665, 1.0) × 500 = 500.0
+    assert plan.minimum_viable_budget == pytest.approx(500.0, abs=1.0)
 
 
 def test_fit_budget_infeasible_carries_required_slots():

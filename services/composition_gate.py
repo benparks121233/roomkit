@@ -44,7 +44,7 @@ def validate_composition(slot_plan: SlotPlan) -> tuple[SlotPlan, str | None]:
 
     # Gate 3: required slots present for the preset.
     taxonomy = load_room_taxonomy()
-    required_ids = taxonomy.room_presets[slot_plan.room_preset].required_slots
+    required_ids = taxonomy.room_presets[slot_plan.room_preset].required_items()
     ok, reason = validate_required_slots(slot_plan, required_ids)
     if not ok:
         return slot_plan, reason

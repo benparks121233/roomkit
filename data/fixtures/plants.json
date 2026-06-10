@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "PT-001",
+    "name": "CROSOFMI Artificial Fiddle Leaf Fig Tree – 6ft",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0BN4NJG81",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/crosofmi-fiddle-leaf.jpg"
+  },
+  {
+    "product_id": "PT-002",
+    "name": "Mkono Macrame Plant Hanger Set of 3",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B07DMRRLHZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/mkono-macrame.jpg"
+  },
+  {
+    "product_id": "PT-003",
+    "name": "Fopamtri Artificial Bird of Paradise – 5ft",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B07ZS5F8XR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/fopamtri-bird-paradise.jpg"
+  }
+]

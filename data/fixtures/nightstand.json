@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "NS-001",
+    "name": "VASAGLE Nightstand with Drawer – Rustic Brown",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B07L5PKFR7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/vasagle-nightstand.jpg"
+  },
+  {
+    "product_id": "NS-002",
+    "name": "ZINUS Becky Farmhouse Wood Nightstand – Natural",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0B1TH5FLJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-becky-nightstand.jpg"
+  },
+  {
+    "product_id": "NS-003",
+    "name": "Sweetcrispy Nightstand with USB Ports – White",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0C5JF1K3X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/sweetcrispy-nightstand.jpg"
+  }
+]

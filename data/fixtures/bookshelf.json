@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "BS-001",
+    "name": "Furinno Luder 5-Tier Bookcase – White/Light Blue",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B01K16Y6M4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/furinno-luder-5tier.jpg"
+  },
+  {
+    "product_id": "BS-002",
+    "name": "VASAGLE 6-Tier Tree Bookshelf – Rustic Brown",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B07T4L8PNL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/vasagle-tree-bookshelf.jpg"
+  },
+  {
+    "product_id": "BS-003",
+    "name": "Nathan James Theo 5-Shelf Ladder Bookcase – Natural Wood",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B08CKFYDL2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/nathan-james-theo.jpg"
+  }
+]

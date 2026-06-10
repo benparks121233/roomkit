@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "ST-001",
+    "name": "Haton Side Table – Round Wood End Table, Natural",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0B5MCTKM8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/haton-side-natural.jpg"
+  },
+  {
+    "product_id": "ST-002",
+    "name": "VASAGLE Industrial End Table – Rustic Brown",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B07L5QNT4J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/vasagle-end-table.jpg"
+  },
+  {
+    "product_id": "ST-003",
+    "name": "Nathan James Myles End Table – Oak/Gold",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B08JTWXHYZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/nathan-james-myles.jpg"
+  }
+]

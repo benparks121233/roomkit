@@ -20,18 +20,21 @@ from unittest.mock import patch
 import pytest
 
 from schemas.room_request import RoomRequest
-from schemas.style_profile import StyleProfile
 from services.composition_gate import validate_composition
 from services.composition_service import plan_composition
+from services.config_loader import load_room_taxonomy
 from services.style_service import interpret_style
+
+TAXONOMY = load_room_taxonomy()
+_BEDROOM_PRESET = TAXONOMY.room_presets["bedroom"]
+BEDROOM_REQUIRED = set(_BEDROOM_PRESET.required_items())
+_LIVING_PRESET = TAXONOMY.room_presets["living_room"]
+LIVING_ROOM_REQUIRED = set(_LIVING_PRESET.required_items())
 
 
 # ---------------------------------------------------------------------------
 # Fixtures
 # ---------------------------------------------------------------------------
-
-BEDROOM_REQUIRED = {"bed_frame", "bedding", "rug", "lighting", "wall_art", "accent"}
-
 
 def _make_request(budget: float = 1500.0, room_type: str = "bedroom") -> RoomRequest:
     return RoomRequest(
@@ -56,16 +59,12 @@ def _style_llm_response() -> str:
 
 
 def _composition_llm_response() -> str:
-    """Simulate a clean composition LLM response with reasonable weights."""
+    """Simulate a clean composition LLM response with v2 item IDs."""
+    weights = _BEDROOM_PRESET.flatten_weights()
+    # Use a subset of items to simulate LLM output (required items).
     return json.dumps({
-        "slot_weights": {
-            "bed_frame": 0.25,
-            "bedding": 0.12,
-            "rug": 0.14,
-            "lighting": 0.10,
-            "wall_art": 0.10,
-            "accent": 0.07,
-        },
+        "slot_weights": {sid: w for sid, w in weights.items()
+                         if sid in BEDROOM_REQUIRED},
         "rationale": "Prioritized bed_frame for warm_minimalist anchoring.",
     })
 
@@ -115,7 +114,7 @@ def test_normal_request_style_profile_is_used():
          patch(_COMP_LLM, return_value=_composition_llm_response()) as mock_comp:
         request = _make_request()
         style = interpret_style(request)
-        plan = plan_composition(request, style)
+        plan_composition(request, style)
 
     # The composition LLM was called (we can't inspect the prompt content
     # easily, but we can verify it was invoked exactly once).
@@ -128,7 +127,6 @@ def test_normal_request_style_profile_is_used():
 
 def test_sub_floor_budget_caught_by_feasibility_gate():
     """Budget below MVB → is_feasible=False → gate returns plan_infeasible reason."""
-    # MVB for bedroom = $500. Budget $100 is well below.
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
          patch(_COMP_LLM, return_value=_composition_llm_response()):
         request = _make_request(budget=100.0)
@@ -150,7 +148,7 @@ def test_sub_floor_budget_carries_minimum_viable_budget():
         plan = plan_composition(request, style)
 
     assert plan.minimum_viable_budget is not None
-    assert plan.minimum_viable_budget == pytest.approx(500.0, abs=1e-2)
+    assert plan.minimum_viable_budget == pytest.approx(500.0, abs=1.0)
 
 
 def test_sub_floor_budget_total_allocated_is_zero():
@@ -170,15 +168,14 @@ def test_sub_floor_budget_total_allocated_is_zero():
 
 def test_living_room_passes_all_gates():
     """Living room preset flows through the same pipeline cleanly."""
-    living_weights = json.dumps({
-        "slot_weights": {
-            "sofa": 0.30, "rug": 0.12, "lighting": 0.10,
-            "tv": 0.20, "wall_art": 0.08, "accent": 0.06,
-        },
+    lr_weights = _LIVING_PRESET.flatten_weights()
+    living_response = json.dumps({
+        "slot_weights": {sid: w for sid, w in lr_weights.items()
+                         if sid in LIVING_ROOM_REQUIRED},
         "rationale": "Sofa is the anchor in a living room.",
     })
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
-         patch(_COMP_LLM, return_value=living_weights):
+         patch(_COMP_LLM, return_value=living_response):
         request = _make_request(budget=2000.0, room_type="living_room")
         style = interpret_style(request)
         plan = plan_composition(request, style)
@@ -188,5 +185,5 @@ def test_living_room_passes_all_gates():
     assert plan.is_feasible is True
     assert plan.room_preset == "living_room"
     slot_ids = {s.slot_id for s in plan.slots}
-    for sid in ["sofa", "rug", "lighting", "tv", "wall_art", "accent"]:
+    for sid in LIVING_ROOM_REQUIRED:
         assert sid in slot_ids

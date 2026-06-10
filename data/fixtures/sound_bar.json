@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "SB-001",
+    "name": "Vizio V-Series 2.0 Compact Sound Bar – 20\"",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1GJ3XR7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/vizio-v-series-20.jpg"
+  },
+  {
+    "product_id": "SB-002",
+    "name": "Samsung HW-C400 2.0ch Soundbar – Bluetooth",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZ6LCYBD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/samsung-hwc400.jpg"
+  },
+  {
+    "product_id": "SB-003",
+    "name": "Bose TV Speaker – Compact Soundbar with Bluetooth",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B088KRPCQJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/bose-tv-speaker.jpg"
+  }
+]

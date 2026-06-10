@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "CM-001",
+    "name": "Utopia Bedding Queen Comforter Set – All Season, Beige",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B00NBYH7QA",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-comforter-beige.jpg"
+  },
+  {
+    "product_id": "CM-002",
+    "name": "Bedsure Queen Comforter Set – Warm Taupe",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B07WG4VLZS",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-comforter-taupe.jpg"
+  },
+  {
+    "product_id": "CM-003",
+    "name": "Utopia Bedding King Comforter Set – All Season, Ivory",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B00NBYH7QK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-comforter-ivory.jpg"
+  }
+]

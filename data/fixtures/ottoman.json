@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "OT-001",
+    "name": "Ornavo Home Foldable Storage Ottoman – Beige Linen",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B07JQLH3X6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/ornavo-ottoman-beige.jpg"
+  },
+  {
+    "product_id": "OT-002",
+    "name": "Adeco Round Velvet Ottoman – Cream",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0B2R8QWFL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/adeco-round-cream.jpg"
+  },
+  {
+    "product_id": "OT-003",
+    "name": "SIMPLIHOME Harrison Coffee Table Ottoman – Distressed Brown",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B00H2RQXXM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/simplihome-harrison.jpg"
+  }
+]

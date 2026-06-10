@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "TL-001",
+    "name": "HAITRAL Bedside Table Lamp Set of 2 – Linen Shade",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B07JM6TLXY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/haitral-table-lamp.jpg"
+  },
+  {
+    "product_id": "TL-002",
+    "name": "JONATHAN Y Baird Metal LED Table Lamp",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B07N1WR9KB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/jonathan-y-baird.jpg"
+  },
+  {
+    "product_id": "TL-003",
+    "name": "Ceramic Table Lamp with Linen Shade – Cream",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B09F3LQXZ1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/ceramic-lamp-cream.jpg"
+  }
+]

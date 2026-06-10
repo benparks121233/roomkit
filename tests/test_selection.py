@@ -19,8 +19,6 @@ import json
 from datetime import datetime, timezone
 from unittest.mock import patch
 
-import pytest
-
 from schemas.product import Product
 from schemas.slot import Slot
 from schemas.style_profile import StyleProfile

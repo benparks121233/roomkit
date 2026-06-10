@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "SH-001",
+    "name": "Mellanni Queen Sheet Set – Brushed Microfiber, Beige",
+    "normalized_price": 34.97,
+    "buy_url": "https://www.amazon.com/dp/B00NLLKNRA",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/mellanni-sheets-beige.jpg"
+  },
+  {
+    "product_id": "SH-002",
+    "name": "CGK Unlimited Queen Sheet Set – 6 Piece, White",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B07BFNPNRL",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/cgk-sheets-white.jpg"
+  },
+  {
+    "product_id": "SH-003",
+    "name": "Mellanni King Sheet Set – Brushed Microfiber, Sand",
+    "normalized_price": 39.97,
+    "buy_url": "https://www.amazon.com/dp/B00NLLKNRK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/mellanni-sheets-sand.jpg"
+  }
+]

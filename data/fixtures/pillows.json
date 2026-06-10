@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "PL-001",
+    "name": "Beckham Hotel Collection Queen Pillows – Set of 2",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B01LYNW421",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/beckham-pillows.jpg"
+  },
+  {
+    "product_id": "PL-002",
+    "name": "Coop Home Goods Original Loft Pillow – Queen",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B00EINBSEW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/coop-pillow-queen.jpg"
+  },
+  {
+    "product_id": "PL-003",
+    "name": "Amazon Basics Down Alternative Pillows – 2 Pack",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B073WMZRL4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/amazon-basics-pillows.jpg"
+  }
+]

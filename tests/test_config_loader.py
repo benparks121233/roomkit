@@ -4,10 +4,10 @@
 # missing file raises; malformed YAML raises; missing required key raises.
 
 import textwrap
-from pathlib import Path
 
 import pytest
 
+from schemas.room_taxonomy import RoomTaxonomy
 from services.config_loader import (
     CategorySpecRules,
     FreshnessPolicies,
@@ -17,8 +17,6 @@ from services.config_loader import (
     load_room_taxonomy,
     load_style_profiles,
 )
-from schemas.room_taxonomy import RoomTaxonomy
-
 
 # ---------------------------------------------------------------------------
 # load_room_taxonomy
@@ -31,41 +29,60 @@ class TestLoadRoomTaxonomy:
 
     def test_version(self):
         result = load_room_taxonomy()
-        assert result.version == 1
+        assert result.version == 2
 
-    def test_slot_count(self):
+    def test_item_count(self):
         result = load_room_taxonomy()
-        assert len(result.slots) == 8
+        assert len(result.items) >= 20  # v2 has 30+ items
 
-    def test_slot_ids_present(self):
+    def test_item_ids_present(self):
         result = load_room_taxonomy()
-        ids = result.slot_ids()
+        ids = result.item_ids()
         assert "wall_art" in ids
-        assert "bedding" in ids
+        assert "bed_frame" in ids
         assert "sofa" in ids
+        assert "mattress" in ids  # new in v2
 
-    def test_slot_by_id_fields(self):
+    def test_slot_ids_alias(self):
+        """slot_ids() is a backward-compat alias for item_ids()."""
         result = load_room_taxonomy()
-        bedding = result.slot_by_id("bedding")
-        assert bedding.optional is True
-        assert bedding.default_budget_weight == pytest.approx(0.10)
-        assert "bed_size" in bedding.required_specs
+        assert result.slot_ids() == result.item_ids()
+
+    def test_item_by_id_fields(self):
+        result = load_room_taxonomy()
+        bed_frame = result.item_by_id("bed_frame")
+        assert "bed_size" in bed_frame.required_specs
 
     def test_room_presets_exist(self):
         result = load_room_taxonomy()
         assert "bedroom" in result.room_presets
         assert "living_room" in result.room_presets
 
-    def test_bedroom_preset_slots(self):
+    def test_bedroom_preset_groups(self):
         result = load_room_taxonomy()
         bedroom = result.room_presets["bedroom"]
-        assert "bed_frame" in bedroom.required_slots
-        assert "bedding" in bedroom.required_slots
+        assert "bed" in bedroom.groups
+        assert "lighting" in bedroom.groups
+        assert "bed_frame" in bedroom.groups["bed"].items
+
+    def test_bedroom_required_items(self):
+        result = load_room_taxonomy()
+        bedroom = result.room_presets["bedroom"]
+        required = bedroom.required_items()
+        assert "bed_frame" in required
+        assert "mattress" in required
+        assert "rug" in required
+
+    def test_flatten_weights_sums_to_one(self):
+        result = load_room_taxonomy()
+        bedroom = result.room_presets["bedroom"]
+        weights = bedroom.flatten_weights()
+        assert sum(weights.values()) == pytest.approx(1.0, abs=0.01)
 
     def test_budget_rules(self):
         result = load_room_taxonomy()
-        assert result.budget_rules.total_must_not_exceed == "target_budget"
-        assert result.budget_rules.per_slot_overflow_flag is True
+        assert result.budget_rules.min_slot_dollars == pytest.approx(15.0)
+        assert result.budget_rules.max_slot_share == pytest.approx(0.40)
 
     def test_missing_file_raises(self, tmp_path):
         with pytest.raises(FileNotFoundError, match="not found"):
@@ -73,7 +90,7 @@ class TestLoadRoomTaxonomy:
 
     def test_malformed_yaml_raises(self, tmp_path):
         bad = tmp_path / "bad.yaml"
-        bad.write_text("slots: [{\n  unclosed")
+        bad.write_text("items: [{\n  unclosed")
         with pytest.raises(ValueError, match="Malformed YAML"):
             load_room_taxonomy(path=bad)
 
@@ -81,12 +98,11 @@ class TestLoadRoomTaxonomy:
         # Missing 'version' — Pydantic should reject
         no_version = tmp_path / "no_version.yaml"
         no_version.write_text(textwrap.dedent("""\
-            country_scope: US
-            slots: []
+            items: {}
             room_presets: {}
             budget_rules:
-              total_must_not_exceed: target_budget
-              per_slot_overflow_flag: true
+              min_slot_dollars: 15.0
+              max_slot_share: 0.40
         """))
         with pytest.raises(ValueError):
             load_room_taxonomy(path=no_version)

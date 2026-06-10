@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "MR-001",
+    "name": "BEAUTYPEAK Full Length Mirror – 56\"x16\" Black Frame",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BXDVLVG7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/beautypeak-full-mirror.jpg"
+  },
+  {
+    "product_id": "MR-002",
+    "name": "Round Wall Mirror – 24\" Gold Frame",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B08CK4Y9VP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/round-mirror-gold.jpg"
+  },
+  {
+    "product_id": "MR-003",
+    "name": "Arched Full Length Floor Mirror – 65\"x22\" Natural Wood",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0BXFG3N2H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/arched-mirror-wood.jpg"
+  }
+]

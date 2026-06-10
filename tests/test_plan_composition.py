@@ -24,14 +24,19 @@ import pytest
 from schemas.room_request import RoomRequest
 from schemas.style_profile import StyleProfile
 from services.composition_service import plan_composition
+from services.config_loader import load_room_taxonomy
+
+TAXONOMY = load_room_taxonomy()
+_BEDROOM_PRESET = TAXONOMY.room_presets["bedroom"]
+BEDROOM_REQUIRED = set(_BEDROOM_PRESET.required_items())
+_BEDROOM_DEFAULT_WEIGHTS = _BEDROOM_PRESET.flatten_weights()
+_LIVING_PRESET = TAXONOMY.room_presets["living_room"]
+LIVING_ROOM_REQUIRED = set(_LIVING_PRESET.required_items())
 
 
 # ---------------------------------------------------------------------------
 # Fixtures
 # ---------------------------------------------------------------------------
-
-BEDROOM_REQUIRED = {"bed_frame", "bedding", "rug", "lighting", "wall_art", "accent"}
-
 
 def _make_request(
     run_id: str = "test-run-001",
@@ -61,6 +66,11 @@ def _llm_weights_json(weights: dict[str, float], rationale: str = "balanced") ->
     return json.dumps({"slot_weights": weights, "rationale": rationale})
 
 
+def _bedroom_required_weights() -> dict[str, float]:
+    """Return taxonomy default weights for bedroom required items only."""
+    return {sid: _BEDROOM_DEFAULT_WEIGHTS[sid] for sid in BEDROOM_REQUIRED}
+
+
 _PATCH_TARGET = "services.composition_service._call_composition_llm"
 
 
@@ -69,11 +79,8 @@ _PATCH_TARGET = "services.composition_service._call_composition_llm"
 # ---------------------------------------------------------------------------
 
 def test_normal_proposal_produces_valid_plan():
-    """Clean weights summing to ~0.66 produce a feasible plan within budget."""
-    weights = {
-        "bed_frame": 0.22, "bedding": 0.10, "rug": 0.12,
-        "lighting": 0.08, "wall_art": 0.08, "accent": 0.06,
-    }
+    """Clean weights produce a feasible plan within budget."""
+    weights = _bedroom_required_weights()
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(_make_request(), _make_style())
 
@@ -85,8 +92,7 @@ def test_normal_proposal_produces_valid_plan():
 
 
 def test_normal_proposal_threads_run_id():
-    weights = {"bed_frame": 0.22, "bedding": 0.10, "rug": 0.12,
-               "lighting": 0.08, "wall_art": 0.08, "accent": 0.06}
+    weights = _bedroom_required_weights()
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(_make_request(run_id="abc-123"), _make_style())
 
@@ -94,8 +100,7 @@ def test_normal_proposal_threads_run_id():
 
 
 def test_normal_proposal_threads_target_budget():
-    weights = {"bed_frame": 0.22, "bedding": 0.10, "rug": 0.12,
-               "lighting": 0.08, "wall_art": 0.08, "accent": 0.06}
+    weights = _bedroom_required_weights()
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(_make_request(budget=2000.0), _make_style())
 
@@ -109,10 +114,7 @@ def test_normal_proposal_threads_target_budget():
 
 def test_overweight_sum_3_still_within_budget():
     """Weights summing to 3.0 are normalized; total never exceeds budget."""
-    weights = {
-        "bed_frame": 0.50, "bedding": 0.50, "rug": 0.50,
-        "lighting": 0.50, "wall_art": 0.50, "accent": 0.50,
-    }
+    weights = {sid: 0.50 for sid in BEDROOM_REQUIRED}
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(_make_request(budget=1000.0), _make_style())
 
@@ -127,11 +129,8 @@ def test_overweight_sum_3_still_within_budget():
 
 def test_hallucinated_slot_id_is_dropped():
     """An unknown slot id from the LLM is silently dropped."""
-    weights = {
-        "bed_frame": 0.22, "bedding": 0.10, "rug": 0.12,
-        "lighting": 0.08, "wall_art": 0.08, "accent": 0.06,
-        "magic_chair": 0.15,  # not in taxonomy
-    }
+    weights = dict(_bedroom_required_weights())
+    weights["magic_chair"] = 0.15  # not in taxonomy
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(_make_request(), _make_style())
 
@@ -148,18 +147,15 @@ def test_hallucinated_slot_id_is_dropped():
 
 def test_missing_required_slot_is_injected():
     """If the LLM omits a required slot, it is injected at taxonomy default."""
-    # Omit 'accent' — required for bedroom.
-    weights = {
-        "bed_frame": 0.22, "bedding": 0.10, "rug": 0.12,
-        "lighting": 0.08, "wall_art": 0.08,
-        # "accent" omitted
-    }
+    weights = dict(_bedroom_required_weights())
+    omitted = sorted(BEDROOM_REQUIRED)[0]
+    del weights[omitted]
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
-    assert "accent" in slot_ids
+    assert omitted in slot_ids
     assert plan.total_allocated <= 1500.0
 
 
@@ -192,10 +188,7 @@ def test_empty_json_object_falls_back():
 
 def test_code_fenced_json_is_parsed():
     """LLM wrapping response in ```json ... ``` is handled."""
-    weights = {
-        "bed_frame": 0.22, "bedding": 0.10, "rug": 0.12,
-        "lighting": 0.08, "wall_art": 0.08, "accent": 0.06,
-    }
+    weights = _bedroom_required_weights()
     fenced = f"```json\n{_llm_weights_json(weights)}\n```"
     with patch(_PATCH_TARGET, return_value=fenced):
         plan = plan_composition(_make_request(), _make_style())
@@ -212,7 +205,7 @@ def test_code_fenced_json_is_parsed():
 
 def test_all_garbage_weights_fall_back():
     """If every proposed weight is invalid, taxonomy defaults are used."""
-    weights = {"bed_frame": -1.0, "bedding": 0, "rug": "banana"}
+    weights = {"bed_frame": -1.0, "mattress": 0, "rug": "banana"}
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(_make_request(), _make_style())
 
@@ -228,10 +221,8 @@ def test_all_garbage_weights_fall_back():
 
 def test_living_room_preset_works():
     """plan_composition works for a non-bedroom preset."""
-    weights = {
-        "sofa": 0.28, "rug": 0.12, "lighting": 0.08,
-        "tv": 0.18, "wall_art": 0.08, "accent": 0.06,
-    }
+    lr_weights = _LIVING_PRESET.flatten_weights()
+    weights = {sid: lr_weights[sid] for sid in LIVING_ROOM_REQUIRED}
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
         plan = plan_composition(
             _make_request(room_type="living_room"), _make_style(),
@@ -240,5 +231,5 @@ def test_living_room_preset_works():
     assert plan.is_feasible is True
     assert plan.room_preset == "living_room"
     slot_ids = {s.slot_id for s in plan.slots}
-    for sid in ["sofa", "rug", "lighting", "tv", "wall_art", "accent"]:
+    for sid in LIVING_ROOM_REQUIRED:
         assert sid in slot_ids

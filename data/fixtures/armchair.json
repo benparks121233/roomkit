@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "AR-001",
+    "name": "Christopher Knight Home Merel Mid-Century Club Chair – Beige",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B01N9L24JT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/ckh-merel-beige.jpg"
+  },
+  {
+    "product_id": "AR-002",
+    "name": "GDF Studio Sienna Fabric Accent Chair – Charcoal",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B075X4NKVB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/gdf-sienna-charcoal.jpg"
+  },
+  {
+    "product_id": "AR-003",
+    "name": "Yaheetech Velvet Accent Chair – Cream",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B08R87ZC7B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/yaheetech-velvet-cream.jpg"
+  }
+]

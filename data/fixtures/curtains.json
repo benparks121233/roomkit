@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "CT-001",
+    "name": "NICETOWN Blackout Curtains – 84\" Beige, 2 Panels",
+    "normalized_price": 29.95,
+    "buy_url": "https://www.amazon.com/dp/B00PF72K38",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/nicetown-blackout-beige.jpg"
+  },
+  {
+    "product_id": "CT-002",
+    "name": "Linen Textured Sheer Curtains – 96\" Natural, 2 Panels",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B07K2NZC4R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/linen-sheer-natural.jpg"
+  },
+  {
+    "product_id": "CT-003",
+    "name": "Deconovo Room Darkening Curtains – 84\" Ivory, 2 Panels",
+    "normalized_price": 22.99,
+    "buy_url": "https://www.amazon.com/dp/B01CO2KVT2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/deconovo-ivory.jpg"
+  }
+]

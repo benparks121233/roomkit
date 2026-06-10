@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "CL-001",
+    "name": "Depuley Modern Semi Flush Mount Ceiling Light – Black",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B08G4V9T4M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/depuley-semi-flush-black.jpg"
+  },
+  {
+    "product_id": "CL-002",
+    "name": "Boho Rattan Ceiling Light Fixture – Natural",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0B7QLHXN3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/boho-rattan-ceiling.jpg"
+  },
+  {
+    "product_id": "CL-003",
+    "name": "DLLT 3-Light Semi Flush Mount – Brushed Nickel",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B07MMXLNXZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/dllt-3light-nickel.jpg"
+  }
+]

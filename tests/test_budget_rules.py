@@ -104,16 +104,18 @@ def test_reason_contains_delta():
 
 def test_allocate_budget_plans_always_pass_validate_budget():
     """Any SlotPlan produced by allocate_budget() must pass validate_budget()."""
+    # Use real item IDs from v2 taxonomy.
+    preset = TAXONOMY.room_presets["bedroom"]
+    default_w = preset.flatten_weights()
+    required_ids = preset.required_items()
+
     weights_cases = [
-        # Exactly 1.0
-        {"bed_frame": 0.33, "bedding": 0.17, "rug": 0.18,
-         "lighting": 0.12, "wall_art": 0.12, "accent": 0.08},
-        # Under 1.0
-        {"bed_frame": 0.22, "bedding": 0.10, "rug": 0.12,
-         "lighting": 0.08, "wall_art": 0.08, "accent": 0.06},
+        # All items at default weights (sum = 1.0)
+        dict(default_w),
+        # Required-only (sum < 1.0)
+        {sid: default_w[sid] for sid in required_ids},
         # Over 1.0
-        {"bed_frame": 0.50, "bedding": 0.40, "rug": 0.40,
-         "lighting": 0.30, "wall_art": 0.25, "accent": 0.25},
+        {sid: w * 3 for sid, w in default_w.items()},
     ]
     for weights in weights_cases:
         for budget in [400.0, 1000.0, 5000.0]:

@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "TP-001",
+    "name": "Luxspire Decorative Throw Pillow Covers – Set of 2, Cream",
+    "normalized_price": 12.99,
+    "buy_url": "https://www.amazon.com/dp/B07R2RQJQ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/luxspire-pillows-cream.jpg"
+  },
+  {
+    "product_id": "TP-002",
+    "name": "Anickal Boho Pillow Covers – 18\"x18\", Set of 4",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0B5M8KQR9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/anickal-boho-set4.jpg"
+  },
+  {
+    "product_id": "TP-003",
+    "name": "MIULEE Velvet Throw Pillow Covers – 18\"x18\", Set of 2, Taupe",
+    "normalized_price": 10.99,
+    "buy_url": "https://www.amazon.com/dp/B07N7HLDNL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/miulee-velvet-taupe.jpg"
+  }
+]

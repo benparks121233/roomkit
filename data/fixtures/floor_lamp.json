@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "FL-001",
+    "name": "Brightech Maxwell LED Floor Lamp – Warm Wood",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B01JBQYMHW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/brightech-maxwell.jpg"
+  },
+  {
+    "product_id": "FL-002",
+    "name": "Simple Designs Floor Lamp with Reading Light – Brushed Nickel",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B00ATORC3E",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/simple-designs-floor.jpg"
+  },
+  {
+    "product_id": "FL-003",
+    "name": "Brickmall Arc Floor Lamp with Rattan Shade",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0BFGH2K7R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/brickmall-arc-rattan.jpg"
+  }
+]

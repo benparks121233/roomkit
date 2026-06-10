@@ -18,7 +18,6 @@ import pytest
 from schemas.room_request import RoomRequest
 from services.intake_service import parse_intake
 
-
 # ---------------------------------------------------------------------------
 # Happy-path tests
 # ---------------------------------------------------------------------------

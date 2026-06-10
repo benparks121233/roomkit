@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "DR-001",
+    "name": "WLIVE 6-Drawer Fabric Dresser – Rustic Brown",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B07PBJV4BN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/wlive-6drawer-dresser.jpg"
+  },
+  {
+    "product_id": "DR-002",
+    "name": "IKENO 4-Drawer Chest – Natural Wood",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0BHG1K2P4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/ikeno-4drawer-natural.jpg"
+  },
+  {
+    "product_id": "DR-003",
+    "name": "Homfa 5-Drawer Dresser – White",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B07VTQYXSL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/homfa-5drawer-white.jpg"
+  }
+]

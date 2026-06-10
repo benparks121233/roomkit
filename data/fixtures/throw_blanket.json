@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "TB-001",
+    "name": "Bedsure Fleece Throw Blanket – 50\"x60\" Taupe",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B07DPPXRG5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-fleece-taupe.jpg"
+  },
+  {
+    "product_id": "TB-002",
+    "name": "Chanasya Faux Fur Throw Blanket – 50\"x65\" Ivory",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B073WB27P9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/chanasya-fur-ivory.jpg"
+  },
+  {
+    "product_id": "TB-003",
+    "name": "L'AGRATY Knit Throw Blanket – 50\"x60\" Cream",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0BXK7R3N1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/lagraty-knit-cream.jpg"
+  }
+]

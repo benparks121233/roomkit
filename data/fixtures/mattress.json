@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "MT-001",
+    "name": "Zinus Green Tea Memory Foam Mattress – Queen 12\"",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B00Q7EPSHI",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-green-tea-queen.jpg"
+  },
+  {
+    "product_id": "MT-002",
+    "name": "Linenspa 8 Inch Hybrid Mattress – Queen",
+    "normalized_price": 179.99,
+    "buy_url": "https://www.amazon.com/dp/B01IU6RJYA",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/linenspa-hybrid-queen.jpg"
+  },
+  {
+    "product_id": "MT-003",
+    "name": "Zinus Green Tea Memory Foam Mattress – King 12\"",
+    "normalized_price": 389.99,
+    "buy_url": "https://www.amazon.com/dp/B00Q7EPSHK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/zinus-green-tea-king.jpg"
+  }
+]

@@ -7,7 +7,7 @@
 from pathlib import Path
 
 import yaml
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel
 
 from schemas.room_taxonomy import RoomTaxonomy
 
@@ -85,7 +85,7 @@ def _load_yaml(path: Path) -> dict:
 
 
 def load_room_taxonomy(path: Path | None = None) -> RoomTaxonomy:
-    """Load and validate context/slot_taxonomy.yaml."""
+    """Load and validate context/slot_taxonomy.yaml (v2 grouped format)."""
     path = path or _CONTEXT_DIR / "slot_taxonomy.yaml"
     data = _load_yaml(path)
     try:

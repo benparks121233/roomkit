@@ -9,6 +9,11 @@
 # The deterministic/LLM split is structural: business-rule math lives in
 # allocate_budget() and fit_slots_to_budget(); LLM creativity lives in the
 # prompt.  Budget enforcement is never delegated to the prompt.
+#
+# v2 taxonomy: groups sit between room-budget and individual items.
+# flatten_weights() bridges groups → flat {item_id: weight} dict.
+# allocate_budget() and fit_slots_to_budget() remain unchanged in logic —
+# they receive flat weight dicts and don't know about groups.
 
 from __future__ import annotations
 
@@ -19,7 +24,7 @@ from pathlib import Path
 import anthropic
 
 from schemas.room_request import RoomRequest
-from schemas.room_taxonomy import RoomTaxonomy, SlotDefinition
+from schemas.room_taxonomy import RoomTaxonomy
 from schemas.slot import Slot
 from schemas.slot_plan import SlotPlan
 from schemas.style_profile import StyleProfile
@@ -43,7 +48,7 @@ def allocate_budget(
     Algorithm:
       1. Validate room_preset against the taxonomy.
       2. Inject any required slots missing from slot_weights using their
-         taxonomy default_budget_weight.
+         default weight from the preset's group structure.
       3. If sum(weights) > 1.0, re-normalize proportionally so the weights
          sum to exactly 1.0.  If sum ≤ 1.0, use weights as-is — under-budget
          is always safe.
@@ -63,7 +68,7 @@ def allocate_budget(
         run_id:            Optional; threaded from RoomRequest when called by
                            plan_composition().  Defaults to "" for standalone use.
         required_override: If provided, use this list of slot ids as the required
-                           set instead of taxonomy.room_presets[preset].required_slots.
+                           set instead of the preset's required_items().
                            Used by fit_slots_to_budget for have/need logic.
 
     Returns:
@@ -82,9 +87,12 @@ def allocate_budget(
     if target_budget <= 0:
         raise ValueError(f"target_budget must be > 0, got {target_budget}")
 
+    preset = taxonomy.room_presets[room_preset]
+    default_weights = preset.flatten_weights()
+
     required_slot_ids = (
         required_override if required_override is not None
-        else taxonomy.room_presets[room_preset].required_slots
+        else preset.required_items()
     )
 
     # --- Step 1: Build effective weight dict ---------------------------------
@@ -92,8 +100,12 @@ def allocate_budget(
     weights: dict[str, float] = dict(slot_weights)
     for slot_id in required_slot_ids:
         if slot_id not in weights:
-            slot_def = taxonomy.slot_by_id(slot_id)   # raises KeyError if unknown
-            weights[slot_id] = slot_def.default_budget_weight
+            if slot_id in default_weights:
+                weights[slot_id] = default_weights[slot_id]
+            else:
+                raise KeyError(
+                    f"Required slot '{slot_id}' not found in preset '{room_preset}' groups"
+                )
 
     # --- Step 2: Re-normalize if sum > 1.0 -----------------------------------
     total_weight = sum(weights.values())
@@ -121,14 +133,15 @@ def allocate_budget(
         allocated = {slot_id: v * scale for slot_id, v in allocated.items()}
 
     # --- Step 5: Build Slot objects ------------------------------------------
+    required_set = set(required_slot_ids)
     slots: list[Slot] = []
     for slot_id, budget in allocated.items():
-        slot_def = taxonomy.slot_by_id(slot_id)
+        item_def = taxonomy.item_by_id(slot_id)
         slots.append(Slot(
             slot_id=slot_id,
             allocated_budget=budget,
-            required_specs=list(slot_def.required_specs),
-            optional=slot_def.optional,
+            required_specs=list(item_def.required_specs),
+            optional=slot_id not in required_set,
         ))
 
     return SlotPlan(
@@ -197,7 +210,9 @@ def fit_slots_to_budget(
     must_have = must_have or set()
 
     multiplier = budget_policies.minimum_room_multiplier
-    preset_required = set(taxonomy.room_presets[room_preset].required_slots)
+    preset = taxonomy.room_presets[room_preset]
+    preset_required = set(preset.required_items())
+    default_weights = preset.flatten_weights()
 
     # Effective required: preset required minus owned, plus must-have.
     effective_required = (preset_required - already_have) | must_have
@@ -207,20 +222,20 @@ def fit_slots_to_budget(
     for slot_id in effective_required:
         if slot_id not in already_have:
             weights[slot_id] = slot_weights.get(
-                slot_id, taxonomy.slot_by_id(slot_id).default_budget_weight
+                slot_id, default_weights.get(slot_id, 0.05)
             )
     for slot_id, w in slot_weights.items():
         if slot_id not in effective_required and slot_id not in already_have:
             weights[slot_id] = w  # optional extra slots from caller
 
     # Droppable optionals: sourced slots that are NOT in effective_required.
-    def _droppable_defs_ascending(active: dict[str, float]) -> list[SlotDefinition]:
+    # Sort by their default weight (ascending) so cheapest drops first.
+    def _droppable_ids_ascending(active: dict[str, float]) -> list[str]:
         droppable = [
-            taxonomy.slot_by_id(sid)
-            for sid in active
+            sid for sid in active
             if sid not in effective_required
         ]
-        return sorted(droppable, key=lambda s: s.default_budget_weight)
+        return sorted(droppable, key=lambda sid: default_weights.get(sid, 0.0))
 
     # Drop optionals until feasible or none left.
     active = dict(weights)
@@ -240,16 +255,16 @@ def fit_slots_to_budget(
                 plan = plan.model_copy(update={"slots": plan.slots + owned_slots})
             return plan
 
-        droppable = _droppable_defs_ascending(active)
+        droppable = _droppable_ids_ascending(active)
         if not droppable:
             break  # Nothing left to drop — infeasible.
 
         # Drop the cheapest droppable optional and retry.
-        active.pop(droppable[0].id)
+        active.pop(droppable[0])
 
     # Effective-required-only is still infeasible.
     req_weight_sum = sum(
-        taxonomy.slot_by_id(sid).default_budget_weight
+        default_weights.get(sid, 0.05)
         for sid in effective_required
     )
     mvb = max(req_weight_sum, 1.0) * multiplier
@@ -258,7 +273,7 @@ def fit_slots_to_budget(
         Slot(
             slot_id=sid,
             allocated_budget=0.0,
-            required_specs=list(taxonomy.slot_by_id(sid).required_specs),
+            required_specs=list(taxonomy.item_by_id(sid).required_specs),
             optional=sid not in effective_required,
         )
         for sid in sorted(effective_required)
@@ -280,12 +295,12 @@ def _build_owned_slots(already_have: set[str], taxonomy: RoomTaxonomy) -> list[S
     """Build Slot objects for user-owned items: $0 budget, owned=True."""
     slots = []
     for sid in sorted(already_have):
-        slot_def = taxonomy.slot_by_id(sid)
+        item_def = taxonomy.item_by_id(sid)
         slots.append(Slot(
             slot_id=sid,
             allocated_budget=0.0,
-            required_specs=list(slot_def.required_specs),
-            optional=slot_def.optional,
+            required_specs=list(item_def.required_specs),
+            optional=True,  # owned slots are not sourced
             owned=True,
         ))
     return slots
@@ -369,17 +384,20 @@ def _build_composition_prompts(
     """Load plan_composition.md, substitute variables, return (system, user)."""
     template_text = (_PROMPTS_DIR / "plan_composition.md").read_text()
 
-    required_ids = taxonomy.room_presets[room_preset].required_slots
-    all_ids = taxonomy.slot_ids()
+    preset = taxonomy.room_presets[room_preset]
+    required_ids = preset.required_items()
+    all_ids = preset.all_items()
 
-    # Build a human-readable slot catalogue.
+    # Build a human-readable item catalogue from the grouped structure.
     slot_lines = []
-    for slot_def in taxonomy.slots:
-        slot_lines.append(
-            f"- id: {slot_def.id}  "
-            f"default_weight: {slot_def.default_budget_weight}  "
-            f"required_specs: {slot_def.required_specs}"
-        )
+    for group_name, group_def in preset.groups.items():
+        for item_id, gi in group_def.items.items():
+            effective_weight = group_def.budget_weight * gi.sub_weight
+            slot_lines.append(
+                f"- id: {item_id}  group: {group_name}  "
+                f"weight: {effective_weight:.3f}  "
+                f"required_specs: {list(taxonomy.item_by_id(item_id).required_specs)}"
+            )
     slot_definitions = "\n".join(slot_lines)
 
     # Style profile summary for the prompt.
@@ -449,7 +467,7 @@ def _parse_weight_proposal(
     if not isinstance(raw_weights, dict):
         return _taxonomy_default_weights(room_preset, taxonomy)
 
-    valid_ids = taxonomy.slot_ids()
+    valid_ids = taxonomy.item_ids()
     cleaned: dict[str, float] = {}
     for slot_id, weight in raw_weights.items():
         if slot_id not in valid_ids:
@@ -491,9 +509,6 @@ def _extract_composition_json(text: str) -> dict:
 def _taxonomy_default_weights(
     room_preset: str, taxonomy: RoomTaxonomy,
 ) -> dict[str, float]:
-    """Return the taxonomy default_budget_weight for every required slot."""
-    required_ids = taxonomy.room_presets[room_preset].required_slots
-    return {
-        sid: taxonomy.slot_by_id(sid).default_budget_weight
-        for sid in required_ids
-    }
+    """Return the flattened default weights for every item in the preset."""
+    preset = taxonomy.room_presets[room_preset]
+    return preset.flatten_weights()
