@@ -30,8 +30,29 @@ _CATALOG_DIR = Path(__file__).parent.parent.parent / "data" / "catalog"
 _DEFAULT_AFFILIATE_TAG = "roomkitai-20"
 
 # Maximum candidates sent to the selection LLM.  Keeps input tokens bounded
-# and gives the LLM a tighter, more on-style shortlist.
-_MAX_CANDIDATES = 25
+# while leaving room for style-matches, interest items, and price spread.
+_MAX_CANDIDATES = 100
+
+# Slots where user interests influence product selection.
+_INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
+
+# Keywords that indicate a product matches a user interest category.
+_INTEREST_KEYWORDS: dict[str, list[str]] = {
+    "music": ["music", "vinyl", "record", "concert", "guitar", "piano",
+              "jazz", "notes", "band", "album"],
+    "sports": ["sports", "basketball", "football", "baseball", "athletic",
+               "soccer", "hockey", "tennis", "golf"],
+    "travel": ["travel", "map", "world", "destination", "city", "globe",
+               "adventure", "wanderlust", "passport"],
+    "gaming": ["gaming", "video game", "retro game", "neon", "controller",
+               "arcade", "pixel"],
+    "books": ["literary", "book", "library", "reading", "quote", "novel",
+              "bookshelf"],
+    "film": ["movie", "film", "cinema", "classic film", "poster"],
+    "nature": ["nature", "landscape", "botanical", "mountain", "forest",
+               "ocean", "sunset", "wildlife"],
+    "art": ["gallery", "fine art", "abstract", "painting", "modern art"],
+}
 
 
 class AmazonAdapter(SourcingAdapter):
@@ -66,6 +87,7 @@ class AmazonAdapter(SourcingAdapter):
         style_keywords: list[str],
         price_band: tuple[float, float],
         required_specs: dict,
+        interests: list[str] | None = None,
     ) -> list[Product]:
         raw_products = self._load_products(slot_id)
         min_price, max_price = price_band
@@ -100,11 +122,16 @@ class AmazonAdapter(SourcingAdapter):
                 fetched_at=now,
             ))
 
-        # Sort by style-keyword relevance and cap to keep input tokens bounded.
-        if len(candidates) > _MAX_CANDIDATES and style_keywords:
-            candidates = self._rank_by_relevance(candidates, style_keywords)
+        if len(candidates) <= _MAX_CANDIDATES:
+            return candidates
 
-        return candidates[:_MAX_CANDIDATES] if len(candidates) > _MAX_CANDIDATES else candidates
+        # Build a blended shortlist: style + interests + price spread.
+        slot_interests = (
+            interests if interests and slot_id in _INTEREST_SLOTS else None
+        )
+        return self._build_shortlist(
+            candidates, style_keywords, max_price, slot_interests,
+        )
 
     # ------------------------------------------------------------------
     # Private helpers
@@ -148,22 +175,89 @@ class AmazonAdapter(SourcingAdapter):
         return True
 
     @staticmethod
-    def _rank_by_relevance(
-        candidates: list[Product], keywords: list[str],
+    def _build_shortlist(
+        candidates: list[Product],
+        style_keywords: list[str],
+        max_price: float,
+        interests: list[str] | None,
     ) -> list[Product]:
-        """Sort candidates so style-relevant products come first.
+        """Build a capped shortlist blending style, interests, and price spread.
 
-        Scores each product by counting how many style keywords appear in
-        its name (case-insensitive).  Higher-scoring products sort first;
-        ties preserve original order (stable sort).
+        Strategy (order of priority, deduped):
+          1. Style-relevant: top items by keyword-match score.
+          2. Interest-guaranteed: for decor slots, products matching the user's
+             interest categories (music, sports, etc.) regardless of style score.
+          3. Price-spread: sample across price terciles so the LLM sees cheap,
+             mid, and expensive options — prevents under-budget picks.
+
+        All three pools are merged, deduped, and capped at _MAX_CANDIDATES.
         """
-        kw_lower = [k.lower() for k in keywords]
+        seen: set[str] = set()
+        result: list[Product] = []
 
-        def score(product: Product) -> int:
-            name = product.name.lower()
+        def _add(product: Product) -> bool:
+            if product.product_id in seen:
+                return False
+            seen.add(product.product_id)
+            result.append(product)
+            return True
+
+        # --- Pool 1: style-relevant (top 40 by keyword score) ---
+        kw_lower = [k.lower() for k in style_keywords]
+
+        def style_score(p: Product) -> int:
+            name = p.name.lower()
             return sum(1 for kw in kw_lower if kw in name)
 
-        return sorted(candidates, key=score, reverse=True)
+        by_style = sorted(candidates, key=style_score, reverse=True)
+        for p in by_style[:40]:
+            _add(p)
+
+        # --- Pool 2: interest-guaranteed (up to 30) ---
+        if interests:
+            # Collect all keywords for the user's interest categories.
+            interest_kw: list[str] = []
+            for cat in interests:
+                interest_kw.extend(_INTEREST_KEYWORDS.get(cat, [cat]))
+            interest_kw_lower = [k.lower() for k in interest_kw]
+
+            def interest_score(p: Product) -> int:
+                name = p.name.lower()
+                return sum(1 for kw in interest_kw_lower if kw in name)
+
+            interest_matches = [
+                p for p in candidates if interest_score(p) > 0
+            ]
+            # Sort by interest relevance, take top 30.
+            interest_matches.sort(key=interest_score, reverse=True)
+            for p in interest_matches[:30]:
+                _add(p)
+
+        # --- Pool 3: price-spread (fill remaining budget with price diversity) ---
+        remaining = _MAX_CANDIDATES - len(result)
+        if remaining > 0 and candidates:
+            # Split into 3 price terciles, sample evenly.
+            by_price = sorted(candidates, key=lambda p: p.normalized_price)
+            n = len(by_price)
+            tercile_size = max(1, n // 3)
+            terciles = [
+                by_price[:tercile_size],
+                by_price[tercile_size:2 * tercile_size],
+                by_price[2 * tercile_size:],
+            ]
+            per_tercile = max(1, remaining // 3)
+
+            for tercile in terciles:
+                # Within each tercile, prefer style-relevant items.
+                tercile_sorted = sorted(tercile, key=style_score, reverse=True)
+                added = 0
+                for p in tercile_sorted:
+                    if added >= per_tercile:
+                        break
+                    if _add(p):
+                        added += 1
+
+        return result[:_MAX_CANDIDATES]
 
     def _inject_affiliate_tag(self, url: str) -> str:
         """Ensure the buy_url contains the affiliate tag query parameter."""

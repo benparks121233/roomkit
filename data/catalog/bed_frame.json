@@ -200,7 +200,7 @@
   {
     "product_id": "B0DDXPGY2V",
     "name": "Furnulem Queen Size Bed Frame with Charging Station and LED Lights, Platform Bed with Metal Slats, Grey Upholstered Headboard with 2-Tier Storage Shelves, No Box Spring Needed",
-    "normalized_price": 129.99,
+    "normalized_price": 139.99,
     "buy_url": "https://www.amazon.com/dp/B0DDXPGY2V",
     "specs": {
       "bed_size": "queen"
@@ -640,7 +640,7 @@
   {
     "product_id": "B086M58PQ3",
     "name": "Allewie Queen Size Platform Bed Frame with Fabric Upholstered Headboard and Wooden Slats Support, Fully Upholstered Mattress Foundation/No Box Spring Needed/Easy Assembly, Dark Grey",
-    "normalized_price": 154.99,
+    "normalized_price": 154.69,
     "buy_url": "https://www.amazon.com/dp/B086M58PQ3",
     "specs": {
       "bed_size": "queen"
@@ -3251,6 +3251,1447 @@
       "bed_size": "king"
     },
     "image_url": "https://m.media-amazon.com/images/I/91fYvTyzy7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3PJGZJG",
+    "name": "Queen Size Linen Bed Frame, Upholstered Platform Bed Frame with Adjustable Headboard, Wooden Slats Support, No Box Spring Needed, Easy Assembly, Beige",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0G3PJGZJG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pcviLJ4oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GV52ZH6B",
+    "name": "Queen Size Upholstered Platform Bed Frame, Modern Linen Fabric Bed with Wingback Headboard, Sturdy No Wobble, Noise-Free & Easy Assembly, No Box Spring Needed, Beige",
+    "normalized_price": 228.99,
+    "buy_url": "https://www.amazon.com/dp/B0GV52ZH6B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-ptLa63LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7XN15ZH",
+    "name": "Queen Size Bed Frame, Linen Upholstered Platform with Wingback Headboard, Wooden Slats Support, No Box Spring Needed, Easy Assembly, Beige",
+    "normalized_price": 269.99,
+    "buy_url": "https://www.amazon.com/dp/B0G7XN15ZH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813i6rvZENL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GV53W99W",
+    "name": "Queen Platform Bed Frame with Adjustable Linen Fabric Upholstered Headboard, Strong Slats Support, Noise-Free, No Box Spring Required, Easy Assembly for Bedroom Guest Room, Beige",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0GV53W99W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ICLTmPTLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DXBZYL5K",
+    "name": "iPormis Upholstered Queen Size Bed Frame with Button Tufted Headboard, Linen Platform Bed with Thickened Support Legs, No Box Spring Needed/Noise-Free/Easy Assembly, Black",
+    "normalized_price": 142.49,
+    "buy_url": "https://www.amazon.com/dp/B0DXBZYL5K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81OXkW7FrZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F293V3MC",
+    "name": "iPormis Queen Platform Bed Frame with Fabric Upholstered Headboard & Thickened Legs, Mattress Foundation with Solid Wooden Slats Support, No Box Spring Needed, Noise Free, Black",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0F293V3MC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91TLCoONNaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BV2JTNBX",
+    "name": "Allewie Queen Size Bed Frame with Button Tufted Wingback Headboard, Upholstered Platform Bed with Wooden Slats Support - No Box Spring Needed, Noise-Free, Easy Assembly, Dark Grey",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0BV2JTNBX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8179c6HzHKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1KWP5F7",
+    "name": "LARMACE Queen Size Bed Frame with 4 Storage Drawers and Tufted Headboard Linen Upholstered Platform Bed Frame with Heavy Duty Wood Slats, No Box Spring Needed, Easy Assembly, Beige",
+    "normalized_price": 259.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1KWP5F7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mu5zSV85L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQM793F2",
+    "name": "Novilla Queen Size Bed Frame, Queen Bed Frame with Headboard, Linen Upholstered Wing Side Headboard, No Box Spring Needed, Heavy Duty Feet, Easy Assembly, Beige",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQM793F2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/713OE9NHYoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDFLXPFY",
+    "name": "LARMACE Queen Size Bed Frame with LED Lights and Charging Station Linen Upholstered Platform Bed Frame with 51.2\" Tall Headboard Wingback and Storage Shelf, No Box Spring Needed, Noise Free, Beige",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDFLXPFY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818OroZRZ0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D12NGLT6",
+    "name": "Jocisland Queen Size Bed Frame Lift Up Storage Bed Linen Upholstered Bed Frame with Hydraulic Storage/Wingback Headboard/No Box Spring Needed/White",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0D12NGLT6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81reqlQPJiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLH8T167",
+    "name": "Queen Size Linen Bed Frame, Storage Headboard with Charging Station, Upholstered Platform Bed with Wooden Slats Support, Solid and Stable, Noise Free, No Box Spring Needed, Easy Assembly, Beige",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0GLH8T167",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818wSJQFogL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJ3NK5NP",
+    "name": "BRELTAM Queen Upholstered Platform Bed Frame with Linen Headboard & Wing Side, Built-in Charging Station, Wooden Slat Support, Mattress Foundation, No Box Spring Needed, Beige",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJ3NK5NP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81TO76PHZ8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLGV8SJP",
+    "name": "Queen Size Bed Frame with Diamond Tufted Linen Headboard & Storage Charging Port, Upholstered Platform Bed with Wood Slats & Sturdy Metal Frames, Noise-Free, No Box Spring Needed, Easy Assembly, Beige",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0GLGV8SJP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/814HoMWSrpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5Y4YYJM",
+    "name": "Furnihome Queen Bed Frame, Modern Upholstered Bed Frame with Adjustable Linen Headboard, Wooden Slats Support Platform Queen Size Bed Frames, No Box Spring Needed,Easy Assembly,Beige",
+    "normalized_price": 115.5,
+    "buy_url": "https://www.amazon.com/dp/B0D5Y4YYJM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81MUPg+5uBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C148C31P",
+    "name": "Jocisland Queen Size Bed Frame 51.2\" Wingback Headboard Linen Upholstered Platform Bed,Solid Wood Legs & Wooden Slats,No Box Spring Needed,Noise-Free,for Family Guest Room Cozy Home,White",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0C148C31P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91g8iKLR7JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRM3B2TF",
+    "name": "Christopher Knight Home Lanet Linen Upholstered Queen Size Bed Frame with Headboard, Modern Queen Bed Frame and Headboard, Wooden Slats Support, Easy Assembly, No Box Spring Needed, Beige",
+    "normalized_price": 438.29,
+    "buy_url": "https://www.amazon.com/dp/B0FRM3B2TF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91zVyj5DISL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVTK7X5X",
+    "name": "Queen Size Bed Frame, Linen Upholstered Platform Bed with Headboard, Strong Wooden Slats Support, Noise-Free Mattress Foundation, No Box Spring Needed, Easy Assembly, Beige",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVTK7X5X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gvzaNg71L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H28HRW8L",
+    "name": "Feonase Queen Bed Frame with Upholstered Headboard, Linen Platform Bed Frame with Wooden & Metal Slats Support, Storage Space Under Bed, No Box Spring Needed, Easy Assembly, Beige",
+    "normalized_price": 132.98,
+    "buy_url": "https://www.amazon.com/dp/B0H28HRW8L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91BAuXbnJyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DLP49VWG",
+    "name": "AMERLIFE Lift Up Storage Bed Queen Size Linen Upholstered Platform Bed Frame, Hydraulic Storage,Modern Wingback Headboard, No Box Spring Needed, Khaki",
+    "normalized_price": 329.99,
+    "buy_url": "https://www.amazon.com/dp/B0DLP49VWG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8188xSh1HiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H38YDWXQ",
+    "name": "Queen Bed Frame with Hydraulic Gas Lift Up Storage, Linen Upholstered Platform Bed with Wingback Headboard, Heavy Duty Metal Slats, Noise Free, 1000LBS Capacity, No Box Spring Needed, Beige",
+    "normalized_price": 229.99,
+    "buy_url": "https://www.amazon.com/dp/B0H38YDWXQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91lnatsinRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDWKCJK6",
+    "name": "Jocisland Queen Size Platform Bed Frame, 6.3\" Thick Upholstered Curved Wingback Headboard and Footboard with Deep Button Tufted, Easy Assembly, No Box Spring Needed, Khaki Linen",
+    "normalized_price": 293.29,
+    "buy_url": "https://www.amazon.com/dp/B0GDWKCJK6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8151qzWC4XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCB8C95K",
+    "name": "VECELO Queen Size Bed Frame Upholstered Platform Beds with Height-Adjustable Cotton and Linen Headboard, Heavy Duty Wood Slats, 6\" Under-Bed Space, Noise-Free, No Box Spring Needed, Easy Assembly",
+    "normalized_price": 153.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCB8C95K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81g7aMYMuSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7Y573FH",
+    "name": "Queen Size Bed Frame, Linen Upholstered Platform with Wingback Headboard, Wooden Slats Support, No Box Spring Needed, Easy Assembly, Lightgrey",
+    "normalized_price": 234.99,
+    "buy_url": "https://www.amazon.com/dp/B0G7Y573FH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xrOi-APfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZSBF5HB",
+    "name": "Martha Stewart Britta Platform Bed with Headboard & Footboard, Faux Linen Upholstery with Piping Detail, Rounded Headboard, No Box Spring Needed, Queen, Beige",
+    "normalized_price": 569.94,
+    "buy_url": "https://www.amazon.com/dp/B0CZSBF5HB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91tyusBIa5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GN23X54Q",
+    "name": "VELOCAVA Queen Upholstered Storage Bed Frame with Drawers, Linen-Look Platform Bed Frame with 4 Under Bed Storage Drawers, Soft Curved Wingback Headboard, No Box Spring Needed, Cream White",
+    "normalized_price": 379.99,
+    "buy_url": "https://www.amazon.com/dp/B0GN23X54Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81blTInIzOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCVN1MVV",
+    "name": "Gruwans Queen Size Bed Frame with Upholstered Wingback Headboard, Easy Assemnly Platform Bed, Wooden Slat Support No Box Spring Needed, Sand",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCVN1MVV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91cLMxq0G3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX5D7L32",
+    "name": "Queen Size Upholstered Platform Bed Frame | 50.6\" Tall Wingback Headboard, Linen Fabric, Retro Wood Legs, No Box Spring Needed, Easy Assembly, Squeak Resistant, Beige",
+    "normalized_price": 229.99,
+    "buy_url": "https://www.amazon.com/dp/B0GX5D7L32",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91EaXwz7zDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4FS5WBL",
+    "name": "FlexiSpot Queen Size Bed Frame, Upholstered Linen Cloud Platform Bed with Adjustable Headboard, Plush Padding, Solid Wood Legs, Bonus LED Wall Light Included, No Box Spring Needed, Easy Assembly, Sage",
+    "normalized_price": 163.18,
+    "buy_url": "https://www.amazon.com/dp/B0G4FS5WBL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81polzk18aL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCF6JFDP",
+    "name": "Queen Size Bed Frame, Velvet Upholstered Platform Bed with Adjustable Tufted Headboard, Sturdy Frame and Slats, Noiseless, No Box Spring Required, Easy to Assemble, Black",
+    "normalized_price": 158.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCF6JFDP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81w8hmUdq2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZPCKZ1X",
+    "name": "Manhattan Comfort Promenade Mid-Century Modern Velvet Upholstered Queen-Size Bed Frame - Luxurious Foam Padding, No Box Spring Needed, Stylish Vertical Stitched Headboard, Grey",
+    "normalized_price": 784.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZPCKZ1X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Xsh7Zpt5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6N67G22",
+    "name": "HAOARA Queen Size Bed Frame, Upholstered Platform Bed with Wingback Headboard, Velvet Button Tufted, Easy Assembly, No Box Spring Needed, Green",
+    "normalized_price": 189.98,
+    "buy_url": "https://www.amazon.com/dp/B0F6N67G22",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FYBdkulpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNRKWKKZ",
+    "name": "SHA CERLIN Queen Bed Frame, Velvet Platform Bed Frame with Vertical Channel Tufted Headboard, Upholstered Corduroy, Strong Wooden Slats, No Box Spring Needed, Easy Assembly, Dark Green",
+    "normalized_price": 139.95,
+    "buy_url": "https://www.amazon.com/dp/B0FNRKWKKZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91letbwO9XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G9213BCQ",
+    "name": "Queen Bed Frame with 55.1\" Tall Headboard, Velvet Upholstered Platform Bed with Channel Tufted Wingback, 2 Reading Lights/Storage Shelf/Charging Station/Easy Assembly/Noise-Free, Black",
+    "normalized_price": 360.99,
+    "buy_url": "https://www.amazon.com/dp/B0G9213BCQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+-StPLFJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFLR32WV",
+    "name": "AMERLIFE Queen Size Bed Frame and Headboard with 59\" Tall Sleigh Design, Luxury Velvet Upholstered Queen Bed Frame with Handcrafted Deep-Tufted and Solid Wood Legs, No Box Spring Needed,Cream",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFLR32WV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81i8nCfkQrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BXPVKBRJ",
+    "name": "Jocisland Queen Size Bed Frame 61.4\" Extra Tall Wingback Headboard Velvet Upholstered Deep Button Tufted Platform Bed with Solid Wood Legs & Wood Slats, No Box Spring Needed, Cream",
+    "normalized_price": 339.99,
+    "buy_url": "https://www.amazon.com/dp/B0BXPVKBRJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81y9xK3fFZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFSD6ZJB",
+    "name": "Allewie Queen Size Storage Bed Frame, Vertical Channel Tufted Adjustable Headboard, Velvet Upholstered Platform Bed with 4 Oversized Underbed Drawers, Wooden Slats Support, No Box Spring Needed, Black",
+    "normalized_price": 182.24,
+    "buy_url": "https://www.amazon.com/dp/B0FFSD6ZJB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yA8+6opxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJ24Z28P",
+    "name": "Allewie Queen Size Velvet Platform Bed Frame with Vertical Tufted Wingback Headboard, Easy Assembly, Under Bed Storage, No Box Spring Required, Modern Style, Black",
+    "normalized_price": 131.28,
+    "buy_url": "https://www.amazon.com/dp/B0FJ24Z28P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81361MEEERL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTJG3FCZ",
+    "name": "Jocisland Queen Size Bed Frame with 59\" Tall Upholstered Headboard, Luxury Velvet Bed with Handcrafted Deep-Tufted Design and Solid Wood Legs, Noise-Free, No Box Spring Needed,Light Grey",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0CTJG3FCZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91EtjytrqwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZZ91RSW",
+    "name": "Keyluv Queen Smart LED Bed Frame with Button Tufted Wingback Headboard & Elegant Golden Metal Decor, Velvet Upholstered Platform Bed with Handmade Pleats Footboard, Sturdy Wood Slats, Beige",
+    "normalized_price": 310.34,
+    "buy_url": "https://www.amazon.com/dp/B0GZZ91RSW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8144L4OageL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GMWQWYPX",
+    "name": "Jocisland Upholstered Canopy Bed Frame Queen Size with 74.8\" Tall Four Poster and Velvet Deep-Tufted Tall Headboard with Charging Station/Modern Luxury Style/No Box Spring Needed/Grey",
+    "normalized_price": 439.99,
+    "buy_url": "https://www.amazon.com/dp/B0GMWQWYPX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lD+asMzfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKWG71GG",
+    "name": "Queen Size Bed Frame with Headboard, Luxury Velvet Fabric Upholstered Bed frame with Button Tufted Design, Strong Wooden Slats Support - Low & Sturdy, Noise-Free, No Box Spring, Easy Assembly, Beige | Plush velvet",
+    "normalized_price": 159.41,
+    "buy_url": "https://www.amazon.com/dp/B0GKWG71GG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816e+56m-7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCR61Q48",
+    "name": "Belffin Queen Size Bed Frame and Headboard, 50.9\" Velvet Upholstered Wingback Bedframe with LED Lights & Storage/Charging Station, Button Tufted Tall Footboard, No Box Spring Needed, Noise-Free, Beige",
+    "normalized_price": 279.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCR61Q48",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81DTT1WG1XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZPPW8G1",
+    "name": "AMERLIFE Queen Size Platform Bed Frame, Velvet Upholstered Sleigh Bed with Scroll Wingback Headboard Footboard/Button Tufted/No Box Spring Required/Easy Assembly/Black",
+    "normalized_price": 429.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZPPW8G1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-ptRPb-NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G92T71FJ",
+    "name": "Queen Bed Frame with 55.1\" Tall Headboard, Velvet Upholstered Platform Bed with Channel Tufted Wingback, 2 Reading Lights/Storage Shelf/Charging Station/Easy Assembly/Noise-Free, Cream",
+    "normalized_price": 360.99,
+    "buy_url": "https://www.amazon.com/dp/B0G92T71FJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yBSUP8jRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKWJSNJD",
+    "name": "Queen Size Bed Frame with Headboard, Luxury Velvet Fabric Upholstered Bed frame with Button Tufted Design, Strong Wooden Slats Support - Low & Sturdy, Noise-Free, No Box Spring, Easy Assembly, Black | Plush velvet",
+    "normalized_price": 143.99,
+    "buy_url": "https://www.amazon.com/dp/B0GKWJSNJD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LQ3D-sJhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCRNN6L9",
+    "name": "Belffin Queen Size Bed Frame and Headboard, 50.9\" Velvet Upholstered Wingback Bedframe with LED Lights & Storage/Charging Station, Button Tufted Tall Footboard, No Box Spring Needed, Noise-Free, Black",
+    "normalized_price": 259.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCRNN6L9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bCRtI8Q3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5RMNM9N",
+    "name": "Jocisland Queen Size Bed Frame with 58\" Tall Headboard, Velvet Upholstered Platform Bed with Channel Tufted Wingback Headboard and Plating Trim, No Box Spring Needed, Black",
+    "normalized_price": 269.99,
+    "buy_url": "https://www.amazon.com/dp/B0D5RMNM9N",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812Kew8tLUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F83VN5GG",
+    "name": "Queen Bed Frame with Tall Headboard & Footboard, Velvet Upholstered Platform Bed Frame with Deep Button Tufted Wingback, No Box Spring Needed, Noise Free, Grey",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0F83VN5GG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nLgut7lZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BHT538CJ",
+    "name": "AMERLIFE Queen Size Platform Bed Frame, Velvet Upholstered Bed with Deep Button Tufted & Nailhead Trim Wingback Headboard/No Box Spring Needed/Grey",
+    "normalized_price": 359.99,
+    "buy_url": "https://www.amazon.com/dp/B0BHT538CJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81etcPmRyZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZ8CF7M8",
+    "name": "LARMACE Queen Size Bed Frame Velvet Upholstered Platform Bed with Wingback Headboard & Footbaord, Deep Button Tufted Bed Frame with Wood Slats Support, No Box Spring Needed, Black",
+    "normalized_price": 256.49,
+    "buy_url": "https://www.amazon.com/dp/B0CZ8CF7M8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81oKUKSaJ5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJZQTX99",
+    "name": "Queen Bed Frame with 51.2\" Tall Headboard, Velvet Upholstered Tufted Platform Bed with Luxury Footboard and Wingback Design, Deep Button Tufting, Nailhead Trim, No Box Spring Needed, Noise Free, Cream",
+    "normalized_price": 279.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJZQTX99",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819LnD-CR7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BRKMXZBC",
+    "name": "AMERLIFE Queen Size Platform Bed Frame, Velvet Upholstered Bed with Deep Button Tufted & Nailhead Trim Wingback Headboard/No Box Spring Needed/Black",
+    "normalized_price": 349.99,
+    "buy_url": "https://www.amazon.com/dp/B0BRKMXZBC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71DBRncNwtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHC5KYYX",
+    "name": "Allewie Vintage Queen Size Velvet Platform Bed Frame with Curved Vertical Tufted Wingback Headboard and Footboard, Charging Station, Easy Assembly, Under Bed Storage, No Box Spring Required, White",
+    "normalized_price": 159.2,
+    "buy_url": "https://www.amazon.com/dp/B0FHC5KYYX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CC9ym6EeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNQZPXSM",
+    "name": "Allewie Velvet Vertical Tufted Queen Upholstered Platform Bed Frame with 2-Tier LED Storage Headboard & 2 Storage Drawers, USB & Type-C Charging Ports, Noise-Free/No Box Spring Needed, White",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNQZPXSM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81cq1IIf7pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8NGTN2G",
+    "name": "Allewie Queen Bed Frame, Velvet Upholstered Platform Bed with Adjustable Vertical Channel Tufted Headboard, Mattress Foundation with Strong Wooden Slats, Box Spring Optional, Easy Assembly, Off-White",
+    "normalized_price": 139.79,
+    "buy_url": "https://www.amazon.com/dp/B0C8NGTN2G",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91yMSKcYWvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGGDXFDP",
+    "name": "COMHOMA Queen Size Bed Frame Luxury Velvet Upholstered Platform with Modern Channel Tufted Modular LED Headboard Adjustable Gaps Sturdy Metal Frame No Box Spring Needed Easy Assembly Noise Free",
+    "normalized_price": 113.38,
+    "buy_url": "https://www.amazon.com/dp/B0GGGDXFDP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81twcG24XvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTJG6JS6",
+    "name": "Jocisland Queen Size Bed Frame with 59\" Tall Upholstered Headboard, Luxury Velvet Bed with Handcrafted Deep-Tufted Design and Solid Wood Legs, Noise-Free, No Box Spring Needed,Black",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0CTJG6JS6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RnHnI5u4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2VG6HG3",
+    "name": "koorlian Queen Bed Frame,Velvet Upholstered Sleigh Bed with Scroll Wingback Headboard & Footboard,Luxury & Soft Button Tufted Queen Size Modern Bed,Easy Assembly,No Box Spring Needed",
+    "normalized_price": 341.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2VG6HG3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819+yAQaU3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D8PH8W6S",
+    "name": "Jocisland Queen Size Bed Frame Velvet Upholstered Platform Bed with 51.6\" Tall Wingback Headboard Deep Button Tufted, No Box Spring Needed, Cream",
+    "normalized_price": 259.99,
+    "buy_url": "https://www.amazon.com/dp/B0D8PH8W6S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810W8aGAr2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G44PY79C",
+    "name": "HOMBCK Queen Bed Frame with Tufted Headboard, Velvet Upholstered Bed Frame Queen Size, Curved Wingback Design, Wooden Slats Support, Easy Assembly, No Box Spring Needed, Noise-Free, Beige",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0G44PY79C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/814JYdCa5mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8P95M45",
+    "name": "Round Bed Frame with Fireplace and TV Stand - Velvet Circle Bed with Tufted Headboard & Footboard, Upholstered Sleigh Bed Queen Size, Luxury Bedframe with Side Storage Stools for Bedroom Furniture",
+    "normalized_price": 1818.88,
+    "buy_url": "https://www.amazon.com/dp/B0F8P95M45",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71R4ZAAth4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQYT437X",
+    "name": "Jocisland Queen Bed Frame Upholstered Bed Wingback Headboard Velvet Tufted Diamond Button/No Box Spring Needed/Easy Assembly/Cream",
+    "normalized_price": 249.99,
+    "buy_url": "https://www.amazon.com/dp/B0BQYT437X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71E8xtQqGRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDFM3YVB",
+    "name": "Queen Size Leather Platform Bed Frame with Adjustable Upholstered Headboard, Solid Wooden Legs, No Box Spring Needed, Easy Assembly, Noise Free, Brown",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0GDFM3YVB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81kRzwxIygL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H33PK6K4",
+    "name": "SHA CERLIN Queen Size Upholstered Platform Bed Frame with LED Lights and Charging Station, 51.2\" Tall Headboard with 2-Tier Storage, Modern Wingback Design, Noise-Free, No Box Spring Needed, Black",
+    "normalized_price": 223.99,
+    "buy_url": "https://www.amazon.com/dp/B0H33PK6K4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81SJFB30u0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09SHHJ49B",
+    "name": "Allewie Queen Bed Frame with Adjustable Headboard, Faux Leather Platform Bed with Wood Slats, Heavy Duty Mattress Foundation, No Box Spring Needed, Noise-Free, Easy Assembly, Black",
+    "normalized_price": 124.6,
+    "buy_url": "https://www.amazon.com/dp/B09SHHJ49B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81uV76slH2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZX9G8L1",
+    "name": "Gruwans Queen Size Bed Frame with Upholstered Wingback Headboard, Easy Assemnly Platform Bed, Wooden Slat Support No Box Spring Needed, Dark Brown Leather",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZX9G8L1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91XTDT1hDjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGNTTWWY",
+    "name": "Queen Upholstered Bed Frame with Headboard and LED Lights, Modern Faux Leather Bed Frame with Wooden Slats Support and Heavy Duty Mattress Foundation, No Box Spring Needed, Easy Assembly, Black",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGNTTWWY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81eTYa-DNcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D8J9QWH1",
+    "name": "Fluest Queen Bed Frame with Headboard PU Leather Upholstered Bed Frame Platform,All Metal Slats Support Platform Bed Frame with Storage Space,Easy Assembly,Noise Free,No Box Spring Needed,Black",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0D8J9QWH1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mJZ5SuVhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBRW1VNQ",
+    "name": "HAOARA Queen Size Upholstered Platform Bed Frame, PU Leather Adjustable Headboard, No Box Spring Needed, Wood Slats Support, Easy Assembly, Black",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBRW1VNQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817A93hf0jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHMBMPP7",
+    "name": "Yaheetech Queen Bed Frame with 2 USB Charging Stations/Port for Type A&Type C/3 Storage Drawers,Leather Upholstered Platform Bed with Headboard/Solid Wood Slat Support/No Box Spring Needed/Amber Brown",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0CHMBMPP7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81jaL6iYjvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9F4NRH3",
+    "name": "VINGLI Upholstered Bed Frame Queen, Faux Leather Platform Bed with Adjustable Headboard, Wood Mattress Foundation with Heavy Duty Slats Support,Luxury Modern,No Box Spring Needed, Black",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9F4NRH3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qe+zPzsHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRGC9RWX",
+    "name": "Queen Bed Frame with Faux Leather Upholstered Headboard, Wear-Resistant, Easy Clean, Mattress Foundation, No Box Spring Required, Easy Assembly, Black",
+    "normalized_price": 279.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRGC9RWX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ZIXHKHu+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F937SGFW",
+    "name": "Fluest Queen Bed Frame with 2 Storage Drawers, Upholstered Headboard Button Tufted Bed Frame with Charging Station, No Box Spring Needed, Noise-Free, All Metal Structure, Black",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0F937SGFW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91NgCH7rPYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FS6Q4KN8",
+    "name": "REVOMINCA Queen Bed Frame with Headboard and LED Lights, Modern Upholstered Faux Leather Platform Bed with Wooden Slats Support, No Box Spring Needed, Easy Assembly, Cream",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0FS6Q4KN8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71aAq+eRvuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1LJHDKN",
+    "name": "REVOMINCA Queen Bed Frame with Headboard, Faux Leather Upholstered Platform Bed Frame, Black Bed Frame Queen Size, Wooden Slat Support, No Box Spring Needed, Black",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0F1LJHDKN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61oedfhiiKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GH651S4V",
+    "name": "OURPIC Queen Bed Frame, 2-Tier Storage Headboard & 6 Fabric Drawers, PU Leather Upholstered Queen Size Platform Bed with Charging Station and LED Lights, No Box Spring Needed, Noise Free",
+    "normalized_price": 199.49,
+    "buy_url": "https://www.amazon.com/dp/B0GH651S4V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91LEcNSCfSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9X4XLFF",
+    "name": "Queen Size Bed Frame with Upholstered Wingback Headboard, Easy Assemnly Platform Bed and Heavy Duty Wooden Slats Support, Noise-Free, No Box Spring Needed (Dark Brown, Queen)",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9X4XLFF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81R56dr0WML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09C8PQB36",
+    "name": "SHA CERLIN Modern Faux Leather Queen Bed Frame with Adjustable Headboard and Iron Accents, Deluxe Upholstered Platform Bed with Solid Wooden Slats Support/No Box Spring Needed, Black",
+    "normalized_price": 218.47,
+    "buy_url": "https://www.amazon.com/dp/B09C8PQB36",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZQUL1BfpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BSNVVGRZ",
+    "name": "SHA CERLIN Queen Size Upholstered Bed Frame, Deluxe Low Profile Sleigh Bed with Faux Leather Ergonomics Headboard, No Box Spring Needed & Easy Assembly, Black",
+    "normalized_price": 217.97,
+    "buy_url": "https://www.amazon.com/dp/B0BSNVVGRZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91kedlAQHpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQ9N7T7W",
+    "name": "Queen Upholstered Platform Bed Frame with Headboard, Faux Leather Modern Bed Frame with Wood Slat Support, No Box Spring Needed, Easy Assembly, Brown",
+    "normalized_price": 179.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQ9N7T7W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81fW70M19TL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09PTYKMJJ",
+    "name": "Yaheetech Queen Bed Frame Upholstered Bed Frame with Adjustable Diamond Button-Tufted Headboard/3 Drawers Storage, Queen Platform Bed/Strong Wooden Slats, Black Queen Bed",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B09PTYKMJJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BHUP8OboL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVZ37QLT",
+    "name": "Queen Bed Frame with Storage Shelf & Charging Station, 55\" Tall Headboard & 25.6\" Footboard, Faux Leather Upholstered Platform Bed with Big Rivets Wingback, Heavy Duty & Noise-Free, Brown",
+    "normalized_price": 369.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVZ37QLT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/811Ip8cwaRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZ815N9P",
+    "name": "SHA CERLIN Queen Size Metal Platform Bed Frame, PU Leather Upholstered Button Tufted Headboard, Mattress Foundation with 12.4\u201d Under-Bed Storage, Noise-Free, Easy Assembly, No Box Spring Needed, Black",
+    "normalized_price": 99.96,
+    "buy_url": "https://www.amazon.com/dp/B0BZ815N9P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ID-0SFxCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXJGFYGX",
+    "name": "Merax Vintage Queen PU Leather Upholstered Bed Frame, High-Back Design Platform Bed with Tufted Headboard & Solid Wood Legs, Brown",
+    "normalized_price": 386.77,
+    "buy_url": "https://www.amazon.com/dp/B0GXJGFYGX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/9115njHqssL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGZQ26YL",
+    "name": "Upholstered Queen Bed Frame with Tall Headboard, Leather Platform Bed Frame with Wingback Sides, Wood Slats Support, Noise-Free Design, No Box Spring Needed, Easy Assembly, White",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGZQ26YL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sd9ECKvNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BR3RC9KR",
+    "name": "Yaheetech Queen Size Bed Frame Platform with 2 USB Charging Station/Port for Type A&Type C/3 Storage Drawers, Leather Upholstered with Headboard/Solid Wood Slat Support/No Box Spring Needed/Black",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0BR3RC9KR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/815dxcz-IgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGQ27J5S",
+    "name": "Queen Upholstered Bed Frame with Headboard and LED Lights, Modern Faux Leather Bed Frame with Wooden Slats Support and Heavy Duty Mattress Foundation, No Box Spring Needed, Easy Assembly, White",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGQ27J5S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81A2+FqzCXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GD5WK58D",
+    "name": "HOME DESIGN Homer Queen Tufted Wingback Upholstered Panel Bed Frame, Faux Leather Button Tufted Headboard with Nailhead Trim, Solid and Engineered Wood Construction, Black",
+    "normalized_price": 144.75,
+    "buy_url": "https://www.amazon.com/dp/B0GD5WK58D",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81GVAE8jT2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BG7B3KVX",
+    "name": "Allewie Upholstered Queen Size Platform Bed Frame with 4 Storage Drawers and Headboard, Diamond Stitched Button Tufted, Mattress Foundation with Wooden Slats Support, No Box Spring Needed, Black Brown",
+    "normalized_price": 193.38,
+    "buy_url": "https://www.amazon.com/dp/B0BG7B3KVX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/7181WNXHMKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G5LJM453",
+    "name": "Queen Bed Frame with Adjustable Headboard, Faux Leather Upholstered Platform Bed Frame, No Box Spring Needed, Noise-Free, Easy Assembly, Orange",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0G5LJM453",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/31Y6sJxT2FL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLK9JSR7",
+    "name": "Furnulem White Queen Bed Frame with Charging Station & Led Lights, PU Leather Upholstered Headboard with 2-Tier Storage Shelves, No Box Spring Needed, Metal Slat Support, Easy Assembly",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLK9JSR7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91oWhVqxq0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FB41ZJ9J",
+    "name": "VIAGDO Queen Bed Frame with Storage Headboard and Charging Station, Leather Upholstered Bed Frame Queen Size with 4 Drawers and LED Lights, Type C and USB, No Box Spring Needed, Black",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0FB41ZJ9J",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71bjpEjCN9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GMWZM34R",
+    "name": "Upholstered Queen Size Platform Bed Frame with Faux Leather Padded Headboard, Sturdy Metal Slats Support, No Box Spring Needed, Vintage Brown",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0GMWZM34R",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vuZ+UWAvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZZ4954H",
+    "name": "Keyluv Queen Size LED Bed Frame with Adjustable Headboard & Removable Pillow, PU Leather Upholstered Platform Bed, Wave-Like Curve Safety Design, Solid Wooden Slats Support, Easy Assembly, Black",
+    "normalized_price": 289.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZZ4954H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71YmI5TEbvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FMFFMBS9",
+    "name": "HOMBCK Floating Bed Frame Queen with Smart LED Lights, Faux Leather Upholstered Bed Frame Queen Size with Diamond Headboard, No Box Spring Needed, Noise Free, Easy Assembly, Black",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0FMFFMBS9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81XxMJRl4bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DR1XSSWD",
+    "name": "IDEALHOUSE Queen Size Bed Frame with 4 Storage Drawers and Headboard, Faux Leather Upholstered Platform Bed Frame with Wooden Slats Support, Button Tufted Design, No Box Spring Needed, Black",
+    "normalized_price": 188.99,
+    "buy_url": "https://www.amazon.com/dp/B0DR1XSSWD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91LvNjSB8XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK4X8DTC",
+    "name": "SHA CERLIN Queen Size Bed Frame with Adjustable Headboard, Faux Leather Upholstered Platform Bed with Wood Slats, Stable Mattress Foundation,No Box Spring Needed, Off-White",
+    "normalized_price": 134.97,
+    "buy_url": "https://www.amazon.com/dp/B0DK4X8DTC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819PkRnk1jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CYLW69WJ",
+    "name": "BarnFurin Queen Bed Frame with Headboard, Faux Leather Upholstered Bed with Button Tufted Headboard, Modern Platform Bed Frame with Diamond Design, No Box Spring Required, Easy Assembly, Black",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0CYLW69WJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pEZKdXkpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H361D8KW",
+    "name": "Queen Floating Bed Frame with LED Lights, Modern Upholstered Faux Leather Platform Bed with Soft Padded Headboard, Heavy Duty Metal Slats, Quiet Sleep Design, No Box Spring Needed, Brown",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0H361D8KW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71SCo3qdQaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BR57NR3Q",
+    "name": "Bilily Upgrade Anti Bending and Round Corner Legs 10 inch Metal Queen Bed Frame 3500 LBS Heavy Steel Slats Support Platform Bed Frames No Box Spring Needed Platform Noise Free Easy Assembly",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0BR57NR3Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71OsP7bJe9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4YNWPGD",
+    "name": "Superay 20 Inch Queen Size Metal Platform Bed Frame with Round Corners, Storage Space Under High Bed Frame-Heavy Duty Steel Slats Support, Noise Free - Easy Assembly - No Box Spring Needed",
+    "normalized_price": 114.97,
+    "buy_url": "https://www.amazon.com/dp/B0D4YNWPGD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71RwQUu1KML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJZH154F",
+    "name": "Bed Frame Queen Size 24 Inch Tall, Double Layer Heavy Duty Metal Platform 4000 lbs Capacity, Bed Frames with Headboard Holes\uff0cRound Corner Legs, Mattress Slide Stopper, Easy Assembly",
+    "normalized_price": 164.96,
+    "buy_url": "https://www.amazon.com/dp/B0GJZH154F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71tI-GI-zZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09ZRVBFFQ",
+    "name": "Yitong Angel 14 Inch Queen Bed Frame,3500 lbs Heavy Duty Metal Platform, Steel Slats Support/No Box Spring Needed/Noise Free/Non-Slip/Easy Assembly",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B09ZRVBFFQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61iL5dP+9PL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHCFMPDK",
+    "name": "LIKIMIO Queen Bed Frame, Tall Industrial Headboard 51.2 \", Platform Bed Frame with Strong Metal Support, Solid and Stable, Noise Free, No Box Spring Needed, Easy Assembly, Charcoal Grey",
+    "normalized_price": 135.87,
+    "buy_url": "https://www.amazon.com/dp/B0DHCFMPDK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817aJMeOW1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZ1Q2QV8",
+    "name": "HOMCOM Queen Size Bed Frame with Upholstered Headboard, Platform Bed Frame with Wooden Slats, No Box Spring Needed, Easy Assembly, Charcoal Gray",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZ1Q2QV8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91-9fSFkK8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3L1JNVR",
+    "name": "VIPSHOW 10 Inch Queen Metal Bed Frame Round Corner Low Platform Bed Frames 3000 LBS Heavy Duty Steel Slats Support Mattress Foundation No Box Spring Needed, Noise Free, Easy Assembly, Black",
+    "normalized_price": 119.69,
+    "buy_url": "https://www.amazon.com/dp/B0D3L1JNVR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71CvZNt3UsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGTP82JK",
+    "name": "iPormis Queen Size Platform Bed Frame with Button Tufted Headboard, Upholstered Bed Frame with Solid Wooden Slats, 8\" Underbed Space, No Box Spring Needed, Noise Free, Easy Assembly, Black",
+    "normalized_price": 155.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGTP82JK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LhoJXo2cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4YD4BH6",
+    "name": "Superay 18 Inch Queen Size Metal Platform Bed Frame with Round Corners, Storage Space Under High Bed Frame-Heavy Duty Steel Slats Support, Noise Free - Easy Assembly - No Box Spring Needed",
+    "normalized_price": 112.97,
+    "buy_url": "https://www.amazon.com/dp/B0D4YD4BH6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71RwQUu1KML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DG5R2B37",
+    "name": "LOEWAY Full Size Bed Frame with Storage Headboard, Industrial Platform Bed with Charging Station and LED Lights, Heavy Duty Metal Slats, No Box Spring Need, Noise Free, Grey",
+    "normalized_price": 111.99,
+    "buy_url": "https://www.amazon.com/dp/B0DG5R2B37",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NPJodvM1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4YJSG1Q",
+    "name": "14 Inch Queen Bed Frame, Metal Platform Bed Frame with Round Corner Legs, 3500 lbs Heavy Duty Steel Slats Support, No Box Spring Needed, Noise Free, Easy Assembly, Black",
+    "normalized_price": 109.97,
+    "buy_url": "https://www.amazon.com/dp/B0D4YJSG1Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dO5DQI0gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLP41C9L",
+    "name": "LIKIMIO Queen Bed Frame with Storage Headboard and LED Lights, Metal Platform Bed with Charging Station, Noise Free, No Box Spring Needed, Under Bed Storage, Charcoal Gray",
+    "normalized_price": 139.98,
+    "buy_url": "https://www.amazon.com/dp/B0GLP41C9L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dalVsRFxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08N4VXB3B",
+    "name": "Allewie Queen Size Panel Bed Frame with Adjustable Headboard for High Profile/Fabric Upholstered/Square Stitched Padded Headboard/Box Spring or Bunkie Board Required/Dark Grey",
+    "normalized_price": 115.92,
+    "buy_url": "https://www.amazon.com/dp/B08N4VXB3B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71bt6MtQDyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DH2HW4SJ",
+    "name": "LIKIMIO Queen Bed Frame with Storage, 4 Drawers and Heavy Strong Metal Support Frames, Solid Stable, Noise-Free, No Box Spring Needed, Easy Assembly, Charcoal Grey",
+    "normalized_price": 152.99,
+    "buy_url": "https://www.amazon.com/dp/B0DH2HW4SJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PgMEjt9LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H3L8XSLC",
+    "name": "Garvee Queen Bed Frame, Wood Platform Bed with Fluted Design, Low Profile BedFrame, Minimalist Bed Base with Noise-Free, Easy Assembly, No Box Spring Needed, Charcoal Grey",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B0H3L8XSLC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81jhBc4GG-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4JW1D8H",
+    "name": "Thor Premium Solid Wood Bed Frame Queen, Japanese Joinery Bed Frame with Wood Slat Support, Platform Bed, No Box Spring Needed, Easy Assembly, Minimalist & Modern Style (Midnight Charcoal)",
+    "normalized_price": 339.99,
+    "buy_url": "https://www.amazon.com/dp/B0F4JW1D8H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81VRp-9JN9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09KX8P5YL",
+    "name": "Yaheetech Queen Bed Frame Upholstered Platform Bed with Fabric Headboard, Wing Edge Design/Non-Slip and Noise-Free/Wooden Slats Support/No Box Spring Needed/Easy Assembly, Dark Gray Queen Bed",
+    "normalized_price": 124.99,
+    "buy_url": "https://www.amazon.com/dp/B09KX8P5YL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91lAgb0oQtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B096RL26X7",
+    "name": "SHA CERLIN Queen Size Bed Frame with Modern Headboard, Heavy Duty Platform Metal Base with Square Footboard and 13 Strong Slats Support, No Box Spring Needed, Black",
+    "normalized_price": 125.08,
+    "buy_url": "https://www.amazon.com/dp/B096RL26X7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81idIUCBR5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG3C7D45",
+    "name": "Allewie Queen Size Platform Bed Frame with Wooden Headboard and Footboard, Heavy Duty 12 Metal Slats Support, No Box Spring Needed, Under-Bed Storage, Noise Free, Easy Assembly, Black Oak",
+    "normalized_price": 119.93,
+    "buy_url": "https://www.amazon.com/dp/B0CG3C7D45",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sYcOLHkQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCS7K8GL",
+    "name": "HAOARA Queen Size Flannel Platform Bed Frame with Adjustable Headboard, Anti-Collision Soft Rounded Corners, No Box Spring Needed, Easy Assembly, Noise-Free, Charcoal Gray",
+    "normalized_price": 115.98,
+    "buy_url": "https://www.amazon.com/dp/B0FCS7K8GL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ssxAbsFCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTHGMN3L",
+    "name": "VECELO Queen Size Platform Bed Frame with Fabric Upholstered Headboard and Wooden Slats Support, No Box Spring Needed/Easy Assembly,Grey",
+    "normalized_price": 150.33,
+    "buy_url": "https://www.amazon.com/dp/B0CTHGMN3L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71yoZO245LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8J4C19T",
+    "name": "LIKIMIO Queen Bed Frame with Headboard, Dark Wood Camas Queen with Strong Supports, Sturdy, Noise-Free, No Box Spring Needed, Grey",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0F8J4C19T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-e0RVC5vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQM2BCZ6",
+    "name": "CSZZD Queen Bed Frame with 4 Storage Drawers and Bookcase Headboard, Upholstered Bed Queen Size with USB Charging Station & LED Lights, Metal Platform Bed with Storage, No Box Spring Needed, Oak Gray",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQM2BCZ6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gey+BONbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G38WCBQZ",
+    "name": "GRUSIGN Queen Size Platform Bed Frame with Velvet Headboard, Adjustable Height Wooden Slats Support, Upholstered Mattress Foundation, Fits Mattress or Mattress with Box Spring, Easy Assembly, Grey",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0G38WCBQZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Mr4pC9-hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08KWM42R3",
+    "name": "Allewie Upholstered Queen Size Platform Bed Frame with 4 Storage Drawers and Headboard, Diamond Stitched Button Tufted, Mattress Foundation with Wooden Slats Support, No Box Spring Needed, Dark Grey",
+    "normalized_price": 179.97,
+    "buy_url": "https://www.amazon.com/dp/B08KWM42R3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91zj11ejAoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHMZ8PTT",
+    "name": "Fluest Queen Platform Bed Frame with Linen Upholstered Adjustable Tall Headboard, No Box Spring Needed, Anti-Noise EVA Sponge, Easy Assembly, One-Box Shipping, 7.5 Inch Under Bed Storage, Dark Grey",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHMZ8PTT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810YNetvabL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9GZ65RP",
+    "name": "Yaheetech Upholstered Bed Frame, Modern Queen Bed Platform with Square Stitched&Button Tufting Headboard Height Adjustable, Wooden Slats Support, No Box Spring Needed, Queen Size, Dark Grey",
+    "normalized_price": 112.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9GZ65RP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91y6MLtYmaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL27NW33",
+    "name": "Allewie Queen Platform Bed Frame with Adjustable Headboard, Plush Velvet Upholstered, Vertical Channel Tufted, Sturdy Wooden Slats, No Box Spring Needed, Easy Assembly, Black",
+    "normalized_price": 109.97,
+    "buy_url": "https://www.amazon.com/dp/B0GL27NW33",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812Hdsq28eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX6SR7JJ",
+    "name": "Queen Grounded Bed Frame with Headboard, Cute Puff Grid Pattern Chenille Upholstered Platform Floor Bed with Sturdy Slats, No Box Spring Needed, Easy Assembly, Charcoal Grey",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX6SR7JJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91U5TpKqmoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRSKVZ12",
+    "name": "SHA CERLIN Queen Platform Bed Frame with Charging Station, Linen Wingback Headboard with Storage Shelf, Wooden Slats Support, Ample Under-Bed Space, No Box Spring Needed, Easy Assembly, Dark Grey",
+    "normalized_price": 137.56,
+    "buy_url": "https://www.amazon.com/dp/B0FRSKVZ12",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819+bBecF3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRSF1V5J",
+    "name": "Allewie Queen Size Platform Bed Frame with Charging Station & Storage Headboard, Upholstered Velvet Wingback Design & USB Port, Strong Wooden Slats Support, No Box Spring Needed, Easy Assembly, Black",
+    "normalized_price": 136.68,
+    "buy_url": "https://www.amazon.com/dp/B0FRSF1V5J",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91rOJv3kFiL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

@@ -105,6 +105,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             style_profile.keywords,
             (0.0, slot.allocated_budget),
             spec_hints,
+            interests=room_request.interests or None,
         )
         sourceable_slots.append((slot, candidates))
 

@@ -18,7 +18,8 @@ class SourcingAdapter(ABC):
 
     @abstractmethod
     def fetch_candidates(self, slot_id: str, style_keywords: list[str],
-                         price_band: tuple[float, float], required_specs: dict) -> list:
+                         price_band: tuple[float, float], required_specs: dict,
+                         interests: list[str] | None = None) -> list:
         """Return a list of Product candidates for the given slot.
 
         Args:
@@ -26,6 +27,9 @@ class SourcingAdapter(ABC):
             style_keywords: style cues from StyleProfile
             price_band: (min_price, max_price) in USD
             required_specs: spec constraints from category_spec_rules.yaml
+            interests: user interest categories (e.g. ["music", "sports"]).
+                       Used to guarantee interest-themed items survive the cap
+                       for decor slots.
 
         Returns:
             List of Product schema instances. Empty list if no candidates found.

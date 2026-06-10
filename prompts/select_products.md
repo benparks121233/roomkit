@@ -19,7 +19,13 @@ Rules:
 - If no candidate in the list satisfies the required specs, return null with
   reason "no_spec_match".
 - If the candidate list is empty, return null with reason "no_candidate".
-- Do not exceed the price band. Within the band, prefer style fit over price minimization.
+- Do not exceed the price band. Style fit is the top priority — never pick a
+  worse-fitting product just to spend more. But among candidates that fit the
+  style equally well, prefer the one closer to the slot's allocated budget of
+  ${{allocated_budget}}. A $80 velvet curtain and a $43 velvet curtain are both
+  on-style — pick the $80 one because it better uses the available budget.
+  Do not default to the cheapest option when a similarly well-fitting pricier
+  option exists.
 - If user interests are provided, prefer products that reflect those interests
   (e.g. music fan → vinyl/music-themed art) when a good candidate exists.
   Style fit takes priority over interests — never pick a clashing product just
@@ -31,6 +37,7 @@ Rules:
 
 Slot: {{slot_id}}
 Style profile: {{style_profile_summary}}
+Allocated budget for this slot: ${{allocated_budget}}
 Price band: ${{min_price}} – ${{max_price}}
 Required specs: {{required_specs}}
 {{interests}}

@@ -169,6 +169,7 @@ def _build_selection_prompts(
         .replace("{{min_price}}", f"{price_min:.2f}")
         .replace("{{max_price}}", f"{price_max:.2f}")
         .replace("{{required_specs}}", json.dumps(slot.required_specs))
+        .replace("{{allocated_budget}}", f"{price_max:.2f}")
         .replace("{{interests}}", interests_line)
         .replace("{{candidates_json}}", candidates_json)
     )
