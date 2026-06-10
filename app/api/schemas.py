@@ -36,6 +36,7 @@ class SlotResult(BaseModel):
     allocated_budget: float
     owned: bool
     product: ProductResult | None = None
+    alternatives: list[ProductResult] = []
     null_reason: str | None = None  # "owned" | "no_candidate" | "no_spec_match" | "llm_error"
 
 

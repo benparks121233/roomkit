@@ -34,6 +34,7 @@ export interface SlotResult {
   allocated_budget: number;
   owned: boolean;
   product: ProductResult | null;
+  alternatives: ProductResult[];
   null_reason: string | null; // "owned" | "no_candidate" | "no_spec_match" | "llm_error"
 }
 

@@ -1,11 +1,11 @@
 # services/selection_service.py
-# Owns: choosing one product per slot from the sourcing adapter's candidate list.
-# LLM (select_products.md) selects within a constrained candidate set.
-# If no candidate satisfies required specs or price band, returns (None, reason).
+# Owns: choosing products per slot from the sourcing adapter's candidate list.
+# LLM (select_products.md) ranks candidates within a constrained set.
+# If no candidate satisfies required specs or price band, returns empty.
 #
 # Critical rules:
 #   - The LLM can only pick from the provided candidates — never invent a product.
-#   - The chosen product is returned exactly as the adapter provided it.
+#   - Chosen products are returned exactly as the adapter provided them.
 #     Selection never modifies price, buy_url, or specs.
 #   - Owned slots are skipped entirely — they are never sourced or selected.
 
@@ -27,9 +27,12 @@ from schemas.style_profile import StyleProfile
 
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-haiku-4-5-20251001"
-_LLM_MAX_TOKENS = 256
+_LLM_MAX_TOKENS = 512
 _RETRY_MAX = 3
 _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
+
+# Default number of ranked picks to request from the LLM.
+_DEFAULT_PICK_COUNT = 6
 
 
 # ---------------------------------------------------------------------------
@@ -40,13 +43,14 @@ _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 _INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
 
 
-def select_product(
+def select_products(
     slot: Slot,
     style_profile: StyleProfile,
     candidates: list[Product],
     interests: list[str] | None = None,
-) -> tuple[Product | None, str | None]:
-    """Choose the single best product for a slot from the candidate list.
+    pick_count: int = _DEFAULT_PICK_COUNT,
+) -> tuple[list[Product], list[str], str | None]:
+    """Rank the top products for a slot from the candidate list.
 
     Args:
         slot:           The slot to fill (provides slot_id, required_specs, owned).
@@ -54,20 +58,22 @@ def select_product(
         candidates:     Products returned by the sourcing adapter.
         interests:      User interest categories (e.g. ["music", "travel"]).
                         Only used for decor slots in _INTEREST_SLOTS.
+        pick_count:     Maximum number of ranked picks to request.
 
     Returns:
-        (Product, fit_reason)   — LLM chose a candidate; product is unmodified.
-        (None, "no_candidate")  — candidate list was empty.
-        (None, "no_spec_match") — no candidate satisfies required specs/price.
-        (None, "llm_error")     — LLM returned unparseable or invalid response.
+        (products, fit_reasons, null_reason) where:
+          - products:    Ranked list of Products (rank 1 first). May be empty.
+          - fit_reasons: Parallel list of fit_reason strings, same length as products.
+          - null_reason: Set only when products is empty ("no_candidate",
+                         "no_spec_match", "llm_error", "owned_slot").
     """
     # Owned slots are never sourced or selected.
     if slot.owned:
-        return None, "owned_slot"
+        return [], [], "owned_slot"
 
     # Empty candidate list.
     if not candidates:
-        return None, "no_candidate"
+        return [], [], "no_candidate"
 
     # Double-check: filter candidates by slot's required specs and price band.
     # The adapter should have already done this, but we enforce defensively.
@@ -77,7 +83,7 @@ def select_product(
         if _satisfies_specs(c, slot.required_specs) and c.normalized_price <= price_max
     ]
     if not valid:
-        return None, "no_spec_match"
+        return [], [], "no_spec_match"
 
     # Only pass interests for decor slots where they're relevant.
     slot_interests = interests if interests and slot.slot_id in _INTEREST_SLOTS else None
@@ -85,15 +91,39 @@ def select_product(
     # Build prompt and ask the LLM.
     system_prompt, user_message = _build_selection_prompts(
         slot, style_profile, valid, interests=slot_interests,
+        pick_count=pick_count,
     )
 
     try:
         raw = _call_selection_llm(system_prompt, user_message)
-        result = _parse_selection(raw, valid)
+        products, fit_reasons, null_reason = _parse_ranked_selection(raw, valid)
     except Exception:
-        return None, "llm_error"
+        logger.exception("Selection LLM call failed for slot %s", slot.slot_id)
+        return [], [], "llm_error"
 
-    return result
+    return products, fit_reasons, null_reason
+
+
+def select_product(
+    slot: Slot,
+    style_profile: StyleProfile,
+    candidates: list[Product],
+    interests: list[str] | None = None,
+) -> tuple[Product | None, str | None]:
+    """Choose the single best product for a slot. Backward-compatible wrapper.
+
+    Returns:
+        (Product, fit_reason)   — LLM chose a candidate; product is unmodified.
+        (None, "no_candidate")  — candidate list was empty.
+        (None, "no_spec_match") — no candidate satisfies required specs/price.
+        (None, "llm_error")     — LLM returned unparseable or invalid response.
+    """
+    products, fit_reasons, null_reason = select_products(
+        slot, style_profile, candidates, interests, pick_count=_DEFAULT_PICK_COUNT,
+    )
+    if not products:
+        return None, null_reason
+    return products[0], fit_reasons[0]
 
 
 # ---------------------------------------------------------------------------
@@ -131,6 +161,7 @@ def _build_selection_prompts(
     candidates: list[Product],
     *,
     interests: list[str] | None = None,
+    pick_count: int = _DEFAULT_PICK_COUNT,
 ) -> tuple[str, str]:
     """Load select_products.md, substitute variables, return (system, user)."""
     template_text = (_PROMPTS_DIR / "select_products.md").read_text()
@@ -172,6 +203,7 @@ def _build_selection_prompts(
         .replace("{{allocated_budget}}", f"{price_max:.2f}")
         .replace("{{interests}}", interests_line)
         .replace("{{candidates_json}}", candidates_json)
+        .replace("{{pick_count}}", str(pick_count))
     )
 
     # Strip leading comment lines.
@@ -203,28 +235,82 @@ def _build_selection_prompts(
     return "\n\n".join(system_parts), user_part
 
 
+def _parse_ranked_selection(
+    raw: str, candidates: list[Product],
+) -> tuple[list[Product], list[str], str | None]:
+    """Parse a ranked LLM response and look up products.
+
+    Handles both the new ranked format ({"ranked_picks": [...]}) and the
+    legacy single-pick format ({"product_id": "..."}) for backward
+    compatibility with tests that mock the old format.
+
+    Returns (products, fit_reasons, null_reason). Hallucinated IDs are
+    silently skipped — only valid candidates are returned.
+    """
+    data = _extract_json(raw)
+    candidate_map = {c.product_id: c for c in candidates}
+
+    # --- New ranked format ---
+    ranked_picks = data.get("ranked_picks")
+    if ranked_picks:
+        products: list[Product] = []
+        fit_reasons: list[str] = []
+        seen: set[str] = set()
+
+        for pick in ranked_picks:
+            pid = pick.get("product_id")
+            if not pid or pid in seen:
+                continue
+            if pid not in candidate_map:
+                continue
+            seen.add(pid)
+            products.append(candidate_map[pid])
+            fit_reasons.append(pick.get("fit_reason", "") or "style_match")
+
+        if not products:
+            return [], [], "llm_error"
+        return products, fit_reasons, None
+
+    # --- Legacy single-pick format ---
+    product_id = data.get("product_id")
+    if product_id is None:
+        null_reason = data.get("null_reason", "no_spec_match")
+        return [], [], null_reason
+
+    if product_id not in candidate_map:
+        return [], [], "llm_error"
+
+    fit_reason = data.get("fit_reason", "") or "style_match"
+    return [candidate_map[product_id]], [fit_reason], None
+
+
 def _parse_selection(
     raw: str, candidates: list[Product],
 ) -> tuple[Product | None, str | None]:
-    """Parse the LLM response and look up the chosen product.
+    """Parse the LLM response (legacy single-pick format).
 
-    If the LLM returns a product_id not in the candidate list, fall back to
-    None with reason "llm_error".  This treats hallucinated IDs the same as
-    unparseable responses — the LLM's job is to pick from the list, not invent.
+    Kept for backward compatibility with tests that mock the old format.
+    The new prompt returns ranked_picks, but this handles both formats.
     """
     data = _extract_json(raw)
+
+    # New ranked format.
+    if "ranked_picks" in data:
+        products, reasons, null_reason = _parse_ranked_selection(raw, candidates)
+        if not products:
+            return None, null_reason
+        return products[0], reasons[0]
+
+    # Legacy single-pick format.
     product_id = data.get("product_id")
     fit_reason = data.get("fit_reason", "")
 
-    # LLM explicitly returned null — respect the null_reason.
     if product_id is None:
         null_reason = data.get("null_reason", "no_spec_match")
         return None, null_reason
 
-    # Look up the product in the candidate list.
     candidate_map = {c.product_id: c for c in candidates}
     if product_id not in candidate_map:
-        # Hallucinated ID — reject.  We don't guess which product it meant.
         return None, "llm_error"
 
     return candidate_map[product_id], fit_reason or "style_match"

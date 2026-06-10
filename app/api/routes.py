@@ -28,7 +28,7 @@ from app.api.schemas import (
 from services.composition_gate import validate_composition
 from services.composition_service import plan_composition
 from services.intake_service import parse_intake
-from services.selection_service import select_product
+from services.selection_service import select_products
 from services.sourcing.amazon_adapter import AmazonAdapter
 from services.style_service import interpret_style
 
@@ -110,14 +110,15 @@ async def create_design(req: DesignRequest) -> DesignResponse:
         sourceable_slots.append((slot, candidates))
 
     # Fire all selection LLM calls in parallel.
-    selection_results: dict[str, tuple[object, str | None]] = {}
+    # Each call returns (ranked_products, fit_reasons, null_reason).
+    selection_results: dict[str, tuple[list, list, str | None]] = {}
     t0 = time.monotonic()
 
     interests = room_request.interests
 
     with ThreadPoolExecutor(max_workers=len(sourceable_slots) or 1) as pool:
         futures = {
-            pool.submit(select_product, slot, style_profile, cands, interests): slot.slot_id
+            pool.submit(select_products, slot, style_profile, cands, interests): slot.slot_id
             for slot, cands in sourceable_slots
         }
         for future in as_completed(futures):
@@ -134,20 +135,34 @@ async def create_design(req: DesignRequest) -> DesignResponse:
     # Build SlotResults for sourceable slots.
     sourceable_results: list[SlotResult] = []
     for slot, _cands in sourceable_slots:
-        product, reason = selection_results[slot.slot_id]
-        if product:
+        products, fit_reasons, null_reason = selection_results[slot.slot_id]
+        if products:
+            # Rank 1 = primary product, ranks 2+ = alternatives.
+            primary = products[0]
+            alts = [
+                ProductResult(
+                    product_id=p.product_id,
+                    name=p.name,
+                    normalized_price=p.normalized_price,
+                    image_url=p.image_url,
+                    buy_url=p.buy_url,
+                    fit_reason=fit_reasons[i + 1],
+                )
+                for i, p in enumerate(products[1:])
+            ]
             sourceable_results.append(SlotResult(
                 slot_id=slot.slot_id,
                 allocated_budget=slot.allocated_budget,
                 owned=False,
                 product=ProductResult(
-                    product_id=product.product_id,
-                    name=product.name,
-                    normalized_price=product.normalized_price,
-                    image_url=product.image_url,
-                    buy_url=product.buy_url,
-                    fit_reason=reason or "style_match",
+                    product_id=primary.product_id,
+                    name=primary.name,
+                    normalized_price=primary.normalized_price,
+                    image_url=primary.image_url,
+                    buy_url=primary.buy_url,
+                    fit_reason=fit_reasons[0],
                 ),
+                alternatives=alts,
                 null_reason=None,
             ))
         else:
@@ -156,7 +171,8 @@ async def create_design(req: DesignRequest) -> DesignResponse:
                 allocated_budget=slot.allocated_budget,
                 owned=False,
                 product=None,
-                null_reason=reason or "no_candidate",
+                alternatives=[],
+                null_reason=null_reason or "no_candidate",
             ))
 
     # Merge and sort by slot_id for deterministic output order.
