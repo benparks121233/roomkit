@@ -43,117 +43,33 @@ COMPOSITION_LLM_RESPONSE = json.dumps({
                  "provide texture warmth; lighting and decor add atmosphere.",
 })
 
-# Per-slot selection responses — map to fixture product IDs.
-SELECTION_RESPONSES = {
-    "bed_frame": json.dumps({
-        "product_id": "BF-001",
-        "fit_reason": "Clean wood platform frame fits warm minimalist perfectly",
-        "confidence": 0.90,
-        "null_reason": None,
-    }),
-    "mattress": json.dumps({
-        "product_id": "MT-002",
-        "fit_reason": "Affordable hybrid mattress fits the budget",
-        "confidence": 0.88,
-        "null_reason": None,
-    }),
-    "sheets": json.dumps({
-        "product_id": "SH-001",
-        "fit_reason": "Beige microfiber sheets match the warm palette",
-        "confidence": 0.87,
-        "null_reason": None,
-    }),
-    "comforter": json.dumps({
-        "product_id": "CM-001",
-        "fit_reason": "Beige all-season comforter matches the palette",
-        "confidence": 0.86,
-        "null_reason": None,
-    }),
-    "pillows": json.dumps({
-        "product_id": "PL-003",
-        "fit_reason": "Budget-friendly down alternative pillows",
-        "confidence": 0.84,
-        "null_reason": None,
-    }),
-    "nightstand": json.dumps({
-        "product_id": "NS-001",
-        "fit_reason": "Rustic brown nightstand complements natural wood",
-        "confidence": 0.88,
-        "null_reason": None,
-    }),
-    "dresser": json.dumps({
-        "product_id": "DR-001",
-        "fit_reason": "Rustic brown fabric dresser matches the mood",
-        "confidence": 0.83,
-        "null_reason": None,
-    }),
-    "ceiling_light": json.dumps({
-        "product_id": "CL-002",
-        "fit_reason": "Boho rattan ceiling light adds natural warmth",
-        "confidence": 0.89,
-        "null_reason": None,
-    }),
-    "table_lamp": json.dumps({
-        "product_id": "TL-001",
-        "fit_reason": "Linen shade table lamp provides warm ambient light",
-        "confidence": 0.85,
-        "null_reason": None,
-    }),
-    "floor_lamp": json.dumps({
-        "product_id": "FL-002",
-        "fit_reason": "Simple floor lamp with reading light adds function",
-        "confidence": 0.84,
-        "null_reason": None,
-    }),
-    "wall_art": json.dumps({
-        "product_id": "WA-002",
-        "fit_reason": "Botanical prints complement natural wood tones",
-        "confidence": 0.83,
-        "null_reason": None,
-    }),
-    "plants": json.dumps({
-        "product_id": "PT-002",
-        "fit_reason": "Macrame plant hangers add warmth without clutter",
-        "confidence": 0.82,
-        "null_reason": None,
-    }),
-    "mirror": json.dumps({
-        "product_id": "MR-002",
-        "fit_reason": "Round gold mirror adds a touch of elegance",
-        "confidence": 0.80,
-        "null_reason": None,
-    }),
-    "rug": json.dumps({
-        "product_id": "RG-001",
-        "fit_reason": "Braided jute adds natural texture",
-        "confidence": 0.91,
-        "null_reason": None,
-    }),
-    "curtains": json.dumps({
-        "product_id": "CT-002",
-        "fit_reason": "Linen sheer curtains let in natural light",
-        "confidence": 0.85,
-        "null_reason": None,
-    }),
-    "throw_blanket": json.dumps({
-        "product_id": "TB-002",
-        "fit_reason": "Ivory faux fur throw adds cozy texture",
-        "confidence": 0.83,
-        "null_reason": None,
-    }),
-}
-
-# Track which slot the selection LLM is being called for.
-_current_slot = {"id": ""}
-
+# Dynamic selection mock — reads the candidate list from the user_message
+# prompt and picks the first product_id.  Works for any catalog (fixture IDs,
+# real ASINs, anything).
 
 def _mock_selection_llm(system_prompt: str, user_message: str) -> str:
-    return SELECTION_RESPONSES.get(_current_slot["id"], json.dumps({
+    """Parse the candidates JSON from the prompt and pick the first one."""
+    # The candidates JSON follows "Candidates:\n" in the user message.
+    marker = "Candidates:\n"
+    try:
+        idx = user_message.index(marker)
+        candidates_text = user_message[idx + len(marker):]
+        candidates = json.loads(candidates_text.strip())
+        if candidates:
+            return json.dumps({
+                "product_id": candidates[0]["product_id"],
+                "fit_reason": "Best style match from candidates",
+                "confidence": 0.88,
+                "null_reason": None,
+            })
+    except (ValueError, json.JSONDecodeError, KeyError, IndexError):
+        pass
+    return json.dumps({
         "product_id": None,
         "fit_reason": "",
         "confidence": 0.0,
         "null_reason": "no_candidate",
-    }))
+    })
 
 
 # --- Run the pipeline --------------------------------------------------------
@@ -227,7 +143,6 @@ def main() -> None:
             spec_hints,
         )
 
-        _current_slot["id"] = slot.slot_id
         with patch("services.selection_service._call_selection_llm",
                    side_effect=_mock_selection_llm):
             product, reason = select_product(slot, style, candidates)

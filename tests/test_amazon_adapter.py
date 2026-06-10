@@ -15,6 +15,8 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from schemas.product import Product
@@ -22,9 +24,9 @@ from services.sourcing.amazon_adapter import AmazonAdapter
 
 
 @pytest.fixture
-def adapter() -> AmazonAdapter:
-    """Use the real fixture files in data/fixtures/."""
-    return AmazonAdapter()
+def adapter(tmp_path: Path) -> AmazonAdapter:
+    """Use the real fixture files in data/fixtures/ (empty catalog dir skips cache)."""
+    return AmazonAdapter(catalog_dir=tmp_path)
 
 
 AFFILIATE_TAG = "roomkitai-20"
