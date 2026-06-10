@@ -33,6 +33,19 @@ _DEFAULT_AFFILIATE_TAG = "roomkitai-20"
 # while leaving room for style-matches, interest items, and price spread.
 _MAX_CANDIDATES = 100
 
+# Name phrases indicating bathroom/vanity mirrors — excluded from the mirror
+# slot because we want bedroom wall/floor mirrors, not bathroom vanity mirrors.
+_BATHROOM_MIRROR_PHRASES = [
+    "bathroom mirror",
+    "vanity mirror",
+    "medicine cabinet",
+    "over sink",
+    "makeup mirror",
+    "lighted makeup",
+    "bath mirror",
+    "bathroom vanity",
+]
+
 # Slots where user interests influence product selection.
 _INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
 
@@ -106,6 +119,12 @@ class AmazonAdapter(SourcingAdapter):
             specs = raw.get("specs", {})
             if not self._specs_match(specs, required_specs):
                 continue
+
+            # Filter: exclude bathroom/vanity mirrors from the mirror slot.
+            if slot_id == "mirror":
+                name_lower = raw.get("name", "").lower()
+                if any(ph in name_lower for ph in _BATHROOM_MIRROR_PHRASES):
+                    continue
 
             # Inject affiliate tag into buy_url.
             tagged_url = self._inject_affiliate_tag(raw["buy_url"])

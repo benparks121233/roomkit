@@ -78,12 +78,13 @@ def select_products(
     # Double-check: filter candidates by slot's required specs and price band.
     # The adapter should have already done this, but we enforce defensively.
     price_max = slot.allocated_budget
-    valid = [
-        c for c in candidates
-        if _satisfies_specs(c, slot.required_specs) and c.normalized_price <= price_max
-    ]
+    spec_valid = [c for c in candidates if _satisfies_specs(c, slot.required_specs)]
+    valid = [c for c in spec_valid if c.normalized_price <= price_max]
     if not valid:
-        return [], [], "no_spec_match"
+        # Distinguish: spec failure vs price-only failure.
+        if not spec_valid:
+            return [], [], "no_spec_match"
+        return [], [], "no_candidate"
 
     # Only pass interests for decor slots where they're relevant.
     slot_interests = interests if interests and slot.slot_id in _INTEREST_SLOTS else None

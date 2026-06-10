@@ -123,6 +123,19 @@ def allocate_budget(
         slot_id: w * target_budget for slot_id, w in weights.items()
     }
 
+    # --- Step 3b: Enforce min_slot_dollars floor ------------------------------
+    # Slots allocated below the minimum get bumped up.  Then scale the whole
+    # set down proportionally so sum(allocated) <= target_budget is preserved.
+    min_slot = taxonomy.budget_rules.min_slot_dollars
+    if min_slot > 0 and len(allocated) > 1:
+        for slot_id in allocated:
+            if allocated[slot_id] < min_slot:
+                allocated[slot_id] = min_slot
+        floor_total = sum(allocated.values())
+        if floor_total > target_budget:
+            scale = target_budget / floor_total
+            allocated = {sid: v * scale for sid, v in allocated.items()}
+
     # --- Step 4: Floating-point clamp ----------------------------------------
     # After normalization the sum should equal target_budget, but IEEE 754
     # rounding can push it a few ULPs above.  Scale uniformly rather than

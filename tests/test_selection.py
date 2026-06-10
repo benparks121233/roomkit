@@ -253,4 +253,4 @@ def test_over_budget_candidate_excluded_by_double_check():
     product, reason = select_product(slot, _make_style(), candidates)
 
     assert product is None
-    assert reason == "no_spec_match"
+    assert reason == "no_candidate"  # price filter, not spec filter

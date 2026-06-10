@@ -1428,7 +1428,7 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
-  min-height: 70vh;
+  align-items: start;
 }
 
 /* Scene placeholder (left column — Slice B replaces with cartoon) */
@@ -1436,7 +1436,7 @@ h1, h2, h3 {
 .guided-scene {
   position: sticky;
   top: 80px;
-  align-self: start;
+  z-index: 4;
 }
 
 .scene-placeholder {
@@ -1447,6 +1447,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .scene-placeholder-inner {
@@ -1648,17 +1649,16 @@ h1, h2, h3 {
 @media (max-width: 768px) {
   .guided-flow {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .guided-scene {
-    position: sticky;
-    top: 60px;
-    z-index: 5;
+    position: static;
   }
 
   .scene-placeholder {
     aspect-ratio: auto;
-    min-height: 120px;
+    min-height: 100px;
     padding: var(--space-4);
   }
 }
