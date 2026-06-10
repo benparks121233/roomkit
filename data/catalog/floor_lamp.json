@@ -101,7 +101,7 @@
   {
     "product_id": "B078YR2WYQ",
     "name": "LEPOWER Wood Tripod Floor Lamp, Mid Century Standing Lamp, Modern Design Studying Light for Living Room, Bedroom, Study and Office, Flaxen Linen Shade with E26 Base Brown",
-    "normalized_price": 59.99,
+    "normalized_price": 56.99,
     "buy_url": "https://www.amazon.com/dp/B078YR2WYQ",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/51n7e6+slTL._AC_UL320_.jpg",
@@ -182,7 +182,7 @@
   {
     "product_id": "B0FC2CVTV7",
     "name": "JOOFO LED Floor Lamp \u2013 Super Bright Torchiere with Remote & Foot Switch, Stepless Dimmable Tall Standing Lamp, 69\" Modern Pole Light for Corner, Living Room, Bedroom, Reading, Office",
-    "normalized_price": 49.99,
+    "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0FC2CVTV7",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61BOcSEJ3pL._AC_UL320_.jpg",
@@ -245,7 +245,7 @@
   {
     "product_id": "B0FZGW3MY5",
     "name": "\u3010Upgraded\u3011 Dimmable Floor Lamp for Living Room,1000 Lumens Bulb Included, Modern Floor Lamps Simple Design with Linen Shade, Tall Standing Lamp for Bedroom Office Dining Room, Black Pole Lamp",
-    "normalized_price": 49.99,
+    "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0FZGW3MY5",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71h+I7WDhOL._AC_UL320_.jpg",
@@ -389,7 +389,7 @@
   {
     "product_id": "B07VF4K6NT",
     "name": "LEPOWER Wood Tripod Floor Lamp, Mid Century Standing Lamp, Modern Design Studying Light for Living Room, Bedroom, Study Room and Office, Flaxen Lamp Shade with E26 Base Walnut",
-    "normalized_price": 59.99,
+    "normalized_price": 59.97,
     "buy_url": "https://www.amazon.com/dp/B07VF4K6NT",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/51ZX1m9ZijL._AC_UL320_.jpg",
@@ -708,6 +708,1428 @@
     "buy_url": "https://www.amazon.com/dp/B0BW92RZ5V",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61lO5ld7SGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4WSMJYK",
+    "name": "62\" Walnut Gold Floor Lamp for Living Room, 1200LM 3-Way Dimmable Mid Century Modern Floor Lamp for Bedroom Office, Wood Vintage Standing Lamp Linen Shade, LED Bulb Included",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0F4WSMJYK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/618ce16wuXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B5WXHTD1",
+    "name": "Karjoefar 2-Light Floor Lamp, Mid Century Floor Lamp with White Fabric Shade, Standing Lamp Tall Lamp for Living Room Bedroom, 3 Color Temperatures 9W Bulb Include",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0B5WXHTD1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81KF7CMufSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DNKJR7RS",
+    "name": "Globe Electric 61000150 60\" Floor Lamp, Antique Brass Finish, Beige Fabric Shade, Mid-Century Modern Standing Lamp, E26 Base, Sustainable Design for Living Rooms and Bedrooms",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0DNKJR7RS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41iz+d3dYUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6MXHHQR",
+    "name": "Gold Floor Lamps for Living Room- Arc Floor Lamps with 9W Bulb, 360\u00b0 Adjustable Metal Shade, Remote Control Dimmable Floor Lamp, Over Couch Mid Century Modern Brass Floor Lamp for Bedroom, Office",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0C6MXHHQR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71O0aiIVz1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBMTPTVP",
+    "name": "O'Bright Nova - Adjustable Floor Lamp with Flexible Gooseneck and Rotatable Shade, E26 Socket, 10-Inch Base - Ideal for Reading, Bedside, Living Room, Antique Brass",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0DBMTPTVP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51-Stj0nB8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBRPJ4B9",
+    "name": "77\u201d Arc Floor Lamp for Living Room, Upgraded Gold Standing Lamp with Remote, 3 Color Temperatures & Brightness Adjustable, Modern Arched Floor lamp for Bedroom,Office, Antique Brass, LED Bulb Included",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBRPJ4B9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61juEmv7NJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9QF8PCW",
+    "name": "Fiqevs Dimmable 3 Globe Floor Lamp - Mid Century Modern Gold Standing Lamp with Frosted Glass Shade & LED Bulbs for Living Room, Bedroom, Office",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9QF8PCW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ooLD7rdrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B074QH891N",
+    "name": "Brightech Logan Arc Floor Lamp, Bright Standing Lamp for Living Rooms, Offices & Bedrooms, Modern Living Room D\u00e9cor, Tall Hanging Floor Lamp for Reading and More \u2013 Gold/Brass",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B074QH891N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51EXSPLWwZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDFMCPCW",
+    "name": "QiMH Gold Floor Lamp for Living Room, Mid Century Modern Standing Lamp Brass Tall Lamp with Green Glass Lamp Shade Marble Base, Large Vintage Retro Floor Lamps for Bedroom Home Decor",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDFMCPCW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BXn+3ndpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9YHTN43",
+    "name": "Modern Floor Lamp for Living Room - 62\" Tall Standing Lamp Mid Century Gold Corner Floor Lamp with Foot Switch and Unique Travertine Decor Pole Floor Reading Lamp for Bedroom Office",
+    "normalized_price": 114.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9YHTN43",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/711grIrpaaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08P5Y7MGT",
+    "name": "360 Lighting Cora Modern Mid Century Arc Floor Lamp Standing 72\" Tall Classic Brass Gold White Linen Drum Shade Decor for Living Room Reading Bedroom Office House Home Decor",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B08P5Y7MGT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71f-lrWSVTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01GW7BXKK",
+    "name": "360 Lighting Aaron Mid Century Modern Tree Floor Lamp 64\" Tall Aged Brass Gold Metal Adjustable Swivel 3-Light Dome Shade Decor for Living Room Reading House Bedroom Home Office House",
+    "normalized_price": 124.99,
+    "buy_url": "https://www.amazon.com/dp/B01GW7BXKK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ho7hrROdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07ZQX979W",
+    "name": "JONATHAN Y 58.5\" Brass Gold Modern Contemporary Iron Floor Lamp, Minimalist Metal Globe Shade, Mid-Century Standing Light for Living Room Bedroom, LED Bulb Included JYL3088A",
+    "normalized_price": 98.94,
+    "buy_url": "https://www.amazon.com/dp/B07ZQX979W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61zaghpC6vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0797F2FMX",
+    "name": "Brightech Montage Modern Floor Lamp - LED Standing Lamp with Adjustable Color Changing Bulbs for Living Rooms & Offices - Tall Corner Bedroom Reading Light for Contemporary Home Decor - Antique Brass",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0797F2FMX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61y8bXoyknL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHHR6K72",
+    "name": "ELYONA Floor Lamp for Bedroom 2-Light Wood Standing Lamp White Fabric Shade Mid Century Modern Tall Pole Corner Light for Living Room Office 3 Color Temperatures 9W LED Bulbs Include, Brushed Brass",
+    "normalized_price": 55.56,
+    "buy_url": "https://www.amazon.com/dp/B0FHHR6K72",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81NJX-9sRTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHGJPVRR",
+    "name": "Mid Century Gold Floor Lamp,Dimmable LED Brass Floor Lamp Touch Control with Remote,Vintage Modern 3 Globe Standing Lamp for Corner,Living Room,Bedroom",
+    "normalized_price": 86.99,
+    "buy_url": "https://www.amazon.com/dp/B0DHGJPVRR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61KFJzPLW6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS3T5KPD",
+    "name": "O\u2019Bright Strata Wooden Floor Lamp - Mid Century Modern Standing Lamp with Layered Wood Shade, Tall Reading Lamp for Living Room, Bedroom, Office, Antique Brass, Light Oak, Horizon Shade",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0GS3T5KPD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51wpd60KqwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS3LR4V4",
+    "name": "O\u2019Bright Strata Wooden Floor Lamp - Mid Century Modern Standing Lamp with Layered Wood Shade, Tall Reading Lamp for Living Room, Bedroom, Office, Antique Brass, Dark Oak, Cascade Shade",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GS3LR4V4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51waDhoeK8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNWSBS5G",
+    "name": "QIYIZM Glass Floor Lamp for Living Room,Bedroom,Gold Dimmable Standing Lamp with Remote,Mid Century Modern Brass Tall Lamp Boho Vintage Retro Floor Lamps Arc Amber Flower Floor Light Lamp Bohemian",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNWSBS5G",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71l4iPfKNfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCNMMQZQ",
+    "name": "Nintiue Upgraded Modern Arc Dimmable Tall Standing Floor Lamp with Linen Shade, 1200 Lumens LED Bulb Included, for Living & Reading Room, Bedroom, Office & Nursery, Brass",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCNMMQZQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61a+mIdIMdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCHYWMV4",
+    "name": "ZenGlimmer Modern Mid Century Floor Lamp with Soft Linen Shade, 63\u201d Tall White & Brass Standing Lamp, Weighted Base, Warm Ambient Light for Living Room, Bedroom & Reading Corners (White & Gold)",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0GCHYWMV4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uzDu1IJZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07ZRVBKHV",
+    "name": "Adesso Antique Brass Torchiere Floor Lamp with White Opal Glass Shade - 300W Double Socket Construction Accent Lighting for Bedroom, Living Room, or Home Office, 71\u201d Tall",
+    "normalized_price": 170.0,
+    "buy_url": "https://www.amazon.com/dp/B07ZRVBKHV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/519W2uW5PiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHPSFHJM",
+    "name": "QIYIZM Floor Lamp for Living Room,Bedroom,Gold Dimmable Standing Lamp with Remote,Mid Century Modern Brass Tall Lamp Retro Vintage Glass Lamp Floor Light Boho Bohemian",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHPSFHJM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71l4iPfKNfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09Z6J3LK5",
+    "name": "FILIYANO Gold Brass Arc Floor Lamp for Living Room - Mid Century Modern Standing Lamp, Overhanging Floor Lamps, Arch Stand Up Lamp & Floor Light with White Marble Base, Ideal for Bedroom Study Room",
+    "normalized_price": 88.99,
+    "buy_url": "https://www.amazon.com/dp/B09Z6J3LK5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/612JxFiwLVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07TR3N7ZW",
+    "name": "Oneach 62\" Gold Floor Lamp for Living Rooms Tall Arc Standing Lamps for Bedrooms Industrial Corner Nursery Girls Kid Vintage Mid-Century Modern Reading Light Office Antique Brass Shade Lantern",
+    "normalized_price": 69.95,
+    "buy_url": "https://www.amazon.com/dp/B07TR3N7ZW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/519NPPI56LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B095YYSRX4",
+    "name": "Brightech Nova 74 in. Antique Brass Industrial 3-Light LED Energy Efficient Floor Lamp with Built-in 3-Way Dimmer Function FL-NVA-BRS",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B095YYSRX4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Q5thGiONL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJYW2LC1",
+    "name": "MOFFE 65\" Mid Century Modern Vintage Real Wood Floor Lamp with 2 Shades for Two Looks, Sculptural Standing Lamp with Teardrop Base & Wooden Pull Chain for Living Room Bedroom Sofa Side (Bulb Included)",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJYW2LC1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Q-oQaiFaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNZNK8BJ",
+    "name": "JOOFO Mid-Century Modern Wood Floor Lamp with Dual Fabric Shade, Remote Control, Dimmable & Adjustable Color Temperature, Reading & Living Room Lamp, Easy Clean Cover, Foot Switch,Walnut Wood",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNZNK8BJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81b0dXybCvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0872864PH",
+    "name": "QiMH Tree Floor Lamp with 3 Light Bulbs, Standing Tall Pole Lamps for Living Room Bedroom Office, Reading Stand up Lamps with 3 Adjustable Arms, Brushed Gold",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0872864PH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61DdSLs8lIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C1G1Z9G7",
+    "name": "Arc Floor Lamps for Living Room, Modern Tall Standing Lamp Remote Control,Stepless Dimmable Gold Floor Lamp with Hanging Dome Shade, Over Couch Arched Reading Lamp for Bedroom, Office (Bulb Included)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1G1Z9G7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71fFkBOgYxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSM8G24Y",
+    "name": "Gold Floor Lamps for Living Room, Arc Floor Lamp with Remote & Dimmable Bulb, Boho Rattan Standing lamp with 3 Color Temperatures, Height Adjustable Tall Lamp for Bedroom, Over Couch Reading Lamp",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSM8G24Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71I2fdXvJaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6D1RB8K",
+    "name": "Fiqevs 3-Globe Floor Lamp - Adjustable Mid Century Modern Stand Lamp with Warm White LED Bulbs for Living Room, Bedroom - Antique Brass/Gold",
+    "normalized_price": 51.99,
+    "buy_url": "https://www.amazon.com/dp/B0G6D1RB8K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81XyREbN03L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B8J7HN8X",
+    "name": "Henn&Hart 68.5\" Mid-Century Modern 2-Light Floor Lamp with White Milk Glass Globe Shade for Living Room, Bedroom, or Office, Gold",
+    "normalized_price": 119.5,
+    "buy_url": "https://www.amazon.com/dp/B0B8J7HN8X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51AfWrD38IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQ1MMD38",
+    "name": "Gold Floor Lamp, Arc Floor Lamp for Living Room with Adjustable Drum Lampshade, Modern Tall Standing Lamp with On/Off Foot Switch, Over Couch Arched Reading Light for Reading, Bedroom, Office",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0BQ1MMD38",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71U1V85OkWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGZRHDXM",
+    "name": "65\u201d Walnut Gold Arc Floor Lamp for Living Room, 1200 Lumens 3-Level Brightness Mid Century Modern Floor Lamp for Bedroom, Wood Vintage Gold Standing Lamp, Adjustable Lampshade, LED Bulb Included",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGZRHDXM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Qrh99aH2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0912KQ9PY",
+    "name": "Coucrek Industrial Floor Lamp, Aged Bronze Rustic Standing Lamp with 3 Color Temperatures, Adjustable Height & Head Farmhouse Reading Lamp for Living Room Bedroom Office",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0912KQ9PY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61gemrMKoSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07HZGZ2X5",
+    "name": "Globe Electric 67046 58\" Floor Lamp, Matte Black Finish, White Linen Rectangular Shade, Modern Geometric Cutout Design, E26 Base",
+    "normalized_price": 87.34,
+    "buy_url": "https://www.amazon.com/dp/B07HZGZ2X5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51o-BTE8TAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8HN3JLJ",
+    "name": "65.3\" Floor Lamps for Living Room, Black Floor Lamp for Bedroom, Dual-Base Industrial Standing Lamp, Adjustable-Head Corner Lamp, Modern Tall Lamp, Living Room Light, Bulb Included, Black",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0G8HN3JLJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71atqS8HhLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSHMDBV8",
+    "name": "Wio-Mio Industrial Floor Lamp with Glass Shade, Modern Dimmable Floor lamp with Remote LED Bulbs, Tall Lamp for Living Room Corner, Bedroom, Office (Black)",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSHMDBV8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/611sbI6iiLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B098F6DG47",
+    "name": "PARTPHONER Industrial Floor Lamp Adjustable, Rustic Farmhouse Reading Lamp in Aged Black Finish, Modern Standing Lamp with Remote Control Metal Shade for Living Room Bedroom Study Room Office Hotel",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B098F6DG47",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71bycaT-yEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6MT8MMB",
+    "name": "Arch Floor Lamps with Remote - Dimmable Floor Lamp 70\u201d, Black Tall Lamp with 360\u00b0 Adjustable Hanging Metal Shade, Arc Lamps Floor Standing with 9W Bulb, Over Couch Lamps for Living Room, Foot Switch",
+    "normalized_price": 49.98,
+    "buy_url": "https://www.amazon.com/dp/B0C6MT8MMB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71QgR7dD3dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPPLTX9L",
+    "name": "Industrial LED Floor Lamp,Black Metal Adjustable Standing Lamp for Living Room, Bedroom, Office,Rotating Head Tall Reading Lamp for Sofa or Desk, Modern Home Decor (Industrial, Metal)",
+    "normalized_price": 24.16,
+    "buy_url": "https://www.amazon.com/dp/B0DPPLTX9L",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51zAzgVaSrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08SR68WFD",
+    "name": "LALISU Floor Lamp, Industrial Floor Lamps for Living Rooms Rustic Farmhouse Reading Standing Floor Lamp Adjustable Metal Heads Indoor Task Lighting for Living Room Bedroom Office Home D\u00e9cor (Black)",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B08SR68WFD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51e5GMRm+ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DMVN8ZVK",
+    "name": "Dimmable Floor Lamp, Farmhouse Standing Lamp with Elegant Metal Cage, Industrial Tall Tree Floor Lamps for Living Room, Bedroom, Study Room, Office, 2400LM LED Bulbs Included - 68\", Black",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DMVN8ZVK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7132ebB4wmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C7KQQ156",
+    "name": "\u3010Upgraded\u3011Black Arc Floor Lamps for Living Room - Dimmable Arched Floor Lamp with Remote Control & 2700-6000K 9W LED Bulb Included, Modern Arch Standing lamp, Industrial Tall Lamp for Bedroom Reading",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0C7KQQ156",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71LVqmPNKzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDKYVN1M",
+    "name": "G-SAFAVA 62.5\" Floor Lamp for Living Room Industrial Black Standing Tall Lamps for Bedroom Mid Century Modern Corner Floor Lamps for Office Nursery Reading Light Room Lamp, Bulbs Included",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDKYVN1M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/810LMBijVVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2H23RFP",
+    "name": "67\" Industrial Floor Lamp with Wood & Black Metal Shade, Modern Standing Lamp, Rustic Farmhouse Tall Lamp for Living Room Bedroom Office, 2700K Bulb & Foot Switch Included (Black)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2H23RFP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61v5Kwglf6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QGRR78H",
+    "name": "VONLUCE Floor Lamp for Living Room, 65\" Tall Industrial Floor Lamp, Adjustable Height & Head Vintage Metal Standing Reading Pole Lamp for Bedroom, Office, Farmhouse",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B07QGRR78H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51vIX63gULL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGDF37V8",
+    "name": "9MMML Floor Lamp for Living Room, Farmhouse Industrial Dimmable Floor lamp,3 Lights Metal Cage Tree Standing Lamp,68\", 3Pcs Led Bulbs Included",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGDF37V8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/712kKRLOtvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FF4TH8QR",
+    "name": "EDISHINE 70IN Farmhouse Floor Lamps for Living Room, Dimmable Industrial Tall Standing Lamps 3 LED Edison Bulbs Included, Diamond-Shaped Cage, Rustic Tree Corner Light for Bedroom, Office, Black",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0FF4TH8QR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71eE1IxnJtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DB7YDQGC",
+    "name": "Oneach 70\" Industrial Floor Lamp, Stepless Dimmable Standing Lamp with 3 Bulbs, Farmhouse Corner Standing Tree Lamp for Living Room, Tall Lamps for Bedroom, Office, Study Room, Dining Room, Black",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DB7YDQGC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71cCzo7zfEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08F52QFB2",
+    "name": "BoostArea Floor Lamp, Industrial Floor Lamp, 63 Inch Standing Lamp, E26 Socket, On/Off Footswitch, Whole Metal, ETL Listed, Modern Small Lamp for Bedroom, Living Room, Minimalist, Vintage, Mid Century",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B08F52QFB2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61KcP9HheiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKZYGYCB",
+    "name": "Floor Lamp, Industrial Modern Standing Lamp with Remote Control, 71\" Height Adjustable, Aged Black Finish Rustic Farmhouse Tall Reading Lamp for Bedroom, Over Couch Arched Reading Light",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKZYGYCB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-hWX-KI0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FF91W6XX",
+    "name": "67\" Industrial Floor Lamp with Wood & Black Metal Shade, Modern Standing Lamp, Rustic Farmhouse Tall Lamp for Living Room Bedroom Office, 2700K Bulb & Foot Switch Included (Black + Remote Control)",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0FF91W6XX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Gb+V1RneL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2MBHCTG",
+    "name": "Industrial LED Floor Lamp,Black Metal Dimmable Lamp for Living Room, Bedroom, Office,Remote Control Tall Reading Lamp for Sofa or Desk, Milkly Glass Shade for Home Decor (Industrial, Glass)",
+    "normalized_price": 22.49,
+    "buy_url": "https://www.amazon.com/dp/B0F2MBHCTG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51e+gVEzkVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL1S2VCM",
+    "name": "Black Floor Lamps for Living Room, Vintage Floor Lamp with LED Bulb, 3 Color Temperatures Metal Standing Lamp with Pull Chain Switch, Industrial Tall Lamp for Bedroom, Modern Stand Up Lamp for Office",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0GL1S2VCM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713x+UrI+sL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CS6JG9VY",
+    "name": "Modern Arc Floor Lamp with Metal Hanging Dome Shade, Industrial Adjustable Over the Couch Stand Up Light, Marble Base Farmhouse Tall Task/Reading Standing Lamp for Living Room Bedroom Office, Black",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CS6JG9VY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713167AqGNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJS1TNFY",
+    "name": "Industrial Floor Lamp, Floor Lamp for Living Room, 66Inch Tall Modern Standing Lamp, Black Stand Up Lamp with Metal Dome Shade, Mid Century Corner Reading Lamp for Bedroom Office Nursery Room, NO BULB",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJS1TNFY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51ImPjtaJgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDPZ851Q",
+    "name": "Coucrek 66'' Black Floor Lamp for Living Room, Industrial Standing Lamp with Unique Reflecting Shade, Modern Tall Floor Lamp for Bedroom Office Corner",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDPZ851Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61496vdcRiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKS378SH",
+    "name": "Luvkczc Black Floor Lamp, 60\" Standing Lamp Tall Lamp with Fabric Lampshade&Pull Chain Corner Floor Lamps for Living Room, Bedroom & Office Bulbs Not Included",
+    "normalized_price": 53.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKS378SH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71DKjqa+5eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2FN3W71",
+    "name": "Bright LED Reading Floor Lamp with Remote and Bluetooth Dimming, Adjustable Brightness and Color temperature, Matte Black Iron Lampshade,Modern Rustic Vintage Living Room Bedroom Office Standing Lamp",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2FN3W71",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71g6oJ61baL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08YNMG713",
+    "name": "BoostArea Industrial Floor Lamp, Standing Lamp with Hanging Iron Mesh Lamp Shade, 6W LED Bulb, Whole Metal Farmhouse Floor Lamp with Foot Switch, Rustic Floor Lamps for Living Room Bedroom, Black",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B08YNMG713",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71zfB2FLFBS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1MT3S95",
+    "name": "Floor Lamp, Industrial Black Floor Lamps for Living Room, 65.6in Standing Lamp, Retro Mushroom Dome Shade, Whole Metal, E26 Socket, Mid Century Modern Floor Lamp for Bedroom/Office,No Bulb",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0F1MT3S95",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/718o3wZDzfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNWN4JWM",
+    "name": "\u3010Upgraded\u3011Dimmable Floor Lamp for Living Room with Glass Shade, Black Modern Industrial Floor Lamp with 900LM LED Bulb Included, Bright Standing Tall Lamp for Bedroom, Office, Reading Room, Corner",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNWN4JWM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61lEXniCr7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B095KM8HLY",
+    "name": "Adjustable Industrial Floor Lamps for Living Room - Rustic Reading Lamp with Pulley System, Modern Farmhouse Indoor Pole Task Lamp, Vintage Tall Standing Lamps for Bedroom Office, Blackened Bronze",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B095KM8HLY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61WyuuHkGmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CRRGYZVT",
+    "name": "Dimmable Floor Lamps for Living Room, 3-Light Industrial Floor Lamp with Wood & Metal Cage, Farmhouse Standing Lamp Tall Tree Lamp for Bedroom Office, Rustic Black Tall Floor Lamp for Corner",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CRRGYZVT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61tOiAj3kxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDB16XY5",
+    "name": "Dimmable Floor Lamp, Farmhouse Standing Lamp with Elegant Metal Cage, Industrial Tall Tree Floor Lamps for Living Room, Bedroom, Study Room, Office, 3 x 800LM LED Bulbs Included, 72\", Black",
+    "normalized_price": 54.14,
+    "buy_url": "https://www.amazon.com/dp/B0FDB16XY5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71NvWtk36rL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BGQ9RMWN",
+    "name": "DLLT Floor Lamp Tall for Room: Black Standing Lamp with Clear Glass Lampshade for Living Room - Modern Bright Lamp for Bedroom - Industrial Corner Floor Lamps for Office 8W Led Bulb Included",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0BGQ9RMWN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71nmn6m1ggL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DM21JF7K",
+    "name": "GyroVu Black Floor Lamp, Height Adjustable Standing Lamp Tall Lamp with Fabric Lampshade&Pull Chain Corner Floor Lamps for Living Room, Bedroom & Office Bulbs Not Included(Black Base)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DM21JF7K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71SoD30U5+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQMQ6HZF",
+    "name": "Arc Floor Lamp with Remote & Dimmable LED Bulb, Vintage Wood Floor Lamps for Living Room, Industrial Black Standing Lamp with 3 Color Temperature, Farmhouse Rustic Tall Lamp for Bedroom Office Corner",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FQMQ6HZF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71aDJYIfmFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C1FZHJ5Q",
+    "name": "Arc Floor Lamps for Living Room, Modern Tall Standing Lamp Remote Control,Stepless Dimmable Black Floor Lamp with Hanging Dome Shade, Over Couch Arched Reading Lamp for Bedroom (Bulb Included)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1FZHJ5Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/718tIxwnUnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6R72J6Y",
+    "name": "Bronze Arch Floor Lamps for Living Room Dimmable - Upgraded 9W LED Arc Lamp with 4 Color Temperatures, Remote Control Rustic Arched Floor Lamp, Reading Standing Lamp for Bedroom (Bulb Included) Brown",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0C6R72J6Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71hCxSElX8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9XRZX7F",
+    "name": "LED Corner Floor Lamp, 360\u00b0Rotating Head, Super Bright 1800LM Dimmable Minimalist Floor Lamps with Remote Control,3000K-6000K Modern Corner Light,67\" Tall Standing Lamp for Living Room,Bedroom,Office",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9XRZX7F",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61nANJQ6u4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX71QB4V",
+    "name": "Arc Floor Lamp, 3 Light Floor Lamp with Remote, 2400LM Super Bright Tall Standing Lamp with 3 Color Temps & Dimmable, 80\" Mid Century Tree Floor Lamps for Living Room, Bedroom, Office",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX71QB4V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71-qM3ZV8jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDFH61KW",
+    "name": "75\" Arc Floor Lamp with Marble Base and Adjustable Height, Rotating Hanging Shade, Dimmable Floor Lamp for Living Room with Remote and Foot Switch, 3CCT, Over Couch Arched Reading Light E15LD05",
+    "normalized_price": 39.98,
+    "buy_url": "https://www.amazon.com/dp/B0FDFH61KW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7176UxTcbgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBH9S5RP",
+    "name": "NU\u00dcR Modern Arc Floor Lamp with Remote Control, 67\" Tall Bright LED Standing Lamp, Stepless Dimmable & 3 Color Temperatures, Minimalist Curved Pole Light for Living Room, Bedroom & Office, Black",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0DBH9S5RP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61EWzjWgEtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F93B96SZ",
+    "name": "SUNMORY 82\" Tall Arc Floor Lamps for Living Room, Large Floor lamp with Length Adjustable, Modern Curved Floor lamp, Corner Lamp for Dining Room, Office, Black",
+    "normalized_price": 155.99,
+    "buy_url": "https://www.amazon.com/dp/B0F93B96SZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71hcjnZcudL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPF15DYY",
+    "name": "Arc Floor Lamps for Living Room with 3 Color Temperatures, Black Standing Lamp with Remote & Dimmable LED Bulb, Rattan Boho Floor Lamp, Farmhouse Tall Lamp for Bedroom, Over Couch Arched Reading Light",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CPF15DYY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71oqq03TW1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G52HSQ39",
+    "name": "marctronic Modern Arc Floor Lamp with Foot Switch for Living Room, 3000K-6000K Adjustable Color Temperature, 71\" Tall Arc Standing Lamp with 9W LED Bulb for Bedroom, Office, Beige",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0G52HSQ39",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ATpB48u1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06WVH873X",
+    "name": "Brightech Sparq Arc Floor Lamp - Sleek, Minimalist Curved LED Standing Lamp for Living Room, Office Desk, Arches Over Bed and Sofa for Reading, Bright & Dimmable Task Light - Silver",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B06WVH873X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61pQH2w2MBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9VW91C9",
+    "name": "RGB Floor Lamp with 3 Color Temperatures, Ultra Bright 1800LM Smart Arc LED Floor Lamp with Remote Control, Music Sync, Scene Modes, Modern Standing Tall Lamp for Bedroom Living Room Gaming Rooms",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9VW91C9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61urxCNQTwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL23LYWJ",
+    "name": "Matte Black Arc Floor Lamp 71\" Tall, Dimmable 12W LED Smart Standing Lamp with Remote Control, 360\u00b0 Rotatable Adjustable Height & Span, Reading Floor Lamp for Living Room, Bedroom, Office, Library",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0GL23LYWJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71lpKgLz8lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09K41V8HQ",
+    "name": "Dimmable Floor Lamp, Arc Floor Lamp with Dimmer, Black Standing Lamp with Adjustable Hanging Shade, Over Couch Tall Reading Light, Modern Pole Lamp for Living Room Bedroom, 9W LED Bulb Included",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B09K41V8HQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71PD2Y8kmfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09Z45ZJ6Q",
+    "name": "FILIYANO Arc Floor Lamp for Living Room, Marble Base Standing Lamp - Black Gold Floor Lamps with 360\u00b0 Rotatable Arm, Industrial Tall Lamp Metal Material, Reading Lamp for Bedroom Couch Sofa Desk",
+    "normalized_price": 77.99,
+    "buy_url": "https://www.amazon.com/dp/B09Z45ZJ6Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81lWLX9tUPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BVYSN159",
+    "name": "EDISHINE 78.3\u2033 Modern Arc Floor Lamp with Remote, Tall Black Standing Lamp with Stepless Dimmable Bulb & 5 Color Temperature, Curved Mid Century Floor Lamps for Living Room, Bedroom, Nursey",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0BVYSN159",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81EqztA2vuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D83NJGCM",
+    "name": "71\" Arc Floor Lamps for Living Room, Standing Lamp with Adjustable Head, Tall Pole Lamp with Foot Switch, Arched Reading Light for Bedroom, Office, 9W Adjustable Color Temperatures Bulb Included",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0D83NJGCM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81dhqqSjZjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08PDLB8M6",
+    "name": "360 Lighting Cora Mid Century Modern Arc Floor Lamp 72\" Tall Black Metal White Linen Fabric Drum Shade Decor for Living Room Reading House Bedroom Home Office House",
+    "normalized_price": 159.99,
+    "buy_url": "https://www.amazon.com/dp/B08PDLB8M6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51hJuh1tsgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07S746F3W",
+    "name": "Teamson Home Arquer 68.1\" Arc Floor Lamp for Living Rooms, Home Offices, Dining Rooms, Bedrooms with Faux White Marble Base and Nickel Bell Shade",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B07S746F3W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61BhdPneu1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D86JWHLC",
+    "name": "CO-Z 69\" Modern Arc Floor Lamp, Gold Standing Light with Adjustable Metal Shade and Marble Base, LED Bulb Included, Contemporary Lighting for Living Room or Sofa",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0D86JWHLC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81vwb+kHGDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK2WSGDT",
+    "name": "Arc Floor Lamps for Living Room with 3 Color Temperatures, Modern Floor Lamp Reading Light with 9W Bulb Included, Standing Lamp with Adjustable White Hanging \u200eLampshade for Bedroom Office(Black)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DK2WSGDT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71fHC6AI3KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D31VY644",
+    "name": "ROTTOGOON Dimmable Floor Lamp, Arc Floor Lamps for Living Room, Stepless Dimming Modern Standing Lamp with Linen Shade, Tall Lamp for Bedroom Office Dining Room- Black",
+    "normalized_price": 45.98,
+    "buy_url": "https://www.amazon.com/dp/B0D31VY644",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71PIcykrA6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BHZ91SCK",
+    "name": "E.P. Light RGBW Modern 69.99 inch Arched Standing Reading Floor Lamp with Remote - Dimmable Black Led Color Changing Curved Ambient Lighting for Bedroom and Living Room",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0BHZ91SCK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61e0AXpN-QL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B074QFCK8R",
+    "name": "Brightech Mason Arc Floor Lamp - Modern Corner Standing Lamp with Unique Hanging Drum Lamp Shade for Living Room - Bright Overhead, Curved Hanging Light for Bedroom. Library, Den - Nickel",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B074QFCK8R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81bbaZedb1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZNRJHXW",
+    "name": "Nintiue Upgraded Modern Arc Dimmable Tall Standing Floor Lamp with Linen Shade, 1200 Lumens LED Bulb Included, for Living & Reading Room, Bedroom, Office & Nursery, Brushed Nickel",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZNRJHXW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/717tQoNYKeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BWJ3V6Z4",
+    "name": "Nordic Simple Floor Lamp with White Shade, Arc Reading Lamp for Living Room, Study Room&Bedroom Beside,Creative Art Deco Bauhaus Standing Lamps for Ambient Lighting",
+    "normalized_price": 164.99,
+    "buy_url": "https://www.amazon.com/dp/B0BWJ3V6Z4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81lTJab8i6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZSHSKJ7",
+    "name": "Brightech Olivia Floor Lamp - Chic Arc Lamp with Rounded Spolight Head and Marble Base for Living Room, Tall Standing Lamp with LED Light Bulb for Bedroom Reading, Boho Home Decor for Office - Chrome",
+    "normalized_price": 171.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZSHSKJ7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/617+zpXsTDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08XQLS1JK",
+    "name": "NU\u00dcR Arc Floor Lamp, 67\" Tall Black Gold LED Modern Standing Floor Lamp with Remote Control, Arched Bright Floor Lamps for Living Room Bedroom Office Home (Black)",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B08XQLS1JK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61GvzMvPKFS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B1DSPXLC",
+    "name": "Major-Q Modern Arcing Floor Lamp - Tall Stand Up Arching Drum Shade - Large Contemporary Floor Lamp for Dining Rooms and Bedrooms - Corner Lamp for Office Lighting and Home Decor",
+    "normalized_price": 155.0,
+    "buy_url": "https://www.amazon.com/dp/B0B1DSPXLC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BGBS0K67L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFG49WFR",
+    "name": "LiteHistory Wood Tripod Floor Lamps for Bedroom, Living Room, and Office, Corner lamp with Beige Linen Shade, 12W Three-Color Bulb Included, Pull Chain Switch, Gifts for mom for Home Decor, Walnut",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFG49WFR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71DKijIKAhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCF5DSPG",
+    "name": "JOOFO Tripod Floor Lamp with Remote Control, Stepless Dimmable Tall Floor Lamp with Fabric Shade, Acrylic Bubble & Metal Pole Design, Modern Standing Lamp for Living Room Bedroom, Brushed Black",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0GCF5DSPG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71AJWFuxHBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D81RWK69",
+    "name": "Tripod Floor Lamp Black, 61\u201d Tall Floor Lamps, Standing Lamp with Rotary Switch, Modern Floor Lamp Simple Design with Beige Shade, Floor Lamps for Living Room, Bedroom, Office, Without Bulb",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0D81RWK69",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+xo3EdXgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVH9GW76",
+    "name": "Buruis 60.6\" Solid Wood Tripod Floor Lamp with 15.7\" Large Linen Shade, Mid-Century Walnut Finish Standing Lamp for Living Room, Bedroom, Office, Corner, UL Listed, Bulb Not Included, Beige",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVH9GW76",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81r6dZ-a+-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB5YPFXN",
+    "name": "KDG Modern Floor Lamp - Tall Tripod Lamp for Living Room, Bedroom, Office; Fabric Shade, LED Bulb, Warm Light (Black)",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB5YPFXN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61SXC7GTycL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1MQP3KB",
+    "name": "SIBRILLE 3 Way Torchiere Floor Lamp - 42W Dimmable LED Tree Standing Lamp with Remote, 2300LM, Color Changing, 72\" Tall Bright Floor Lamp for Living Room Bedroom Office",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1MQP3KB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71DwyuzKZJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BRK77VFL",
+    "name": "Lightdot Tripod Floor Lamp Stepless Dimmable Globe Modern Floor Lamp Gold Standing Lamps with 3PCS 3000K Bulbs Included Mid Century Modern Floor Lamps for Living Room/Bedroom/Sofa Beside/Corner Decor",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0BRK77VFL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/611HnweexnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D7BWWVC7",
+    "name": "LAMSU Boho Tripod Floor Lamps for Living Room, Rattan Wood Floor Lamp with Fabric Shades, Mid Century Standing Lamp with Shelf, Foot Switch, Modern Farmhouse Tall Lamps for Bedroom Office Brown",
+    "normalized_price": 85.49,
+    "buy_url": "https://www.amazon.com/dp/B0D7BWWVC7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71il15B8+9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CNW45Z6R",
+    "name": "64.4\u201d Slim Floor Lamp for Living Room with Magnetic Remote and Foot Switch, Dimmable Standing Tall Lamp Mood for Bedroom Nursery, 3 Color Temperatures, 1-Hour Timer,900LM Bulb Included,Beige E06LD05W1",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0CNW45Z6R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/817Np7c0hZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJYVY924",
+    "name": "Mid Century Modern Tripod Floor Lamp, Gold Accented Two-Tone Solid Wood Floor Lamp with Black-Finished Solid Wood Center, Linen Shade & Pull Chain, Tall Lamp for Living Room Bedroom Reading Corner",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJYVY924",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61L3TEacO9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09VZJHDZF",
+    "name": "Mordern industrial tripod floor lamp for living room, bedroom office, vintage gold brass standing reading light floor lamp with camera tripod wood, rotatable nautical spotlight standing lamp black",
+    "normalized_price": 147.99,
+    "buy_url": "https://www.amazon.com/dp/B09VZJHDZF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51teLcUT0EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKH135DX",
+    "name": "MIXL-Tripod Wooden Tall Floor Lamp,Fabric Drum Shade Corner Standing Lamp,Farmhouse Style Floor Light for Nursery and Study Room",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKH135DX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71yNlqWH3cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08HQBF6QY",
+    "name": "LEPOWER Tripod Floor Lamp, Mid Century Wood Standing Lamp, Modern Design Shelf Floor Lamp for Living Room, Bedroom, Office, Flaxen Lamp Shade with E26 Lamp Base Black",
+    "normalized_price": 78.99,
+    "buy_url": "https://www.amazon.com/dp/B08HQBF6QY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51OYUYLE-XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2YBWGZ2",
+    "name": "Lightdot Gold Tripod Floor Lamp, Modern Floor Lamp for Living Room, Standing Lamp with Linen Shade, E26 Bulb Included, 66\" Tall Floor Lamps for Bedroom, Home Office",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2YBWGZ2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/617bWT4FLyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08BY9124H",
+    "name": "Wio-Mio Floor lamp, 15w/1000lm Bright LED Floor Lamp with Stepless Adjustable 3000K-6000K Colors and Dimmer, Remote and Touch Control, Adjustable Floor Lamp for Living Room",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B08BY9124H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Jg5Qs85VL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJR7GW4N",
+    "name": "Reading Floor Lamp, 72\" Tall LED Lamp with Flexible Gooseneck, Dimmable Zoomable Spotlight, Adjustable Color Beam Standing Lamp, Touch & Remote Control, Task Craft Bedroom Living Room, Matte Black",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJR7GW4N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61jMlhk57vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBMNTNKM",
+    "name": "O'Bright Nova - Adjustable Floor Lamp with Flexible Gooseneck and Rotatable Shade, E26 Socket, 10-Inch Base - Ideal for Reading, Bedside, Living Room, Black",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0DBMNTNKM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51cXQaB85DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJCX364T",
+    "name": "Reading Floor Lamp, Dimmable LED Floor Lamp with Remote, Standing Lamp with Flexible Gooseneck, Zoomable Spotlight, Reading Light, Task Crafting Tall Lamps for Living Room Office Bedroom",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJCX364T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51B0WPW15BL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP7C3XK9",
+    "name": "PACOVY Floor Lamp, Adjustable Height Floor Lamps for Living Room Bedroom, 120 LED Super Bright Standing Lamp Remote & Touch Control Dimmable Gooseneck Tall Stand Reading Lamp for Office Craft, Black",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DP7C3XK9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/611za3-cjnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08JSCB6L4",
+    "name": "O\u2019Bright Dimmable LED Pharmacy Floor Lamp, 12W LED, Full Range Dimming, 360 Degree Swing Arms, Adjustable Heights, Standing Lamp for Reading, Sewing, and Craft, ETL Listed, Antique Brass (Gold)",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B08JSCB6L4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41LHBaKObVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B078YP29Q1",
+    "name": "LEPOWER Floor Lamp, Metal Standing Lamp with Adjustable Gooseneck, Heavy Metal Base, Reading Pole Lamp for Office, Black Floor Lamps for Bedroom, Living Room",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B078YP29Q1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/410poWQ3r3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR8T5CHL",
+    "name": "GLOWRIUM 48,000 Lux Light Therapy Lamp, LED Full Spectrum Natural Light, 67\" Tall Bright Daylight Floor Lamp with Flexible Gooseneck, 3 Modes, Stepless Dimming & Color Temps for Home Office & Reading",
+    "normalized_price": 98.46,
+    "buy_url": "https://www.amazon.com/dp/B0GR8T5CHL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71KmmlX5z2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFSLDQNJ",
+    "name": "Reading Floor Lamp, 74.2\" Tall LED Lamp with, 360\u00b0 Flexible Gooseneck & Touch Control, 5000K Cool White LED, Sturdy Base, Crafts Standing Lamp, for Reading, Living Room, Matte Gold D16LD05",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FFSLDQNJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61EfChRy05L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCBL5CFC",
+    "name": "48000 LUX UV-Free Sunlight Lamp, 36W Bright LED Floor Lamp, Full Spectrum Sun Lamp, 7 Brightness Levels 4 Color Temps with Remote, Adjustable Height Reading Floor Lamp for Living Room Bedroom Office",
+    "normalized_price": 98.89,
+    "buy_url": "https://www.amazon.com/dp/B0GCBL5CFC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/811lcimIy7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKL4RBY3",
+    "name": "Yikuneng Dimmable LED Floor Lamp, Super Bright Reading Lamps Floor Standing lamp with Remote & Touch Control, Stepless Dimming & 2700K-6500K Color Temperature, for Living Room Bedroom Office, Black",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0CKL4RBY3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61m0IP+z2jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPWK9BPK",
+    "name": "EDISHINE LED Floor Lamp, 1300LM Super Bright Reading Floor Lamps for Living Room, Dimmable 4 Color Temperature Standing Lamp, Remote & Touch Control, Adjustable Gooseneck Lamp for Bedroom Office Black",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FPWK9BPK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81nq6-VwxHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DM5T6FPW",
+    "name": "Coucrek Floor Lamp for Living Room, Adjustable Head Standing Lamp with White Plastic Shade, Black Reading Floor Lamps for Dorm, Bulb not Included",
+    "normalized_price": 23.74,
+    "buy_url": "https://www.amazon.com/dp/B0DM5T6FPW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/517sEZb7RdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZP52PQP",
+    "name": "AXX Reading Floor Lamp for Living Room, Flexible Gooseneck Standing Lights for Task, Craft, Architect - Small-Shade, Metal, LED, Black, Bright, Dimmable",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZP52PQP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51t+gcWvYLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP4G2NG8",
+    "name": "Syrinx LED Floor Lamp, 18W 2000LM Bright Reading Floor Lamp for Office, Gesture & Remote Control, Dual Head Goose-Neck Standing Lamp, Dimmable Brightness & Color Temp, Eye Caring Light for Living Room",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0DP4G2NG8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71wIMDUfeIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07FB1VRBR",
+    "name": "Regency Hill Jenson Traditional Farmhouse Adjustable Pharmacy Floor Lamp Standing Base Swing Arm 54\" Tall Dark Bronze Metal Bright Downward Light for Living Room Reading House Bedroom",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B07FB1VRBR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+pMBZkfIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7LM5KSB",
+    "name": "GyroVu Traditional Height Adjustable Pharmacy Floor Lamp with 350\u00b0 Swing Arm, Color Temperature Adjustable Standing Lamp Metal Shade for Living Room Reading House Bedroom Home Office(Gold)",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0F7LM5KSB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71e83dz5WCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C14D5CX6",
+    "name": "marctronic Floor Lamp, 18W 1800LM Super Bright LED Floor Lamp with Remote & Works with Smart Plug, Dimmable Timing Eye Caring Reading Lamps Floor Standing for Living Room Bedroom Office",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0C14D5CX6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71rgzD-dk8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00VJ4SHZG",
+    "name": "Brightech Litespan - Bright LED Floor Reading Lamp for Over Chair Crafts and Reading, Esthetician Light for Lash Extensions, Gooseneck Adjustable Standing Lamp for Living Room, Bedroom, Office - Black",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B00VJ4SHZG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61kooCytiTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8B6TVC8",
+    "name": "Dimmable Pharmacy Floor Lamp with Remote, 17W Gold LED Reading Floor Lamp with 360\u00b0Swing Arm, 3 Color Temperature, Height Adjustable Standing Task Lamp for Living Room, Bedroom, Office, Antique Brass",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0F8B6TVC8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Qrk6TkmCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGJFSN72",
+    "name": "LED Floor Lamp for Living Room, Bright Reading Lamps for Office, Adjustable Colors Temperatures&Brightness, Dual Head Goose-Neck Standing Lamp, Remote and Button Control, Eye Caring Tall Lamp, Black",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGJFSN72",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71yp0kVYcRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00VJ4SFZI",
+    "name": "Brightech Litespan - Bright LED Floor Reading Lamp for Over Chair Crafts and Reading, Estheticians' Light for Lash Extensions, Adjustable Standing Lamp for Living Room, Bedroom, Office - Havana Brown",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B00VJ4SFZI",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71CZm-2mEIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08L7DD8L9",
+    "name": "Dimunt LED Floor Lamp, Bright 15W Floor Lamps for Living Room with 1H Timer, Stepless Adjustable 3000K-6000K Colors & Brightness Standing Lamp with Remote & Touch Control Reading Floor Lamps",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B08L7DD8L9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61jVnjd9EIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLDPPYBZ",
+    "name": "SUNMORY Dimmable LED Pharmacy Floor Lamp, 16W/1500LM Bright Reading Floor Lamp with Remote & Touch Control, 350\u00b0Swing Arm, Adjustable Task Craft Standing Lamp for Living Room Bedroom Office, Gold",
+    "normalized_price": 67.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLDPPYBZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51z78usxDqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYDKZNN7",
+    "name": "Reading Floor Lamp, 62\" Tall LED Floor Lamp, Dimmable Standing Lamp, 7 Brightness & 4 Color Temperature, Adjustable Gooseneck, Touch Control, Task Craft Light for Living Room Bedroom Office,Black",
+    "normalized_price": 49.79,
+    "buy_url": "https://www.amazon.com/dp/B0FYDKZNN7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/813KiJUE8yL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8H6YYQD",
+    "name": "PARTPHONER Vintage Floor Lamps for Living Room,Traditional 350\u00b0 Adjustable Swing Arm Farmhouse Floor Lamp for Bedroom, Rustic Standing Lamp Pole Lamps for Reading, Home D\u00e9cor and Office, Brown",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0F8H6YYQD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61f+QER8nSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3H2L6GY",
+    "name": "LED Floor Lamp with Remote Control Foot Switch for Living Room, Stepless Adjustable Colour Temperature Brightness Standing Lamp with Timer, Eye Caring Tall Lamp Reading for Bedroom,office, Gift",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0D3H2L6GY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61ce-qL1UFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07R43W6L1",
+    "name": "Globe Electric 67134 72\" Torchiere Floor Lamp and Adjustable Reading Light, Silver, Frosted Shade, Dual Rotary Switch, 3-Step Dimming, Modern Lighting for Living Room or Office, Timeless",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B07R43W6L1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41zcMTdfFML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW4N3X32",
+    "name": "HMVPL Farmhouse Floor Lamp for Living Room, Rustic Standing Lamp with 5W 3000K Bulb, Wood Corner Floor Lamp with Foot Switch, Height Adjustable, Boho Pole Tall Lamp for Bedroom Reading Office Nursery",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0FW4N3X32",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71OOGjCHgWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQK6PCZX",
+    "name": "LED Floor Lamp, 18W/2000LM Bright Reading Floor Lamp for Office with Double Head, Adjustable Gooseneck Dimmable Modern Standing Light for Lash Extension Craft, Eye Caring Floor Lamps for Living Room",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQK6PCZX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71fBgkcEVRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRPCXT4H",
+    "name": "Floor Lamps for Living Room - 60\" Resin Farmhouse Floor Lamp with Adjustable Color Temperatures - Vintage Standing Lamp Reading Light with Linen Shade Retro Tall Lamp for Bedroom Office, Black",
+    "normalized_price": 69.97,
+    "buy_url": "https://www.amazon.com/dp/B0DRPCXT4H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71QQOeBVdiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FX436VLM",
+    "name": "Dimmable Floor Lamp for Living Room with Remote and Foot Switch, Modern Standing, Corner Lamp,10W Bulb 3 Color Temperatures, for Bedroom, Office, Corner, ETL Listed, Black and Beige E19LD05",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0FX436VLM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71WGH6f4udL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4DGFFCM",
+    "name": "Ambimall Tall Floor Lamps with 3 Color Temperatures Bulb & Adjustable Linen Shade, for Living Room, Bedroom, Office, Classroom, Dorm Room (9W Bulb Included), Beige & Black, 60\"",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4DGFFCM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81OkUcWhMvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08T1N86Q5",
+    "name": "PESRAE Floor Lamp, Remote Control with Stpeless Color Temperatures and Brightness, Torchiere lamp for Bedroom, Living Room, Bulb Included (Matte Black)",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B08T1N86Q5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51+IKShrEWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKGX54CD",
+    "name": "64.2\u201d Dimmable Floor Lamp for Living Room with Remote and Foot Switch, Corner Floor Lamp for Bedroom, Includes 10W A19 Bulb, Modern Standing Tall Lamp, ETL Listed Beige and Black E17LD05",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKGX54CD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71OmT1qXyTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CN8Q9RGP",
+    "name": "Arc Floor Lamps for Living Room Rattan Boho Floor Lamp with Remote Control,Dimmable LED Floor Lamp Wicker Lamp Shades Black Standing Lamp with 3 Color Temperature Tall Floor Lamps For Bedroom Corner",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CN8Q9RGP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81fPAjCCcwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09N6YNZBK",
+    "name": "ROTTOGOON Dimmable Farmhouse Floor Lamp, Industrial Floor Lamp for Living Room with 3 X 6W LED Bulbs, 3 Light Rustic Standing Tall Lamp for Bedroom, Office, 68\"",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B09N6YNZBK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71bLt4mPEDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSPK5Q98",
+    "name": "\u3010Upgraded\u3011Dimmable Gold Floor Lamps for Living Room, 11W LED Bulb Included, Modern Standing Lamp with Marble Base, Tall Pole Light with White Linen Shade for Bedroom Reading Office Corner Nursery",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSPK5Q98",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71C8GJ0DnDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDB2G5F8",
+    "name": "BOBOMOMO 62\" Rustic Farmhouse Floor Lamp with Remote & Dimmable 9W Bulb, 3 Color Temperatures Tall Resin Standing Lamp, Retro Floor Lamp for Living Room, Bedroom, Office, Nursery, Reading Nock",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDB2G5F8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81oe7MCqAOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C3GY2PJ2",
+    "name": "Arc Floor Lamp for Living Room with 3 Color Temperatures, Farmhouse Floor Lamps with Remote & Dimmable Bulb, Boho Standing Lamp with Rattan & Fabric Shades, Adjustable Tall Lamp for Bedroom, Office",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0C3GY2PJ2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71LC9-M5eyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSN27RNC",
+    "name": "SIBRILLE 36W LED Floor Lamp, Super Bright Standing Lamp, Modern Stepless Dimmable Torchiere Tall Lamp with Remote Control, 350\u00b0Rotating Head Reading Floor Lamp for Living Room, Bedroom, Office",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSN27RNC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713-dfUQbDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B099WTN2TR",
+    "name": "Govee RGBIC Floor Lamp Basic, 1000lm LED Corner Lamp Compatible with SmartThings, Alexa, and Matter, Modern Floor Lamp with Music Sync and 16 Million DIY Colors, Standing Lamp for Bedroom Living Room",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B099WTN2TR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61SdRNLwZzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPM2DDQB",
+    "name": "SIBRILLE 2-in-1 Torchiere Floor Lamp, 34W Super Bright LED Standing Lamp with Remote & Touch Control, 72\" Dimmable Adjustable Corner Reading Lamp for Living Room, Bedroom, Office, Black",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FPM2DDQB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71wWWgzZaEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BS14V9DX",
+    "name": "SIBRILLE 36W LED Tree Floor Lamp, Modern Dimmable Standing Lamp with Remote & Touch Control, 4 Color Temperatures, 3 Rotatable LED Light Floor Lamps for Living Room, Bedroom, Office",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0BS14V9DX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61wZzbvDaIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTDN587X",
+    "name": "Keepsmile Dimmable Floor Lamps for LivingRoom with 12W LED Bulb, Foot Switch, Remote Custom Color Temperature Floor Light, Linen Shade Standing Lamps, Modern Tall Lamp for Office Bedroom Kid Room",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DTDN587X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81v+NPJJ+JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B71LHCV6",
+    "name": "SIBRILLE LED Floor Lamp - Rotatable Standing Lamp with Touch & Remote Control, 3000-6000K, 22W Modern Floor Reading Light, Dimmable Corner Uplighter for Living Room Bedroom Office, Black",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0B71LHCV6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61GW6E8hyKL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

@@ -198,14 +198,20 @@ class TestBuildCatalogPlan:
             assert term, "Empty search_term in query"
 
     def test_every_bedroom_slot_covered(self):
-        """Every slot in the bedroom preset should have at least one query."""
+        """Every slot in the bedroom preset should have queries or existing catalog data."""
         from scripts.build_catalog import BEDROOM_QUERIES
         from services.config_loader import load_room_taxonomy
+        from services.sourcing.catalog_cache import read_cache
 
         taxonomy = load_room_taxonomy()
         bedroom = taxonomy.room_presets["bedroom"]
         bedroom_slots = set(bedroom.all_items())
 
         queried_slots = {slot_id for slot_id, _ in BEDROOM_QUERIES}
-        missing = bedroom_slots - queried_slots
-        assert not missing, f"Bedroom slots with no queries: {missing}"
+        # Slots with 200+ cached products don't need active queries.
+        cached_slots = {
+            sid for sid in bedroom_slots
+            if (data := read_cache(sid)) is not None and len(data) >= 200
+        }
+        missing = bedroom_slots - queried_slots - cached_slots
+        assert not missing, f"Bedroom slots with no queries and insufficient cache: {missing}"

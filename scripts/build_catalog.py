@@ -40,90 +40,172 @@ from services.sourcing.catalog_cache import merge_cache, read_cache  # noqa: E40
 # Goal: 2-3 style variants per slot so the LLM has diverse candidates.
 
 BEDROOM_QUERIES: list[tuple[str, str]] = [
-    # bed_frame — 3 style variants × 4 sizes
-    ("bed_frame", "wood platform twin bed frame"),
-    ("bed_frame", "upholstered twin bed frame"),
-    ("bed_frame", "metal twin bed frame"),
-    ("bed_frame", "wood platform full bed frame"),
-    ("bed_frame", "upholstered full bed frame"),
-    ("bed_frame", "metal full bed frame"),
-    ("bed_frame", "wood platform queen bed frame"),
-    ("bed_frame", "upholstered queen bed frame"),
-    ("bed_frame", "metal queen bed frame"),
-    ("bed_frame", "wood platform king bed frame"),
-    ("bed_frame", "upholstered king bed frame"),
-    ("bed_frame", "metal king bed frame"),
-    # mattress — 2 variants × 4 sizes
-    ("mattress", "twin memory foam mattress"),
-    ("mattress", "twin hybrid mattress"),
-    ("mattress", "full memory foam mattress"),
-    ("mattress", "full hybrid mattress"),
-    ("mattress", "queen memory foam mattress"),
-    ("mattress", "queen hybrid mattress"),
-    ("mattress", "king memory foam mattress"),
-    ("mattress", "king hybrid mattress"),
-    # sheets — 2 variants × 4 sizes
-    ("sheets", "twin cotton sheet set"),
-    ("sheets", "twin microfiber sheet set"),
-    ("sheets", "full cotton sheet set"),
-    ("sheets", "full microfiber sheet set"),
-    ("sheets", "queen cotton sheet set"),
-    ("sheets", "queen linen sheet set"),
-    ("sheets", "king cotton sheet set"),
-    ("sheets", "king linen sheet set"),
-    # comforter — 2 variants × 4 sizes
-    ("comforter", "twin comforter set neutral"),
-    ("comforter", "twin down alternative comforter"),
-    ("comforter", "full comforter set neutral"),
-    ("comforter", "full down alternative comforter"),
-    ("comforter", "queen comforter set neutral"),
-    ("comforter", "queen down alternative comforter"),
-    ("comforter", "king comforter set neutral"),
-    ("comforter", "king down alternative comforter"),
-    # pillows — 2 variants (no size spec required)
-    ("pillows", "bed pillows queen size 2 pack"),
-    ("pillows", "down alternative pillows queen"),
-    # nightstand — 3 variants
-    ("nightstand", "wood nightstand with drawer"),
-    ("nightstand", "modern nightstand"),
-    ("nightstand", "rustic bedside table"),
-    # dresser — 2 variants
-    ("dresser", "6 drawer dresser wood"),
-    ("dresser", "modern bedroom dresser"),
-    # ceiling_light — 2 variants
-    ("ceiling_light", "flush mount ceiling light modern"),
-    ("ceiling_light", "boho rattan ceiling light"),
-    # table_lamp — 3 variants
-    ("table_lamp", "bedside table lamp modern"),
-    ("table_lamp", "ceramic table lamp neutral"),
-    ("table_lamp", "wood table lamp with linen shade"),
-    # floor_lamp — 2 variants
-    ("floor_lamp", "modern floor lamp living room"),
-    ("floor_lamp", "wood tripod floor lamp"),
-    # wall_art — 3 variants
-    ("wall_art", "minimalist wall art set"),
-    ("wall_art", "botanical print framed wall art"),
-    ("wall_art", "abstract neutral canvas wall art"),
-    # plants — 2 variants
-    ("plants", "artificial plant indoor"),
-    ("plants", "faux plant home decor"),
-    # mirror — 2 variants
-    ("mirror", "full length mirror bedroom"),
-    ("mirror", "round wall mirror"),
-    # rug — 3 variants
-    ("rug", "wool area rug 5x8"),
-    ("rug", "jute area rug 5x8"),
-    ("rug", "modern area rug 5x8"),
-    # curtains — 2 variants
-    ("curtains", "linen curtains bedroom"),
-    ("curtains", "blackout curtains neutral"),
-    # throw_blanket — 2 variants
-    ("throw_blanket", "knit throw blanket"),
-    ("throw_blanket", "cozy throw blanket neutral"),
+    # =================================================================
+    # BED-GROUP CATEGORIES — already 200+ each, skip these entirely.
+    # bed_frame (296), mattress (238), sheets (242), comforter (268).
+    # =================================================================
+
+    # -----------------------------------------------------------------
+    # pillows — currently 40, target 150+
+    # -----------------------------------------------------------------
+    ("pillows", "memory foam pillow queen size"),
+    ("pillows", "gel cooling pillow queen"),
+    ("pillows", "firm bed pillow queen 2 pack"),
+    ("pillows", "soft bed pillow queen 2 pack"),
+    ("pillows", "hotel quality pillow queen"),
+    ("pillows", "bamboo pillow queen size"),
+    ("pillows", "shredded memory foam pillow"),
+    ("pillows", "hypoallergenic pillow queen"),
+
+    # -----------------------------------------------------------------
+    # nightstand — currently 101, target 200+
+    # -----------------------------------------------------------------
+    ("nightstand", "mid century modern nightstand walnut"),
+    ("nightstand", "industrial metal nightstand"),
+    ("nightstand", "white nightstand coastal"),
+    ("nightstand", "nightstand with charging station"),
+    ("nightstand", "minimalist nightstand bedroom"),
+    ("nightstand", "farmhouse nightstand wood"),
+
+    # -----------------------------------------------------------------
+    # dresser — currently 72, target 200+
+    # -----------------------------------------------------------------
+    ("dresser", "mid century modern dresser walnut"),
+    ("dresser", "industrial metal dresser"),
+    ("dresser", "white dresser coastal bedroom"),
+    ("dresser", "tall dresser 5 drawer bedroom"),
+    ("dresser", "small dresser bedroom compact"),
+    ("dresser", "wide dresser 6 drawer"),
+
+    # -----------------------------------------------------------------
+    # ceiling_light — currently 73, target 200+
+    # -----------------------------------------------------------------
+    ("ceiling_light", "mid century modern ceiling light"),
+    ("ceiling_light", "industrial ceiling light matte black"),
+    ("ceiling_light", "coastal flush mount ceiling light"),
+    ("ceiling_light", "minimalist flush mount ceiling light"),
+    ("ceiling_light", "bedroom ceiling light fixture"),
+    ("ceiling_light", "led flush mount light warm white"),
+
+    # -----------------------------------------------------------------
+    # table_lamp — currently 80, target 200+
+    # -----------------------------------------------------------------
+    ("table_lamp", "mid century modern table lamp brass"),
+    ("table_lamp", "industrial table lamp matte black"),
+    ("table_lamp", "rattan table lamp boho"),
+    ("table_lamp", "small bedside lamp modern"),
+    ("table_lamp", "touch table lamp bedroom"),
+    ("table_lamp", "glass table lamp bedroom"),
+
+    # -----------------------------------------------------------------
+    # floor_lamp — currently 79, target 200+
+    # -----------------------------------------------------------------
+    ("floor_lamp", "mid century modern floor lamp brass"),
+    ("floor_lamp", "industrial floor lamp black metal"),
+    ("floor_lamp", "arc floor lamp minimalist"),
+    ("floor_lamp", "tripod floor lamp bedroom"),
+    ("floor_lamp", "reading floor lamp adjustable"),
+    ("floor_lamp", "dimmable floor lamp living room"),
+
+    # -----------------------------------------------------------------
+    # wall_art — currently 98, target 250+ (style + interest variants)
+    # -----------------------------------------------------------------
+    # Style variants
+    ("wall_art", "mid century modern wall art print"),
+    ("wall_art", "industrial wall art metal"),
+    ("wall_art", "coastal wall art ocean print"),
+    ("wall_art", "japandi wall art minimalist print"),
+    ("wall_art", "dark academia wall art vintage"),
+    ("wall_art", "black and white photography wall art"),
+    ("wall_art", "boho wall art set framed"),
+    ("wall_art", "abstract wall art large canvas"),
+    # Interest: music
+    ("wall_art", "music wall art vinyl record print"),
+    ("wall_art", "vinyl record wall art decor"),
+    ("wall_art", "music notes wall art bedroom"),
+    ("wall_art", "concert poster wall art vintage"),
+    # Interest: sports
+    ("wall_art", "sports wall art basketball poster"),
+    ("wall_art", "sports wall art football baseball"),
+    ("wall_art", "athletic wall art motivational"),
+    # Interest: travel
+    ("wall_art", "travel world map wall art print"),
+    ("wall_art", "travel poster wall art vintage city"),
+    ("wall_art", "destination prints wall art framed"),
+    # Interest: art & film
+    ("wall_art", "movie poster wall art classic film"),
+    ("wall_art", "gallery wall art prints framed"),
+    ("wall_art", "fine art photography print framed"),
+    # Interest: books
+    ("wall_art", "literary wall art book quote print"),
+    ("wall_art", "library wall art vintage book print"),
+    # Interest: gaming
+    ("wall_art", "gaming wall art retro neon"),
+    ("wall_art", "video game wall art poster"),
+    # Interest: plants / nature
+    ("wall_art", "nature photography wall art landscape"),
+    ("wall_art", "botanical illustration wall art framed"),
+
+    # -----------------------------------------------------------------
+    # plants — currently 71, target 200+
+    # -----------------------------------------------------------------
+    ("plants", "artificial snake plant indoor"),
+    ("plants", "faux eucalyptus plant"),
+    ("plants", "fake pothos plant indoor"),
+    ("plants", "artificial bird of paradise"),
+    ("plants", "faux fiddle leaf fig tree"),
+    ("plants", "small artificial succulent plant set"),
+    ("plants", "artificial olive tree indoor"),
+    ("plants", "faux monstera plant"),
+
+    # -----------------------------------------------------------------
+    # mirror — currently 39, target 200+
+    # -----------------------------------------------------------------
+    ("mirror", "mid century modern mirror brass"),
+    ("mirror", "industrial mirror metal frame"),
+    ("mirror", "arched mirror bedroom"),
+    ("mirror", "full length floor mirror standing"),
+    ("mirror", "round wall mirror gold"),
+    ("mirror", "black framed wall mirror rectangle"),
+    ("mirror", "vanity mirror bedroom"),
+    ("mirror", "oval wall mirror bathroom"),
+
+    # -----------------------------------------------------------------
+    # rug — currently 89, target 200+
+    # -----------------------------------------------------------------
+    ("rug", "mid century modern area rug 5x8"),
+    ("rug", "industrial area rug dark 5x8"),
+    ("rug", "coastal area rug blue white 5x8"),
+    ("rug", "boho area rug colorful 5x8"),
+    ("rug", "neutral area rug bedroom 8x10"),
+    ("rug", "washable area rug 5x8"),
+    ("rug", "shag area rug bedroom 5x8"),
+    ("rug", "geometric area rug modern 5x8"),
+
+    # -----------------------------------------------------------------
+    # curtains — currently 70, target 200+
+    # -----------------------------------------------------------------
+    ("curtains", "mid century modern curtains"),
+    ("curtains", "velvet curtains bedroom"),
+    ("curtains", "sheer curtains white bedroom"),
+    ("curtains", "blackout curtains 84 inch"),
+    ("curtains", "linen curtains natural beige"),
+    ("curtains", "thermal insulated curtains bedroom"),
+
+    # -----------------------------------------------------------------
+    # throw_blanket — currently 66, target 200+
+    # -----------------------------------------------------------------
+    ("throw_blanket", "chunky knit throw blanket"),
+    ("throw_blanket", "cotton throw blanket minimalist"),
+    ("throw_blanket", "faux fur throw blanket"),
+    ("throw_blanket", "waffle weave throw blanket"),
+    ("throw_blanket", "fleece throw blanket soft"),
+    ("throw_blanket", "woven throw blanket boho"),
+    ("throw_blanket", "lightweight throw blanket summer"),
 ]
 
 DEFAULT_LIMIT = 40
-DEFAULT_MAX_REQUESTS = 80
+DEFAULT_MAX_REQUESTS = 120
 
 
 # ---------------------------------------------------------------------------
