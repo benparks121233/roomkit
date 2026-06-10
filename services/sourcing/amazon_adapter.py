@@ -29,6 +29,10 @@ _CATALOG_DIR = Path(__file__).parent.parent.parent / "data" / "catalog"
 # Default affiliate tag; overridden via AMAZON_AFFILIATE_TAG env var.
 _DEFAULT_AFFILIATE_TAG = "roomkitai-20"
 
+# Maximum candidates sent to the selection LLM.  Keeps input tokens bounded
+# and gives the LLM a tighter, more on-style shortlist.
+_MAX_CANDIDATES = 25
+
 
 class AmazonAdapter(SourcingAdapter):
     """Sourcing adapter that reads from Canopy cache or fixture files.
@@ -96,7 +100,11 @@ class AmazonAdapter(SourcingAdapter):
                 fetched_at=now,
             ))
 
-        return candidates
+        # Sort by style-keyword relevance and cap to keep input tokens bounded.
+        if len(candidates) > _MAX_CANDIDATES and style_keywords:
+            candidates = self._rank_by_relevance(candidates, style_keywords)
+
+        return candidates[:_MAX_CANDIDATES] if len(candidates) > _MAX_CANDIDATES else candidates
 
     # ------------------------------------------------------------------
     # Private helpers
@@ -138,6 +146,24 @@ class AmazonAdapter(SourcingAdapter):
                 if product_specs[key].lower() != str(required_value).lower():
                     return False
         return True
+
+    @staticmethod
+    def _rank_by_relevance(
+        candidates: list[Product], keywords: list[str],
+    ) -> list[Product]:
+        """Sort candidates so style-relevant products come first.
+
+        Scores each product by counting how many style keywords appear in
+        its name (case-insensitive).  Higher-scoring products sort first;
+        ties preserve original order (stable sort).
+        """
+        kw_lower = [k.lower() for k in keywords]
+
+        def score(product: Product) -> int:
+            name = product.name.lower()
+            return sum(1 for kw in kw_lower if kw in name)
+
+        return sorted(candidates, key=score, reverse=True)
 
     def _inject_affiliate_tag(self, url: str) -> str:
         """Ensure the buy_url contains the affiliate tag query parameter."""

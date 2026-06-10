@@ -7,6 +7,15 @@ import Image from "next/image";
 import { useState } from "react";
 import type { SlotResult } from "@/lib/api";
 
+/**
+ * Upgrade Amazon product image URLs from 320px thumbnails to 800px.
+ * Canopy returns URLs like `…/ID._AC_UL320_.jpg`; replacing the size
+ * token gives us the same image at higher resolution — no extra API call.
+ */
+function upgradeAmazonImage(url: string): string {
+  return url.replace(/\._AC_[A-Z]{2}\d+_\./, "._AC_SL800_.");
+}
+
 export default function ProductCard({ slot }: { slot: SlotResult }) {
   const [imgError, setImgError] = useState(false);
 
@@ -51,10 +60,11 @@ export default function ProductCard({ slot }: { slot: SlotResult }) {
       <div className="card-image-wrap">
         {showImage ? (
           <Image
-            src={product.image_url}
+            src={upgradeAmazonImage(product.image_url)}
             alt={product.name}
-            width={280}
-            height={280}
+            width={800}
+            height={800}
+            sizes="(max-width: 640px) 50vw, 280px"
             style={{ objectFit: "contain", width: "100%", height: "auto" }}
             onError={() => setImgError(true)}
           />
