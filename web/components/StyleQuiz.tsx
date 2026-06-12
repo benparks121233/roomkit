@@ -120,6 +120,9 @@ const Q_CORE: QuizStepDef = {
     { key: "sports_den",    label: "Sports Den",    description: "Dark + loungey",     swatches: ["#2A2A2A", "#8B6F47"], image: "core_sports_den.jpg" },
     { key: "city_modern",   label: "City Modern",   description: "Sleek + urban",      swatches: ["#3A3A3A", "#FFFFFF"], image: "core_city_modern.jpg" },
     { key: "ski_lodge",     label: "Ski Lodge",     description: "Cozy + alpine",      swatches: ["#8B6F47", "#D4B896"], image: "core_ski_lodge.jpg" },
+    { key: "jungle_oasis", label: "Jungle Oasis",  description: "Lush + tropical",    swatches: ["#4A6741", "#C4A882"], image: "core_jungle_oasis.jpg" },
+    { key: "gamer_den",    label: "Gamer Den",     description: "Dark + techy",       swatches: ["#1A1A2E", "#7B5EA7"], image: "core_gamer_den.jpg" },
+    { key: "poster_maximalist", label: "Poster Maximalist", description: "Eclectic + expressive", swatches: ["#C67B5C", "#E8C547"], image: "core_poster_maximalist.jpg" },
   ],
 };
 
@@ -136,19 +139,24 @@ const Q_MOOD: QuizStepDef = {
     { key: "bold_confident",   label: "Bold & Confident",    swatches: ["#8B1A2B", "#C89B3C"], image: "mood_bold_confident.jpg" },
     { key: "moody_deep",       label: "Moody & Deep",        swatches: ["#2A2A2A", "#4A3A2A"], image: "mood_moody_deep.jpg" },
     { key: "playful_eclectic", label: "Playful & Eclectic",  swatches: ["#C67B5C", "#6B7C4E"], image: "mood_playful_eclectic.jpg" },
+    { key: "heritage",         label: "Heritage",            swatches: ["#5E4B3B", "#C89B3C"], image: "mood_heritage.jpg" },
+    { key: "alpine",           label: "Alpine",              swatches: ["#8B6F47", "#D4B896"], image: "mood_alpine.jpg" },
   ],
 };
 
 const MOOD_ORDER: Record<string, string[]> = {
-  cottagecore:   ["warm_cozy", "soft_still", "bright_airy", "playful_eclectic", "bold_confident", "moody_deep"],
-  dark_academia: ["moody_deep", "warm_cozy", "bold_confident", "soft_still", "playful_eclectic", "bright_airy"],
-  japandi:       ["soft_still", "bright_airy", "warm_cozy", "moody_deep", "bold_confident", "playful_eclectic"],
-  coastal:       ["bright_airy", "soft_still", "warm_cozy", "playful_eclectic", "bold_confident", "moody_deep"],
-  industrial:    ["moody_deep", "bold_confident", "warm_cozy", "playful_eclectic", "soft_still", "bright_airy"],
-  quiet_luxury:  ["soft_still", "warm_cozy", "bold_confident", "bright_airy", "moody_deep", "playful_eclectic"],
-  sports_den:    ["moody_deep", "bold_confident", "warm_cozy", "playful_eclectic", "soft_still", "bright_airy"],
-  city_modern:   ["bold_confident", "moody_deep", "bright_airy", "soft_still", "warm_cozy", "playful_eclectic"],
-  ski_lodge:     ["warm_cozy", "soft_still", "moody_deep", "bright_airy", "bold_confident", "playful_eclectic"],
+  cottagecore:   ["warm_cozy", "soft_still", "bright_airy", "heritage", "playful_eclectic", "alpine", "bold_confident", "moody_deep"],
+  dark_academia: ["moody_deep", "heritage", "warm_cozy", "bold_confident", "soft_still", "alpine", "playful_eclectic", "bright_airy"],
+  japandi:       ["soft_still", "bright_airy", "warm_cozy", "moody_deep", "heritage", "bold_confident", "alpine", "playful_eclectic"],
+  coastal:       ["bright_airy", "soft_still", "warm_cozy", "playful_eclectic", "alpine", "bold_confident", "heritage", "moody_deep"],
+  industrial:    ["moody_deep", "bold_confident", "warm_cozy", "alpine", "playful_eclectic", "heritage", "soft_still", "bright_airy"],
+  quiet_luxury:  ["heritage", "soft_still", "warm_cozy", "bold_confident", "bright_airy", "moody_deep", "alpine", "playful_eclectic"],
+  sports_den:    ["moody_deep", "bold_confident", "heritage", "warm_cozy", "playful_eclectic", "alpine", "soft_still", "bright_airy"],
+  city_modern:   ["bold_confident", "moody_deep", "heritage", "bright_airy", "soft_still", "warm_cozy", "alpine", "playful_eclectic"],
+  ski_lodge:     ["alpine", "warm_cozy", "soft_still", "moody_deep", "heritage", "bright_airy", "bold_confident", "playful_eclectic"],
+  jungle_oasis:  ["warm_cozy", "soft_still", "bright_airy", "playful_eclectic", "alpine", "bold_confident", "heritage", "moody_deep"],
+  gamer_den:     ["moody_deep", "bold_confident", "playful_eclectic", "warm_cozy", "alpine", "soft_still", "heritage", "bright_airy"],
+  poster_maximalist: ["playful_eclectic", "bold_confident", "warm_cozy", "moody_deep", "alpine", "bright_airy", "heritage", "soft_still"],
 };
 
 const Q_PALETTE: QuizStepDef = {
@@ -164,19 +172,24 @@ const Q_PALETTE: QuizStepDef = {
     { key: "coastal_soft",  label: "Coastal Soft",    swatches: ["#FFFFFF", "#A8C4B8", "#D4C5A9"], image: "palette_coastal_soft.jpg" },
     { key: "dark_moody",    label: "Dark & Moody",    swatches: ["#3A3A3A", "#5E4B3B", "#C89B3C"], image: "palette_dark_moody.jpg" },
     { key: "blush_sage",    label: "Blush & Sage",    swatches: ["#D4A9A1", "#9CAF88", "#F5F0E8"], image: "palette_blush_sage.jpg" },
+    { key: "verdant",       label: "Verdant",         swatches: ["#2D5A3D", "#6B7C4E", "#B5A167"], image: "palette_verdant.jpg" },
+    { key: "electric",      label: "Electric",        swatches: ["#2A4FBF", "#E85D5D", "#F0C040"], image: "palette_electric.jpg" },
   ],
 };
 
 const PALETTE_ORDER: Record<string, string[]> = {
-  cottagecore:   ["blush_sage", "warm_neutrals", "coastal_soft", "earthy_rich", "jewel_tones", "dark_moody"],
-  dark_academia: ["dark_moody", "earthy_rich", "jewel_tones", "warm_neutrals", "blush_sage", "coastal_soft"],
-  japandi:       ["warm_neutrals", "coastal_soft", "blush_sage", "dark_moody", "earthy_rich", "jewel_tones"],
-  coastal:       ["coastal_soft", "warm_neutrals", "blush_sage", "earthy_rich", "jewel_tones", "dark_moody"],
-  industrial:    ["dark_moody", "earthy_rich", "warm_neutrals", "jewel_tones", "coastal_soft", "blush_sage"],
-  quiet_luxury:  ["warm_neutrals", "blush_sage", "coastal_soft", "earthy_rich", "dark_moody", "jewel_tones"],
-  sports_den:    ["dark_moody", "earthy_rich", "jewel_tones", "warm_neutrals", "coastal_soft", "blush_sage"],
-  city_modern:   ["dark_moody", "warm_neutrals", "coastal_soft", "jewel_tones", "earthy_rich", "blush_sage"],
-  ski_lodge:     ["earthy_rich", "warm_neutrals", "dark_moody", "blush_sage", "jewel_tones", "coastal_soft"],
+  cottagecore:   ["blush_sage", "warm_neutrals", "verdant", "coastal_soft", "earthy_rich", "jewel_tones", "electric", "dark_moody"],
+  dark_academia: ["dark_moody", "earthy_rich", "jewel_tones", "verdant", "warm_neutrals", "blush_sage", "coastal_soft", "electric"],
+  japandi:       ["warm_neutrals", "coastal_soft", "blush_sage", "verdant", "dark_moody", "earthy_rich", "jewel_tones", "electric"],
+  coastal:       ["coastal_soft", "warm_neutrals", "blush_sage", "verdant", "earthy_rich", "electric", "jewel_tones", "dark_moody"],
+  industrial:    ["dark_moody", "earthy_rich", "warm_neutrals", "jewel_tones", "verdant", "electric", "coastal_soft", "blush_sage"],
+  quiet_luxury:  ["warm_neutrals", "blush_sage", "coastal_soft", "earthy_rich", "verdant", "dark_moody", "jewel_tones", "electric"],
+  sports_den:    ["dark_moody", "earthy_rich", "jewel_tones", "warm_neutrals", "verdant", "coastal_soft", "electric", "blush_sage"],
+  city_modern:   ["dark_moody", "warm_neutrals", "electric", "coastal_soft", "jewel_tones", "earthy_rich", "verdant", "blush_sage"],
+  ski_lodge:     ["earthy_rich", "warm_neutrals", "verdant", "dark_moody", "blush_sage", "jewel_tones", "coastal_soft", "electric"],
+  jungle_oasis:  ["verdant", "earthy_rich", "warm_neutrals", "blush_sage", "dark_moody", "jewel_tones", "coastal_soft", "electric"],
+  gamer_den:     ["dark_moody", "electric", "jewel_tones", "verdant", "earthy_rich", "warm_neutrals", "coastal_soft", "blush_sage"],
+  poster_maximalist: ["electric", "jewel_tones", "earthy_rich", "warm_neutrals", "verdant", "blush_sage", "dark_moody", "coastal_soft"],
 };
 
 const Q_MATERIALS: QuizStepDef = {
@@ -192,7 +205,6 @@ const Q_MATERIALS: QuizStepDef = {
     { key: "walnut_leather", label: "Walnut & Leather", swatches: ["#5E4B3B"], image: "material_walnut_leather.jpg" },
     { key: "velvet_brass",   label: "Velvet & Brass",   swatches: ["#8B1A2B"], image: "material_velvet_brass.jpg" },
     { key: "rattan_cotton",  label: "Rattan & Cotton",  swatches: ["#D4C5A9"], image: "material_rattan_cotton.jpg" },
-    { key: "metal_concrete", label: "Metal & Concrete", swatches: ["#7A7A7A"], image: "material_metal_concrete.jpg" },
   ],
 };
 
@@ -374,6 +386,8 @@ const MOOD_PHRASES: Record<string, string> = {
   bold_confident:   "bold and confident, with saturated decisive tones",
   moody_deep:       "moody and atmospheric, with rich depth",
   playful_eclectic: "playful and eclectic, with vibrant mixed energy",
+  heritage:         "refined and heritage-inspired, with antiques, rich woods, and understated old-money elegance",
+  alpine:           "alpine and lodge-like, with timber, wool, and cozy-grand mountain warmth",
 };
 
 const MATERIAL_PHRASES: Record<string, string> = {
@@ -381,7 +395,6 @@ const MATERIAL_PHRASES: Record<string, string> = {
   walnut_leather: "walnut and leather",
   velvet_brass:   "velvet and brass accents",
   rattan_cotton:  "rattan and cotton",
-  metal_concrete: "metal and concrete",
 };
 
 const PALETTE_PHRASES: Record<string, string> = {
@@ -391,6 +404,8 @@ const PALETTE_PHRASES: Record<string, string> = {
   coastal_soft:  "in coastal tones with white, seafoam, and sand",
   dark_moody:    "in dark tones with charcoal, dark wood, and warm amber",
   blush_sage:    "in soft blush and sage with dusty pink, green, and cream",
+  verdant:       "in deep botanical greens with emerald, olive, and warm brass accents",
+  electric:      "in saturated modern brights with bold color-blocking — cobalt, coral, and sunshine yellow, kept intentional and premium",
 };
 
 const SHAPE_PHRASES: Record<string, string> = {
@@ -441,12 +456,14 @@ const MOOD_LABELS: Record<string, string> = {
   soft_still: "Soft & Still", bright_airy: "Bright & Airy",
   warm_cozy: "Warm & Cozy", bold_confident: "Bold & Confident",
   moody_deep: "Moody & Deep", playful_eclectic: "Playful & Eclectic",
+  heritage: "Heritage", alpine: "Alpine",
 };
 
 const PALETTE_LABELS: Record<string, string> = {
   warm_neutrals: "Warm Neutrals", earthy_rich: "Earthy & Rich",
   jewel_tones: "Jewel Tones", coastal_soft: "Coastal Soft",
   dark_moody: "Dark & Moody", blush_sage: "Blush & Sage",
+  verdant: "Verdant", electric: "Electric",
 };
 
 function buildSummary(core: string, mood: string, palette: string): string {
@@ -600,6 +617,7 @@ export default function StyleQuiz({ onComplete }: Props) {
   const [roomType, setRoomType] = useState("bedroom");
   const [bedSize, setBedSize] = useState("queen");
   const [budget, setBudget] = useState(2500);
+  const [budgetText, setBudgetText] = useState("2,500");
   const [fullRoom, setFullRoom] = useState(true);
   const [wants, setWants] = useState<string[]>([]);
 
@@ -805,18 +823,50 @@ export default function StyleQuiz({ onComplete }: Props) {
     if (current.layout === "budget") {
       return (
         <div className="budget-step">
-          <div className="budget-display">${budget.toLocaleString()}</div>
+          <div className="budget-input-wrapper">
+            <span className="budget-currency">$</span>
+            <input
+              type="text"
+              inputMode="numeric"
+              value={budgetText}
+              onChange={(e) => {
+                const raw = e.target.value.replace(/[^0-9]/g, "");
+                setBudgetText(raw);
+                const val = parseInt(raw, 10);
+                if (!isNaN(val) && val >= 0) {
+                  setBudget(Math.min(val, 5000));
+                } else if (raw === "") {
+                  setBudget(0);
+                }
+              }}
+              onBlur={() => {
+                const clamped = Math.min(Math.max(budget, 0), 5000);
+                setBudget(clamped);
+                setBudgetText(clamped.toLocaleString());
+              }}
+              onFocus={(e) => {
+                setBudgetText(budget === 0 ? "" : String(budget));
+                e.target.select();
+              }}
+              placeholder="2,500"
+              className="budget-text-input"
+            />
+          </div>
           <input
             type="range"
-            min={20}
+            min={0}
             max={5000}
             step={10}
             value={budget}
-            onChange={(e) => setBudget(Number(e.target.value))}
+            onChange={(e) => {
+              const val = Number(e.target.value);
+              setBudget(val);
+              setBudgetText(val.toLocaleString());
+            }}
             className="budget-slider"
           />
           <div className="budget-range-labels">
-            <span>$20</span>
+            <span>$0</span>
             <span>$5,000</span>
           </div>
         </div>

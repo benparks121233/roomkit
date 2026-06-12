@@ -27,17 +27,18 @@ from schemas.style_profile import StyleProfile
 
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-haiku-4-5-20251001"
-_LLM_MAX_TOKENS = 2048  # sized for 18-pick slots (wall_art); ~65 tokens/pick + JSON structure
+_LLM_MAX_TOKENS = 4096  # sized for 35-pick slots (wall_art); ~65 tokens/pick + JSON structure
 _RETRY_MAX = 3
 _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 
-# Default number of ranked picks to request from the LLM.
-_DEFAULT_PICK_COUNT = 9
+# Number of ranked picks to REQUEST from the LLM. We over-request by ~30%
+# because the diversity filter (brand dedup) typically removes 2-4 items.
+_DEFAULT_PICK_COUNT = 18
 
 # Per-slot overrides for slots that benefit from more options.
 _SLOT_PICK_COUNTS: dict[str, int] = {
-    "wall_art": 18,
-    "plants": 12,
+    "wall_art": 35,
+    "plants": 24,
 }
 
 
@@ -52,6 +53,114 @@ _INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
 def pick_count_for_slot(slot_id: str) -> int:
     """Return the number of ranked picks to request for a given slot."""
     return _SLOT_PICK_COUNTS.get(slot_id, _DEFAULT_PICK_COUNT)
+
+
+# Decor slots have tighter price constraints (5–50% of budget vs 35–100%).
+_DECOR_SLOTS = {"wall_art", "plants", "mirror", "throw_blanket", "curtains"}
+
+
+# Common product-type words that are NOT brands.
+_NOT_BRANDS = {
+    "lamp", "table", "floor", "wall", "ceiling", "modern", "simple", "vintage",
+    "rustic", "classic", "large", "small", "set", "pack", "led", "white",
+    "black", "fluted", "rattan", "wood", "metal", "fabric", "natural",
+    "abstract", "botanical", "framed", "decorative",
+}
+
+
+def _extract_brand(name: str) -> str:
+    """Extract brand from a product name (typically the first word/token).
+
+    Returns empty string if the first word is a generic product-type word
+    (not a real brand). Real Amazon brands are usually all-caps or proper
+    nouns like VASAGLE, Brightech, WLIVE, etc.
+    """
+    # Strip leading quotes, numbers, special chars
+    cleaned = re.sub(r'^[\d"\']+\s*', "", name.strip())
+    first_word = cleaned.split()[0] if cleaned.split() else ""
+    lower = first_word.lower()
+    # Skip generic product-type words
+    if lower in _NOT_BRANDS:
+        return ""
+    return lower
+
+
+def _name_keywords(name: str) -> set[str]:
+    """Extract meaningful keywords from a product name (lowercase, 4+ chars)."""
+    words = re.findall(r"[a-zA-Z]{4,}", name.lower())
+    # Skip the brand (first word) and common filler words
+    skip = {"with", "from", "that", "this", "wood", "inch", "wide", "tall", "drawer", "drawers"}
+    return {w for w in words[1:] if w not in skip}
+
+
+def _apply_diversity_rules(
+    products: list[Product],
+    fit_reasons: list[str],
+    allocated_budget: float,
+    slot_id: str,
+) -> tuple[list[Product], list[str]]:
+    """Post-LLM filter enforcing brand diversity and price spread.
+
+    Rules:
+      - Max 2 products from the same brand per slot.
+      - Same-brand items must have meaningfully different keywords.
+      - After brand dedup, backfill cheaper options to ensure price diversity.
+    """
+    # Track brand counts and keyword sets per brand
+    brand_count: dict[str, int] = {}
+    brand_keywords: dict[str, list[set[str]]] = {}
+
+    filtered: list[Product] = []
+    filtered_reasons: list[str] = []
+
+    for product, reason in zip(products, fit_reasons):
+        brand = _extract_brand(product.name)
+        keywords = _name_keywords(product.name)
+
+        # Brand-level checks only apply when we can detect a real brand
+        if brand:
+            count = brand_count.get(brand, 0)
+
+            # Max 2 per brand
+            if count >= 2:
+                continue
+
+            # Same brand items must have different keywords
+            if count > 0 and brand in brand_keywords:
+                prev_kw_sets = brand_keywords[brand]
+                too_similar = any(
+                    len(keywords & prev) > max(len(keywords), len(prev)) * 0.5
+                    for prev in prev_kw_sets
+                )
+                if too_similar:
+                    continue
+
+        if brand:
+            brand_count[brand] = brand_count.get(brand, 0) + 1
+            brand_keywords.setdefault(brand, []).append(keywords)
+        filtered.append(product)
+        filtered_reasons.append(reason)
+
+    # Price spread: ensure we have items across a range.
+    # If all items cluster in the top 60% of the budget, pull in a cheaper
+    # option from the original ranked list that we may have skipped.
+    is_decor = slot_id in _DECOR_SLOTS
+    cheap_threshold = allocated_budget * (0.15 if is_decor else 0.40)
+    if len(filtered) >= 3:
+        has_affordable = any(p.normalized_price <= cheap_threshold for p in filtered)
+        if not has_affordable:
+            included_ids = {p.product_id for p in filtered}
+            for product, reason in zip(products, fit_reasons):
+                if product.product_id in included_ids:
+                    continue
+                if product.normalized_price <= cheap_threshold:
+                    brand = _extract_brand(product.name)
+                    if not brand or brand_count.get(brand, 0) < 2:
+                        filtered.append(product)
+                        filtered_reasons.append(reason)
+                        break
+
+    return filtered, filtered_reasons
 
 
 def select_products(
@@ -87,8 +196,9 @@ def select_products(
         return [], [], "no_candidate"
 
     # Double-check: filter candidates by slot's required specs and price band.
-    # The adapter should have already done this, but we enforce defensively.
-    price_max = slot.allocated_budget
+    # We allow up to 1.5x the slot budget so users see more variety — budget
+    # enforcement happens in the UI with over-budget warnings.
+    price_max = slot.allocated_budget * 1.5
     spec_valid = [c for c in candidates if _satisfies_specs(c, slot.required_specs)]
     valid = [c for c in spec_valid if c.normalized_price <= price_max]
     if not valid:
@@ -112,6 +222,21 @@ def select_products(
     except Exception:
         logger.exception("Selection LLM call failed for slot %s", slot.slot_id)
         return [], [], "llm_error"
+
+    pre_diversity = len(products)
+
+    # Apply diversity rules: brand dedup, price spread, per-item cap.
+    if products:
+        products, fit_reasons = _apply_diversity_rules(
+            products, fit_reasons, slot.allocated_budget, slot.slot_id,
+        )
+        if not products:
+            return [], [], "llm_error"
+
+    logger.info(
+        "Slot %s: %d candidates → LLM returned %d → diversity filter kept %d (requested %d)",
+        slot.slot_id, len(valid), pre_diversity, len(products), pick_count,
+    )
 
     return products, fit_reasons, null_reason
 
@@ -201,9 +326,41 @@ def _build_selection_prompts(
     price_max = slot.allocated_budget
 
     # Interest line — only for decor slots with user interests.
+    # For wall_art, interests are the dominant signal.
     interests_line = ""
     if interests:
-        interests_line = f"User interests: {', '.join(interests)}\n"
+        if slot.slot_id == "wall_art":
+            interests_line = (
+                f"User interests: {', '.join(interests)}\n"
+                f"IMPORTANT: This is wall art — the user's interests should be the "
+                f"PRIMARY factor in your rankings. Most of your picks should directly "
+                f"reflect these interests. Only use room style as a secondary filter "
+                f"to avoid outright clashes.\n"
+            )
+        else:
+            interests_line = f"User interests: {', '.join(interests)}\n"
+
+    # Neutral fallback instruction for basics (sheets, pillows, curtains,
+    # throw_blanket).  The majority of picks stay characterful/varied; we just
+    # guarantee 2-3 clean neutral staples among them.
+    _NEUTRAL_SLOTS = {"sheets", "throw_blanket", "pillows", "curtains"}
+    neutral_instruction = ""
+    if slot.slot_id in _NEUTRAL_SLOTS:
+        # Pick neutral tones that match the room's mood.
+        mood_lower = (style_profile.mood or "").lower()
+        if any(w in mood_lower for w in ("moody", "dark", "bold", "deep")):
+            neutral_tones = "black, charcoal, or dark grey"
+        elif any(w in mood_lower for w in ("warm", "cozy", "heritage", "alpine")):
+            neutral_tones = "beige, oatmeal, or warm cream"
+        else:
+            neutral_tones = "white, cream, or light grey"
+        neutral_instruction = (
+            f"- NEUTRAL STAPLES: Among your {pick_count} picks, include 2-3 clean "
+            f"neutral options ({neutral_tones} — solid/plain, no patterns) so the "
+            f"user always has a safe fallback. The MAJORITY of your picks should "
+            f"still be varied, characterful, and interesting — patterns, colors, "
+            f"textures. Do NOT make the list mostly neutral."
+        )
 
     rendered = (
         template_text
@@ -216,6 +373,7 @@ def _build_selection_prompts(
         .replace("{{interests}}", interests_line)
         .replace("{{candidates_json}}", candidates_json)
         .replace("{{pick_count}}", str(pick_count))
+        .replace("{{neutral_instruction}}", neutral_instruction)
     )
 
     # Strip leading comment lines.

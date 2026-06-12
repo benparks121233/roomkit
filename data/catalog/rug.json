@@ -112,7 +112,7 @@
   {
     "product_id": "B0F5X83KSM",
     "name": "5x7 Area Rug Living Room Rug: Washable Modern Abstract Soft Thin Rug Indoor Floor No Slip Stain Resistant Carpet for Bedroom Dining Room Farmhouse Nursery Home Office - Black",
-    "normalized_price": 29.99,
+    "normalized_price": 26.99,
     "buy_url": "https://www.amazon.com/dp/B0F5X83KSM",
     "specs": {
       "dimensions": "5x7"
@@ -2442,7 +2442,7 @@
   {
     "product_id": "B0GL357H51",
     "name": "8x10 Area Rugs for Living Room: Vintage Boho Neutral Washable Rug Indoor Soft Large Area Rug Carpet for Bedroom Nursery Farmhouse Dining Room Office Floor Non-Slip Low Pile Under Table Rug Beige",
-    "normalized_price": 68.99,
+    "normalized_price": 62.09,
     "buy_url": "https://www.amazon.com/dp/B0GL357H51",
     "specs": {
       "dimensions": "8x10"
@@ -4313,6 +4313,947 @@
     "buy_url": "https://www.amazon.com/dp/B073H7359Q",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/A1mGUTewNeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSW8NGDD",
+    "name": "Rugxara Area Rugs 5x7 for Living Room Bedroom, Grey Washable Rug, Vintage Retro Boho Rug, Non Slip & Low Pile Faux Wool Thin Carpet for Indoor Dining Room, Dorm and Kids Room(Taupe/Grey 5x7ft)",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSW8NGDD",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81X7zzmqFYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQH4P2QC",
+    "name": "Toneed Abstract Area Rug Modern Washable Rug Soft Non Slip Rug Low Pile for Bedroom Living Room Dining Room Grey 4x6 Feet",
+    "normalized_price": 22.88,
+    "buy_url": "https://www.amazon.com/dp/B0DQH4P2QC",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81wvO+c8hfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9GFYJBV",
+    "name": "OLANLY Area Rugs for Living Room Bedroom, Machine Washable 4x5.9 ft Soft Fluffy Shaggy Bedside Rug, Indoor Floor Carpet for Kids Girls and Boys, Dorms, Nursery Rooms, Home Decor Aesthetic, Grey",
+    "normalized_price": 12.98,
+    "buy_url": "https://www.amazon.com/dp/B0D9GFYJBV",
+    "specs": {
+      "dimensions": "4x5"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91tpF-73gYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGP6H4ZP",
+    "name": "Lofus 5x7 Area Rugs for Living Room, Washable Area Rug, Rugs for Bedroom, Kitchen, Vintage Boho Carpet, Soft Non-Slip, Low Pile Large Area Rug for Office Dining Room, Floral Brown",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGP6H4ZP",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81OGye01M0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDGT7CJR",
+    "name": "8x10 Area Rugs for Living Room - Washable Rug Modern Abstract Soft Large Neutral Non-Slip Carpet Indoor Floor Stain Resistant Thin Carpets for Bedroom Dining Room Farmhouse Nursery Home Office Grey",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDGT7CJR",
+    "specs": {
+      "dimensions": "8x10"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bsVUbz55L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BLS4BR95",
+    "name": "Tortania Area Rug Living Room Rugs - 5x7 Washable Large Soft Neutral Boho Moroccan Bohemian Farmhouse Rug Indoor Floor Carpet for Bedroom Under Dining Table Home Office Decor - Cream Brown",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0BLS4BR95",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/919Q4pZlxnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C2Z1T5GV",
+    "name": "Nakagishi Area Rug Living Room Rugs: 5x7 Large Soft Machine Washable Boho Moroccan FarmNeutral Stain Resistant Indoor Floor Carpet for Bedroom Under Dining Table Home Office Decor-Cream Brown",
+    "normalized_price": 25.64,
+    "buy_url": "https://www.amazon.com/dp/B0C2Z1T5GV",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lgTGVLjoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FS26QTCM",
+    "name": "5x7 Area Rugs Living Room Rug: Washable Vintage Boho Rug No Slip Stain Resistant Soft Carpet Indoor Floor Floral Large Carpets for Bedroom Dining Room Farmhouse Nursery Hallway Home Office Beige",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FS26QTCM",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ZmCyyuRuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNWHB3ZN",
+    "name": "5x7 Area Rugs for Living Room Bedroom, Modern Abstract Washable Rug, Boho Non Slip Low Pile Carpet for Indoor Dining Room, Office, Dorm, Classroom, Farmhouse and Kids Room - Indigo Black",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNWHB3ZN",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91SkDHPhujL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CRHSPDFN",
+    "name": "RELEANY Washable Area Rugs 5'x7' Non-Slip Modern Abstract Soft for Living Room Entryway Bedroom Nursery, Print Pattern, Blue Grey Navy Gray",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0CRHSPDFN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81SDDp-XvYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSB6SYBB",
+    "name": "5x7 Area Rugs, Soft Non Slip Low Pile Washable Rug, Boho Modern Rug for Living Room, Bedroom, Dining Room, Sage Green",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSB6SYBB",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/9107onPqTSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLG1C7ZC",
+    "name": "Vintage Living Room Area Rug 5x7 - Large Soft Washable Oriental Traditional Distressed Farmhouse Rugs for Bedroom - Indoor Floor Accent Carpet for Home Office House Decor - Beige",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLG1C7ZC",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91HbMjBlGtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLNY1L3R",
+    "name": "Keeko 4x6 Area Rugs for Living Room, Soft Modern Memory Foam Bedroom Rug Washable Indoor Rug Low Pile Minimalist Non Slip Carpet for Kids Nursery Dorm Room Home Decor Brown and White",
+    "normalized_price": 18.73,
+    "buy_url": "https://www.amazon.com/dp/B0CLNY1L3R",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91KrKyQ4jZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSWBRT3L",
+    "name": "Rugxara Area Rugs 5x7, Washable Rugs for Living Room, Vintage Boho Light Blue Rug for Office, Dining Room, home decorKids Room and Farmhouse,Home Decor Durable Low Pile Non-Slip for High Traffic Areas",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSWBRT3L",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81HNX6NC2pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1T3FSYP",
+    "name": "6x9 Ft Large Area Rugs for Living Room, Soft Non-Slip Washable Rugs Modern Abstract Pattern Carpet for Bedroom Indoor Floor Nursery Home Decor (Blue)",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1T3FSYP",
+    "specs": {
+      "dimensions": "6x9"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810z4a1vvDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1VH7C94",
+    "name": "Black Rug for Bedroom, Soft Shaggy Modern Shag 4x6 Area Rugs for Living Room, Upgrade Non-Slip Plush Fluffy Carpet for Kids Boys Girls Room Dorm Home Decor Aesthetic",
+    "normalized_price": 16.96,
+    "buy_url": "https://www.amazon.com/dp/B0D1VH7C94",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ZXXa-QS-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZKNTWBY",
+    "name": "Area Rug Living Room Rugs: 5x7 Large Soft Indoor Carpet Modern Abstract Rug with Non Slip Rubber Backing for Under Dining Table Nursery Home Office Bedroom White Gray Blue",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZKNTWBY",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61jWi103XbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DR18VGHV",
+    "name": "5x7 Black Area Rugs for Living Room, Large Fluffy Shag Bedroom Rugs Non-Slip, Ultra Soft Plush Carpet for Nursery Kids PlayRoom Dorm Office Indoor Modern Carpets",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B0DR18VGHV",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xhTYiSorL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DT1MRXQ2",
+    "name": "FinRe\u0300c 5x7 Washable Area Rugs for Bedroom Living Room, Low Pile Thin Rug Solid Color, Non-Slip Carpet Indoor for Home Decor (Grey)",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0DT1MRXQ2",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vJ8HZD7DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPCK95B3",
+    "name": "Grey Rugs for Bedroom 5x7 ft - Ultra Soft Faux Fur Area Rug - Plush Non-Slip Shaggy Carpet for Living Room, Cozy Fluffy Rug for Kids Boys Girls Dorm Nursery Room, High Pile Floor Carpet",
+    "normalized_price": 21.96,
+    "buy_url": "https://www.amazon.com/dp/B0DPCK95B3",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81cr1aoDKbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1TBC4VC",
+    "name": "5x7 Ft Area Rugs for Living Room, Soft Non-Slip Washable Rugs Modern Abstract Pattern Carpet for Bedroom Indoor Floor Nursery Home Decor (Blue)",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1TBC4VC",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810z4a1vvDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G133D26R",
+    "name": "HUGEAR 5x7 Machine Washable Area Rugs Vintage Brown - Neutral Living Room Bedroom Rug Non Slip Stain Resistant Low Pile Aesthetic Throw Carpet Kids & Pet Friendly",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0G133D26R",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91YV2KJ4WWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CP95FVZ9",
+    "name": "Puremy Ultra Soft Area Rugs for Living Room, 5x7 Tie-Dyed Light Grey Fluffy Plush Rugs for Bedroom, Non-Slip Floor Carpet for Nursery, Bedside, Playroom, Corridor, Indoor Decor",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0CP95FVZ9",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81fWkrMHqXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9GF3R5N",
+    "name": "OLANLY 5x7 Machine Washable Large Area Rugs for Living Room, Bedroom, Soft Fluffy Shaggy Bedside Rug, Indoor Floor Carpet for Kids Girls and Boys, Dorms, Nursery, Home Decor Aesthetic, Grey",
+    "normalized_price": 36.96,
+    "buy_url": "https://www.amazon.com/dp/B0D9GF3R5N",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sKlgcuGnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FD3NR1N8",
+    "name": "Washable Rugs 5x7 Area Rugs for Living Room- Modern Abstract Rugs for Bedroom,Dining Room,Large Soft Low Pile Carpet with Non Slip Rubber Backing,Neutral Accent Nursery Rug for Home Office",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0FD3NR1N8",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Axd5GS11L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGBCFFZK",
+    "name": "Area Rug for Living Room Bedroom: 5x7 Black Grey Soft Fluffy Shag Upgrade Non-Slip High Pile Carpet Large Fuzzy Plush Indoor Floor Decor Shaggy Rug for Kid Boys Girls Playroom Nursery Modern Home",
+    "normalized_price": 29.98,
+    "buy_url": "https://www.amazon.com/dp/B0GGBCFFZK",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qmoonEnBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYTHKRGY",
+    "name": "5x7 Ft Large Shag Rugs for Bedroom Living Room Decor for Men Boys, Tie Dyed Ultra Soft Fluffy Furry Area Rug for Indoor Floor, Aesthetic Carpet for Home Decor (Dark Grey)",
+    "normalized_price": 24.69,
+    "buy_url": "https://www.amazon.com/dp/B0DYTHKRGY",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81XnL34CtmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP4XJ5MP",
+    "name": "Area Rug 5x7 Living Room Rugs, Modern Abstract Washable Rug,Non-Slip Stain Resistant Carpet for Entryway Bedroom Dining Room Farmhouse Nursery Home Office-Abstract Blue Gray",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP4XJ5MP",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8143IqwHoKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5H4CJSJ",
+    "name": "Amazon Basics Fluffy Washable Area Rug, Shaggy Carpet for Living Room, Bedroom, 5' W \u00d7 7' L, Dark Gray",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0F5H4CJSJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/916SV6+OaEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQV59P8G",
+    "name": "Area Rug 5x7 Washable Rug Beige for Living Room, Dining Room, Bedroom, Large Carpets, Non Slip & Non-Shedding Low Pile Vintage Print Rug for Home Office Decor",
+    "normalized_price": 21.61,
+    "buy_url": "https://www.amazon.com/dp/B0FQV59P8G",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71AlvMykMNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FF9FPGFY",
+    "name": "Washable Rug 5x7 Area Rugs: Modern Geometric Rugs for Living Room Non Slip Soft Low Pile Moroccan Indoor Carpet for Bedroom Nursery Dining Room Home Office Children's Room (Beige, 5'x7')",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0FF9FPGFY",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81le-OhprsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTXF75Z7",
+    "name": "5x7 Feet Grey Area Rugs for Bedroom, Indoor Washable Memory Foam Rug for Living Room, Modern Aesthetic Minimalist Non-Slip Carpets for Kids Boys Girls Adults Dorm Home Decor",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0GTXF75Z7",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gp-PUZcAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6YZMT4R",
+    "name": "5x7 Area Rugs for Living Room: Washable Vintage Soft Thin Area Rug Stain Resistant Non-Slip Backing Carpet for Bedroom Dining Room Nursery Home Office - Tea Brown",
+    "normalized_price": 22.99,
+    "buy_url": "https://www.amazon.com/dp/B0G6YZMT4R",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91RM-OhianL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCFJPNKQ",
+    "name": "5x7 ft Neon Gaming Area Rug for Boys Room, Colorful Game Controller Carpet for Gamer Room Decor, Low Pile Non-Slip Video Game Rug for Teens Playroom or Game Zone - 03",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCFJPNKQ",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/815PX0hw89L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCFJK678",
+    "name": "3x5 ft Neon Gaming Area Rug for Boys Room, Colorful Game Controller Carpet for Gamer Room Decor, Low Pile Non-Slip Video Game Rug for Teens Playroom or Game Zone - 03",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCFJK678",
+    "specs": {
+      "dimensions": "3x5"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81YV45thKSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2GFLSW5",
+    "name": "8x10 ft Neon Gaming Area Rug for Boys Room, Colorful Game Controller Carpet for Gamer Room Decor, Low Pile Non-Slip Video Game Rug for Teens Playroom or Game Zone - 03",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2GFLSW5",
+    "specs": {
+      "dimensions": "8x10"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ITW-ypU8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYNGGHB6",
+    "name": "2'6''x5' Gaming Rug for Boys Room,3D Printed Carpet for Bedroom, Living Room, Game Room Decoration, Anti Slip, Anti Fading, Easy to Clean Area Carpet",
+    "normalized_price": 9.49,
+    "buy_url": "https://www.amazon.com/dp/B0DYNGGHB6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BWsmpG9SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZ7K4QG3",
+    "name": "Neon Gaming Area Rug, 3D Blacklight Game Controller Carpet, Non-Slip UV Reactive Fluorescent Floor Mat, Glow in The Dark Large Play Mat for Kids Game Room Playroom, 47x70inch",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZ7K4QG3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81K10R+0gHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQYSV8Y9",
+    "name": "Gaming Area Rug Teen Boys Carpet, 3D Transparent Gamepad and Colorful Bomb Background Game Controller Design for Game Room, Gaming Room, Boys Girls Bedroom Playroom, Living Room (60\" x 40\")",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQYSV8Y9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81d7-rkxUFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5WLGW2D",
+    "name": "Gaming Rug for Boys Room - Purple Gamer Area Rug for Boys Bedroom Games Themed Kids Room Decor Gaming Carpet Rugs, 59 x 39 Inches",
+    "normalized_price": 35.3,
+    "buy_url": "https://www.amazon.com/dp/B0F5WLGW2D",
+    "specs": {
+      "dimensions": "59x39"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RRtTCQczL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQTFNNFN",
+    "name": "Gaming Area Rugs for Boys,Gaming Rug Boy Room Decor,Gaming Rugs for Gaming Room,Teen Game Player Video Gaming Rugs for Bedroom Living Room Playroom,Teen Game Player(47\" x 31\")",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQTFNNFN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/716URE8D7kL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GSG63WNW",
+    "name": "Game Rugs for Boys Bedroom - 5x8 Rug, Game Zone Gaming Living Room Rugs, Gaming Bedroom Rug, Neon Playroom Boys Man Carpet, Cyberpunk Home Decor & Gifts",
+    "normalized_price": 157.69,
+    "buy_url": "https://www.amazon.com/dp/B0GSG63WNW",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/917fv64L9SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXXL7G35",
+    "name": "Osimiccp Gamer Rug for Game Room 3'x5' Non-Slip 3D Cool Printed Gaming Rugs for Bedroom and Living Room Decor",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXXL7G35",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TUfyKEFBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GD5YDMYW",
+    "name": "LAKEA Blue Lightning Lighter Shaped Tufted Rug, Neon Aesthetic Cool Gamer Rug, Soft Non-Slip Irregular Accent Floor Mat for Man Cave, Bedroom & Gaming Room Street Decor, 31.5\" x 17.3\"",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0GD5YDMYW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6181BYB2RUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CBHLSL23",
+    "name": "Astronaut Area Rug Black Light, Large UV Reactive Glow in The Dark Space Rug, Non-Slip Fluorescent Rug for Bedroom Living Room Home Decor 70\"\u00d747\"\u00d70.39\"",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0CBHLSL23",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Ira48MQbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGX4KN1R",
+    "name": "Gaming Rug for Room,3x5 ft Non-Slip Cool Gamer Rugs for Bedroom Livingroom and Game Room Decor",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGX4KN1R",
+    "specs": {
+      "dimensions": "3x5"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RPW1LueEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3HSFLN2",
+    "name": "Gaming Area Rugs for Boys Cool Gamer Rugs Teens Large Video Games Carpets for Bedroom Game Console Decorative Floor Mats for Playroom 60\" x 39\"",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0D3HSFLN2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/814eUbrmnxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09PC7HJBD",
+    "name": "Joy Carpets Fluorescent Kapow 12' x 6' Area Rug",
+    "normalized_price": 260.37,
+    "buy_url": "https://www.amazon.com/dp/B09PC7HJBD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81BrRUuE4xL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9NWFH81",
+    "name": "Blacklight Kiss Skull Area Rug, Neon UV Reactive Couple Skeleton Throw Rug, Romantic Fluorescent Luminous Floor Mat Carpet, Glow in The Dark Decor for Bedroom Lover Gift 70x47inch",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9NWFH81",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91VyFUQzpcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FN47M81B",
+    "name": "Gaming Rug for Living Room -Colorful Gamer Design Video Game Area Rug, Teen Boy Room Decor Kids Rug Gamer Carpet for Bedroom/Game Room/Playroom -Durable Anti-Slip Floor Mat 47.2x70.8 in",
+    "normalized_price": 33.86,
+    "buy_url": "https://www.amazon.com/dp/B0FN47M81B",
+    "specs": {
+      "dimensions": "2x70"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81eMlapY-zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FSLBG9S5",
+    "name": "4'x6' Galaxy Rug Bedroom Living Room Gaming Area Rugs Nebula Throw Rugs Yoga Floor Mat Carpet,47\"x71\"",
+    "normalized_price": 58.98,
+    "buy_url": "https://www.amazon.com/dp/B0FSLBG9S5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Izcw4CczL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNMMWS6J",
+    "name": "Gaming Rug for Room,3'x5' Cool Gamer Rugs with Non-Slip Backing,Game Room Carpet for Bedroom and Livingroom Decor",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNMMWS6J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91YfbUakwcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTH7J3RR",
+    "name": "4x6 Gaming Rug for Boys Room - 3D Printed Games Theme Fluorescent Green Gamer Area Rug for Livingroom Teen Boy Gamer Room Rug Decor Video Game Area Carpet for Bedroom,Game Room",
+    "normalized_price": 34.85,
+    "buy_url": "https://www.amazon.com/dp/B0DTH7J3RR",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dxcR3qAFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07H196CVW",
+    "name": "Hauteloom Hadrian Bohemian Southwestern Colorful Area Rug - Traditional Tribal Aztec Carpet for Living Room, Bedroom, Dining Room - Pink, Magenta, Green, Orange, Purple - 5'3\" x 7'3\" (5x7)",
+    "normalized_price": 164.85,
+    "buy_url": "https://www.amazon.com/dp/B07H196CVW",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/A101hwv-syL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01HDWHHCG",
+    "name": "Nuloom Kindra Multicolor/Red, 4' x 6', Bohemian Circles, Soft and Cozy, High Traffic, Stain Resistant, Easy Clean, Durable Area Rug for Bedroom, Living Room, Dining Space, Den, Foyer, Entryway",
+    "normalized_price": 86.0,
+    "buy_url": "https://www.amazon.com/dp/B01HDWHHCG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/917hChFAN0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08HHF94NH",
+    "name": "5'3\" x 7'6\" Rectangle Bohemian & Eclectic Multi Color Medallion Area Rug | Beautiful Colorful Intricate Floral Traditional Patterns Vintage Rug | Latex Free Machine Made High Traffic Durable Decor",
+    "normalized_price": 132.14,
+    "buy_url": "https://www.amazon.com/dp/B08HHF94NH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/818X2A8EL-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBLM67C2",
+    "name": "Lahome Reine 5x7 Boho Living Room Rug Colorful Bedroom Rug, Large Bohemian Nursery Rugs, Hot Pink Non-Slip Machine Washable Soft Playroom Mat Indoor Floor Accent Carpet for Dining Table Mud Room",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBLM67C2",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81aq4WRFk8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01MTRVZ1V",
+    "name": "SAFAVIEH Monaco Collection Area Rug - 8' x 10', Multi, Boho Chic Tribal Distressed Design, Non-Shedding & Easy Care, Ideal for High Traffic Areas in Living Room, Bedroom (MNC222F)",
+    "normalized_price": 193.68,
+    "buy_url": "https://www.amazon.com/dp/B01MTRVZ1V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91KVqlm96FL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09V176R5M",
+    "name": "GRUHUM Handwoven 6'feet Jute Cotton Round Area Rug, Natural Multi Chindi Boho Colorful Rustic Vintage Soft Braided Reversible Bohemian Rug- Indoor EcoFriendly Kitchen Bedroom Living Room 6' ft Circle",
+    "normalized_price": 80.99,
+    "buy_url": "https://www.amazon.com/dp/B09V176R5M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/916eZzQAQYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07BZ8LZD5",
+    "name": "Unique Loom Chromatic Collection Area Rug - Champagne (5' x 8' Rectangle, Multi/ Blue)",
+    "normalized_price": 98.99,
+    "buy_url": "https://www.amazon.com/dp/B07BZ8LZD5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91P4cdAsRpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DS2DB14Z",
+    "name": "Moynesa Bedroom Rug 5x7, Washable Bohemian Scandinavian Orange Area Rugs for Living Room Dining Room Reading Coner, Modern Country Floral Bird Carpet, Fall Home Decor Non-Slip Protection",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B0DS2DB14Z",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81AGl8ro35L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B017NMBRAE",
+    "name": "SAFAVIEH Monaco Collection Area Rug - 9' x 12', Multi, Boho Chic Tribal Distressed Design, Non-Shedding & Easy Care, Ideal for High Traffic Areas in Living Room, Bedroom (MNC222F)",
+    "normalized_price": 188.0,
+    "buy_url": "https://www.amazon.com/dp/B017NMBRAE",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91KVqlm96FL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B014DXFZ5O",
+    "name": "Unique Loom Estrella Collection Colorful, Abstract, Geometric, Gradient, Modern Area Rug (5' 0 x 8' 0 Rectangular, Multi/Pink)",
+    "normalized_price": 100.16,
+    "buy_url": "https://www.amazon.com/dp/B014DXFZ5O",
+    "specs": {
+      "dimensions": "0x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Mx75SjGlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGMFYVTQ",
+    "name": "7x9 Area Rug for Living Room,Non Slip Washable Colorful Abstract Coral Blue Red Boho 9x7 Rugs for Bedroom,7 by 9 FT Multicolor Bohemian Dining Room Carpet,Modern Southwestern Tribal Office Desk Mat",
+    "normalized_price": 68.58,
+    "buy_url": "https://www.amazon.com/dp/B0DGMFYVTQ",
+    "specs": {
+      "dimensions": "7x9"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PaDUvA7cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073HJFF3F",
+    "name": "SAFAVIEH Area Rug 4x6 - Cape Cod Collection - Red & Multi, Handmade Jute & Cotton, Woven Braided Design (CAP202A)",
+    "normalized_price": 45.44,
+    "buy_url": "https://www.amazon.com/dp/B073HJFF3F",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/A1semvVcEML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01HDWDT4Q",
+    "name": "Nuloom Tammara Multicolor, 4' x 6', Hand Braided, Bohemian, Cotton, Soft and Cozy, High Traffic, Stain Resistant, Easy Clean, Durable Area Rug for Bedroom, Living Room, Dining, Den, Entryway",
+    "normalized_price": 102.99,
+    "buy_url": "https://www.amazon.com/dp/B01HDWDT4Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91TfD-gX+KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01HDWDT7S",
+    "name": "nuLOOM 3' x 8' Bohemian Hand Braided Area Rug, Vibrant Colors, Hand Crafted in India, Medium Pile, Tammara Multi",
+    "normalized_price": 96.91,
+    "buy_url": "https://www.amazon.com/dp/B01HDWDT7S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91w2Z5l7W7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCGL4K6G",
+    "name": "Mandala - Indoor Area Rugs 8x10 Washable, Stain Resistant Machine Washable Rugs for Living Room, Bedroom, and Modern House D\u00e9cor - Durable Polyester Material, Colorful Patterned - Blue & Multi Color",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CCGL4K6G",
+    "specs": {
+      "dimensions": "8x10"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81uI7TKTlAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073H84QXK",
+    "name": "SAFAVIEH Monaco Collection Area Rug - 8' x 10', Blue & Fuchsia, Boho Chic Medallion Distressed Design, Non-Shedding & Easy Care, Ideal for High Traffic Areas in Living Room, Bedroom (MNC252J)",
+    "normalized_price": 184.81,
+    "buy_url": "https://www.amazon.com/dp/B073H84QXK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1P-VMTg1RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSJPCV1C",
+    "name": "5x7 FT Leopard Rug for Living Room Hot Pink Leopard Vintage Animal Rug Aesthetic Pink Rugs for Girls Room Nursery Bedroom Home Office Dorm Thin Bright Magenta Carpet (Hot Pink, 5X7 FT)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSJPCV1C",
+    "specs": {
+      "dimensions": "5x7"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ULxnTUGML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01GS4FLAU",
+    "name": "SAFAVIEH Monaco Collection Area Rug - 8' x 10', Pink & Multi, Boho Chic Abstract Watercolor Design, Non-Shedding & Easy Care, Ideal for High Traffic Areas in Living Room, Bedroom (MNC225D)",
+    "normalized_price": 140.0,
+    "buy_url": "https://www.amazon.com/dp/B01GS4FLAU",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A13qvxv1j9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B74SR4VQ",
+    "name": "S & L Homes Jute Cotton Hand Woven Natural Farmhouse Area Rug for Living Room - Rustic Vintage Bohemian D\u00e9cor - (8' x 10' Natural)",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0B74SR4VQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61G+HSjO3CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CJ6ZJT4",
+    "name": "SAFAVIEH Area Rug 6x9 - Cape Cod Collection - Natural Brown, Handmade Braided Flat Weave Jute (CAP252A)",
+    "normalized_price": 135.0,
+    "buy_url": "https://www.amazon.com/dp/B07CJ6ZJT4",
+    "specs": {
+      "dimensions": "6x9"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91kxrOQwlbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B002XWFR4M",
+    "name": "SAFAVIEH Area Rug 8x10 - Natural Fiber Collection - Large - Natural Brown, Handmade Jute, Farmhouse Style, Chunky Textured Thick Pile (NF447A)",
+    "normalized_price": 225.0,
+    "buy_url": "https://www.amazon.com/dp/B002XWFR4M",
+    "specs": {
+      "dimensions": "8x10"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91bIfjQ07CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXB381QZ",
+    "name": "S & L Homes Jute Pulse Handwoven Natural Area Rug for Living Room Bedroom Kitchen Hallway Entryway- Rustic Vintage Farmhouse Decor - (8' x 10' Natural Ivory)",
+    "normalized_price": 245.99,
+    "buy_url": "https://www.amazon.com/dp/B0FXB381QZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71bf0pGqEmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQ36RNL4",
+    "name": "Bedsure 8x10 Printed Jute-Look Rug for Living Room, Machine Washable Rugs, Jute-Look Rug, Non-Slip Backing, Non-Shedding",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0FQ36RNL4",
+    "specs": {
+      "dimensions": "8x10"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91pmr+eDN0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FK2W3R2X",
+    "name": "8x10 feet Natural Jute & Wool Area Rug,\u2013 Handwoven Mini Check Natural Fiber Rug with 4\" Border, Neutral Boho Farmhouse Rug for Living Room,Dining Room,Bedroom | 0.6\" Pile (8' x 10')",
+    "normalized_price": 184.99,
+    "buy_url": "https://www.amazon.com/dp/B0FK2W3R2X",
+    "specs": {
+      "dimensions": "8x10"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sYXyw5acL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKT7VG67",
+    "name": "HOMEMONDE Solid Braided 8'x10' Jute Area Rug Natural - Eco Friendly Premium Fiber - Durable and Reversible Handwoven Farmhouse Rugs for Living Room, Hallway, Bedroom, Dinning Room, Kitchen, Office",
+    "normalized_price": 224.99,
+    "buy_url": "https://www.amazon.com/dp/B0CKT7VG67",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81lin5WK8jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00SWW1K1G",
+    "name": "nuLOOM 6x9 Rigo Jute Hand Woven Area Rug, Natural, Solid Farmhouse Design, Natural Fiber, For Bedroom, Living Room, Dining Room, Hallway, Office, Kitchen, Entryway",
+    "normalized_price": 169.0,
+    "buy_url": "https://www.amazon.com/dp/B00SWW1K1G",
+    "specs": {
+      "dimensions": "6x9"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lhH40E9xL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFLS8XHS",
+    "name": "GRUHUM Jute Cotton Area Rug 5'x8' ft Rectangle Handwoven Natural Fabric Farmhouse Rug for Living Room, Bedroom Kitchen - Rustic Vintage Bohemian Eco-Friendly Carpet Home D\u00e9cor 5x8 ft Natural Boho Rug",
+    "normalized_price": 114.49,
+    "buy_url": "https://www.amazon.com/dp/B0CFLS8XHS",
+    "specs": {
+      "dimensions": "5x8"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816sFtnhW3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL7QMW11",
+    "name": "Handspun Jute Area Rug \u2013 Premium Handwoven Reversible Chunky Textured Natural Rug - Tan Beige Neutral Accent Carpet for Rustic Farmhouse D\u00e9cor, Entryway, Bedroom, Family Room - 24x36 inches",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0GL7QMW11",
+    "specs": {
+      "dimensions": "24x36"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81VY3pHh7QL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07T94RS2R",
+    "name": "JONATHAN Y Pata Hand Woven Chunky Jute Natural Indoor Area Rug, 4x6, Bohemian, Rustic, Cottage, Easy-Cleaning for Living Room, Bedroom, Kitchen, Non-Shedding (NRF102A-4)",
+    "normalized_price": 79.0,
+    "buy_url": "https://www.amazon.com/dp/B07T94RS2R",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/A1JWBQW2bvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09QLK6XFM",
+    "name": "FRELISH DECOR Handwoven Jute Area Rug - 9x12 Feet Natural Yarn - Rustic Vintage Beige Braided Reversible Rectangular Rugs for Bedroom - Kitchen - Living Room - Farmhouse (9' x 12')",
+    "normalized_price": 297.99,
+    "buy_url": "https://www.amazon.com/dp/B09QLK6XFM",
+    "specs": {
+      "dimensions": "9x12"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81KZ1sMut5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073HNTPMZ",
+    "name": "SAFAVIEH Area Rug 2x3 - Natural Fiber Collection - Natural Brown, Handmade Jute, Farmhouse Style, Chunky Textured Thick Pile (NF447A)",
+    "normalized_price": 20.78,
+    "buy_url": "https://www.amazon.com/dp/B073HNTPMZ",
+    "specs": {
+      "dimensions": "2x3"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OHyiIpnOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2PB825S",
+    "name": "Luul Home Easy Jute Rugs 4x6 Natural Color Living Room Indoor Outdoor Area Rug for Farmhouse Patio and Kitchen Rug High Traffic Washable Easy to Clean Solid Boho Woven Design Outside Carpet (4 x 6)",
+    "normalized_price": 67.79,
+    "buy_url": "https://www.amazon.com/dp/B0D2PB825S",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91REFahwgJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B084CTGD9M",
+    "name": "nuLOOM 4x6 Elfriede Jute & Cotton Hand Woven Area Rug, Natural, Solid Rustic Farmhouse Style, Weaved Design, Natural Fiber, For Bedroom, Living Room, Dining Room, Hallway, Office, Entryway",
+    "normalized_price": 118.99,
+    "buy_url": "https://www.amazon.com/dp/B084CTGD9M",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91U7hN4m82L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B084D2F2JQ",
+    "name": "nuLOOM 2'6\" x 6' Elfriede Jute & Cotton Hand Woven Area Rug, Natural, Solid Rustic Farmhouse Style, Weaved Design, Natural Fiber, For Bedroom, Living Room, Dining Room, Hallway, Office, Entryway",
+    "normalized_price": 66.99,
+    "buy_url": "https://www.amazon.com/dp/B084D2F2JQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A178FrxOKAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCKFDGBB",
+    "name": "HOMEMONDE Hand Woven Jute Cotton Area Rug 6' x 9' ft Rectangle Natural Farmhouse Rug - Rustic Vintage Boho Decor Rug for Living Room, Bedroom, Dining Room",
+    "normalized_price": 161.99,
+    "buy_url": "https://www.amazon.com/dp/B0GCKFDGBB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71fwHkYj53L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F43ZBNDL",
+    "name": "LBRO2M Easy Jute Solid Area Rug 8X10 Washable Rugs for Living Room Bedroom Natural Jute Indoor Outdoor Carpet Durable, Solid Non Shedding Eco Friendly (8X10 Natural)",
+    "normalized_price": 119.97,
+    "buy_url": "https://www.amazon.com/dp/B0F43ZBNDL",
+    "specs": {
+      "dimensions": "8x10"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ODuJUT+FL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQLNJHDQ",
+    "name": "EARTHALL Woven Area Rug 4x6 Ft Washable Rugs for Entryway Non Slip Braided Throw Rugs Bedroom Carpet Cotton Entry Rug Cotton Floor Carpets for Bedroom Dining Room Living Room, Orange/Tan/Brown",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQLNJHDQ",
+    "specs": {
+      "dimensions": "4x6"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91FqPiVJ83L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01HDWANIG",
+    "name": "Nuloom Ashli Hand Woven, Natural, 7'6\" x 9'6\", Farmhouse, Jute, Soft and Textured, High Traffic, Stain Resistant, Easy Clean, Durable Area Rug for Bedroom, Living Room, Dining, Den, Foyer, Entryway",
+    "normalized_price": 269.99,
+    "buy_url": "https://www.amazon.com/dp/B01HDWANIG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91EcLH22L0L._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

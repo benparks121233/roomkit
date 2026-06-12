@@ -208,13 +208,15 @@ IMAGES: list[tuple[str, str]] = [
     (
         "bedroom/mood_soft_still.jpg",
         "A richly styled, quiet bedroom corner that transports you into "
-        "contemplative stillness. A low wooden stool holds a handmade ceramic "
+        "contemplative stillness. A low light-wood stool holds a handmade ceramic "
         "cup and a small open book. A single stem of dried pampas grass in a "
-        "slender clay vase on the windowsill. Sheer linen curtains filter soft "
-        "morning light into gentle rays. A folded wool meditation blanket on "
-        "the floor. A tiny incense holder with a wisp of smoke. A framed piece "
-        "of minimal calligraphy on the wall. Muted cream, stone, and warm grey "
-        "tones. Every element chosen, nothing extra — serene and unhurried. "
+        "slender clay vase on the windowsill. Sheer white linen curtains let "
+        "generous soft MORNING SUNLIGHT pour in, illuminating the space in gentle "
+        "bright warmth. A folded cream wool meditation blanket on the pale floor. "
+        "A tiny incense holder with a wisp of smoke. A framed piece of minimal "
+        "calligraphy on a light wall. Muted cream, warm white, and soft stone "
+        "tones. The room is BRIGHT and calm — luminous serenity, not dim. "
+        "Every element chosen, nothing extra — serene and unhurried. "
         + _VIGNETTE_SUFFIX,
     ),
     (
@@ -232,14 +234,15 @@ IMAGES: list[tuple[str, str]] = [
     (
         "bedroom/mood_warm_cozy.jpg",
         "A richly styled, intimate bedroom reading nook that transports you "
-        "into enveloping warmth. A deep upholstered armchair in warm camel "
-        "fabric with a chunky cable-knit throw. A tall stack of well-loved "
-        "books on the floor beside it. A brass reading lamp casting a warm "
-        "amber pool of light. A small side table with a steaming mug, a "
-        "half-eaten cookie on a ceramic plate, and a lit beeswax candle. A "
-        "small framed vintage illustration on the wall. Thick wool rug "
-        "underfoot. Warm honey, camel, rust, and cream tones. Warm lamp glow "
-        "against the evening outside the window. " + _VIGNETTE_SUFFIX,
+        "into enveloping warmth. GOLDEN AFTERNOON SUNLIGHT streams through a "
+        "window, bathing the space in rich warm light. A deep upholstered "
+        "armchair in warm camel fabric with a chunky cable-knit throw catches "
+        "the sun. A tall stack of well-loved books on the floor beside it. A "
+        "small side table with a steaming mug, a half-eaten cookie on a ceramic "
+        "plate, and a lit beeswax candle. A small framed vintage illustration on "
+        "a warm-toned wall. Thick wool rug underfoot. Warm honey, camel, rust, "
+        "and cream tones. The room is WELL-LIT with golden natural light — warm "
+        "and inviting, not dim or shadowy. " + _VIGNETTE_SUFFIX,
     ),
     (
         "bedroom/mood_bold_confident.jpg",
@@ -323,7 +326,53 @@ IMAGES: list[tuple[str, str]] = [
         + _COLOR_DETAIL_SUFFIX,
     ),
 
-    # ── MATERIALS (5) — shared, already generated ─────────────────────────
+    # ── PALETTE — additional colors ──────────────────────────────────────
+    (
+        "bedroom/palette_verdant.jpg",
+        "A styled bedroom nightstand vignette showcasing a deep botanical green palette: "
+        "emerald green ceramic vase with fresh monstera leaf, olive green linen napkin, "
+        "aged brass candle holder, dark green leather-bound journal, every object chosen "
+        "for its emerald-olive-brass color harmony. " + _COLOR_DETAIL_SUFFIX,
+    ),
+    (
+        "bedroom/palette_electric.jpg",
+        "A styled bedroom shelf vignette showcasing a saturated modern brights palette: "
+        "bold cobalt blue ceramic sculpture, vivid coral pink book spine, sunshine yellow "
+        "ceramic bowl, clean white background — intentional color-blocking, premium and "
+        "curated, NOT cheap or garish. Every object chosen for its cobalt-coral-yellow "
+        "color harmony. " + _COLOR_DETAIL_SUFFIX,
+    ),
+
+    # ── MOOD — additional feels ──────────────────────────────────────────
+    (
+        "bedroom/mood_heritage.jpg",
+        "A richly styled, refined bedroom corner that transports you into sunlit "
+        "old-money elegance. BRIGHT NATURAL SUNLIGHT floods through tall windows into "
+        "a grand, airy study corner. A warm mahogany antique writing desk with turned "
+        "legs holds a small stack of leather-bound books, a brass desk lamp with green "
+        "glass shade, and a silver-framed family photograph. Above, an oil portrait in "
+        "an ornate gilt frame on a LIGHT cream wall. A wingback chair in olive velvet "
+        "beside the desk. Rich Persian rug on the floor. A crystal decanter catches "
+        "sunlight on a brass butler tray. Everything feels inherited, refined, and "
+        "luminous — old money that is AIRY and GRAND, not dark or cavernous. Warm "
+        "cream walls, rich wood accents, abundant natural daylight. "
+        + _VIGNETTE_SUFFIX,
+    ),
+    (
+        "bedroom/mood_alpine.jpg",
+        "A richly styled, cozy-grand bedroom corner that transports you into a DAYLIT "
+        "mountain lodge retreat. BRIGHT SNOW-GLOW LIGHT pours through a large window "
+        "revealing a stunning snowy mountain landscape in bright daylight. Exposed honey-"
+        "toned timber beam overhead. A chunky reclaimed wood side table holds a ceramic "
+        "mug of hot chocolate, a lit lantern-style candle, and a worn paperback. A thick "
+        "sheepskin draped over a leather and wood chair. A plaid wool blanket folded on "
+        "the armrest. The room is BRIGHT and well-lit from the snow-reflected daylight — "
+        "cozy and grand, not dim or nighttime. Warm timber, cream wool, and natural "
+        "mountain light fill the space. "
+        + _VIGNETTE_SUFFIX,
+    ),
+
+    # ── MATERIALS (4) — shared, already generated ─────────────────────────
     (
         "material_wood_linen.jpg",
         "A detail vignette of natural light oak wood grain surface next to "

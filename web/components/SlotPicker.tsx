@@ -2,14 +2,28 @@
 
 // SlotPicker — "Choose your [slot]" card grid for the guided selection flow.
 // Supports single-select (max_quantity=1) and multi-select (max_quantity>1).
-// Multi-select shows a pool meter, toggles items on/off, and has a Done button.
+//
+// Single-select: tap a card to expand it and see details. Confirm with
+// "Select" button, or tap another card to switch focus. This gives users
+// time to review before committing.
+//
+// Multi-select: toggles items on/off with a pool meter and Done button.
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ProductResult } from "@/lib/api";
 
 function upgradeAmazonImage(url: string): string {
   return url.replace(/\._AC_[A-Z]{2}\d+_\./, "._AC_SL800_.");
+}
+
+/** Trim long Amazon product names to something readable. */
+function trimName(name: string, maxLen = 60): string {
+  if (name.length <= maxLen) return name;
+  // Try to break at a word boundary
+  const trimmed = name.slice(0, maxLen);
+  const lastSpace = trimmed.lastIndexOf(" ");
+  return (lastSpace > maxLen * 0.6 ? trimmed.slice(0, lastSpace) : trimmed) + "…";
 }
 
 interface SlotPickerProps {
@@ -45,6 +59,14 @@ export default function SlotPicker({
   const remaining = poolBudget - poolSpent;
   const atCap = selectedIds.length >= maxQuantity;
   const selectedSet = new Set(selectedIds);
+
+  // For single-select: which card is expanded (shows details + confirm)
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  // Reset expanded card when slot changes
+  useEffect(() => {
+    setExpandedId(null);
+  }, [slotId]);
 
   return (
     <div className="slot-picker">
@@ -85,10 +107,10 @@ export default function SlotPicker({
       <div className="slot-picker-grid">
         {choices.map((product) => {
           const isSelected = selectedSet.has(product.product_id);
+          const isExpanded = !isMulti && expandedId === product.product_id;
           // Disable if: not selected AND (at cap OR adding would exceed pool)
           const wouldExceedPool = !isSelected && product.normalized_price > remaining;
-          // Single-select: never disable (clicking replaces selection)
-          // Multi-select: disable if at cap or would exceed pool
+          // Single-select: never disable. Multi-select: disable if at cap or exceeds pool
           const disabled = isMulti && !isSelected && (atCap || wouldExceedPool);
 
           return (
@@ -96,8 +118,11 @@ export default function SlotPicker({
               key={product.product_id}
               product={product}
               isSelected={isSelected}
+              isExpanded={isExpanded}
               disabled={disabled}
+              isMulti={isMulti}
               onToggle={onToggle}
+              onExpand={(id) => setExpandedId(expandedId === id ? null : id)}
             />
           );
         })}
@@ -127,57 +152,114 @@ export default function SlotPicker({
 function PickerCard({
   product,
   isSelected,
+  isExpanded,
   disabled,
+  isMulti,
   onToggle,
+  onExpand,
 }: {
   product: ProductResult;
   isSelected: boolean;
+  isExpanded: boolean;
   disabled: boolean;
+  isMulti: boolean;
   onToggle: (product: ProductResult) => void;
+  onExpand: (productId: string) => void;
 }) {
   const [imgError, setImgError] = useState(false);
   const showImage = product.image_url && !imgError;
+  const expandedRef = useRef<HTMLDivElement>(null);
+
+  // Scroll expanded card into view
+  useEffect(() => {
+    if (isExpanded && expandedRef.current) {
+      expandedRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }, [isExpanded]);
+
+  const handleClick = () => {
+    if (disabled) return;
+    if (isMulti) {
+      // Multi-select: toggle directly
+      onToggle(product);
+    } else {
+      // Single-select: expand to show details
+      onExpand(product.product_id);
+    }
+  };
 
   return (
-    <button
-      type="button"
-      className={`picker-card${isSelected ? " selected" : ""}${disabled ? " disabled" : ""}`}
-      onClick={() => !disabled && onToggle(product)}
-      aria-disabled={disabled}
+    <div
+      ref={isExpanded ? expandedRef : undefined}
+      className={[
+        "picker-card",
+        isSelected ? "selected" : "",
+        isExpanded ? "expanded" : "",
+        disabled ? "disabled" : "",
+      ].filter(Boolean).join(" ")}
     >
-      <div className="picker-card-image">
-        {showImage ? (
-          <Image
-            src={upgradeAmazonImage(product.image_url)}
-            alt={product.name}
-            width={400}
-            height={400}
-            sizes="(max-width: 768px) 45vw, 200px"
-            style={{ objectFit: "contain", width: "100%", height: "100%" }}
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="picker-card-placeholder">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <path d="M21 15l-5-5L5 21" />
+      <button
+        type="button"
+        className="picker-card-main"
+        onClick={handleClick}
+        aria-disabled={disabled}
+      >
+        <div className="picker-card-image">
+          {showImage ? (
+            <Image
+              src={upgradeAmazonImage(product.image_url)}
+              alt={product.name}
+              width={400}
+              height={400}
+              sizes="(max-width: 768px) 45vw, 200px"
+              style={{ objectFit: "contain", width: "100%", height: "100%" }}
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div className="picker-card-placeholder">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="M21 15l-5-5L5 21" />
+              </svg>
+            </div>
+          )}
+        </div>
+        <div className="picker-card-body">
+          <p className="picker-card-name">{trimName(product.name)}</p>
+          <p className="picker-card-price">${product.normalized_price.toFixed(2)}</p>
+          {/* Show a short preview of fit_reason on collapsed cards */}
+          {!isExpanded && product.fit_reason && (
+            <p className="picker-card-reason">{product.fit_reason}</p>
+          )}
+        </div>
+        {isSelected && (
+          <div className="picker-card-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12l5 5L20 7" />
             </svg>
           </div>
         )}
-      </div>
-      <div className="picker-card-body">
-        <p className="picker-card-name">{product.name}</p>
-        <p className="picker-card-price">${product.normalized_price.toFixed(2)}</p>
-        <p className="picker-card-reason">{product.fit_reason}</p>
-      </div>
-      {isSelected && (
-        <div className="picker-card-check">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12l5 5L20 7" />
-          </svg>
+      </button>
+
+      {/* Expanded detail panel — single-select only */}
+      {isExpanded && (
+        <div className="picker-card-detail">
+          {product.fit_reason && (
+            <p className="picker-card-detail-reason">{product.fit_reason}</p>
+          )}
+          <button
+            type="button"
+            className="picker-card-select-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggle(product);
+            }}
+          >
+            Select this {product.normalized_price > 0 ? `— $${product.normalized_price.toFixed(2)}` : ""}
+          </button>
         </div>
       )}
-    </button>
+    </div>
   );
 }

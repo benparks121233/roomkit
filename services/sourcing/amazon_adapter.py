@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
@@ -49,22 +50,52 @@ _BATHROOM_MIRROR_PHRASES = [
 # Slots where user interests influence product selection.
 _INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
 
+# Cheugy / low-taste product name patterns filtered at the catalog level.
+# These never reach the LLM.  Patterns are checked case-insensitively.
+_CHEUGY_PATTERNS = [
+    r"live\s*,?\s*laugh\s*,?\s*love",
+    r"motivational\b",
+    r"inspirational\b",
+    r"\bbless(ed)?\s+(this|our)\b",
+    r"\bhome\s+sweet\s+home\b",
+    r"\bman\s+cave\b",
+    r"\bfan\s+cave\b",
+    r"\bshe\s+shed\b",
+    r"\bbathroom\s+rules\b",
+    r"\bkitchen\s+rules\b",
+    r"\blaundry\s+room\b",
+    r"\bfamily\s+rules\b",
+    r"\bnever\s+give\s+up\b",
+    r"\bdream\s+big\b",
+    r"\bhustle\b",
+    r"\bbible\s+verse\b",
+    r"\bscripture\b",
+    r"\bprayer\b",
+]
+_CHEUGY_RE = re.compile("|".join(_CHEUGY_PATTERNS), re.IGNORECASE)
+
 # Keywords that indicate a product matches a user interest category.
+# Emphasize elevated/vintage/framed versions over generic merch.
 _INTEREST_KEYWORDS: dict[str, list[str]] = {
     "music": ["music", "vinyl", "record", "concert", "guitar", "piano",
-              "jazz", "notes", "band", "album"],
+              "jazz", "notes", "band", "album", "vintage concert",
+              "retro music", "tour poster"],
     "sports": ["sports", "basketball", "football", "baseball", "athletic",
-               "soccer", "hockey", "tennis", "golf"],
+               "soccer", "hockey", "tennis", "golf", "vintage sports",
+               "retro sports", "stadium", "pennant"],
     "travel": ["travel", "map", "world", "destination", "city", "globe",
-               "adventure", "wanderlust", "passport"],
+               "adventure", "wanderlust", "passport", "vintage travel",
+               "retro travel"],
     "gaming": ["gaming", "video game", "retro game", "neon", "controller",
                "arcade", "pixel"],
-    "books": ["literary", "book", "library", "reading", "quote", "novel",
+    "books": ["literary", "book", "library", "reading", "novel",
               "bookshelf"],
-    "film": ["movie", "film", "cinema", "classic film", "poster"],
+    "film": ["movie", "film", "cinema", "classic film", "poster",
+             "vintage movie", "retro film"],
     "nature": ["nature", "landscape", "botanical", "mountain", "forest",
                "ocean", "sunset", "wildlife"],
-    "art": ["gallery", "fine art", "abstract", "painting", "modern art"],
+    "art": ["gallery", "fine art", "abstract", "painting", "modern art",
+            "mid century", "bauhaus", "matisse"],
 }
 
 
@@ -126,6 +157,10 @@ class AmazonAdapter(SourcingAdapter):
                 if any(ph in name_lower for ph in _BATHROOM_MIRROR_PHRASES):
                     continue
 
+            # Filter: exclude cheugy / low-taste products across all slots.
+            if _CHEUGY_RE.search(raw.get("name", "")):
+                continue
+
             # Inject affiliate tag into buy_url.
             tagged_url = self._inject_affiliate_tag(raw["buy_url"])
 
@@ -149,7 +184,7 @@ class AmazonAdapter(SourcingAdapter):
             interests if interests and slot_id in _INTEREST_SLOTS else None
         )
         return self._build_shortlist(
-            candidates, style_keywords, max_price, slot_interests,
+            candidates, style_keywords, max_price, slot_interests, slot_id,
         )
 
     # ------------------------------------------------------------------
@@ -199,6 +234,7 @@ class AmazonAdapter(SourcingAdapter):
         style_keywords: list[str],
         max_price: float,
         interests: list[str] | None,
+        slot_id: str = "",
     ) -> list[Product]:
         """Build a capped shortlist blending style, interests, and price spread.
 
@@ -212,45 +248,75 @@ class AmazonAdapter(SourcingAdapter):
         All three pools are merged, deduped, and capped at _MAX_CANDIDATES.
         """
         seen: set[str] = set()
+        brand_count: dict[str, int] = {}
         result: list[Product] = []
+
+        def _extract_brand(name: str) -> str:
+            """First word of product name, lowered."""
+            cleaned = re.sub(r'^[\d"\']+\s*', "", name.strip())
+            return cleaned.split()[0].lower() if cleaned.split() else ""
 
         def _add(product: Product) -> bool:
             if product.product_id in seen:
                 return False
+            brand = _extract_brand(product.name)
+            # Cap any single brand at 4 in the candidate pool
+            if brand_count.get(brand, 0) >= 4:
+                return False
             seen.add(product.product_id)
+            brand_count[brand] = brand_count.get(brand, 0) + 1
             result.append(product)
             return True
 
-        # --- Pool 1: style-relevant (top 40 by keyword score) ---
+        # --- Pool 1: style-relevant ---
         kw_lower = [k.lower() for k in style_keywords]
 
         def style_score(p: Product) -> int:
             name = p.name.lower()
             return sum(1 for kw in kw_lower if kw in name)
 
-        by_style = sorted(candidates, key=style_score, reverse=True)
-        for p in by_style[:40]:
-            _add(p)
-
-        # --- Pool 2: interest-guaranteed (up to 30) ---
+        # --- Pool 2: interest-matched ---
+        interest_kw_lower: list[str] = []
         if interests:
-            # Collect all keywords for the user's interest categories.
-            interest_kw: list[str] = []
             for cat in interests:
-                interest_kw.extend(_INTEREST_KEYWORDS.get(cat, [cat]))
-            interest_kw_lower = [k.lower() for k in interest_kw]
+                interest_kw_lower.extend(
+                    k.lower() for k in _INTEREST_KEYWORDS.get(cat, [cat])
+                )
 
-            def interest_score(p: Product) -> int:
-                name = p.name.lower()
-                return sum(1 for kw in interest_kw_lower if kw in name)
+        def interest_score(p: Product) -> int:
+            name = p.name.lower()
+            return sum(1 for kw in interest_kw_lower if kw in name)
 
+        # For wall_art with interests: flip priority — interests first (60),
+        # then style fills the rest. This ensures the LLM sees mostly
+        # interest-relevant candidates.
+        is_interest_dominant = slot_id == "wall_art" and bool(interests)
+
+        if is_interest_dominant:
+            # Interest pool first (up to 60)
             interest_matches = [
                 p for p in candidates if interest_score(p) > 0
             ]
-            # Sort by interest relevance, take top 30.
             interest_matches.sort(key=interest_score, reverse=True)
-            for p in interest_matches[:30]:
+            for p in interest_matches[:60]:
                 _add(p)
+            # Then backfill with style-relevant (remaining capacity)
+            by_style = sorted(candidates, key=style_score, reverse=True)
+            for p in by_style[:40]:
+                _add(p)
+        else:
+            # Default: style first (40), then interests (30)
+            by_style = sorted(candidates, key=style_score, reverse=True)
+            for p in by_style[:40]:
+                _add(p)
+
+            if interests:
+                interest_matches = [
+                    p for p in candidates if interest_score(p) > 0
+                ]
+                interest_matches.sort(key=interest_score, reverse=True)
+                for p in interest_matches[:30]:
+                    _add(p)
 
         # --- Pool 3: price-spread (fill remaining budget with price diversity) ---
         remaining = _MAX_CANDIDATES - len(result)

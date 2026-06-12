@@ -19,6 +19,7 @@ import SlotPicker from "@/components/SlotPicker";
 import ProductCard from "@/components/ProductCard";
 import BudgetMeter from "@/components/BudgetMeter";
 import Image from "next/image";
+import RoomSceneImage from "@/components/RoomSceneImage";
 
 // ---------------------------------------------------------------------------
 // Taxonomy group ordering — mirrors slot_taxonomy.yaml
@@ -87,11 +88,16 @@ export default function ResultPage() {
   const [error, setError] = useState<string | null>(null);
 
   // Selection state — always arrays (length 1 for single-select slots)
-  const [phase, setPhase] = useState<"selecting" | "complete">("selecting");
+  const [phase, setPhase] = useState<"selecting" | "transition" | "complete">("selecting");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selections, setSelections] = useState<Record<string, ProductResult[]>>({});
   const [validationError, setValidationError] = useState<string | null>(null);
   const validationRan = useRef(false);
+  const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [lastPickedSlotId, setLastPickedSlotId] = useState<string | null>(null);
+  const [pickCount, setPickCount] = useState(0);
+  const [skipAnimations, setSkipAnimations] = useState(false);
+  const [overBudgetProduct, setOverBudgetProduct] = useState<ProductResult | null>(null);
 
   // Fetch design
   useEffect(() => {
@@ -170,7 +176,45 @@ export default function ResultPage() {
     window.scrollTo(0, 0);
   }, [currentIndex, phase]);
 
-  // Advance to next slot (fills rank-1 defaults for un-visited slots on completion)
+  // Bed slot IDs — intermediate bed picks skip the transition entirely
+  const BED_SLOTS = useMemo(() => new Set(["bed_frame", "mattress", "sheets", "comforter", "pillows"]), []);
+  const lastBedSlotInFlow = useMemo(() => {
+    const bedSlots = activeSlotIds.filter((id) => BED_SLOTS.has(id));
+    return bedSlots[bedSlots.length - 1] ?? null;
+  }, [activeSlotIds, BED_SLOTS]);
+
+  // Show transition scene, then advance to next slot after delay
+  const advanceWithTransition = useCallback(() => {
+    if (transitionTimer.current) clearTimeout(transitionTimer.current);
+
+    // Skip transition for intermediate bed picks or when animations are disabled
+    const isIntermediateBedPick = currentSlotId && BED_SLOTS.has(currentSlotId) && currentSlotId !== lastBedSlotInFlow;
+    if (skipAnimations || isIntermediateBedPick) {
+      const next = currentIndex + 1;
+      if (next >= activeSlotIds.length) {
+        setSelections((prev) => fillDefaults(prev));
+        setPhase("complete");
+      } else {
+        setCurrentIndex(next);
+        setPhase("selecting");
+      }
+      return;
+    }
+
+    setPhase("transition");
+    transitionTimer.current = setTimeout(() => {
+      const next = currentIndex + 1;
+      if (next >= activeSlotIds.length) {
+        setSelections((prev) => fillDefaults(prev));
+        setPhase("complete");
+      } else {
+        setCurrentIndex(next);
+        setPhase("selecting");
+      }
+    }, 2000);
+  }, [currentIndex, currentSlotId, activeSlotIds, fillDefaults, skipAnimations, BED_SLOTS, lastBedSlotInFlow]);
+
+  // Direct advance (no transition) — for skip
   const advanceToNext = useCallback(() => {
     const next = currentIndex + 1;
     if (next >= activeSlotIds.length) {
@@ -181,6 +225,13 @@ export default function ResultPage() {
     }
   }, [currentIndex, activeSlotIds, fillDefaults]);
 
+  // Clean up transition timer
+  useEffect(() => {
+    return () => {
+      if (transitionTimer.current) clearTimeout(transitionTimer.current);
+    };
+  }, []);
+
   // Toggle handler for guided selection (works for both single and multi)
   const handleToggle = useCallback(
     (product: ProductResult) => {
@@ -188,9 +239,23 @@ export default function ResultPage() {
       const maxQty = currentSlot.max_quantity ?? 1;
 
       if (maxQty === 1) {
-        // Single-select: replace and auto-advance
+        // Single-select: check if this would blow the total budget
+        const otherSpend = Object.entries(selections)
+          .filter(([id]) => id !== currentSlotId)
+          .flatMap(([, prods]) => prods)
+          .reduce((sum, p) => sum + p.normalized_price, 0);
+        const wouldExceed = design && (otherSpend + product.normalized_price > design.target_budget * 1.05);
+
+        if (wouldExceed) {
+          // Show over-budget warning — let user confirm or pick again
+          setOverBudgetProduct(product);
+          return;
+        }
+
         setSelections((prev) => ({ ...prev, [currentSlotId]: [product] }));
-        setTimeout(advanceToNext, 400);
+        setLastPickedSlotId(currentSlotId);
+        setPickCount((c) => c + 1);
+        setTimeout(advanceWithTransition, 300);
       } else {
         // Multi-select: toggle on/off
         setSelections((prev) => {
@@ -214,15 +279,17 @@ export default function ResultPage() {
           if (spent + product.normalized_price > pool) return prev;
           return { ...prev, [currentSlotId]: [...current, product] };
         });
+        setLastPickedSlotId(currentSlotId);
+        setPickCount((c) => c + 1);
       }
     },
-    [currentSlotId, currentSlot, advanceToNext],
+    [currentSlotId, currentSlot, advanceWithTransition],
   );
 
   // Done handler for multi-select
   const handleDone = useCallback(() => {
-    advanceToNext();
-  }, [advanceToNext]);
+    advanceWithTransition();
+  }, [advanceWithTransition]);
 
   // Swap handler for final page (single-select slots)
   const handleSwap = useCallback(
@@ -288,12 +355,151 @@ export default function ResultPage() {
     );
   }
 
+  // --- Transition scene (between picks) ---
+  if (phase === "transition") {
+    // Figure out what group label to show
+    const transGroup = currentSlotId && design
+      ? getGroupForSlot(currentSlotId, design.room_type)
+      : null;
+    const nextIndex = currentIndex + 1;
+    const nextSlotId = activeSlotIds[nextIndex] ?? null;
+    const nextGroup = nextSlotId && design
+      ? getGroupForSlot(nextSlotId, design.room_type)
+      : null;
+    const showNextLabel = nextGroup && nextGroup.key !== transGroup?.key;
+
+    return (
+      <main className="result-page">
+        <div
+          className="scene-transition"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            minHeight: "100dvh",
+            padding: "24px",
+            background: "#F5F0EA",
+            animation: "sceneFadeIn 0.4s ease both",
+          }}
+        >
+          <div style={{ width: "100%", maxWidth: 720 }}>
+            <RoomSceneImage
+              selections={selections}
+              lastPickedSlotId={lastPickedSlotId}
+              pickCount={pickCount}
+              activeSlotIds={activeSlotIds}
+            />
+          </div>
+
+          {/* Progress dots */}
+          <div style={{
+            display: "flex",
+            gap: 6,
+            marginTop: 24,
+            alignItems: "center",
+          }}>
+            {activeSlotIds.map((id, i) => (
+              <div
+                key={id}
+                style={{
+                  width: i <= currentIndex ? 10 : 7,
+                  height: i <= currentIndex ? 10 : 7,
+                  borderRadius: "50%",
+                  background: i < currentIndex
+                    ? "#B8A080"
+                    : i === currentIndex
+                    ? "#8B6F5C"
+                    : "#DDD6CC",
+                  transition: "all 0.3s ease",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Upcoming group label */}
+          {showNextLabel && nextGroup && (
+            <p style={{
+              marginTop: 20,
+              color: "#8B6F5C",
+              fontSize: "0.85rem",
+              fontWeight: 500,
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              opacity: 0,
+              animation: "sceneFadeIn 0.5s ease 1.5s both",
+            }}>
+              Next: {nextGroup.label}
+            </p>
+          )}
+
+          {/* Skip / continue buttons */}
+          <div style={{ display: "flex", gap: 16, marginTop: 16, alignItems: "center" }}>
+            <button
+              type="button"
+              onClick={() => {
+                if (transitionTimer.current) clearTimeout(transitionTimer.current);
+                const next = currentIndex + 1;
+                if (next >= activeSlotIds.length) {
+                  setSelections((prev) => fillDefaults(prev));
+                  setPhase("complete");
+                } else {
+                  setCurrentIndex(next);
+                  setPhase("selecting");
+                }
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                color: "#A8A29E",
+                fontSize: "0.8rem",
+                cursor: "pointer",
+                textDecoration: "underline",
+              }}
+            >
+              Continue
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setSkipAnimations(true);
+                if (transitionTimer.current) clearTimeout(transitionTimer.current);
+                const next = currentIndex + 1;
+                if (next >= activeSlotIds.length) {
+                  setSelections((prev) => fillDefaults(prev));
+                  setPhase("complete");
+                } else {
+                  setCurrentIndex(next);
+                  setPhase("selecting");
+                }
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                color: "#A8A29E",
+                fontSize: "0.75rem",
+                cursor: "pointer",
+                opacity: 0.7,
+              }}
+            >
+              Skip all animations
+            </button>
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes sceneFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+        `}</style>
+      </main>
+    );
+  }
+
   // --- Phase 1: Guided selection ---
   if (phase === "selecting" && currentSlot) {
     const choices = getChoicesForSlot(currentSlot);
-    const progress = activeSlotIds.length > 0
-      ? currentIndex / activeSlotIds.length
-      : 0;
     const currentSelections = selections[currentSlotId!] ?? [];
     const selectedIds = currentSelections.map((p) => p.product_id);
 
@@ -313,34 +519,7 @@ export default function ResultPage() {
           </button>
         </div>
 
-        <div className="guided-flow">
-          {/* Room scene placeholder — Slice B will replace */}
-          <div className="guided-scene">
-            <div className="scene-placeholder">
-              <div className="scene-placeholder-inner">
-                <p className="scene-placeholder-count">
-                  {currentIndex} / {activeSlotIds.length} pieces placed
-                </p>
-                <div className="scene-placeholder-bar-track">
-                  <div
-                    className="scene-placeholder-bar-fill"
-                    style={{ width: `${progress * 100}%` }}
-                  />
-                </div>
-                <div className="scene-placed-dots">
-                  {activeSlotIds.map((id, i) => (
-                    <div
-                      key={id}
-                      className={`scene-dot${i < currentIndex ? " placed" : i === currentIndex ? " current" : ""}`}
-                      title={id.replace(/_/g, " ")}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Selection panel */}
+        <div className="guided-flow" style={{ display: "block", maxWidth: 640, margin: "0 auto" }}>
           <div className="guided-picker">
             {isNewGroup && currentGroup && (
               <div className="group-transition">
@@ -362,6 +541,81 @@ export default function ResultPage() {
             />
           </div>
         </div>
+
+        {/* Over-budget confirmation modal */}
+        {overBudgetProduct && design && (
+          <div style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.4)",
+            backdropFilter: "blur(4px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 100,
+            padding: 24,
+          }}>
+            <div style={{
+              background: "#FFF",
+              borderRadius: 16,
+              padding: "28px 24px",
+              maxWidth: 380,
+              width: "100%",
+              textAlign: "center",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.15)",
+            }}>
+              <p style={{ fontSize: "1.1rem", fontWeight: 600, color: "#1C1917", marginBottom: 8 }}>
+                Over budget
+              </p>
+              <p style={{ fontSize: "0.85rem", color: "#78716C", lineHeight: 1.5, marginBottom: 20 }}>
+                Picking <strong>{overBudgetProduct.name.slice(0, 40)}…</strong> (${overBudgetProduct.normalized_price.toFixed(2)}) would put you over your ${design.target_budget.toLocaleString()} budget. You can keep it or pick something else.
+              </p>
+              <div style={{ display: "flex", gap: 10 }}>
+                <button
+                  type="button"
+                  onClick={() => setOverBudgetProduct(null)}
+                  style={{
+                    flex: 1,
+                    padding: "10px 16px",
+                    border: "1.5px solid #E2DED6",
+                    borderRadius: 8,
+                    background: "#FFF",
+                    color: "#1C1917",
+                    fontSize: "0.85rem",
+                    fontWeight: 500,
+                    cursor: "pointer",
+                  }}
+                >
+                  Pick again
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const product = overBudgetProduct;
+                    setOverBudgetProduct(null);
+                    setSelections((prev) => ({ ...prev, [currentSlotId!]: [product] }));
+                    setLastPickedSlotId(currentSlotId);
+                    setPickCount((c) => c + 1);
+                    setTimeout(advanceWithTransition, 300);
+                  }}
+                  style={{
+                    flex: 1,
+                    padding: "10px 16px",
+                    border: "none",
+                    borderRadius: 8,
+                    background: "#1C1917",
+                    color: "#FFF",
+                    fontSize: "0.85rem",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                  }}
+                >
+                  Keep it anyway
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     );
   }

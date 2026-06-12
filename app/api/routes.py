@@ -105,10 +105,13 @@ async def create_design(req: DesignRequest) -> DesignResponse:
         if "bed_size" in slot.required_specs and room_request.bed_size:
             spec_hints["bed_size"] = room_request.bed_size
 
+        # Fetch candidates up to 1.5x the slot budget so the user sees more
+        # variety. The LLM and UI will handle budget enforcement — items above
+        # the slot budget are shown but flagged if they'd blow the total.
         candidates = adapter.fetch_candidates(
             slot.slot_id,
             style_profile.keywords,
-            (0.0, slot.allocated_budget),
+            (0.0, slot.allocated_budget * 1.5),
             spec_hints,
             interests=room_request.interests or None,
         )

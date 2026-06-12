@@ -79,7 +79,7 @@
   {
     "product_id": "B06WWRCZXX",
     "name": "Queen Size 4 Piece Sheet Set - Comfy Breathable & Cooling Sheets - Hotel Luxury Bed Sheets for Women and Men - Deep Pockets, Easy-Fit, Soft and Wrinkle Free Sheets - Dark Grey Oeko-Tex Bed Sheet Set",
-    "normalized_price": 29.99,
+    "normalized_price": 24.99,
     "buy_url": "https://www.amazon.com/dp/B06WWRCZXX",
     "specs": {
       "bed_size": "queen"
@@ -90,7 +90,7 @@
   {
     "product_id": "B0G1S94Z4H",
     "name": "Hotel Queen Size Sheet Set \u2013 4 Piece Luxury Bedding Sheets, Deep Pocket Soft & Breathable Microfiber Bed Sheets, 1 Fitted Sheet, 1 Flat Sheet and 2 Pillowcases \u2013 Oeko Tex (White)",
-    "normalized_price": 12.17,
+    "normalized_price": 14.99,
     "buy_url": "https://www.amazon.com/dp/B0G1S94Z4H",
     "specs": {
       "bed_size": "queen"
@@ -320,8 +320,8 @@
   },
   {
     "product_id": "B08HH4DDRP",
-    "name": "Utopia Bedding Queen Sheet Set - Jersey Knit Sheets 4 Piece \u2013 Cotton \u2013 Soft T-Shirt Stretchy Sheets (Heather Light Grey)",
-    "normalized_price": 26.49,
+    "name": "Utopia Bedding Jersey Knit Queen Sheets Set \u2013 4 Piece Cotton Jersey Sheets, Ultra Soft T-Shirt Feel, Breathable & Stretchy Bed Sheet Set, Heather Light Grey",
+    "normalized_price": 27.49,
     "buy_url": "https://www.amazon.com/dp/B08HH4DDRP",
     "specs": {
       "bed_size": "queen"
@@ -2655,6 +2655,226 @@
       "bed_size": "king"
     },
     "image_url": "https://m.media-amazon.com/images/I/81ZjTB3+0rL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DXVPG57F",
+    "name": "ClevaHome Sheet Set Queen Size, 4-Piece Bedding, Lightweight & Super Soft Easy Care Microfiber\u2013 Shrinkage & Fade Resistant Bedding Set with 14'' Deep Pockets (Navy Blue)",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B0DXVPG57F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71qu1CjZ9GL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B079RXWGSD",
+    "name": "Pure Bamboo Queen Sheets, Genuine 100% Organic Viscose Derived from Bamboo Bed Sheet Set, Luxuriously Soft & Cooling, Double Stitching, 2 Year Quality Promise (Queen, Sea Glass)",
+    "normalized_price": 104.99,
+    "buy_url": "https://www.amazon.com/dp/B079RXWGSD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91BvFwlicHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D81TZ21Q",
+    "name": "Luxury Bamboo Market | Queen Size Bed Sheet Set | 100% Viscose Made from Bamboo | Organically Grown | Ultra Soft | Cooling Sheets for Hot Sleepers | 17\" Deep Pocket [Coastal Green]",
+    "normalized_price": 129.94,
+    "buy_url": "https://www.amazon.com/dp/B0D81TZ21Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61ZSJaiElhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BHZSJ4QK",
+    "name": "BOLL & BRANCH Signature Hemmed Sheet Set - Queen, White - Luxury 100% Organic Cotton - Includes 1 Flat, 1 Fitted, 2 Pillowcases - Buttery Soft",
+    "normalized_price": 279.0,
+    "buy_url": "https://www.amazon.com/dp/B0BHZSJ4QK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51b1GKukZ6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DT44L8MZ",
+    "name": "Amazon Basics Ultra-Soft Lightweight Microfiber 4-Piece Bed Sheet Set with Flat Sheet and Fitted Sheet, Polyester, Machine Wash, Queen, Aqua, Printed",
+    "normalized_price": 16.7,
+    "buy_url": "https://www.amazon.com/dp/B0DT44L8MZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OpRLaeftL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGJN34ZH",
+    "name": "Utopia Bedding Queen Sheet Set, Soft Microfiber 4 Piece Bed Sheets with 15\" Deep Pocket - Easy Care Brushed Microfiber (Queen, Grey)",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGJN34ZH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71YHOF+PBqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D81JW9LB",
+    "name": "Luxury Bamboo Market | Queen Size Bed Sheet Set | 100% Viscose Made from Bamboo | Organically Grown | Ultra Soft | Cooling Sheets for Hot Sleepers | 17\" Deep Pocket [Spa Blue]",
+    "normalized_price": 129.94,
+    "buy_url": "https://www.amazon.com/dp/B0D81JW9LB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xl5Bq-ttL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08DM9V1ZL",
+    "name": "Elegant Comfort Luxury Soft Bed Sheets Paisley Pattern - 1500 Premium Hotel Quality Microfiber Softness Wrinkle and Fade Resistant (6-Piece) Bedding Set, Queen, Navy",
+    "normalized_price": 16.59,
+    "buy_url": "https://www.amazon.com/dp/B08DM9V1ZL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91PQJsarlwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01IE7P2VW",
+    "name": "Utopia Bedding Queen Fitted Sheet - Bottom Sheet - Deep Pocket - Soft Microfiber - Shrinkage and Fade Resistant - Easy Care -1 Fitted Sheet Only (Grey)",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B01IE7P2VW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/715ODRGbEdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CH7NGTRG",
+    "name": "Luxury Bamboo Market | Queen Size Bed Sheet Set | 100% Viscose Made from Bamboo | Organically Grown | Ultra Soft | Cooling Sheets for Hot Sleepers | 17\" Deep Pocket [Charcoal Grey]",
+    "normalized_price": 129.94,
+    "buy_url": "https://www.amazon.com/dp/B0CH7NGTRG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61JdwzrPZcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHMS61F1",
+    "name": "Threadmill Supima Cotton Sheets Queen, 1000 Thread Count Queen Sheets for Queen Mattresses, 4 Piece Luxury Bed Sheets, Sateen Weave Hotel Quality Sheet with Elasticized Deep Pocket, Folkstone Blue",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0CHMS61F1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71cMeaAFM+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07DZMB498",
+    "name": "Pure Bamboo Queen Sheets, Genuine 100% Organic Viscose Derived from Bamboo Bed Sheet Set, Luxuriously Soft & Cooling, Double Stitching, 2 Year Quality Promise (Queen, Ivory)",
+    "normalized_price": 104.99,
+    "buy_url": "https://www.amazon.com/dp/B07DZMB498",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91dfner9BkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09LH12RFS",
+    "name": "Mooreeke Queen Size Sheets Set - 4 Piece Soft Breathable Microfiber Bed Sheet Set - Blue & White Flower Pattern Sheet Set Queen - Deep Pocket Non-Slip Floral Fitted Sheet Included for All Season",
+    "normalized_price": 17.09,
+    "buy_url": "https://www.amazon.com/dp/B09LH12RFS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/916-7EoEoaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08L866W2S",
+    "name": "Bella Coterie Luxury Bamboo Viscose Queen Size Sheet Set | 100% Organically Grown | Ultra Soft | Cooling for Hot Sleepers | 18\" Deep Pocket [Grey Mist]",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B08L866W2S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71+Z0qDUahL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FB8WW8HC",
+    "name": "Bedsure 100% Organically Grown Bamboo Viscose Queen Sheet Set | Cooling Bedsheets for Hot Sleepers | Luxury Silky Soft PureWoven | 18\" Deep Pocket with Corner Straps | Oeko-Tex Certified [Olive Green]",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0FB8WW8HC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816hcvFQTaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BX9F1VS5",
+    "name": "ILAVANDE Queen Sheets Set 6 Piece,Hotel Luxury Super Soft 1800 Series Microfiber Queen Bed Sheets Set-Wrinkle Free & Breathable-14 Deep Pocket Sheets for Queen Size Bed(Queen,Sage Green)",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0BX9F1VS5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Uyy6SR+rL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGQV7J4C",
+    "name": "Bedsure Deep Pocket Queen Sheets - 6 Piece, Prewashed Ultra-Soft Queen Sheet Set, Fits Mattresses Up to 18 Inches Thick, Breathable & Secure Fit, Hotel Luxury Bedding, Grey",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGQV7J4C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WXfYC1VfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F23PFNXW",
+    "name": "White Queen Sheet Set, 4 Pieces Soft Bedding Queen Sheet Set, Breathable and Cooling Sheets, Deep Pocket with 1 Fitted, 1 Flat, 2 Pillow Cases (White, Queen Size)",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0F23PFNXW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71on+ktpSJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQWB4TWV",
+    "name": "Amazon Basics Brushed Microfiber Sheet Set, Extra Soft with Natural Texture, Breathable, Elastic Band, Machine Washable, Oeko-TEX Certified, 4-Piece, Queen, Brown",
+    "normalized_price": 15.74,
+    "buy_url": "https://www.amazon.com/dp/B0DQWB4TWV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711yZVOgTzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKNCZ1N6",
+    "name": "Cozy Soft Cooling 4 piece Sheet Set - Luxurious, Supreme Soft and Cozy Microfiber Bed Sheets - Includes Flat Sheet, Fitted Sheet with Deep Pockets, & Pillowcases & Easy Care- Gray Queen",
+    "normalized_price": 13.98,
+    "buy_url": "https://www.amazon.com/dp/B0GKNCZ1N6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mdrluJO5L._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

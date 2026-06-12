@@ -2,7 +2,7 @@
   {
     "product_id": "B08DTH86Q2",
     "name": "Utopia Bedding Down Alternative Bed Pillows for Sleeping Queen Size (White), Set of 2, Soft & Fluffy Pillow with Cooling, Hotel Quality, Gusseted Pillow for Back, Stomach or Side Sleepers",
-    "normalized_price": 28.89,
+    "normalized_price": 23.4,
     "buy_url": "https://www.amazon.com/dp/B08DTH86Q2",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61fywr4RYhL._AC_UL320_.jpg",
@@ -317,7 +317,7 @@
   {
     "product_id": "B0FTYHQKZC",
     "name": "JOLLYVOGUE Pillows Queen Size Set of 2, Bed Pillow for Side, Back, and Stomach Sleepers, Down Alternative Filled Pillows, Luxury Hotel Quality and Machine Washable, 28\" x 20\", 2 Pack",
-    "normalized_price": 19.98,
+    "normalized_price": 21.99,
     "buy_url": "https://www.amazon.com/dp/B0FTYHQKZC",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/619Mq3T3hOL._AC_UL320_.jpg",
@@ -632,7 +632,7 @@
   {
     "product_id": "B0176SPRZQ",
     "name": "Memory Foam Pillows Queen Size Set of 2 - Cooling Bed Pillows for Sleeping - Back, Stomach, Side Sleeper Firm, Comfy Cool Shredded - 2 Pack, Rayon Derived from Bamboo",
-    "normalized_price": 38.99,
+    "normalized_price": 33.14,
     "buy_url": "https://www.amazon.com/dp/B0176SPRZQ",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61dqKF9ITyL._AC_UL320_.jpg",
@@ -1797,6 +1797,114 @@
     "buy_url": "https://www.amazon.com/dp/B0DHN5HFX4",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61noA84F4pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPV9R4XX",
+    "name": "Favocama Pillows Standard Size Set of 4 Hotel Collection Bed Pillow for Sleeping Pillows 4 Pack for Back, Stomach or Side Sleepers Soft and Supportive Washable Pillows for Bedroom",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DPV9R4XX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61i47Y-tW4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DT4MBQMQ",
+    "name": "Bed pillows Reversible Queen Size Set of 4, Firm on One Side, Soft on the Other, Luxury Hotel Quality 3D Microfiber for Side, Back & Stomach Sleepers, Breathable Cover to Reduce Neck Pain 20*30",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DT4MBQMQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/611yzi8R9hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08J4BZZ5L",
+    "name": "2 Pack King Size Pillows for Sleeping, Cooling Shredded Memory Foam Adjustable Bed Pillow with, Removable/Washable Cover (King 2 Pack)",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B08J4BZZ5L",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51eex1ffxdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5CDG244",
+    "name": "CGK Linens Ultra Thin Flat Pillows for Sleeping - Queen Size Pillows Set of 2 - Soft, Cozy Down Alternative Bed Pillows for Back & Stomach Sleepers - Low Density, Low Loft Support - 20\" x 30\" - White",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0F5CDG244",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61J0PQbUYHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJ2FJH11",
+    "name": "Standard Size Bed Pillows for Sleeping 4 Pack,Luxury Hotel Pillows,Comfortable and Supportive,Machine Washable,Suitable for Stomach,Back and Side Sleepers.",
+    "normalized_price": 26.91,
+    "buy_url": "https://www.amazon.com/dp/B0CJ2FJH11",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61hYXXmFzpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZ2PRB69",
+    "name": "Piwaal Luxury Hotel Pillows for Sleeping 2 Pack,Bed Pillows Standard Size Set of 2,Down Alternative Filling,Pillows for Back,Stomach and Side Sleepers",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZ2PRB69",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Kwn1HEVOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D8KPNRXG",
+    "name": "JOLLYVOGUE Pillows Standard Size Set of 4, Collection Bed Pillows for Sleeping, Hotel Quality Pillows for Side, Back and Stomach Sleepers, Soft Supportive Oeko-Tex Certified Down Alternative Filling",
+    "normalized_price": 29.98,
+    "buy_url": "https://www.amazon.com/dp/B0D8KPNRXG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61LHUG9MX4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZ8H5MBP",
+    "name": "ROYALE LINENS Pillows Standard Size Set of 2 - Bed Pillows for Sleeping - Cooling Pillow for Back, Stomach & Side Sleepers - Down Alternative Standard Pillow - Hotel Quality - (20x26 Inche,Pack of 2)",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZ8H5MBP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61tEN54dxaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJDC1JPP",
+    "name": "Pillows Standard Size Set of 4, Luxury Fluffy Bed Pillows for Sleeping 4 Pack, Soft and Supportive Bed Pillow with Down Alternative Filling for Side and Back Sleepers (18\"x26\")",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJDC1JPP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61ToDpfA8fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRNFCX2H",
+    "name": "Bed Pillows Queen Size Set of 4, Medium Firm Hotel Pillows for Sleeping, Cooling Pillows for Side & Back Sleepers, Down Alternative Filling, 20 x 28 Inches",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRNFCX2H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61itLDQIP-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFPQJSN9",
+    "name": "CozyLux Pillows Queen Size Set of 2, Soft and Supportive 3D Down Alternative Bed Pillow for Sleeping 2 Pack White, Luxury Hotel Quality Gusseted Bedding Pillow for Back, Stomach or Side Sleepers 18x28",
+    "normalized_price": 21.49,
+    "buy_url": "https://www.amazon.com/dp/B0DFPQJSN9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61yhYl4cVqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQMG8L97",
+    "name": "COZSINOOR Bed Pillows for Sleeping Queen Size - Hotel Quality Set of 2 - Breathable Cooling Down Alternative Microfiber Filled for Back, Stomach, Side Sleepers Skin-Friendly",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQMG8L97",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71V+xFSlwKL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

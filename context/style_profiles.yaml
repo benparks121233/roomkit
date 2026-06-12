@@ -61,6 +61,24 @@ profiles:
     color_palette: [warm brown, deep red, cream, forest green, burnt orange]
     mood: warm, inviting, alpine cozy
 
+  - id: jungle_oasis
+    display_name: Jungle Oasis
+    keywords: [tropical, rattan, monstera, botanical, natural wood, jute, macrame, earthy, lush]
+    color_palette: [deep green, terracotta, warm cream, natural tan, olive]
+    mood: lush, grounding, tropical retreat
+
+  - id: gamer_den
+    display_name: Gamer Den
+    keywords: [LED, dark, minimalist, tech, gaming, RGB, matte black, sleek, acoustic]
+    color_palette: [charcoal black, deep purple, electric blue, dark grey, neon accent]
+    mood: moody, immersive, futuristic
+
+  - id: poster_maximalist
+    display_name: Poster Maximalist
+    keywords: [eclectic, maximalist, collage, posters, fairy lights, vines, layered, colorful, expressive]
+    color_palette: [warm amber, terracotta, mustard yellow, dusty pink, mixed brights]
+    mood: expressive, personal, youthful, maximalist
+
   # Fallback profile — used when the LLM can't confidently match any above.
   - id: warm_minimalist
     display_name: Warm Minimalist

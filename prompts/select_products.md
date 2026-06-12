@@ -29,9 +29,37 @@ Rules:
   option exists.
 - If user interests are provided, prefer products that reflect those interests
   (e.g. music fan → vinyl/music-themed art) when a good candidate exists.
-  Style fit takes priority over interests — never pick a clashing product just
-  because it matches an interest.
-- Return up to {{pick_count}} products, ranked by style fit (rank 1 = best).
+  For most slots, style fit takes priority over interests.
+  **EXCEPTION — wall_art:** For the wall_art slot, interests are the PRIMARY
+  ranking signal. If the user likes sports, most picks should be sports-themed.
+  If they like music, prioritize music/vinyl/concert art. Interests should
+  dominate the rankings — the room style is secondary (just avoid picks that
+  outright clash with the style). If no interests are provided, fall back to
+  style-based ranking as normal.
+- DIVERSITY: Avoid ranking many products from the same brand. Max 2 from any
+  single brand. If you include 2 from the same brand, they must be meaningfully
+  different products (e.g. different style, material, or size — not just color
+  variants). Spread your picks across different brands.
+- PRICE RANGE: Include a mix of price points. Your picks should span from
+  affordable options (around 35% of the allocated budget) up to premium options
+  (up to 100% of budget). Do not cluster all picks in the same price tier.
+- TASTE / QUALITY FILTER: You are curating for a design-forward room, not a
+  big-box clearance rack. Strongly prefer elevated, tasteful, design-magazine-
+  worthy products. SKIP or rank last any of the following:
+    • Motivational quote decor, "live laugh love," inspirational text of any kind
+    • Generic mass-market novelty items, kitschy/cheesy pieces, "man cave" signs
+    • Dated or tacky patterns (generic chevron, mass-market farmhouse "bless this mess")
+    • For wall_art specifically: prefer abstract art, vintage prints, botanical
+      illustrations, photography, line art, gallery-quality pieces. Avoid mall-
+      kiosk canvas, motivational posters, and generic clip-art prints.
+    • For interest-based picks (sports, music, hobbies): pick the COOL, ELEVATED
+      version — vintage posters, framed retro prints, tasteful typography, cool
+      photography. NOT cheap novelty merch, generic logo canvas, plastic signs,
+      or "fan cave" junk. Think: what a design-savvy fan would actually hang.
+- You MUST return exactly {{pick_count}} products (or as many as available if
+  fewer than {{pick_count}} candidates exist). Do not stop early — the user
+  needs a full selection to choose from. Rank by style fit (rank 1 = best).
+{{neutral_instruction}}
 
 ---
 

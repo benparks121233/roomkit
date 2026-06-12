@@ -299,7 +299,7 @@
   {
     "product_id": "B086ZLGLV3",
     "name": "ROTTOGOON Floor Lamp for Living Room with 3 Color Temperatures LED Bulb, Standing Lamp Tall Industrial Floor Lamp Reading for Bedroom, Office (9W LED Bulb, Beige Lampshade Included) -Black",
-    "normalized_price": 26.99,
+    "normalized_price": 24.99,
     "buy_url": "https://www.amazon.com/dp/B086ZLGLV3",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61pJwYkeP9L._AC_UL320_.jpg",
@@ -2090,7 +2090,7 @@
   {
     "product_id": "B099WTN2TR",
     "name": "Govee RGBIC Floor Lamp Basic, 1000lm LED Corner Lamp Compatible with SmartThings, Alexa, and Matter, Modern Floor Lamp with Music Sync and 16 Million DIY Colors, Standing Lamp for Bedroom Living Room",
-    "normalized_price": 99.99,
+    "normalized_price": 64.6,
     "buy_url": "https://www.amazon.com/dp/B099WTN2TR",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61SdRNLwZzL._AC_UL320_.jpg",
@@ -2499,6 +2499,375 @@
     "buy_url": "https://www.amazon.com/dp/B0DLGMKYWN",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/612x8fOlVbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVQL97VY",
+    "name": "FRIDEKO HOME Smart Floor Lamp, Color Changing Standing Light with Music Sync, App & Remote Control, Adjustable Brightness & Color Temperature (Beige Shade)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVQL97VY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71XL7ZhHwwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYG5YHKW",
+    "name": "NEEWER Smart RGB IC W Floor Lamp, 1500lm LED Standing Corner Light Compatible with Alexa Google, APP Control/AI DIY/Music Sync/16 Million Colors, Ambience Lighting Bedroom Living Room Home Decor, NF01",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0FYG5YHKW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61eP6zcohBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DB28LM12",
+    "name": "15W Floor Lamp with Touch Control Adjustable Brightness 3500K-7000K 360\u00b0 Gooseneck LED Floor Lamps Eye-Caring Floor Lamp for Living Room, Bedroom & Office Stepless Dimming Standing Lamp",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0DB28LM12",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71umG3DgFoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BXWQHYVQ",
+    "name": "Miortior Corner Floor Lamp - Smart RGB LED Corner Lamp with App and Remote Control, 16 Million Colors & 68+ Scene, Music Sync, Timer Setting - Ideal for Living Rooms, Bedrooms, and Gaming Rooms",
+    "normalized_price": 37.96,
+    "buy_url": "https://www.amazon.com/dp/B0BXWQHYVQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61ff09oRxJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHQ38912",
+    "name": "Ambimall Arc Floor Lamp for Living Room with Remote, Color Temperature & Brightness Adjustable, Boho Standing Lamp with Rattan & Fabric Double Drum Shades, Bulb Included(Black)",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHQ38912",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81BpfSajn9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJZGM1YW",
+    "name": "Floor Lamp for Living Room and Bedroom - Modern Standing Lamps Tall with Dimmable LED Bulb and Remote Control - Black Stand Arc Light With Shade for Reading Home Decor Corner and office\uff08Black\uff09",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJZGM1YW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/714zLX5yUFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D77D5WKD",
+    "name": "Gupuzm Floor Lamp with Shelves, Modern Square Standing Lamp with 3 Color Temperature Bulb, Corner Display Bookshelf Lamp for Living Room, Bedroom and Office (Black)",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B0D77D5WKD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61m4JpM4hYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C3LPL7DT",
+    "name": "Floor Lamp, Dimmable Standing Lamp, 3 Levels Brightness Led Floor Lamp Rotary Switch Floor Lamps Modern Industrial Lamp with Shade, Tall Lamps for Living Room Bedroom Office Dining Room (Black)",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0C3LPL7DT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51z3pX5eSrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZRGWPK1",
+    "name": "FOLKSMATE Floor Lamp for Living Room, LED Modern Simple Standing Lamps, Tall Lamp for Bedroom, Kid, Office, Reading Room Black Pole Light Without Bulb",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZRGWPK1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/616cP5hq84L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BXL58MJS",
+    "name": "PARTPHONER Floor Lamp for Living Room, Modern Standing Lamps with Lampshade, Minimalist Tall Lamp with Foot Switch for Living Room, Bedroom, Kids Room, Office(Bulb Not Included)",
+    "normalized_price": 20.89,
+    "buy_url": "https://www.amazon.com/dp/B0BXL58MJS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81fMliEl0BL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B084WD7WZB",
+    "name": "Newhouse Lighting 71-in. Charles Black Modern Standing Lamp NHFL-CH-BK, Floor Lamp for Living Room, Bedroom, and Other Home Decor, Ambient Lighting and Mood Lighting for Office Decor",
+    "normalized_price": 16.8,
+    "buy_url": "https://www.amazon.com/dp/B084WD7WZB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41p5mOEL3QL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BVFX154J",
+    "name": "Floor Lamp with Shelves for Living Room, Shelf Floor Lamp with 3 CCT LED Bulb, Corner Display Standing Column Lamp Etagere Organizer Tower Nightstand with White Linen Shade for Bedroom, Office",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0BVFX154J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71u3LMKkWEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4H294KQ",
+    "name": "Coucrek Floor Lamp, LED Standing Lamps with White Plastic Shade, Black Modern Torchiere Floor Lamp, Tall Lamps for Living Room Dorm, Bulb not Included",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4H294KQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Rj8re4WiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09H2NPN6X",
+    "name": "WORLD WIN Floor Lamp, 61'' Smart RGB LED Corner Lamp with Music Sync and 16 Million DIY Colors, 3 Color Temperature, APP & Remote Control, Color Changing Standing Floor Lamp for Bedroom Living Room",
+    "normalized_price": 39.95,
+    "buy_url": "https://www.amazon.com/dp/B09H2NPN6X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71SdbKWO7wL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFWKK62B",
+    "name": "DREAME LED Floor Lamp for Living Room, RGB Color Changing Tall Light with 70 Effects, 1200LM 2700K-6500K Dual White, Music Sync, Works with Alexa Google Home, Matter Compatible, Modern Full-Metal",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0GFWKK62B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ybZadhR6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYJDFR9N",
+    "name": "luckystyle Smart RGB+IC Corner Floor Lamp,Bright LED Tall Modern Floor Lamp with APP and Remote,Ambient Lighting Color Changing Standing Lamps with Music Mode and Timing for Living Room,Bedroom,Party",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DYJDFR9N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Aq4SKHAvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7R6XGJ3",
+    "name": "Floor Lamp, 2800LM RGBWW Smart Standing Lamps for Living Room with Smart App & Voice Control, 69.3in Torchiere Floor Lamps Color Changing, 350\u00b0Rotating LED Tall Lamp for Bedroom Office Gaming Party",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0F7R6XGJ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61yv-BW2T9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6MRCBFW",
+    "name": "WORLD WIN Floor Lamp, 61'' Smart RGB LED Corner Lamp with Music Sync and 16 Million DIY Colors, 3 Color Temperature, APP & Remote Control, Color Changing Standing Floor Lamp for Bedroom Living Room",
+    "normalized_price": 39.95,
+    "buy_url": "https://www.amazon.com/dp/B0C6MRCBFW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71skDhv+MfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C1B8FY25",
+    "name": "WISIMMALL 2PCS RGB Corner Floor Lamp, 64.5\" RGB Color Changing Mood Light Bluetooth APP and Remote Control Music Sync LED 398 Dimmable Modes Modern Floor Lamp for Living Room, Light Timing",
+    "normalized_price": 63.64,
+    "buy_url": "https://www.amazon.com/dp/B0C1B8FY25",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61wkSyH1JOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCD6HB5R",
+    "name": "61'' Round Floor Lamp, RGB LED Corner Floor Lamp with Music Sync, 16W+ Colors & 3 Color Temperatures, APP & Remote Control, Modern Standing Lamp for Living Room Bedroom",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CCD6HB5R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/718YAr4WBkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRFPCJ49",
+    "name": "OIYN Smart RGBICW LED Corner Floor Lamp - 16 Million DIY Colors, 68+ Scenes, Music Sync, App & Remote Control, Color-Changing Ambient Lighting for Living Rooms, Bedrooms, and Gaming Rooms",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRFPCJ49",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Z3mufc6lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D93T78D7",
+    "name": "Tyute Corner Floor Lamp, RGB LED Corner Lamp with Music Sync, Smart App and Remote Control Color Changing Ambience Light, LED Lamp with 16 Million Colors for Bedroom, Living Room Gaming Room",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0D93T78D7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61WwgSzdikL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRF76Y1W",
+    "name": "Smart Corner Floor Lamp, RGBICW LED Standing Lamp with App Control, 16 Million Colors with Music Sync, Dimmable Ambient Light for Bedroom, Living Room, Home Decor (Black)",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRF76Y1W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/610coePkNiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9LWPWWJ",
+    "name": "SUNMORY Smart RGB Floor Lamps for Living Room, 32W Bright LED Floor Lamp with APP and Remote Control, Tall Standing Lamp with Stepless Dimmable, Modern Torchiere Corner Lamp for Bedroom, Gaming Room",
+    "normalized_price": 68.75,
+    "buy_url": "https://www.amazon.com/dp/B0D9LWPWWJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61AeoIPlwAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTL1NXYM",
+    "name": "LED Corner Floor Lamp, RGB LED Corner Lamp with App & Remote, Smart Floor Lamp with 16 Million Colors, Music Sync, Scene Modes, Color Changing Standing Lamps for Living Room, Bedroom",
+    "normalized_price": 35.98,
+    "buy_url": "https://www.amazon.com/dp/B0GTL1NXYM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61EJ45xJjtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CWTV39JN",
+    "name": "Wio-Mio Floor Lamps, RGB Color Changing Dimmer Bright LED Floor Lamp with Stepless Adjustable 3000K-6000K, Smart Remote Control Modern Standing Floor Lamp for Bedroom, Reading, Gaming Room",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CWTV39JN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51TW9vB2e+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2VNZT7H",
+    "name": "Corner Floor Lamp, 2 Pack RGB Corner Lamp with App/Remote/Button Control, Smart LED Floor Lamp with 16 Million DIY Colors & 68+ Scene, Music Sync for Living Room, Bedroom, Gaming Room (2, 57 Inch)",
+    "normalized_price": 58.99,
+    "buy_url": "https://www.amazon.com/dp/B0D2VNZT7H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71rFZe3TpsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BK19M17S",
+    "name": "Yikuneng RGB Torchiere Floor Lamps for Living Room, 3600LM 36W Bright LED Standing Lamp with Remote, Modern Color Changing Tall Lamp with Stepless Dimming, 69\" Corner Floor Lamp for Bedroom, Office",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BK19M17S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71V7xpny8pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GY848JBV",
+    "name": "RIYO LED Corner Floor Lamp, RGB Color Changing Standing Lamp with App and Remote Control, 16 Million Colors & 68+ Scene Music Sync Ambient Lighting for Living Room, Bedroom, Gaming Room Decor",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0GY848JBV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71U1Z1hXynL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DR2LFXRK",
+    "name": "2PCS RGB Corner Floor Lamp, 64.5\" RGB Color Changing Led Floor Lamp for Living Room APP and Remote Modern Light Bar with Music Sync and 16 Million Colors Dimmable Ambient Lighting for Bedroom",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0DR2LFXRK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/619nnj0fAwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BFB74R57",
+    "name": "Corner Floor Lamp,65\u201d Color Changing LED Floor Lamp with Music Sync,Modern Mood Lighting Corner Lamp with Remote & App Control, Creative DIY Mode & Timing,RGB Floor Lamps for Living Room Gaming Room",
+    "normalized_price": 34.95,
+    "buy_url": "https://www.amazon.com/dp/B0BFB74R57",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/710IfaJswQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FK1TYHX1",
+    "name": "Flupuro 2 Pack DIY Corner Floor Lamps, ICRGB Floor Lamp with Music Sync and 16 Million Colors, Color Changing Standing Floor LED Lights for Bedroom Living Room Decor, Ambient Mood Lighting Gaming",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FK1TYHX1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81vta4rxL2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZGQJN13",
+    "name": "RGB LED Corner Lamp with Music Sync - 16 Million Colors Ambience Light, Smart App & Remote Control, Perfect Corner Floor Lamp for Bedroom Living Room Gaming Room",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZGQJN13",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61yRNszTPNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8Y2PX24",
+    "name": "Flupuro 2 Pack ICRGB Corner Floor Lamp, Smart LED Floor Lamps with App & Remote Control, Music Sync, 16 Million Colors, Auto Timer, Modern Ambient Standing Light for Gaming Room, Living Room, Bedroom",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0G8Y2PX24",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81taCv2NiML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6Y666WB",
+    "name": "RGB LED Corner Floor Lamp\uff0cDIY Floor Lamp with Music Sync and 16 Million Colors, 15 Dynamic Modes, App & Remote Control,Standingl Corner Changing Ambience Light, for Living Bedroom Room Gaming Room",
+    "normalized_price": 13.98,
+    "buy_url": "https://www.amazon.com/dp/B0F6Y666WB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61FiiGDZvSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CNQYNF86",
+    "name": "2PCS Corner Floor Lamp, 65\" RGB Color Changing Mood Light with Remote Control, Dimmable LED Corner Lamp with Music Sync, Modern Floor Lamp for Living Room Gaming Room",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0CNQYNF86",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BcCt0RqUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G48CS129",
+    "name": "Tyute Corner Floor Lamp, RGB LED Lamp with Smart App and Remote Control Color Changing, Music Sync Ambience Lighting, Mood Lighting with 16 Million Colors for Bedroom Living Room Gaming Room",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0G48CS129",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/613aOY58wjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G48XLHBP",
+    "name": "NBBUFF Led Corner Floor Lamp USB Powered with App & Remote Control, Color Changing Led Lamp Music Sync IC+RGBW, Timer, 64+ Music Modes, Standing Lamps for Living Room Lamp Bedroom Gaming Room, 1 Pack",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0G48XLHBP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71QhYjGn7GL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDX1W77M",
+    "name": "OIYN Corner Floor Lamp, RGBICW LED Corner Lamp with 1300lm Smart Modern Floor Lamp,App & Remote Control,Music Sync,Color Changing Standing Lamp for Bedroom Living Room and Gaming Rooms",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDX1W77M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61I6xLWHhHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BDL1K1QQ",
+    "name": "Qaubauyt Smart LED Floor Lamp with APP Control & RGB Colors - Dimmable Standing Lamp for Living Room, Bedroom, Gaming - Remote, Timer, 9W Bulb Included, 67\" Modern Tall Lamp (black pole + white shade)",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0BDL1K1QQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ewgPi1cvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GRN3F42X",
+    "name": "Led Corner Floor Lamp USB Powered IC+RGBW Color Changing, App & Remote Control Led Lamp Music Sync, Timer, 64+ Music Modes Standing Lamps for Living Room Lamp Bedroom Gaming Room, 1 Pack",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0GRN3F42X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71aU4Sygb9L._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

@@ -74,7 +74,7 @@
   {
     "product_id": "B0DNZ322RH",
     "name": "Fluted Dresser for Bedroom with 6 Drawers, 48\" Wide Modern Chest of Drawers with Metal Handle, Wooden Dresser TV Stand, Wood Closet Clothes Storage Organizer for Living Room, Hallway, Natural Oak",
-    "normalized_price": 159.37,
+    "normalized_price": 199.99,
     "buy_url": "https://www.amazon.com/dp/B0DNZ322RH",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/91tvkhx2KsL._AC_UL320_.jpg",
@@ -1253,7 +1253,7 @@
   {
     "product_id": "B0GWHPRMST",
     "name": "Sweetcrispy Dresser, Dresser for Bedroom Organizer Storage, Fabric Storage Tower with 8 Drawers, Chest of Drawers with Steel Frame, Wood Top for Living Room, Closet, Black",
-    "normalized_price": 39.99,
+    "normalized_price": 54.99,
     "buy_url": "https://www.amazon.com/dp/B0GWHPRMST",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71i+Jb40osL._AC_UL320_.jpg",
@@ -1973,7 +1973,7 @@
   {
     "product_id": "B09QCZJXWM",
     "name": "FOTOSOK White Dresser, 4 Drawer Dresser Small Chest of Drawers 23.6L x 15.7W x 31.5H in, Modern White Storage Cabinet with 4 Drawers for Home Office",
-    "normalized_price": 90.0,
+    "normalized_price": 89.99,
     "buy_url": "https://www.amazon.com/dp/B09QCZJXWM",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/51yErenwILL._AC_UL320_.jpg",
@@ -2544,6 +2544,438 @@
     "buy_url": "https://www.amazon.com/dp/B0GYDY9BCY",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81FpRe3rM-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJLT8YMZ",
+    "name": "Sweetcrispy 7 Drawer Dresser with Fabric Bins Fabric Storage Tower Organizer for Bedroom Closet Hallway Entryway Tall Chest of Drawers with Steel Frame Wood Top Easy Pull Handles,Black",
+    "normalized_price": 39.39,
+    "buy_url": "https://www.amazon.com/dp/B0FJLT8YMZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81xcHhG-wWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GN2F8S8N",
+    "name": "SONGMICS BELLAH Collection - Dresser for Bedroom, TV Stand for TVs Up to 55 Inches, Chest of Drawers for Living Room, Closet, Steel, 9 Drawers, Modern, Cloud White ULGS033WH02S",
+    "normalized_price": 59.47,
+    "buy_url": "https://www.amazon.com/dp/B0GN2F8S8N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81adLj0qVOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTZLDVHT",
+    "name": "SONGMICS BELLAH Collection - Dresser for Bedroom with Outlets and LED Lights, TV Stand for TVs Up to 55 Inches, Chest of Drawers, 8 Drawers, Steel, Modern, Cloud White ULGS433WH02S",
+    "normalized_price": 67.96,
+    "buy_url": "https://www.amazon.com/dp/B0GTZLDVHT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71tv3rQhodL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5GKQW8L",
+    "name": "WLIVE Led Dresser for Bedroom, Black Dresser TV Stand for Bedroom with LED Lights and Power Outlet, Wide Chest of Drawers for Hallway, 8 Fabric Drawers for Living Room and Entryway, Easy to Assemble",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0D5GKQW8L",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81IntSixcaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GRGRB7TF",
+    "name": "SONGMICS BELLAH Collection - Dresser for Bedroom, Chest of Drawers, TV Stand for TVs Up to 55 Inches, Living Room, Closet, 6 Drawers and 1 Shelf, Modern, Cloud White ULGS833WH02S",
+    "normalized_price": 59.47,
+    "buy_url": "https://www.amazon.com/dp/B0GRGRB7TF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71sFymb+F8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BMB3ND64",
+    "name": "Gizoon 4 Drawer Dresser for Bedroom, Sturdy White Chest of Drawers with Anti-Tip Device, Modern Large Capacity Storage Furniture for Closet, Embedded Handles, Space-Saving Design, Wooden Finish, White",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0BMB3ND64",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61qdp5LSV9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F997X9QT",
+    "name": "SONGMICS Dresser for Bedroom, Chest of Drawers, Steel, MDF, 8 Non-Woven Fabric Drawers, Storage Organizer Unit, Closet, Entryway, Cloud White and Snow White ULGS124W01S",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0F997X9QT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71y5PN2xpOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GN2T73JX",
+    "name": "SONGMICS BELLAH Collection - Dresser for Bedroom with App-Controlled LED Lights and Charging Station, Chest of Drawers, TV Stand, 7 Drawers, Shelf, Modern, Ink Black ULGS733BH02S",
+    "normalized_price": 67.96,
+    "buy_url": "https://www.amazon.com/dp/B0GN2T73JX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81T6ConytCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CW5GFZFV",
+    "name": "Sweetcrispy Dresser for Bedroom, Chest Organizer Unit with 8 Fabric Bins, Fabric Storage Tower, Drawer Organizer with Steel Frame, Wooden Top for Living Room, Closet",
+    "normalized_price": 39.9,
+    "buy_url": "https://www.amazon.com/dp/B0CW5GFZFV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61351wWRkfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXPN1F13",
+    "name": "OLIXIS Dresser for Bedroom with 7 Fabric Drawers Storage Organizer Closet Chest Clothes Cabinet Vertical Dresser for Living Room Entryway Hallway,Black",
+    "normalized_price": 39.95,
+    "buy_url": "https://www.amazon.com/dp/B0CXPN1F13",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81dWXsyI3gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09N7FHZ7R",
+    "name": "HOUSUIT White Dresser, 4 Drawer Dressers Chest of Drawers, Modern Tall Dresser, Wood Drawer Chest Storage Cabinet for Living Room, Hallway, Entryway, Home Office, Ivory White",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B09N7FHZ7R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51J7xjlF6fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVSV53LS",
+    "name": "Dresser for Bedroom with 8 Drawers, 54\" Wide Wood Chest of Drawers with Deep Drawers & Mental Handle, Modern Dresser TV Stand, Wooden Closet Storage Organizer for Living Room, Hallway, Entryway, Black",
+    "normalized_price": 249.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVSV53LS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81IpDab5flL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHXHJ2PG",
+    "name": "DUMOS Dresser for Bedroom, Storage Organizer with 9 Drawers, Chest of Drawers with Fabric Bins, Sturdy Metal Frame, Wood Tabletop for Guest Room, Closet, Entryway, White",
+    "normalized_price": 77.66,
+    "buy_url": "https://www.amazon.com/dp/B0DHXHJ2PG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Kp--BfJ6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFGS3XR1",
+    "name": "BORNOON 7-Drawer Dresser for Bedroom, Modern Wooden Chest of Drawers with Metal Handles, Anti-Tipping Design, Sturdy and Stable Storage Organizer for Living Room, Entryway, Home Office",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0FFGS3XR1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81kLh11L4NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8H73N43",
+    "name": "MAISONARIA Walnut Dresser for Bedroom, 55.1\" Wide Dresser with 6 Drawers and Hidden Handles, Modern Wood Chest of Drawers for Clothes and Accessories, Stylish Storage Cabinet for Living Room, Entryway",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0G8H73N43",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81I2zx7TqqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6V99WZX",
+    "name": "6 Drawer Dresser for Bedroom, Fluted Dressers Chest of Drawers with Gold Handle, Mid Century Modern Dresser for Closet, Wood Closet Storage Organizer Furniture for Bedroom, Living Room, Hallway, Pink",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6V99WZX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Az4j3z86L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT8WD9FP",
+    "name": "Fluted 9 Drawer Dresser for Bedroom, 50\u201d Wide Modern Dresser & Chest of Drawers with Curved Profile Design, Wood Mid Century Dressers for Bedroom, Living Room, Walnut",
+    "normalized_price": 289.99,
+    "buy_url": "https://www.amazon.com/dp/B0GT8WD9FP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91vQgyfGz2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2X32FTN",
+    "name": "Gyfimoie 8 Drawer Dresser with Power Outlet, Dresser with LED Light, Modern Chest of Drawers for Closet, Double Wide Drawer Organizer Cabinet for Bedroom, Living Room (Black, 8 Drawers)",
+    "normalized_price": 209.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2X32FTN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71U6KLkecPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CYH3T9WT",
+    "name": "Hlivelood 6 Drawer Dresser with LED Light and Charging Station, Modern Chest of Drawers for Closet, Wide Drawer Organizer Cabinet for Bedroom, Living Room, Entryway, Hallway(Black)",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0CYH3T9WT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ElBNJtiQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3PQV951",
+    "name": "HAUOMS 9 Drawer Dresser with LED Light, Black Modern Chest of Drawers for Bedroom,Long Dresser with Drawers for Living Room, Entryway, Hallway",
+    "normalized_price": 209.99,
+    "buy_url": "https://www.amazon.com/dp/B0G3PQV951",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71kip7Arw+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GV69JSRX",
+    "name": "Black Dresser with Power Outlet and LED Lights, Modern 6 Drawer Dresser for Bedroom, 47.2\u201d Long Chest Of Drawer Deep Drawer Dressers TV Stand for Living Room Closet Hallway Entryway UXKCG006B",
+    "normalized_price": 125.99,
+    "buy_url": "https://www.amazon.com/dp/B0GV69JSRX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71mRaZA0C2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTYKLXNK",
+    "name": "Vipbear Black Dresser for Bedroom 6 Drawer with Sliding Top LED Lights Power Outlet Modern TV Stand Double Dresser Wide Chest of Deep Drawers Storage Cabinet for Living Room,Game Room",
+    "normalized_price": 170.99,
+    "buy_url": "https://www.amazon.com/dp/B0GTYKLXNK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/710Fc6RGeoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2RY4VPC",
+    "name": "UNIQUITE 6 Drawer Dresser for Bedroom, Black Dresser with LED Lights and Power Outlet, Wooden Dressers Chests of Drawers, Double Wide Dressers for Bedroom, Entryway, Hallway",
+    "normalized_price": 184.49,
+    "buy_url": "https://www.amazon.com/dp/B0F2RY4VPC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7138+RDR49L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDX8Q3DX",
+    "name": "FJTJBSI Dresser with Power Outlets and LED Lights Wooden 4 Drawer Dresser with Large Organizer Tall Black Drawer for Bedroom Modern Chest of Drawers Closet for Living Room Kids Room",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDX8Q3DX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51sGI1eYjrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS1KHGDF",
+    "name": "Black Dresser for Bedroom, 6 Drawer Dresser, Fabric Vertical Storage Tower with Fabric Bins with Open Shelves LED Light and Charging Station, Chest of Drawers for Closet Chests Organizer, Living Room",
+    "normalized_price": 123.49,
+    "buy_url": "https://www.amazon.com/dp/B0GS1KHGDF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71nNFuUe3aL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFNVNLV1",
+    "name": "WLIVE 75.5\" TV Stand for 65, 75, 80, 85 Inch TV, Dresser for Bedroom with Power Outlets & LED Lights, 11 Drawer Fabric Dresser with Open Shelves, Entertainment Center with Storage, Black",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0GFNVNLV1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81--2IrQuJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9WW29M7",
+    "name": "WLIVE 12 Drawer Dresser for Bedroom, Black Dresser TV Stand for 65, 70, 75 inch TV with Led Light & Charging Station, Wide Chest of Drawers with Open Shelves, Fabric Dressers for Closet, Living Room",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9WW29M7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-oQU1BLqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6V1NVM1",
+    "name": "WLIVE Black Dresser TV Stand for 45, 50, 55 inch TV, Entertainment Center with LED Lights & Charging Station, Chest of Drawers with 8 Fabric Drawers and Open Shelves for Living Room, Hallway, Wood Top",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0D6V1NVM1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81trCKndUsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPQRH8YC",
+    "name": "Black 8 Drawer Dresser for Bedroom, Modern Chest of Drawers, Jewelry Dresser Display with Glass Top and LED Light, Dressers Organizer for Bedroom, Closet, Living Room",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0FPQRH8YC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71FscwJdhmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRSG65W3",
+    "name": "knoworld 8 Drawer Dressers for Bedroom, Black Dresser with LED Lights and Power Outlet, Wood LED Dresser, Double Wide Modern Chest of Drawers for Bedroom, Entryway, Hallway",
+    "normalized_price": 197.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRSG65W3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81mpfjRdg2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GH6SC7K8",
+    "name": "VASAGLE Custos Collection - Dresser for Bedroom, with LED Lights and Power Strip, Chest of Drawers, Modern, TV Stand for Living Room, 6 Drawers, 15.8 x 46.9 x 32 Inches, Ink Black ULTS316BC01S",
+    "normalized_price": 175.37,
+    "buy_url": "https://www.amazon.com/dp/B0GH6SC7K8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71u5abdb0EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHR8F85S",
+    "name": "EXOTICA Van Gogh 9 Drawers Dresser Wide TV Stand Colorful Dressers & Chest of Drawers Enterway Furniture for Bedroom Living Room Hallway Closets Steel Frame Wood Top",
+    "normalized_price": 119.89,
+    "buy_url": "https://www.amazon.com/dp/B0CHR8F85S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91sL2A5KHsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZTYP4DW",
+    "name": "VASICAR Dresser for Bedroom with 9 Deep Fabric Drawers, Wide TV Stand Storage Cabinet, Colorful Chest of Drawers for Closet, Nursery, Entryway, Hallway",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZTYP4DW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71by4tl5JjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVLHYLN6",
+    "name": "HOUROM Walnut Dresser for Bedroom with 9 Drawers,59\" Wide Modern Dressers Chest of Drawers,Sturdy Base,Minimalist Linear Design,Wooden Closet Clothes Organizer for Bedroom,Hallway",
+    "normalized_price": 289.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVLHYLN6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8166M7ZCAyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CC84PRSD",
+    "name": "VASICAR Dresser for Bedroom with 12 Drawers, Tall Fabric Drawer Dresser, Chest of Drawers for Closet, Nursery, Bedside, Living Room, Entryway, Hallway (Pattern)",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0CC84PRSD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/817I7-uxOxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3YPK7TY",
+    "name": "GiftGo Retro Dresser with Fabric Drawers Boho Mandala Flower Chest of Drawers Narrow Storage Tower for Small Spaces Gaps Bedroom Beautiful Nightstand Living Room Table (Mandala, 5 Drawers)",
+    "normalized_price": 66.39,
+    "buy_url": "https://www.amazon.com/dp/B0D3YPK7TY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81kLXkYKtKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXW32MNV",
+    "name": "UNIQUITE Tall Dresser for Bedroom, Green Dresser with LED Lights, Wood 5 Drawer Chest with Power Outlet, Modern Tall Chest of Drawers for Bedroom, Entryway, Hallway",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXW32MNV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71GPeFti3OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FSZNNNVL",
+    "name": "63'' Wide 9 Drawers Dresser for Bedroom,Modern Fluted Vertical Chest with Rounded Corners,Fluted Dresser for Living Room,Hallway, Black",
+    "normalized_price": 278.98,
+    "buy_url": "https://www.amazon.com/dp/B0FSZNNNVL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91F3cktsazL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX17GZ5Z",
+    "name": "Dresser for Bedroom with RGB LED Lights and Charging Station, 6 Drawers Wooden Chest of Drawers, 53\" Tall Fluted TV Stand, Closet Clothes Storage Organizer for Living Room, Hallway, Oak",
+    "normalized_price": 197.99,
+    "buy_url": "https://www.amazon.com/dp/B0GX17GZ5Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Ov92mUMhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW4LWWGG",
+    "name": "Curved 9-Drawer Dresser for Bedroom, 63\" Wide Modern Chest of Drawers, Vanity Desk TV Stand for Living Room, Closet Storage Drawers Organizer Furniture, Nursery, Hallway, Dark Burl",
+    "normalized_price": 408.49,
+    "buy_url": "https://www.amazon.com/dp/B0FW4LWWGG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81zegyntBrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXB7MJD7",
+    "name": "Sweetcrispy 7 Drawer Dresser, Fabric Storage Tower Organizer for Bedroom, Closet, Hallway, Entryway, Tall Chest of Drawers with Steel Frame, Wood Top, Large Storage, Floral Painted",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXB7MJD7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81qMy6c1pQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKGT8MYB",
+    "name": "Vintage Accent Cabinet with 4 Drawers & Distressed Wood, Rustic Storage Vintage Dresser with Ornate Pattern for Bedroom Living Room, Colorful",
+    "normalized_price": 259.99,
+    "buy_url": "https://www.amazon.com/dp/B0GKGT8MYB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81SnodzMHpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHXXP6N9",
+    "name": "Tohomeor Dresser with Drawers for Bedroom Chest of Drawers Fabric Dresser for Closet,Nursery Entryway Hall Tree TV Stand for Living Room Retro Floral Pattern Drawers Wooden Top (14 Drawers)",
+    "normalized_price": 129.89,
+    "buy_url": "https://www.amazon.com/dp/B0CHXXP6N9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81JeAhi7NyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FB95G6JD",
+    "name": "LUMTOK 8 Drawers Corner Dresser with Storage Fabric Drawers and Open Shelves for Small Space\uff0cBedroom\uff0cEntryway\uff0cLiving Room (Retro Pattern)",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0FB95G6JD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81vaSNMYI4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYTZHK3X",
+    "name": "WLIVE Tall Dresser for Bedroom, 6 Drawer Dressers & Chests of Drawers, Fabric Dresser for Closet, Living Room, Night Stand with Metal Frame, Storage Tower with Fabric Bins, Wood Top, Floral Painted",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0DYTZHK3X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TOeViPyVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DD465LH5",
+    "name": "FINETONES 50\u2019\u2019 Tall Dresser, Boho Dresser Vintage Dressers with 4 Drawers and 2 Doors, Wood Chests of Drawers for Home, 16.1D x 23.6W x 50H Inch",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0DD465LH5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71X0FGSjESL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CBJ43VYK",
+    "name": "Tohomeor Small Dresser for Bedroom with Retro Flower Narrow Drawers Slim Chest of Drawers Skinny Nightstand Sofa End Table for Living Room Entryway Closet Storage (Multi, 5 Drawers)",
+    "normalized_price": 59.89,
+    "buy_url": "https://www.amazon.com/dp/B0CBJ43VYK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71LJ0p1boXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1T3XW39",
+    "name": "Vintage Tall Wooden Accent Cabinet with 6 Drawers & 2 Doors, Rustic Multicolor Carved Storage Chest for Living Room, Bedroom, Farmhouse Console Table\uff0cColorful (27.76\" L x 14.37\" W x 47.44\" H)",
+    "normalized_price": 283.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1T3XW39",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71JwDe9UNvL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

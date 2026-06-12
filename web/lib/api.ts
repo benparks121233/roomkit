@@ -33,7 +33,7 @@ export interface SlotResult {
   slot_id: string;
   allocated_budget: number;
   owned: boolean;
-  max_quantity: number; // >1 enables multi-select (e.g. wall_art: 6)
+  max_quantity: number; // >1 enables multi-select (e.g. wall_art: 4)
   product: ProductResult | null;
   alternatives: ProductResult[];
   null_reason: string | null; // "owned" | "no_candidate" | "no_spec_match" | "llm_error"

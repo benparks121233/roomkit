@@ -33,7 +33,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from dotenv import load_dotenv  # noqa: E402
 
 from services.sourcing.canopy_client import CanopyClient  # noqa: E402
-from services.sourcing.catalog_cache import write_cache  # noqa: E402
+from services.sourcing.catalog_cache import merge_cache, write_cache  # noqa: E402
 
 load_dotenv()
 
@@ -159,7 +159,8 @@ def refresh_slot(
         if mapped:  # skip empties (no price)
             products.append(mapped)
 
-    write_cache(slot_id, products)
+    total, added = merge_cache(slot_id, products)
+    print(f"    Merged: {added} new products, {total} total in cache")
     return len(products)
 
 

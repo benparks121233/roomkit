@@ -11,7 +11,7 @@
   {
     "product_id": "B0BHVP949X",
     "name": "Small Bedside Table lamp for Bedroom - 3 Color Temperatures Bedside Lamps with USB C and A Ports, Pull Chain Table Lamps with AC Outlet, White Nightstand Lamps with Black Metal Base for Kids Reading",
-    "normalized_price": 23.99,
+    "normalized_price": 19.99,
     "buy_url": "https://www.amazon.com/dp/B0BHVP949X",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71C-9a3M-jL._AC_UL320_.jpg",
@@ -47,7 +47,7 @@
   {
     "product_id": "B0DZD1X83N",
     "name": "Fenmzee Small Table Lamp for Bedroom - Inline Control, Bedside Lamp with 3000K A15 LED Blub, Easy Assembly (Cream Shade - Wood Base, 9\" Inline Control)",
-    "normalized_price": 9.99,
+    "normalized_price": 11.99,
     "buy_url": "https://www.amazon.com/dp/B0DZD1X83N",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71HckKKPVML._AC_UL320_.jpg",
@@ -146,7 +146,7 @@
   {
     "product_id": "B0D41XL87F",
     "name": "Govee RGBIC Smart Table Lamp 2, Touch Bedside Small Table Lamp Compatible with SmartThings, Matter, Alexa, Desk Lamp with 64 Scene Modes, Nightstand Lamp for Bedroom Living Room Night Light(Corded)",
-    "normalized_price": 79.99,
+    "normalized_price": 69.99,
     "buy_url": "https://www.amazon.com/dp/B0D41XL87F",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/618yTEtHltL._AC_UL320_.jpg",
@@ -3183,6 +3183,555 @@
     "buy_url": "https://www.amazon.com/dp/B07BL29ZNQ",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81d3OQvXOeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKMBWPH9",
+    "name": "RGBICWW Smart Table Lamp, Touch Bedside Lamp with App Control, LED Desk Lamp with Music Sync, 30+ Scenes & 16M Colors, Color Changing Lamp for Bedroom Living Room Gaming Dimmable Night Light, White",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKMBWPH9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Yzsu0Le5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK6Q7TJG",
+    "name": "LUTEC 2 Pack Cordless Table Lamp,6000mAh Rechargeable Battery Operated Desk Lamp,Two Adjustable Heights,Waterproof, Touch Control & 3 Color Stepless Dimming for Restaurant/Bedroom/Bars/Outdoor (Black)",
+    "normalized_price": 19.97,
+    "buy_url": "https://www.amazon.com/dp/B0DK6Q7TJG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71GnZBZyImL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZ2J4NHJ",
+    "name": "UME 3 Pack Cordless Table Lamp, Battery Operated Lamp - Portable Waterproof Rechargeable Table Lamp w/ 3 Color Temps & Stepless Dimming for Dinner, Desk, Cafe, Outdoor (Black)",
+    "normalized_price": 33.98,
+    "buy_url": "https://www.amazon.com/dp/B0DZ2J4NHJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61NLB5-PwbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FWS2MWKG",
+    "name": "Rechargeable Cordless Table Lamp Gold - 1 Pack Brass 7500mAh Battery Operated Lamp, 16-Inch Antique Brass Aesthetic Desk Light for Kitchen Counter, Bathroom Vanity and Dining Room",
+    "normalized_price": 20.03,
+    "buy_url": "https://www.amazon.com/dp/B0FWS2MWKG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61nPBtbe-eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRMSQD7M",
+    "name": "UNIFUN Table Lamp, Touch Sensor Bedside Lamps, Dimmable Warm White Light & Color Changing RGB for Kids,Holiday, Camping Use",
+    "normalized_price": 5.59,
+    "buy_url": "https://www.amazon.com/dp/B0FRMSQD7M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51v0WM2-vgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH2B2Y4S",
+    "name": "Desk Lamp LED Bulb Included, Small Bedside Table Lamp Plug-in - Classic Wood Base with Flaxen Fabric Shade, Lamps for Night Stands, Simple Nightstand Light for Bedroom, Office, Desk",
+    "normalized_price": 11.59,
+    "buy_url": "https://www.amazon.com/dp/B0FH2B2Y4S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61vwysn8YtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGHSWZCY",
+    "name": "Small Bedside Table Lamp with USB Powered, Minimalist Rustic Wood Base &Linen Shade, 2700K Warm Eye-Care Night Light, Farmhouse Boho Nightstand Lamp for Bedroom Dorm Nursery Kids Room Kitchen",
+    "normalized_price": 11.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGHSWZCY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81r4QuzZaKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLQHY1RY",
+    "name": "Portable Baby Night Light, 3 Colors Egg Light for Nursery, Mini Bedside Table Lamp for Kids Adults, Touch Control & Eye Caring & Rechargeable Dimmable LED Lamp for Nursing, Boy, Girl, Toddler",
+    "normalized_price": 6.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLQHY1RY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61prcI1xiZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3LSP5PX",
+    "name": "Table Lamp Set of 2, Bedside Lamp Nightstand Lamp, 3000K Warm Light Desk Lamp, USB Powered LED Reading Lamp, Boho Vintage Small Lamp for Bedroom Living Room Office Dorm Dresser Bookshelf",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0G3LSP5PX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71RjbeWexML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1KB4G6T",
+    "name": "Fenmzee Bedside Table Lamps Set of 2-3 Color Temperatures Pull Chain Lamp with AC Outlet Charging Port, Small Round Night Stand Lamps for Bedroom Guest Room Office, Bed Side Light with E26 LED Bulbs",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1KB4G6T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71fjJpg4rNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09G6LZPGJ",
+    "name": "BGFHome Crystal Table Lamp RGB Color Changing Night Light,Romantic LED Rose Diamond Touch Lamps for Living Room (Remote & Touch)",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B09G6LZPGJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Tp+Y1aBWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G13C7GJM",
+    "name": "Unicozin Table Lamp for Bedroom, 3 Color Temperatures, 7 RGB Colors, Adjustable Brightness, Dual USB Charging Ports, Ambience Nightstand Light with Grey Shade, Desk Lamp for Kids Reading Home Office",
+    "normalized_price": 24.69,
+    "buy_url": "https://www.amazon.com/dp/B0G13C7GJM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81IEUN2L2bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BDLHM6R2",
+    "name": "LED Color Changing Table Lamps, Dimmable Bedside Lamp with Remote, Plug in Desk Light Bedroom Lamp for Living Room-Black",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0BDLHM6R2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/613sYC-e4LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHSH1H1D",
+    "name": "Crystal Table Lamp Touch, 16 Color Changing Night Light, Rechargeable, Dimmable, RGB Rose Diamond Ambient Mood Lighting, Protable Cordless Desk Lamp Bedside Led Light for Bedroom Living Room Party",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHSH1H1D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Q-2hwmf3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDTLS9P8",
+    "name": "Unicozin Table Lamp,3 CCT 3000K/4500K/6500K & RGB Color Changing,Stepless Dimmable Touch Control Bedside Lamp for Reading,Ambience Nightstand Light for Home Decor Party,White Shade",
+    "normalized_price": 24.69,
+    "buy_url": "https://www.amazon.com/dp/B0DDTLS9P8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/716sXWJni9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D83CQ1PF",
+    "name": "Daymeet LED Table Lamp, Modern Bedside Light Desk Nightstand Lamp RGB Color Changing Dimmable with Remote Music Sync Smart Bluetooth APP Control Night Light 5V USB Unique Desk Lamp for Bedroom Home",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B0D83CQ1PF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71yw5QMQATL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFCFY279",
+    "name": "Wowag Small Cordless Table Lamps Rechargeable,5000mAh Battery Operated Portable Desk Lamp,3 Colors & RGB Stepless Dimmable Wireless Touch Lamps for Restaurant Home Dinner Dining Patio(Black)",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFCFY279",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61H5i353QlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B3MBWS84",
+    "name": "ROOTRO Table Lamp, [Advanced] Bedside Touch Control Lamp for Bedroom 3 Level Dimmable Warm White Lights with 256 RGB Color Mode Modern Deisgn Smart Nightstand Desktop LED Lamps Portable for Read",
+    "normalized_price": 23.98,
+    "buy_url": "https://www.amazon.com/dp/B0B3MBWS84",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51m3qLmx0EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDXD8BMQ",
+    "name": "Lepro TB1 AI Smart Table Lamp, RGB+IC Addressable Color Changing Desk Light Alexa Google Home Enable, Music Sync, DIY Endless Scenes, APP Control Cool LED Lamp for Room Decor Ambient Lighting, 2.4 GHz",
+    "normalized_price": 63.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDXD8BMQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71r6-ICscrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B099MV5XMX",
+    "name": "Hifree Smart Table Lamp, Dimmable Desk Lamp with App/Voice Control, LED RGB Color Changing Touch Lamp, Night Lamp for Bedroom Compatible with Alexa",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B099MV5XMX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51ywmuw+uVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F13VV1JK",
+    "name": "Ascher Small Bedside Table lamp Set of 2, RGB Color Changing Lamps, 3 Color Temperatures, Dimmable Nightstand Lamp with USB C+A Ports, Touch Desk Lamp for Bedroom Living Room, H11.4in(Flaxen Shade)",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B0F13VV1JK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81i36sZHz-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLV9RHLZ",
+    "name": "2 Pack Crystal Table Lamp, Remote and Touch Control Rose Wave Lamp, RGB Color Changing Night Light, Dimmable, USB Rechargeable Decoration Ambient Lighting for Dinner/Bars/Game Room/Living Room/Bedroom",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLV9RHLZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81FF+bC7ySL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F13WZR59",
+    "name": "Ascher Small Bedside Table lamp, RGB Color Changing Lamps, 3 Color Temperatures, Dimmable Nightstand Lamp with USB C+A Ports, Touch Desk Lamp for Bedroom Living Room, H11.4in(Flaxen Shade)",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0F13WZR59",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/811KLOkQtKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLY77G4Z",
+    "name": "RGB Color Changing Lamp - Multi Color Desk Table Lamp with 2 AC Outlets, Stepless Dimming, Built-in USB-C + USB Charging Ports, Modern LED Bedside Lamp for Bedroom,Living Room, Dorm, or Home Office",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLY77G4Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ylBuxH7RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C2PVM68B",
+    "name": "Barhootao RGB Light Bar,Smart LED Light Bar for Room,16 Million Colors,Three Control Modes,Dynamic Music Sync Mode,213 Preset Modes,USB Interface\uff08Without Adapter\uff09",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0C2PVM68B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71A9scho4qL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCMHVLYY",
+    "name": "Rechargeable Table Lamp RGB+IC LED Cordless Table Light,12.59inch 1500LM Ambient Lighting APP & Remote Control, Desk Lamp Music Sync, Color Change Lamp for Bedside Bedroom, Home Decor",
+    "normalized_price": 28.49,
+    "buy_url": "https://www.amazon.com/dp/B0GCMHVLYY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71XT2VnDq2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSJRRK2G",
+    "name": "SIBRILLE Upgraded LED Desk Lamp for Home Office with RGB, Rotatable Computer Desk Light with Remote, Tall Table Lamp with Clamp for Working, Dimmable Dual Head Task Lighting for Monitor PC, 22W",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSJRRK2G",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+qh-IEKWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6CRK9HQ",
+    "name": "Led Desk Lamp with Atmosphere Lighting, Smart RGB LED Desk Lamp-Music Sync and 16 Million DIY Colors, Foldable Lamp with Dimmable and Timer, Modern LED Lights for Desk, and Gaming Rooms",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6CRK9HQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61PTeGuuhtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPJZTJGW",
+    "name": "TJOY Smart Light Bars, Gaming Lights for Desk, 14 Inches, RGB Light Bar, TV Backlight with Music Sync and Scene, 60 Lumens, Mood Lighting for PC, Game, RGB Desk Lighting(Black)",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0DPJZTJGW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71AP9GvPx7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZR9MN1W",
+    "name": "velted RGB Light Bar, Music Sync RGB IC LED Lights Bars, USB Powered Ambient Lighting, Remote Control Color Changing Gaming TV Backlight, 8 Dynamic Modes for PC Room Monitor Desk",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZR9MN1W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/613ZDSUYyGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B6CQ2LQ2",
+    "name": "Govee RGBIC Gaming Light Bars H6047 with Smart Controller, Wi-Fi Smart LED Gaming Lights with Music Modes and 60+ Scene Modes Built, Works with Alexa & Google Assistant, Game Room Lights Decor",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0B6CQ2LQ2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61PZawwCWwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B096WZXKZP",
+    "name": "Govee Smart LED Light Bars, Work with Alexa and Google Assistant, RGBICWW WiFi TV Backlights with Scene and Music Modes for Gaming, PC, Living Room Decoration, Black",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B096WZXKZP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71gYPiuGlJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1SG8GP1",
+    "name": "NEEWER Dual Sided RGB LED Streaming Key Light, Smart Desk Lamp Compatible with Alexa Google Assistant for Gaming Video Conference, 16 Million Colors, 2700K-7000K/CRI97+ Studio Tube Lighting, NG01",
+    "normalized_price": 85.49,
+    "buy_url": "https://www.amazon.com/dp/B0G1SG8GP1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6147GqmF4QL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYNX1WYG",
+    "name": "Govee Gaming Light Bars Pro, Upgraded 16-Inch Smart Triple-Sided RGBIC Illumination Wi-Fi LED Game Lights, Music Sync & 60+ Scene Modes, Works with Alexa & Google Home, Gaming Room Decor",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0DYNX1WYG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71DGzR+vByL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BXNCRPS1",
+    "name": "Govee RGBIC Gaming Lights, 10ft Neon Rope Lights Soft Lighting for Gaming Desks, LED Strip Lights Syncing with Razer Chroma, Support Cutting, Smart App Control, Music Sync, Adapter (Only 2.4G Wi-Fi)",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0BXNCRPS1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713yIh9bdQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BLSGHRXB",
+    "name": "Govee RGBIC Floor Lamp, LED Corner Lamp Works with Alexa, Smart Modern Floor Lamp with Music Sync and 16 Million DIY Colors, Color Changing Standing Lamp for Bedroom Living Room Silver",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0BLSGHRXB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61CWTaNyTDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D45HYXLQ",
+    "name": "Govee Gaming Wall Light, RGBIC Glide Wall Light, Work with Matter, Alexa and Google Assistant, DIY Customized LED Wall Lighting Effects and Shapes, Gaming Lights for Gaming Room",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0D45HYXLQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71IrUbQUM9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C5JMWZC9",
+    "name": "Quntis Monitor Light Bar 15.7\", 24 RGB Backlight Modes for lmmersive Gaming Ambience, 900 Lux Glare-Free Computer Screen Lamp, High CRI 95 Eye Care Desk Light for Home Office",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0C5JMWZC9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61JttcDsIWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4ZYSP7J",
+    "name": "RGB Monitor Light Bar, Eye-Care Dual Light Reading Screen Lamp, 9 Modes Gaming Backlight LED Computer Lamp, 3 Colors Dimmable Frontlight, 15.75'' USB Desk Lights for Home, Office",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0G4ZYSP7J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/611-vSq9XTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDY5X5QR",
+    "name": "Pak LED Desk Lamp with Clamp, 18W Dual Light Architect Desk Light, Adjustable Swing Arm RGB Light Sensor Switch, Eye-Caring 4 Modes Stepless Dimming Table Lamp for Home Office Reading Study Gaming",
+    "normalized_price": 37.23,
+    "buy_url": "https://www.amazon.com/dp/B0DDY5X5QR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71QktJVFaWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9LBFHJZ",
+    "name": "Quntis Curved Monitor Light Bar 15 RGB Backlight for 34\"+ Screens, Computer Bar Lights Foldable Dual Light with Color Temperature Brightness Stepless Dimming, No Glare Desk Lamp for Home Office Gaming",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9LBFHJZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ENh9a9frL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCXP8VTT",
+    "name": "Brightown 300 LED Fairy Curtain Lights, 9.8ft x 9.8ft Warm White Curtain String Lights, USB Plug in 8 Lighting Modes Christmas Decoration, Hanging Lights with Remote for Bedroom Indoor Weddings Dorm",
+    "normalized_price": 8.49,
+    "buy_url": "https://www.amazon.com/dp/B0FCXP8VTT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81lje80zgcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07STZQ744",
+    "name": "Minetom Color Changing Fairy String Lights - 33 ft 100 LED USB Silver Wire Lights with Remote and Timer, Starry Fairy Light for Bedroom Party Indoor Christmas Decoration, 16 Colors, Adapter Included",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B07STZQ744",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81qmsBWBxrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SYP4TL2",
+    "name": "Fairy Lights with Remote, 8 Modes & Timer, 66 Feet 200 Led Christmas Light Twinkle Lights Plug in, Waterproof String Lights for Bedroom Decor Home Girl's Room Garden Party Christmas Decorations",
+    "normalized_price": 11.99,
+    "buy_url": "https://www.amazon.com/dp/B07SYP4TL2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81zfdoM6-IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08K34MBNV",
+    "name": "suddus Curtain Lights for Bedroom, 200 Led Hanging String Light Outdoor, Fairy Curtain Lights Indoor for Christmas, Dorm, Wall, Backdrop, Window, Wedding, Party, Birthday Decor, Warm White",
+    "normalized_price": 15.58,
+    "buy_url": "https://www.amazon.com/dp/B08K34MBNV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81DAOCdJSaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GC981RB1",
+    "name": "JMEXSUSS USB Fairy Lights for Bedroom, 33ft 100 LED Twinkle Lights Plug in with Remote, Indoor String Light for Dorm Girl's Room Tent DIY Birthday Gift Party Decor, Silver Wire, Warm White,Timer",
+    "normalized_price": 6.99,
+    "buy_url": "https://www.amazon.com/dp/B0GC981RB1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/814EVisNvkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0895DDN47",
+    "name": "HXWEIYE 120LED Warm White 40Ft Fairy String Light with 52 Clear Clips & 12 Hooks, USB Powered, Waterproof, 8 Modes & Timer, Perfect for Indoor/Outdoor, Bedroom, Party, Wedding Decor",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B0895DDN47",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71JFch3glEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5HL32BN",
+    "name": "Smart Star Fairy Lights Plug in, 33Ft 16 Million Color Changing String Lights RGB Built in Chip APP & Remote Control DIY Music Sync Twinkle Light for Bedroom Christmas Decoration Christmas Gift",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0D5HL32BN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81b0uXNbzFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B085Y1J85P",
+    "name": "HXWEIYE 300LED Fairy Curtain Lights, 9.8x9.8Ft USB Plug-in 8 Modes Christmas String Hanging Lights with Remote for Bedroom Backdrop Wedding Indoor Wall Decor, Warm White, Standard \u2013 1 Pack",
+    "normalized_price": 8.49,
+    "buy_url": "https://www.amazon.com/dp/B085Y1J85P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/612s6UitfxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0819PCKSL",
+    "name": "66Ft 200 LED Fairy Lights Plug in, Waterproof String Lights Outdoor & Indoor 8 Modes Christmas Light Bedroom Decor, Timer Twinkle Lights for Girl's Room Garden Party Christmas Decorations (Warm White)",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B0819PCKSL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PEs5HK6GL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGHVJCCK",
+    "name": "JMEXSUSS 100 LED Connectable Globe String Lights Indoor Bedroom, 33ft Warm White Christmas Lights Plug in with Remote, 8 Modes Hanging Fairy Light Outdoor for Room Classroom Party Spring Home Decor",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGHVJCCK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81DZpMNd+9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CRKCYNZX",
+    "name": "Minetom Star String Lights Battery Operated - 17 ft 50 LED Star Fairy String Lights with Timer, Waterproof for Indoor Bedroom Tent Loft Bed Patio Party Wedding Ramadan Decorations, Warm White",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B0CRKCYNZX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81a+ap0-72L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CFWX1VY",
+    "name": "JMEXSUSS 100 LED String Lights Indoor Bedroom, 8 Modes Warm White Christmas Lights Plug in, 33ft Connectable Room Fairy Twinkle Light Outdoor for Mirror Room Home Garden Xmas Tree",
+    "normalized_price": 14.19,
+    "buy_url": "https://www.amazon.com/dp/B07CFWX1VY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/712yQdNwwoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGPGV4Q3",
+    "name": "Fairy Lights USB Plug in 33ft 100LEDs with Remote, Warm White 20 Color Changing Light Twinkle Firefly String Lights for Bedroom Party Wedding Christmas Tapestry, Multicolor Colors",
+    "normalized_price": 12.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGPGV4Q3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81reCLH4RqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CJ2V1LR",
+    "name": "JMEXSUSS 300 LED Remote Control Curtain Lights, Plug in Fairy Curtain Lights Outdoor, Window Wall Hanging String Lights for Bedroom Indoor Dorm Backdrop Wedding Party Patio Christmas Decor, Warm White",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B07CJ2V1LR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/914huqMHcKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFGK7HMG",
+    "name": "suddus Vine with Fairy Lights Battery Operated, 33ft100 LED Pothos String Lights with Remote, Leaf Lights for Bedroom, Room, Wall, Garden, Party, Wedding Dorm Decor(Warm White)",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0CFGK7HMG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+GwempDtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CN2DMCKF",
+    "name": "Minetom Twinkle Fairy Lights, 33 ft 100 LED USB Plug in String Lights with Remote and Timer, Waterproof 8 Modes for Bedroom Indoor Wreath DIY Party Wedding Holiday Christmas Ramadan Decorations",
+    "normalized_price": 6.99,
+    "buy_url": "https://www.amazon.com/dp/B0CN2DMCKF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81YqedxnsJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01LLSNG1E",
+    "name": "Twinkle Star 300 LED Curtain String Lights, 8 Modes Plug in Fairy Lights for Bedroom,Wedding,Party,Birthday, Hanging Twinkle Light for Indoor Outdoor Wall Window Backdrop Decoration, Warm White",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B01LLSNG1E",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81SeihZDOGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00JR5N0JM",
+    "name": "Minetom Fairy Lights Plug in, 33Ft 100 LEDs Waterproof Silver Wire Firefly Light, Adaptor Included, Starry String Lights for Wedding Patio Indoor Outdoor Christmas Decorations, Warm White",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B00JR5N0JM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71LgO0c1uQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D91YD2PQ",
+    "name": "Fairy Lights Plug in 66FT 200 LED USB Twinkle Lights for Bedroom Copper Wire Lights with Remote and Timer 8 Modes, Waterproof String Lights for Dorm DIY Party Christmas Decoration\uff08Warm White\uff09",
+    "normalized_price": 7.99,
+    "buy_url": "https://www.amazon.com/dp/B0D91YD2PQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81h5liwjkfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJRNSMZP",
+    "name": "Minetom Fairy Lights Color Changing - 33FT 100 LED String Light with Remote, 16 Single Colors & 6 Holiday Colors,12 Modes, USB Fairy Lights for Bedroom, 4th of July Light for Indoor Classroom",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJRNSMZP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/812cHwf-j4L._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]
