@@ -1,0 +1,162 @@
+[
+  {
+    "slot_id": "bed_frame",
+    "x": 0.42,
+    "y": 0.55,
+    "w": 0.4,
+    "h": 0.35,
+    "product_name": "NEW JETO Metal Bed Frame,King Size Bed Frame with Storage Space,Heavy Duty Sturdy Mattress Foundation,Easy Assembly,No Box Spring Needed, Black,18 Inch,King",
+    "price": 63.99,
+    "buy_url": "https://www.amazon.com/dp/B0BN413GP3?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "ceiling_light",
+    "x": 0.45,
+    "y": 0.06,
+    "w": 0.12,
+    "h": 0.1,
+    "product_name": "Modern Matte Black Semi Flush Mount Ceiling Light Fixture Industrial Metal Round Bowl Shape Milk Glass Light Fixture Ceiling Mount for Bathroom Bedroom Hallway Office Living Room",
+    "price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB5VYP2Z?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "comforter",
+    "x": 0.42,
+    "y": 0.55,
+    "w": 0.35,
+    "h": 0.2,
+    "product_name": "TEXARTIST Premium 2100 Series King Comforter All Season Breathable Grey Comforter Soft 4D Spiral Fiber Quilted Lightweight Down Alternative Duvet Insert with Corner Tabs Hotel Summer Style (90\"x102\")",
+    "price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B08D3W7TFM?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "curtains",
+    "x": 0.42,
+    "y": 0.25,
+    "w": 0.55,
+    "h": 0.15,
+    "product_name": "NICETOWN Black Velvet Curtains 84 inch Long 2 Panels, Rod Pocket & Back Tab Heavyweight Luxury Blackout Window Treatments Sliding Glass Door Winter Drapes for Bedroom, W52 x L84",
+    "price": 19.19,
+    "buy_url": "https://www.amazon.com/dp/B0FL1LH6BM?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "dresser",
+    "x": 0.82,
+    "y": 0.52,
+    "w": 0.18,
+    "h": 0.25,
+    "product_name": "Jocoevol Modern 6 Drawer Dresser Black Dresser for Bedroom, Simply Chest of Drawers, Wood Storage Dresser with Deep Drawers for Living Room Hallway Entryway, Black",
+    "price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0DNF65Q7J?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "floor_lamp",
+    "x": 0.68,
+    "y": 0.38,
+    "w": 0.08,
+    "h": 0.3,
+    "product_name": "Globe Electric 67046 58\" Floor Lamp, Matte Black Finish, White Linen Rectangular Shade, Modern Geometric Cutout Design, E26 Base",
+    "price": 87.34,
+    "buy_url": "https://www.amazon.com/dp/B07HZGZ2X5?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "mattress",
+    "x": 0.42,
+    "y": 0.5,
+    "w": 0.35,
+    "h": 0.18,
+    "product_name": "King Size Hybrid Mattress 12 Inch, Memory Foam and Pocket Spring Mattress in a Box, Medium Firm, Pressure Relief, Motion Isolation, Cooling Comfort, CertiPUR-US, Oeko-TEX",
+    "price": 375.0,
+    "buy_url": "https://www.amazon.com/dp/B0H3C68ZFJ?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "mirror",
+    "x": 0.82,
+    "y": 0.28,
+    "w": 0.12,
+    "h": 0.18,
+    "product_name": "DUMOS 64\"x21\" Full Length Mirror with Stand, Floor Standing Aluminum Frame, ShatterProof Nano Glass for Bedroom, Living Room, Cloakroom Modern Simple Home Decor, Can Be Hanging, Leaning or Wall, Black",
+    "price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVSL5BS7?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "nightstand",
+    "x": 0.14,
+    "y": 0.55,
+    "w": 0.12,
+    "h": 0.18,
+    "product_name": "Treocho Led Nightstand with Hidden Space, Modern Night Stand with Charging Station, 3 Drawer Smart Nightstand with Glossy Finish, Tall Bedside Table with RGB Lights for Bedroom, Black",
+    "price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0F5G98WY3?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "pillows",
+    "x": 0.42,
+    "y": 0.38,
+    "w": 0.25,
+    "h": 0.1,
+    "product_name": "ACCURATEX Pillows Queen Size Set of 2, Hybrid Shredded Memory Foam Pillow[Adjustable Loft], Fluffy Down Alternative Fill Removable Cotton Cover, Firm Supportive Pillow for Side Back Sleepers",
+    "price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B07FY4YS8M?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "plants",
+    "x": 0.9,
+    "y": 0.62,
+    "w": 0.12,
+    "h": 0.22,
+    "product_name": "Kante 12.6\" H Tall Rectangular Concrete Planters, Outdoor Indoor Lightweight Plant Pots with Drainage Hole and Rubber Plug, Modern Style for Home Garden Patio, Weathered Concrete",
+    "price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0CYZK227X?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "rug",
+    "x": 0.42,
+    "y": 0.78,
+    "w": 0.45,
+    "h": 0.18,
+    "product_name": "Abani Cream and Black Swirl Area Rug | 5\" x 8\" Beige Carpet with Wave Pattern | Modern Rug for Living Room, Bedroom and Office | Nuevo Collection",
+    "price": 116.0,
+    "buy_url": "https://www.amazon.com/dp/B0DCZPYH7F?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "sheets",
+    "x": 0.42,
+    "y": 0.52,
+    "w": 0.3,
+    "h": 0.12,
+    "product_name": "Good Sleep Bedding 100% Egyptian Cotton Sheets King Size, 4 Piece Silky Sateen Weave King Sheets, Ultra-Soft & Durable Hotel Luxury, 16 Inch Deep Pocket King Sheet Set - White",
+    "price": 95.99,
+    "buy_url": "https://www.amazon.com/dp/B08P1P4X1D?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "table_lamp",
+    "x": 0.14,
+    "y": 0.4,
+    "w": 0.08,
+    "h": 0.14,
+    "product_name": "BOKT Modern Chrome Metal Globe Table Lamp Contemporary Milk White Glass Reading Lamp 1-Light E26 Table Standing Lamp Home Decor Glass Ball Iron Lighting Fixture for Bedside Hotel Shop Office Gifts",
+    "price": 85.99,
+    "buy_url": "https://www.amazon.com/dp/B0BTLXKPGZ?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "throw_blanket",
+    "x": 0.42,
+    "y": 0.65,
+    "w": 0.25,
+    "h": 0.1,
+    "product_name": "Madison Park Zuri Soft Plush Luxury Oversized Faux Fur Throw Animal Stripes Design, Faux Mink On The Reverse, Modern All Seasons Blanket for Bed, Sofa Couch, Office, Snow Leopard, 60x70",
+    "price": 31.16,
+    "buy_url": "https://www.amazon.com/dp/B07T2Y1QHF?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "wall_art",
+    "x": 0.42,
+    "y": 0.18,
+    "w": 0.25,
+    "h": 0.16,
+    "product_name": "IPIC - Vintage World Map Canvas Wall Art, Oversize Travel Map Print for Home, Office, or Study, Push Pin Wall Decor for Travel Lovers, Ready to Hang",
+    "price": 79.97,
+    "buy_url": "https://www.amazon.com/dp/B0DKSXBN5X?tag=roomkitai-20"
+  }
+]

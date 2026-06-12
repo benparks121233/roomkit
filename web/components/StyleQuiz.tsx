@@ -368,15 +368,18 @@ const ROOM_OWNERSHIP_GROUPS: Record<string, OwnershipGroup[]> = {
 // ---------------------------------------------------------------------------
 
 const CORE_PHRASES: Record<string, string> = {
-  cottagecore:   "cottagecore",
-  dark_academia: "dark academia",
-  japandi:       "japandi",
-  coastal:       "coastal",
-  industrial:    "industrial",
-  quiet_luxury:  "quiet luxury",
-  sports_den:    "sports den",
-  city_modern:   "city modern",
-  ski_lodge:     "ski lodge",
+  cottagecore:        "cottagecore",
+  dark_academia:      "dark academia",
+  japandi:            "japandi",
+  coastal:            "coastal",
+  industrial:         "industrial",
+  quiet_luxury:       "quiet luxury",
+  sports_den:         "sports den",
+  city_modern:        "city modern",
+  ski_lodge:          "ski lodge",
+  jungle_oasis:       "jungle oasis",
+  gamer_den:          "gamer den",
+  poster_maximalist:  "poster maximalist",
 };
 
 const MOOD_PHRASES: Record<string, string> = {

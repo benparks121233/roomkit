@@ -244,7 +244,7 @@
   {
     "product_id": "B0CL4XP5LG",
     "name": "Bedsure Queen Size Comforter Set Beige, Boho Tufted Bed Set, Checkered Farmhouse-Style Distressed Vintage Bedding, 3 Pieces, 1 Plaid Geometric Comforter and 2 Pillow Shams",
-    "normalized_price": 59.99,
+    "normalized_price": 51.99,
     "buy_url": "https://www.amazon.com/dp/B0CL4XP5LG",
     "specs": {
       "bed_size": "queen"
@@ -463,7 +463,7 @@
   },
   {
     "product_id": "B0B7JRZ6LX",
-    "name": "BEDELITE Fleece Queen Comforter Set -Super Soft & Warm Fluffy Cream White Bedding, Luxury Fuzzy Heavy Bed Set for Winter with 2 Pillow Cases",
+    "name": "BEDELITE Fleece Queen Comforter Set -Super Soft & Warm Fluffy Cream White Bedding, Luxury Fuzzy Heavy Bed Set for All Season with 2 Pillow Cases",
     "normalized_price": 36.99,
     "buy_url": "https://www.amazon.com/dp/B0B7JRZ6LX",
     "specs": {
@@ -2422,7 +2422,7 @@
   {
     "product_id": "B0CGV4SWGW",
     "name": "Litanika King Size Comforter Set Beige, 3 Pieces Cream Tufted Boho Farmhouse Bedding Comforter Sets, Lightweight Fluffy Comforter Bed Set for All Season (104x90In Comforter and 2 Pillowcases)",
-    "normalized_price": 34.98,
+    "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B0CGV4SWGW",
     "specs": {
       "bed_size": "king"
@@ -3231,6 +3231,3282 @@
       "bed_size": "queen"
     },
     "image_url": "https://m.media-amazon.com/images/I/81NkFVOCpSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2QWJ2KL",
+    "name": "EAVD Vintage Colorful Striped Comforter Set Queen Soft Cotton 3-Piece Retro Vertical Striped Bedding Set with 2 Pillowcases Boho Geometric Comforter Set for All-Season(Pink&Yellow&Blue, Queen)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2QWJ2KL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/811zWJNWVrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJS1BXQX",
+    "name": "ETDIFFE Boho Queen Size Comforter Set, 3pc Colorful Bohemian Chic Soft Bedding Set, All Season Lightweight Hippie Teal Orange Bed Comforter",
+    "normalized_price": 36.79,
+    "buy_url": "https://www.amazon.com/dp/B0FJS1BXQX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vyEdAeaML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DG93ZLQS",
+    "name": "Boho Full Size Comforter Set Soft Chic Boho Comforter Set 3 Pieces Lightweight Exotic Yellow Orange Bohemian Mandala Colorful Retro 1 Boho Comforter and 2 Pillowcases for All Seasons",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0DG93ZLQS",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dfG2Mt-1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CVS5KZJ",
+    "name": "7 Pieces Comforter Sheet Set Queen Size Bed in a Bag Microfiber All Season Soft Colorful Dots Bedding Set (1 Comforter, 2 Pillow Shams, 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases) Queen",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B08CVS5KZJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71LTyO8kZIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07ZRB2FDF",
+    "name": "WONGS BEDDING Bohemian Comforter Set Queen, Ultra Soft Microfiber Reversible Boho Alternative Comforter Set - 3 Pieces (1 Solid Comforter + 2 Pillowcases), Bedding Duvet Set for Queen Bed",
+    "normalized_price": 48.99,
+    "buy_url": "https://www.amazon.com/dp/B07ZRB2FDF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61WRddx0TtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BFL3HGF5",
+    "name": "Cottolester Boho Comforter Set Queen Size 8 Piece Bed in a Bag Bohemian Striped Bedding Quilt Set Aqua Paisley Floral Comforter and Sheet Set,Soft Microfiber Complete Bedding Sets for All Season",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B0BFL3HGF5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81O-P-7+NGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY543QF6",
+    "name": "Tyrot 3 Piece Boho Floral Full/Queen Quilt Sets Farmhouse Botanical Reversible Lightweight Bedspread Coverlet with 2 Shams Mid Century Leaves Microfiber Bedding Quilts Set for All Season, 90''x96''",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0CY543QF6",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91F1ykpa7eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FF4FJ1D7",
+    "name": "LifeTB Queen Comforter Set Multi-Colored Gingham Comforter Modern Style Checkered Pattern Comforter Set Colorful Grid Plaid Bedding Comforter Fluffy Soft Lightweight Grid Bedding Set Breathable",
+    "normalized_price": 59.19,
+    "buy_url": "https://www.amazon.com/dp/B0FF4FJ1D7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816JzsVGiaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYNW3MG5",
+    "name": "mixinni Retro Striped Duvet Cover Set Queen - 100% Natural Cotton 3-Piece Vintage Red Stripes Pattern Printed Bedding Set, Soft Breathable Comforter Cover with Zipper Closure & Corner Ties, Queen Size",
+    "normalized_price": 58.09,
+    "buy_url": "https://www.amazon.com/dp/B0DYNW3MG5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ICIFniCbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1YP5XJB",
+    "name": "EAVD Colorful Striped Duvet Cover Queen Soft 100% Cotton Vintage Pink Green Yellow Stripes Printed Bedding Set with 2 Pillowcases Retro Reversible Geometric Comforter Cover with Zipper Corner Ties",
+    "normalized_price": 58.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1YP5XJB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RllMYlAML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FY63HHMW",
+    "name": "HighBuy Boho Striped Comforter Set Full Size Geometric Bedding Comforter Multi Color Stripes Comforters Full Bedding Sets 3 Piece Striped Comforter Modern Bedding for Teen Boy,Fluffy Soft",
+    "normalized_price": 75.19,
+    "buy_url": "https://www.amazon.com/dp/B0FY63HHMW",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WhlkYo6HL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLCKY8TG",
+    "name": "Mooreeke Floral Queen Size Comforter Sets, Green and Yellow Botanical Patterned Bedding for All Seasons, 3-Piece Vintage Bed in a Bag with Fluffy Quilted Reversible Comforter & 2 Pillow Shams",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLCKY8TG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818ma6RL89L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B093KFQ77S",
+    "name": "Qucover King Size Quilt Bedding Set, 100% Cotton Boho Bedspread, Vibrant Colorful Gorgeous Paisley Print Coverlet for Living Bedroom, Bed Cover with 2 Pillow Shams, 98x106 Inches",
+    "normalized_price": 81.69,
+    "buy_url": "https://www.amazon.com/dp/B093KFQ77S",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91PelEtIwrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DS3S1YR9",
+    "name": "BLOOMHAVEN Full Size Comforter Sets-7 Pieces Puff Marigold Blue Floral Bedding Set for All Seasons, Shabby Chic Farmhouse Bed in a Bag Full with Floral Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DS3S1YR9",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91sXnwecpZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09SGXFGJZ",
+    "name": "Wake In Cloud - Bohemian Comforter Set, Boho Chic Paisley Striped Floral Pattern Printed for Men Women, Soft Lightweight Bedding, 3 Pieces, Orange Navy, Queen Size",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B09SGXFGJZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812zGFyIlgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJZPF1N2",
+    "name": "A Nice Night 5Pcs Comforter Sets,Ruffle Comforter for Dorm Room Essentials for Queen Bed,Colorful Plaid Checkered Chic Bedding Bed in a Bag for Girls Boys Teens",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJZPF1N2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71cPsyYxitL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08L69L4FY",
+    "name": "Exclusivo Mezcla Lightweight Reversible Queen Size Comforter Set, Down Alternative Comforter with 2 Pillow Sham, Queen Size Bedding Set for All Seasons, Orange/Yellow",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B08L69L4FY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71q-5IYCbkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08B51GQGQ",
+    "name": "Quilt Set Colorful and Bright for Summer 3 Piece Reversible Colorful Quilt Set Queen Size with Navy Green Orange Yellow Cubes Microfiber Lightweight Bedding Coverlet Set Bedspread",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B08B51GQGQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZRdmH7UVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9JP6N3P",
+    "name": "Queen Quilt Set - Washed Quilted Patchwork Comforter Coverlet, Lightweight Breathable Bedspread for All Seasons, Reversible 90\"x90\" with 2 Pillow Shams, Machine Washable",
+    "normalized_price": 58.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9JP6N3P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81n7udB2ClL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B091CBY73X",
+    "name": "Secgo King Size Comforter Set- 100% Cotton Quilt King Size Set, Green, Sage bedspreads (96 * 108 Inch) with 2 Pillow Shams, Patchwork Reversible Lightweight Bedding",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B091CBY73X",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810qfdjn0qL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBRR6LJB",
+    "name": "Annibedding Pink Floral Queen Comforter Set, 8 Piece Soft Microfiber Flower Bed in a Bag Bedding Set with Pillowcase and Sheets for All Season (90\"x90\")",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBRR6LJB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CFzC7pNXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY9ZZJKL",
+    "name": "Wake In Cloud - Floral Bedding Set for Girls, Cute Colorful Botanical Flowers Patterned Soft Lightweight Comforter Set with Sheets, 5 Pieces Kids Bed in a Bag, Orange Cream, Twin Size",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CY9ZZJKL",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mIO3TUVqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNNG9FC4",
+    "name": "Travan 3-Piece Quilt Set Quilted Bedspread Lightweight Coverlet Set Garden Style Floral Printed Oversized Quilted Bedding Set with Shams for All Season, Exquisite, Queen Size | Quilted Bedspread",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BNNG9FC4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91xACUrsS2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BC3TQ24X",
+    "name": "DHSFKBE Boho Comforter Set Queen - 7 Pieces Bed in a Bag Floral Medallions Design, Bohemian Comforter Set with Sheets, Soft Microfiber Complete Bedding Sets All Season (Teal Blue, Queen)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BC3TQ24X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813FrCV6DgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK19G77Y",
+    "name": "Nttopship 3 Piece Boho Floral Comforter Set Full Size Colorful Bohemian Contemporary Flower Microfiber Bedding Set Vibrant Bright Soft Machine Washable Lightweight 1 Comforter Set with 2 Pillowcases",
+    "normalized_price": 48.5,
+    "buy_url": "https://www.amazon.com/dp/B0DK19G77Y",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81u3kAqDTqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C2YVBNRV",
+    "name": "Luxudecor Floral Comforter Set Queen Size 7 Piece, Purple Flower Bed in a Bag, Elegant Floral Comforter with Sheet Set, Soft Microfiber Bedding Set for All Season (Purple, 90\"x90\")",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0C2YVBNRV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vQrqeRf1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDDLJ1M9",
+    "name": "Wake In Cloud - Boho Quilt Set, Bohemian Chic Colorful Medallion with Flower Leaf Stripe Pattern, Reversible Lightweight Bedspread Coverlet, 3 Pieces, Coral Green, Queen/Full Size",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0GDDLJ1M9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91m5kJGstHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW93185H",
+    "name": "Wake In Cloud - Boho Comforter Set, Floral Farmhouse Botanical Western Style with Colorful Flowers and Tropical Leaves, Soft Lightweight Bedding, 3 Pieces, Amber Black, Queen Size",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B0FW93185H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RU50a3+mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09SGX11S8",
+    "name": "Wake In Cloud - Floral Comforter Set, Shabby Chic Farmhouse Cottagecore Vintage Colorful Pastel Spring Flowers, Soft Lightweight Bedding for Women Girls, 3 Pieces, Green, Queen Size",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B09SGX11S8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/716doO0IwRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDGFLMVV",
+    "name": "WONGS BEDDING Floral Comforter Set Queen Size 8 Piece Colorful Flowers Botanical Pattern Bed in a Bag, Soft Microfiber Farmhouse Reversible Comforter Bedding Set for All Season",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDGFLMVV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LvN46-6JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BGSC7G3P",
+    "name": "Boho Style Twin Size Quilt Set Reversible Bohemian Floral Strip Quilt Beddding Set, Soft and Lightweight Bedspread for All Season,XL Twin Bed Coverlet with 1 Matching Pillow Sham (2 Pieces)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BGSC7G3P",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ylD4wEJFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09RCC56B1",
+    "name": "Intelligent Design Queen/Full Size Comforter Set, Watercolor Queen Bedding Sets, Tie Dye Comforter Set for Teen Girl & Boys, 4 Pieces Cassiopeia Comforter, Sham, Throw Pillow Full/Queen Pink/Blue",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B09RCC56B1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81fUWAEAMKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHBW4JYL",
+    "name": "Levtex Home - Basel Comforter Set - Full/Queen Comforter (90x94in.) + Two Standard Pillow Cases (26x20in.) - Multicolor Floral - Cotton",
+    "normalized_price": 108.9,
+    "buy_url": "https://www.amazon.com/dp/B0FHBW4JYL",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91K5HLkRVJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1KHV9TM",
+    "name": "Joyreap 3 Pieces Floral Patchwork Quilt Set Queen, Orange n White Flowers Design, Smooth Soft Microfiber Quilt, Bedspread Bed Cover for All Season- 90x90 inches",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1KHV9TM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ojjgNK4TL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDQ3YNLX",
+    "name": "Yiran Comforter Set Queen Size, 7 Piece Peacock Blue Floral Comforters Lightweight Bedding Set Bed in a Bag Soft Microfiber Complete Botanical Beds Sets with Sheets for All Season Spring Summer",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDQ3YNLX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qovRYro-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F87HXP1M",
+    "name": "Pamnest Comforter Set Queen Size, Mid Century Atomic Colorful Soft Bedding for Kids and Adults, Green Teal Orange Comforter Set with 2 Pillowcases for Bedroom Bed Decor",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0F87HXP1M",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71M6QvWA5yL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP4DL27L",
+    "name": "AMBERSPACE Full Size Comforter Set for Girls, Colorful Checkered Bedding Set with Cute Floral, All Season Plaid Kids Bed in a Bag 7 Pieces with Sheets, Pillowcases & Shams",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP4DL27L",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71M4d6txc2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B53HVCT5",
+    "name": "WONGS BEDDING Boho Quilt King Size, Blue Purple Bohemian King Quilt, Lightweight Microfiber Bed Decor Bedspread for All Season 103\"x90\"(3 Pieces)",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0B53HVCT5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816+uEco0wL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQX9PCB8",
+    "name": "Nanko Quilt Set Queen Full Size 3 Pcs, Boho Red & Green Colorful Vintage Striped Bedspreads, Soft Lightweight Coverlet Bed Spreads, Bohemian Thin Quilted Comforter Bedding Sets for Women Men, 90x90",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQX9PCB8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71-gNjMjB8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CRD62CB8",
+    "name": "Intelligent Design Kids Full Comforter Set for Girls, Tufted Chenille Floral Comforter Set Queen, Lightweight Polka Dot Reversible Bed Set, Shams, Pillow, Gracie, Full/Queen White/Purple 4 Piece",
+    "normalized_price": 158.62,
+    "buy_url": "https://www.amazon.com/dp/B0CRD62CB8",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/714zzVzOTfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C27Z58MH",
+    "name": "VM VOUGEMARKET Linen Cotton Jacquard Duvet Cover Queen,3 Pcs Yarn-Dyed Textured Duvet Cover Set Green Purple Floral Bedding Breathable, Natural Wrinkled Look-No Comforter",
+    "normalized_price": 85.99,
+    "buy_url": "https://www.amazon.com/dp/B0C27Z58MH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71srrs9igIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08PBQPT72",
+    "name": "mixinni Garden Style Cotton Flowers and Birds Pattern Printed Duvet Cover Reversible Design Peacock Blue 3 Piece Bedding Duvet Set with Zipper Closure, Perfect for Him and Her-Queen Size",
+    "normalized_price": 72.01,
+    "buy_url": "https://www.amazon.com/dp/B08PBQPT72",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hzmuoAsjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9753T6W",
+    "name": "7 Pieces Groovy Daisy Flower Comforter Set Queen Size,70s 80s Vintage Floral Hippie Psychedelic Bedding,Rainbow Exotic Bohemia Retro\uff08Comforter+Fitted+Flat Sheet+2 Pillowcases+2 Throw Pillow Covers\uff09",
+    "normalized_price": 66.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9753T6W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81HsesCbyTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1XNG77L",
+    "name": "Queen Size Boho Comforter Set - 3 Pieces Lightweight Exotic Yellow Orange Mandala Colorful Retro Boho Comforter and 2 Pillowcases for All Seasons",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1XNG77L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dfG2Mt-1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDQ39YYK",
+    "name": "Yiran Queen Comforter Set, 7 Piece Black Dandelion Floral Comforter Bedding Set, Winter Bed in a Bag Queen, Soft Microfiber Complete Bedding Set with Sheets for All Season",
+    "normalized_price": 41.75,
+    "buy_url": "https://www.amazon.com/dp/B0DDQ39YYK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dUXGp3uaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BN65WVNZ",
+    "name": "Bedsure Comforter Set Queen Size - Checkered Bedding Comforter Set for Boys, 3 Pieces, 1 Soft Green Comforter and 2 Pillow Shams",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0BN65WVNZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ZbG1ZH7SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BWYXQVZ2",
+    "name": "Vintage Style Duvet Cover Set,5 PCS Boho Comforter Cover Set,Paisley Floral Bedding Set,Green Floral Duvet Cover,Queen Duvet Cover,Soft Reversible Design(Autumn,Queen)",
+    "normalized_price": 58.86,
+    "buy_url": "https://www.amazon.com/dp/B0BWYXQVZ2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iZ8m35aHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVWX5M3Z",
+    "name": "Wake In Cloud - Boho Quilt Set, Floral Bohemian Chic Farmhouse Tropical Botanical Colorful Flower Pattern, Reversible Lightweight Bedspread Coverlet, 3 Pieces, Amber Black, Queen/Full Size",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVWX5M3Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91MHExBK8tL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09CT192W1",
+    "name": "Ivellow Velvet Duvet Cover Queen Set Sage Green Velvet Comforter Cover 3Pcs Ultra Soft Breathable Bedding with Pillow Shams Luxury Cozy Flannel Velour Duvet Cover with Zipper Closure and 8 Corner Ties",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B09CT192W1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xceL6xIeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BGS98JWS",
+    "name": "Boho Style Queen Quilt Set Reversible Bohemian Floral Strip Quilt Beddding Set, Soft and Lightweight Bedspread for All Season, Full Size Bed Coverlet with 2 Matching Pillow Shams (3 Pieces)",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0BGS98JWS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ylD4wEJFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F383QMS7",
+    "name": "Pamnest Quilt Set Full/Queen Size, Gold Yellow Mid Century 3 Pcs Soft Bed Cover Bedding Set for Kids and Adults, Sun Boho Geometric Leaf Lightweight Bedspread Coverlet with Pillow Sham for All Season",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0F383QMS7",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qIEx6tiUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09SGXDDVJ",
+    "name": "Wake In Cloud - Bohemian Comforter Set, Boho Chic Ornate Floral Elements Pattern Printed for Men Women, Soft Lightweight Bedding, 3 Pieces, Orange Navy, Queen Size",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B09SGXDDVJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yP3VWweKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJPCQ8PH",
+    "name": "WeCozy 7 Pcs Queen Size Comforter Set with 2 Pillowcases & 2 Shams, Mid Century Bedding for Adults, Sun Boho Geometric Rainbow Bed in a Bag with Flat Fitted Sheet",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DJPCQ8PH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NUSwLv0rL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6PYF3NQ",
+    "name": "ENJOHOS Boho Queen Comforter Set Beige Tufted Rainbow Bedding for Queen Size Bed, Boho Chic Decor, 3 Pieces Lightweight Fluffy Soft Microfiber Cream Comforter with 2 Pillow Cases for All Season",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0C6PYF3NQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81eCGLlIz5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2KM5N9D",
+    "name": "Wake In Cloud - Boho Comforter Set, Floral Farmhouse Bohemian Chic Style with Colorful Sunflowers and Birds Pattern, Soft Lightweight Bedding, 3 Pieces, Amber Green, Queen Size",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2KM5N9D",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91VOrUrkOsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B081HDSXPN",
+    "name": "Pangzi Bohemian Retro Bedding Sheet Set,Boho -1 Fitted Sheet, 1 Flat, 2 Pillow Cases - 4 Piece (Queen, Red)",
+    "normalized_price": 24.17,
+    "buy_url": "https://www.amazon.com/dp/B081HDSXPN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/719ut6Fb4fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2HTMF1R",
+    "name": "Blue Gingham Comforter Set Queen Modern Plaid Checkered Pattern Comforter 3 Pieces Blue Grid Comforter with 2 Pillowcases Soft Fluffy Gingham Bedding Set Farmhouse Plaid Comforter Set for All Seasons",
+    "normalized_price": 59.09,
+    "buy_url": "https://www.amazon.com/dp/B0F2HTMF1R",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BGArOPsML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D14ZJD9F",
+    "name": "Boho Queen Comforter Set Soft Chic 3 Pieces Bedding Queen Comforter Set Lightweight Exotic Red Teal Bohemian Mandala Colorful Vintage Comforter Bed Set for All Seasons (Queen, Boho)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0D14ZJD9F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71siald7jVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DS2CVSW7",
+    "name": "Boho Quilt Set Queen Size \u2013 Lightweight Microfiber Bohemian Quilt Bedding Set, All Season Boho Bedspread Queen, Soft Boho Coverlet with Shams, Moroccan Patterned Bedding for Bedroom & Guest Room",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B0DS2CVSW7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71795NggMvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDDJCW9W",
+    "name": "Wake In Cloud - Boho Quilt Set, Bohemian Chic Colorful Medallion with Flower Leaf Stripe Pattern, Reversible Lightweight Bedspread Coverlet, 3 Pieces, Aqua Purple, Queen/Full Size",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0GDDJCW9W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Yp5VT9-DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09XP4JR1P",
+    "name": "Boho Bohemian Farmhouse Black and Orange Wildflower Garden Floral Duvet Comforter Cover and Sham 3 pc. Full Queen Size Bed Bedding Set Bedroom Aesthetic Botanical Cottagecore Flower Print Vintage",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B09XP4JR1P",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OgdnMItLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTKZQHYQ",
+    "name": "Intelligent Design Queen Quilt Set Boho Quilt Set, Watercolor Tie-Dye Coverlet Set, Casual & Trendy Quilted Lightweight Bedspread, All Season Bed Set, Shams, Cassiopeia, Full/Queen, Pink/Blue 4 Piece",
+    "normalized_price": 53.1,
+    "buy_url": "https://www.amazon.com/dp/B0CTKZQHYQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QHuYXJC7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFG9BB1K",
+    "name": "Colorful Bohemian Quilt Set Queen Size Boho Red Green Exotic Printed Bedspread Set 3 Pieces Vibrant Vintage Ethnic Striped Microfiber Bed Coverlet for All Seasons",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFG9BB1K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81XiFrBVXRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY5BX6WZ",
+    "name": "Tyrot 3 Piece Black Red Boho Floral Quilt Sets Full/Queen Farmhouse Reversible Lightweight Bedspread Coverlet with 2 Shams Vintage Mid Century Microfiber Bedding Quilts Set for All Season, 90''x96''",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CY5BX6WZ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91XsTZDcdBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1LR8897",
+    "name": "Wake In Cloud - Boho Quilt Set, Floral Bohemian Chic Farmhouse Cottagecore Tropical Colorful Sunflower Pattern, Reversible Lightweight Bedspread Coverlet, 3 Pieces, Amber Black, Queen/Full Size",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1LR8897",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91EaNflhF8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09XF85KW3",
+    "name": "Ikawaapurry Comforter Set for Queen Size Bed Farmhouse Boho Bedding Sets Fluffy Lightweight Flowers Plants All Season 3 Pcs Comforter with 2 Pillow Shames",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B09XF85KW3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qbjkhA86L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0797M1KC5",
+    "name": "Lush Decor Rowley Birds Quilt Set, 7 Piece Set, King, Multi - Reversible Bird Bedding Set With Pillow Cases & Throw Pillows - Colorful, Whimsical, & Playful Floral Bird Print",
+    "normalized_price": 83.62,
+    "buy_url": "https://www.amazon.com/dp/B0797M1KC5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91BGLeCgSGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPJ95S83",
+    "name": "WeCozy Queen Size Comforter Set with 2 Pillowcases, Sun Moon Boho Mushroom 3 Pcs Bedding for Kids and Adults, Astrology Tarot Witch Soft Comforter Set for Bedroom Bed Decor",
+    "normalized_price": 53.99,
+    "buy_url": "https://www.amazon.com/dp/B0CPJ95S83",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81EHiCTNG0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B6NWSWZF",
+    "name": "WONGS BEDDING Boho Queen Quilt Set, Yellow Orange Bohemian Queen Quilt Bedding Set, Lightweight Microfiber Bed Decor Bedspread for All Season 96\"x90\"(3 Pieces)",
+    "normalized_price": 41.3,
+    "buy_url": "https://www.amazon.com/dp/B0B6NWSWZF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81o0alGj+KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9WDMYBD",
+    "name": "HOSIMA Bohemia Queen Quilt,Lightweight Mushrooms Flowers Pattern Summer Bedding,Butterfly Print Plaid Patchwork Sun and Moon Boho Floral Bedding for Adult Room Decor with 2 Pillowcases.",
+    "normalized_price": 54.89,
+    "buy_url": "https://www.amazon.com/dp/B0F9WDMYBD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81KcphGty8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09ZSPTJK1",
+    "name": "Plush Red Comforter Cover Queen Set, Soft Shaggy Faux Fur Red Bedding Queen Set 3 Pieces (1 Fluffy Duvet Cover + 2 Fuzzy Pillow Cases) Furry Bed Set, Zipper Closure",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B09ZSPTJK1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71UWw98XORL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08BRGHN12",
+    "name": "Goodidea Striped Bohemian Comforter Set Queen Size 3 Pieces Boho Hippie Geometric Bedding Set Soft Breathable Reversible Microfiber Boho Comforter with 2 Pillowcases(20\"x26\")",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B08BRGHN12",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81g5ePcAh3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGCLBG1T",
+    "name": "Nesker Comforter Set Queen Size, Bohemian Boho Geometric 7 Pcs Bedding for Kids and Adults, Mid Century Modern Plant Sun Bed Sheet Sets with Fitted Sheet 2 Pillowcases & 2 Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGCLBG1T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91nZlSLCTvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09P3DLJN2",
+    "name": "CLOTHKNOW Black Floral King Size Comforter Set Sunflower Bedding Comforter Sets Brown Plaid Comforter Boho Comforter with 2 x Pillow Cases",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B09P3DLJN2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71O8Z2Ad4gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B6PJMM76",
+    "name": "WONGS BEDDING Boho Queen Quilt Set, Orange and Blue Bohemian Queen Quilt Bedding Set, Lightweight Bed Decor Bedspread for All Season 96\"x90\"(3 Pieces)",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0B6PJMM76",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81t2-f2nSyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJRSXKHP",
+    "name": "ETDIFFE Boho Comforter Set Queen Size, 3pc Bohemian Chic Soft Striped Bedding Set, All Season Lightweight Microfiber Down Alternative Bed Comforter, Pink",
+    "normalized_price": 37.59,
+    "buy_url": "https://www.amazon.com/dp/B0FJRSXKHP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71uvRu5JCML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFJ2MMYH",
+    "name": "Levtex Home - Mackenzie Comforter Set - Full/Queen Comforter + Two Standard Pillow Cases - Bohemian - Teal, Orange, Yellow, Green, Blue - Comforter (90 x 94in.) and Pillow Case (26 x 20in.) - Cotton",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0FFJ2MMYH",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91dWl6vLwSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2BKNDCK",
+    "name": "Sun and Moon Comforter Set Twin Size,Colorful Flowers Bohemian Exotic Gothic Bedding Sets for Kids Teens Girls Room Decor,Universe Galaxy Bedding with 2 Pillowcases.",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2BKNDCK",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Cas1RsTFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6YM5VKJ",
+    "name": "Wake In Cloud - Boho Comforter Set, Floral Shabby Chic Style with Colorful Flowers and Funky Vines Pattern, Soft Lightweight Bedding, 3 Pieces, Burnt Orange, Queen Size",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0G6YM5VKJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91KRYxCy9yL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00SFFOFY4",
+    "name": "Southshore Fine Living, Inc. White Queen Quilt Bedding Set, Lightweight Bedding Quilts Queen Size Bedspread, Coverlet Full Size, Quilted Coverlet Bed Spread w/Pillow Shams, White Quilts Full Size",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B00SFFOFY4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-hGPzNdGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBGGJX1Q",
+    "name": "Ombre Blue Comforter Set Queen Size Reversible Gradient Blue Grey Boho Bedding Set for Men Women 8 Pieces Bed in A Bag Bohemian Bed Set With Comforter, Sheets, Pillowcases & Shams, Cushion Cover",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBGGJX1Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81g-veMOGuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C3QB9YJ1",
+    "name": "VISIMISI Cotton Bedspread Quilt Sets Reversible Coverlet Sets Comforters Vintage Bohemian Patchwork Bedspread (Green, King Size)",
+    "normalized_price": 86.89,
+    "buy_url": "https://www.amazon.com/dp/B0C3QB9YJ1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71wMp3Kc83L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLP5P9Q9",
+    "name": "Dinjoy Brown Boho Comforter Set Queen Size,7 Pieces Bed in a Bag Queen Coffee Aztec Bedding Sets with Sheets Bohemian Geometric Striped Complete Set for All Season 90\"x90\"",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLP5P9Q9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81cXj36peIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CX84NBTM",
+    "name": "Cupocupa Pink Ruffle King Size Comforter Set, Shabby Chic Boho Bedding Comforter Sets, Fluffy Cozy Bedding Comforters & Sets for All Season, 3PCS Lightweight Farmhouse Rustic Bedding Sets, Beige",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CX84NBTM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71R7F1ne-8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08YXKR996",
+    "name": "ROSGONIA Queen Comforter Set Olive Green, 3pcs Bedding Sets Queen (1 Boho Olive Comforter & 2 Pillowcases), All Season Lightweight Blanket Quilt",
+    "normalized_price": 27.06,
+    "buy_url": "https://www.amazon.com/dp/B08YXKR996",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71oJG7laS5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BC1F9B6V",
+    "name": "Bedsure Queen Comforter Set - White Comforter, Boho Tufted Bedding Comforter Set for Kids, 3 Pieces Farmhouse-Style Bed Set for All Seasons, Fluffy Soft Bedding Set with 2 Pillow Shams",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0BC1F9B6V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91+vECJ8t-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1MTR93H",
+    "name": "Merryword 8 Pieces Universe Bed in a Bag Sun and Moon Comforter Set Queen Size Galaxy Bedding Purple Gold Moon Star Pattern Bohemian Gothic Comforter Set for Boys Girls Women",
+    "normalized_price": 93.99,
+    "buy_url": "https://www.amazon.com/dp/B0F1MTR93H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81rPK7jAYYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H38ZCY1Y",
+    "name": "HOSIMA 7Pcs Butterfly Bedding Sets Full for Girls Women,Black Sheets Aesthetics Room Decor,Boho Mandala Comforter Butterfly Bedding Set,Bohemian Bed in a Bag with 4 Pillowcases.",
+    "normalized_price": 75.99,
+    "buy_url": "https://www.amazon.com/dp/B0H38ZCY1Y",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Kufbs4mlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GG9328W5",
+    "name": "Boho Comforter Set California King Size, 7 Piece Bed in a Bag Bohemian Striped Bedding Purple Paisley Floral Comforters with Sheet Soft Lightweight Complete Sets for All Season",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0GG9328W5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Ykf7vg95L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GRGH7HL1",
+    "name": "Andency Brown Oversized Super King Plus Comforter Set, Boho Soft Warm Tufted Neutral Bedding Comforter Sets, 3 Pieces Aesthetic Chevron Farmhouse Cute Bohemian Textured Bedding Set",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0GRGH7HL1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813X76cuzGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B8YQFN98",
+    "name": "Andency King Size Comforter Set Burnt Orange, 3 Pieces Boho Terracotta Soft Lightweight Bedding Comforter Sets, Rust Tassel All Season Bed Set (104x90In Comforter & 2 Pillowcases)",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0B8YQFN98",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mxBEZmaSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJ8SDKZ5",
+    "name": "Bedsure Boho Duvet Cover Queen Size, Soft & Comfortable Elegant Design Boho Bedding for Decoration, Machine Washable Comforter Cover for All Seasons,Includes 1 Duvet Cover & 2 Pillow Shams,Beige",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJ8SDKZ5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91WGfsypvaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3HB9VWZ",
+    "name": "Cottolester Boho King Size Comforter Set 8 Pieces,Green and Brown Bohemian Striped Bed in a Bag,Floral Soft Microfiber Bedding Comforter Set",
+    "normalized_price": 41.59,
+    "buy_url": "https://www.amazon.com/dp/B0D3HB9VWZ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91NKytTjq5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFG5MJ82",
+    "name": "AILONEN Boho Moon Comforter Set Full Size,7-Piece Soft Bed in a Bag,Gold Purple Crescent Bedding Print Comforter & Fitted Sheet & Flat Sheet & 2 Pillowcases,2 Pillow Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FFG5MJ82",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81upJyliMsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNWBGNBL",
+    "name": "AMBERSPACE King Size Comforter Set Autumn Leaf, Tufted Boho Bedding Farmhouse Bed Set, All Season 7 Pieces Bed in a Bag with Sheets, Pillowcases & Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNWBGNBL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91UJFsR9HCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFTJRPBD",
+    "name": "Tree of Life Bedding Twin Comforter Set,Mystic Planet Starry Sky Printed Bedding Comforter Sets for Kids Boys Girls Room Decor,Bohemian Bedding Puffy Comforter Sets 2 Pillowcases.",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFTJRPBD",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CC+awumcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DXV5S5YB",
+    "name": "BEDELITE Boho Comforter Set Queen Size, Beige Tufted Boho Bed Set 3 Pieces, Soft & Lightweight Comforter for All Seasons, Jacquard Farmhouse Bedding Set with 2 Pillow Shams",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B0DXV5S5YB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81415zE83VL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8D4WHX7",
+    "name": "7 Pieces Tufted Boho Comforter Set Leaves Floral Khaki Farmhouse Shabby Chic Embroidered Bedding for All Seasons Queen Size with Comforter Sheets Pillowcases Shams",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0G8D4WHX7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nvwoVX5ML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLCY6K6S",
+    "name": "Boho Comforter Set Queen - 3 Pieces Bedding with Pillow Shams, Bohemian Design, Teal & Yellow Bohemian Floral, Ultra Soft Microfiber, Bed in a Bag",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLCY6K6S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WABmWUFNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDCBVCPT",
+    "name": "Wake In Cloud - Boho Comforter Set, Bohemian Chic Colorful Medallion with Geometric Botanical Flowers and Horizontal Stripes, Soft Lightweight Bedding, 3 Pieces, Coral Green, Queen Size",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0GDCBVCPT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/910PjARI02L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B5TG8ZVW",
+    "name": "REST\u00ae Evercool\u00ae Cooling Comforter, King/Cali King, Blanket for Hot Sleepers, All Season Bedding for Night Sweats, Breathable Lightweight Duvet, 106x90 Inches, Cool Gray",
+    "normalized_price": 186.75,
+    "buy_url": "https://www.amazon.com/dp/B0B5TG8ZVW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hHyI4f4WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D86M5RYL",
+    "name": "CUDDLE DREAMS Wool Comforter Duvet Insert, 100% Australian Wool Filling with Soft Noiseless Cotton Shell, Natural Warmth (Midweight for All Season, Twin)",
+    "normalized_price": 129.9,
+    "buy_url": "https://www.amazon.com/dp/B0D86M5RYL",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/613eUs7taXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BDVH633P",
+    "name": "ROSGONIA Queen Comforter Set Oatmeal, 3pcs(1 Boho Oatmeal Comforter & 2 Pillowcases) All Season Soft Bedding Lightweight Bedspread Blanket Quilt",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0BDVH633P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B9oxqmyOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQGZDH74",
+    "name": "Pacific Coast Goose Feather Down Fiber Comforters Twin Size, Extra Fluffy White Duvet Insert, Ultra-Soft, Breathable, All Season Hotel Luxury Bedding Comforters, 8 Corner & Center Loops (68\"x90\")",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQGZDH74",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gNI3ZA4zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08GP5SSJS",
+    "name": "EP Mode 100% Pure Cashmere Throw Blanket for Sofa, Classic Design with Gift Box (Lt. Heather Grey)",
+    "normalized_price": 209.9,
+    "buy_url": "https://www.amazon.com/dp/B08GP5SSJS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91k30ZJ8fQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DNYBG8YH",
+    "name": "Sunday Citizen Snug Throw Blanket \u2013 Soft Oversized Lightweight Throw Blanket, Cozy Bedding with Plush Snug Fabric, Machine Washable, Oeko-TEX\u00ae Certified (Biscotti)",
+    "normalized_price": 98.0,
+    "buy_url": "https://www.amazon.com/dp/B0DNYBG8YH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PJ90hNxrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01N9Z2HU5",
+    "name": "Tribeca Living Brisbane Oversized Queen Quilt Bedding Set, Solid 3-Piece Quilted Bedspread Coverlet with Matching Pillow Shams, Super Soft, Fade and Wrinkle Resistant Quilts, Cashmere",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B01N9Z2HU5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81H0sbJO+gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2676NTB",
+    "name": "WRENSONGE Queen Comforter Set - 3 Pieces Prewashed Brown Comforter Soft Lightweight for All Seasons,Down Alternative Comforters Queen Size with 2 Pillow Shams",
+    "normalized_price": 39.98,
+    "buy_url": "https://www.amazon.com/dp/B0F2676NTB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71c1kxj67ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8T64CD7",
+    "name": "Bedsure Comforter Set Queen Size - GentleSoft\u2122 3 Pieces Double-Side Fleece Fluffy White Comforter Set, Cozy Striped Room Decor Aesthetic, Luxury Bedding Queen Size, 2 Pillowcases, 90x90 Inches",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0C8T64CD7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZA2vxI3SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DS2DNZVV",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Queen Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, Cream,Queen 88 x 88 Inches",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0DS2DNZVV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71lOmiGI6gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3PQZWM2",
+    "name": "HOMBYS All-Season Wool Blend Comforter, 51% Merino Wool & 49% Fiber Fill, Breathable Soft Queen Duvet Insert with 100% Cotton Shell, Warm & Lightweight Bedding for Year-Round Comfort, Queen",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0G3PQZWM2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mQFH4goKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJFKJ2MS",
+    "name": "ChiXpace Flannel Fleece Queen Comforter Set - Ultra Soft Furry Grey Leaves Pattern Faux Fur Bed Set, Winter Fuzzy Fluffy Comfort Set, Velvet Bedding Set for Bed with 2 Pillow Cases",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJFKJ2MS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91WXaFIClOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKSZV4RB",
+    "name": "Litanika King Size Comforter Set Oatmeal, 3 Piece Khaki Boho Tufted Bedding, Beige Fluffy Farmhouse Bed Set for All Season with 2 Leaf Pattern Pillowcases\uff08104x90In\uff09",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKSZV4RB",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81c1qL+T98L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSK8CLDR",
+    "name": "PHF Soft Waffle Comforter Set Queen Size- Comfy Breathable Waffle Weave Comforter with 2 Pillow Shams, 3 Pieces Less Snagging Lightweight Textured Bedding Set for All Season, Natural/Linen",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSK8CLDR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+CbCdhZ8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CBLLZJ4B",
+    "name": "Andency Fluffy Sherpa Queen Comforter Set, Super Soft Beige Fleece Warm Bedding for Winter, Luxury Jacquard Boho Thick Fuzzy Plush Bed Set 3 Pieces(1 Shaggy Comforter, 2 Pillowcases)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CBLLZJ4B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81oUAKXcvEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CMR4SNWL",
+    "name": "UGG Leonora Comforter Set with 2 Pillow Shams Lightweight Down Alternative Blanket Reversible Cozy Warm All Season Washable and Hypoallergenic Bedding Set, Full/Queen, Charcoal Grey",
+    "normalized_price": 120.0,
+    "buy_url": "https://www.amazon.com/dp/B0CMR4SNWL",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71JS8RZ+OKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK7K97H9",
+    "name": "Olive + Crate Twin XL | Twin Size Comforter - 100% Outer Shell Viscose Derived from Bamboo Comforter - Hypoallergenic, Cooling Duvet Insert for Twin Bedding - White Dorm Bedding - 62\"x90\"",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0DK7K97H9",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/717JQeRp43L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D7YRPSY9",
+    "name": "Sophia & William Cashmere Queen Quilt,Striped Bedding Set,Lightweight Coverlet,Super Soft Cashmere Feel Velvet Bedspread for All Season,Navy Blue(1 Coverlet 88\u00d792\", 2 Pillow Shams 26\u00d720\")",
+    "normalized_price": 61.99,
+    "buy_url": "https://www.amazon.com/dp/B0D7YRPSY9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/714hisYGEvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09HR7D831",
+    "name": "Tribeca Living Oversized Queen Quilt Set, Three-Piece Box Stitch Soft Bedding Set Includes One Quilt & Two Sham Pillowcases, Wrinkle Resistant Super Soft 110-GSM Microfiber Naples/Cashmere",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B09HR7D831",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Rl5S11TjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09VJ14ZX6",
+    "name": "Luxurious Goose Down Feather Fiber Comforter Oversize California King Size Duvet Insert, Pinch Pleat Ruffled Twisted Flower, 108 x 98 inches, 100% Egyptian Cotton Cover, 80 oz. Fill Weight, Gray",
+    "normalized_price": 169.95,
+    "buy_url": "https://www.amazon.com/dp/B09VJ14ZX6",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61I+ri-fZwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DT16BZH5",
+    "name": "Hybrid Australian Wool Comforter Queen Size with 100% Organic Cotton, Hypoallergenic Luxury Duvet Insert with Tabs, Temperature Regulating All-Season Bedding, White",
+    "normalized_price": 92.99,
+    "buy_url": "https://www.amazon.com/dp/B0DT16BZH5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fyk9rbOaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DV6LWCNH",
+    "name": "Continental Bedding Harmony White Down Comforter 550 Fill Power All Year Weight 100% Cotton Shell Made in USA",
+    "normalized_price": 383.99,
+    "buy_url": "https://www.amazon.com/dp/B0DV6LWCNH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71wKKNl5yFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F3V4FKPY",
+    "name": "Goose Feather Down Fiber Comforter Queen Size, All Season Duvet Insert, 750+FP Hotel Bed Comforter, Ultra Soft 100% Organic Cotton Fabric, 90x90 Inches",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0F3V4FKPY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81324uWxcuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHH2PQ77",
+    "name": "Am\u00e9lie Home Jacquard Waffle Fleece Comforter Set Queen Size, Khaki Fluffy Fleece Bedding Set, Super Soft Fluffy Plush Bedding Set, 3 Pieces, 1 Fuzzy Comforter and 2 Pillowcases",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHH2PQ77",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ttRD72PvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHB29VTL",
+    "name": "Bedsure Tufted Boho Comforter Set Full Size - Terracotta Boho Bed Set, GentleSoft\u2122 3 Pieces Farmhouse-Style Embroidery Bedding, Gifts for Woman, Soft Jacquard Kids' Full Comforter for All Seasons",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0CHB29VTL",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Y9c1a7IGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09F6CTPQX",
+    "name": "YOUR MOON Luxurious All Season Wool Comforter Queen Size, 100% Natural Australian Wool Filling, Hypoallergenic Comforter Duvet Insert, Noiseless Cotton Shell (White)",
+    "normalized_price": 149.31,
+    "buy_url": "https://www.amazon.com/dp/B09F6CTPQX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71zTs1fhPVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CWC7D4X2",
+    "name": "Levtex Home Cloud Waffle King/Cal King Comforter Set (106x94in) with 2 Pillow Shams (36x20in) - Solid Waffle Cotton Texture - Taupe - 100% Cotton King Size Comforter Set - Soft, Pre-Washed",
+    "normalized_price": 179.99,
+    "buy_url": "https://www.amazon.com/dp/B0CWC7D4X2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/919aV6EFAsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL22271M",
+    "name": "Quilt Set King Size- Lightweight Quilt Bedding Set with 2 Pillow Shams, Luxury Jump Stitch Design Bedspread Coverlet with Ruffled Lace, Pre-Washed Fabric, All Season(Camel)",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0FL22271M",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81L5z+-xaVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3PND1WG",
+    "name": "Wool Comforter Duvet Insert for All Season Queen Size, Luxurious Wool Fill Duvet, 100% Noiseless Waffle Cotton Shell, Breathable Comforter (Light Gray)",
+    "normalized_price": 59.8,
+    "buy_url": "https://www.amazon.com/dp/B0G3PND1WG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71AHA4I7hLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07D2WJ5WY",
+    "name": "Amazon Basics 3-Piece Down Alternative Micromink Sherpa Bedding Set, Ultra-Soft, Warm All Season Comforter, Machine Washable, King, Charcoal",
+    "normalized_price": 41.39,
+    "buy_url": "https://www.amazon.com/dp/B07D2WJ5WY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81wDuXhndJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWQNFHRT",
+    "name": "Storage Bags for Clothing - 14.8 Gal Space Saver Collapsible Vacuum Storage Boxes with Lids, Stackable Storage Bins, Large blanket Storage Bags for Comforter, Sweaters & Cashmere(1-Pack)",
+    "normalized_price": 81.59,
+    "buy_url": "https://www.amazon.com/dp/B0GWQNFHRT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61qEQC+qP7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08XR1CWHP",
+    "name": "UGG Kenzie Comforter Set with 2 Pillow Shams Plush Faux Fur Bedding Soft Warm Down Alternative Comforter Washable Hypoallergenic Fluffy Blanket Set for Bedroom, King/California King Size, Seal",
+    "normalized_price": 139.3,
+    "buy_url": "https://www.amazon.com/dp/B08XR1CWHP",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FxndrF76L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CH4QNDTD",
+    "name": "LLanCL 3D Jacquard Design Comforter Set, Ultra-Soft Warm King Size Sherpa Fur Plush 3-Pieces Sets Luxury Cozy Bedding with 2 Pillowcases (104\"x90\", Cream White)",
+    "normalized_price": 104.99,
+    "buy_url": "https://www.amazon.com/dp/B0CH4QNDTD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81IjHz5-C6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW4R293W",
+    "name": "SONORO KATE 100% French Linen Duvet Cover King Size, Soft Breathable for Hot Sleepers, Moisture Wicking & Durable Cover Set - Zipper Closure & 4 Corner Ties Duvet Covers 3 Piece (Cream,King)",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0FW4R293W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71BhMEaJhKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C1CPF5G9",
+    "name": "Bedsure 100% Washed Cotton Duvet Cover King Size - Oatmeal Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons (Oatmeal, King, 104\"x90\")",
+    "normalized_price": 68.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1CPF5G9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818ffNaNKyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082CSKHK7",
+    "name": "MooMee Bedding Duvet Cover Set 100% Washed Cotton Linen Like Textured Breathable Durable Soft Comfy (Heathered Tannish Linen Grey, King 104\"x90\")",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B082CSKHK7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OykGwVwuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BTQQB2GQ",
+    "name": "Brooklinen Luxury Percale Duvet Cover \u2013 100% Cotton, Cool, Crisp, Extra-Long Corner Ties, Button Closure, Soft & Breathable \u2013 Machine Washable, Duvet Cover Full/Queen Bed Sizes (Cream)",
+    "normalized_price": 165.0,
+    "buy_url": "https://www.amazon.com/dp/B0BTQQB2GQ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71YJUewkAhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGHHTWLB",
+    "name": "ATLINIA 100% Flax Linen Duvet Cover Set - Stone Washed Pure French Linen Organic Fabric for Farmhouse Comforter Boho Bedding Included 1 Duvet Cover 2 Pillow Shams(Natural, King)",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGHHTWLB",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91in1jDLOaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07GKRFKV1",
+    "name": "MooMee Striped Duvet Cover Set 100% Washed Cotton Linen Like Textured Breathable Durable Soft Comfy (White Dark Grey Wide Stripes, King 104\"x90\")",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B07GKRFKV1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bLvZd9n0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSVN516Z",
+    "name": "JIYUAN Queen Size Duvet Cover Set, 3-Piece - 100% Washed Cotton, Linen-Like Soft & Breathable with Zipper Closure, Includes 90x90 Inch Cover & 2 Pillowcases, Heathered Beige",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSVN516Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bQzmAJW7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B015PC71GS",
+    "name": "Simple&Opulence 100% Linen Duvet Cover Set, 3 PCS Natural French Flax Linen Duvet Cover Queen Size, Breathable Soft Comfy Linen Bedding Comforter Cover with 2 Pillowcases(Linen, 88\"x92\")",
+    "normalized_price": 142.99,
+    "buy_url": "https://www.amazon.com/dp/B015PC71GS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71aP6maYZZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QK9CTXR",
+    "name": "MooMee Bedding Duvet Cover Set 100% Washed Cotton Linen Like Textured Breathable Durable Soft Comfy (Heathered Tannish Linen Grey, Queen 90\"x90\")",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B07QK9CTXR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91UeJli0YwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F21PBM9J",
+    "name": "Bedsure Cream Duvet Cover Queen Size - 3 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure & 2 Pillow Shams, No Comforter",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B0F21PBM9J",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8121ENnDuJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1Y1KXWL",
+    "name": "EMME Cream White Muslin Duvet Cover Queen Size, 100% Cotton Soft Gauze Bedding Set with 2 Pillowcases, Breathable Lightweight All Season Comforter Cover with Zipper & Corner Ties, 90\"x90\"",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0F1Y1KXWL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LBfzYVxlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G79DWB53",
+    "name": "Bedsure Textured Duvet Cover Queen Size - Cotton-Like Polyester Jacquard Duvet Cover Set for All Seasons - 3 Pieces Elevated Textured Dobby Soft Bedding Set, NO Comforter (Beige, Queen, 90\"x 90\")",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0G79DWB53",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/918f+2hXy8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01IMZLNBE",
+    "name": "Simple&Opulence 100% Linen Duvet Cover Set 3pcs Basic Style Natural French Washed Flax Solid Color Soft Breathable Farmhouse Bedding with Button Closure - Linen, King",
+    "normalized_price": 146.0,
+    "buy_url": "https://www.amazon.com/dp/B01IMZLNBE",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NUbEWbQXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01L8FHTMW",
+    "name": "Simple&Opulence 100% Linen Duvet Cover Set with Embroidery Border Washed - 3 Pieces (1 Duvet Cover with 2 Pillow Shams) with Button Closure Soft Breathable Farmhouse - Linen, Queen Size",
+    "normalized_price": 135.99,
+    "buy_url": "https://www.amazon.com/dp/B01L8FHTMW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71+B-QgK4fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0126HED16",
+    "name": "Simple&Opulence 100% Washed Linen Duvet Cover Set with Embroidered,3 Pieces Soft Farmhouse Comforter Set with Button Closure,1 Duvet Cover and 2 Pillowshams(King,Natural Linen)",
+    "normalized_price": 134.99,
+    "buy_url": "https://www.amazon.com/dp/B0126HED16",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/716Cb2odBJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B089VRBZY6",
+    "name": "Simple&Opulence 100% Linen Duvet Cover Set, 3 PCS Natural French Flax Ruffle Duvet Cover King Size, Breathable Comfy Linen Bedding Comforter Cover with 2 Pillowcases (Natural Linen, 104\" X 92\")",
+    "normalized_price": 144.99,
+    "buy_url": "https://www.amazon.com/dp/B089VRBZY6",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71tLIcas27L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B015PC71HC",
+    "name": "Simple&Opulence 100% Linen Duvet Cover Set, Natural French Flax Duvet Cover Twin Size, Breathable Soft Comfy Linen Bedding Comforter Cover with 1 Pillowcase (68\"x86\")",
+    "normalized_price": 106.99,
+    "buy_url": "https://www.amazon.com/dp/B015PC71HC",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71PngrSB0JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B093BSJJB8",
+    "name": "Simple&Opulence 100% Linen Duvet Cover Set, 3 Pieces Belgian Flax Breathable Bedding, King Size 104''x92'' (1 Comforter Cover+2 Pillowshams) with Tie Closure Style,Linen",
+    "normalized_price": 134.99,
+    "buy_url": "https://www.amazon.com/dp/B093BSJJB8",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71QSeB6N2pS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B094JBH2VN",
+    "name": "Simple&Opulence French Linen Duvet Cover Set 68\" x 86\"- 2 Pieces (1 Comforter Cover,1 Pillowcase)- Natural Flax Cotton Blend-Solid Color Breathable Farmhouse Bedding-Rust, Twin",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B094JBH2VN",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/714jnwvSm+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP26B7S2",
+    "name": "Simple&Opulence 100% Muslin Cotton Duvet Cover Set King Size, 2-Layer Gauze Ruffle Comforter Cover with Linen Like Texture, 3Pcs Breathable Soft Shabby Chic Farmhouse Bedding for All Seasons(Khaki)",
+    "normalized_price": 78.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP26B7S2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mRP7zd4pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01NCJS5IC",
+    "name": "Simple&Opulence 100% Linen Duvet Cover Set 3pcs with Coconut Button Closure Natural French Washed Flax Solid Color Soft Breathable Farmhouse Bedding - White, Queen Size",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B01NCJS5IC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71x4nfxYduL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F21PTTRW",
+    "name": "Bedsure Cream Duvet Cover King Size - 3 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 104x90 Inches with Zipper Closure & 2 Pillow Shams, No Comforter",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0F21PTTRW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8121ENnDuJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG5ZBZSH",
+    "name": "Bedsure 100% Washed Cotton Duvet Cover King Size - Ivory Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons, 3 Pieces (Ivory, King, 104\"x90\")",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0CG5ZBZSH",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pMMgI8NjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCNJ8LD1",
+    "name": "SE SOFTEXLY Muslin Duvet Cover Queen Size, 100% Washed Cotton Duvet Cover Set, Ultra Soft Comforter Cover Linen Like, 3 Pieces Minimalist Gauze Duvet Cover with 2 Pillowcases, 90\"x90\", Off-White",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCNJ8LD1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/914T2aDE6hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG62SC4X",
+    "name": "Bedsure 100% Washed Cotton Duvet Cover Queen Size - Ivory Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons, 3 Pieces (Ivory, Queen, 90\"x90\")",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0CG62SC4X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pMMgI8NjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09YM372LR",
+    "name": "Bedsure Duvet Cover Queen Size - 3 Pieces Prewashed Extra Soft Bedding Set, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure & 2 Pillow Shams, Linen, Comforter Not Included",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B09YM372LR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+ka8pM5eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXJCX7D",
+    "name": "Bedsure Duvet Cover Queen Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 3 Pieces, Includes 1 Duvet Cover (90\"x90\") & 2 Pillow Shams, NO Comforter, Cream White",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B08CXJCX7D",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WXrok7-HL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07FYJB7TJ",
+    "name": "DAPU 100% Linen Duvet Cover Set 3PCs, Pure Natural French Flax Linen Duvet Cover King 90\"x104\" with Corner Ties and Zipper Closure, Soft Breathable Durable for Hot Sleepers (Natural Linen, King)",
+    "normalized_price": 131.39,
+    "buy_url": "https://www.amazon.com/dp/B07FYJB7TJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71YS2zOnVTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCXSJ5BR",
+    "name": "ATLINIA 100% Flax Linen Duvet Cover Set - Stone Washed Pure French Linen Organic Fabric for Farmhouse Comforter Boho Bedding Included 1 Duvet Cover 2 Pillow Shams(Natural, Queen)",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCXSJ5BR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91in1jDLOaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FC27KT8B",
+    "name": "Cream White Cotton Duvet Cover Full Size, Linen-Like Natural Bedding Set with Zipper Closure (No Comforter), Full Size, Duvet Cover (80\"x90\") x 1, Pillowsham(20\"x26\") x 2",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0FC27KT8B",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fJ3bcvLKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJWDRHXN",
+    "name": "LBRO2M 100% France Linen Duvet Cover Set 3 Pcs Including 1 Flax Comforter Cover with Zipper Closure, 2 Pillowcase, Cozy Duvet Cover King Size, Linen Color",
+    "normalized_price": 129.18,
+    "buy_url": "https://www.amazon.com/dp/B0FJWDRHXN",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71MYnAojjqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRG6DHZW",
+    "name": "FOSSA Duvet Cover Set 100% Washed Cotton Linen Feel Super Soft Breathable Cozy 3 Pieces Bedding Sets Solid Cream White King",
+    "normalized_price": 72.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRG6DHZW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Tfu4ZGGIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1349SLF",
+    "name": "Bedsure Muslin Duvet Cover Queen Size - 100% Cotton 3-Layer Gauze Duvet Cover PureWoven Ultra-Soft & Breathable Bedding Set with Zipper Closure and 8 Corner Ties (Linen, Queen, 90\"x90\")",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1349SLF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81g30a68TaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPN843S8",
+    "name": "Queen Muslin Duvet Cover Set - 4-Layer 100% Cotton Gauze, Breathable Lightweight Comforter Cover with No-Tie Channel + 2 Pillow Shams, Italian Cream, 92\" x 88\"",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DPN843S8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Uoen83SaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXFQD1PJ",
+    "name": "HYPREST Muslin Duvet Cover King Size, Cloud-Gauze Cotton Duvet Cover Set, Breathable & Lightweight, Soft Textured Linen Like Bedding Set with Zipper & 8 Corner Ties (Linen, King, 104\"x90\")",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXFQD1PJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZAm4uezaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B089161BPR",
+    "name": "BESTOUCH Duvet Cover Set 100% Washed Cotton Linen Feel Super Soft Comfortable Chic Lightweight 3 PCs Home Bedding Set Solid Off White Queen",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B089161BPR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71VeZMqz45L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSVDHT2W",
+    "name": "JIYUAN King Size Duvet Cover Set, 3-Piece - 100% Washed Cotton, Linen-Like Soft & Breathable with Zipper Closure, Includes 104x90 Inch Cover & 2 Pillowcases, Heathered Beige",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSVDHT2W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bQzmAJW7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSLGJFHK",
+    "name": "Bailix Muslin Duvet Cover Set Queen Size, 100% Washed Cotton Gauze Duvet Cover for All Seasons, Linen Like, 3 PCS, 1 Fluffy Duvet Cover(90\"x90\") with 2 Pillow Shams(20\"x26\"), Beige",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSLGJFHK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81jfGyiPMGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV4K8WKF",
+    "name": "Duvet Cover Queen Size Set - Extra Soft Queen Duvet Cover 90\" x 90\" with 2 Pillow Shams - Hotel Luxury, Easy Care and Fade Free w/ Zipper Closures & Ties - All Season, Comfy, Cozy & Breathable (Cream)",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0CV4K8WKF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WoXhR0I7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CRQZNDTD",
+    "name": "MooMee Striped Duvet Cover Set 100% Washed Cotton Linen Like Textured Breathable Durable Soft Comfy (Tannish Linen Grey White Wide Stripes, King 104\"x90\")",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0CRQZNDTD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81uhaf02pkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2GTBR9W",
+    "name": "Lush Decor Lotti Boucle Duvet Cover 3 Piece Set King Soft White - White Duvet Cover- Textured Cozy Bedding Set - Modern Minimalist Decor",
+    "normalized_price": 116.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2GTBR9W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Bv8SgwJCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2DJBLK6",
+    "name": "David's Home Waffle Weave Comforter Set 3PCS Queen Size, Soft Breathable Lightweight Cozy Skin-Friendly Warm for All Season, Elegant Aesthetic Home Decor Bedding Set with Pillow Shams, White",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0D2DJBLK6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81OFdw5iv1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B7JR4BCV",
+    "name": "BEDELITE Fleece King Comforter Set -Super Soft & Warm Fluffy Cream White Bedding, Luxury Fuzzy Heavy Bed Set for All Season with 2 Pillow Cases",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0B7JR4BCV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71DHGM135CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJNQRGR2",
+    "name": "Bonlino Queen Comforter Set - Ruched Comforter Queen Size Bed Set Boho Shabby Chic Bedding for Bedroom Comforter Fluffy 3 Piece Ruffle Comforter Set with Pillow White Bedding Soft",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJNQRGR2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81jNv0G3u5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFSF8256",
+    "name": "Monbix King Size Comforter Set, Brown King Bedding Set Reversible, King Comforter Set 7 Pieces, Cationic Dyeing Bed in a Bag with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0FFSF8256",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81eP-idupaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D14MFJGF",
+    "name": "EverGrace Velvet Quilt Set Queen Size, Luxurious Soft Quilted Bedding Sets, Lightweight Velvet Comforter for All Season, Striped Channel Bedspread Coverlet with 2 Shams, Urban Taupe",
+    "normalized_price": 75.99,
+    "buy_url": "https://www.amazon.com/dp/B0D14MFJGF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Wz8MFCVVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFLWGDDZ",
+    "name": "Madison Park Queen Comforter Set Pieced Boucle & Mink Comforters for Queen Size Bed Fuzzy & Warm Quilted Bedding, All Season Luxurious Comforters Queen Size Bed Set, Amelia, Full/Queen Grey 5 Piece",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFLWGDDZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91O620FucBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB5LM247",
+    "name": "Geniospin King Size Comforter Set - 7 Pieces Dark Green Bedding Set, Botanical Textured Comforter Bed Set, All Season Lightweight Bed in a Bag with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB5LM247",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ttbItiisL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C2TDXSVP",
+    "name": "Bedsure Tufted Boho Comforter Set Queen Size - Bright White Boho Bed Set, GentleSoft\u2122 3 Pieces Farmhouse-Style Embroidery Bedding, Gifts for Woman, Soft Jacquard Kids' Queen Comforter for All Seasons",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0C2TDXSVP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81SRq7v-zWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFLGQDF8",
+    "name": "Madison Park King Comforter Set Pieced Boucle & Mink Comforters for King Size Bed Fuzzy & Warm Quilted Bedding, All Season Luxurious Comforters King Size Bed Set, Amelia, King/Cal King Grey 5 Piece",
+    "normalized_price": 80.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFLGQDF8",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91O620FucBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F59N554W",
+    "name": "JOLLYVOGUE Ivory King Comforter Set, 3 Pieces Seersucker Comforters King Size, Lightweight & Fluffy Bedding Sets King for All Season with 1 Ruffle Comforter and 2 Ruffle Pillowshams",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0F59N554W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81GjUIVUQeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6YHZT39",
+    "name": "Smoofy Fluffy King Size Comforter Set 3 Pieces - Light Grey Fleece Fluffy Comforter Set, Luxury Fuzzy King Bedding Set, Soft King Bed Set All Season, Heavy Faux Fur Comforter with 2 Pillow Cases",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0D6YHZT39",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91TKVsHLQJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9PHSCFP",
+    "name": "Eddie Bauer - Throw Blanket, Soft & Textured Boucle Bedding with Faux Fur Reverse, Blanket for Couch & Bed (Tarrytown Plaid Green, 50\" x 70\")",
+    "normalized_price": 24.7,
+    "buy_url": "https://www.amazon.com/dp/B0D9PHSCFP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91zVADyE-dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07TY7Z7SM",
+    "name": "Madison Park Essentials Room in a Bag Faux Silk Comforter Set - Luxe Diamond Tufting All Season Bedding, Matching Curtains, Decorative Pillows, Blush King(104\"x92\") 24 Piece",
+    "normalized_price": 138.99,
+    "buy_url": "https://www.amazon.com/dp/B07TY7Z7SM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71JVvDRwKkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DB4S3W1W",
+    "name": "EVERGRACEHOME Stonewashed Cotton Quilt Set Full Queen Size, Ultra Soft Oversized Bedspread Coverlet Set, Lightweight Crinkle Box Stitch Bedding Sets for All Season, with 2 Shams, Mocha Brown",
+    "normalized_price": 104.49,
+    "buy_url": "https://www.amazon.com/dp/B0DB4S3W1W",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yxqb7FfIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FB3P14CD",
+    "name": "WDCOZY Velvet Queen Size Quilt Set - Brown Taupe Tan Camel Striped Pick Stitch Soft Lightweight Bedspread, Channel Farmhouse Country Rustic Coverlet, Modern Bedding Warm Thin Comforter, 3 Pieces",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0FB3P14CD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91DX6myIpBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBR7RRQN",
+    "name": "NEXHOME PRO Duvet Cover Set Queen Size Linen Look Textured 100% Washed Cotton Duvet Cover Burgundy Dark Red 3 Pieces Bedding Set with Zipper Closure,Breathable, Soft Organic Natural(No Comforter)",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBR7RRQN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Gw67DSlWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08MXP7QWC",
+    "name": "Smoofy Fluffy Queen Comforter Set, Faux Fur Pink Comforter Set Queen Size, Luxury Fuzzy Bedding Set, Soft Shaggy Bed Set Pink for All Season, 3 Pieces - 1 Comforter & 2 Pillowcases",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B08MXP7QWC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81S1o+Nc2OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQCHC24S",
+    "name": "MIULEE 18x18 Inch Decorative Pillow Covers for Couch Bed Set of 2 Textured Boucle Neutral Throw Pillow Covers Natural Beige Ivory Accent Solid Pillowcases Sofa Living Room Home Decor",
+    "normalized_price": 15.29,
+    "buy_url": "https://www.amazon.com/dp/B0CQCHC24S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81f22bA6sKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJKK3CXC",
+    "name": "Tahari Home Queen Size Bedding Set - 5 Piece | Comforter, 2 Shams & 2 Decorative Pillows | Elegant Home Decor | Soft, Durable & Breathable | Fade & Wrinkle Resistant | Nikka Collection, Coconut Milk",
+    "normalized_price": 77.99,
+    "buy_url": "https://www.amazon.com/dp/B0DJKK3CXC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91aUEeYgbDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CS33SWLM",
+    "name": "DOZ Duvet Cover Set, 100% Viscose derived from Bamboo, Organically Grown, Buttery Soft, Cooling Duvet Covers, High GSM, 1 Duvet Cover and 2 Pillowcases, 90\"x90\" (Ivory, Full/Queen)",
+    "normalized_price": 85.0,
+    "buy_url": "https://www.amazon.com/dp/B0CS33SWLM",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xBKQ4KY-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZ415XFT",
+    "name": "Andency White Comforter Set Queen Size, Lightweight Fluffy Farmhouse White Ruffle Bedding Set, Soft Polyester All Season Shabby Chic Bed Comforter Set 3 Pieces(1 Ruffle Comforter 2 Pillowcases)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BZ415XFT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BeOFoWhDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHR5V7KR",
+    "name": "tohrisa Boho Comforter Set Full Size - 3 Pieces Lightweight Jacquard Seersucker Bedding Sets (1 Soft Fluffy Grid Comforter & & 2 Pillowcases) - All Seasons Cozy Modern Bed Set(80\"x90\" Light Blue)",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHR5V7KR",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZWebC9gtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F99S2FSX",
+    "name": "MIULEE 26x26 Inch Decorative Euro Sham Pillow Covers for Couch Bed Set of 2 Textured Boucle Neutral Throw Pillow Covers Natural Beige Ivory Accent Solid Pillowcases Sofa Living Room Home Decor",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0F99S2FSX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81f22bA6sKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL2CZW4Y",
+    "name": "DEZENE 12x20 Beige Lumbar Pillow Cover Textured Boucle Striped Chic Morden Boho Accent Farmhouse Rectangular Decorative Couch Pillow Case for Home Decor Bed Sofa Living Room",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B0FL2CZW4Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81UgWV1Or-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CDMZFVQ9",
+    "name": "Pine Cone Hill Boucle Indoor/Outdoor Throw, 50\" X 70\", Blue Solid Pattern",
+    "normalized_price": 148.0,
+    "buy_url": "https://www.amazon.com/dp/B0CDMZFVQ9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/A1xJ-IB0msL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DKNR77ST",
+    "name": "KINWELL 12 inch Boucle Ball Throw Pillow Nordic Round Toss Pillow Detachable Sphere Shaped Decorative Pillow for Couch, Sofa, Bedroom (Black, 12 inch)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DKNR77ST",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81pfBMQc8EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GRW8XD8Q",
+    "name": "Asuprui Supportive Boucle Pouf Ottoman Foot Rest Elevate Your Living Room Decor with Lightweight Pouf Filler Modern Foam Stuffed Poof Perfect to Rest Your Feet (Deep Green, 20x20x14 Inches)",
+    "normalized_price": 49.91,
+    "buy_url": "https://www.amazon.com/dp/B0GRW8XD8Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81G8SFJjkZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FC291PYG",
+    "name": "Lush Decor Tulum Boucle Textured Woven Fringed Throw Blanket Single 50\" W x 60\" L Neutral - Soft Cozy Blanket for Bed, Couch Or Chair - Modern Boho Home Decor",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FC291PYG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91XItoK+UVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CX8QW9QP",
+    "name": "JUSPURBET White Decorative Pillow Covers 16x24 Set of 2 Throw Pillow Covers for Couch Sofa Bed Cozy Boucle Textured Lumbar Cushion Covers Cases with Hidden Zipper for Living Room Home Decor",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0CX8QW9QP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81o8vSLI7JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F65ZCYCW",
+    "name": "11.8 inch Ball Pillow Round Decorative Pillow Black Sphere Shaped Throw Pillows Soft Nordic Style Boucle Pillows Cushion for Bed Couch Living Sofa Room Decor",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0F65ZCYCW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91shj56RJEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQLPFV5R",
+    "name": "MIULEE Textured Boucle Throw Pillow Cover Khaki Accent Solid Lumbar Pillow Case Decorative Soft Pack of 1 Couch Cushion Chair Sofa Bedroom Livingroom Home Decor,12x20 Inch",
+    "normalized_price": 13.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQLPFV5R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81n9OPm4nvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FX8CSCKT",
+    "name": "Foindtower Pack of 2 Decorative Jacquard Boucle Throw Pillow Covers Accent Textured Striped Pillowcases Soft Boho Modern Cushion for Couch Sofa Bedroom Living Room Home Decor 22x22 Inch Cream White",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0FX8CSCKT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81MXxZ3JA9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4X69J3R",
+    "name": "JoraLion 20x54 inch Neutral Boucle Body Pillow Cover, Cream White Long Pillow Cover Cozy Soft Cushion Case for Couch Sofa Bed Living Room Home Decor, Pack of 1 (Cover Only)",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0F4X69J3R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71uPNuDcsXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZ9J1M2G",
+    "name": "Tegeme 4 Pack Boucle Throw Pillow Covers 18x18 Inch Boho Accent Farmhouse Square Decorative Pillow Covers Cozy Soft Couch Cushion Case for Home Decor Bed Sofa Living Room",
+    "normalized_price": 12.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZ9J1M2G",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81u+BDFYlgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP5J4KQ5",
+    "name": "HiEnd Accents Teddy Throw Blanket, 50x60 inch, Dark Oak, Boucle Throw Blanket, Soft Cozy Classic Chic Casual Heavy Blanket, Modern Rustic Plush Comfy Warm Blanket for Bed, Sofa",
+    "normalized_price": 89.25,
+    "buy_url": "https://www.amazon.com/dp/B0DP5J4KQ5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91FMtnO++0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK86J8Z7",
+    "name": "HiEnd Accents Tweed Textured 3 Piece King Comforter Set, Brown Woven Warm Thick Comforter, Modern Rustic Classic Traditional Cozy, Men's Bedding Set with Pillow Shams",
+    "normalized_price": 379.0,
+    "buy_url": "https://www.amazon.com/dp/B0DK86J8Z7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91JRFW-orVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPG2XJS2",
+    "name": "Topfinel Natural Contrast Color Boucle Pillow Cover Set of 4 Complete Sofa Layering Set Modern Farmhouse & Neutral Chair Sofa Couch Bedding Room Decor (12\"x20\"x2,18\"x18\",20\"x20\")",
+    "normalized_price": 9.19,
+    "buy_url": "https://www.amazon.com/dp/B0FPG2XJS2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81lfBGOpn1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BJ71QRFY",
+    "name": "RECYCO Luxury Velvet Quilt Set King Size, Lightweight Velvet Comforter Set, Oversized Bedspread Coverlet Quilted Bedding Set, with 2 Matching Pillow Shams, for All Season, Olive Green",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0BJ71QRFY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81SKDNNiskL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B099DP7D1N",
+    "name": "Comfort Spaces Juliette Luxe Comforter Set Velvet Lush with Soft Brushed Microfiber Reverse, All Season Cozy Velvet Bedding Sets, Fluffy Comforter Bed Set, Matching Sham, Blush Full/Queen 3 Piece",
+    "normalized_price": 46.03,
+    "buy_url": "https://www.amazon.com/dp/B099DP7D1N",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8137tE01BeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D14L8P87",
+    "name": "EverGrace Velvet Quilt Set King Size, Luxurious Soft Striped Channel Bedding Set, Lightweight Velvet Comforter for All Season, Oversized Bedspread Coverlet with 2 Matching Shams, Mocha Brown",
+    "normalized_price": 87.39,
+    "buy_url": "https://www.amazon.com/dp/B0D14L8P87",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81KzreT-2oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BYZW343L",
+    "name": "Fredsure Distressed Velvet Comforter Set, 5 Pieces Black Queen, Distressed Velvet Face and Brushed Microfiber Reverse",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0BYZW343L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nM96c8xZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRCT5XXY",
+    "name": "BEDELITE Velvet Quilt Set King Size - Luxury Velvet Comforter Bedding Set 3 Pieces, Lightweight Soft Cozy Shiny Cream White Oversized Bedspread Coverlet for All Seasons with 2 Pillow Shams",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRCT5XXY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817ernFGb3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLYD7CJ1",
+    "name": "EVERGRACE Luxury Ruched Velvet Quilt King Size, Ultra Soft Bedspread Coverlet Set, Lightweight Velvet Comforter, Quilted Bedding Cover with 2 Matching Shams for All Season, Olive Green | Luxe Velvet",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLYD7CJ1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pP91Cv4lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09B3J6QVQ",
+    "name": "Sunshine Nicole Distressed Velvet Comforter Set, Distressed Velvet Face and Brushed Solid Microfiber Reverse, with Light Weight Soft Poly Fill, 5 Pieces Grey Queen",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B09B3J6QVQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71GcQq8SEUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CC8BW4NV",
+    "name": "Ivellow Crushed Velvet Comforter Set Queen, Lightweight Comforter Set, 5pcs Ultra Soft Breathable Grey Comforter Set, Luxury Cozy Flannel Comforter Queen Size (1 Comforter,2 Pillow Shams, 2 Euro Shams",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0CC8BW4NV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81tRJVEuNrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5HNM3TL",
+    "name": "TAMGHO Velvet Comforter Queen, Luxuriously Soft Queen Comforter Set, Lightweight Bedding Set for All Seasons, Comforter (92\"x96\") with 2 Matching Shams (20\"x26\"), Black",
+    "normalized_price": 53.99,
+    "buy_url": "https://www.amazon.com/dp/B0D5HNM3TL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QKGL-6fHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDFY5K2G",
+    "name": "Lotus Karen Comforter Set Full - Ultra Soft & Warm Velvet Dark Green Comforter Set for Men Women - Cozy Fuzzy Plush Fluffy Luxury Bedding Set 3 Pieces (1 Comforter and 2 Pillowcases)",
+    "normalized_price": 37.39,
+    "buy_url": "https://www.amazon.com/dp/B0GDFY5K2G",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91rd8dtoHRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1MF94WW",
+    "name": "EverGrace Luxury Velvet Quilt Set King Size 3 Piece, Soft Cross-Stitch Velvet Comforter Set with Pillow Shams, Lightweight Coverlet Bedspread Bedding Set for All Seasons, Mushroom Brown",
+    "normalized_price": 81.69,
+    "buy_url": "https://www.amazon.com/dp/B0F1MF94WW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qLGFV0AzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BGHZJ3K9",
+    "name": "Fredsure Crinkle Velvet Comforter Set, 3 Pieces Khaki King, Crinkle Velvet Face and Brushed Microfiber Reverse, with Light Poly Fill",
+    "normalized_price": 71.99,
+    "buy_url": "https://www.amazon.com/dp/B0BGHZJ3K9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81rRPf70woL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZ8P1BL3",
+    "name": "Luxury Velvet Queen Comforter Set, 3 Pieces Reversible Comforters Queen Size with 2 Pillow Shams, Brushed Solid Microfiber Back, All Season Cozy, Soft, Warm, Lightweight (Beige, 90x90 Inch)",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZ8P1BL3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KfOuvzLgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1LS7PK8",
+    "name": "WDCOZY Brown Velvet Queen Size Quilt Set - Striped Soft Lightweight Bedspread, Neutral Channel Farmhouse Country Rustic Coverlet, Modern Bedding Warm Thin Comforter",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1LS7PK8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Spjkch46L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL7N4N64",
+    "name": "Velvet Comforter Set King Size, Blue Fluffy Velvet 3 Piece, Soft Breathable Luxury Winter Warm Bedding Sets, with 1 Cozy Comforter, 2 Pillow Shams (Teal)",
+    "normalized_price": 48.77,
+    "buy_url": "https://www.amazon.com/dp/B0FL7N4N64",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71kUT4qkAKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8ZFZKKQ",
+    "name": "WSOFRLAC Luxury Velvet Quilt Set King Size, Comforter Set with Pillow Shams, Soft Lightweight Bedspread Coverlet Bedding Sets for All Seasons, Beige",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0F8ZFZKKQ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71iFOcM3CnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4L2974L",
+    "name": "EverGrace Luxury Velvet Quilt Queen Size, Ultra Soft Wave Crushed Velvet Bedding Set, Lightweight Quilted Comforter Set for All Season, Oversized Bedspread Coverlet with 2 Shams, Burnt Orange",
+    "normalized_price": 61.74,
+    "buy_url": "https://www.amazon.com/dp/B0C4L2974L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81JFGm6tZpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFNYP31",
+    "name": "Burgundy Velvet Bedding Comforter Sets: Queen Size 3 Pieces Luxury Ultra Soft Bed Set Suitable for All Seasons - Cozy Striped Modern Rustic Lightweight Men Women Bedroom Queen Comforter with 2 Shams",
+    "normalized_price": 57.99,
+    "buy_url": "https://www.amazon.com/dp/B0GKFNYP31",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CC9VQHQcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8SVYYJS",
+    "name": "Andency Queen Comforter Set Black, Fluffy Winter Faux Fur Warm Soft Plush Bedding Comforter Set (1 Velvet Comforter & 2 Pillowcases), Fuzzy Thick Heavy Puffy Comforters Bed Set",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B0C8SVYYJS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81a53c4WLJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C334VJRD",
+    "name": "EVERGRACE 3 Pieces Luxurious Velvet King Quilts, Ultra Soft Lightweight Velvet Comforter Set, Matelasse Oversized Bedspread Coverlet for All Season with 2 Shams, Burnt Orange, 108\"x96\"",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0C334VJRD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Dc74ThEwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6TM2YSP",
+    "name": "LEAONME Velvet Quilt King Size 98''x106'', Lightweight Caramel Velvet Comforter Set with 2 Matching Shams, Soft Cross Stitch Bedspread Coverlet Bedding Set for All Season",
+    "normalized_price": 89.09,
+    "buy_url": "https://www.amazon.com/dp/B0F6TM2YSP",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Vjt5KpbjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPCVSLGV",
+    "name": "Fleeco Double-Sided Velvet Quilt King Size Comforter Set, 108\"x 96\" Lightweight Velvet Bedding Set, Ultra Soft Bedspread with 2 Matching Shams, for All Seasons, Brown",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0FPCVSLGV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Bm2p8LPFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGLPMSJH",
+    "name": "Bedsure Queen Comforter Set, Dark Green Soft Prewashed Bedding for All Seasons, 3 Pieces GentleSoft\u2122 Bed Set, 1 Lightweight Comforter (90\"x90\") and 2 Pillowcases (20\"x26\")",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGLPMSJH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81s4zDIRCHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCCQQ91F",
+    "name": "L'AGRATY Velvet Quilt Queen Size: 3-Piece Reversible Luxury Velvet Bedding Comforter Set - Lightweight Oversized Quilted Bedspread Coverlet with 2 Pillow Sham for All Season - Light Linen Quilt",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCCQQ91F",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Ucykp+IfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4QZDTVN",
+    "name": "LEAONME Velvet Quilt Full/Queen Size-90''x98'', Lightweight Caramel Velvet Comforter Set with 2 Pillow Shams, Soft Bedspread Coverlet Quilted Bedding Set for All Season",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0D4QZDTVN",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813+S-is0lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNRLKT1J",
+    "name": "Madison Park Jasmine King Comforter Set, Luxurious Reversible Faux Fur Plush Ribbed Velvet Bedding, Fuzzy Thick Warm Winter Comforter, Super Soft Fluffy 3-Piece Set Ivory",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNRLKT1J",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gprs7oKoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZP32BR1",
+    "name": "PHF Crushed Velvet Comforter Set King Size, 5-Piece Luxury Winter Bedding Sets with 2 Euro Shams, Heavyweight Warm Fluffy Velvet Bed Spread, Glam Home Decor, Grey",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZP32BR1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71-Tj1hZ0bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8T8QKJ7",
+    "name": "BEDELITE Fluffy Queen Comforter Set - Grey Fleece Soft Comforter for Queen Size Bed, Luxury Warm Bedding Set for Winter, Fuzzy Bed Set 3 Pieces (1 Comforter, 2 Pillowcases)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0C8T8QKJ7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81hauWlUzTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BJZBW2Y5",
+    "name": "Luxlovery Army Green Velvet Comforter Set - Dark Green Flannel Bedding - Modern Winter Warm Comforter Set",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0BJZBW2Y5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71J2voCOISL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHVBT3F6",
+    "name": "WRENSONGE Velvet Queen Quilt Set-3 Pieces Blue Grey Luxurious Velvet Striped Channel Comforter with 2 Shams, Soft Bedspread Coverlet Quilted Bedding Set for All Season",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHVBT3F6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81GWI3+ug4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D7D9BR6S",
+    "name": "EXQ Home Fluffy Comforter Set Queen Size - Super Soft Faux Fur Stripe Jacquard Comforter 3 Pieces, Black Fleece Bedding Set,Winter Warm Bed Set,1 Comforter with 2 Pillowcases",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0D7D9BR6S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hUnJNbIWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CYKFHB1L",
+    "name": "Sunshine Nicole Velvet Jacquard Comforter Set, Velvet Jacquard Face and Brushed Solid Microfiber Reverse, with Light Weight Soft Poly Fill, 3 Pieces White, Queen",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0CYKFHB1L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZyZ1LRpDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B3F797XF",
+    "name": "Riverbrook Home Turin Crinkle Velvet Comforter Bedding Set, King Size, Glam Textured D\u00e9cor, Black, 7 Pieces",
+    "normalized_price": 105.29,
+    "buy_url": "https://www.amazon.com/dp/B0B3F797XF",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81UM+UThERL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QG8XLFD",
+    "name": "PHF Truly Velvet Duvet Cover Set Queen Size, 3pcs Ultra Soft Breathable Comforter Cover Set, Luxury Cozy Flannel Duvet Cover with Pillow Shams Bedding Collection, 90\" x 90\", Dark Grey",
+    "normalized_price": 46.74,
+    "buy_url": "https://www.amazon.com/dp/B07QG8XLFD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81y6g0NrOrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR92Q647",
+    "name": "Cosybay Luxury Velvet Quilt Set Queen, Lightweight Oversized Bedspread Coverlet Quilted Box Stitch Bedding Set, with 2 Matching Pillow Shams, for All Season, Olive Green",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B0GR92Q647",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iAL8-RhEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BF41RC4K",
+    "name": "CLOTHKNOW Dark Green Comforter Set Full Size 3Pcs Green Bedding Comforter Sets Soft All Season Comforters",
+    "normalized_price": 75.99,
+    "buy_url": "https://www.amazon.com/dp/B0BF41RC4K",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61q0s0FlxsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GSQJLKL5",
+    "name": "JOLLYVOGUE Queen Comforter Set, Cationic Dyeing Bed in a Bag 7 Pieces, Double-Tone Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams, Dark Green",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0GSQJLKL5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8168ylhboVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1Y7Z4YM",
+    "name": "Bedsure Dark Olive Green Queen Size Comforter Set, Boho Tufted Bed Set, Checkered Farmhouse-Style Distressed Vintage Bedding, 3 Pieces, 1 Plaid Geometric Comforter and 2 Pillow Shams",
+    "normalized_price": 58.99,
+    "buy_url": "https://www.amazon.com/dp/B0F1Y7Z4YM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91DhXMRti+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJJ7PDF7",
+    "name": "Geniospin King Size Comforter Set- 7 Piece Dark Green Textured King Bedding Set, Soft Solid Bed in a Bag for All Season, King Comforter Set with Sheets(Dark Green,102''x90'')",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJJ7PDF7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91xzMk5oDfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4L55CL7",
+    "name": "Litanika Queen Comforter Set Dark Emerald Green - 7 Pieces Bed in a Bag Queen Bedding Comforter Sets, Solid Lightweight Bed Set with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4L55CL7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Kdkh07pfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXPVQ5DK",
+    "name": "Monbix Queen Comforter Set - 7 Pieces Cationic Dyeing Olive Green Bed in a Bag Queen Bedding Sets with Comforter, Sheets, Pillowcases & Shams, Reversible Bedding Comforters Sets",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXPVQ5DK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/9183+45BpbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQ8FGMRS",
+    "name": "MUXHOMO 5 Pieces Twin Comforter Set, Reversible Bed in a Bag Twin Size, All Season Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Shams, Dark Green & Light Green",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQ8FGMRS",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71CjMvnaOmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BW92XZQ3",
+    "name": "Andency Dark Emerald Green Queen Size Comforter Set, 3 Pieces Forest Hunter Green Boho Solid Bedding Sets, Soft Cozy Lightweight Down Alternative All Season Bed Set",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0BW92XZQ3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71sY4Yt5+SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4GKJPTG",
+    "name": "CozyLux Queen Comforter Set Navy Blue, 7 Pieces Bed in a Bag, Blue Comforter Queen Size, All Season Bedding Sets with Stitch Quilted Comforter, Flat Sheet, Fitted Sheet, Pillowcases",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4GKJPTG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/715iIug1nEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCW7XJPN",
+    "name": "CozyLux Queen Comforter Set Brown - Bed in a Bag Queen Size 7 Pieces, Luxury Soft Bed Set for All Seasons, Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 48.99,
+    "buy_url": "https://www.amazon.com/dp/B0CCW7XJPN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZQrNaF4RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CYSR5JCG",
+    "name": "Bedsure Oversized King Comforter Set, Dark Green Soft Prewashed Bedding for All Seasons, 3 Pieces GentleSoft\u2122 Bed Set, 1 Lightweight Comforter (120\"x98\") and 2 Pillowcases (20\"x36\")",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0CYSR5JCG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81s4zDIRCHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CMZX4425",
+    "name": "Andency King Size Comforter Set 7 Pieces Dark Emerald Green - Bed in a Bag King Boho Lightweight Fluffy Tufted Bedding Comforter Sets with Quilt Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 48.99,
+    "buy_url": "https://www.amazon.com/dp/B0CMZX4425",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8156edF78ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGLQ56FV",
+    "name": "Bedsure King Comforter Set, Dark Green Soft Prewashed Bedding for All Seasons, 3 Pieces GentleSoft\u2122 Bed Set, 1 Lightweight Comforter (104\"x90\") and 2 Pillowcases (20\"x36\")",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGLQ56FV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81s4zDIRCHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CMZV1P69",
+    "name": "Andency Queen Comforter Set 7 Piece Dark Emerald Green - Bed in a Bag Queen Boho Lightweight Fluffy Tufted Bedding Sets with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 46.79,
+    "buy_url": "https://www.amazon.com/dp/B0CMZV1P69",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8156edF78ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BSL9VFS1",
+    "name": "Bedsure Olive Green Comforter Set - Bed in a Bag Queen Size Bedding 7 Pieces, GentleSoft\u2122 Pintuck Bed Set Gift for Family, All Season Down Alternative Comforter with Sheets, Pillowcases & Shams",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B0BSL9VFS1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91d-Ige70jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D171N9RB",
+    "name": "CozyLux Queen Comforter Set Emerald Green - Bed in a Bag Queen Size 7 Pieces, Luxury Soft Bed Set for All Seasons, Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B0D171N9RB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71f4rhNUc-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BF4WFX37",
+    "name": "KAREVER Army Green Comforter Queen Dark Green Bedding Set Olive Green Comforter Set Queen Men Breathable 3 PCs Comforter Set 1 Queen Comforter (90x90 inches) with 2 Pillowcases (20x26 inches)",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0BF4WFX37",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71AJkTZsL0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1Y7CHSS",
+    "name": "Bedsure Dark Olive Green King Size Comforter Set, Boho Tufted Bed Set, Checkered Farmhouse-Style Distressed Vintage Bedding, 3 Pieces, 1 Plaid Geometric Comforter and 2 Pillow Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0F1Y7CHSS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91DhXMRti+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4996R9V",
+    "name": "Bedsure Comforter Set Queen Size - GentleSoft\u2122 3 Pieces Double-Side Fleece Fluffy Olive Green Comforter Set, Cozy Striped Room Decor Aesthetic, Luxury Bedding Queen Size, 2 Pillowcases, 90x90 Inches",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0D4996R9V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/911QnK6WxWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BW92JRNG",
+    "name": "Andency Dark Emerald Green King Size Comforter Set, 3 Pieces Forest Hunter Green Boho Solid Bedding Comforters & Sets, Soft Lightweight Polyester All Season Reversible Bed Set for Men Women",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0BW92JRNG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71sY4Yt5+SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB5KTXP3",
+    "name": "Geniospin Queen Comforter Set - 7 Pieces Dark Green Bedding Set, Botanical Textured Comforter Bed Set, All Season Lightweight Bed in a Bag with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 68.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB5KTXP3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ttbItiisL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DNG4BR41",
+    "name": "ATsense Duvet Cover Super King Size, 100% Washed Cotton, Linen Feel, Dark Green Comforter Cover, 3 Pieces Bedding Set, Soft and Breathable, Premium Luxury Hotel Style, Farmhouse Style",
+    "normalized_price": 85.99,
+    "buy_url": "https://www.amazon.com/dp/B0DNG4BR41",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81prGdGoIyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BG53HSK9",
+    "name": "Houseri Olive Green Comforter Set King Dark Green Bedding King Size Army Green Farmhouse Comforter Sets for Men Women Vintage Blackish Green Bed Comforter Blanket King Hunter Green Quilts Ultra Comfy",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0BG53HSK9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71egYCLvAeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D49TLQHP",
+    "name": "Bedsure Green Comforter Set Queen - Soft Bedding for All Seasons, Cationic Dyed Bed Set, 3 Pieces, 1 Queen Size Comforter (90\"x90\") and 2 Pillow Shams (20\"x26\"+2\")",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0D49TLQHP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91TyUvyrmKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV5YYCRK",
+    "name": "Bedsure Tufted Boho Comforter Set Queen Size - Olive Green Boho Bed Set, GentleSoft\u2122 3 Pieces Farmhouse-Style Embroidery Bedding, Gifts for Woman, Soft Jacquard Kids' Queen Comforter for All Seasons",
+    "normalized_price": 59.84,
+    "buy_url": "https://www.amazon.com/dp/B0CV5YYCRK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91MFnv9fZpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BKFGZC2W",
+    "name": "Litanika Dark Olive Green Comforter Set King, 3 Pieces Solid Bedding Comforter Set, All Season Fluffy Bed Set (104x90In Comforter & 2 Pillowcases)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BKFGZC2W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71co40hO6KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C488MYHW",
+    "name": "Houseri Olive Green Comforter Set King Size Army Green Bedding Comforter Sets King Men Women Solid Green Comforter Military Green Bedding Set King Comfy Soft Breathable Dark Green Bed Blanket King",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0C488MYHW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61b+95eIrkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08BL9VR75",
+    "name": "HIG 3pc Green Queen Size Comforter Set - All Season Reversible Down Alternative Bedding Comforter Set - Quilted Duvet Insert with Corner Tabs - Box Stitched Blanket - Breathable, Soft, Fluffy",
+    "normalized_price": 27.89,
+    "buy_url": "https://www.amazon.com/dp/B08BL9VR75",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71x1k3sd9vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJJQ7HSL",
+    "name": "WRENSONGE Queen Comforter Set- 7 Pieces Soft Olive Green Bed in a Bag with Fitted Sheet, Flat Sheet, 2 Pillow Shams, and 2 Pillowcases- Warm Bedding Sets Queen for All Season",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJJQ7HSL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81J60Ce6HkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYSHCCYP",
+    "name": "CozyLux Queen Comforter Set Olive Green, 7 Pieces Seersucker Textured Luxury Bed in a Bag Queen, All Seasons Soft Bedding Sets with Down Alternative Comforter, Sheets, Pillowcases & Shams, Home Gift",
+    "normalized_price": 55.79,
+    "buy_url": "https://www.amazon.com/dp/B0DYSHCCYP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bb11DC-WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BF4963MD",
+    "name": "Luxlovery Dark Green Comforter Set Queen Olive Green Bedding Comforter Men Army Bedding Set Soft Breathable Blanket Quilts Minimalist Bedding for Queen Bed",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0BF4963MD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Y93ljNnfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNMXV7CF",
+    "name": "BLOOMHAVEN Queen Comforter Set - 7 Pieces Ruffle Forest Green Bedding Sets, Shabby Chic Farmhouse Bed in a Bag with Ruffle Comforter, Floral Sheets, Pillowcases & Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNMXV7CF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FT7EEIf4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SZWGHZP",
+    "name": "Paseo Road Clifton 3 Piece Western Comforter Set with Pillow Shams, Brown Woven Twill Plaid Queen Size, Rustic Cabin Log Lodge Western Bedding, 1 Comforter and 2 Pillowcases",
+    "normalized_price": 319.0,
+    "buy_url": "https://www.amazon.com/dp/B07SZWGHZP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/A1pNf8qHHhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01J90QV2C",
+    "name": "Paseo Road Highland Lodge Rustic Bedding Queen Size Comforter Set, 5 Piece Rustic Comforter Set with Bed Skirt, Shams, Accent Pillow, Green Brown Chenille Jacquard, Cozy Lodge Cabin Bedding",
+    "normalized_price": 419.0,
+    "buy_url": "https://www.amazon.com/dp/B01J90QV2C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Fy5eTq-XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDQ3Z34M",
+    "name": "Yiran Queen Comforter Set 7 Piece, Dark Green Floral Bedding Set, Bed in a Bag Queen with Botanical Flowers Patterns, Soft Lightweight Complete Comforters with Sheets for All Season",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDQ3Z34M",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Op0lvaayL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF1M5447",
+    "name": "AMBERSPACE Queen Comforter Set Dark Purple, Ruffle Shabby Chic Bedding Set Farmhouse 7 Pieces, All Season Fluffy Bed in a Bag with Sheets, Pillowcases & Shams",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GF1M5447",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CBSIKDIGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FB7YWDV7",
+    "name": "Moody Floral Botanical 20x54 Body Pillow Cover, Dark Aesthetic Room Decor, Rustic Dark Cottagecore Gold Plants Flower Botanical Decorative Long Body Pillow Cases for Bed Couch",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0FB7YWDV7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71igCq2TN7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG94K246",
+    "name": "Love's cabin Seersucker Black King Size Comforter Set, 7-Piece All Season Lightweight Bed in a Bag Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases and Shams",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CG94K246",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81fu2AlJcJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJN198HT",
+    "name": "HYPREST Black Sheets Queen,Deep Pocket Sheets, 1800 Thread Count Pattrn Bed Sheets Soft Breathable Cute Printed Boho Farmhouse Bed Sheets, Oeko-Tex Certificated- Up to 18 Inch",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJN198HT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8145-xkzpEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F266BXDQ",
+    "name": "WRENSONGE Queen Comforter Set - 3 Pieces Prewashed Deep Purple Comforter Soft Lightweight for All Seasons,Down Alternative Comforters Queen Size with 2 Pillow Shams",
+    "normalized_price": 39.98,
+    "buy_url": "https://www.amazon.com/dp/B0F266BXDQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Hm-zAg1EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSKMLWQ7",
+    "name": "Wonderful Spring Fresh Quilt, Taupe Floral Bedspread King Size, 3 Piece Cotton Vintage Farmhouse Bedding Set, Machine Washable Lightweight Soft Bed Cover for All Season | breathable material",
+    "normalized_price": 76.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSKMLWQ7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ATZDNTtwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DG55CJWY",
+    "name": "Bedsure Comforter Set King Size - Cute Floral Comforter, Black Bedding Comforter Sets, 1 Soft Reversible Botanical Flowers Comforter and 2 Pillow Shams",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DG55CJWY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OlSU69IiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3GDH33N",
+    "name": "WARMDERN Peacock Blue Flannel Velvet Duvet Cover Queen Size Duvet Cover Bedding Sets, 3pcs Ultra Soft Luxury Textured Modern Crystal Velvet Duvet Covers with Zipper Closure(Peacock Blue, Queen)",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0D3GDH33N",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71M5kCEGmwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DS4KB724",
+    "name": "BLOOMHAVEN Queen Comforter Set - 7 Pieces Ruffle Sage Green Bedding Sets, Shabby Chic Farmhouse Bed in a Bag Queen with Ruffle Comforter, Floral Sheets, Pillowcases & Shams",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0DS4KB724",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Qzl04NzgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP43F2VF",
+    "name": "VM VOUGEMARKET Purple Green Duvet Cover Queen,3 Pieces Retro Boho Medallion Jacquard Flower Bedding Set,Linen Cotton Yarn-Dyed Textured Duvet Cover with Zipper Closure",
+    "normalized_price": 90.99,
+    "buy_url": "https://www.amazon.com/dp/B0DP43F2VF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81swVtPGrcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9Y97CK4",
+    "name": "LUVIVIHOME 3PCS Black Floral Duvet Cover King Bedding Set, Gothic Bedding, Dark Moody Victorian Aesthetic Retro Garden Blossom Botanical Vintage Peony Rose Flower Comforter Quilt Cover, 2 Pillow Cases",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9Y97CK4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711lQF8A2bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2HB9P7Z",
+    "name": "Vintage Victorian Gothic Witchy Moody Throw Pillow Covers Bedroom Decor 18x18 Set of 2, Black Butterfly Throw Pillows, Dark Academia Decor",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2HB9P7Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81xi2QqHFWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CWLBKJRP",
+    "name": "Bedsure Queen Comforter Set - 7 Pieces Forest Green Queen Bedding Set for All Seasons, Boho Contrasting Design Bed in a Bag with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 45.59,
+    "buy_url": "https://www.amazon.com/dp/B0CWLBKJRP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810oZpCXzfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BC91YVXF",
+    "name": "Love's cabin Queen Comforter Set Black, 7 Pieces Queen Bed in a Bag, All Season Bedding Sets with 1 Comforter, 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcase and 2 Pillow Sham | Soft",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0BC91YVXF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hrJcCLbKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1D63H83",
+    "name": "NOGAWA Moody Flower Sheets California King Size, Floral Bed Sheets, Vintage Bedding Sheets, Pillowcases 4 Piece Set, Microfiber Deep Pocket Fitted Sheet, Flat Sheet, 2 Pillow Cases",
+    "normalized_price": 60.69,
+    "buy_url": "https://www.amazon.com/dp/B0F1D63H83",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71WhQPrcB-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CX9FGZ4V",
+    "name": "Feelyou Adults Gothic Comforter Set Queen Size Dark Olive Green Damask Comforter Death Moth Bohemia Boho Bedding Set Goth Skull Duvet Set Vintage Victorian Baroque Floral Quilt Set 3Pcs",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0CX9FGZ4V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71RAWB98-XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D8W29JV5",
+    "name": "Feelyou Adults Gothic Moth Skull Bedding Set Queen Size Goth Dark Olive Green Vintage Damask Floral Comforter Set 7 Pieces Oriental Antique Comforters Bed in a Bag",
+    "normalized_price": 56.85,
+    "buy_url": "https://www.amazon.com/dp/B0D8W29JV5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810UqeXP8WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGDTSKM4",
+    "name": "Andency Black King Comforter Set(104x90Inch), 3 Pieces Ruffle Comforter Set with 2 Pillowcases, Farmhouse Shabby Chic Lightweight Fluffy Soft Polyester All Season Bed Set",
+    "normalized_price": 60.79,
+    "buy_url": "https://www.amazon.com/dp/B0CGDTSKM4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816PkkrSPGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6R9MK99",
+    "name": "MaiR\u00eave Embroidery Comforter Set, Boho Farmhouse Western Bedding Set, All Season Bed in A Bag Comforter Set with Sheets, Pillowcases & Shams, Olive Green Queen 7 Pieces",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0D6R9MK99",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91yFIo2Zn7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DF7J7G7X",
+    "name": "Ivellow Crushed Velvet Comforter Set Queen Green Comforter Set 5pcs Ultra Soft Lightweight Breathable Bedding Set Luxury Cozy Flannel Comforter Queen Size (1 Comforter,2 Pillow Shams, 2 Euro Shams",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0DF7J7G7X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816gahgBB1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08H219GWK",
+    "name": "Whale Flotilla Flannel Fleece Bed Blankets Queen Size, Lightweight Soft Cozy Summer Velvet Bedspread Coverlet, Fluffy Fuzzy Vintage Pattern Decorative Blanket for Bed, 90x90 Inch, Deep Green",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B08H219GWK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/916-hoCTxOL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

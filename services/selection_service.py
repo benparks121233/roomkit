@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import logging
+import random
 import re
 import time
 from pathlib import Path
@@ -27,18 +28,18 @@ from schemas.style_profile import StyleProfile
 
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-haiku-4-5-20251001"
-_LLM_MAX_TOKENS = 4096  # sized for 35-pick slots (wall_art); ~65 tokens/pick + JSON structure
+_LLM_MAX_TOKENS = 2048  # 25-pick slots need ~1600 tokens; 2048 is generous headroom
 _RETRY_MAX = 3
 _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 
 # Number of ranked picks to REQUEST from the LLM. We over-request by ~30%
 # because the diversity filter (brand dedup) typically removes 2-4 items.
-_DEFAULT_PICK_COUNT = 18
+_DEFAULT_PICK_COUNT = 14
 
 # Per-slot overrides for slots that benefit from more options.
 _SLOT_PICK_COUNTS: dict[str, int] = {
-    "wall_art": 35,
-    "plants": 24,
+    "wall_art": 25,
+    "plants": 20,
 }
 
 
@@ -196,16 +197,24 @@ def select_products(
         return [], [], "no_candidate"
 
     # Double-check: filter candidates by slot's required specs and price band.
-    # We allow up to 1.5x the slot budget so users see more variety — budget
-    # enforcement happens in the UI with over-budget warnings.
-    price_max = slot.allocated_budget * 1.5
+    # The LLM sees only candidates within the allocation so it can never pick
+    # something that breaks the never-exceed guarantee.  Alternatives up to 1.5x
+    # are appended AFTER the LLM picks (user can choose them with UI warnings).
     spec_valid = [c for c in candidates if _satisfies_specs(c, slot.required_specs)]
-    valid = [c for c in spec_valid if c.normalized_price <= price_max]
-    if not valid:
-        # Distinguish: spec failure vs price-only failure.
+    within_budget = [c for c in spec_valid if c.normalized_price <= slot.allocated_budget]
+    stretch_pool = [c for c in spec_valid
+                    if slot.allocated_budget < c.normalized_price <= slot.allocated_budget * 1.5]
+    if not within_budget:
         if not spec_valid:
             return [], [], "no_spec_match"
         return [], [], "no_candidate"
+    valid = within_budget
+
+    # Shuffle candidates before sending to LLM — prevents position bias
+    # from causing the same items to get picked every run. The LLM sees
+    # the same pool but in different order, leading to varied selections.
+    valid = list(valid)
+    random.shuffle(valid)
 
     # Only pass interests for decor slots where they're relevant.
     slot_interests = interests if interests and slot.slot_id in _INTEREST_SLOTS else None
@@ -233,9 +242,18 @@ def select_products(
         if not products:
             return [], [], "llm_error"
 
+    # Append stretch-pool items (1.0x-1.5x budget) as lower-ranked alternatives
+    # so the user sees premium options, but the LLM's top pick is always within budget.
+    if stretch_pool and products:
+        selected_ids = {p.product_id for p in products}
+        for sp in sorted(stretch_pool, key=lambda p: p.normalized_price)[:3]:
+            if sp.product_id not in selected_ids:
+                products.append(sp)
+                fit_reasons.append("Premium option (above slot budget)")
+
     logger.info(
-        "Slot %s: %d candidates → LLM returned %d → diversity filter kept %d (requested %d)",
-        slot.slot_id, len(valid), pre_diversity, len(products), pick_count,
+        "Slot %s: %d candidates → LLM returned %d → diversity filter kept %d (requested %d, +%d stretch)",
+        slot.slot_id, len(valid), pre_diversity, len(products), pick_count, len(stretch_pool),
     )
 
     return products, fit_reasons, null_reason
@@ -279,6 +297,7 @@ def _call_selection_llm(system_prompt: str, user_message: str) -> str:
             message = client.messages.create(
                 model=_LLM_MODEL,
                 max_tokens=_LLM_MAX_TOKENS,
+                temperature=0.3,  # Light randomization for selection diversity
                 system=system_prompt,
                 messages=[{"role": "user", "content": user_message}],
             )
@@ -346,11 +365,14 @@ def _build_selection_prompts(
     _NEUTRAL_SLOTS = {"sheets", "throw_blanket", "pillows", "curtains"}
     neutral_instruction = ""
     if slot.slot_id in _NEUTRAL_SLOTS:
-        # Pick neutral tones that match the room's mood.
+        # Pick neutral tones that match the room's mood + style keywords.
         mood_lower = (style_profile.mood or "").lower()
-        if any(w in mood_lower for w in ("moody", "dark", "bold", "deep")):
+        kw_lower = " ".join(style_profile.keywords).lower()
+        style_lower = (style_profile.style_name or "").lower()
+        style_signal = f"{mood_lower} {kw_lower} {style_lower}"
+        if any(w in style_signal for w in ("moody", "dark", "bold", "deep", "academia", "industrial", "gamer")):
             neutral_tones = "black, charcoal, or dark grey"
-        elif any(w in mood_lower for w in ("warm", "cozy", "heritage", "alpine")):
+        elif any(w in style_signal for w in ("warm", "cozy", "heritage", "alpine", "cottage", "coastal")):
             neutral_tones = "beige, oatmeal, or warm cream"
         else:
             neutral_tones = "white, cream, or light grey"

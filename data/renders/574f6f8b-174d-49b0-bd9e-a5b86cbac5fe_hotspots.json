@@ -1,0 +1,162 @@
+[
+  {
+    "slot_id": "bed_frame",
+    "x": 0.42,
+    "y": 0.55,
+    "w": 0.4,
+    "h": 0.35,
+    "product_name": "Cozyman King Size Wood Bed Frame with Adjustable Headboard, Mid Century Modern Solid Rubberwood Platform Bed, 800LBS Heavy Duty, No Box Spring Needed, 30 Mins Assembly, Dark Walnut",
+    "price": 329.99,
+    "buy_url": "https://www.amazon.com/dp/B0GV35WK14?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "ceiling_light",
+    "x": 0.45,
+    "y": 0.06,
+    "w": 0.12,
+    "h": 0.1,
+    "product_name": "WOKNOS Dimmable Wood Flush Mount Ceiling Light Modern Black LED Ceiling Light Fixture 2700K-6000K Minimalist Round Close to Ceiling Light for Bathroom Hallway Bedroom Entryway Kitchen, 11.81\"",
+    "price": 53.99,
+    "buy_url": "https://www.amazon.com/dp/B0DNZ3BJLJ?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "comforter",
+    "x": 0.42,
+    "y": 0.55,
+    "w": 0.35,
+    "h": 0.2,
+    "product_name": "Southshore Fine Living, Inc. King Size Down Alternative Comforter, Oversized Cal King Comforter Only, Hotel Bedding, All Season Comforters, Wrinkle Free Bedding, Duvet Insert, Dark Taupe Comforters",
+    "price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B06W9H9BK5?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "curtains",
+    "x": 0.42,
+    "y": 0.25,
+    "w": 0.55,
+    "h": 0.15,
+    "product_name": "Roslynwood Velvet Olive Green Curtain 63 inch Long - Curtains Block Light Rod Pocket Thermal Insulated Window Drapes Set for Living Room/Bedroom/Dining Room, W52 x L63, 2 Panels",
+    "price": 38.95,
+    "buy_url": "https://www.amazon.com/dp/B07T1WYCKH?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "dresser",
+    "x": 0.82,
+    "y": 0.52,
+    "w": 0.18,
+    "h": 0.25,
+    "product_name": "Modern 6-Drawer Dresser with Spacious Storage, Sturdy Wood Frame, Large Capacity Fabric Drawers, Dressers for Bedroom, Home Organization Storage for Living Room or Hallway, Walnut",
+    "price": 131.35,
+    "buy_url": "https://www.amazon.com/dp/B0DW13NH4G?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "floor_lamp",
+    "x": 0.68,
+    "y": 0.38,
+    "w": 0.08,
+    "h": 0.3,
+    "product_name": "JOOFO Mid-Century Modern Wood Floor Lamp with Dual Fabric Shade, Remote Control, Dimmable & Adjustable Color Temperature, Reading & Living Room Lamp, Easy Clean Cover, Foot Switch,Walnut Wood",
+    "price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNZNK8BJ?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "mattress",
+    "x": 0.42,
+    "y": 0.5,
+    "w": 0.35,
+    "h": 0.18,
+    "product_name": "Lukace 12 Inch King Size Mattress No Fiberglass Gel Memory Foam Mattress for Back Pain, Relieve Pressure with Medium Firm Support & Motion Isolation, Certified Safe Materials, 80\" L x 76\" W",
+    "price": 245.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJD4Q96L?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "mirror",
+    "x": 0.82,
+    "y": 0.28,
+    "w": 0.12,
+    "h": 0.18,
+    "product_name": "Kate and Laurel Yitro Round Industrial Modern Metal Framed Wall Mirror, 23.5x28.5, Gold",
+    "price": 67.99,
+    "buy_url": "https://www.amazon.com/dp/B07NLDGKWC?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "nightstand",
+    "x": 0.14,
+    "y": 0.55,
+    "w": 0.12,
+    "h": 0.18,
+    "product_name": "Fluted Nightstand, 24\" Wide Side Table with 3 Large Storage Drawers, Mid Century Modern Wood Night Stand with Metal Handle, Wooden Bedside End Table for Bedroom, Living Room, Closet, Walnut",
+    "price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0FT2CLDJ6?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "pillows",
+    "x": 0.42,
+    "y": 0.38,
+    "w": 0.25,
+    "h": 0.1,
+    "product_name": "Feather Pillows Queen Size Set of 2 - Goose Down Hotel Bed Pillow for Sleeping, Soft 600 Thread Count Cotton Cover, Fluffy Support Surround Fill Polyester for Side, Back and Stomach Sleepers",
+    "price": 35.97,
+    "buy_url": "https://www.amazon.com/dp/B0FW4QK6ZY?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "plants",
+    "x": 0.9,
+    "y": 0.62,
+    "w": 0.12,
+    "h": 0.22,
+    "product_name": "Nearly Natural 48in Artificial Dracaena with Real Touch Leaves and Multi Tonal Trunks, Large Indoor Silk Plant with Pot, Maintenance Free For Living Room And Home Office Decor",
+    "price": 35.0,
+    "buy_url": "https://www.amazon.com/dp/B00B3LO53S?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "rug",
+    "x": 0.42,
+    "y": 0.78,
+    "w": 0.45,
+    "h": 0.18,
+    "product_name": "SAFAVIEH Heritage Collection Area Rug - 5' x 8', Black & Red, Handmade Traditional Oriental Wool, Ideal for High Traffic Areas in Living Room, Bedroom (HG953A)",
+    "price": 197.99,
+    "buy_url": "https://www.amazon.com/dp/B003F10KPG?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "sheets",
+    "x": 0.42,
+    "y": 0.52,
+    "w": 0.3,
+    "h": 0.12,
+    "product_name": "LANE LINEN King Size Sheets Set 100% Organic Cotton GOTS Certified Percale Weave Deep Pocket 4 Piece Soft Breathable Cooling Lightweight All Season Machine Washable Crisp White",
+    "price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0946MVWGD?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "table_lamp",
+    "x": 0.14,
+    "y": 0.4,
+    "w": 0.08,
+    "h": 0.14,
+    "product_name": "Bankers Lamp, Traditional Green Desk Lamp with Solid Birch Wood Base, Green Glass Antique Library Lamp with Pull Chain Switch, Plug in Vintage Bankers Desk Lamp for Office, Study Room \u3010E26 Socket\u3011",
+    "price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0DPM88QPJ?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "throw_blanket",
+    "x": 0.42,
+    "y": 0.65,
+    "w": 0.25,
+    "h": 0.1,
+    "product_name": "EVERGRACEHOME Chunky Chenille Knit Throw Blanket for Couch, Soft Luxurious Moss Stitch Blankets for Bed, Cozy Decorative Farmhouse Knitted Throws for Sofa, Camel Brown, 50\" x 60\"",
+    "price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0FC668VX3?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "wall_art",
+    "x": 0.42,
+    "y": 0.18,
+    "w": 0.25,
+    "h": 0.16,
+    "product_name": "Framed Canvas Wall Art 24x36 inch Vinyl Record Player Vintage Music Poster Minimalist Turntable With Tiny Dancers Print For Living Room Bedroom Wall Decor",
+    "price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2M4FL46?tag=roomkitai-20"
+  }
+]

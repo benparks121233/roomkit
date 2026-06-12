@@ -101,6 +101,7 @@ export default function IntakePage() {
       room_type: result.roomType,
       budget: result.budget,
       style_description: result.quiz.style.description,
+      core_aesthetic: result.quiz.style.core,
       bed_size: result.roomType === "bedroom" ? result.bedSize : null,
       density: result.quiz.style.density,
       interests: result.quiz.interests.map((i) => i.category),
@@ -138,6 +139,9 @@ export default function IntakePage() {
             <h2 className="build-loading-title">
               Building your dream room
             </h2>
+            <p className="build-loading-tagline">
+              Your personalized AI room renders at the end.
+            </p>
 
             <div className="build-loading-stage-label">
               {currentStage.label}

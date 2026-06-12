@@ -928,7 +928,14 @@ h1, h2, h3 {
   font-family: var(--font-display);
   font-size: 1.5rem;
   color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.build-loading-tagline {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
   margin-bottom: var(--space-6);
+  letter-spacing: 0.01em;
 }
 
 .build-loading-stage-label {
@@ -1911,6 +1918,318 @@ h1, h2, h3 {
   font-weight: 600;
   color: var(--color-text);
   padding: 4px;
+}
+
+/* ---------------------------------------------------------------------------
+   Interactive Room Render (AI-generated room with shoppable hotspots)
+   --------------------------------------------------------------------------- */
+
+.room-render-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--color-surface-muted);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.room-render-transform {
+  position: relative;
+  width: 100%;
+  transform-origin: center center;
+}
+
+.room-render-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Fullscreen overlay */
+.room-render-fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: renderFullscreenIn 0.2s ease;
+}
+
+@keyframes renderFullscreenIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.room-render-fullscreen-overlay .room-render-container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  background: transparent;
+}
+
+.room-render-fullscreen-overlay .room-render-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.room-render-fullscreen-overlay .room-render-transform {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Marquee selection box */
+.room-render-marquee {
+  position: absolute;
+  border: 2px dashed rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Hotspot overlay */
+.room-hotspot {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.room-hotspot:hover,
+.room-hotspot.hovered {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.room-hotspot-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(28, 25, 23, 0.92);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  white-space: nowrap;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  animation: tooltipFadeIn 0.15s ease;
+  z-index: 10;
+}
+
+@keyframes tooltipFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.room-hotspot-name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room-hotspot-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #9AE6B4;
+}
+
+.room-render-zoom-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 5;
+}
+
+.room-render-zoom-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 25, 23, 0.75);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.room-render-zoom-btn:hover:not(:disabled) {
+  background: rgba(28, 25, 23, 0.9);
+}
+
+.room-render-zoom-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.room-render-zoom-btn.active {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.room-render-zoom-hint-active {
+  animation: none !important;
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.room-render-zoom-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(28, 25, 23, 0.6);
+  backdrop-filter: blur(6px);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+  animation: hintFade 0.5s ease 2s both;
+}
+
+@keyframes hintFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Render CTA — on-demand trigger */
+.render-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 400px;
+  margin: var(--space-6) auto;
+  padding: var(--space-4) var(--space-6);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-surface);
+  background: var(--color-text);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.render-cta-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.render-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* Render loading screen */
+.render-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-4);
+  padding: var(--space-8);
+}
+
+.render-loading-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.render-loading-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 320px;
+}
+
+.render-loading-bar {
+  width: 200px;
+  height: 3px;
+  background: var(--color-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.render-loading-bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 2px;
+  animation: renderProgress 20s ease-out forwards;
+}
+
+@keyframes renderProgress {
+  0% { width: 0%; }
+  30% { width: 40%; }
+  60% { width: 70%; }
+  80% { width: 85%; }
+  100% { width: 95%; }
+}
+
+@keyframes renderPhaseFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Export to cart */
+.export-cart-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 20px;
+}
+
+.export-cart-btn {
+  background: #FF9900;
+  color: #111;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 32px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+
+.export-cart-btn:hover {
+  background: #FFa929;
+  transform: translateY(-1px);
+}
+
+.export-cart-btn:active {
+  transform: translateY(0);
 }
 
 /* ---------------------------------------------------------------------------

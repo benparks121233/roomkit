@@ -4480,5 +4480,581 @@
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71HV-v6zGML._AC_UL320_.jpg",
     "source": "canopy"
+  },
+  {
+    "product_id": "B08Q3PSR75",
+    "name": "BLUBLU Tie Dye Colorful Rainbow Flannel Fleece Bed Blanket Throw Blanket Lightweight Cozy Plush Blanket for Bedroom Living Rooms Sofa Couch 50\"x40\"",
+    "normalized_price": 19.98,
+    "buy_url": "https://www.amazon.com/dp/B08Q3PSR75",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71vdBHRjeKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00CPKGU5C",
+    "name": "Pendleton Chief Joseph Jacquard Wool Blanket 64\" x 80\", Reversible Throw Blanket, Wool Felt Binding, Breathable, Napped for Softness, Great for Home and Travel",
+    "normalized_price": 254.99,
+    "buy_url": "https://www.amazon.com/dp/B00CPKGU5C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91G6y6cHqAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZNLJZVL",
+    "name": "Smoofy Faux Fur Throw Blanket for Couch - Rainbow Super Soft Cozy Bubble Blanket, Fluffy Plush Fuzzy Throw for Sofa & Bed, Thick Lightweight Warm Blanket, Luxury Aesthetic Gift for Women 50\"x60\"",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZNLJZVL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81aazBr2OtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZNSGP82",
+    "name": "VANJOROY Boho Throw Blanket, 100% Organic Muslin Cotton Skin-friendly Breathable Ultra Soft Bed Quilt Throw - All Season Bohemian Decor Luxury Colorful Blanket for Sofa Couch Chair and Gift. 60\" x 80\"",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZNSGP82",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/715SZNYRQFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F662NRBD",
+    "name": "Battilo Fall Orange Plaid Throw Blanket for Couch, Colorful Mohair Tartan Plaid Blanket, Farmhouse Style Throw Blankets for Fall Home Decor(50\"x60\")",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0F662NRBD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/812-pd8VTAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL6WTXWP",
+    "name": "3D Circle Pattern 300 GSM Hot Pink Throw Blanket for Couch - Fleece Picnic Blankets for Women,Warm Spring Throw Blanket, 50x60 Inches",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0FL6WTXWP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81twImhqq6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6K8B6PC",
+    "name": "VANJOROY Boho 100% Organic Cotton Muslin Large Throw Blanket 60\" x 80\" - All Season Rustic Ultra Soft Breathable Floral Bird Blanket for Bed Sofa Couch Chair Bedspread Quilt Gift,-Teal/Green",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0C6K8B6PC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91fYjCKO-PL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FSKVVRN5",
+    "name": "Tyrot Boho Floral Flannel Fleece Throw Blanket \u2013 Soft, Warm & Lightweight Fuzzy Blanket for Couch, Bed, or Sofa Decor, Cute Botanical Design for Women & Girls, 50''x60''",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0FSKVVRN5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91oIQTMSdQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BTGRYZP6",
+    "name": "Colorful Fleece Blanket, Plush Cozy Throw Blanket for Couch and Bed, Luxury Soft Fuzzy Microfiber Cover, Warm Lightweight Comfort Blanket for Home Decor, Mothers Day Birthday Gifts for Women Mom",
+    "normalized_price": 12.99,
+    "buy_url": "https://www.amazon.com/dp/B0BTGRYZP6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71yyhlb6ivL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09HKGYVJ3",
+    "name": "Neasow Floral Fleece Throw Blanket, Vibrant Color Boho Flowers Blossom Cozy Decor Throws for Sofa Bed Couch Chair or Dorm 40\u00d750 inch",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B09HKGYVJ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81P1iW4Ie9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCFJF3J2",
+    "name": "Whimsical Gorilla Blanket Soft Cozy Flannel Throw Blanket, Warm Yet Lightweight Colorful Flowers Blankets for Travel, Couch, Bed, for Adults Women Men Boys, Fuzzy Outdoor Comfort Wrap 60\"\u00d750\"",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCFJF3J2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81qd+TjTC7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5QX7B38",
+    "name": "Vintage Guitar Collection Throw Blanket - Soft and Cozy Fleece Blanket with Colorful Acoustic Guitar Design - Perfect for Music Lovers, Couch, Bed, or Outdoor Use - 50x60 Inches",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0D5QX7B38",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81J8O720psL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F593TK4C",
+    "name": "Colorful Snake Blanket,Exotic Decorative Throw with Wildlife and Tropical Jungle Flower,Lightweight Flannel Blankets for Outdoor,Picnic,Travel,Ideal Gifts for Adults Animal Lovers 50\"x60\"",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0F593TK4C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81nKjb-1xOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08VZWRRXX",
+    "name": "SARO LIFESTYLE Confetti Design Throw Blanket, Multi, 50\"x60\"",
+    "normalized_price": 61.72,
+    "buy_url": "https://www.amazon.com/dp/B08VZWRRXX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91ISR439wZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPKWXW9Y",
+    "name": "Checkerboard Grid Pattern Throw Blanket, Colorful Checkered Retro Soft Warm Cozy Plush Comfy Blanket for Couch Bed Sofa, Aesthetic 70S Groovy Cute Fleece Flannel Throws to Decorate Living Room Bedroom",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0CPKWXW9Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61JkWgp0lCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4HQ4B6Y",
+    "name": "Boho Throw Blanket for Bed 60\u201dx80\u201d, 100% Cotton Woven Blanket for Couch Sofa, Ultra Soft 4-Layer Muslin Quilt with Floral Printed, Farmhouse Bed Blanket/Cover for Living Room Decor",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0D4HQ4B6Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81yXSbVAbbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQ56GF19",
+    "name": "LIFEREVO Luxury Faux Rabbit Fur Bed Blanket Queen Size, Soft and Thick Waffle Big Bubble Tie Dye Blanket for All Season, Cute Fuzzy Colorful Throw Home Decor for Bed Couch Sofa Office, 90x90, Rainbow",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FQ56GF19",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81mpSYRD5fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWHRRLD1",
+    "name": "Colorful Mushroom Forest Throw Blanket Gifts for Kids Women, Mushrooms Blankets for Couch, Bedroom, Living Room Home Decor, Fuzzy Warm Flannel Plush 50\"x60\"",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWHRRLD1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81CJqYV5b3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F48646BF",
+    "name": "Colorful Chameleon Blanket, Soft Warm Cozy Vibrant Reptile Throw Blanket Gifts for Adults Kids Women, Lightweight Fuzzy Comfy Flannel Blankets for Couch, Travel, Bed, House Decor 60\u00d750 Inch",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0F48646BF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-D7w0DUuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWK444ND",
+    "name": "Colorful Tiger Blanket, Gifts for Women, Neon Tiger Galaxy Soft Lightweight Throw Blankets for Kids Girls, Travel Bed Living Room Decor, 50x60in",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWK444ND",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71jjE3pPM5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BLRBXBX5",
+    "name": "MSGKV Boho Throw Blanket 60''x80'',100% Cotton Blanket for Couch Bed, Summer Breathable Quilt Farmhouse Home Decor Soft Lightweight Picnic Blankets",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0BLRBXBX5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81lF-SKD9hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCXYDSFF",
+    "name": "Home Decor Throw Blanket, Abstract Colorful Waves Pattern Warm Soft Cozy Flannel Bed Blankets for Bed, Couch, Sofa and Chair, All Seasons Suitable, 80x60 inches",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCXYDSFF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71NG6iiFf9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHKTZTMN",
+    "name": "Bailix Boho Throw Blanket for Couch Sofa Bed, 100% Cotton Woven Quilt with Tassel 60\u201dx80\u201d, Super Soft Muslin Blanket with Floral Printed, Decorative Reversible Bed Blanket/Cover for All Seasons",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0DHKTZTMN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91dbzU-GEqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DD3RFJLH",
+    "name": "Whaline Floral Fuzzy Blanket Spring Wildflower Throw Blanket Watercolor Colorful Flower Soft Cozy Flannel Blankets for Spring Summer Home Bed Sofa Couch Chair, 50 x 60 Inch",
+    "normalized_price": 22.99,
+    "buy_url": "https://www.amazon.com/dp/B0DD3RFJLH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/618E1ZPbplL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRS2NRTQ",
+    "name": "Horaldaily Spring Summer Flannel Blanket Throw, Colorful Tulips Butterfly Soft Fuzzy Plush Cozy Fleece Blankets for Couch Sofa Bed Lounging, Ideal Gifts for Kids Adults Self, 50x60",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRS2NRTQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81bB4DTxoLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJ3ZQQHN",
+    "name": "Hahafelt Boho Pastel Floral Throw Blanket Ultra Soft Fleece Patchwork Blanket for Couch and Bed Holiday Theme Cozy Throw Decoration Warm Gift for Spring Summer, 50 x 60 Inches",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJ3ZQQHN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PdcOXp5mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09X1SS5BN",
+    "name": "CASAAGUSTO Boho Throw Blanket with Tassel, Farmhouse Western Flannel Bohemian Blanket, Vintage Native Mexican Decorative Throw, Ideal for Gifting (50x60 Inches, Colorful)",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B09X1SS5BN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71I05GwxwhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHPG8TV3",
+    "name": "Phuryllic Boho Throw Blanket Twin Size, Soft Cozy Cotton Muslin Quilt Blanket for Bed Decor, Floral Patterned Couch Sofa Chair Cover, Vintage Farmhouse Cottage Tapestry Woven Blanket, Orange&Green",
+    "normalized_price": 33.23,
+    "buy_url": "https://www.amazon.com/dp/B0DHPG8TV3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/917YTz12YwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B54FPSX5",
+    "name": "TEHALK Unicorn Glow in The Dark Blanket, Unicorn Blanket for Girls/Kids, Unicorns Gifts for Girls Age 3-12, Toddler Blanket for Kids, Soft Fleece Blanket Throw Birthday Gift 40\"x60\"",
+    "normalized_price": 12.99,
+    "buy_url": "https://www.amazon.com/dp/B0B54FPSX5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ESuDWvWFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FV8G217H",
+    "name": "Maximalist Funky Tiger Leopard Cheetah Pillow Covers 18x18, Eclectic Home Decor, Tropical Trendy Preppy Colorful Tiger Decorative Throw Pillow Covers Pillowcases for Living Room Bedroom",
+    "normalized_price": 8.99,
+    "buy_url": "https://www.amazon.com/dp/B0FV8G217H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/9153BABhzwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2S29FVC",
+    "name": "Horaldaily Boho Bohemia Blanket Throw, Vintage Country Rustic Farmhouse Soft Fuzzy Plush Faux Fur Cozy Blankets for Couch Sofa Bed Lounging, Ideal Gifts for Kids Adults Wife Self, 50x60",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2S29FVC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81L3K96puAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DD7DDZ5D",
+    "name": "Abstract Retro Throw Blanket 50x60, Mid-Century Modern Theme Blankets for Living Room Decor, Soft Flannel Rainbow Gifts for Women",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0DD7DDZ5D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71GtIXKxX9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B003UCBHES",
+    "name": "Greenland Home Antique Chic Quilted Patchwork Throw, 50\" x 60\" , Multicolor",
+    "normalized_price": 34.49,
+    "buy_url": "https://www.amazon.com/dp/B003UCBHES",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81QNitgO2cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKC6PQJL",
+    "name": "Bloomingville Woven Cotton Blend Jacquard Throw Blanket with Abstract Pattern, Natural and Brown",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKC6PQJL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81glIDFFDFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2S4MRKN",
+    "name": "Horaldaily Boho Bohemia Style Blanket Throw, Vintage Country Rustic Farmhouse Soft Fuzzy Plush Faux Fur Cozy Blankets for Couch Sofa Bed Lounging, Ideal Gifts for Kids Adults Wife Self, 50x60",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2S4MRKN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81wdMZHkaVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07YTSBJ5Y",
+    "name": "BOURINA Fluffy Chenille Knitted Fringe Throw Blanket Lightweight Soft Cozy for Bed Sofa Chair Throw Blankets, Orange 50\" x 60\"",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B07YTSBJ5Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81H-5EF0U+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2S8G73N",
+    "name": "Horaldaily Boho Bohemia Style Blanket Throw, Vintage Soft Fuzzy Plush Faux Fur Cozy Blankets for Couch Sofa Bed Lounging, Ideal Gifts for Kids Adults Wife Self, 50x60",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2S8G73N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PeMKgWxqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5MJ23RX",
+    "name": "Vintage Dark Floral Fleece Blanket,50x60in,Red Orange Peony and Autumn Garden Flower Black Throw Blankets,Soft Cozy Lightweight, Ideal for Bed Living Room Home Boho Decor,Women Gifts",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0F5MJ23RX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/816Q+hbmo7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6172GDV",
+    "name": "JOJUSIS Pack of 2 Faux Fur Plush Decorative Throw Pillow Covers Couch Cushion Case Soft Pillowcases (Mustard Yellow, 18 x 18-Inch)",
+    "normalized_price": 10.91,
+    "buy_url": "https://www.amazon.com/dp/B0C6172GDV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81RlYqg5s2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJJFK94D",
+    "name": "Marubhumi Vintage Kantha Quilt \u2013 Handmade Reversible Cotton Throw Blanket with Assorted Patchwork | Boho-Style Decorative Bedding for Sofa, Couch, Bed & Picnic | 1 Pc",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJJFK94D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91oSum2F+rL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRMF3KK1",
+    "name": "Floral Chenille Throw Blanket 50 x 60'' Farmhouse Vintage Boho Flower Blanket Soft Throw for Couch Bed Sofa Chair Living Room Outdoor Woven Decorative Home Gift(Brown)(Flower,Brown)",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRMF3KK1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81d1Y22C7lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09334KXJ4",
+    "name": "DOWN HOME Chenille Cotton Throw Blanket for Couch, Lightweight Boho Blanket for Bed Sofa Chair Living Room Outdoor Soft Woven Decorative Blanket with Tassel Gift Orange Leaves 55\"x60\"",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B09334KXJ4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71o6S0+0mZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQCZ23P6",
+    "name": "MSGKV Boho Throw Blanket for Couch and Sofa 50\"x60\" Cotton Throw Cover for Living Room with Floral and Butterfly, Summer Breathable&Lightweight Blanket",
+    "normalized_price": 22.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQCZ23P6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81LFxOKDTeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B075F8P1HB",
+    "name": "DII Bold Eclectic Leopard Woven Throw, 50x60, Tan with White Spots",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B075F8P1HB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81w3JD38H8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CBPXJM1K",
+    "name": "Chunky Knit Blanket Throw 40\"\u00d740\", Hand Knitted Warm Chenille Throw Blanket, Home Decor Soft Thick Yarn Cable Knit Blanket,Soft Breathable Fleece Banket Christmas for Couch Bed Sofa Best Gift (Yellow)",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B0CBPXJM1K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51OqhXmZJqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFT193N3",
+    "name": "Boho Bohemian Throw Blanket for Couch Sofa Bed, Soft Cozy Lightweight Boho Blankets Knitted with Tassel, Decorative Blanket All Season 50x60 inches (Red)",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFT193N3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91rdecr3M6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCJFWWTF",
+    "name": "Acrylic Knitted Throw Blanket, Lightweight and Soft Cozy Decorative Woven Blanket with Tassels for Couch, Bed, Sofa, Travel, Suitable for All Seasons, 50 x 60 Inches, Orange",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0CCJFWWTF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91u6JRmHZ3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHKRJP3K",
+    "name": "Miyotaa Retro Flower Sage Green Orange Blanket 50Wx60H Inch Matisse Groovy 70s Funky Trendy Aesthetic Gift Warm Fuzzy Throw Blanket for Sofa Bed Throws Birthday Presents",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHKRJP3K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71u84j2+AML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C3D32FYB",
+    "name": "Abstract Modern Throw Blanket Boho Minimalist Mid Century Sun Aesthetic Soft Warm Bed Bedding Women Blankets for Couch Bedroom Sofa Office Cozy Flannel Blanket Orange Beige Black 30\"X40\"",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B0C3D32FYB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/618S5GUJEFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09YTGL7DR",
+    "name": "Boho Throw Blankets Reversible Woven Blankets Cover Hippie for Couch Bed Recliner Sofa Bohemian Tapestry Colorful Furniture Protector Cover for Home D\u00e9cor, Astrology, Double Side, 50\"x70\"",
+    "normalized_price": 26.5,
+    "buy_url": "https://www.amazon.com/dp/B09YTGL7DR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/9194W7WvAHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08RP7PP6Z",
+    "name": "Boho Throw Blanket, Chenille Jacquard Tassels Throw Blankets for Bed Couch Soft Chair\uff0c Bohemian Fringe Tassels (Red, S:60x75",
+    "normalized_price": 29.69,
+    "buy_url": "https://www.amazon.com/dp/B08RP7PP6Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81MjY+XoqkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4K6L98Y",
+    "name": "Boho Throw Blanket for Bed 100% Cotton Bohemian Blankets Ultra Soft Woven Muslin Decorative Blankets All Seasons Vintage Quilt Knitted Blanket for Sofa Chair (Colorful, 50\"x60\")",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0F4K6L98Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71zCkrHLgkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZ9F958B",
+    "name": "Boho Throw Blanket Reversible Cotton Bohemian Tapestry Hippie Room Decor Outdoor Blanket Double Sided (Boho Patten 50\"x60\")",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZ9F958B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81bm2alSW2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDPNNSHZ",
+    "name": "Oversized Turkish Beach Towel Blanket XXL Cotton Sandproof Towels Boho Woven Extra Large Big Sand Free Giant Throw Blankets Huge Quilt XL Picnic Camping Necessities Cloud For Adult Gifts Beige",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDPNNSHZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uXwqVwg0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DR8CHFKV",
+    "name": "inhand Cooling Blanket Queen Size (90\"x90\"), Cooling Blankets for Hot Sleepers, Absorbs Heat to Keep Adults Cool For Summer Nights Sweats, Thin Cold Lightweight Blanket for Couch Bed, All Season Use",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0DR8CHFKV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81OThawpNFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B093PRZK4Q",
+    "name": "Lqprom Boho Throw Blankets Knit Bed Blankets with Tassel Aztec Western Throws Cover for All Season Sofa Couch Chair Outdoor Camping Picnic Tent Beach Car Traveling 51\"x63\"",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B093PRZK4Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71fT0VWFZWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BX8XSK8B",
+    "name": "Boho Throw Blanket - Hippie Chenille Jacquard Bohemian Chair Couch Sofa and Bed Furniture Cover with Colorful Tribal Pattern (Purple, 60\" x 75\")",
+    "normalized_price": 29.5,
+    "buy_url": "https://www.amazon.com/dp/B0BX8XSK8B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91ZRLldvAwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07GNGZCBR",
+    "name": "UKELER Boho Sherpa Throw 60'' x 50''- Bohemian Soft Plush Flannel Throw Blankets for Bed/Couch/Sofa/Office/Camping",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B07GNGZCBR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Hdx7JUe+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08DG6FPLX",
+    "name": "Mexican Blanket (Authentic Handmade Falsa) - Durable, Lightweight Baja Indian Blanket for Yoga, Beach, Camping, Picnic, Car/Truck, Outdoor Mexican Throw, Baja Saddle Blanket, 70\"x50\", Cherry",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B08DG6FPLX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/917lm6U1txL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJL8WHNR",
+    "name": "Jacquard Boho Fleece Throw Blanket-Cozy Fluffy Soft Lightweight Fuzzy Fall Blanket for Sofa, Couch, Bed, Chair & Car, Gifts for Teen Girls, Women & Men, Home and Dorm Decor, Rust Red, 50\" x 70\"",
+    "normalized_price": 8.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJL8WHNR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81kYdQKM-LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0114LD834",
+    "name": "5 Pieces Mix Lot Whole Sale Tribal Kantha Quilts Vintage Cotton Bed Cover Throw Old Assorted Patches Made Rally",
+    "normalized_price": 53.99,
+    "buy_url": "https://www.amazon.com/dp/B0114LD834",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51YTjva6XmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVKNC9VJ",
+    "name": "Boho Knitted Chenille Blanket with Tassels - Lightweight & Soft All-Season Throw - 3D Classic Pattern for Living Room Bedroom Couch, Celestial Blue, Throw 50\"x60\"",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVKNC9VJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/819O2LSg9EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FK9QCY1W",
+    "name": "Boho Chic Sherpa Throw Blanket - Vibrant Bohemian Print & Ultra-Soft Cozy Lining, Stylish & Warm Winter Throw for Couch, Bed, or D\u00e9cor",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0FK9QCY1W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81BCwdVmaDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRVQMQ2T",
+    "name": "Boho Throw Blanket for Bed - 100% Pure Cotton Ultra Soft Rustic Quilt - Farmhouse Decor Bed Blankets, All Season Rustic Throw for Sofa Couch Chair(60''\u00d780'', Floral)",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRVQMQ2T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/816tVP7cxeL._AC_UL320_.jpg",
+    "source": "canopy"
   }
 ]

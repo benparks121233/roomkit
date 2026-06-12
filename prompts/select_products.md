@@ -21,12 +21,13 @@ Rules:
 - If the candidate list is empty, return an empty ranked_picks array with
   null_reason "no_candidate".
 - Do not exceed the price band. Style fit is the top priority — never pick a
-  worse-fitting product just to spend more. But among candidates that fit the
-  style equally well, prefer the one closer to the slot's allocated budget of
-  ${{allocated_budget}}. A $80 velvet curtain and a $43 velvet curtain are both
-  on-style — pick the $80 one because it better uses the available budget.
-  Do not default to the cheapest option when a similarly well-fitting pricier
-  option exists.
+  worse-fitting product just to spend more. But ACTIVELY PREFER higher-quality,
+  pricier products when they fit the style. The user's budget of ${{allocated_budget}}
+  for this slot is meant to be USED — spending only 40% of it means the user
+  gets a cheaper-looking room than they asked for. Between a $80 velvet curtain
+  and a $43 velvet curtain that both fit the style, ALWAYS pick the $80 one.
+  Your rank-1 pick should aim for 70-100% of the allocated budget when quality
+  options exist at that price point. Do not default to the cheapest acceptable option.
 - If user interests are provided, prefer products that reflect those interests
   (e.g. music fan → vinyl/music-themed art) when a good candidate exists.
   For most slots, style fit takes priority over interests.
@@ -56,6 +57,29 @@ Rules:
       version — vintage posters, framed retro prints, tasteful typography, cool
       photography. NOT cheap novelty merch, generic logo canvas, plastic signs,
       or "fan cave" junk. Think: what a design-savvy fan would actually hang.
+    • For gamer_den style specifically:
+      - WALL ART: prefer sleek/dark/abstract art, cool graphic art, vintage
+        gaming posters done tastefully, minimalist controller/console art.
+        SKIP anything with the literal word "GAMER" in bold text, cheesy
+        gaming slogans, or cheap novelty gaming canvas.
+      - NEON SIGNS: pick VARIED designs — geometric shapes, abstract lines,
+        cool symbols, planet/lightning/wave neon, different words/phrases.
+        Do NOT cluster on signs that literally say "GAMER" or "GAME ON."
+      - RUGS: rank sleek BLACK/dark/minimal rugs FIRST. Some subtle gaming
+        rugs are OK but rank them BELOW clean dark rugs. Skip loud RGB/
+        rainbow gaming rugs or anything with "GAMER" text on it.
+    • For quiet_luxury style specifically: this aesthetic demands GENUINE
+      quality and refinement. Apply strict taste filtering:
+      - SKIP cheap furniture that just has "faux marble top" laminate — that's
+        not quiet luxury. Prefer items with real marble, solid wood, genuine
+        brass/gold hardware, or premium-looking construction.
+      - Price is a STRONG signal for this aesthetic. Cheap items ($15-40 for
+        furniture) almost never read as quiet luxury. Strongly favor the upper
+        50% of the price range for this style.
+      - SKIP anything with LED lights, charging stations, or "smart" features
+        built into furniture — those are functional/modern, not quiet luxury.
+      - Prefer: fluted details, bouclé upholstery, brass/gold accents,
+        natural stone, cream/ivory/warm white tones, clean tailored lines.
 - You MUST return exactly {{pick_count}} products (or as many as available if
   fewer than {{pick_count}} candidates exist). Do not stop early — the user
   needs a full selection to choose from. Rank by style fit (rank 1 = best).

@@ -198,20 +198,22 @@ def test_duplicate_ids_deduplicated():
 # ---------------------------------------------------------------------------
 
 def test_over_budget_candidates_excluded_before_llm():
-    """Products above allocated_budget are filtered out before the LLM sees them."""
+    """Products above allocated_budget are not LLM-selected; stretch items appended as extras."""
     slot = _make_slot(budget=40.0)
     candidates = [
         _make_product("LT-001", "Cheap", 29.99),
-        _make_product("LT-002", "Expensive", 55.99),  # Over budget
+        _make_product("LT-002", "Expensive", 55.99),  # Over budget but within 1.5x
     ]
     response = _ranked_response([("LT-001", "Only option")])
     with patch(_PATCH_TARGET, return_value=response):
         products, _, _ = select_products(slot, _make_style(), candidates)
 
-    # LT-002 should have been filtered before the LLM call.
-    assert len(products) == 1
+    # LT-001 must be the LLM's rank-1 pick (within budget).
     assert products[0].product_id == "LT-001"
     assert products[0].normalized_price <= 40.0
+    # LT-002 is appended as a stretch-pool alternative (over slot budget, under 1.5x).
+    assert len(products) == 2
+    assert products[1].product_id == "LT-002"
 
 
 # ---------------------------------------------------------------------------

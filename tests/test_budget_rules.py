@@ -138,7 +138,7 @@ def test_allocate_budget_carries_max_quantity():
     # Multi-select decor slots.
     assert slot_map["wall_art"].max_quantity == 6
     assert slot_map["plants"].max_quantity == 3
-    assert slot_map["throw_blanket"].max_quantity == 2
+    assert slot_map["throw_blanket"].max_quantity == 1
 
     # Single-select slots default to 1.
     assert slot_map["bed_frame"].max_quantity == 1
@@ -149,7 +149,7 @@ def test_allocate_budget_carries_max_quantity():
 def test_taxonomy_max_quantity_defaults_to_one():
     """Items without explicit max_quantity in YAML default to 1."""
     for item_id, item_def in TAXONOMY.items.items():
-        if item_id in ("wall_art", "plants", "throw_blanket"):
+        if item_id in ("wall_art", "plants"):
             assert item_def.max_quantity > 1, f"{item_id} should be multi-select"
         else:
             assert item_def.max_quantity == 1, f"{item_id} should default to 1"

@@ -72,7 +72,6 @@ items:
     required_specs: []
   throw_blanket:
     required_specs: []
-    max_quantity: 2
   throw_pillows:
     required_specs: []
 

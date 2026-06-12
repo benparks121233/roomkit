@@ -13,11 +13,12 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
-import { getDesign, validateSelections } from "@/lib/api";
-import type { DesignResponse, ProductResult, SlotResult } from "@/lib/api";
+import { getDesign, validateSelections, generateRender, API_BASE, HOTSPOT_POSITIONS } from "@/lib/api";
+import type { DesignResponse, ProductResult, SlotResult, Hotspot } from "@/lib/api";
 import SlotPicker from "@/components/SlotPicker";
 import ProductCard from "@/components/ProductCard";
 import BudgetMeter from "@/components/BudgetMeter";
+import InteractiveRoomRender from "@/components/InteractiveRoomRender";
 import Image from "next/image";
 import RoomSceneImage from "@/components/RoomSceneImage";
 
@@ -91,13 +92,19 @@ export default function ResultPage() {
   const [phase, setPhase] = useState<"selecting" | "transition" | "complete">("selecting");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selections, setSelections] = useState<Record<string, ProductResult[]>>({});
-  const [validationError, setValidationError] = useState<string | null>(null);
+  // Validation runs silently — errors logged to console, never shown to user.
   const validationRan = useRef(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [lastPickedSlotId, setLastPickedSlotId] = useState<string | null>(null);
   const [pickCount, setPickCount] = useState(0);
   const [skipAnimations, setSkipAnimations] = useState(false);
   const [overBudgetProduct, setOverBudgetProduct] = useState<ProductResult | null>(null);
+
+  // AI render state
+  const [renderUrl, setRenderUrl] = useState<string | null>(null);
+  const [hotspots, setHotspots] = useState<Hotspot[]>([]);
+  const [renderLoading, setRenderLoading] = useState(false);
+  const [renderFailed, setRenderFailed] = useState(false);
 
   // Fetch design
   useEffect(() => {
@@ -272,11 +279,8 @@ export default function ResultPage() {
               ),
             };
           }
-          // Add (if under cap and pool)
+          // Add (if under cap — pool is soft limit, not hard block)
           if (current.length >= maxQty) return prev;
-          const pool = currentSlot.allocated_budget;
-          const spent = current.reduce((s, p) => s + p.normalized_price, 0);
-          if (spent + product.normalized_price > pool) return prev;
           return { ...prev, [currentSlotId]: [...current, product] };
         });
         setLastPickedSlotId(currentSlotId);
@@ -314,18 +318,71 @@ export default function ResultPage() {
     validateSelections(runId, selectionPayload)
       .then((resp) => {
         if (!resp.valid) {
+          // Log internally but never surface raw validation errors to the user.
+          // The design is still usable — validation is a guardrail, not a gate.
           const reasons = resp.slots
             .filter((s) => !s.valid)
             .map((s) => `${s.slot_id}: ${s.reason}`)
             .join(", ");
-          setValidationError(`Server validation failed: ${reasons}`);
+          console.warn("Selection validation issues (hidden from user):", reasons);
         }
       })
       .catch((err) => {
-        // Don't block the UI — log but allow viewing results
         console.error("Selection validation failed:", err);
       });
   }, [phase, runId, selections]);
+
+  // Build hotspots DETERMINISTICALLY from the user's actual selections.
+  // Every label/link comes directly from what the user picked — impossible
+  // to link an item that wasn't selected.
+  useEffect(() => {
+    if (phase !== "complete" || !design) return;
+    const positions = HOTSPOT_POSITIONS[design.room_type] ?? HOTSPOT_POSITIONS.bedroom;
+    const built: Hotspot[] = [];
+
+    for (const [slotId, products] of Object.entries(selections)) {
+      const pos = positions[slotId];
+      if (!pos || products.length === 0) continue;
+      // Use first selected product for hotspot label/link
+      const prod = products[0];
+      built.push({
+        slot_id: slotId,
+        x: pos.x,
+        y: pos.y,
+        w: pos.w,
+        h: pos.h,
+        product_name: prod.name,
+        price: prod.normalized_price,
+        buy_url: prod.buy_url,
+      });
+    }
+
+    setHotspots(built);
+  }, [phase, design, selections]);
+
+  // On-demand render — only generate when the user explicitly requests it.
+  // This avoids paying ~$0.10-0.30 per render for users who bail before viewing.
+  const triggerRender = useCallback(() => {
+    if (!runId || renderUrl || renderLoading) return;
+    setRenderLoading(true);
+
+    const selectionIds: Record<string, string[]> = {};
+    for (const [slotId, products] of Object.entries(selections)) {
+      selectionIds[slotId] = products.map((p) => p.product_id);
+    }
+
+    generateRender(runId, selectionIds)
+      .then((renderResp) => {
+        setRenderUrl(`${API_BASE}${renderResp.render_url}`);
+      })
+      .catch((err) => {
+        console.error("Render generation failed:", err);
+        setRenderFailed(true);
+      })
+      .finally(() => {
+        setRenderLoading(false);
+      });
+  }, [runId, renderUrl, renderLoading, selections]);
 
   // --- Error state ---
   if (error) {
@@ -391,6 +448,15 @@ export default function ResultPage() {
               activeSlotIds={activeSlotIds}
             />
           </div>
+
+          <p style={{
+            fontSize: "0.75rem",
+            color: "#A8A29E",
+            marginTop: 12,
+            letterSpacing: "0.01em",
+          }}>
+            Just a fun illustration &middot; your AI room renders at the end
+          </p>
 
           {/* Progress dots */}
           <div style={{
@@ -646,11 +712,34 @@ export default function ResultPage() {
         </div>
       )}
 
-      {validationError && (
-        <div className="warning-banner">{validationError}</div>
+      {/* AI Room Render hero — on-demand, not auto-generated */}
+      {phase === "complete" && !renderUrl && !renderLoading && !renderFailed && (
+        <button
+          type="button"
+          className="render-cta-btn"
+          onClick={triggerRender}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+          See your room
+        </button>
+      )}
+
+      {renderLoading && !renderUrl && !renderFailed && (
+        <RenderLoadingScreen />
+      )}
+
+      {renderUrl && (
+        <InteractiveRoomRender renderUrl={renderUrl} hotspots={hotspots} />
       )}
 
       <BudgetMeter total={totalSpent} target={design.target_budget} />
+
+      {/* Export all to Amazon cart */}
+      <ExportToCartButton selections={selections} />
 
       {/* Grouped product grid */}
       {groups.map((group) => {
@@ -689,10 +778,6 @@ export default function ResultPage() {
                         setSelections((prev) => {
                           const current = prev[slot.slot_id] ?? [];
                           if (current.length >= slot.max_quantity) return prev;
-                          const spent = current.reduce(
-                            (s, p) => s + p.normalized_price, 0,
-                          );
-                          if (spent + product.normalized_price > slot.allocated_budget) return prev;
                           return {
                             ...prev,
                             [slot.slot_id]: [...current, product],
@@ -755,7 +840,7 @@ function MultiSelectGallery({
   const atCap = selected.length >= slot.max_quantity;
   const selectedIds = new Set(selected.map((p) => p.product_id));
   const addable = allChoices.filter(
-    (p) => !selectedIds.has(p.product_id) && p.normalized_price <= remaining,
+    (p) => !selectedIds.has(p.product_id),
   );
 
   return (
@@ -855,6 +940,89 @@ function GalleryItem({
       >
         Buy
       </a>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Phased loading screen for render generation
+// ---------------------------------------------------------------------------
+
+const RENDER_PHASES = [
+  { title: "Designing your space...", sub: "Analyzing your style selections", delay: 0 },
+  { title: "Placing your furniture...", sub: "Arranging each piece in the room", delay: 5000 },
+  { title: "Setting the mood...", sub: "Matching lighting and textures to your aesthetic", delay: 12000 },
+  { title: "Adding the finishing touches...", sub: "Wall art, plants, and decor details", delay: 22000 },
+  { title: "Almost there...", sub: "Polishing your photorealistic room render", delay: 35000 },
+];
+
+function RenderLoadingScreen() {
+  const [phaseIdx, setPhaseIdx] = useState(0);
+
+  useEffect(() => {
+    const timers = RENDER_PHASES.slice(1).map((p, i) =>
+      setTimeout(() => setPhaseIdx(i + 1), p.delay),
+    );
+    return () => timers.forEach(clearTimeout);
+  }, []);
+
+  const phase = RENDER_PHASES[phaseIdx];
+
+  return (
+    <div className="render-loading">
+      <h2 className="render-loading-title" key={phaseIdx} style={{
+        animation: "renderPhaseFadeIn 0.5s ease both",
+      }}>
+        {phase.title}
+      </h2>
+      <p className="render-loading-subtitle" key={`sub-${phaseIdx}`} style={{
+        animation: "renderPhaseFadeIn 0.5s ease 0.15s both",
+      }}>
+        {phase.sub}
+      </p>
+      <div className="render-loading-bar">
+        <div className="render-loading-bar-fill" />
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Export all to Amazon cart
+// ---------------------------------------------------------------------------
+
+function ExportToCartButton({
+  selections,
+}: {
+  selections: Record<string, ProductResult[]>;
+}) {
+  const allProducts = Object.values(selections).flat();
+  if (allProducts.length === 0) return null;
+
+  const handleExport = () => {
+    // Amazon add-to-cart URL: each item gets ASIN.{index}.1 + Quantity.{index}.1
+    const params = new URLSearchParams();
+    allProducts.forEach((product, i) => {
+      const idx = i + 1;
+      params.set(`ASIN.${idx}`, product.product_id);
+      params.set(`Quantity.${idx}`, "1");
+    });
+    params.set("tag", "roomkitai-20");
+    const url = `https://www.amazon.com/gp/aws/cart/add.html?${params.toString()}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const total = allProducts.reduce((s, p) => s + p.normalized_price, 0);
+
+  return (
+    <div className="export-cart-wrapper">
+      <button
+        type="button"
+        className="export-cart-btn"
+        onClick={handleExport}
+      >
+        Add all {allProducts.length} items to Amazon cart — ${total.toFixed(0)}
+      </button>
     </div>
   );
 }

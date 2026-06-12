@@ -43,7 +43,7 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
     "curtains": 6.99,
     "dresser": 19.96,
     "floor_lamp": 19.99,
-    "mattress": 29.99,
+    "mattress": 80.00,
     "mirror": 14.80,
     "nightstand": 11.99,
     "ottoman": 34.99,

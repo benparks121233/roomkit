@@ -6,8 +6,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+from pathlib import Path  # noqa: E402
+
 from fastapi import FastAPI  # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
+from fastapi.staticfiles import StaticFiles  # noqa: E402
 
 from app.api.routes import router  # noqa: E402
 
@@ -24,7 +27,18 @@ app.add_middleware(
 
 app.include_router(router)
 
+# Serve rendered room images as static files.
+_renders_dir = Path(__file__).parent.parent / "data" / "renders"
+_renders_dir.mkdir(parents=True, exist_ok=True)
+app.mount("/renders", StaticFiles(directory=str(_renders_dir)), name="renders")
+
 
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
+
+
+@app.get("/health/supabase")
+def supabase_health() -> dict:
+    from services.supabase_client import health_check
+    return health_check()

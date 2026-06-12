@@ -44,16 +44,38 @@ _LLM_MAX_TOKENS = 512
 def interpret_style(room_request: RoomRequest) -> StyleProfile:
     """Map a RoomRequest to a validated StyleProfile.
 
-    Calls the LLM with the rendered interpret_style.md template.  The
-    response must be a JSON object matching StyleProfile.  If it is not —
-    or if confidence is below threshold, or the named profile is unknown —
-    a warm_minimalist fallback is returned with fallback=True.
+    When the request includes a core_aesthetic (from the quiz's direct
+    selection), that profile id is used DETERMINISTICALLY — the LLM is
+    only called to refine keywords/mood to the user's description, but
+    the style_name is locked to the user's pick.  This prevents the LLM
+    from reinterpreting "quiet luxury + heritage mood" as "dark_academia."
+
+    Falls back to full LLM interpretation only when core_aesthetic is absent.
 
     This function never raises; callers always receive a StyleProfile.
     """
     profiles_config = load_style_profiles()
     valid_ids = {p.id for p in profiles_config.profiles}
+    profile_map = {p.id: p for p in profiles_config.profiles}
 
+    # --- Deterministic path: core_aesthetic from quiz ---
+    if room_request.core_aesthetic and room_request.core_aesthetic in valid_ids:
+        locked_id = room_request.core_aesthetic
+        config_profile = profile_map[locked_id]
+
+        # Use the profile's canonical keywords/mood/palette, enhanced with
+        # the user's style_description for richer context — but style_name
+        # is NEVER overridden.
+        return StyleProfile(
+            style_name=locked_id,
+            keywords=config_profile.keywords,
+            color_palette=config_profile.color_palette,
+            mood=config_profile.mood,
+            confidence=1.0,
+            fallback=False,
+        )
+
+    # --- LLM interpretation path (no core_aesthetic) ---
     system_prompt, user_message = _build_prompts(room_request, profiles_config)
     raw = _call_llm(system_prompt, user_message)
 

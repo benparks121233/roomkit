@@ -41,6 +41,11 @@ class RoomRequest(BaseModel):
     # Style — free-form text from Q&A; interpreted by style_service in Stage 4.
     style_description: Optional[str] = None
 
+    # Direct core aesthetic from the quiz (e.g. "quiet_luxury", "dark_academia").
+    # When set, style_service uses this as the deterministic style_name instead
+    # of letting the LLM reinterpret from style_description.
+    core_aesthetic: Optional[str] = None
+
     # Structured Q&A answers keyed by question id.  Empty dict if no Q&A.
     qa_answers: dict[str, str] = {}
 

@@ -1,0 +1,82 @@
+[
+  {
+    "slot_id": "bed_frame",
+    "x": 0.5,
+    "y": 0.5,
+    "w": 0.6,
+    "h": 0.3,
+    "product_name": "Jocisland Queen Size Platform Bed Frame, 6.3\" Thick Upholstered Curved Wingback Headboard and Footboard with Deep Button Tufted, Easy Assembly, No Box Spring Needed, Khaki Linen",
+    "price": 293.29,
+    "buy_url": "https://www.amazon.com/dp/B0GDWKCJK6?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "nightstand",
+    "x": 0.25,
+    "y": 0.5,
+    "w": 0.2,
+    "h": 0.3,
+    "product_name": "LEYAOYAO Rattan Night Stand with Charging Station,23.6\" Curved Profile Nightstand with 2 Drawers,Natural Wood Bedside Table with Storage Shelf & Solid Handle,Boho End Tables for Bedroom,Living Room",
+    "price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0H3PV6FY7?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "floor_lamp",
+    "x": 0.75,
+    "y": 0.5,
+    "w": 0.1,
+    "h": 0.6,
+    "product_name": "Buruis 60.6\" Solid Wood Tripod Floor Lamp with 15.7\" Large Linen Shade, Mid-Century Walnut Finish Standing Lamp for Living Room, Bedroom, Office, Corner, UL Listed, Bulb Not Included, Cream",
+    "price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVHF39VL?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "dresser",
+    "x": 0.75,
+    "y": 0.25,
+    "w": 0.25,
+    "h": 0.25,
+    "product_name": "HOUROM 47\" Wide 6-Drawer Dresser,Mid-Century Modern Chest with Solid Wood Legs, Concealed Handle,Large Wood Storage Organizer, Bedroom Storage,Walnut",
+    "price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVLKN4FN?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "rug",
+    "x": 0.5,
+    "y": 0.75,
+    "w": 0.4,
+    "h": 0.1,
+    "product_name": "Hand-Tufted Wool Rectangle Area Rug \u2013 Soft Premium Wool Carpet for Living Room, Bedroom & Home D\u00e9cor \u2013 5X8 ft| Milano Green \u2013 Durable, Non-Slip Backing, Handcrafted Rug",
+    "price": 295.0,
+    "buy_url": "https://www.amazon.com/dp/B0G2SF7HM4?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "curtains",
+    "x": 0.1,
+    "y": 0.4,
+    "w": 0.1,
+    "h": 0.6,
+    "product_name": "Sage Green Pinch Pleated Linen Curtains 90 Inches Long for Living Room Bedroom with Rings Hooks Clips Back Tab Semi Sheer Curtains Light Filtering Boho Farmhouse Drapes Light Green",
+    "price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBGB7G3H?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "wall_art",
+    "x": 0.5,
+    "y": 0.35,
+    "w": 0.35,
+    "h": 0.15,
+    "product_name": "Moody Botanical Bookshelf Canvas Wall Art, Dark Academia Library Print, Vintage Plant and Book Artwork for Reading Room Office Bedroom Decor, Ready to Hang (Framed,16\u00d724 inch)",
+    "price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXBLMVCY?tag=roomkitai-20"
+  },
+  {
+    "slot_id": "mirror",
+    "x": 0.85,
+    "y": 0.6,
+    "w": 0.1,
+    "h": 0.1,
+    "product_name": "Sintuff 24 Inch Boho Scalloped Jute Wall Mirror Decorative Flower Round Wavy Mirror with Frame Rustic Farmhouse Rattan Wicker Natural Wall Decor for Bathroom Bedroom Office",
+    "price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWF5C8PS?tag=roomkitai-20"
+  }
+]

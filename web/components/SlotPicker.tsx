@@ -108,10 +108,8 @@ export default function SlotPicker({
         {choices.map((product) => {
           const isSelected = selectedSet.has(product.product_id);
           const isExpanded = !isMulti && expandedId === product.product_id;
-          // Disable if: not selected AND (at cap OR adding would exceed pool)
-          const wouldExceedPool = !isSelected && product.normalized_price > remaining;
-          // Single-select: never disable. Multi-select: disable if at cap or exceeds pool
-          const disabled = isMulti && !isSelected && (atCap || wouldExceedPool);
+          // Disable if: not selected AND at cap. Pool is informational, not blocking.
+          const disabled = isMulti && !isSelected && atCap;
 
           return (
             <PickerCard

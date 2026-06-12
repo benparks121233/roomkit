@@ -501,7 +501,7 @@ class TestValidateSelections:
         slots = {s["slot_id"]: s for s in resp.json()["slots"]}
         assert slots["wall_art"]["max_quantity"] == 6
         assert slots["plants"]["max_quantity"] == 3
-        assert slots["throw_blanket"]["max_quantity"] == 2
+        assert slots["throw_blanket"]["max_quantity"] == 1
         assert slots["bed_frame"]["max_quantity"] == 1
 
     def test_validate_unknown_run_id_returns_404(self):

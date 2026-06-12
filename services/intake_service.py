@@ -71,6 +71,7 @@ def parse_intake(raw_input: dict) -> RoomRequest:
     photo_url: str | None = raw_input.get("photo_url") or None
     bed_size: str | None = raw_input.get("bed_size") or None
     style_description: str | None = raw_input.get("style_description") or None
+    core_aesthetic: str | None = raw_input.get("core_aesthetic") or None
     qa_answers: dict[str, str] = dict(raw_input.get("qa_answers") or {})
 
     # --- Density (minimal / balanced / layered) ---------------------------
@@ -113,6 +114,7 @@ def parse_intake(raw_input: dict) -> RoomRequest:
         budget=budget,
         bed_size=bed_size,
         style_description=style_description,
+        core_aesthetic=core_aesthetic,
         qa_answers=qa_answers,
         density=density,
         interests=interests,

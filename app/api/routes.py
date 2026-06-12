@@ -15,6 +15,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
 
@@ -316,6 +317,131 @@ async def validate_selections(
             for sid, ok, slot_total, reason in per_slot
         ],
     )
+
+
+# ---------------------------------------------------------------------------
+# POST /design/{run_id}/render — generate AI room render
+# ---------------------------------------------------------------------------
+
+class RenderRequest(BaseModel):
+    """Body for POST /design/{run_id}/render."""
+    selections: dict[str, list[str]] = {}  # slot_id → [product_id, ...]
+
+
+@router.post("/design/{run_id}/render")
+async def generate_render(run_id: str, body: RenderRequest | None = None) -> dict:
+    """Generate a photorealistic AI room render from the user's selected products.
+
+    The request body contains the user's actual selections (slot_id → product_ids)
+    so the render uses exactly what the user picked, not server defaults.
+    """
+    from services.render_service import render_room, render_exists, get_render_path
+
+    if run_id not in _designs:
+        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+
+    # Return cached render if it exists.
+    if render_exists(run_id):
+        return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": True}
+
+    design = _designs[run_id]
+    user_selections = body.selections if body else {}
+
+    # Build product lookup: all products (primary + alternatives) by (slot_id, product_id).
+    product_lookup: dict[tuple[str, str], ProductResult] = {}
+    for slot in design.slots:
+        if slot.product:
+            product_lookup[(slot.slot_id, slot.product.product_id)] = slot.product
+        for alt in slot.alternatives:
+            product_lookup[(slot.slot_id, alt.product_id)] = alt
+
+    # Resolve the user's selections to actual product data.
+    # For multi-select slots (wall_art, plants, etc.), include ALL selected
+    # products so the render shows every item the user picked.
+    products: dict[str, list[dict]] = {}
+    for slot in design.slots:
+        slot_id = slot.slot_id
+        selected_ids = user_selections.get(slot_id, [])
+
+        if selected_ids:
+            items = []
+            for pid in selected_ids:
+                prod = product_lookup.get((slot_id, pid))
+                if prod:
+                    items.append({
+                        "name": prod.name,
+                        "image_url": prod.image_url,
+                    })
+            if items:
+                products[slot_id] = items
+                continue
+
+        # Fallback to rank-1 default
+        if slot.product:
+            products[slot_id] = [{
+                "name": slot.product.name,
+                "image_url": slot.product.image_url,
+            }]
+
+    render_path = render_room(
+        run_id=run_id,
+        room_type=design.room_type,
+        style_name=design.style.style_name,
+        mood=design.style.mood,
+        keywords=design.style.keywords,
+        products=products,
+    )
+
+    if render_path is None:
+        raise HTTPException(status_code=500, detail="Room render generation failed")
+
+    return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": False}
+
+
+# ---------------------------------------------------------------------------
+# POST /design/{run_id}/hotspots — detect product locations in the render
+# ---------------------------------------------------------------------------
+
+@router.post("/design/{run_id}/hotspots")
+async def detect_hotspots(run_id: str) -> dict:
+    """Use a vision model to detect product bounding boxes in the room render.
+
+    Returns approximate hotspot coordinates (0-1 fractions) for each
+    detected hero product, mapped to their buy links and prices.
+    Cached per run_id alongside the render.
+    """
+    from services.render_service import render_exists, get_render_path
+    from services.hotspot_service import detect_product_hotspots, hotspots_exist, load_hotspots
+
+    if run_id not in _designs:
+        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+
+    if not render_exists(run_id):
+        raise HTTPException(status_code=400, detail="Render not yet generated")
+
+    # Return cached hotspots.
+    if hotspots_exist(run_id):
+        return {"run_id": run_id, "hotspots": load_hotspots(run_id), "cached": True}
+
+    design = _designs[run_id]
+
+    # Build product info for the hotspot detector.
+    products: dict[str, dict] = {}
+    for slot in design.slots:
+        if slot.product:
+            products[slot.slot_id] = {
+                "name": slot.product.name,
+                "price": slot.product.normalized_price,
+                "buy_url": slot.product.buy_url,
+            }
+
+    render_path = str(get_render_path(run_id))
+    hotspots = detect_product_hotspots(run_id, render_path, products, room_type=design.room_type)
+
+    if hotspots is None:
+        raise HTTPException(status_code=500, detail="Hotspot detection failed")
+
+    return {"run_id": run_id, "hotspots": hotspots, "cached": False}
 
 
 # ---------------------------------------------------------------------------

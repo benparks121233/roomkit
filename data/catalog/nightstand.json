@@ -479,7 +479,7 @@
   {
     "product_id": "B0F32Q95SP",
     "name": "Mid Century Modern Nightstand, Small End Tables Living Room, Accent Bedside Table with Drawer for Bedroom and Small Space, Rustic Brown",
-    "normalized_price": 35.99,
+    "normalized_price": 35.98,
     "buy_url": "https://www.amazon.com/dp/B0F32Q95SP",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61P88e3Ss4L._AC_UL320_.jpg",
@@ -3417,6 +3417,1743 @@
     "buy_url": "https://www.amazon.com/dp/B0FPWR1MMP",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71rBjHxOF8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2WYWPTS",
+    "name": "Acrylic End Table Record Player Table with Storage Shelf Clear Side Table Nightstand, Orange | Storage Shelf",
+    "normalized_price": 86.99,
+    "buy_url": "https://www.amazon.com/dp/B0D2WYWPTS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71pGiic1CWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BX9Q9PMZ",
+    "name": "APEXCHASER Cute Nightstand,Metal Side Table,3-Tier Modern End Table with Storage, Small Coffee Tables for Small Spaces,Coffee Table for Living Room, Bedroom,Dorm,Yellow",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BX9Q9PMZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/711jEDhDD-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DMF9LV5B",
+    "name": "Nightstand Bedside Table with Storage Space, Multifunctional Colorful Plastic End Table Small Side Table for Bedroom, Dorm and Small Spaces, Easy Assembly(11.8\" D x 15\" W x 15.7\" H, Orange)",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0DMF9LV5B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61hxsVw4brL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGXYQXFG",
+    "name": "3 Tier Square Nightstand with Drawers, Multicolor Square Side Table Small Plastic Storage End Table for Bedroom, Living Room, Bathroom",
+    "normalized_price": 87.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGXYQXFG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51gWCEMHbtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRF2TL69",
+    "name": "FOTOSOK Nightstands Set of 2 with Charging Station, 3 Drawer Nightstand with Gold Handles, Green Nightstand for Bedroom, Modern Design End Side Table for Home, Office",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRF2TL69",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/714FMTjPIBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVFNP2B8",
+    "name": "DHH Mid Century Modern Nightstand with Charging Station, Fluted Accent Side Table with Sliding Door & Adjustable Shelf, End Table for Small Space, Living Room, Bedroom,Sofa Couch(1, Yellow)",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVFNP2B8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ayQygxhbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCM6NXMX",
+    "name": "Nightstand,Modern Bedside Table with Gold Frame,Night Stand,Bedside Furniture, Modern Side Table with Drawer and Shelf for Bedroom,Living Room (Green)",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCM6NXMX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BCU6q9a2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D7LZMDMS",
+    "name": "Yoobure Night Stand with Fabric Drawer, Modern Nightstand, Bedside Tables, Mid Century Nightstands with Open Storage Shelf, Wood Bedside Table, Small Night Stands for Bedrooms, 2-Tier Night Table",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0D7LZMDMS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61aJ8fx86GL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHVFRBM4",
+    "name": "SYKIARIOL Kids Nightstand,Girls Bedside Table,Night Side Table,Kids Night Stand,End Tables Bedroom,Purple Cute Nightstand with Storage Drawer for Girls",
+    "normalized_price": 44.09,
+    "buy_url": "https://www.amazon.com/dp/B0DHVFRBM4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71AUxUO0bML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZH4XQVL",
+    "name": "WLIVE Nightstand with Charging Station, 31.9\" H Nightstand with 3 Fabric Drawers, LED Bedside Table with USB Ports and Outlets, End Table for Dorm, Bedroom, Entryway, Floral Painted",
+    "normalized_price": 53.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZH4XQVL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71k-xuZ8h3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FMDCSM1M",
+    "name": "Fluted Nightstand with Charging Station, Modern Wood Nightstand with Drawer Storage, Night Stand Bedside Table with Type-C and USB Ports, Night Stand for Bedroom, Green",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0FMDCSM1M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81LpEiQZU3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09XQPVFD1",
+    "name": "TeoKJ 2 Tier Green Side Table, Folding Round Metal End Table Small Nightstand with Two Removable Tray for Bedroom Living Room Bedside Small Spaces Dark Green",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B09XQPVFD1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61RGs3RrGuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYDYT8RR",
+    "name": "RoyalCraft Fluted Nightstand with 2 Drawers, Colorful Nightstand for Bedroom, Modern Wooden End Table with Storage for Small Spaces, Tall Side Sofa Table for Couch, Home Office, Milky Green",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0DYDYT8RR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71e2ZTmweoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D8SKVHH6",
+    "name": "Bonnlo Nightstand Set of 2, Nightstands with 2 Drawers, Bed Side Table/Night Stand, Pink Nightstand, Small Nightstand for Bedroom, College Dorm, Kids\u2019 Room, Living Room, Wood, 16W x 12D x 24H",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B0D8SKVHH6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Xgud3zhjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1VKSTH8",
+    "name": "Furnulem Retro Night Stand with 3 Drawers and 2-Tier Shelf, Small Nightstand Side Table, Vintage Storage Dresser for Bedroom, Fabric Drawer Organizer for Closet, Beside Furniture",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1VKSTH8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Ad-u1ICML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCG9VB5W",
+    "name": "JOONEE Nightstand,Modern Bedside Table with Storage Drawer and Open Wood Shelf, for Living Room, Bedroom and Small Spaces, Accent Night Stand with Solid Wood Legs, Easy Assembly,Classic Pink",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCG9VB5W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/611e-HROyRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCF8DH1T",
+    "name": "Huuger Nightstand with Charging Station, Side Table with Fabric Drawers, End Table with Open Shelf, Bedside Table with USB Ports and Outlets, Night Stand for Bedroom, Pink",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCF8DH1T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71x2vwc3PHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6CK86D5",
+    "name": "Fluted Nightstand, Farmhouse Night Stand with 3 Drawers, Mid Century Modern Side Accent Table,Bedside End Table for Bedroom, Living Room, Pale Green",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6CK86D5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61CUUH1ZsVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP1RDTTT",
+    "name": "Aenuert Night Stand, Purple Nightstand, Modern End Table with Open Storage, 2-Tier Wooden Bedside Table for Small Space, Living Room, Bedroom",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP1RDTTT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71jgdhQky5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2QLJ9HZ",
+    "name": "Fluted Nightstand with Charging Station Set of 2, 21\" Wide Modern Bedside Table with 2 Drawers & Open Shelf, Wood End Table with Storage & Metal Handle for Bedroom, Small Spaces, Green",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2QLJ9HZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/810YEw3KGTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFDSY3DD",
+    "name": "Small Night Stand Set of 2, Mid Century Modern Nightstands with 2 Drawers and Solid Wood Legs, 2 Drawer Dresser Curved Profile Design End Table Side Table for Small Space, Dorm, Bedroom(Green)",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0GFDSY3DD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/817bFsJSlZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BRFYKZ1M",
+    "name": "Clear Acrylic End Table 2-Tier Bedside nightstand for Living Room Bedroom Home Decor (Orange)",
+    "normalized_price": 86.96,
+    "buy_url": "https://www.amazon.com/dp/B0BRFYKZ1M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61psmk96TyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5PZFXVM",
+    "name": "Aenuert Nightstand Modern Bedside Table with 2 Storage Drawer, Small Night Stand, Wooden Sofa Side Table for Bedroom,Study Room and Small Spaces (Pink)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0F5PZFXVM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81qKtawkWLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKGY1T5G",
+    "name": "Stero Nightstand, Kids Dresser with 2 Drawers, Steel Frame Bedside Furniture, Wood Top Fabric Night Stand, Colorful End Table for Home, Bedroom, Office Tie-dye Purple",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKGY1T5G",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Uz1Z0DPQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGKNPNHV",
+    "name": "SYKIARIOL Kids Nightstand for Girls, Metal Bedside Table with 4 Hooks & Hanging Basket, 3-Tier Storage Shelf, Toddler Night Stand for Bedroom, Purple",
+    "normalized_price": 42.29,
+    "buy_url": "https://www.amazon.com/dp/B0DGKNPNHV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81jgwNMMn3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZLJQ3D1",
+    "name": "Small Modern Oval Side Table with Storage,2-Tier Side Tables Living Room,Sturdy Nightstand for Small Space - Living Room, Bedroom, Bathroom, Nursery,\uff081 PC,Orange\uff09",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZLJQ3D1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91coDOEeLVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB3BDV34",
+    "name": "Cubehom Modern Nightstand End Side Table with Large Storage Space Bedside Table for Bedroom Living Room and Playroom Yellow & Blue",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB3BDV34",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+EfuPTd4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DF7BJF7J",
+    "name": "JOONEE Pink Nightstand with Charging Station and LED Lights,Modern Bedside Table with 2 Storage Drawer and Open Wood Shelf, for Bedroom and Small Spaces,Night Stand with Solid Wood Legs,Pink",
+    "normalized_price": 69.34,
+    "buy_url": "https://www.amazon.com/dp/B0DF7BJF7J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81+j+wfqqrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D45F154B",
+    "name": "ALBAD Compact Metal Nightstand with Lockable Cabinet and Open Shelf, Modern Bedside Table, Versatile Side Table for Bedroom, Living Room, or Office (Yellow, 26\" H-Lockable Door)",
+    "normalized_price": 58.88,
+    "buy_url": "https://www.amazon.com/dp/B0D45F154B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51A5s+NO82L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZX7VGDL",
+    "name": "HLR Modern Nightstand Set of 2, Fluted Bed Side Table with 2 Drawers Storage, Wood End Table with Gold Metal Handle, Blue Night Stands for Bedroom",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZX7VGDL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Wh-EEvsVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHGQ8F6K",
+    "name": "Nightstand, Boho Night Stand with 1 Drawers, Modern Side Accent Table with Open Shelf, Wooden Top Bedside End Table for Bedroom, Living Room, Pink",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHGQ8F6K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61hRPzAEvBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9KYL5L7",
+    "name": "Winsley 2-Drawer Vintage Green Painted Wood Storage Nightstand",
+    "normalized_price": 159.76,
+    "buy_url": "https://www.amazon.com/dp/B0D9KYL5L7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51jxErpC8xL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CBJ4MKQP",
+    "name": "Tohomeor Small Dresser for Bedroom with Retro Flower Narrow Drawers Slim Chest of Drawers Skinny Nightstand Sofa End Table for Living Room Entryway Closet Storage (Multi, 3 Drawers)",
+    "normalized_price": 47.89,
+    "buy_url": "https://www.amazon.com/dp/B0CBJ4MKQP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71lZ3KZHuzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QK2GD6W",
+    "name": "Glory Furniture Hammond 3 Drawer Nightstand in Yellow",
+    "normalized_price": 170.72,
+    "buy_url": "https://www.amazon.com/dp/B07QK2GD6W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41t-qDlXdAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D941CTN5",
+    "name": "May in Color Large Green Fluted 3 Drawer Dresser Set of 2, Chest of Drawers with Ball Bearing Slide Modern 30 inch Tall Wood Nightstand with Spacious Storage for Bedroom Hallway Living Room Entryway",
+    "normalized_price": 237.98,
+    "buy_url": "https://www.amazon.com/dp/B0D941CTN5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ajuvKVAEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BTHDG9J8",
+    "name": "VASAGLE LILEA Collection - Small Round Side End Table, Modern Nightstand with Fabric Basket, Jelly Pink and Cream White ULET223R61",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BTHDG9J8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71uKGbp8K0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSD3N215",
+    "name": "Masupu Night Stand,Mid-Century Modern Bedside Table with Storage Drawer and Open Wood Shelf,Small Gold Frame Side Table for Bedroom,Living Room, Blue",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0DSD3N215",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/719njNdUbCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4LJM5R9",
+    "name": "RoyalCraft Farmhouse Tall Nightstand Set of 2, Painted Wooden Bedside End Table with 3 Storage Drawers, Rustic Side Table for Bedroom, Living Room, Green",
+    "normalized_price": 179.99,
+    "buy_url": "https://www.amazon.com/dp/B0G4LJM5R9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+V1IeKQ-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BX9SX1MM",
+    "name": "APEXCHASER Cute Nightstand,Metal Side Table,3-Tier Modern End Table with Storage Shelf, Unique Side Tables, Cute Coffee Table for Living Room, Small Table for Bedroom,Navy Blue",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BX9SX1MM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81FU7OlPYmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1FRDFFX",
+    "name": "Dawnwake Mushroom Lamp Table Lamp for Bedroom,Desk Bedside Small Lamps for Living Room Night Stands,Mushroom Decor Cute Mini Modern Mid Century Lamps,Unique Aesthetic Home Living Room Decor(Orange)",
+    "normalized_price": 39.98,
+    "buy_url": "https://www.amazon.com/dp/B0D1FRDFFX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+8fRAbEkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6SPXFVL",
+    "name": "3 Tier Round Nightstand with Drawer, Ginger Yellow Bedside Table with Storage Cabinet, Modern Plastic End Table for Bedroom, Living Room, Small Spaces,No Assembly Required",
+    "normalized_price": 74.98,
+    "buy_url": "https://www.amazon.com/dp/B0G6SPXFVL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61RlHcJ7q5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F99S9MDT",
+    "name": "Sleek Hourglass Side Table - Stylish Modern Design Perfect for Living Rooms, Cafes, Dining Areas, Bedrooms, and Outdoors - Chic Decorative Accent (1, Hermes Orange)",
+    "normalized_price": 68.39,
+    "buy_url": "https://www.amazon.com/dp/B0F99S9MDT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71br3OVUlpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B17Z4LF9",
+    "name": "MIOCASA Metal Nightstand Modern End Side Table Steel Bedside Storage Cabinet with Shelf Easy Assembly for Living Room Bedroom",
+    "normalized_price": 55.49,
+    "buy_url": "https://www.amazon.com/dp/B0B17Z4LF9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51HTl5DtjTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F54JXSSC",
+    "name": "Small Modern Oval Side Table with Storage,2-Tier Side Tables Living Room,Sturdy Nightstand for Small Space - Living Room, Bedroom, Bathroom, Nursery (1PC,Green)",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0F54JXSSC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81OikawkTCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00GOVGZBC",
+    "name": "Solid Wood Accent End Table - Hand Carved Vintage Boho Folding Side Table - Small Spaces Entryway Farmhouse Living Room Bedside - No Tools Assembly -18x18 Round - Jaipur Antique Brown -Cotton Craft",
+    "normalized_price": 72.99,
+    "buy_url": "https://www.amazon.com/dp/B00GOVGZBC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81NJ6mFCtqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DMF9X4S5",
+    "name": "Nightstand Bedside with Storage Space, Multifunctional Colorful Plastic End Table Small Side Table for Bedroom, Dorm and Small Spaces, Easy Assembly(11.8\" D x 15\" W x 15.7\" H, Green)",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0DMF9X4S5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61cA6+uvNzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFSW5S49",
+    "name": "AVZEAR Small Night Stand with 2 Drawers, Mid Century Modern Nightstands with Solid Wood Legs, 2 Drawer Dresser Curved Profile Design End Table Side Table for Small Space, Dorm, Bedroom(Green)",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0GFSW5S49",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BDMJbhFuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJDQQ98J",
+    "name": "SICOTAS Blue Night Stand Set 2, Fluted Glossy Nightstand with 2 Drawers, Wide Modern Storage Bedside Table for Bedroom, End Side Table with Golden Metal Legs and Handles (Blue, 2 Pieces)",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJDQQ98J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7165zUw6LcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK8V9WD2",
+    "name": "YAUKOMEL Fluted Night Stand with Opening Storage,Mid Century Bedside Table with Drawer,Wood Nightstand with Legs,End Table Side Table for Living Room,Bedroom,Caramel Oak 11.8\"Dx15.7Wx 25.2\"H CTG56BR",
+    "normalized_price": 44.96,
+    "buy_url": "https://www.amazon.com/dp/B0DK8V9WD2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8188MnDHAoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9P3GVTV",
+    "name": "AVZEAR Small Round Side Table Fluted Night Stand Set of 2, Modern Boho End Table with Storage, Circle Bedside Tables Wood Nightstands for Small Spaces, Living Room, Bedroom (Nature)",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9P3GVTV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-859Ao8dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DY7N2LRB",
+    "name": "Akxomel Fluted Nightstand, Wooden Night Stand with Charging Station and LED Light, Modern Mid Century End Table with Drawer, 15\" D x 15.7\" W x 22.6\" H, for Bedroom, Natural Oak",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DY7N2LRB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81hcfLTKYVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV4SYQHB",
+    "name": "VASAGLE LILEA Collection - Side Table with Charging Station, Round End Table with Fabric Basket, Nightstand with USB Ports, for Living Room, Bedroom, Modern, Forest Green and Cream White ULET228C04",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CV4SYQHB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71orGT5cJIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CR6KRRQB",
+    "name": "VASAGLE LILEA Collection - Small Round Side End Table, Modern Nightstand with Fabric Basket, Forest Green and Cream White ULET223C80",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CR6KRRQB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71iXEBctgaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCL1CR89",
+    "name": "Masupu Nightstand with Charging Station,Mid-Century Modern Bedside Table with Storage Drawer and Open Wood Shelf,Small Gold Frame Side Table for Bedroom,Living Room (Green Fluted)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0GCL1CR89",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71uRLO70FnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJZGWKJ9",
+    "name": "win2win Fluted Nightstand with Charging Station, Mid Century Modern Nightstand with Wave Design, Modern Bedside Table with Drawer Storage, Minimalist End Table for Bedroom Living Room, Walnut",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJZGWKJ9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81XaEnB+pjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DMD45QTV",
+    "name": "ADORNEVE Nightstand with Charging Station,Pink Night Stand with Hutch,Bedside Table with Drawers,Bed Side Table with Storage",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0DMD45QTV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71GdhuMdyML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGQLSCNY",
+    "name": "HULALA HOME 2 Drawer End Table with Pull-Out Shelf, Mid-Century Modern End Table with Wood Legs, Wood Side Table with Charging Station(Acorn)",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGQLSCNY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61mOl8FldML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C85PKSLD",
+    "name": "Tohomeor Nightstand with 2 Fabric Drawers Retro Flower End Table Side Table with Open Storage Shelf for Bedroom Living Room Sofa Beside Vintage",
+    "normalized_price": 47.39,
+    "buy_url": "https://www.amazon.com/dp/B0C85PKSLD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81fF-6A50uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJSV675B",
+    "name": "Nightstand, Fluted Night Stand with Charging Station, Small Bedside Table with Drawer&Open Storage, Solid Wood Legs, End Table for Bedroom, Walnut",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJSV675B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91TxRw9yA4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2XCNWFM",
+    "name": "3-Tier Round Bedside Table, Narrow Storage Cabinet, Small Stylish Storage Cabinet, no Installation Required, Suitable for Living Room and Bedroom, Small Space",
+    "normalized_price": 106.59,
+    "buy_url": "https://www.amazon.com/dp/B0D2XCNWFM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61YTc0ay9nL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQKLKN6W",
+    "name": "Nightstand,Morden Bedside Table with Gold Frame,Small Blue Night Stand,End Table,Bedside Furniture,Side Table with Drawer and Shelf for Bedroom,Living Room (1Drawer, Blue)",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQKLKN6W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71W-fBgYxvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FG293GK9",
+    "name": "MDF Frame Side Table with Brown Tempered Glass Top, Mortise and Tenon Joint Design, No Screw Easy Assembly, Sturdy End Table for Living Room, Bedroom (Seaweed-Brown)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FG293GK9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/817nRUrSs8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9WY1K6Z",
+    "name": "FUQARHY Rattan Nightstand Set of 2, Boho Side Table with Drawer, Mid Century Modern, End Table with Wood Legs for Bedroom, Dorm and Small Spaces",
+    "normalized_price": 39.98,
+    "buy_url": "https://www.amazon.com/dp/B0F9WY1K6Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+bWzl6jRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS95HWXR",
+    "name": "VASAGLE ELLAN Collection - Boho Nightstands with Rattan-Look Drawer, Set of 2 Accent Side End Tables with Open Compartment, Rounded Corners, for Bedroom Bedside, Oak Beige ULET818YC01",
+    "normalized_price": 115.99,
+    "buy_url": "https://www.amazon.com/dp/B0GS95HWXR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81aUEiPEfxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CDBPD4Q5",
+    "name": "Lerliuo Rattan Nightstand with Charging Station, Boho Side Table with Drawer Open Shelf, Cane Accent Bedside End Table for Bedroom, Dorm and Small Spaces",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CDBPD4Q5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71KS9n2n8+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BR7K2WW9",
+    "name": "Halitaa Real Rattan Nightstands Set of 2 with Charging Station and Led Lights, End Tables with 2 Drawers and Solid Wood Legs, Bedside Table Side Table, Boho Night Stand Set 2 for Bedroom (2 Pack)",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0BR7K2WW9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81j38m5Ld6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C98MQW5T",
+    "name": "AWASEN Rattan Nightstand, Bedside Table with Rattan Drawer, Wood End Table with Storage and Solid Wood Legs for Bedroom Living Room Small Space (Walnut)",
+    "normalized_price": 35.98,
+    "buy_url": "https://www.amazon.com/dp/B0C98MQW5T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71iq-d3JT0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYLRSD5D",
+    "name": "Boho Nightstands Set of 2, Farmhouse Night Stand Bedside Table with Drawer and Storage Shelf Rattan End Tables Side Tables for Bedroom Sofa Couch Office,Small Space, Oak",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0GYLRSD5D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81o2wQBX4sL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BXPLS8PP",
+    "name": "Bme Oliver Solid Wood Rattan Nightstand/Side Table/End Table, Fully Assembled, for Bohemian & Mid Century Style Bedroom and Living Room, Caramel | Fully Assembled",
+    "normalized_price": 149.0,
+    "buy_url": "https://www.amazon.com/dp/B0BXPLS8PP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81bGkrF0WdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1G78F89",
+    "name": "VINGLI Rattan Nightstand with Charging Station, Boho Nightstand with Drawers and Shelves, Wood Night Stand Bedroom, Real Rattan Bed Side Table/End Table\uff0c17.72\" W*13.86\" D*25.6\" H",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0F1G78F89",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81EFNDT7lPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXFWV3DW",
+    "name": "Rattan Night Stand with Drawers - Boho Nightstand with Charging Station, Bedside Table with Storage Shelf, Accent Side Table End Tables Living Room, Wood Nightstands for Bedroom, Light Wood",
+    "normalized_price": 99.73,
+    "buy_url": "https://www.amazon.com/dp/B0FXFWV3DW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71e45fsJeBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B9XTR821",
+    "name": "SICOTAS Rattan Nightstands Set of 2 - Farmhouse Night Stand with Drawer and Storage Shelf - Boho Bedside Table End Side Table for Bedroom, Oak",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0B9XTR821",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71EH97Y-t2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6KB21SX",
+    "name": "Rattan Nightstand Set of 2, 23.6'' Rattan End Table with Ample Storage, Boho Nightstand with Charging Station, Thickened Curved Profile Design, Oak Nightstands for Living Room, Bedroom",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6KB21SX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81AInobBtjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCFWWYBN",
+    "name": "Nathan James Boho Jasper Wood Nightstand with Drawer, Fluted Side Table or End Table with Storage, Light Brown",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCFWWYBN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81oBuBxskOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FN4NW6JJ",
+    "name": "LEYAOYAO 26.8\" Wide Rattan Nightstand, Large Boho 3 Drawer Night Stand, Natural Wood Bedside Table with Storage, Tall Bed Side End Tables, Chest of Drawers Dressers for Bedroom, Living Room, Hallway",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0FN4NW6JJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81tExy4bvmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BC2941DD",
+    "name": "Signature Design by Ashley Paxberry Bohemian 1 Drawer Nightstand with Open Cubby, 22.09\" Tall, White",
+    "normalized_price": 66.29,
+    "buy_url": "https://www.amazon.com/dp/B0BC2941DD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71kTzAMNtsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CYQG122X",
+    "name": "Bali & pari Kiara Bohemian Natural Rattan Nightstand",
+    "normalized_price": 127.21,
+    "buy_url": "https://www.amazon.com/dp/B0CYQG122X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81XW-9-tDCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWMGW11W",
+    "name": "Nightstands Set of 2 with Charging Station, Modern Boho Rattan Bedside Tables with 2 Drawers,Open Storage End Tables for Bedroom, Small Spaces and Dorm, Solid Wood Legs,Natural",
+    "normalized_price": 107.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWMGW11W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81a1Rjf0BUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFKBPDG",
+    "name": "Furnifact Brown Nightstand Bohemian Style Rattan Poles Frame Soft Wipe Clean Finish One Piece Bedroom Furniture for Cozy Storage and Rustic D\u00e9cor",
+    "normalized_price": 162.11,
+    "buy_url": "https://www.amazon.com/dp/B0GKFKBPDG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/610AINWhXrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFQR2YH",
+    "name": "Furnifact Brown Rattan Nightstand, Modern Bohemian Style, Durable Natural Rattan Frame, Easy to Clean",
+    "normalized_price": 191.02,
+    "buy_url": "https://www.amazon.com/dp/B0GKFQR2YH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51XSiGWAyWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFNP98B",
+    "name": "Furnifact Brown Nightstand with Mango Finish, Bohemian Style, Rectangle Shape, Single Piece, Transitional Design for Bedroom Storage and Decor",
+    "normalized_price": 108.65,
+    "buy_url": "https://www.amazon.com/dp/B0GKFNP98B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61KCKIKpIDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C9ZGCLMY",
+    "name": "YAUKOMEL Rattan Nightstand, Wood End Table, Side Table with 2 Hand Made Rattan Decorated Drawers,Boho Bedside Table,Wood Accent Table with Storage for Livingroom, Bedroom, Natural CTG59Y",
+    "normalized_price": 52.96,
+    "buy_url": "https://www.amazon.com/dp/B0C9ZGCLMY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81TiKaDg+CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FN3VCSYL",
+    "name": "Bamboo Nightstand, Boho Side Table with Drawer and Open Shelf, 3 Tier End Table, Bedside Table, Accent Table, Small Dresser for Bedroom, Dorm and Small Spaces, Natural",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0FN3VCSYL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/819Zg+4gahL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTH72WKY",
+    "name": "WLIVE Rattan Nightstand with Charging Station, Boho Night Stand, Small Bedroom Side Table, End Table with Drawer and Storage, Wood Bedside Tables for Bedroom, Small Spaces, Natural Oak",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0CTH72WKY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71qaJnAForL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFWFJNQ",
+    "name": "Furnifact Brown Bohemian Nightstand, Rattan Frame, Mahogany Wood Legs, One-Piece Design, Natural Finish, Easy Wipe Clean Surface",
+    "normalized_price": 197.77,
+    "buy_url": "https://www.amazon.com/dp/B0GKFWFJNQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/719fKqClVML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FN4MVK8N",
+    "name": "LEYAOYAO 26.8\" Wide Rattan Night Stand, Large Boho Nightstand, Bedside Table with Storage, Tall Bed Side End Tables, Chest of Drawers for Bedroom, Living Room, Hallway\uff08Natural,3 Drawers,2\uff09",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0FN4MVK8N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81TMkizOsUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GSZQYQ4J",
+    "name": "Boho Nightstand with Charging Station, Large Bedside Table with Drawer & Open Storage Shelf, Mid-Century Modern End Table Rattan-Look Drawer, Accent Side Table with Rounded Corners for Bedroom",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0GSZQYQ4J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815fbHCk1xL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4R9RC7T",
+    "name": "LEYAOYAO Rattan Night Stand with Charger Station, 23\" Wide Boho Nightstand with 2 Drawers, Natural Wood Bedside Table Open Storage Cabinet, Bed Side End Tables Dresser for Bedroom, Living Room Hallway",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0F4R9RC7T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81pWBdLhvKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHQ3H5ZG",
+    "name": "Natural Nightstand Set of 2, Small Bed Side Table for Small Spaces, Mid Century Modern Nightstand End Table with Open Storage, Side Table for Bedroom Living Room, MLBZ20Y-2",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHQ3H5ZG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81IwwyE0xYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVWQGBRT",
+    "name": "Apicizon Nightstand with 2 Storage Drawers, Boho Side Table with Solid Wood Legs, End Table for Small Spaces, Bedroom, Living Room, Entryway, Natural",
+    "normalized_price": 40.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVWQGBRT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Q61BETpdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CK1K2S8C",
+    "name": "AOGLLATI Rattan Nightstand with Charging Station, LED Night Stand for Bedroom, Wood End Table with USB Ports, Boho Bedside Table with 2 Drawers, Natural",
+    "normalized_price": 45.0,
+    "buy_url": "https://www.amazon.com/dp/B0CK1K2S8C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-eHkmftqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBVJ853T",
+    "name": "Aienvey Rattan Nightstand, Small Night Stand, Side Table with Drawer Open Shelf, Cane Accent Bedside End Table with Wood Legs, Bohemian Wood Nightstand for Bedroom, Oak (Bohemian)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0DBVJ853T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71mRUWxWoPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9P56DRH",
+    "name": "AVZEAR Fluted Round Side Table with Storage, Small End Table Modern Boho Nightstands, Circle Bedside Tables Bohemian Accent Table Wood Night Stand for Small Spaces, Living Room, Bedroom (Nature)",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9P56DRH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PUCZLSWTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DKFXXGVW",
+    "name": "Luxury Marble Side Table,Square End Table for Modern Sofa and Bed, Living Room, Sofa, Bedroom\uff08Calacatta Viola\uff09",
+    "normalized_price": 588.0,
+    "buy_url": "https://www.amazon.com/dp/B0DKFXXGVW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71QA7J1DtwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BPCGZ5JF",
+    "name": "ADORNEVE Nightstand with Charging Station and LED Lights,Night Stand with Sliding Top for Bedroom,Bedside Table with Drawers,Modern End Side Table,White Marble",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0BPCGZ5JF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Kaj57dzmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP2F2FGD",
+    "name": "Fluted Nightstand Set of 2, 23\" W Night Stand with Drawer, Wood Bed Side Table with Faux Marble-Top, Curved Corner, Metal Handle, Modern Bedside Table for Bedroom, Living Room, Office, Dark Oak",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP2F2FGD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Yl4kgrOVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP2JCMTD",
+    "name": "Fluted Nightstand Set of 2, 23\" W Night Stand with Drawer, Wood Bed Side Table with Faux Marble-Top, Curved Corner, Metal Handle, Modern Bedside Table for Bedroom, Living Room, Office, Natural Oak",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP2JCMTD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71JgcD93OqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C58CZ46F",
+    "name": "HOOBRO Side Table with Charging Station, End Table with USB Port and Outlet, Nightstand with 2-Layer Storage Shelves for Small Spaces, Living Room, Bedroom, Stable Frame, Gold and Marble DM09UBZ01",
+    "normalized_price": 28.48,
+    "buy_url": "https://www.amazon.com/dp/B0C58CZ46F",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61pZ0+UpYYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDCX5XR7",
+    "name": "ADORNEVE Night Stand with Drawers and LED Lights,Night Stand with Sliding Top,Bedside Table with Charging Station,Modern End Side Table for Bedroom,White Marble Color",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0GDCX5XR7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71n11Z8dJuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL7NS2SL",
+    "name": "Small Marble End Table, Round Side Table, Modern Drink Table, Pedestal Accent Table for Living Room, Bedroom, Sofa Side, Nightstand for Small Spaces, Easy Assembly, White and Gold",
+    "normalized_price": 49.97,
+    "buy_url": "https://www.amazon.com/dp/B0GL7NS2SL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61LEzdvP3NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDCN288G",
+    "name": "ADORNEVE Nightstand with Charging Station and LED Lights,Night Stand with Sliding Top,Bedside Table with 2 Drawers,Modern End Side Table for Bedroom,White Marble",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GDCN288G",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71rZUyrBupL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1XL33QJ",
+    "name": "HOOBRO Side Table with Charging Station, Set of 2 End Tables with USB Port and Outlet, Nightstand with 2-Layer Storage Shelves for Small Spaces, Living Room, Bedroom, Gold and Marble DM09UBZP201",
+    "normalized_price": 43.68,
+    "buy_url": "https://www.amazon.com/dp/B0D1XL33QJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/616QGk1dblL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRFJTTR6",
+    "name": "Fluted Nightstand with Marble Top, 23.6\" Large Bedside Side Table with Drawer, Wood End Table with Storage, Curved Round Corner, Furniture Bedroom Sofa, Mid Century Modern, Boho,Oak, Marble",
+    "normalized_price": 125.98,
+    "buy_url": "https://www.amazon.com/dp/B0FRFJTTR6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91T1+aFpyTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2NMZ3YG",
+    "name": "i-aplus Night Stand Set 2 LED Nightstand with 2 Drawers Bedside Table with LED Lights Side Tables for Bedroom Living Room",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0D2NMZ3YG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BswhJ5XKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHMT1SJG",
+    "name": "LuxenHome Brown Nightstand with Drawer and Open Shelf, 21.5\" H Modern Night Stand with Marble-Look Tabletop, Bedside Table, Nightstands for Bedroom, Wood Accent Side Table, End Tables for Living Room",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHMT1SJG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815GvOzU79L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP26ZZSX",
+    "name": "Fluted Night Stand, 23\" W Nightstand with Drawer, Wood Bed Side Table with Faux Marble-Top, Curved Profile Design, Metal Handle, Modern Bedside Table for Bedroom, Living Room End Table, Natural Oak",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP26ZZSX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71bP6DV9nVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C7KSTX8P",
+    "name": "LED Nightstands, Bedside Table with 2 Drawers, Modern Bedroom Furniture with Changing RGB Light & Remote for Bedroom and Living Room, Black Marble Pattern",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0C7KSTX8P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91Q4+f-LzIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8VL8ZQX",
+    "name": "Giantex 2-Drawer Nightstand Set of 2, Modern Faux Marble Bedside Table with Storage, Accent Sofa Side Table, Oval Night Stand for Small Space, Bedroom, White",
+    "normalized_price": 94.99,
+    "buy_url": "https://www.amazon.com/dp/B0F8VL8ZQX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/610G3-gEb2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8V521BB",
+    "name": "SAFAVIEH Furniture - Valentia Round Marble Accent Table - White & Brown - Marble Top - Glam Stone Pedestal Design - Ideal for Living Room, Bedroom, Entryway, 10\"W x 10\"D x 17.5\"H (SFV9704B)",
+    "normalized_price": 170.06,
+    "buy_url": "https://www.amazon.com/dp/B0C8V521BB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61OKyHU2QML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09263LQGD",
+    "name": "fashciaga Luxurious Marble Cell Phone Stand Holder for Cellphone Tablet On Desk, Countertop, Table, Nightstand. Heavy Real Stone Mobile Phone Stands (Solid)",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B09263LQGD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/617Bj9xveeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTTVQC8T",
+    "name": "T4TREAM Fluted 3 Drawers Nightstand Set of 2, Oversized Extra Large Modern Side Table with Faux Marble Top, End Table Bedside for Bedroom, Living Room, Curved Profile Design, Natural Oak",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0DTTVQC8T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81nMnl+-MRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CNSJBH8L",
+    "name": "SAYGOER White Faux Marble End Tables 13.3''D Small Side Table with Storage Wood Night Stand Gold Metal Frames 2 Tier Bedside Table with Adjustable Feet, 1PCS, White Gold",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0CNSJBH8L",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61ImQ471kcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRZWSNK7",
+    "name": "Fluted Nightstand with Charging Station, Wood Bedside Table with Faux Marble-Top, Modern End Table with Curved Corners, Metal Handle, Large Night Stand for Bedroom, Office, Living Room, Natural Oak",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRZWSNK7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81rJcUsQxkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C7VM8T6Y",
+    "name": "BTHFST LED Nightstands Set of 2,Night Stands for Bedroom,Nightstand with Charging Station and Sliding Top,Bedside Table with Drawers,Modern End Side Table,White Marble Color",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0C7VM8T6Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71jYDQ9uukL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZLVJGQ1",
+    "name": "Fluted Nightstand Set of 2 with Charging Station, Wood Bedside Table with Faux Marble-Top, Modern End Table with Curved Corners, Metal Handle, Large Nightstand for Bedroom, Living Room, Black",
+    "normalized_price": 214.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZLVJGQ1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/817N7n7+1DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP91KQ7S",
+    "name": "Fluted Nightstand Set of 2,Modern End Table with Faux Marble Top,2 Storage Drawers Side Table,Bedside Table for Bedroom, Living Room,Curved Profile Design Furniture,Natural Oak",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP91KQ7S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/816ey4DIR8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BVXYGJ87",
+    "name": "Wolawu End Table 3 Tiers White Marble Wood Nightstand with Storage Ladder Shelf Sofa Side Table for Small Space Modern Trapezoid Furniture Plant Stand in Living Room Bedroom Gold",
+    "normalized_price": 36.09,
+    "buy_url": "https://www.amazon.com/dp/B0BVXYGJ87",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Lj1YP+Q+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GSCZQMGT",
+    "name": "ModernMate Night Stand Set of 2 with 2 Drawers, 23.6\u201d Bedside Table with Faux Travertine Texture-Top, Metal Handles Modern NightStand for Bedroom, Space-Saving Living Room End Table",
+    "normalized_price": 299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GSCZQMGT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81xrLEM71xL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F265JCZT",
+    "name": "Adjustable-Height Marble Drink Table - 10x10x22-30, White Marble & Antique Brass, Modern Round End Table, Side Table with Pedestal Stand for Small Spaces, Vintage Metal Martini Cocktail Accent",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0F265JCZT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61liX79GY4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DC6VM1CM",
+    "name": "Side Table, End Table Living Room Table, Modern Sofa Couch Table, Faux Marble End Table, Bedside Table Nightstand for Small Spaces, Bedroom",
+    "normalized_price": 119.98,
+    "buy_url": "https://www.amazon.com/dp/B0DC6VM1CM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81RCaAFsJSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C5HR8SFL",
+    "name": "OIOG Round Side Table with Drawer, 2 Tier Night Stand with Shelf, Modern Side Table with Gold Legs for Living Room, Bedroom, Dorm, Marbling Natural Stone/Gold",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0C5HR8SFL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81AGD9lNuHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CWNZX7S9",
+    "name": "UEV Black Nightstand Set of 2 for Bedroom,Modern Two Drawers Nightstand with Gold Handles & Faux Marble Top,Tall Accent Side Table",
+    "normalized_price": 125.99,
+    "buy_url": "https://www.amazon.com/dp/B0CWNZX7S9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71nAiQUm64L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRST316N",
+    "name": "24\u201d Tall Nightstand - Fluted Night Stand with Charging Station Faux Marble Top Bedside Table with Curved Profile Design for Bedroom/ 2 Drawer, Black",
+    "normalized_price": 79.98,
+    "buy_url": "https://www.amazon.com/dp/B0FRST316N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8164bfbxAML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FX9NNRHY",
+    "name": "Adjustable-Height Marble Drink Table - 12x12x22-30, White Marble & Antique Brass, Modern Round End Table, Side Table with Pedestal Stand for Small Spaces, Vintage Metal Martini Cocktail Accent",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0FX9NNRHY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61p+fteC9+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CN2LPS56",
+    "name": "T4TREAM Fluted 6 Drawers Dresser, 54\" Wide Modern Chest of Drawers with Faux Marble Top, Curved Profile Design, Dresser TV Stand, Wood Drawer Organizer for Bedroom, Living Room, Hallway, Natural Oak",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0CN2LPS56",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91qvWsCD7tL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FT8L3ZFK",
+    "name": "32\" Width Fluted Nightstand Set of 2, Modern 3 Drawer Bedside Table with Faux Marble Top, Wood Chest of Bedside Table with Curved Profile, End Table for Bedroom, Living Room, Hallway (Walnut 2pcs)",
+    "normalized_price": 273.99,
+    "buy_url": "https://www.amazon.com/dp/B0FT8L3ZFK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81aHD4O2V9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWDWS8MG",
+    "name": "Fluted Nightstand with Drawer, Bedside Table with Faux Marble-Top, Modern Nightstand with Charging Station, Drawers and Open Shelf, Curved Corners, Modern Night Stand for Bedroom, Black",
+    "normalized_price": 88.34,
+    "buy_url": "https://www.amazon.com/dp/B0GWDWS8MG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81sI1t33qDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C5HPZLVM",
+    "name": "OIOG Round End Table with Drawer, Modern 2 Tier NightStand with Shelf, Small Side Table with Sintered Stone Tabletop for Living Room, Bedroom, Dorm, and Office, Marbling Natural Stone/White",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0C5HPZLVM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81yQ9x1KWwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPWZFGLT",
+    "name": "Fixwal Fluted Nightstand with Charging Station, Large Side Table with 2 Wood Drawers for Bedroom, Mid Century Modern Bedside Table, Faux Marble Top, Natural Oak, 17.7 x 13.7 x 23.6in",
+    "normalized_price": 61.74,
+    "buy_url": "https://www.amazon.com/dp/B0FPWZFGLT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81JrGLBx88L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B083TCJJLB",
+    "name": "Nathan James Mid-Century Rectangle Accent Side or End Table Walnut Finish Wood and Faux Marble Top with Storage Nightstand, Frame, White/Brown",
+    "normalized_price": 134.99,
+    "buy_url": "https://www.amazon.com/dp/B083TCJJLB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/811YkJWTdvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX63H42P",
+    "name": "T4TREAM Fluted Nightstand Set of 2 with Charging Station, 18\" Modern Side Table with Faux Marble Top, 2 Drawer End Table w/Storage, BedsideTable for Bedroom, Living Room, Curved Profile, Natural Oak",
+    "normalized_price": 209.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX63H42P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81By2fuejWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FX4VYFCF",
+    "name": "Anbuy Black Marble Nightstand, Modern Night Stand with 3 Drawers for Bedroom, Large Side End Table Bedside Night Tables with Gold Handles & Matel Legs",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0FX4VYFCF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81AAyr4rpbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2Z5WKPD",
+    "name": "23.6\" W Fluted Nightstand with Charging Station, Wood 3 Drawer Bedside Table with Faux Marble Top, Large Storage & Gold Handles, Small Dresser for Bedroom Living Room, Oak",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0H2Z5WKPD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81+frClRfBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CN44GN3J",
+    "name": "Homhedy 3-Tier Side Tables Set of 2, End Tables with Tempered Glass, Nightstands with Storage Shelves, Slim Sofa Tables for Living Room, Bedroom (2, Golden)",
+    "normalized_price": 49.49,
+    "buy_url": "https://www.amazon.com/dp/B0CN44GN3J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TCd-xPsOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09XQBK1W7",
+    "name": "TeoKJ 2 Tier Gold Side Table, Folding Round Metal End Table Small Nightstand with Two Removable Tray for Bedroom Living Room Small Spaces Bedside Gold",
+    "normalized_price": 40.99,
+    "buy_url": "https://www.amazon.com/dp/B09XQBK1W7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61rwhzDQ+QL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6Y9276N",
+    "name": "BOLUO Gold Nightstand with Charging Station, LED Night Stand with 2 Fabric Drawers, Bedside Table with USB Ports and Outlets, Nightstand for Bedroom Modern",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6Y9276N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71AgjMC+yyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G52N5ZQG",
+    "name": "Side Tables Set of 2, Tempered Glass End Table with Metal Frame, 3-Tier Small Nightstands with Storage Shelves,Tall Table Stand for Home Decor, Living Room, Bedroom, Office, Gold\uff082 Pack\uff09",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0G52N5ZQG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71eU8Vy3KBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB73YWWN",
+    "name": "Small Round Gold Side Table by Objet D\u2019Art, Accent, End, Pedestal, Martini, Cocktail and Drink Table for Living Room and Small Spaces, Petra Vintage Metal Brass Style Decor, 21\u201d Height",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB73YWWN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6127v9zbo6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY4SVLZM",
+    "name": "Aienvey Night Stand, Modern Nightstand with Drawers, Bedside Table, Gold Small Side Table for Bedroom, Living Room End Table (White Stripe, 2 Drawers)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0CY4SVLZM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TpO+S3Z7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F37ZL2GV",
+    "name": "Nightstand with Charging Station, Modern Bedside Table with Drawer and Legs,White and Gold Night Stand with Open Shelf, Narrow Side Table for Bedroom, Living Room",
+    "normalized_price": 47.49,
+    "buy_url": "https://www.amazon.com/dp/B0F37ZL2GV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71nQmp4hJlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BHT2V4ZZ",
+    "name": "HOMSHO Side Tables Set of 2, End Tables with Tempered Glass, 2-Tier Nightstands with Storage Shelves, Coffee Table with Modern Style, Slim Sofa Table for Living Room, Bedroom, 11.8\" D x 15\" W, Gold",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0BHT2V4ZZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71SXqPndXKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QW7XQJN",
+    "name": "VASAGLE Round Side Table, Glass End Table with Metal Frame, Gold Coffee Table with Modern Style, for Living Room, Balcony, Bedroom, Gold Color",
+    "normalized_price": 37.92,
+    "buy_url": "https://www.amazon.com/dp/B07QW7XQJN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61m0ujIvpGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09RF2FPBS",
+    "name": "danpinera Gold Side Table with Fabric Storage Basket, Metal Round Side Small Bedside Table Nightstand with Removable Tray for Living Room, Bedroom, Outdoor Table for Patio, Nursery, Bathroom, Gold",
+    "normalized_price": 38.99,
+    "buy_url": "https://www.amazon.com/dp/B09RF2FPBS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/717JqPcMPXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBYSPHR6",
+    "name": "HOOBRO End Tables Set of 2 with Charging Station, Side Tables with USB Ports & Power Outlets, 3-Tier Slim Nightstands with Storage Shelves, Tempered Glass, for Living Room, Bedroom, Gold GD77UBZP201",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBYSPHR6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71kpIIdWP0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BMP82L8M",
+    "name": "HOOBRO End Table with Charging Station, Bedside Table with 2 Drawer & USB Port & Type-C Port, Nightstand for Small Spaces, Stable and Sturdy, for Living Room, White and Gold DW43UBZ01",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BMP82L8M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/619fKaQD+1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B4DLW1KP",
+    "name": "HOOBRO Gold Side Table, Tall Telephone End Table with Mesh Shelves, 3-Tier Nightstand with Tempered Glass Tabletop, for Living Room, Bedroom, Gold GD04DH01",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0B4DLW1KP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71a1kqj27PL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CRDY93JS",
+    "name": "HOOBRO Small Narrow Side Table with Charging Station, Skinny End Table for Small Spaces, Slim Nightstand with USB Ports Outlet, Sofa Beside Table with Storage Shelf, White and Gold DW102UBZ01",
+    "normalized_price": 30.99,
+    "buy_url": "https://www.amazon.com/dp/B0CRDY93JS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/612NlwUf+QL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BP65W32W",
+    "name": "HOOBRO Nightstand with Charging Station, Side Table with USB Port and Outlet, Small End Table for Tight Spaces, Solid and Stable, for Office, Bedroom, Study, White and Gold DW88UBZ01",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0BP65W32W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61IoFrPjawL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBYM2SV5",
+    "name": "HOOBRO End Table with Charging Station, Side Table with USB Port & Power Outlets, 3-Tier Slim Nightstand with Storage Shelves, Tempered Glass, for Living Room, Bedroom, Gold GD77UBZ01",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBYM2SV5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71vpaUhnaCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBZ6KBXN",
+    "name": "HOOBRO Side Table with Charging Station, Set of 2 End Tables with USB Port, Nightstand for Tight Spaces, Tempered Glass, Modern Metal Frame, for Office, Bedroom, Living Room, Gold GD76UBZP201",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BBZ6KBXN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61MhhcldfAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT4R874T",
+    "name": "Modern Side Table, 19.7\" x 11.8\" Small End Table for Living Room, Metal Frame Coffee Table with Storage Shelf for Small Spaces, Nightstand for Bedroom, Easy Assembly (Gold)",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0GT4R874T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Lhr6qWONL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZW4J7BF",
+    "name": "BORNOON Fluted Night Stand with 3 Drawers, Modern Bedside Table Dresser with Gold Handles, End Side Table Storage Cabinet for Bedroom",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZW4J7BF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/912nMF4ZNlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFP4GXB",
+    "name": "Starlight Canyon Home Brushed Gold Nightstand, Contemporary Design, Sleek Finish, Stylish Bedroom Accent, Durable Construction, Elegant Storage Solution",
+    "normalized_price": 232.21,
+    "buy_url": "https://www.amazon.com/dp/B0GKFP4GXB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41o8hBZ6NML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKG42DYR",
+    "name": "Starlight Canyon Home Gold Nightstand, Contemporary Design, Elegant Finish, Bedroom Furniture, Durable Construction, Stylish Storage Solution",
+    "normalized_price": 198.9,
+    "buy_url": "https://www.amazon.com/dp/B0GKG42DYR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/410lQAN6giL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BY4N5M3Z",
+    "name": "HOOBRO Set of 2 Side Tables, 2-Tier End Table, Nightstands for Tight Spaces, Tempered Glass Bedside Tables, Modern Metal Frame, for Office, Bedroom, Living Room, Study, Gold GD76BZP201",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BY4N5M3Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61F-Umx7xCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BTBVGMN4",
+    "name": "HOOBRO Side Table with Charging Station and USB Port, Small End Table for Small Space, 3-Tier Nightstand with Adjustable Shelf, for Living Room, Bedroom, White and Gold DW112BZ01G1",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0BTBVGMN4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61gk3Y-fKpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8BBF7QM",
+    "name": "Nightstand with Charging Station, Side Tables for Bedroom with Built-in USB Side Table with 2 USB Ports and Outlets Nightstand with Cloth Drawer End Tables Living Room Sofa Couch",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0F8BBF7QM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71B7Kgd5aNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BJCZ23KJ",
+    "name": "Masupu Nightstand,Mid-Century Modern Bedside Table with Storage Drawer and Open Wood Shelf,Small Gold Frame Side Table for Bedroom,Living Room,White",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0BJCZ23KJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71XniOOOe8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFNVG6G",
+    "name": "Furnifact Gold Nightstand 2-Piece Set, Compact Bedside Table, Modern Minimalist Design, Durable Construction, Convenient Storage for Bedroom Organization",
+    "normalized_price": 53.0,
+    "buy_url": "https://www.amazon.com/dp/B0GKFNVG6G",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/515fzIOgBGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH9Y7XHC",
+    "name": "Gold End Table, Faux Marble Side Table, 2-Tier Small Round Nightstand for Bedroom - Modern Accent Table for Living Room Couch, Metal Frame (1 Pack)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FH9Y7XHC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61nIul2xfsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFQ9YMH",
+    "name": "Furnifact Emerald Vintage Nightstand, 1 Drawer, Gold Hardware, Mid Century Modern, Farmhouse Design, Durable, Functional Bedroom Storage Solution",
+    "normalized_price": 163.42,
+    "buy_url": "https://www.amazon.com/dp/B0GKFQ9YMH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41lX13+zliL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKFRK3H9",
+    "name": "Furnifact Emerald Nightstand, 1 Drawer, Casual Farmhouse Style, Gold Hardware, Durable Construction, Bedroom Storage and Organization Furniture",
+    "normalized_price": 213.07,
+    "buy_url": "https://www.amazon.com/dp/B0GKFRK3H9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41dToVaXtyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BY288ZL5",
+    "name": "Masupu Nightstand with Charging Station,3-Tier Modern Bedside Night Stand with Storage Drawer and Shelf,Small End Side Table for Bedroom,Living Room,White",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0BY288ZL5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TN8H31ohL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BY1X235X",
+    "name": "Masupu Nightstand,Mid-Century Modern Bedside Table with 2 Storage Drawer,Small Gold Frame Side End Table for Bedroom,Living Room, Black",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0BY1X235X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/710HYRXES7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQT6FVLB",
+    "name": "DAOUTIME Side Tables Set of 2, End Tables with Tempered Glass & Metal Frame, Small Nightstands with Storage Shelves, 2-Tier Gold Coffee Table with Modern Style, Slim Sofa Table for Living Room,Bedroom",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQT6FVLB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713LWZasg4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087NL52BB",
+    "name": "Meridian Furniture Bali Collection Modern | Contemporary Durable Metal Side Table/Nightstand, 16\" W x 16\" D x 23\" H, Gold",
+    "normalized_price": 170.88,
+    "buy_url": "https://www.amazon.com/dp/B087NL52BB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41sf-YaQYVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CWRBSFL2",
+    "name": "SAYGOER Glass Side Table Small Gold End Table for Narrow Space 2-Tier Square Nightstand with Storage,13.3\" x 11.8\" x 19.7\",Modern Bed Side Table with Metal Frame for Bedroom Living Room, Easy Assembly",
+    "normalized_price": 24.69,
+    "buy_url": "https://www.amazon.com/dp/B0CWRBSFL2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61VR1Y-b7QL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLJD3VSY",
+    "name": "Vagusicc Small Round Side Table End Table, Tall Accent Table with Storage Basket, Set of 2 Half Round Tables Half Moon Tables, Coffee Bedside Tables, Modern Nightstand for Living Room Bedroom, Cream",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLJD3VSY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81W+WBdfZtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BTHCT32C",
+    "name": "VASAGLE LILEA Collection - Small Round Side End Table, Modern Nightstand with Fabric Basket, Cement Gray and Cream White ULET223G49",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0BTHCT32C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71uKPTfqt5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPQ526F1",
+    "name": "Tribesigns 3-Drawer Nightstand, Modern Bedside Table with Storage Drawers, Wood Night Stand Side End Table for Bedroom, Beige",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0DPQ526F1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81iHAdy03TL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYF1K8LD",
+    "name": "RoyalCraft Beige Fluted Nightstand Set of 2, Colorful Nightstand with 2 Drawers, Modern Wooden End Table with Storage for Small Spaces, Side Table for Bedroom, Couch, Home Office",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0DYF1K8LD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81hxfRSgcNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVYCJ53S",
+    "name": "Arched End Table Set of 2 with Type-C Charging Station, 22\" Modern Bedroom NightStand with Arched Shelf, Side Table with Outlet, USB, Type-C Port for Bedroom, Cream",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVYCJ53S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/717elbOxasL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHS227NG",
+    "name": "Yoobure Nightstand with Charging Station, LED Night Stand with Fabric Drawers and Storage Shelf for Bedroom, Nightstands Bedside Tables with USB Ports & Outlets, Small Night Stands, Bed Side Table",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0DHS227NG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+Ojthb3dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFGC5CWK",
+    "name": "RoyalCraft Nightstand Set of 2, Night Stand with 3 Drawers Storage, Modern Bedside Table, End Table for Bedroom, Hallway, Closet, Beige",
+    "normalized_price": 219.99,
+    "buy_url": "https://www.amazon.com/dp/B0FFGC5CWK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71krPfwfg+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F37J9NN3",
+    "name": "Eclatara Large Rattan Night Stand Set of 2\uff1aBoho Nightstand with Drawers and Storage Shelf, White Bedside Table End Table Side Table for Bedroom(Cream White Oak,2 Pieces)",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0F37J9NN3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81EzlXA9sCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP4V87LP",
+    "name": "RoyalCraft Beige Nightstand Set of 2, Small End Table with Storage Shelf and Door, Faux Two-Drawer Design Side Table, Modern Night Stand for Bedroom Dorm, Wood Beside Table for Small Spaces",
+    "normalized_price": 84.35,
+    "buy_url": "https://www.amazon.com/dp/B0FP4V87LP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7149IDS5SOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FMK64FQT",
+    "name": "Decofy Fluted Nightstand with Charging Station, 19.7'' Wide Morden End Table with USB/Type-C Ports, 2 Drawers & Open Shelf, Curved Profile Design, Wood Bedside Table for Bedroom (White)",
+    "normalized_price": 104.99,
+    "buy_url": "https://www.amazon.com/dp/B0FMK64FQT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81SjLwvaVBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CR6M1HBW",
+    "name": "VASAGLE LILEA Collection - Small Round Side End Table, Modern Nightstand with Fabric Basket, Cream White ULET223K67",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0CR6M1HBW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71HTpJpD3tL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLVBSCFV",
+    "name": "LITTLE TREE No Assembly Nightstand with 3 Drawers, Farmhouse Off-White Bedside Table for Bedroom, All Wooden Oval Nightstand with Storage",
+    "normalized_price": 189.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLVBSCFV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61dNF5jysFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFMSN922",
+    "name": "Fatmok Nightstand with Charging Station Set of 2, 24\" Wooden Bedside Table with Drawer and Open Storage, Curved Profile Design End Table with 3-Color LED Light & Metal Handle for Bedroom(Cream White)",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0GFMSN922",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81TEjvlr+gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2QWL5RW",
+    "name": "Fluted Nightstand with Charging Station, 27.3\" Wide Modern Bedside Table with 2 Drawers & Open Shelf, Large Wood End Table with Storage & Metal Handle for Bedroom, Living Room, Cream White",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2QWL5RW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71-dJ5QCcJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C7PXX7TH",
+    "name": "VASAGLE Side Table with Charging Station, 3-Tier End Table with USB Ports and Outlets, Nightstand for Living Room, Bedroom, 11.8 x 13.4 x 22.8 Inches, Plug-in Series, Cream White",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0C7PXX7TH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61y3sl-UyrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNN37VCD",
+    "name": "Eclatara Large Rattan Night Stand Set of 2: Boho Nightstand with 3 Drawers, White Storage Bedside Table End Table Side Table for Bedroom(Cream White Oak,2 Pieces)",
+    "normalized_price": 229.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNN37VCD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81LdeJJWLSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DC4KQZJ7",
+    "name": "Modern and Simple Bedside Table, Solid Wood Night Stand with 2 Drawers, Cream Style Leather, Luxury Bedroom Furniture, Free Installation (Beige, Right)",
+    "normalized_price": 110.5,
+    "buy_url": "https://www.amazon.com/dp/B0DC4KQZJ7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Hh1LlLKtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DKDV99ZK",
+    "name": "VASAGLE LILEA Collection - Side Table with Charging Station, Round End Table with Fabric Basket, Nightstand with USB Ports, for Living Room, Bedroom, Modern, Cream White ULET228N01",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DKDV99ZK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71e0NVBIKBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGDMRSD2",
+    "name": "BOLUO Wood Night Stand Set 2, Small Nightstand with 2 Drawers Boho Nightstands Wooden Rattan Bedside Table for Bedroom Beige",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGDMRSD2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71gC09hmUmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQJZ8XQG",
+    "name": "SICOTAS Night Stand Set of 2 Nightstands with Drawer Storage Fluted Bed Side Table End Table Large Modern Wide Bedside Stand Mid Century Night Stands for Bedroom Living Room Sofa Office, White Alder",
+    "normalized_price": 180.49,
+    "buy_url": "https://www.amazon.com/dp/B0CQJZ8XQG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/819k9j5hoeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVLJHVFY",
+    "name": "Vagusicc Nightstand with Charging Station, End Table with Fabric Drawer, Small Side Table with 2-Tier Storage Shelves, 25.4\" Tall Night Stand, Bedside Table for Bedroom, Living Room, Dorm, Beige",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVLJHVFY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61YTk5wpnfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2QHMG1V",
+    "name": "Fluted Nightstand with Charging Station Set of 2, 21\" Wide Modern Bedside Table with 2 Drawers & Open Shelf, Wood End Table with Storage & Metal Handle for Bedroom, Small Spaces, Cream White",
+    "normalized_price": 169.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2QHMG1V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81tae7fBWqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHDN44WL",
+    "name": "Set of 2 Nightstands, Modern End Table with Drawer and Storage Shelf, Rattan Night Stand for Bedroom Small Spaces, White Cream",
+    "normalized_price": 125.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHDN44WL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81zeLGwLlTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF2998LS",
+    "name": "Cream Small Nightstand with 2 Drawers, Bedside Table for Bedroom Storage, High-Gloss MDF Night Stand for Small Spaces, Kids Room, Guest Room, End Table 15.75\"\u00d715.75\"\u00d722.83\"",
+    "normalized_price": 85.65,
+    "buy_url": "https://www.amazon.com/dp/B0GF2998LS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7162pph6vOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR4RY68P",
+    "name": "ModernMate Nightstand Set of 2, 23.6\" Fluted Night Stand with 2 Drawers, Curve Profile Bedside Table with Solid Metal Handle, Thicken End Side Table for Bedroom, White Alder",
+    "normalized_price": 239.99,
+    "buy_url": "https://www.amazon.com/dp/B0GR4RY68P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71NvNnk+eXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C7PWRDTW",
+    "name": "VASAGLE End Table with Charging Station, Set of 2, Small Side Tables for Living Room, Bedroom, Nightstand with Outlets and USB Ports, Bedside Table with Storage Shelf, Cream White",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0C7PWRDTW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+-kXCRbjL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

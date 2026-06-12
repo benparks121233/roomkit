@@ -12,6 +12,7 @@ export interface DesignRequest {
   room_type: string;
   budget: number;
   style_description: string;
+  core_aesthetic?: string;
   bed_size?: string | null;
   qa_answers?: Record<string, string>;
   density?: string;
@@ -166,5 +167,101 @@ export async function validateSelections(
   }
   return (await res.json()) as ValidateSelectionsResponse;
 }
+
+// ---------------------------------------------------------------------------
+// Room render (AI-generated photorealistic room image)
+// ---------------------------------------------------------------------------
+
+export interface RenderResponse {
+  run_id: string;
+  render_url: string;
+  cached: boolean;
+}
+
+export interface Hotspot {
+  slot_id: string;
+  x: number;      // 0-1 fraction of image width (center)
+  y: number;      // 0-1 fraction of image height (center)
+  w: number;      // 0-1 fraction width
+  h: number;      // 0-1 fraction height
+  product_name: string;
+  price: number;
+  buy_url: string;
+}
+
+export interface HotspotsResponse {
+  run_id: string;
+  hotspots: Hotspot[];
+  cached: boolean;
+}
+
+/**
+ * POST /design/{run_id}/render — generate AI room render.
+ * Sends the user's actual product selections so the render uses those,
+ * not the server's default rank-1 picks.
+ * Takes ~15-60s on first call; cached after that.
+ */
+export async function generateRender(
+  runId: string,
+  selections: Record<string, string[]>,
+): Promise<RenderResponse> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 120_000);
+  try {
+    const res = await fetch(`${API_BASE}/design/${runId}/render`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ selections }),
+      signal: controller.signal,
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => null);
+      throw new Error(body?.detail ?? `Render error ${res.status}`);
+    }
+    return (await res.json()) as RenderResponse;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+// Predetermined hotspot positions — same layout the render prompt specifies.
+// Hotspots are built client-side from the user's actual selections + these
+// positions, ensuring labels always match what the user selected.
+export const HOTSPOT_POSITIONS: Record<string, Record<string, { x: number; y: number; w: number; h: number }>> = {
+  bedroom: {
+    bed_frame:     { x: 0.42, y: 0.55, w: 0.40, h: 0.35 },
+    mattress:      { x: 0.42, y: 0.50, w: 0.35, h: 0.18 },
+    sheets:        { x: 0.42, y: 0.52, w: 0.30, h: 0.12 },
+    comforter:     { x: 0.42, y: 0.55, w: 0.35, h: 0.20 },
+    pillows:       { x: 0.42, y: 0.38, w: 0.25, h: 0.10 },
+    nightstand:    { x: 0.14, y: 0.55, w: 0.12, h: 0.18 },
+    table_lamp:    { x: 0.14, y: 0.40, w: 0.08, h: 0.14 },
+    dresser:       { x: 0.82, y: 0.52, w: 0.18, h: 0.25 },
+    floor_lamp:    { x: 0.68, y: 0.38, w: 0.08, h: 0.30 },
+    rug:           { x: 0.42, y: 0.78, w: 0.45, h: 0.18 },
+    curtains:      { x: 0.42, y: 0.25, w: 0.55, h: 0.15 },
+    wall_art:      { x: 0.42, y: 0.18, w: 0.25, h: 0.16 },
+    plants:        { x: 0.90, y: 0.62, w: 0.12, h: 0.22 },
+    mirror:        { x: 0.82, y: 0.28, w: 0.12, h: 0.18 },
+    ceiling_light: { x: 0.45, y: 0.06, w: 0.12, h: 0.10 },
+    throw_blanket: { x: 0.42, y: 0.65, w: 0.25, h: 0.10 },
+  },
+  living_room: {
+    sofa:          { x: 0.38, y: 0.55, w: 0.40, h: 0.25 },
+    coffee_table:  { x: 0.40, y: 0.72, w: 0.22, h: 0.12 },
+    side_table:    { x: 0.65, y: 0.55, w: 0.10, h: 0.15 },
+    table_lamp:    { x: 0.65, y: 0.40, w: 0.08, h: 0.14 },
+    tv_stand:      { x: 0.82, y: 0.50, w: 0.18, h: 0.20 },
+    floor_lamp:    { x: 0.88, y: 0.35, w: 0.08, h: 0.30 },
+    rug:           { x: 0.40, y: 0.78, w: 0.40, h: 0.15 },
+    curtains:      { x: 0.40, y: 0.22, w: 0.50, h: 0.15 },
+    wall_art:      { x: 0.38, y: 0.18, w: 0.25, h: 0.16 },
+    plants:        { x: 0.90, y: 0.60, w: 0.12, h: 0.22 },
+    mirror:        { x: 0.82, y: 0.25, w: 0.12, h: 0.18 },
+    throw_pillows: { x: 0.35, y: 0.48, w: 0.15, h: 0.10 },
+    throw_blanket: { x: 0.42, y: 0.58, w: 0.18, h: 0.10 },
+    ceiling_light: { x: 0.45, y: 0.06, w: 0.12, h: 0.10 },
+  },
+};
 
 export { API_BASE };

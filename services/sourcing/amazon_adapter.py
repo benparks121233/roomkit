@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import os
+import random
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -32,10 +33,43 @@ _DEFAULT_AFFILIATE_TAG = "roomkitai-20"
 
 # Maximum candidates sent to the selection LLM.  Keeps input tokens bounded
 # while leaving room for style-matches, interest items, and price spread.
-_MAX_CANDIDATES = 100
+_MAX_CANDIDATES = 80
 
 # Name phrases indicating bathroom/vanity mirrors — excluded from the mirror
 # slot because we want bedroom wall/floor mirrors, not bathroom vanity mirrors.
+_DECORATIVE_PILLOW_PHRASES = [
+    "decorative",
+    "throw pillow",
+    "accent pillow",
+    "cushion cover",
+    "pillow cover",
+    "lumbar pillow",
+    "bolster",
+    "outdoor pillow",
+    "floor cushion",
+    "couch pillow",
+    "sofa pillow",
+    "patio pillow",
+]
+
+_PLANT_STAND_PHRASES = [
+    "plant stand",
+    "plant shelf",
+    "plant rack",
+    "plant hanger",
+    "plant hook",
+    "plant holder",
+    "tiered stand",
+    "corner stand",
+    "ladder shelf",
+    "watering can",
+    "soil",
+    "fertilizer",
+    "gardening tool",
+    "garden hose",
+    "plant saucer",
+]
+
 _BATHROOM_MIRROR_PHRASES = [
     "bathroom mirror",
     "vanity mirror",
@@ -71,6 +105,31 @@ _CHEUGY_PATTERNS = [
     r"\bbible\s+verse\b",
     r"\bscripture\b",
     r"\bprayer\b",
+    r"\bfarmhouse\s+sign\b",
+    r"\brustic\s+(sign|quote|word)\b",
+    r"\bword\s+art\b",
+    r"\bletter\s+board\b",
+    r"\bcollage\s+frame\b",
+    r"\bphoto\s+collage\b",
+    r"\bbelieve\b.*\bsign\b",
+    r"\bgathered?\b.*\bsign\b",
+    r"\bfaith\b.*\b(sign|wall)\b",
+    r"\bgrateful\b.*\bsign\b",
+    r"\bblessed\b.*\bsign\b",
+    r"\bbarn\s+door\b.*\bdecor\b",
+    r"\bcheesy\b",
+    r"\bnovelty\b",
+    r"\bgag\s+gift\b",
+    r"\bfunny\b.*\bsign\b",
+    # Corny gamer decor — filter the worst offenders
+    r"\bgamer\b.*\b(canvas|poster|sign|wall\s*art)\b",
+    r"\b(canvas|poster|sign|wall\s*art)\b.*\bgamer\b",
+    r"\bgame\s+room\s+(sign|rules|decor)\b",
+    r"\bgaming\s+(zone|rules|area)\s+(sign|poster)\b",
+    r"\beat\s+sleep\s+game\b",
+    r"\bdo\s+not\s+disturb.*gam(e|ing)\b",
+    r"\bkill\s+streak\b.*\b(sign|poster)\b",
+    r"\bRGB\s+(rug|carpet)\b",
 ]
 _CHEUGY_RE = re.compile("|".join(_CHEUGY_PATTERNS), re.IGNORECASE)
 
@@ -90,12 +149,12 @@ _INTEREST_KEYWORDS: dict[str, list[str]] = {
                "arcade", "pixel"],
     "books": ["literary", "book", "library", "reading", "novel",
               "bookshelf"],
-    "film": ["movie", "film", "cinema", "classic film", "poster",
-             "vintage movie", "retro film"],
+    "art_film": ["movie", "film", "cinema", "classic film", "poster",
+                 "vintage movie", "retro film", "gallery", "fine art",
+                 "abstract", "painting", "modern art", "mid century",
+                 "bauhaus", "matisse"],
     "nature": ["nature", "landscape", "botanical", "mountain", "forest",
                "ocean", "sunset", "wildlife"],
-    "art": ["gallery", "fine art", "abstract", "painting", "modern art",
-            "mid century", "bauhaus", "matisse"],
 }
 
 
@@ -155,6 +214,18 @@ class AmazonAdapter(SourcingAdapter):
             if slot_id == "mirror":
                 name_lower = raw.get("name", "").lower()
                 if any(ph in name_lower for ph in _BATHROOM_MIRROR_PHRASES):
+                    continue
+
+            # Filter: pillows slot = bed/sleeping pillows only (not decorative).
+            if slot_id == "pillows":
+                name_lower = raw.get("name", "").lower()
+                if any(ph in name_lower for ph in _DECORATIVE_PILLOW_PHRASES):
+                    continue
+
+            # Filter: plants slot = actual plants/planters only (not stands).
+            if slot_id == "plants":
+                name_lower = raw.get("name", "").lower()
+                if any(ph in name_lower for ph in _PLANT_STAND_PHRASES):
                     continue
 
             # Filter: exclude cheugy / low-taste products across all slots.
@@ -292,30 +363,46 @@ class AmazonAdapter(SourcingAdapter):
         # interest-relevant candidates.
         is_interest_dominant = slot_id == "wall_art" and bool(interests)
 
+        def _shuffle_within_tiers(products: list[Product], score_fn) -> list[Product]:
+            """Sort by score descending, but shuffle within same-score tiers.
+
+            This preserves style/interest relevance ranking while ensuring
+            different products surface across runs — kills selection bias
+            without sacrificing on-aesthetic quality.
+            """
+            from itertools import groupby
+            scored = sorted(products, key=score_fn, reverse=True)
+            shuffled: list[Product] = []
+            for _score, group in groupby(scored, key=score_fn):
+                tier = list(group)
+                random.shuffle(tier)
+                shuffled.extend(tier)
+            return shuffled
+
         if is_interest_dominant:
-            # Interest pool first (up to 60)
+            # Interest pool first (up to 48)
             interest_matches = [
                 p for p in candidates if interest_score(p) > 0
             ]
-            interest_matches.sort(key=interest_score, reverse=True)
-            for p in interest_matches[:60]:
+            interest_matches = _shuffle_within_tiers(interest_matches, interest_score)
+            for p in interest_matches[:48]:
                 _add(p)
             # Then backfill with style-relevant (remaining capacity)
-            by_style = sorted(candidates, key=style_score, reverse=True)
-            for p in by_style[:40]:
+            by_style = _shuffle_within_tiers(candidates, style_score)
+            for p in by_style[:32]:
                 _add(p)
         else:
-            # Default: style first (40), then interests (30)
-            by_style = sorted(candidates, key=style_score, reverse=True)
-            for p in by_style[:40]:
+            # Default: style first (32), then interests (24)
+            by_style = _shuffle_within_tiers(candidates, style_score)
+            for p in by_style[:32]:
                 _add(p)
 
             if interests:
                 interest_matches = [
                     p for p in candidates if interest_score(p) > 0
                 ]
-                interest_matches.sort(key=interest_score, reverse=True)
-                for p in interest_matches[:30]:
+                interest_matches = _shuffle_within_tiers(interest_matches, interest_score)
+                for p in interest_matches[:24]:
                     _add(p)
 
         # --- Pool 3: price-spread (fill remaining budget with price diversity) ---
@@ -333,10 +420,10 @@ class AmazonAdapter(SourcingAdapter):
             per_tercile = max(1, remaining // 3)
 
             for tercile in terciles:
-                # Within each tercile, prefer style-relevant items.
-                tercile_sorted = sorted(tercile, key=style_score, reverse=True)
+                # Within each tercile, shuffle style-relevant items for variety.
+                tercile_shuffled = _shuffle_within_tiers(tercile, style_score)
                 added = 0
-                for p in tercile_sorted:
+                for p in tercile_shuffled:
                     if added >= per_tercile:
                         break
                     if _add(p):

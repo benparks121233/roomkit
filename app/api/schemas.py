@@ -12,6 +12,7 @@ class DesignRequest(BaseModel):
     room_type: str = "bedroom"
     budget: float = 1500.0
     style_description: str = ""
+    core_aesthetic: str | None = None  # Direct style profile id from quiz (e.g. "quiet_luxury")
     bed_size: str | None = None
     qa_answers: dict[str, str] = {}
     density: str = "balanced"
