@@ -118,7 +118,6 @@ export default function IntakePage() {
       wants: pendingResult.wants,
       excluded_slots: pendingResult.excludedSlots,
       mirror_type: pendingResult.mirrorType,
-      allow_over_budget: pendingResult.allowOverBudget,
     };
 
     try {
@@ -248,7 +247,7 @@ export default function IntakePage() {
               }}
             >
               <div style={{ fontWeight: 600, fontSize: "0.95rem", color: "#1C1917", marginBottom: 4 }}>
-                Curated selection
+                Curated selection <span style={{ fontWeight: 400, fontSize: "0.8rem", opacity: 0.55 }}>(recommended)</span>
               </div>
               <div style={{ fontSize: "0.8rem", color: "#78716C", lineHeight: 1.4 }}>
                 Pick each item yourself with our guided flow

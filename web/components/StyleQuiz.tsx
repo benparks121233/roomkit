@@ -41,7 +41,6 @@ export interface IntakeResult {
   wants: string[];
   excludedSlots: string[];
   mirrorType: string | null;
-  allowOverBudget: boolean;
   quiz: QuizOutput;
   summary: string;
 }
@@ -363,29 +362,18 @@ const Q_DESK_PREF: QuizStepDef = {
   ],
 };
 
-const Q_WALLPAPER_PREF: QuizStepDef = {
-  id: "wallpaper_pref",
-  question: "Interested in an accent wall?",
-  hint: "Peel-and-stick wallpaper — easy to apply and remove.",
-  selectMode: "single",
-  layout: "select-cards",
-  options: [
-    { key: "yes", label: "Yes — add wallpaper", swatches: [] },
-    { key: "no",  label: "No wallpaper", swatches: [] },
-  ],
-};
-
 const Q_MIRROR_PREF: QuizStepDef = {
   id: "mirror_pref",
   question: "What kind of mirror?",
   selectMode: "single",
   layout: "select-cards",
   options: [
-    { key: "full_length", label: "Full-length / Standing", swatches: [] },
-    { key: "round",       label: "Round",       swatches: [] },
-    { key: "wall",        label: "Wall",         swatches: [] },
+    { key: "round",       label: "Round",        swatches: [] },
     { key: "arched",      label: "Arched",       swatches: [] },
-    { key: "none",        label: "No mirror",    swatches: [] },
+    { key: "rectangular", label: "Rectangular",  swatches: [] },
+    { key: "full_length", label: "Full-length",  swatches: [] },
+    { key: "any",         label: "No preference", swatches: [] },
+    { key: "none",        label: "None",          swatches: [] },
   ],
 };
 
@@ -421,7 +409,7 @@ const ROOM_OWNERSHIP_GROUPS: Record<string, OwnershipGroup[]> = {
     { label: "Storage & Workspace", items: ["nightstand", "dresser", "desk", "desk_chair"] },
     { label: "Lighting",   items: ["ceiling_light", "table_lamp", "floor_lamp", "sconce"] },
     { label: "Decor",      items: ["wall_art", "plants", "mirror"] },
-    { label: "Soft Goods", items: ["rug", "curtains", "throw_blanket", "wallpaper"] },
+    { label: "Soft Goods", items: ["rug", "curtains", "throw_blanket"] },
   ],
   living_room: [
     { label: "Seating",       items: ["sofa", "armchair", "ottoman"] },
@@ -702,14 +690,10 @@ export default function StyleQuiz({ onComplete }: Props) {
   const [shape, setShape] = useState("");
   const [density, setDensity] = useState("");
 
-  // Budget options
-  const [allowOverBudget, setAllowOverBudget] = useState(false);
-
   // Preference state (slot-gating survey) — all start unselected.
   const [beddingType, setBeddingType] = useState("");
   const [lightingTypes, setLightingTypes] = useState<string[]>([]);
   const [deskPref, setDeskPref] = useState("");
-  const [wallpaperPref, setWallpaperPref] = useState("");
   const [mirrorPref, setMirrorPref] = useState("");
 
   // Interest state
@@ -732,7 +716,7 @@ export default function StyleQuiz({ onComplete }: Props) {
     // Preference steps — full-room + bedroom only.
     // Partial-room users expressed preferences via the item picker in scope.
     if (fullRoom && roomType === "bedroom") {
-      steps.push(Q_BEDDING_TYPE, Q_LIGHTING_TYPES, Q_DESK_PREF, Q_WALLPAPER_PREF, Q_MIRROR_PREF);
+      steps.push(Q_BEDDING_TYPE, Q_LIGHTING_TYPES, Q_DESK_PREF, Q_MIRROR_PREF);
     }
     // Density AFTER preferences — controls ambient items (plants, curtains,
     // throw) that preferences don't address.
@@ -785,7 +769,6 @@ export default function StyleQuiz({ onComplete }: Props) {
       case "bedding_type": return beddingType;
       case "lighting_types": return lightingTypes;
       case "desk_pref": return deskPref;
-      case "wallpaper_pref": return wallpaperPref;
       case "mirror_pref": return mirrorPref;
       case "interests": return interests;
       default: return "";
@@ -821,7 +804,6 @@ export default function StyleQuiz({ onComplete }: Props) {
         });
         break;
       case "desk_pref": setDeskPref(key); break;
-      case "wallpaper_pref": setWallpaperPref(key); break;
       case "mirror_pref": setMirrorPref(key); break;
       case "interests":
         setInterests((prev) =>
@@ -837,18 +819,35 @@ export default function StyleQuiz({ onComplete }: Props) {
   }
 
   // Wants chip toggles (partial room mode)
+  // Bedding exclusivity: comforter vs duvet system are mutually exclusive.
+  const _DUVET_SYSTEM = ["duvet_insert", "duvet_cover"];
   function toggleWant(item: string) {
-    setWants((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item],
-    );
+    setWants((prev) => {
+      if (prev.includes(item)) {
+        return prev.filter((i) => i !== item);
+      }
+      let next = [...prev, item];
+      // Enforce bedding exclusivity
+      if (item === "comforter") {
+        next = next.filter((i) => !_DUVET_SYSTEM.includes(i));
+      } else if (_DUVET_SYSTEM.includes(item)) {
+        next = next.filter((i) => i !== "comforter");
+      }
+      return next;
+    });
   }
 
   function toggleWantGroup(items: string[]) {
-    const allSelected = items.every((i) => wants.includes(i));
+    // For "select all" check, ignore the mutually-exclusive bedding items
+    // so the group can toggle cleanly.
+    const checkableItems = items.filter((i) => !_DUVET_SYSTEM.includes(i));
+    const allSelected = checkableItems.every((i) => wants.includes(i));
     if (allSelected) {
       setWants((prev) => prev.filter((i) => !items.includes(i)));
     } else {
-      setWants((prev) => Array.from(new Set([...prev, ...items])));
+      // When selecting the whole bed group, default to comforter (exclude duvet system)
+      const toAdd = items.filter((i) => !_DUVET_SYSTEM.includes(i));
+      setWants((prev) => Array.from(new Set([...prev, ...toAdd])));
     }
   }
 
@@ -869,7 +868,7 @@ export default function StyleQuiz({ onComplete }: Props) {
     switch (current.id) {
       case "room_type": return roomType !== "";
       case "bed_size": return bedSize !== "";
-      case "budget": return true;
+      case "budget": return !(fullRoom && budget > 0 && budget < 1000);
       case "core": return core !== "";
       case "mood": return mood !== "";
       case "palette": return palette !== "";
@@ -879,7 +878,6 @@ export default function StyleQuiz({ onComplete }: Props) {
       case "bedding_type": return beddingType !== "";
       case "lighting_types": return lightingTypes.length > 0;
       case "desk_pref": return deskPref !== "";
-      case "wallpaper_pref": return wallpaperPref !== "";
       case "mirror_pref": return mirrorPref !== "";
       case "bridge": return true;
       case "interests": return true;
@@ -924,8 +922,6 @@ export default function StyleQuiz({ onComplete }: Props) {
         }
         // Desk
         if (deskPref === "no") excluded.push("desk", "desk_chair");
-        // Wallpaper
-        if (wallpaperPref === "no") excluded.push("wallpaper");
         // Mirror
         if (mirrorPref === "none") excluded.push("mirror");
       }
@@ -937,8 +933,7 @@ export default function StyleQuiz({ onComplete }: Props) {
         fullRoom,
         wants,
         excludedSlots: excluded,
-        mirrorType: mirrorPref && mirrorPref !== "none" ? mirrorPref : null,
-        allowOverBudget,
+        mirrorType: mirrorPref && mirrorPref !== "none" && mirrorPref !== "any" ? mirrorPref : null,
         quiz: {
           style: { core, mood, palette, materials, shape, density, description },
           interests: interestOutput,
@@ -1014,28 +1009,11 @@ export default function StyleQuiz({ onComplete }: Props) {
             <span>$5,000</span>
           </div>
 
-          {/* Over-budget toggle */}
-          <label className="over-budget-toggle" style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "1.25rem", cursor: "pointer", fontSize: "0.9rem" }}>
-            <input
-              type="checkbox"
-              checked={allowOverBudget}
-              onChange={(e) => setAllowOverBudget(e.target.checked)}
-              style={{ width: "1.1rem", height: "1.1rem" }}
-            />
-            <span>
-              Allow up to 30% over budget for better options
-              {allowOverBudget && budget > 0 && (
-                <span style={{ opacity: 0.7 }}> (max ${Math.round(budget * 1.3).toLocaleString()})</span>
-              )}
-            </span>
-          </label>
-
           {/* Full-room minimum budget warning */}
           {fullRoom && budget > 0 && budget < 1000 && (
-            <div style={{ marginTop: "1rem", padding: "0.75rem 1rem", background: "rgba(255, 170, 0, 0.1)", border: "1px solid rgba(255, 170, 0, 0.3)", borderRadius: "0.5rem", fontSize: "0.88rem", lineHeight: 1.5 }}>
-              <strong>A full room needs at least $1,000 for good coverage.</strong>
-              {" "}At ${budget.toLocaleString()}, some categories will have limited options.
-              We recommend choosing specific pieces instead for budgets under $1,000.
+            <div style={{ marginTop: "1rem", padding: "0.75rem 1rem", background: "rgba(185, 28, 28, 0.08)", border: "1px solid rgba(185, 28, 28, 0.25)", borderRadius: "0.5rem", fontSize: "0.88rem", lineHeight: 1.5, color: "#7F1D1D" }}>
+              <strong>Full-room designs require a minimum budget of $1,000.</strong>
+              {" "}Increase your budget or go back and choose specific pieces instead.
             </div>
           )}
         </div>
@@ -1079,19 +1057,29 @@ export default function StyleQuiz({ onComplete }: Props) {
                       {group.label}
                     </span>
                     <div className="ownership-chips">
-                      {group.items.map((item) => (
+                      {group.items.map((item) => {
+                        // Bedding exclusivity: disable the other system's chips
+                        const comforterSelected = wants.includes("comforter");
+                        const duvetSelected = _DUVET_SYSTEM.some((s) => wants.includes(s));
+                        const disabled =
+                          (item === "comforter" && duvetSelected) ||
+                          (_DUVET_SYSTEM.includes(item) && comforterSelected);
+                        return (
                         <button
                           key={item}
                           type="button"
                           className={`ownership-chip ${wants.includes(item) ? "selected" : ""}`}
-                          onClick={() => toggleWant(item)}
+                          onClick={() => !disabled && toggleWant(item)}
+                          style={disabled ? { opacity: 0.35, cursor: "not-allowed" } : undefined}
+                          title={disabled ? "Can't use both comforter and duvet" : undefined}
                         >
                           <svg className="chip-check" viewBox="0 0 14 14" fill="none">
                             <path d="M2.5 7.5L5.5 10.5L11.5 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           {item.replace(/_/g, " ")}
                         </button>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 ))}

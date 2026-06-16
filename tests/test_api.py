@@ -500,7 +500,7 @@ class TestValidateSelections:
         """SlotResult carries max_quantity from taxonomy."""
         resp = client.post("/design", json={"room_type": "bedroom", "budget": 1500})
         slots = {s["slot_id"]: s for s in resp.json()["slots"]}
-        assert slots["wall_art"]["max_quantity"] == 6
+        assert slots["wall_art"]["max_quantity"] == 4
         assert slots["plants"]["max_quantity"] == 3
         assert slots["throw_blanket"]["max_quantity"] == 1
         assert slots["bed_frame"]["max_quantity"] == 1

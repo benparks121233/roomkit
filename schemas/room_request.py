@@ -70,9 +70,5 @@ class RoomRequest(BaseModel):
     # selection_service to filter mirror candidates.
     mirror_type: Optional[str] = None
 
-    # Over-budget option: if True, the effective budget is 130% of the stated
-    # budget.  The never-exceed guarantee holds at the 130% ceiling.
-    allow_over_budget: bool = False
-
     # Timestamp set by intake_service at parse time (UTC).
     created_at: datetime

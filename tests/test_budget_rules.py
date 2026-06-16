@@ -136,7 +136,7 @@ def test_allocate_budget_carries_max_quantity():
     slot_map = {s.slot_id: s for s in plan.slots}
 
     # Multi-select decor slots.
-    assert slot_map["wall_art"].max_quantity == 6
+    assert slot_map["wall_art"].max_quantity == 4
     assert slot_map["plants"].max_quantity == 3
     assert slot_map["throw_blanket"].max_quantity == 1
 

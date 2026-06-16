@@ -21,7 +21,6 @@ export interface DesignRequest {
   wants?: string[];
   excluded_slots?: string[];
   mirror_type?: string | null;
-  allow_over_budget?: boolean;
 }
 
 export interface ProductResult {
@@ -56,7 +55,6 @@ export interface DesignResponse {
   room_type: string;
   style: StyleResult;
   target_budget: number;
-  user_budget: number;  // User's stated budget (before over-budget multiplier)
   total_spent: number;
   is_feasible: boolean;
   slots: SlotResult[];
@@ -254,7 +252,6 @@ export const HOTSPOT_POSITIONS: Record<string, Record<string, { x: number; y: nu
     desk:          { x: 0.88, y: 0.50, w: 0.14, h: 0.22 },
     desk_chair:    { x: 0.85, y: 0.60, w: 0.10, h: 0.18 },
     sconce:        { x: 0.22, y: 0.30, w: 0.08, h: 0.12 },
-    wallpaper:     { x: 0.42, y: 0.15, w: 0.50, h: 0.30 },
   },
   living_room: {
     sofa:          { x: 0.38, y: 0.55, w: 0.40, h: 0.25 },

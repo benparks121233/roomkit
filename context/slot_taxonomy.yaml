@@ -66,7 +66,7 @@ items:
   # Decor
   wall_art:
     required_specs: []
-    max_quantity: 6
+    max_quantity: 4
   plants:
     required_specs: []
     max_quantity: 3
@@ -84,89 +84,82 @@ items:
     required_specs: []
   throw_pillows:
     required_specs: []
-  wallpaper:
-    required_specs: []
-
+  # Budget weights are proportional to 75th-percentile product prices per
+  # category. This ensures allocations scale evenly with budget — at $1500,
+  # every slot reaches ~80% of p75; at $2000, every slot hits p75+.
 room_presets:
   bedroom:
     groups:
       bed:
-        budget_weight: 0.40
+        budget_weight: 0.48
         items:
-          bed_frame:    { required: true,  sub_weight: 0.42 }
-          mattress:     { required: true,  sub_weight: 0.30 }
-          sheets:       { required: true,  sub_weight: 0.12 }
-          comforter:    { required: false, sub_weight: 0.08 }
-          duvet_insert: { required: false, sub_weight: 0.04 }
-          duvet_cover:  { required: false, sub_weight: 0.06 }
+          bed_frame:    { required: true,  sub_weight: 0.26 }
+          mattress:     { required: true,  sub_weight: 0.36 }
+          sheets:       { required: true,  sub_weight: 0.07 }
+          comforter:    { required: false, sub_weight: 0.07 }
+          duvet_insert: { required: false, sub_weight: 0.10 }
+          duvet_cover:  { required: false, sub_weight: 0.08 }
           pillows:      { required: true,  sub_weight: 0.06 }
       storage:
         budget_weight: 0.20
         items:
-          nightstand:   { required: true,  sub_weight: 0.30 }
-          dresser:      { required: false, sub_weight: 0.35 }
-          desk:         { required: false, sub_weight: 0.25 }
-          desk_chair:   { required: false, sub_weight: 0.10 }
+          nightstand:   { required: true,  sub_weight: 0.18 }
+          dresser:      { required: false, sub_weight: 0.33 }
+          desk:         { required: false, sub_weight: 0.29 }
+          desk_chair:   { required: false, sub_weight: 0.20 }
       lighting:
-        budget_weight: 0.10
+        budget_weight: 0.08
         items:
-          ceiling_light: { required: true,  sub_weight: 0.20 }
-          table_lamp:    { required: false, sub_weight: 0.30 }
-          floor_lamp:    { required: false, sub_weight: 0.25 }
-          sconce:        { required: false, sub_weight: 0.25 }
+          ceiling_light: { required: true,  sub_weight: 0.27 }
+          table_lamp:    { required: false, sub_weight: 0.21 }
+          floor_lamp:    { required: false, sub_weight: 0.26 }
+          sconce:        { required: false, sub_weight: 0.26 }
       decor:
-        budget_weight: 0.10
+        budget_weight: 0.13
         items:
-          wall_art:     { required: true,  sub_weight: 0.45 }
-          plants:       { required: false, sub_weight: 0.25 }
-          mirror:       { required: false, sub_weight: 0.30 }
+          wall_art:     { required: true,  sub_weight: 0.22 }
+          plants:       { required: false, sub_weight: 0.27 }
+          mirror:       { required: false, sub_weight: 0.51 }
       soft_goods:
-        budget_weight: 0.20
+        budget_weight: 0.11
         items:
-          rug:             { required: true,  sub_weight: 0.40 }
-          curtains:        { required: false, sub_weight: 0.25 }
-          throw_blanket:   { required: false, sub_weight: 0.15 }
-          wallpaper:       { required: false, sub_weight: 0.20 }
+          rug:             { required: true,  sub_weight: 0.59 }
+          curtains:        { required: false, sub_weight: 0.23 }
+          throw_blanket:   { required: false, sub_weight: 0.18 }
 
   living_room:
     groups:
       seating:
-        budget_weight: 0.30
+        budget_weight: 0.44
         items:
-          sofa:         { required: true,  sub_weight: 0.55 }
-          armchair:     { required: false, sub_weight: 0.30 }
-          ottoman:      { required: false, sub_weight: 0.15 }
-      entertainment:
-        budget_weight: 0.22
-        items:
-          tv:           { required: true,  sub_weight: 0.55 }
-          tv_stand:     { required: true,  sub_weight: 0.30 }
-          sound_bar:    { required: false, sub_weight: 0.15 }
+          sofa:         { required: true,  sub_weight: 0.60 }
+          armchair:     { required: false, sub_weight: 0.27 }
+          ottoman:      { required: false, sub_weight: 0.13 }
       tables:
-        budget_weight: 0.10
+        budget_weight: 0.24
         items:
-          coffee_table: { required: true,  sub_weight: 0.60 }
-          side_table:   { required: false, sub_weight: 0.40 }
+          coffee_table: { required: true,  sub_weight: 0.36 }
+          side_table:   { required: false, sub_weight: 0.19 }
+          tv_stand:     { required: true,  sub_weight: 0.45 }
       lighting:
-        budget_weight: 0.10
+        budget_weight: 0.09
         items:
-          ceiling_light: { required: true,  sub_weight: 0.40 }
+          ceiling_light: { required: true,  sub_weight: 0.37 }
           floor_lamp:    { required: false, sub_weight: 0.35 }
-          table_lamp:    { required: false, sub_weight: 0.25 }
+          table_lamp:    { required: false, sub_weight: 0.28 }
       decor:
-        budget_weight: 0.10
+        budget_weight: 0.12
         items:
-          wall_art:     { required: true,  sub_weight: 0.30 }
-          plants:       { required: false, sub_weight: 0.25 }
-          mirror:       { required: false, sub_weight: 0.20 }
-          bookshelf:    { required: false, sub_weight: 0.25 }
+          wall_art:     { required: true,  sub_weight: 0.22 }
+          plants:       { required: false, sub_weight: 0.27 }
+          mirror:       { required: false, sub_weight: 0.51 }
       soft_goods:
-        budget_weight: 0.18
+        budget_weight: 0.11
         items:
-          rug:             { required: true,  sub_weight: 0.40 }
-          curtains:        { required: false, sub_weight: 0.25 }
-          throw_pillows:   { required: false, sub_weight: 0.15 }
-          throw_blanket:   { required: false, sub_weight: 0.20 }
+          rug:             { required: true,  sub_weight: 0.54 }
+          curtains:        { required: false, sub_weight: 0.20 }
+          throw_pillows:   { required: false, sub_weight: 0.10 }
+          throw_blanket:   { required: false, sub_weight: 0.16 }
 
 budget_rules:
   min_slot_dollars: 15.0

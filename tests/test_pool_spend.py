@@ -50,7 +50,7 @@ def _make_plan(
 # ---------------------------------------------------------------------------
 
 def test_single_item_within_pool():
-    plan = _make_plan([("wall_art", 60.0, 6)])
+    plan = _make_plan([("wall_art", 60.0, 4)])
     ok, total, results = validate_pool_spend({"wall_art": [10.0]}, plan)
     assert ok is True
     assert total == 10.0
@@ -58,7 +58,7 @@ def test_single_item_within_pool():
 
 
 def test_multiple_items_sum_exactly_at_pool():
-    plan = _make_plan([("wall_art", 60.0, 6)])
+    plan = _make_plan([("wall_art", 60.0, 4)])
     prices = [10.0, 15.0, 20.0, 15.0]  # sum = 60.0
     ok, total, results = validate_pool_spend({"wall_art": prices}, plan)
     assert ok is True
@@ -74,7 +74,7 @@ def test_multiple_items_under_pool():
 
 
 def test_empty_selections():
-    plan = _make_plan([("wall_art", 60.0, 6)])
+    plan = _make_plan([("wall_art", 60.0, 4)])
     ok, total, results = validate_pool_spend({}, plan)
     assert ok is True
     assert total == 0.0
@@ -86,7 +86,7 @@ def test_empty_selections():
 # ---------------------------------------------------------------------------
 
 def test_sum_over_pool_is_invalid():
-    plan = _make_plan([("wall_art", 60.0, 6)])
+    plan = _make_plan([("wall_art", 60.0, 4)])
     prices = [20.0, 25.0, 20.0]  # sum = 65.0 > 60.0
     ok, total, results = validate_pool_spend({"wall_art": prices}, plan)
     assert ok is False
@@ -121,7 +121,7 @@ def test_single_select_slot_rejects_two_items():
 # ---------------------------------------------------------------------------
 
 def test_unknown_slot():
-    plan = _make_plan([("wall_art", 60.0, 6)])
+    plan = _make_plan([("wall_art", 60.0, 4)])
     ok, total, results = validate_pool_spend({"fake_slot": [10.0]}, plan)
     assert ok is False
     assert results[0] == ("fake_slot", False, 0.0, "unknown_slot")
@@ -133,12 +133,12 @@ def test_unknown_slot():
 
 def test_mixed_valid_and_invalid():
     plan = _make_plan([
-        ("wall_art", 60.0, 6),
+        ("wall_art", 60.0, 4),
         ("plants", 45.0, 3),
         ("bed_frame", 270.0, 1),
     ])
     selections = {
-        "wall_art": [10.0, 12.0],        # valid: 22 <= 60, 2 <= 6
+        "wall_art": [10.0, 12.0],        # valid: 22 <= 60, 2 <= 4
         "plants": [20.0, 15.0, 12.0],    # invalid: 47 > 45
         "bed_frame": [200.0],             # valid: 200 <= 270, 1 <= 1
     }
@@ -154,7 +154,7 @@ def test_mixed_valid_and_invalid():
 
 def test_total_spent_sums_all_slots():
     plan = _make_plan([
-        ("wall_art", 60.0, 6),
+        ("wall_art", 60.0, 4),
         ("plants", 45.0, 3),
     ])
     selections = {

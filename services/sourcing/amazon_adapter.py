@@ -14,6 +14,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import random
 import re
@@ -100,6 +101,23 @@ _PLANT_STAND_PHRASES = [
     "grow kit",
     "propagation",
 ]
+
+# Empty pot/planter detection for the plants slot.
+# Products with these words are pots/planters/vessels.  We keep them ONLY
+# if the name also contains a plant indicator (artificial, faux, tree, etc.).
+_POT_PLANTER_WORDS = re.compile(
+    r"\b(?:planter|plant\s*pot|flower\s*pot|ceramic\s*pot|garden\s*pot"
+    r"|cachepot|jardiniere|nursery\s*pot|planting\s*pot)\b",
+    re.IGNORECASE,
+)
+_PLANT_INDICATOR_WORDS = re.compile(
+    r"\b(?:artificial|faux|fake|silk|real|live|tree|fern|palm|succulent"
+    r"|cactus|ivy|monstera|snake\s*plant|fiddle|pothos|eucalyptus|olive"
+    r"|ficus|grass|topiary|bonsai|dracaena|philodendron|orchid|aloe"
+    r"|agave|vine|leaf|leaves|bouquet|arrangement|greenery|bamboo"
+    r"|herb|lavender|rosemary|bush|shrub|stem|branch|floral|potted)\b",
+    re.IGNORECASE,
+)
 
 _BATHROOM_MIRROR_PHRASES = [
     "bathroom mirror",
@@ -200,6 +218,24 @@ _CHEUGY_PATTERNS = [
 ]
 _CHEUGY_RE = re.compile("|".join(_CHEUGY_PATTERNS), re.IGNORECASE)
 
+# Floral-pattern keywords excluded from the sheets slot.
+# Live Amazon results frequently surface floral bedding; we want clean/solid
+# or geometric patterns only.  Checked case-insensitively as substrings.
+_FLORAL_SHEET_PHRASES = [
+    "floral",
+    "flower",
+    "blossom",
+    "bloom",
+    "botanical",
+    "rose pattern",
+    "daisy",
+    "tulip",
+    "poppy",
+    "lily pattern",
+    "wildflower",
+    "garden print",
+]
+
 # Per-slot exclusion phrases — consolidated contamination filters.
 # Checked case-insensitively against product names during fetch_candidates().
 _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
@@ -263,10 +299,6 @@ _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
     "sconce": [
         "outdoor", "porch", "garage", "bathroom vanity light",
         "kitchen", "under cabinet",
-    ],
-    "wallpaper": [
-        "wallpaper paste", "wallpaper tool", "wallpaper smoother",
-        "wallpaper scorer", "contact paper", "shelf liner",
     ],
 }
 
@@ -359,10 +391,14 @@ class AmazonAdapter(SourcingAdapter):
                 if any(ph in name_lower for ph in _DECORATIVE_PILLOW_PHRASES):
                     continue
 
-            # Filter: plants slot = actual plants/planters only (not stands).
+            # Filter: plants slot = actual plants only (not stands or empty pots).
             if slot_id == "plants":
                 name_lower = raw.get("name", "").lower()
                 if any(ph in name_lower for ph in _PLANT_STAND_PHRASES):
+                    continue
+                # Exclude empty pots/planters that don't include an actual plant.
+                raw_name = raw.get("name", "")
+                if _POT_PLANTER_WORDS.search(raw_name) and not _PLANT_INDICATOR_WORDS.search(raw_name):
                     continue
 
             # Filter: consolidated per-slot contamination exclusions.
@@ -390,6 +426,26 @@ class AmazonAdapter(SourcingAdapter):
                 slot_id=slot_id,
                 fetched_at=now,
             ))
+
+        # Post-filter: remove floral-patterned sheets from the sheets slot.
+        # Live Amazon results frequently surface floral bedding that doesn't
+        # fit a clean/modern room design.
+        if slot_id == "sheets":
+            before = len(candidates)
+            candidates = [
+                p for p in candidates
+                if not any(ph in p.name.lower() for ph in _FLORAL_SHEET_PHRASES)
+            ]
+            removed = before - len(candidates)
+            if removed:
+                logging.getLogger(__name__).info(
+                    "sheets: removed %d floral candidate(s)", removed
+                )
+
+        # Diversity pass: remove near-duplicate products whose names
+        # differ only in size, color, or minor descriptors.  Keeps the first
+        # (cheapest) variant and drops repetitive clones.
+        candidates = self._deduplicate(candidates)
 
         if len(candidates) <= _MAX_CANDIDATES:
             return candidates
@@ -443,6 +499,10 @@ class AmazonAdapter(SourcingAdapter):
                     return False
         return True
 
+    # Functional/commodity slots where aesthetic scoring is irrelevant.
+    # These skip style Pool 1 entirely and rely on price-spread only.
+    _AESTHETIC_AGNOSTIC_SLOTS = {"mattress", "duvet_insert"}
+
     @staticmethod
     def _build_shortlist(
         candidates: list[Product],
@@ -454,7 +514,8 @@ class AmazonAdapter(SourcingAdapter):
         """Build a capped shortlist blending style, interests, and price spread.
 
         Strategy (order of priority, deduped):
-          1. Style-relevant: top items by keyword-match score.
+          1. Style-relevant: top items by keyword-match score (skipped for
+             functional/commodity slots like mattress and duvet_insert).
           2. Interest-guaranteed: for decor slots, products matching the user's
              interest categories (music, sports, etc.) regardless of style score.
           3. Price-spread: sample across price terciles so the LLM sees cheap,
@@ -507,47 +568,78 @@ class AmazonAdapter(SourcingAdapter):
         # interest-relevant candidates.
         is_interest_dominant = slot_id == "wall_art" and bool(interests)
 
-        def _shuffle_within_tiers(products: list[Product], score_fn) -> list[Product]:
-            """Sort by score descending, but shuffle within same-score tiers.
+        def _shuffle_within_tiers(products: list[Product], score_fn, cap: int = 0) -> list[Product]:
+            """Sort by score descending, shuffle within tiers, sample all tiers.
 
-            This preserves style/interest relevance ranking while ensuring
-            different products surface across runs — kills selection bias
-            without sacrificing on-aesthetic quality.
+            When cap > 0 and the pool is larger than the cap, each tier gets
+            a share of the cap proportional to its size, with a guaranteed
+            minimum of 1.  This ensures high-scoring items are well-represented
+            but every tier contributes variety — preventing the same top-37
+            items from locking out the pool every run.
             """
             from itertools import groupby
             scored = sorted(products, key=score_fn, reverse=True)
-            shuffled: list[Product] = []
+
+            if cap <= 0 or len(scored) <= cap:
+                # No sampling needed — just shuffle within tiers
+                shuffled: list[Product] = []
+                for _score, group in groupby(scored, key=score_fn):
+                    tier = list(group)
+                    random.shuffle(tier)
+                    shuffled.extend(tier)
+                return shuffled
+
+            # Proportional sampling: each tier gets cap * (tier_size / total)
+            # slots, rounded up, with a minimum of 1.
+            tiers: list[list[Product]] = []
             for _score, group in groupby(scored, key=score_fn):
-                tier = list(group)
+                tiers.append(list(group))
+
+            total = len(scored)
+            result_list: list[Product] = []
+            for tier in tiers:
                 random.shuffle(tier)
-                shuffled.extend(tier)
-            return shuffled
+                share = max(1, round(cap * len(tier) / total))
+                result_list.extend(tier[:share])
 
-        if is_interest_dominant:
-            # Interest pool first (up to 48)
-            interest_matches = [
-                p for p in candidates if interest_score(p) > 0
-            ]
-            interest_matches = _shuffle_within_tiers(interest_matches, interest_score)
-            for p in interest_matches[:48]:
-                _add(p)
-            # Then backfill with style-relevant (remaining capacity)
-            by_style = _shuffle_within_tiers(candidates, style_score)
-            for p in by_style[:32]:
-                _add(p)
-        else:
-            # Default: style first (32), then interests (24)
-            by_style = _shuffle_within_tiers(candidates, style_score)
-            for p in by_style[:32]:
-                _add(p)
+            # Trim to cap (rounding may overshoot slightly)
+            random.shuffle(result_list)
+            # Re-sort by score so top items still lead the list
+            result_list.sort(key=score_fn, reverse=True)
+            return result_list[:cap]
 
-            if interests:
+        # Only take style-scored products (score > 0) in Pool 1.
+        # Zero-score products are left for Pool 3 price-spread backfill.
+        # Aesthetic-agnostic slots (mattress, duvet_insert) skip Pool 1
+        # entirely — they're functional items where style doesn't matter.
+        is_agnostic = slot_id in AmazonAdapter._AESTHETIC_AGNOSTIC_SLOTS
+
+        if not is_agnostic:
+            style_matched = [p for p in candidates if style_score(p) > 0]
+
+            if is_interest_dominant:
                 interest_matches = [
                     p for p in candidates if interest_score(p) > 0
                 ]
-                interest_matches = _shuffle_within_tiers(interest_matches, interest_score)
-                for p in interest_matches[:24]:
+                interest_matches = _shuffle_within_tiers(interest_matches, interest_score, cap=48)
+                for p in interest_matches[:48]:
                     _add(p)
+                style_matched = _shuffle_within_tiers(style_matched, style_score, cap=32)
+                for p in style_matched[:32]:
+                    _add(p)
+            else:
+                # Default: style first (up to 40), then interests (24)
+                style_matched = _shuffle_within_tiers(style_matched, style_score, cap=40)
+                for p in style_matched[:40]:
+                    _add(p)
+
+                if interests:
+                    interest_matches = [
+                        p for p in candidates if interest_score(p) > 0
+                    ]
+                    interest_matches = _shuffle_within_tiers(interest_matches, interest_score, cap=24)
+                    for p in interest_matches[:24]:
+                        _add(p)
 
         # --- Pool 3: price-spread (fill remaining budget with price diversity) ---
         remaining = _MAX_CANDIDATES - len(result)
@@ -574,6 +666,51 @@ class AmazonAdapter(SourcingAdapter):
                         added += 1
 
         return result[:_MAX_CANDIDATES]
+
+    # Regex stripping color/finish descriptors so we can compare
+    # the "core" product name for near-duplicate detection.
+    # NOTE: bed sizes (twin/full/queen/king) are NOT stripped — a Queen
+    # and King bed frame are fundamentally different products.
+    _DEDUP_STRIP_RE = re.compile(
+        r"""
+        \b(?:                                   # word boundary
+          \d+["']\s*x\s*\d+["']?               # dimensions like 56"x16"
+          |\d+\s*(?:inch|in|cm|mm|ft|pack)\b   # 24 inch, 6 pack
+          |(?:x+\s*)?(?:small|medium|large|xl|xxl)\b
+          |black|white|gray|grey|brown|beige|cream|ivory|taupe|sand
+          |walnut|oak|espresso|natural|mahogany|cherry|rustic|charcoal
+          |gold|silver|brass|bronze|copper|nickel
+        )\b
+        |–\s*                                   # dash separators
+        |[,()[\]]                               # punctuation
+        """,
+        re.IGNORECASE | re.VERBOSE,
+    )
+
+    @staticmethod
+    def _deduplicate(candidates: list[Product]) -> list[Product]:
+        """Remove near-duplicate products (same core name, different size/color).
+
+        Keeps the first occurrence (by original order).  Two products are
+        considered duplicates if their names, after stripping dimensions,
+        colors, and size descriptors, are identical.
+        """
+        seen_cores: set[str] = set()
+        result: list[Product] = []
+        for p in candidates:
+            core = AmazonAdapter._DEDUP_STRIP_RE.sub("", p.name.lower())
+            core = re.sub(r"\s+", " ", core).strip()
+            if core in seen_cores:
+                continue
+            seen_cores.add(core)
+            result.append(p)
+        removed = len(candidates) - len(result)
+        if removed:
+            logging.getLogger(__name__).info(
+                "Diversity: removed %d near-duplicate(s) from %d candidates",
+                removed, len(candidates),
+            )
+        return result
 
     def _inject_affiliate_tag(self, url: str) -> str:
         """Ensure the buy_url contains the affiliate tag query parameter."""

@@ -449,6 +449,7 @@ h1, h2, h3 {
 .budget-range-labels {
   display: flex;
   justify-content: space-between;
+  position: relative;
   width: 100%;
   font-size: 0.75rem;
   color: var(--color-text-muted);
@@ -2280,5 +2281,119 @@ h1, h2, h3 {
 @media (max-width: 420px) {
   .product-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Room So Far — horizontal thumbnail strip during guided selection
+   --------------------------------------------------------------------------- */
+
+.room-so-far {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 12px;
+  padding: 0 16px;
+}
+
+.room-so-far-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 8px;
+}
+
+.room-so-far-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  /* Hide scrollbar but keep scroll functionality */
+  scrollbar-width: none;
+}
+
+.room-so-far-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.room-so-far-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  scroll-snap-align: start;
+  animation: roomSoFarFadeIn 0.3s ease both;
+}
+
+.room-so-far-thumb {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.room-so-far-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-so-far-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.room-so-far-label {
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 56px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+@keyframes roomSoFarFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slightly larger thumbs on wider screens */
+@media (min-width: 640px) {
+  .room-so-far-thumb {
+    width: 60px;
+    height: 60px;
+  }
+  .room-so-far-label {
+    font-size: 0.7rem;
+    max-width: 64px;
   }
 }

@@ -20,7 +20,7 @@ import ProductCard from "@/components/ProductCard";
 import BudgetMeter from "@/components/BudgetMeter";
 import InteractiveRoomRender from "@/components/InteractiveRoomRender";
 import Image from "next/image";
-import RoomSceneImage from "@/components/RoomSceneImage";
+import RoomSoFar from "@/components/RoomSoFar";
 
 // ---------------------------------------------------------------------------
 // Taxonomy group ordering — mirrors slot_taxonomy.yaml
@@ -37,7 +37,7 @@ const BEDROOM_GROUPS: GroupDef[] = [
   { key: "storage", label: "Storage & Workspace", slotIds: ["nightstand", "dresser", "desk", "desk_chair"] },
   { key: "lighting", label: "Lighting", slotIds: ["ceiling_light", "table_lamp", "floor_lamp", "sconce"] },
   { key: "decor", label: "Decor", slotIds: ["wall_art", "plants", "mirror"] },
-  { key: "soft_goods", label: "Soft Goods", slotIds: ["rug", "curtains", "throw_blanket", "wallpaper"] },
+  { key: "soft_goods", label: "Soft Goods", slotIds: ["rug", "curtains", "throw_blanket"] },
 ];
 
 const LIVING_ROOM_GROUPS: GroupDef[] = [
@@ -104,15 +104,11 @@ export default function ResultPage() {
   const [error, setError] = useState<string | null>(null);
 
   // Selection state — always arrays (length 1 for single-select slots)
-  const [phase, setPhase] = useState<"selecting" | "transition" | "complete">("selecting");
+  const [phase, setPhase] = useState<"selecting" | "complete">("selecting");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selections, setSelections] = useState<Record<string, ProductResult[]>>({});
   // Validation runs silently — errors logged to console, never shown to user.
   const validationRan = useRef(false);
-  const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [lastPickedSlotId, setLastPickedSlotId] = useState<string | null>(null);
-  const [pickCount, setPickCount] = useState(0);
-  const [skipAnimations, setSkipAnimations] = useState(false);
   const [skippedSlots, setSkippedSlots] = useState<Set<string>>(new Set());
   const [overBudgetProduct, setOverBudgetProduct] = useState<ProductResult | null>(null);
 
@@ -137,11 +133,13 @@ export default function ResultPage() {
   useEffect(() => {
     if (isAutoMode && design && !autoModeApplied.current) {
       autoModeApplied.current = true;
-      // Fill all slots with rank-1 defaults
+      // Fill all slots with up to max_quantity defaults (rank-1 + top alternatives)
       const defaults: Record<string, ProductResult[]> = {};
       for (const slot of design.slots) {
         if (slot.product) {
-          defaults[slot.slot_id] = [slot.product];
+          const qty = slot.max_quantity ?? 1;
+          const all = [slot.product, ...slot.alternatives];
+          defaults[slot.slot_id] = all.slice(0, qty);
         }
       }
       setSelections(defaults);
@@ -175,7 +173,9 @@ export default function ResultPage() {
         if (filled[id] && filled[id].length > 0) continue;
         const slot = slotMap.get(id);
         if (slot?.product) {
-          filled[id] = [slot.product];
+          const qty = slot.max_quantity ?? 1;
+          const all = [slot.product, ...slot.alternatives];
+          filled[id] = all.slice(0, qty);
         }
       }
       return filled;
@@ -218,61 +218,33 @@ export default function ResultPage() {
     window.scrollTo(0, 0);
   }, [currentIndex, phase]);
 
-  // Bed slot IDs — intermediate bed picks skip the transition entirely
-  const BED_SLOTS = useMemo(() => new Set(["bed_frame", "mattress", "sheets", "comforter", "duvet_insert", "duvet_cover", "pillows"]), []);
-  const lastBedSlotInFlow = useMemo(() => {
-    const bedSlots = activeSlotIds.filter((id) => BED_SLOTS.has(id));
-    return bedSlots[bedSlots.length - 1] ?? null;
-  }, [activeSlotIds, BED_SLOTS]);
 
-  // Show transition scene, then advance to next slot after delay
+  // Advance to next slot immediately.
   const advanceWithTransition = useCallback(() => {
-    if (transitionTimer.current) clearTimeout(transitionTimer.current);
-
-    // Skip transition for intermediate bed picks or when animations are disabled
-    const isIntermediateBedPick = currentSlotId && BED_SLOTS.has(currentSlotId) && currentSlotId !== lastBedSlotInFlow;
-    if (skipAnimations || isIntermediateBedPick) {
-      const next = currentIndex + 1;
-      if (next >= activeSlotIds.length) {
-        setSelections((prev) => fillDefaults(prev));
-        setPhase("complete");
-      } else {
-        setCurrentIndex(next);
-        setPhase("selecting");
-      }
-      return;
-    }
-
-    setPhase("transition");
-    transitionTimer.current = setTimeout(() => {
-      const next = currentIndex + 1;
-      if (next >= activeSlotIds.length) {
-        setSelections((prev) => fillDefaults(prev));
-        setPhase("complete");
-      } else {
-        setCurrentIndex(next);
-        setPhase("selecting");
-      }
-    }, 2000);
-  }, [currentIndex, currentSlotId, activeSlotIds, fillDefaults, skipAnimations, BED_SLOTS, lastBedSlotInFlow]);
-
-  // Direct advance (no transition) — for skip
-  const advanceToNext = useCallback(() => {
     const next = currentIndex + 1;
     if (next >= activeSlotIds.length) {
       setSelections((prev) => fillDefaults(prev));
       setPhase("complete");
     } else {
       setCurrentIndex(next);
+      setPhase("selecting");
     }
   }, [currentIndex, activeSlotIds, fillDefaults]);
 
-  // Clean up transition timer
-  useEffect(() => {
-    return () => {
-      if (transitionTimer.current) clearTimeout(transitionTimer.current);
-    };
-  }, []);
+  // Alias for skip buttons that call advanceToNext
+  const advanceToNext = advanceWithTransition;
+
+  // Back button — go to previous non-skipped slot, preserving all selections
+  const goBack = useCallback(() => {
+    let target = currentIndex - 1;
+    while (target >= 0 && skippedSlots.has(activeSlotIds[target])) {
+      target--;
+    }
+    if (target >= 0) {
+      setCurrentIndex(target);
+    }
+  }, [currentIndex, activeSlotIds, skippedSlots]);
+
 
   // Toggle handler for guided selection (works for both single and multi)
   const handleToggle = useCallback(
@@ -286,8 +258,7 @@ export default function ResultPage() {
           .filter(([id]) => id !== currentSlotId)
           .flatMap(([, prods]) => prods)
           .reduce((sum, p) => sum + p.normalized_price, 0);
-        const budgetCap = design ? (design.user_budget ?? design.target_budget) : 0;
-        const wouldExceed = design && (otherSpend + product.normalized_price > budgetCap * 1.05);
+        const wouldExceed = design && (otherSpend + product.normalized_price > design.target_budget * 1.05);
 
         if (wouldExceed) {
           // Show over-budget warning — let user confirm or pick again
@@ -296,8 +267,7 @@ export default function ResultPage() {
         }
 
         setSelections((prev) => ({ ...prev, [currentSlotId]: [product] }));
-        setLastPickedSlotId(currentSlotId);
-        setPickCount((c) => c + 1);
+
         setTimeout(advanceWithTransition, 300);
       } else {
         // Multi-select: toggle on/off
@@ -319,8 +289,7 @@ export default function ResultPage() {
           if (current.length >= maxQty) return prev;
           return { ...prev, [currentSlotId]: [...current, product] };
         });
-        setLastPickedSlotId(currentSlotId);
-        setPickCount((c) => c + 1);
+
       }
     },
     [currentSlotId, currentSlot, advanceWithTransition],
@@ -449,156 +418,8 @@ export default function ResultPage() {
     );
   }
 
-  // --- Transition scene (between picks) ---
-  if (phase === "transition") {
-    // Figure out what group label to show
-    const transGroup = currentSlotId && design
-      ? getGroupForSlot(currentSlotId, design.room_type)
-      : null;
-    const nextIndex = currentIndex + 1;
-    const nextSlotId = activeSlotIds[nextIndex] ?? null;
-    const nextGroup = nextSlotId && design
-      ? getGroupForSlot(nextSlotId, design.room_type)
-      : null;
-    const showNextLabel = nextGroup && nextGroup.key !== transGroup?.key;
-
-    return (
-      <main className="result-page">
-        <div
-          className="scene-transition"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            minHeight: "100dvh",
-            padding: "24px",
-            background: "#F5F0EA",
-            animation: "sceneFadeIn 0.4s ease both",
-          }}
-        >
-          <div style={{ width: "100%", maxWidth: 720 }}>
-            <RoomSceneImage
-              selections={selections}
-              lastPickedSlotId={lastPickedSlotId}
-              pickCount={pickCount}
-              activeSlotIds={activeSlotIds}
-            />
-          </div>
-
-          <p style={{
-            fontSize: "0.75rem",
-            color: "#A8A29E",
-            marginTop: 12,
-            letterSpacing: "0.01em",
-          }}>
-            Just a fun illustration &middot; your AI room renders at the end
-          </p>
-
-          {/* Progress dots */}
-          <div style={{
-            display: "flex",
-            gap: 6,
-            marginTop: 24,
-            alignItems: "center",
-          }}>
-            {activeSlotIds.map((id, i) => (
-              <div
-                key={id}
-                style={{
-                  width: i <= currentIndex ? 10 : 7,
-                  height: i <= currentIndex ? 10 : 7,
-                  borderRadius: "50%",
-                  background: i < currentIndex
-                    ? "#B8A080"
-                    : i === currentIndex
-                    ? "#8B6F5C"
-                    : "#DDD6CC",
-                  transition: "all 0.3s ease",
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Upcoming group label */}
-          {showNextLabel && nextGroup && (
-            <p style={{
-              marginTop: 20,
-              color: "#8B6F5C",
-              fontSize: "0.85rem",
-              fontWeight: 500,
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              opacity: 0,
-              animation: "sceneFadeIn 0.5s ease 1.5s both",
-            }}>
-              Next: {nextGroup.label}
-            </p>
-          )}
-
-          {/* Skip / continue buttons */}
-          <div style={{ display: "flex", gap: 16, marginTop: 16, alignItems: "center" }}>
-            <button
-              type="button"
-              onClick={() => {
-                if (transitionTimer.current) clearTimeout(transitionTimer.current);
-                const next = currentIndex + 1;
-                if (next >= activeSlotIds.length) {
-                  setSelections((prev) => fillDefaults(prev));
-                  setPhase("complete");
-                } else {
-                  setCurrentIndex(next);
-                  setPhase("selecting");
-                }
-              }}
-              style={{
-                background: "none",
-                border: "none",
-                color: "#A8A29E",
-                fontSize: "0.8rem",
-                cursor: "pointer",
-                textDecoration: "underline",
-              }}
-            >
-              Continue
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setSkipAnimations(true);
-                if (transitionTimer.current) clearTimeout(transitionTimer.current);
-                const next = currentIndex + 1;
-                if (next >= activeSlotIds.length) {
-                  setSelections((prev) => fillDefaults(prev));
-                  setPhase("complete");
-                } else {
-                  setCurrentIndex(next);
-                  setPhase("selecting");
-                }
-              }}
-              style={{
-                background: "none",
-                border: "none",
-                color: "#A8A29E",
-                fontSize: "0.75rem",
-                cursor: "pointer",
-                opacity: 0.7,
-              }}
-            >
-              Skip all animations
-            </button>
-          </div>
-        </div>
-
-        <style>{`
-          @keyframes sceneFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-        `}</style>
-      </main>
-    );
-  }
+  // (Transition pause screen removed — RoomSoFar strip on the selecting
+  //  phase gives the user context without interrupting the flow.)
 
   // --- Phase 1: Guided selection ---
   if (phase === "selecting" && currentSlot) {
@@ -633,10 +454,33 @@ export default function ResultPage() {
           fontSize: "0.78rem",
           color: "#A8A29E",
         }}>
-          <span>
-            {currentIndex + 1} of {activeSlotIds.length} items
-            {currentGroup ? ` · ${currentGroup.label}` : ""}
-          </span>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            {currentIndex > 0 && activeSlotIds.slice(0, currentIndex).some((id) => !skippedSlots.has(id)) && (
+              <button
+                type="button"
+                onClick={goBack}
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "#8B6F5C",
+                  cursor: "pointer",
+                  fontSize: "0.82rem",
+                  fontWeight: 500,
+                  padding: "4px 8px",
+                  borderRadius: 6,
+                  transition: "background 0.15s",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "#F5F2EE"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+              >
+                ← Back
+              </button>
+            )}
+            <span>
+              {currentIndex + 1} of {activeSlotIds.length} items
+              {currentGroup ? ` · ${currentGroup.label}` : ""}
+            </span>
+          </div>
           <div style={{ display: "flex", gap: 3 }}>
             {activeSlotIds.map((id, i) => (
               <div
@@ -651,6 +495,9 @@ export default function ResultPage() {
             ))}
           </div>
         </div>
+
+        {/* Room so far — persistent strip of already-picked items */}
+        <RoomSoFar selections={selections} />
 
         <div className="guided-flow" style={{ display: "block", maxWidth: 640, margin: "0 auto" }}>
           <div className="guided-picker">
@@ -782,8 +629,6 @@ export default function ResultPage() {
                     const product = overBudgetProduct;
                     setOverBudgetProduct(null);
                     setSelections((prev) => ({ ...prev, [currentSlotId!]: [product] }));
-                    setLastPickedSlotId(currentSlotId);
-                    setPickCount((c) => c + 1);
                     setTimeout(advanceWithTransition, 300);
                   }}
                   style={{
@@ -866,7 +711,7 @@ export default function ResultPage() {
         />
       )}
 
-      <BudgetMeter total={totalSpent} target={design.target_budget} userBudget={design.user_budget} />
+      <BudgetMeter total={totalSpent} target={design.target_budget} />
 
       {/* Export all to Amazon cart */}
       <ExportToCartButton selections={selections} runId={runId} />

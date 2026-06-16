@@ -365,43 +365,102 @@ def _build_selection_prompts(
         else:
             interests_line = f"User interests: {', '.join(interests)}\n"
 
-    # Neutral fallback instruction for basics (sheets, pillows, curtains,
-    # throw_blanket).  The majority of picks stay characterful/varied; we just
-    # guarantee 2-3 clean neutral staples among them.
-    _NEUTRAL_SLOTS = {"sheets", "throw_blanket", "pillows", "curtains"}
-    neutral_instruction = ""
-    if slot.slot_id in _NEUTRAL_SLOTS:
-        # Pick neutral tones that match the room's mood + style keywords.
-        mood_lower = (style_profile.mood or "").lower()
-        kw_lower = " ".join(style_profile.keywords).lower()
-        style_lower = (style_profile.style_name or "").lower()
-        style_signal = f"{mood_lower} {kw_lower} {style_lower}"
-        if any(w in style_signal for w in ("moody", "dark", "bold", "deep", "academia", "industrial", "gamer")):
-            neutral_tones = "black, charcoal, or dark grey"
-        elif any(w in style_signal for w in ("warm", "cozy", "heritage", "alpine", "cottage", "coastal")):
-            neutral_tones = "beige, oatmeal, or warm cream"
-        else:
-            neutral_tones = "white, cream, or light grey"
+    # Per-aesthetic soft goods color profiles.
+    # For sheets, comforter, duvet_cover, curtains, pillows, throw_blanket,
+    # and throw_pillows — inject an instruction telling the LLM what colors
+    # and textures match THIS aesthetic.  White/neutral is always valid as a
+    # lower-ranked option, but it must NOT dominate the top picks unless the
+    # aesthetic is genuinely light (japandi, coastal, warm_minimalist).
+    _SOFT_GOODS_SLOTS = {
+        "sheets", "comforter", "duvet_cover", "curtains", "pillows",
+        "throw_blanket", "throw_pillows",
+    }
+    _SOFT_GOODS_PALETTES: dict[str, str] = {
+        "dark_academia": (
+            "deep burgundy, forest green, charcoal, espresso, oxblood, "
+            "dark plaid/tartan, rich jewel tones, dark walnut brown. "
+            "Think: a scholarly library with moody velvet and aged leather tones"
+        ),
+        "cottagecore": (
+            "soft sage, dusty rose, cream, floral prints, gingham, "
+            "lavender, warm white, patchwork, vintage linen. "
+            "Think: a sun-dappled cottage bedroom with garden-inspired textiles"
+        ),
+        "coastal": (
+            "soft blue, sandy beige, white, seafoam, navy stripe, "
+            "natural linen, light chambray. "
+            "Think: breezy beach house with ocean-inspired tones"
+        ),
+        "japandi": (
+            "warm grey, oatmeal, off-white, muted natural linen, "
+            "pale beige, stone. Light tones are CORRECT for this aesthetic. "
+            "Think: serene and minimal with organic textures"
+        ),
+        "industrial": (
+            "charcoal, dark grey, black, raw linen, muted olive, "
+            "dark denim, slate. "
+            "Think: converted loft with utilitarian textiles"
+        ),
+        "quiet_luxury": (
+            "ivory, champagne, taupe, soft gold, cream, warm white, "
+            "blush, cashmere tones. Premium fabric is the star — sateen, "
+            "silk, high-thread-count cotton. "
+            "Think: five-star hotel suite"
+        ),
+        "sports_den": (
+            "deep navy, cognac brown, charcoal, dark green, burgundy, "
+            "rich warm neutrals. "
+            "Think: refined gentlemen's lounge"
+        ),
+        "city_modern": (
+            "black, white, cool grey, high-contrast monochrome, "
+            "one bold accent color (cobalt, red). "
+            "Think: sleek high-rise apartment"
+        ),
+        "ski_lodge": (
+            "deep red, forest green, cream, buffalo check/plaid, "
+            "warm brown, burnt orange, chunky knit textures. "
+            "Think: cozy alpine cabin by the fire"
+        ),
+        "jungle_oasis": (
+            "deep green, terracotta, warm cream, botanical prints, "
+            "earthy tan, olive, tropical leaf patterns. "
+            "Think: lush tropical retreat"
+        ),
+        "gamer_den": (
+            "black, dark charcoal, deep purple, dark grey, "
+            "matte dark tones. Keep it sleek and minimal. "
+            "Think: moody immersive tech space"
+        ),
+        "poster_maximalist": (
+            "warm amber, dusty pink, mustard yellow, mixed brights, "
+            "bold patterns, eclectic prints, retro patterns. "
+            "Think: expressive dorm-meets-gallery layered maximalism"
+        ),
+        "warm_minimalist": (
+            "cream, warm white, oatmeal, light oak tones, soft beige, "
+            "natural linen, cotton. Light and airy is CORRECT here. "
+            "Think: calm Scandinavian simplicity"
+        ),
+    }
 
-        if slot.slot_id == "sheets":
-            # Sheets: neutrals MUST be in the top picks. Bold/colorful sheets
-            # are niche — most people want clean, subtle bedding.
-            neutral_instruction = (
-                f"- SHEETS — NEUTRAL FIRST: Your rank 1-2 picks MUST be clean "
-                f"neutral solid colors ({neutral_tones}). Avoid busy patterns, "
-                f"bold colors, or novelty prints in the top picks — those feel "
-                f"cheap and polarizing. Subtle texture (sateen sheen, linen "
-                f"weave) is great; loud patterns are not. Rank 3+ can be more "
-                f"varied but keep the majority neutral/subtle."
-            )
-        else:
-            neutral_instruction = (
-                f"- NEUTRAL STAPLES: Among your {pick_count} picks, include 2-3 clean "
-                f"neutral options ({neutral_tones} — solid/plain, no patterns) so the "
-                f"user always has a safe fallback. The MAJORITY of your picks should "
-                f"still be varied, characterful, and interesting — patterns, colors, "
-                f"textures. Do NOT make the list mostly neutral."
-            )
+    neutral_instruction = ""
+    if slot.slot_id in _SOFT_GOODS_SLOTS:
+        style_name = (style_profile.style_name or "").lower()
+        palette = _SOFT_GOODS_PALETTES.get(
+            style_name,
+            _SOFT_GOODS_PALETTES.get("warm_minimalist", ""),
+        )
+        neutral_instruction = (
+            f"- **SOFT GOODS — MATCH THE AESTHETIC:**\n"
+            f"  This slot carries the room's color story. Prioritize products\n"
+            f"  that reflect the {style_name} palette: {palette}.\n"
+            f"  Rank products that match these colors and textures highest.\n"
+            f"  Show the full range of the palette across your picks.\n"
+            f"  When characterful options cost less than plain basics,\n"
+            f"  PREFER the characterful option — a $45 burgundy velvet curtain\n"
+            f"  that nails dark_academia beats a $90 plain white linen panel."
+        )
 
     rendered = (
         template_text

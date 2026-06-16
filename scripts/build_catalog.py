@@ -85,20 +85,6 @@ CATALOG_QUERIES: list[tuple[str, str]] = [
     ("sconce", "vintage wall sconce antique brass"),
 
     # -----------------------------------------------------------------
-    # wallpaper — 0 cached, target 265+ (10 queries)
-    # -----------------------------------------------------------------
-    ("wallpaper", "peel and stick wallpaper bedroom"),
-    ("wallpaper", "removable wallpaper modern"),
-    ("wallpaper", "floral wallpaper peel and stick"),
-    ("wallpaper", "geometric wallpaper modern"),
-    ("wallpaper", "tropical wallpaper palm leaf"),
-    ("wallpaper", "dark wallpaper moody"),
-    ("wallpaper", "textured wallpaper neutral beige"),
-    ("wallpaper", "japandi wallpaper minimalist"),
-    ("wallpaper", "plaid wallpaper rustic"),
-    ("wallpaper", "abstract wallpaper bold colorful"),
-
-    # -----------------------------------------------------------------
     # duvet_cover — 0 cached, target 265+ (8 queries)
     # -----------------------------------------------------------------
     ("duvet_cover", "duvet cover set queen"),

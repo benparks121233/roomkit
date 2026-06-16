@@ -90,12 +90,20 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             slot_plan,
             slots_results=[],
             gate_error=gate_error,
-            user_budget=req.budget,
         )
 
     # 5. Sourcing + selection — parallel LLM calls for non-owned slots.
     adapter = AmazonAdapter()
     slot_results: list[SlotResult] = []
+
+    # Decor single-item cap: no single decor item may exceed 50% of the
+    # total decor group budget. Prevents one expensive item eating the pool.
+    _DECOR_SLOTS = {"wall_art", "plants", "mirror", "throw_blanket"}
+    decor_total_budget = sum(
+        s.allocated_budget for s in slot_plan.slots
+        if s.slot_id in _DECOR_SLOTS and not s.owned
+    )
+    decor_item_cap = decor_total_budget * 0.50
 
     # Owned slots don't need LLM calls — collect them immediately.
     owned_results: list[SlotResult] = []
@@ -121,10 +129,19 @@ async def create_design(req: DesignRequest) -> DesignResponse:
         # Fetch candidates up to 1.5x the slot budget so the user sees more
         # variety. The LLM and UI will handle budget enforcement — items above
         # the slot budget are shown but flagged if they'd blow the total.
+        # For decor slots, cap at 50% of the total decor pool to prevent
+        # one expensive item eating the entire decor allocation.
+        max_price = slot.allocated_budget * 1.5
+        if slot.slot_id in _DECOR_SLOTS and decor_item_cap > 0:
+            max_price = min(max_price, decor_item_cap)
+
+        # Use sourcing_terms (product-name-friendly) for adapter scoring,
+        # falling back to keywords if sourcing_terms not set.
+        sourcing_kw = style_profile.sourcing_terms or style_profile.keywords
         candidates = adapter.fetch_candidates(
             slot.slot_id,
-            style_profile.keywords,
-            (0.0, slot.allocated_budget * 1.5),
+            sourcing_kw,
+            (0.0, max_price),
             spec_hints,
             interests=room_request.interests or None,
         )
@@ -132,11 +149,22 @@ async def create_design(req: DesignRequest) -> DesignResponse:
 
         # Mirror type filter: if user selected a mirror type (e.g. "round",
         # "full_length"), prefer candidates whose name matches that type.
-        # Fall back to full pool if too few type-matches remain.
+        # Synonyms cover common product-name vocabulary variations.
+        _MIRROR_SYNONYMS: dict[str, list[str]] = {
+            "round": ["round", "circular", "circle"],
+            "full_length": ["full length", "full-length", "standing", "floor"],
+            "rectangular": ["rectangular", "rectangle", "square"],
+            "wall": ["wall"],
+            "arched": ["arched", "arch"],
+        }
         if slot.slot_id == "mirror" and room_request.mirror_type:
-            mtype = room_request.mirror_type.replace("_", " ").lower()
-            typed = [c for c in candidates if mtype in c.name.lower()]
-            if len(typed) >= 5:
+            mtype = room_request.mirror_type.lower()
+            synonyms = _MIRROR_SYNONYMS.get(mtype, [mtype.replace("_", " ")])
+            typed = [
+                c for c in candidates
+                if any(syn in c.name.lower() for syn in synonyms)
+            ]
+            if typed:
                 candidates = typed
 
         sourceable_slots.append((slot, candidates))
@@ -225,7 +253,6 @@ async def create_design(req: DesignRequest) -> DesignResponse:
         style_profile,
         slot_plan,
         slots_results=slot_results,
-        user_budget=req.budget,
     )
     _designs[response.run_id] = response
 
@@ -439,8 +466,11 @@ async def generate_render(run_id: str, body: RenderRequest | None = None) -> dic
                 products[slot_id] = items
                 continue
 
-        # Fallback to rank-1 default
-        if slot.product:
+        # Fallback to rank-1 default — but only when the client sent no
+        # selections at all (legacy/auto path).  If the client DID send a
+        # selections dict, absent slots were explicitly skipped by the user
+        # and should NOT appear in the render.
+        if not user_selections and slot.product:
             products[slot_id] = [{
                 "name": slot.product.name,
                 "image_url": slot.product.image_url,
@@ -563,7 +593,6 @@ def _build_response(
     *,
     slots_results: list[SlotResult],
     gate_error: str | None = None,
-    user_budget: float = 1500.0,
 ) -> DesignResponse:
     """Assemble a DesignResponse from pipeline outputs."""
     total_spent = sum(
@@ -583,7 +612,6 @@ def _build_response(
             fallback=style_profile.fallback,  # type: ignore[attr-defined]
         ),
         target_budget=slot_plan.target_budget,  # type: ignore[attr-defined]
-        user_budget=user_budget,
         total_spent=total_spent,
         is_feasible=slot_plan.is_feasible if not gate_error else False,  # type: ignore[attr-defined]
         slots=slots_results,

@@ -10,72 +10,84 @@ profiles:
   - id: cottagecore
     display_name: Cottagecore
     keywords: [vintage, floral, distressed wood, soft linen, handmade, cozy, pastoral]
+    sourcing_terms: [vintage, floral, distressed, linen, handmade, cozy, shabby, antique, farmhouse, cottage, rustic, cream, lace, ruffled, quilt, patchwork, wicker, ceramic, rose]
     color_palette: [dusty rose, sage green, cream, warm white, soft blush]
     mood: gentle, nostalgic, handcrafted
 
   - id: dark_academia
     display_name: Dark Academia
     keywords: [dark walnut, leather-bound, antique brass, rich velvet, scholarly, moody]
+    sourcing_terms: [walnut, dark, brass, antique, velvet, tufted, leather, vintage, mahogany, espresso, brown, traditional, classic, gothic, ornate, bronze, library, aged, dark brown, gold, wood, rich]
     color_palette: [deep brown, burgundy, forest green, antique gold, espresso]
     mood: intellectual, atmospheric, richly layered
 
   - id: japandi
     display_name: Japandi
     keywords: [minimalist, zen, matte, ash wood, clean lines, negative space, organic]
+    sourcing_terms: [minimalist, zen, matte, oak, bamboo, natural, japanese, clean, organic, simple, neutral, wood, ash, low profile, wabi, ceramic, stone, linen, beige, light]
     color_palette: [warm grey, off-white, pale oak, stone, charcoal accent]
     mood: serene, intentional, quietly refined
 
   - id: coastal
     display_name: Coastal
     keywords: [whitewash, woven rattan, crisp linen, sea glass, driftwood, airy, natural]
+    sourcing_terms: [rattan, woven, white, natural, driftwood, beach, sea, blue, linen, bamboo, wicker, coastal, nautical, sand, whitewash, light, stripe, shell, jute, airy, ocean]
     color_palette: [white, soft blue, sand, seafoam, natural rattan]
     mood: breezy, relaxed, sun-washed
 
   - id: industrial
     display_name: Industrial
     keywords: [exposed metal, concrete, raw steel, dark wood, Edison bulbs, utilitarian, matte black]
+    sourcing_terms: [metal, iron, black, pipe, edison, industrial, steel, rustic, wood, reclaimed, loft, matte black, warehouse, raw, dark, vintage, distressed, cage, exposed, urban, riveted, factory]
     color_palette: [charcoal, steel grey, dark walnut, black, warm amber accent]
     mood: edgy, urban, raw
 
   - id: quiet_luxury
     display_name: Quiet Luxury
     keywords: [cashmere, marble, brushed gold, understated, tailored, bouclé, fine grain]
+    sourcing_terms: [marble, gold, cream, ivory, velvet, linen, fluted, upholstered, boucle, bouclé, elegant, luxe, taupe, champagne, silk, satin, brass, curved, plush, soft, cashmere, refined, sophisticated]
     color_palette: [ivory, taupe, champagne, warm grey, soft gold accent]
     mood: polished, serene, effortlessly refined
 
   - id: sports_den
     display_name: Sports Den
     keywords: [leather, dark tones, masculine, bold, lounge, warm wood, club]
+    sourcing_terms: [leather, dark, brown, cognac, navy, tufted, wood, brass, industrial, lounge, recliner, chesterfield, vintage, walnut, cigar, whiskey, den, rich, studded, nailhead, wingback, classic]
     color_palette: [deep navy, cognac brown, charcoal, dark green, warm brass]
     mood: confident, relaxed, den-like
 
   - id: city_modern
     display_name: City Modern
     keywords: [sleek, glass, monochrome, polished chrome, high-contrast, angular, modern]
+    sourcing_terms: [modern, glass, chrome, sleek, contemporary, metal, black, white, minimalist, geometric, angular, acrylic, polished, steel, slim, clean, abstract, monochrome, lacquer, gloss]
     color_palette: [black, white, cool grey, chrome silver, accent cobalt]
     mood: sharp, metropolitan, curated
 
   - id: ski_lodge
     display_name: Ski Lodge
     keywords: [timber, wool plaid, chunky knit, warm, rustic, hearth, cabin, fur]
+    sourcing_terms: [rustic, wood, cabin, plaid, warm, fur, cozy, lodge, timber, flannel, knit, pine, cedar, reclaimed, sheepskin, sherpa, buffalo check, wool, antler, stone, log, mountain]
     color_palette: [warm brown, deep red, cream, forest green, burnt orange]
     mood: warm, inviting, alpine cozy
 
   - id: jungle_oasis
     display_name: Jungle Oasis
     keywords: [tropical, rattan, monstera, botanical, natural wood, jute, macrame, earthy, lush]
+    sourcing_terms: [rattan, tropical, botanical, green, natural, jute, macrame, bamboo, woven, boho, monstera, plant, palm, leaf, wood, wicker, earthy, terracotta, cane, vine, fern]
     color_palette: [deep green, terracotta, warm cream, natural tan, olive]
     mood: lush, grounding, tropical retreat
 
   - id: gamer_den
     display_name: Gamer Den
     keywords: [LED, dark, minimalist, tech, gaming, RGB, matte black, sleek, acoustic]
+    sourcing_terms: [LED, dark, gaming, RGB, black, matte, tech, gamer, neon, light, minimalist, sleek, carbon, metal, modern, cool, futuristic, electric, desk, monitor, headset]
     color_palette: [charcoal black, deep purple, electric blue, dark grey, neon accent]
     mood: moody, immersive, futuristic
 
   - id: poster_maximalist
     display_name: Poster Maximalist
     keywords: [eclectic, maximalist, collage, posters, fairy lights, vines, layered, colorful, expressive]
+    sourcing_terms: [eclectic, colorful, poster, boho, bright, vibrant, gallery, collage, artistic, mixed, bold, vintage, retro, funky, abstract, print, neon, bohemian, tapestry, whimsical, quirky, patterned]
     color_palette: [warm amber, terracotta, mustard yellow, dusty pink, mixed brights]
     mood: expressive, personal, youthful, maximalist
 
@@ -83,5 +95,6 @@ profiles:
   - id: warm_minimalist
     display_name: Warm Minimalist
     keywords: [natural wood, linen, neutral tones, clean lines, cozy simplicity]
+    sourcing_terms: [wood, natural, linen, oak, minimal, simple, neutral, beige, cream, clean, organic, warm, light, matte, scandinavian, white, cotton, pine, birch, soft, understated]
     color_palette: [cream, warm white, light oak, terracotta accent]
     mood: calm, grounded, uncluttered

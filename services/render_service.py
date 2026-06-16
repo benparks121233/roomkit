@@ -56,7 +56,6 @@ _SLOT_PLACEMENTS: dict[str, dict[str, str]] = {
         "desk":          "DESK: against the LEFT wall, between the nightstand and the corner — a workspace area",
         "desk_chair":    "DESK CHAIR: tucked under or in front of the desk",
         "sconce":        "WALL SCONCE: CLEARLY VISIBLE wall-mounted light fixture(s) flanking the bed headboard — these MUST be prominent and recognizable, not hidden or tiny",
-        "wallpaper":     "WALLPAPER: accent wall pattern visible on the BACK WALL behind the bed — covers the full wall surface",
         "duvet_insert":  "DUVET INSERT: inside the duvet cover (not separately visible — skip if duvet_cover is present)",
     },
     "living_room": {
@@ -153,7 +152,6 @@ HOTSPOT_POSITIONS: dict[str, dict[str, dict]] = {
         "desk":          {"x": 0.12, "y": 0.52, "w": 0.16, "h": 0.22},
         "desk_chair":    {"x": 0.12, "y": 0.65, "w": 0.10, "h": 0.18},
         "sconce":        {"x": 0.28, "y": 0.32, "w": 0.06, "h": 0.12},
-        "wallpaper":     {"x": 0.42, "y": 0.30, "w": 0.55, "h": 0.40},
     },
     "living_room": {
         "sofa":          {"x": 0.38, "y": 0.55, "w": 0.40, "h": 0.25},

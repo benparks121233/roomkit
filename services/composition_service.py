@@ -65,7 +65,6 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
     "tv": 149.99,
     "tv_stand": 49.99,
     "wall_art": 2.34,
-    "wallpaper": 19.99,
 }
 _DEFAULT_PRICE_FLOOR = 15.0
 
@@ -409,7 +408,7 @@ def _build_owned_slots(already_have: set[str], taxonomy: RoomTaxonomy) -> list[S
 # Slots dropped per density level.  Only optional slots may appear here.
 # "minimal" drops extra decor/accent items; "balanced"/"layered" keep all.
 # Slots dropped per density level.  Only non-preference-addressed optional
-# items appear here.  Survey-gated items (desk, lighting types, wallpaper,
+# items appear here.  Survey-gated items (desk, lighting types,
 # mirror, bedding type) are controlled by the preference survey on the
 # full-room path, or by the wants picker on the partial-room path — never
 # by density.
@@ -447,14 +446,7 @@ def plan_composition(
     budget_policies = load_budget_policies()
 
     room_preset = room_request.room_type or "bedroom"
-    base_budget = room_request.budget or 1000.0
-    # Over-budget option: 130% of stated budget, never-exceed holds at 130%.
-    _OVER_BUDGET_MULTIPLIER = 1.3
-    target_budget = (
-        base_budget * _OVER_BUDGET_MULTIPLIER
-        if getattr(room_request, "allow_over_budget", False)
-        else base_budget
-    )
+    target_budget = room_request.budget or 1000.0
     run_id = room_request.run_id
 
     system_prompt, user_message = _build_composition_prompts(

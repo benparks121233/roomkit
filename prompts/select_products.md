@@ -28,6 +28,11 @@ Rules:
   and a $43 velvet curtain that both fit the style, ALWAYS pick the $80 one.
   Your rank-1 pick should aim for 70-100% of the allocated budget when quality
   options exist at that price point. Do not default to the cheapest acceptable option.
+  **EXCEPTION — wall_art:** For wall art, IGNORE the 70-100% price target.
+  A $17 vintage botanical print that nails the aesthetic is a better rank-1
+  pick than a $90 "neutral abstract" set. Price does not indicate quality
+  for art — a cheap framed print can look better than an expensive generic
+  canvas. Rank wall art by style fit and visual character only.
 - If user interests are provided, prefer products that reflect those interests
   (e.g. music fan → vinyl/music-themed art) when a good candidate exists.
   For most slots, style fit takes priority over interests.
@@ -45,23 +50,67 @@ Rules:
   affordable options (around 35% of the allocated budget) up to premium options
   (up to 100% of budget). Do not cluster all picks in the same price tier.
 - TOP PICKS MUST FEEL PREMIUM: Your rank 1-4 picks are the first things the
-  user sees. They MUST be upscale, broadly appealing, and safe — the kind of
-  product featured in Architectural Digest or CB2, not a random Amazon find.
-  Niche, eccentric, or polarizing designs can appear at rank 5+ but never in
-  the top 4. When in doubt, rank the more polished/classic option higher.
+  user sees. They MUST be upscale and well-curated — not cheap or generic.
+  But "premium" does NOT mean "plain neutral." Premium means elevated
+  execution of the aesthetic. A premium cottagecore duvet has beautiful
+  florals on quality cotton — that IS premium for that style. Pick products
+  that look like they belong in the aesthetic, not products that could
+  belong in any room. Niche, eccentric, or polarizing designs can appear
+  at rank 5+ but never in the top 4.
+- FURNITURE slots (bed_frame, dresser, nightstand, desk, desk_chair, sofa,
+  coffee_table, side_table, tv_stand): prefer muted, understated versions.
+  Ranks 1-4 clean and broadly appealing. Color/pattern fine at rank 5+.
+- SOFT GOODS and DECOR slots (wall_art, throw_blanket, throw_pillows,
+  comforter, duvet_cover, curtains, rug, plants): these carry the room's
+  character. Include patterns, colors, and textures that are distinctive
+  to the aesthetic — don't flatten everything to plain neutrals.
+- **WALL ART — MATCH THE AESTHETIC (CRITICAL):**
+  Wall art is the room's visual anchor. Do NOT default to generic
+  "neutral abstract beige" for every style. Pick art that LOOKS LIKE
+  the aesthetic:
+    • cottagecore → botanical prints, floral illustrations, vintage pastoral
+      scenes, wildflower art, garden prints
+    • dark_academia → moody oil paintings, antique portraits, gothic prints,
+      vintage library/scholarly art, rich dark tones
+    • japandi → minimalist ink wash, zen landscapes, simple line art, wabi-sabi
+    • coastal → ocean photography, watercolor seascapes, nautical prints
+    • gamer_den → sleek graphic art, minimalist gaming art, dark abstract
+    • industrial → architectural prints, blueprint art, urban photography
+    • warm_minimalist → textured abstract, earthy tones, organic shapes
+    • quiet_luxury → fine art reproductions, elegant photography, muted palettes
+  A cottagecore room with "neutral abstract beige" wall art looks wrong.
+  The art MUST visually say what aesthetic this room is. When in doubt,
+  pick the option with more visual character over the safer neutral one.
+  WARNING: many product names contain "neutral" or "abstract" as SEO
+  keywords — do NOT treat those words as quality signals. A product
+  called "Neutral Botanical Wall Art" is not better than "Vintage Floral
+  Wall Art" — evaluate by what the art actually depicts (botanical,
+  floral, vintage scenes = cottagecore character), not by marketing words.
+  If user interests are provided, blend: interest-themed art that also
+  coordinates with the room's aesthetic (see interest rules below).
 - TASTE / QUALITY FILTER: You are curating for a design-forward room, not a
   big-box clearance rack. Strongly prefer elevated, tasteful, design-magazine-
   worthy products. SKIP or rank last any of the following:
     • Motivational quote decor, "live laugh love," inspirational text of any kind
     • Generic mass-market novelty items, kitschy/cheesy pieces, "man cave" signs
     • Dated or tacky patterns (generic chevron, mass-market farmhouse "bless this mess")
-    • For wall_art specifically: prefer abstract art, vintage prints, botanical
-      illustrations, photography, line art, gallery-quality pieces. Avoid mall-
-      kiosk canvas, motivational posters, and generic clip-art prints.
-    • For interest-based picks (sports, music, hobbies): pick the COOL, ELEVATED
-      version — vintage posters, framed retro prints, tasteful typography, cool
-      photography. NOT cheap novelty merch, generic logo canvas, plastic signs,
-      or "fan cave" junk. Think: what a design-savvy fan would actually hang.
+    • For wall_art: see the WALL ART rule above — match the aesthetic.
+      Avoid: mall-kiosk canvas, motivational posters, generic clip-art,
+      and safe "neutral abstract beige" that ignores the room's style.
+    • For interest-based wall_art picks — curated and cool, NOT generic merch:
+      - SPORTS → vintage/retro team posters, classic stadium photography,
+        retro sports prints, tasteful team-color graphic art
+      - MOVIES → retro/vintage movie posters, classic film prints,
+        minimalist film art, iconic cinema photography
+      - MUSIC → concert posters, album/vinyl cover art, vintage band prints,
+        music photography, retro tour posters
+      - BOOKS → vintage book cover art, literary prints, classic typography,
+        library-aesthetic pieces
+      - ART → gallery prints, museum-quality reproductions, fine art posters
+      Think: a curated collector's wall, not random fan merch on canvas.
+      Interest picks should COORDINATE with the room aesthetic — a music-
+      loving cottagecore user gets vintage concert posters in warm tones,
+      not neon gig posters that clash with the room.
     • For gamer_den style specifically:
       - WALL ART: prefer sleek/dark/abstract art, cool graphic art, vintage
         gaming posters done tastefully, minimalist controller/console art.

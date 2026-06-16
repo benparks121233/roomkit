@@ -24,6 +24,9 @@ class StyleProfile(BaseModel):
 
     # Style cues forwarded to composition_service and select_products.md.
     keywords: list[str]
+    # Product-name-friendly terms for sourcing adapter scoring (separate from
+    # LLM keywords to match how Amazon products are actually named).
+    sourcing_terms: list[str] = []
     color_palette: list[str]
 
     # One-phrase mood description (e.g. "calm, grounded, uncluttered").

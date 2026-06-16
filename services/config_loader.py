@@ -22,6 +22,7 @@ class StyleProfileEntry(BaseModel):
     id: str
     display_name: str
     keywords: list[str]
+    sourcing_terms: list[str] = []  # Product-name-friendly terms for adapter scoring
     color_palette: list[str]
     mood: str
 

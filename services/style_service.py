@@ -74,6 +74,7 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
         return StyleProfile(
             style_name=locked_id,
             keywords=config_profile.keywords,
+            sourcing_terms=config_profile.sourcing_terms or config_profile.keywords,
             color_palette=config_profile.color_palette,
             mood=config_profile.mood,
             confidence=1.0,
@@ -96,6 +97,13 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
         # Low confidence: ensure the flag is set even if the LLM forgot to.
         if profile.confidence < _LOW_CONFIDENCE_THRESHOLD and not profile.fallback:
             profile = profile.model_copy(update={"fallback": True})
+
+        # Inject sourcing_terms from config (LLM doesn't generate these).
+        if profile.style_name in profile_map:
+            cfg = profile_map[profile.style_name]
+            profile = profile.model_copy(update={
+                "sourcing_terms": cfg.sourcing_terms or cfg.keywords,
+            })
 
         return profile
 
@@ -233,6 +241,7 @@ def _make_fallback(profiles_config: StyleProfilesConfig) -> StyleProfile:
     return StyleProfile(
         style_name=default.id,
         keywords=list(default.keywords),
+        sourcing_terms=list(default.sourcing_terms or default.keywords),
         color_palette=list(default.color_palette),
         mood=default.mood,
         confidence=0.0,
