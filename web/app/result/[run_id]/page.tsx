@@ -12,8 +12,8 @@
 //   Living room: seating → entertainment → tables → lighting → decor → soft_goods
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useParams } from "next/navigation";
-import { getDesign, validateSelections, generateRender, API_BASE, HOTSPOT_POSITIONS } from "@/lib/api";
+import { useParams, useSearchParams } from "next/navigation";
+import { getDesign, validateSelections, generateRender, trackEvent, API_BASE, HOTSPOT_POSITIONS } from "@/lib/api";
 import type { DesignResponse, ProductResult, SlotResult, Hotspot } from "@/lib/api";
 import SlotPicker from "@/components/SlotPicker";
 import ProductCard from "@/components/ProductCard";
@@ -33,11 +33,11 @@ interface GroupDef {
 }
 
 const BEDROOM_GROUPS: GroupDef[] = [
-  { key: "bed", label: "Bed", slotIds: ["bed_frame", "mattress", "sheets", "comforter", "pillows"] },
-  { key: "storage", label: "Storage", slotIds: ["nightstand", "dresser"] },
-  { key: "lighting", label: "Lighting", slotIds: ["ceiling_light", "table_lamp", "floor_lamp"] },
+  { key: "bed", label: "Bed", slotIds: ["bed_frame", "mattress", "sheets", "comforter", "duvet_insert", "duvet_cover", "pillows"] },
+  { key: "storage", label: "Storage & Workspace", slotIds: ["nightstand", "dresser", "desk", "desk_chair"] },
+  { key: "lighting", label: "Lighting", slotIds: ["ceiling_light", "table_lamp", "floor_lamp", "sconce"] },
   { key: "decor", label: "Decor", slotIds: ["wall_art", "plants", "mirror"] },
-  { key: "soft_goods", label: "Soft Goods", slotIds: ["rug", "curtains", "throw_blanket"] },
+  { key: "soft_goods", label: "Soft Goods", slotIds: ["rug", "curtains", "throw_blanket", "wallpaper"] },
 ];
 
 const LIVING_ROOM_GROUPS: GroupDef[] = [
@@ -68,9 +68,16 @@ function getGroupForSlot(slotId: string, roomType: string): GroupDef | null {
 // Helpers
 // ---------------------------------------------------------------------------
 
+// Decor/accessory slots show fewer options (4) so the page isn't overwhelming.
+// Anchor furniture slots show the full list.
+const _TRIMMED_SLOTS = new Set(["wall_art", "plants", "mirror", "throw_blanket"]);
+const _TRIM_COUNT = 4;
+
 function getChoicesForSlot(slot: SlotResult): ProductResult[] {
   if (!slot.product) return [];
-  return [slot.product, ...slot.alternatives];
+  const all = [slot.product, ...slot.alternatives];
+  if (_TRIMMED_SLOTS.has(slot.slot_id)) return all.slice(0, _TRIM_COUNT);
+  return all;
 }
 
 function upgradeAmazonImage(url: string): string {
@@ -83,7 +90,9 @@ function upgradeAmazonImage(url: string): string {
 
 export default function ResultPage() {
   const params = useParams<{ run_id: string }>();
+  const searchParams = useSearchParams();
   const runId = params.run_id;
+  const isAutoMode = searchParams.get("mode") === "auto";
 
   const [design, setDesign] = useState<DesignResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -98,6 +107,7 @@ export default function ResultPage() {
   const [lastPickedSlotId, setLastPickedSlotId] = useState<string | null>(null);
   const [pickCount, setPickCount] = useState(0);
   const [skipAnimations, setSkipAnimations] = useState(false);
+  const [skippedSlots, setSkippedSlots] = useState<Set<string>>(new Set());
   const [overBudgetProduct, setOverBudgetProduct] = useState<ProductResult | null>(null);
 
   // AI render state
@@ -116,6 +126,23 @@ export default function ResultPage() {
       );
   }, [runId]);
 
+  // Auto mode: skip guided selection, fill all defaults, jump to complete
+  const autoModeApplied = useRef(false);
+  useEffect(() => {
+    if (isAutoMode && design && !autoModeApplied.current) {
+      autoModeApplied.current = true;
+      // Fill all slots with rank-1 defaults
+      const defaults: Record<string, ProductResult[]> = {};
+      for (const slot of design.slots) {
+        if (slot.product) {
+          defaults[slot.slot_id] = [slot.product];
+        }
+      }
+      setSelections(defaults);
+      setPhase("complete");
+    }
+  }, [isAutoMode, design]);
+
   // Build ordered active slot IDs (slots with products, in taxonomy order)
   const activeSlotIds = useMemo(() => {
     if (!design) return [];
@@ -132,11 +159,13 @@ export default function ResultPage() {
     return new Map(design.slots.map((s) => [s.slot_id, s]));
   }, [design]);
 
-  // Fill rank-1 defaults for un-visited slots (called on skip or flow completion)
+  // Fill rank-1 defaults for un-visited slots (called on skip or flow completion).
+  // Skipped slots (user chose "I don't want this") are excluded — no default fill.
   const fillDefaults = useCallback(
     (prev: Record<string, ProductResult[]>) => {
       const filled = { ...prev };
       for (const id of activeSlotIds) {
+        if (skippedSlots.has(id)) continue;
         if (filled[id] && filled[id].length > 0) continue;
         const slot = slotMap.get(id);
         if (slot?.product) {
@@ -184,7 +213,7 @@ export default function ResultPage() {
   }, [currentIndex, phase]);
 
   // Bed slot IDs — intermediate bed picks skip the transition entirely
-  const BED_SLOTS = useMemo(() => new Set(["bed_frame", "mattress", "sheets", "comforter", "pillows"]), []);
+  const BED_SLOTS = useMemo(() => new Set(["bed_frame", "mattress", "sheets", "comforter", "duvet_insert", "duvet_cover", "pillows"]), []);
   const lastBedSlotInFlow = useMemo(() => {
     const bedSlots = activeSlotIds.filter((id) => BED_SLOTS.has(id));
     return bedSlots[bedSlots.length - 1] ?? null;
@@ -374,6 +403,7 @@ export default function ResultPage() {
     generateRender(runId, selectionIds)
       .then((renderResp) => {
         setRenderUrl(`${API_BASE}${renderResp.render_url}`);
+        if (runId) trackEvent(runId, "render_viewed");
       })
       .catch((err) => {
         console.error("Render generation failed:", err);
@@ -585,6 +615,36 @@ export default function ResultPage() {
           </button>
         </div>
 
+        {/* Progress panel */}
+        <div style={{
+          maxWidth: 640,
+          margin: "0 auto",
+          padding: "12px 16px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          fontSize: "0.78rem",
+          color: "#A8A29E",
+        }}>
+          <span>
+            {currentIndex + 1} of {activeSlotIds.length} items
+            {currentGroup ? ` · ${currentGroup.label}` : ""}
+          </span>
+          <div style={{ display: "flex", gap: 3 }}>
+            {activeSlotIds.map((id, i) => (
+              <div
+                key={id}
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  background: i < currentIndex ? "#B8A080" : i === currentIndex ? "#8B6F5C" : "#E2DED6",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
         <div className="guided-flow" style={{ display: "block", maxWidth: 640, margin: "0 auto" }}>
           <div className="guided-picker">
             {isNewGroup && currentGroup && (
@@ -594,6 +654,61 @@ export default function ResultPage() {
                 </span>
               </div>
             )}
+
+            {/* Skip — exclude slot entirely: at the TOP, clearly accessible */}
+            <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 16 }}>
+              <button
+                type="button"
+                onClick={() => {
+                  // Mark slot as skipped — truly excluded, no product, no budget
+                  setSkippedSlots((prev) => new Set(prev).add(currentSlotId!));
+                  setSelections((prev) => {
+                    const next = { ...prev };
+                    delete next[currentSlotId!];
+                    return next;
+                  });
+                  advanceToNext();
+                }}
+                style={{
+                  background: "#FAFAF8",
+                  border: "1.5px solid #E2DED6",
+                  borderRadius: 10,
+                  color: "#78716C",
+                  fontSize: "0.82rem",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  padding: "10px 20px",
+                  transition: "border-color 0.15s",
+                }}
+              >
+                I don&apos;t need this item
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  // Use our top pick — fills rank-1 default, advances
+                  if (currentSlot?.product) {
+                    setSelections((prev) => ({
+                      ...prev,
+                      [currentSlotId!]: [currentSlot.product!],
+                    }));
+                  }
+                  advanceToNext();
+                }}
+                style={{
+                  background: "none",
+                  border: "1.5px solid #E2DED6",
+                  borderRadius: 10,
+                  color: "#A8A29E",
+                  fontSize: "0.82rem",
+                  cursor: "pointer",
+                  padding: "10px 20px",
+                  transition: "border-color 0.15s",
+                }}
+              >
+                Use our pick
+              </button>
+            </div>
 
             <SlotPicker
               slotId={currentSlotId!}
@@ -733,17 +848,29 @@ export default function ResultPage() {
       )}
 
       {renderUrl && (
-        <InteractiveRoomRender renderUrl={renderUrl} hotspots={hotspots} />
+        <InteractiveRoomRender
+          renderUrl={renderUrl}
+          hotspots={hotspots}
+          onHotspotClick={(hs) => {
+            if (runId) trackEvent(runId, "hotspot_clicked", {
+              slot_id: hs.slot_id, product_name: hs.product_name, price: hs.price,
+            });
+          }}
+        />
       )}
 
       <BudgetMeter total={totalSpent} target={design.target_budget} />
 
       {/* Export all to Amazon cart */}
-      <ExportToCartButton selections={selections} />
+      <ExportToCartButton selections={selections} runId={runId} />
 
       {/* Grouped product grid */}
       {groups.map((group) => {
+        // Only render slots that were actually sourced (have products)
+        // AND not explicitly skipped by the user.
+        const activeSet = new Set(activeSlotIds);
         const groupSlots = group.slotIds
+          .filter((id) => activeSet.has(id) && !skippedSlots.has(id))
           .map((id) => slotMap.get(id))
           .filter((s): s is SlotResult => s !== undefined);
 
@@ -805,6 +932,11 @@ export default function ResultPage() {
                         ? (product) => handleSwap(slot.slot_id, product)
                         : undefined
                     }
+                    onBuyClick={(product, slotId) => {
+                      if (runId) trackEvent(runId, "buy_link_clicked", {
+                        slot_id: slotId, product_id: product.product_id, price: product.normalized_price,
+                      });
+                    }}
                   />
                 );
               })}
@@ -993,8 +1125,10 @@ function RenderLoadingScreen() {
 
 function ExportToCartButton({
   selections,
+  runId,
 }: {
   selections: Record<string, ProductResult[]>;
+  runId: string | null;
 }) {
   const allProducts = Object.values(selections).flat();
   if (allProducts.length === 0) return null;
@@ -1010,6 +1144,9 @@ function ExportToCartButton({
     params.set("tag", "roomkitai-20");
     const url = `https://www.amazon.com/gp/aws/cart/add.html?${params.toString()}`;
     window.open(url, "_blank", "noopener,noreferrer");
+    if (runId) trackEvent(runId, "export_cart_clicked", {
+      product_count: allProducts.length, total_price: total,
+    });
   };
 
   const total = allProducts.reduce((s, p) => s + p.normalized_price, 0);

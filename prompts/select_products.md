@@ -44,6 +44,11 @@ Rules:
 - PRICE RANGE: Include a mix of price points. Your picks should span from
   affordable options (around 35% of the allocated budget) up to premium options
   (up to 100% of budget). Do not cluster all picks in the same price tier.
+- TOP PICKS MUST FEEL PREMIUM: Your rank 1-4 picks are the first things the
+  user sees. They MUST be upscale, broadly appealing, and safe — the kind of
+  product featured in Architectural Digest or CB2, not a random Amazon find.
+  Niche, eccentric, or polarizing designs can appear at rank 5+ but never in
+  the top 4. When in doubt, rank the more polished/classic option higher.
 - TASTE / QUALITY FILTER: You are curating for a design-forward room, not a
   big-box clearance rack. Strongly prefer elevated, tasteful, design-magazine-
   worthy products. SKIP or rank last any of the following:

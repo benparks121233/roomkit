@@ -1,0 +1,42 @@
+[
+  {
+    "product_id": "DSK-001",
+    "name": "CubiCubi Computer Desk 40 Inch – Home Office Writing Desk, Modern Simple Style, Black",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B08DSK001A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/cubicubi-desk-black.jpg"
+  },
+  {
+    "product_id": "DSK-002",
+    "name": "Coleshome 47 Inch Computer Desk – Modern Simple Writing Desk, Walnut",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B08DSK002A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/coleshome-desk-walnut.jpg"
+  },
+  {
+    "product_id": "DSK-003",
+    "name": "VASAGLE Writing Desk – Industrial Style Computer Desk, Rustic Brown",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B08DSK003A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/vasagle-desk-rustic.jpg"
+  },
+  {
+    "product_id": "DSK-004",
+    "name": "SHW Home Office 48-Inch Computer Desk – Oak",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B08DSK004A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/shw-desk-oak.jpg"
+  },
+  {
+    "product_id": "DSK-005",
+    "name": "Walker Edison Mid Century Modern Wood Desk – White Marble / Gold",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B08DSK005A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/walker-desk-marble-gold.jpg"
+  }
+]

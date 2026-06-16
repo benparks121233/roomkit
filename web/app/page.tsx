@@ -34,6 +34,8 @@ export default function IntakePage() {
   const [stageIndex, setStageIndex] = useState(0);
   const [stageProgress, setStageProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [pendingResult, setPendingResult] = useState<IntakeResult | null>(null);
+  const [chosenMode, setChosenMode] = useState<"curated" | "auto" | null>(null);
 
   const timersRef = useRef<NodeJS.Timeout[]>([]);
   const rafRef = useRef<number | null>(null);
@@ -91,28 +93,38 @@ export default function IntakePage() {
     }
   }
 
-  // Wizard completion → API call
-  async function handleComplete(result: IntakeResult) {
+  // Wizard completion → show mode choice
+  function handleComplete(result: IntakeResult) {
+    setPendingResult(result);
+  }
+
+  // Mode chosen → API call
+  async function handleModeChoice(mode: "curated" | "auto") {
+    if (!pendingResult) return;
+    setChosenMode(mode);
     setLoading(true);
     setError(null);
     startLoading();
 
     const req: DesignRequest = {
-      room_type: result.roomType,
-      budget: result.budget,
-      style_description: result.quiz.style.description,
-      core_aesthetic: result.quiz.style.core,
-      bed_size: result.roomType === "bedroom" ? result.bedSize : null,
-      density: result.quiz.style.density,
-      interests: result.quiz.interests.map((i) => i.category),
-      full_room: result.fullRoom,
-      wants: result.wants,
+      room_type: pendingResult.roomType,
+      budget: pendingResult.budget,
+      style_description: pendingResult.quiz.style.description,
+      core_aesthetic: pendingResult.quiz.style.core,
+      bed_size: pendingResult.roomType === "bedroom" ? pendingResult.bedSize : null,
+      density: pendingResult.quiz.style.density,
+      interests: pendingResult.quiz.interests.map((i) => i.category),
+      full_room: pendingResult.fullRoom,
+      wants: pendingResult.wants,
+      excluded_slots: pendingResult.excludedSlots,
+      mirror_type: pendingResult.mirrorType,
     };
 
     try {
       const design = await createDesign(req);
       stopLoading();
-      router.push(`/result/${design.run_id}`);
+      const suffix = mode === "auto" ? "?mode=auto" : "";
+      router.push(`/result/${design.run_id}${suffix}`);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Something went wrong";
       if (msg.includes("aborted")) {
@@ -181,6 +193,110 @@ export default function IntakePage() {
               })}
             </div>
           </div>
+        </div>
+      </main>
+    );
+  }
+
+  // --- Mode choice (after quiz, before API call) ---
+  if (pendingResult && !loading) {
+    return (
+      <main className="intake-page">
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "80vh",
+          padding: "24px",
+          textAlign: "center",
+        }}>
+          <h2 style={{
+            fontSize: "1.3rem",
+            fontWeight: 600,
+            color: "#1C1917",
+            marginBottom: 8,
+          }}>
+            How do you want to build your room?
+          </h2>
+          <p style={{
+            fontSize: "0.85rem",
+            color: "#78716C",
+            marginBottom: 32,
+            maxWidth: 420,
+            lineHeight: 1.5,
+          }}>
+            Either way, you get the same AI-curated products. You can always swap items after.
+          </p>
+
+          {error && <div className="error-banner" style={{ marginBottom: 20 }}>{error}</div>}
+
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+            <button
+              type="button"
+              onClick={() => setChosenMode("curated")}
+              style={{
+                padding: "20px 28px",
+                borderRadius: 12,
+                border: chosenMode === "curated" ? "2px solid #1C1917" : "1.5px solid #E2DED6",
+                background: chosenMode === "curated" ? "#FAFAF8" : "#FFF",
+                cursor: "pointer",
+                width: 220,
+                textAlign: "left",
+                transition: "border 0.15s, background 0.15s",
+              }}
+            >
+              <div style={{ fontWeight: 600, fontSize: "0.95rem", color: "#1C1917", marginBottom: 4 }}>
+                Curated selection
+              </div>
+              <div style={{ fontSize: "0.8rem", color: "#78716C", lineHeight: 1.4 }}>
+                Pick each item yourself with our guided flow
+              </div>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setChosenMode("auto")}
+              style={{
+                padding: "20px 28px",
+                borderRadius: 12,
+                border: chosenMode === "auto" ? "2px solid #1C1917" : "1.5px solid #E2DED6",
+                background: chosenMode === "auto" ? "#1C1917" : "#FFF",
+                color: chosenMode === "auto" ? "#FFF" : "#1C1917",
+                cursor: "pointer",
+                width: 220,
+                textAlign: "left",
+                transition: "border 0.15s, background 0.15s, color 0.15s",
+              }}
+            >
+              <div style={{ fontWeight: 600, fontSize: "0.95rem", marginBottom: 4 }}>
+                Generate for me
+              </div>
+              <div style={{ fontSize: "0.8rem", opacity: chosenMode === "auto" ? 0.7 : 0.55, lineHeight: 1.4 }}>
+                AI picks everything — see the full room instantly
+              </div>
+            </button>
+          </div>
+
+          <button
+            type="button"
+            disabled={!chosenMode}
+            onClick={() => { if (chosenMode) handleModeChoice(chosenMode); }}
+            style={{
+              marginTop: 28,
+              padding: "12px 48px",
+              borderRadius: 10,
+              border: "none",
+              background: chosenMode ? "#1C1917" : "#D6D3D1",
+              color: chosenMode ? "#FFF" : "#A8A29E",
+              fontSize: "0.95rem",
+              fontWeight: 600,
+              cursor: chosenMode ? "pointer" : "default",
+              transition: "background 0.15s, color 0.15s",
+            }}
+          >
+            Continue
+          </button>
         </div>
       </main>
     );

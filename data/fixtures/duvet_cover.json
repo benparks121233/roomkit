@@ -1,0 +1,42 @@
+[
+  {
+    "product_id": "DC-001",
+    "name": "Bedsure Queen Duvet Cover Set – Soft Brushed Microfiber, Taupe",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B07WGDCOV1",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-duvet-cover-taupe.jpg"
+  },
+  {
+    "product_id": "DC-002",
+    "name": "SONORO KATE Queen Duvet Cover Set – 100% Washed Cotton, Linen Look",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B09DCOV02S",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/sonoro-duvet-cover-linen.jpg"
+  },
+  {
+    "product_id": "DC-003",
+    "name": "Utopia Bedding King Duvet Cover Set – Brushed Microfiber, White",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B00NBYDCVK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-duvet-cover-white.jpg"
+  },
+  {
+    "product_id": "DC-004",
+    "name": "PHF Muslin Cotton Twin Duvet Cover Set – Gauze Textured, Sage Green",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0ADCOVTWN",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/phf-duvet-cover-sage.jpg"
+  },
+  {
+    "product_id": "DC-005",
+    "name": "Simple&Opulence 100% Linen Queen Duvet Cover Set – Washed French Flax, Oatmeal",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B08DCOV05L",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/simple-linen-duvet-oatmeal.jpg"
+  }
+]

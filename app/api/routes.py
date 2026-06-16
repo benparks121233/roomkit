@@ -19,6 +19,8 @@ from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
 
+from services.tracking import log_event, log_selections
+
 from app.api.schemas import (
     DesignRequest,
     DesignResponse,
@@ -55,11 +57,20 @@ async def create_design(req: DesignRequest) -> DesignResponse:
 
     This makes real LLM calls (~17 total) and can take 60-90 seconds.
     """
+    # 0. Track: design started.
+    _start_time = time.monotonic()
+
     # 1. Intake — validate and produce a RoomRequest.
     try:
         room_request = parse_intake(req.model_dump())
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
+
+    log_event(room_request.run_id, "design_started", {
+        "room_type": room_request.room_type or "bedroom",
+        "budget": req.budget,
+        "aesthetic": req.core_aesthetic or "",
+    })
 
     # 2. Style interpretation — real LLM call.
     style_profile = interpret_style(room_request)
@@ -116,6 +127,16 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             spec_hints,
             interests=room_request.interests or None,
         )
+
+        # Mirror type filter: if user selected a mirror type (e.g. "round",
+        # "full_length"), prefer candidates whose name matches that type.
+        # Fall back to full pool if too few type-matches remain.
+        if slot.slot_id == "mirror" and room_request.mirror_type:
+            mtype = room_request.mirror_type.replace("_", " ").lower()
+            typed = [c for c in candidates if mtype in c.name.lower()]
+            if len(typed) >= 5:
+                candidates = typed
+
         sourceable_slots.append((slot, candidates))
 
     # Fire all selection LLM calls in parallel.
@@ -204,6 +225,42 @@ async def create_design(req: DesignRequest) -> DesignResponse:
         slots_results=slot_results,
     )
     _designs[response.run_id] = response
+
+    # Track: design completed + selections.
+    _elapsed = time.monotonic() - _start_time
+    # Estimate API cost: ~16 Haiku selection calls + 1 Sonnet style + 1 Sonnet composition.
+    _sel_count = len(sourceable_slots)
+    _est_cost = round(0.012 * _sel_count + 0.02, 4)  # ~$0.012/selection + ~$0.02 style+comp
+
+    log_event(response.run_id, "design_completed", {
+        "slot_count": len(slot_results),
+        "total_spent": response.total_spent,
+        "elapsed_s": round(_elapsed, 1),
+        "api_cost": _est_cost,
+    }, api_cost=_est_cost)
+
+    # Log per-slot selections (default rank-1 picks).
+    _slot_products = []
+    for sr in slot_results:
+        if sr.product:
+            _slot_products.append({
+                "slot_id": sr.slot_id,
+                "product_id": sr.product.product_id,
+                "product_name": sr.product.name,
+                "product_price": float(sr.product.normalized_price),
+                "is_multiselect": (sr.max_quantity or 1) > 1,
+            })
+    log_selections(
+        run_id=response.run_id,
+        room_type=response.room_type,
+        aesthetic=response.style.style_name,
+        mood=response.style.mood,
+        color_palette=getattr(style_profile, "color_palette", []),
+        keywords=response.style.keywords,
+        budget=response.target_budget,
+        slot_products=_slot_products,
+    )
+
     return response
 
 
@@ -340,8 +397,11 @@ async def generate_render(run_id: str, body: RenderRequest | None = None) -> dic
     if run_id not in _designs:
         raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
 
+    log_event(run_id, "render_requested")
+
     # Return cached render if it exists.
     if render_exists(run_id):
+        log_event(run_id, "render_generated", {"render_cost": 0.0, "cached": True}, api_cost=0.0)
         return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": True}
 
     design = _designs[run_id]
@@ -394,6 +454,13 @@ async def generate_render(run_id: str, body: RenderRequest | None = None) -> dic
 
     if render_path is None:
         raise HTTPException(status_code=500, detail="Room render generation failed")
+
+    import os
+    _render_quality = os.environ.get("RENDER_QUALITY", "medium")
+    _render_cost = 0.10 if _render_quality == "medium" else 0.30
+    log_event(run_id, "render_generated", {
+        "render_cost": _render_cost, "cached": False,
+    }, api_cost=_render_cost)
 
     return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": False}
 
@@ -451,6 +518,34 @@ async def detect_hotspots(run_id: str) -> dict:
 @router.post("/click")
 async def record_click(event: dict) -> dict:
     raise NotImplementedError("Stage 10: implement click logging")
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# POST /track — client-side event logging (fire-and-forget)
+# ---------------------------------------------------------------------------
+
+class TrackEventRequest(BaseModel):
+    run_id: str
+    event_type: str
+    data: dict = {}
+
+
+_ALLOWED_CLIENT_EVENTS = {
+    "render_viewed", "hotspot_clicked", "buy_link_clicked", "export_cart_clicked",
+}
+
+
+@router.post("/track")
+async def track_event(req: TrackEventRequest) -> dict:
+    """Log a client-side funnel event. Always returns 200 — never fails the client."""
+    if req.event_type not in _ALLOWED_CLIENT_EVENTS:
+        return {"ok": False, "reason": "unknown_event_type"}
+    log_event(req.run_id, req.event_type, req.data)
+    return {"ok": True}
 
 
 # ---------------------------------------------------------------------------

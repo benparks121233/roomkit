@@ -6,11 +6,12 @@ import type { Hotspot } from "@/lib/api";
 interface Props {
   renderUrl: string;
   hotspots: Hotspot[];
+  onHotspotClick?: (hotspot: Hotspot) => void;
 }
 
 type ZoomMode = "idle" | "marquee";
 
-export default function InteractiveRoomRender({ renderUrl, hotspots }: Props) {
+export default function InteractiveRoomRender({ renderUrl, hotspots, onHotspotClick }: Props) {
   // Zoom/pan state
   const [scale, setScale] = useState(1);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
@@ -240,6 +241,8 @@ export default function InteractiveRoomRender({ renderUrl, hotspots }: Props) {
             onClick={(e) => {
               if (mode === "marquee" || (scale > 1 && dragging)) {
                 e.preventDefault();
+              } else {
+                onHotspotClick?.(hs);
               }
             }}
           >

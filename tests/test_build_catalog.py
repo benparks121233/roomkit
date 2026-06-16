@@ -183,23 +183,23 @@ class TestBuildCatalogExecution:
 
 class TestBuildCatalogPlan:
     def test_query_count_within_ceiling(self):
-        from scripts.build_catalog import BEDROOM_QUERIES, DEFAULT_MAX_REQUESTS
+        from scripts.build_catalog import CATALOG_QUERIES, DEFAULT_MAX_REQUESTS
 
-        assert len(BEDROOM_QUERIES) <= DEFAULT_MAX_REQUESTS, (
-            f"Query count {len(BEDROOM_QUERIES)} exceeds default ceiling "
+        assert len(CATALOG_QUERIES) <= DEFAULT_MAX_REQUESTS, (
+            f"Query count {len(CATALOG_QUERIES)} exceeds default ceiling "
             f"{DEFAULT_MAX_REQUESTS}"
         )
 
     def test_all_queries_have_slot_and_term(self):
-        from scripts.build_catalog import BEDROOM_QUERIES
+        from scripts.build_catalog import CATALOG_QUERIES
 
-        for slot_id, term in BEDROOM_QUERIES:
+        for slot_id, term in CATALOG_QUERIES:
             assert slot_id, "Empty slot_id in query"
             assert term, "Empty search_term in query"
 
     def test_every_bedroom_slot_covered(self):
         """Every slot in the bedroom preset should have queries or existing catalog data."""
-        from scripts.build_catalog import BEDROOM_QUERIES
+        from scripts.build_catalog import CATALOG_QUERIES
         from services.config_loader import load_room_taxonomy
         from services.sourcing.catalog_cache import read_cache
 
@@ -207,11 +207,18 @@ class TestBuildCatalogPlan:
         bedroom = taxonomy.room_presets["bedroom"]
         bedroom_slots = set(bedroom.all_items())
 
-        queried_slots = {slot_id for slot_id, _ in BEDROOM_QUERIES}
+        queried_slots = {slot_id for slot_id, _ in CATALOG_QUERIES}
         # Slots with 200+ cached products don't need active queries.
         cached_slots = {
             sid for sid in bedroom_slots
             if (data := read_cache(sid)) is not None and len(data) >= 200
         }
-        missing = bedroom_slots - queried_slots - cached_slots
-        assert not missing, f"Bedroom slots with no queries and insufficient cache: {missing}"
+        # Slots with fixture files are covered (fixture-only until Canopy fetch).
+        from pathlib import Path
+        fixtures_dir = Path(__file__).parent.parent / "data" / "fixtures"
+        fixture_slots = {
+            sid for sid in bedroom_slots
+            if (fixtures_dir / f"{sid}.json").exists()
+        }
+        missing = bedroom_slots - queried_slots - cached_slots - fixture_slots
+        assert not missing, f"Bedroom slots with no queries, cache, or fixtures: {missing}"

@@ -41,6 +41,10 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
     "coffee_table": 59.99,
     "comforter": 18.99,
     "curtains": 6.99,
+    "desk": 49.99,
+    "desk_chair": 39.99,
+    "duvet_cover": 14.99,
+    "duvet_insert": 19.99,
     "dresser": 19.96,
     "floor_lamp": 19.99,
     "mattress": 80.00,
@@ -50,6 +54,7 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
     "pillows": 5.59,
     "plants": 4.89,
     "rug": 17.99,
+    "sconce": 14.99,
     "sheets": 9.97,
     "side_table": 29.99,
     "sofa": 199.99,
@@ -60,6 +65,7 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
     "tv": 149.99,
     "tv_stand": 49.99,
     "wall_art": 2.34,
+    "wallpaper": 19.99,
 }
 _DEFAULT_PRICE_FLOOR = 15.0
 
@@ -140,15 +146,17 @@ def allocate_budget(
                     f"Required slot '{slot_id}' not found in preset '{room_preset}' groups"
                 )
 
-    # --- Step 2: Re-normalize if sum > 1.0 -----------------------------------
+    # --- Step 2: Always normalize to 1.0 ----------------------------------------
+    # When excluded/owned slots are removed, the remaining weights sum to < 1.0.
+    # Without normalization, that gap becomes un-allocated budget (utilization leak).
+    # Always normalize so active slots split the FULL budget proportionally.
     total_weight = sum(weights.values())
     if total_weight <= 0.0:
         raise ValueError(
             "All effective slot weights are zero or negative — "
             "cannot allocate a budget."
         )
-    if total_weight > 1.0:
-        # Proportional re-normalization: preserves relative slot priorities.
+    if abs(total_weight - 1.0) > 1e-9:
         weights = {slot_id: w / total_weight for slot_id, w in weights.items()}
 
     # --- Step 3: Multiply weights by target_budget ---------------------------
@@ -400,8 +408,13 @@ def _build_owned_slots(already_have: set[str], taxonomy: RoomTaxonomy) -> list[S
 
 # Slots dropped per density level.  Only optional slots may appear here.
 # "minimal" drops extra decor/accent items; "balanced"/"layered" keep all.
+# Slots dropped per density level.  Only non-preference-addressed optional
+# items appear here.  Survey-gated items (desk, lighting types, wallpaper,
+# mirror, bedding type) are controlled by the preference survey on the
+# full-room path, or by the wants picker on the partial-room path — never
+# by density.
 _DENSITY_DROP: dict[str, set[str]] = {
-    "minimal": {"floor_lamp", "plants", "mirror", "curtains", "throw_blanket"},
+    "minimal": {"plants", "curtains", "throw_blanket"},
     "balanced": set(),
     "layered": set(),
 }
@@ -448,17 +461,37 @@ def plan_composition(
         weights = _taxonomy_default_weights(room_preset, taxonomy)
 
     # Density: treat density-dropped slots as "already owned" so they get
-    # $0 budget and are excluded from sourcing, without touching the LLM
-    # or the budget math.  Only optional slots are in _DENSITY_DROP.
+    # $0 budget and are excluded from sourcing.  Density only controls
+    # ambient items (plants, curtains, throw) — survey-gated items are
+    # controlled by preferences (full-room) or the wants picker (partial).
     density = getattr(room_request, "density", "balanced")
-    density_drops = _DENSITY_DROP.get(density, set())
+    density_drops = set(_DENSITY_DROP.get(density, set()))
+
     already_have = set(room_request.already_have) | density_drops
+
+    # Bedding: comforter and duvet are mutually exclusive.
+    # - If user chose duvet (comforter excluded but duvet slots NOT excluded),
+    #   promote duvet_insert + duvet_cover to must_have so they get real budget.
+    # - If comforter is NOT excluded, promote it so the bed isn't bare.
+    # - On partial-room paths where comforter is in already_have because the
+    #   user simply didn't want it (and also didn't want duvet), do NOT
+    #   auto-promote duvet slots — they'll also be in already_have.
+    must_have = set(room_request.must_have)
+    if room_preset == "bedroom":
+        if "comforter" in already_have:
+            # Only promote duvet if the duvet slots are NOT also excluded.
+            # If they're excluded too, user wants neither (partial-room path).
+            if "duvet_insert" not in already_have and "duvet_cover" not in already_have:
+                must_have.add("duvet_insert")
+                must_have.add("duvet_cover")
+        else:
+            must_have.add("comforter")
 
     return fit_slots_to_budget(
         weights, target_budget, room_preset, taxonomy, budget_policies,
         run_id=run_id,
         already_have=already_have,
-        must_have=set(room_request.must_have),
+        must_have=must_have,
     )
 
 

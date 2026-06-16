@@ -1,0 +1,42 @@
+[
+  {
+    "product_id": "DCH-001",
+    "name": "Hbada Office Chair – Ergonomic Desk Chair with Lumbar Support, Black Mesh",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B08DCH001A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/hbada-chair-black.jpg"
+  },
+  {
+    "product_id": "DCH-002",
+    "name": "SWEETCRISPY Armless Office Chair – Low-Back Swivel, Beige Linen",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B08DCH002A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/sweetcrispy-chair-beige.jpg"
+  },
+  {
+    "product_id": "DCH-003",
+    "name": "DUMOS Cross-Legged Office Chair – Wide Seat Armless, Gray",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B08DCH003A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/dumos-chair-gray.jpg"
+  },
+  {
+    "product_id": "DCH-004",
+    "name": "Flash Furniture Mid-Back Task Chair – White LeatherSoft",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B08DCH004A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/flash-chair-white.jpg"
+  },
+  {
+    "product_id": "DCH-005",
+    "name": "Branch Verve Chair – Ergonomic Desk Chair, Charcoal",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B08DCH005A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/branch-chair-charcoal.jpg"
+  }
+]

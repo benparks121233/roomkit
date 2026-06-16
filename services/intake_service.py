@@ -106,6 +106,19 @@ def parse_intake(raw_input: dict) -> RoomRequest:
         # Wants become must_have so they're never dropped
         must_have = list(wants)
 
+    # --- Mirror type preference ------------------------------------------------
+    mirror_type: str | None = raw_input.get("mirror_type") or None
+
+    # --- Merge survey-driven excluded_slots into already_have ---------------
+    # The frontend computes which slots to exclude from survey answers (e.g.
+    # user picks "comforter" → exclude duvet_insert, duvet_cover).
+    # These are merged into already_have so the backend treats them as owned.
+    excluded_slots: list[str] = list(raw_input.get("excluded_slots") or [])
+    if excluded_slots:
+        have_set = set(already_have)
+        have_set.update(excluded_slots)
+        already_have = sorted(have_set)
+
     return RoomRequest(
         run_id=str(uuid.uuid4()),
         room_type=room_type,
@@ -120,5 +133,6 @@ def parse_intake(raw_input: dict) -> RoomRequest:
         interests=interests,
         already_have=already_have,
         must_have=must_have,
+        mirror_type=mirror_type,
         created_at=datetime.now(tz=timezone.utc),
     )

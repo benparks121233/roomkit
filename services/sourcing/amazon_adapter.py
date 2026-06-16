@@ -50,6 +50,20 @@ _DECORATIVE_PILLOW_PHRASES = [
     "couch pillow",
     "sofa pillow",
     "patio pillow",
+    "pillow sham",
+    "euro sham",
+    "pillow insert",
+    "pillow form",
+    "toss pillow",
+    "velvet pillow",
+    "embroidered pillow",
+    "sequin pillow",
+    "faux fur pillow",
+    "pillow set of",
+    "18x18",
+    "20x20",
+    "16x16",
+    "12x20",
 ]
 
 _PLANT_STAND_PHRASES = [
@@ -68,6 +82,23 @@ _PLANT_STAND_PHRASES = [
     "gardening tool",
     "garden hose",
     "plant saucer",
+    # Vases, display items, and non-plant junk
+    "vase",
+    "floating shelf",
+    "wall shelf",
+    "display shelf",
+    "corner shelf",
+    "bookshelf",
+    "lego",
+    "building block",
+    "building set",
+    "candle",
+    "terrarium kit",
+    "moss ball",
+    "seed starter",
+    "grow light",
+    "grow kit",
+    "propagation",
 ]
 
 _BATHROOM_MIRROR_PHRASES = [
@@ -132,6 +163,69 @@ _CHEUGY_PATTERNS = [
     r"\bRGB\s+(rug|carpet)\b",
 ]
 _CHEUGY_RE = re.compile("|".join(_CHEUGY_PATTERNS), re.IGNORECASE)
+
+# Per-slot exclusion phrases — consolidated contamination filters.
+# Checked case-insensitively against product names during fetch_candidates().
+_SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
+    "ceiling_light": [
+        "kitchen", "utility", "garage", "workshop", "closet", "pantry",
+        "laundry", "basement", "stairwell", "outdoor", "porch", "barn light",
+        "shop light", "work light", "under cabinet",
+    ],
+    "rug": [
+        "outdoor rug", "bath mat", "bathroom rug", "bath rug", "kitchen mat",
+        "door mat", "doormat", "welcome mat", "kitchen rug", "patio rug",
+    ],
+    "nightstand": ["bathroom vanity", "bathroom cabinet"],
+    "dresser": [
+        "jewelry box", "makeup vanity", "bathroom cabinet", "vanity desk",
+        "kids", "toddler", "nursery", "children", "baby", "kid's", "child's",
+        "toy chest", "toy box", "toy organizer", "diaper",
+    ],
+    "pillows": [
+        "neck pillow", "dog pillow", "pet pillow", "body pillow",
+        "travel pillow", "cervical pillow", "knee pillow",
+    ],
+    "curtains": ["shower curtain", "shower liner"],
+    "sheets": [
+        "toddler sheet", "crib sheet", "paper towel", "sheet music",
+        "sticker sheet", "coloring sheet",
+    ],
+    "bed_frame": ["bunk bed", "daybed", "day bed", "toddler bed", "loft bed", "crib"],
+    "throw_blanket": [
+        "outdoor blanket", "beach blanket", "picnic blanket",
+        "stadium blanket", "camping blanket",
+    ],
+    "mattress": [
+        "mattress topper", "mattress pad", "mattress protector",
+        "air mattress", "inflatable mattress", "mattress cover",
+    ],
+    "comforter": ["duvet cover", "duvet set", "cover set"],
+    "duvet_insert": ["duvet cover", "cover set", "comforter set"],
+    "duvet_cover": [
+        "comforter", "down alternative comforter", "quilted comforter",
+        "duvet insert", "down comforter",
+    ],
+    "desk": [
+        "standing desk converter", "desk organizer", "desk pad", "desk mat",
+        "desk lamp", "desk light", "task light", "reading light", "clip light",
+        "clip on light", "book light", "led light",
+        "desk shelf", "monitor stand", "laptop stand",
+        "keyboard tray", "cable management",
+    ],
+    "desk_chair": [
+        "chair cushion", "chair pad", "chair cover", "chair mat",
+        "stool", "bar stool", "dining chair", "folding chair",
+    ],
+    "sconce": [
+        "outdoor", "porch", "garage", "bathroom vanity light",
+        "kitchen", "under cabinet",
+    ],
+    "wallpaper": [
+        "wallpaper paste", "wallpaper tool", "wallpaper smoother",
+        "wallpaper scorer", "contact paper", "shelf liner",
+    ],
+}
 
 # Keywords that indicate a product matches a user interest category.
 # Emphasize elevated/vintage/framed versions over generic merch.
@@ -226,6 +320,13 @@ class AmazonAdapter(SourcingAdapter):
             if slot_id == "plants":
                 name_lower = raw.get("name", "").lower()
                 if any(ph in name_lower for ph in _PLANT_STAND_PHRASES):
+                    continue
+
+            # Filter: consolidated per-slot contamination exclusions.
+            _exclude = _SLOT_EXCLUDE_PHRASES.get(slot_id)
+            if _exclude:
+                name_lower = raw.get("name", "").lower()
+                if any(ph in name_lower for ph in _exclude):
                     continue
 
             # Filter: exclude cheugy / low-taste products across all slots.

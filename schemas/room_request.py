@@ -65,5 +65,10 @@ class RoomRequest(BaseModel):
     # for the room preset.  Validated against the taxonomy in intake_service.
     must_have: list[str] = []
 
+    # Mirror type preference from the survey (e.g. "full_length", "round",
+    # "wall", "arched").  None if no mirror or not specified.  Used by
+    # selection_service to filter mirror candidates.
+    mirror_type: Optional[str] = None
+
     # Timestamp set by intake_service at parse time (UTC).
     created_at: datetime

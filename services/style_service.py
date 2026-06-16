@@ -20,9 +20,13 @@ from pathlib import Path
 
 import anthropic
 
+import logging
+
 from schemas.room_request import RoomRequest
 from schemas.style_profile import StyleProfile
 from services.config_loader import StyleProfilesConfig, load_style_profiles
+
+logger = logging.getLogger(__name__)
 
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 
@@ -62,6 +66,7 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
     if room_request.core_aesthetic and room_request.core_aesthetic in valid_ids:
         locked_id = room_request.core_aesthetic
         config_profile = profile_map[locked_id]
+        logger.info("Style locked to %r (deterministic path)", locked_id)
 
         # Use the profile's canonical keywords/mood/palette, enhanced with
         # the user's style_description for richer context — but style_name
@@ -76,6 +81,7 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
         )
 
     # --- LLM interpretation path (no core_aesthetic) ---
+    logger.info("Style via LLM (core_aesthetic=%r)", room_request.core_aesthetic)
     system_prompt, user_message = _build_prompts(room_request, profiles_config)
     raw = _call_llm(system_prompt, user_message)
 

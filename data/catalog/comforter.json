@@ -5987,7 +5987,7 @@
   },
   {
     "product_id": "B0C4GKJPTG",
-    "name": "CozyLux Queen Comforter Set Navy Blue, 7 Pieces Bed in a Bag, Blue Comforter Queen Size, All Season Bedding Sets with Stitch Quilted Comforter, Flat Sheet, Fitted Sheet, Pillowcases",
+    "name": "CozyLux Queen Comforter Set Navy Blue, 7 Pieces Bed in a Bag, Blue Comforters Queen Size, All Season Bedding Sets with Stitch Quilted Comforter, Flat Sheet, Fitted Sheet, Pillowcases",
     "normalized_price": 42.99,
     "buy_url": "https://www.amazon.com/dp/B0C4GKJPTG",
     "specs": {
@@ -6507,6 +6507,1194 @@
       "bed_size": "queen"
     },
     "image_url": "https://m.media-amazon.com/images/I/916-hoCTxOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BHJ8PWCB",
+    "name": "ROSGONIA Queen Comforter Set Charcoal Grey, 3pcs (1 Dark Gray Comforter & 2 Pillowcases) All Season Soft Bedding Lightweight Bedspread Blanket Quilt",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BHJ8PWCB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71OIeALcE7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCG5FHKX",
+    "name": "Bedsure Queen Comforter Set, Black Grey Soft Prewashed Bedding for All Seasons, 3 Pieces GentleSoft\u2122 Bed Set, 1 Lightweight Comforter (90\"x90\") and 2 Pillowcases (20\"x26\")",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCG5FHKX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81JWwzGRBzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07H4K9H6L",
+    "name": "Basic Beyond Queen Comforter Set - Black Comforter Set Queen, Reversible Bed Comforter Queen Set for All Seasons, Black/Grey, 1 Comforter (88\"x92\") and 2 Pillow Shams (20\"x26\"+2\")",
+    "normalized_price": 29.96,
+    "buy_url": "https://www.amazon.com/dp/B07H4K9H6L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71YirWBfcdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXQ5QFQG",
+    "name": "Bedsure Black Comforter Set Queen - Soft Bedding for All Seasons, Breathable Cationic Dyed Bed Set, 3 Pieces, 1 Queen Size Comforter (90\"x90\") and 2 Pillow Shams (20\"x26\"+2\")",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXQ5QFQG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81TSfnJTz5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D49JQTSJ",
+    "name": "Bedsure Waffle Comforter Set Queen, Charcoal Soft Bedding, Waffle Weave Bed Set, 3 Pieces, 1 Comforter (90\"x90\") and 2 Pillow Shams, Cotton Shell and Polyester Lining for All Seasons",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0D49JQTSJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Pu05SYUmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZGH7HSX",
+    "name": "MaiR\u00eave Embroidery Queen Size Comforter Set Black, Boho Farmhouse Western Bedding Set 7 Pieces, All Season Bed in A Bag Comforter Set with Sheets, Pillowcases & Shams",
+    "normalized_price": 75.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZGH7HSX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817utuRm2GL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4GJSJ9M",
+    "name": "CozyLux Queen Comforter Set Black, 7 Pieces Bed in a Bag, Black Comforters Queen Size, All Season Bedding Sets with Stitch Quilted Comforter, Flat Sheet, Fitted Sheet, Pillowcases",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4GJSJ9M",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71M6BBe+0oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073R5JBFX",
+    "name": "Sweet Home Collection 7 Piece Comforter Set Bag Solid Color All Season Soft Down Alternative Blanket & Luxurious Microfiber Bed Sheets, Black, Queen",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B073R5JBFX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61A3VOPrmrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09JNN7GKC",
+    "name": "Litanika Queen Comforter Set Black White Grey - 3 Pieces Lightweight Summer Bedding Set, All Season Down Alternative Comforter (1 Comforter, 2 Pillowcases)",
+    "normalized_price": 30.39,
+    "buy_url": "https://www.amazon.com/dp/B09JNN7GKC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pFX-OrE3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09R93GGS4",
+    "name": "CozyLux Queen Comforter Set Black, 7 Pieces Pintuck Bed in A Bag, All Season Comforter Queen Size, Bed Set Gift for Family, Pinch Pleat Bedding Sets with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 29.97,
+    "buy_url": "https://www.amazon.com/dp/B09R93GGS4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71LWHlANp5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09C1B2X9Y",
+    "name": "Houseri Black Comforter Set - Queen Size, Soft & Comfy, All Season, Plain Black, Lightweight & Fluffy Bedding for Men, Women, Boys & Girls",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B09C1B2X9Y",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51oZks9dkyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09DPPH4R7",
+    "name": "CozyLux Queen Comforter Set Black - Bed in a Bag Queen Size 7 Pieces, Luxury Soft Bed Set for All Seasons, Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B09DPPH4R7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71qT47LQrHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK6VXX4Q",
+    "name": "Bedsure Dark Black Queen Comforter Set - 7 Pieces Reversible Queen Bed in a Bag, Bed Set Dark Black and Grey with Comforters, Sheets, Pillowcases & Shams",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0DK6VXX4Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817yTbMs0jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09QC7WVZW",
+    "name": "Flysheep Ombre Boho Striped Bed in a Bag 7 Pieces Queen Size, White Striped on Black Dark Gray Comforter Sheet Set (1 Comforter, 1 Flat Sheet, 1 Fitted Sheet, 2 Pillow Shams, 2 Pillowcases)",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B09QC7WVZW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WcC+N7psL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08TGC56L6",
+    "name": "WONGS BEDDING Black Comforter Set Queen, Reversible Black Grey Stripe Down Alternative Comforter for All Season,3 Pieces(1 Patchwork Comforter+2 Pillowcases), Soft Microfiber Bedding Set 90\"\u00d790\"",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B08TGC56L6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71lmIInPrNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G68XHHFB",
+    "name": "CozyLux Oversized Queen Comforter Set Black - 7 Pieces Bed in a Bag, Modern Vertical Quilted Room Decor, Soft All-Season Bedding Gift with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0G68XHHFB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/719f4tlQd6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLLF95XY",
+    "name": "PHF Ultra Soft Waffle Weave Comforter Set Queen Size, 3 Pieces Lightweight Breathable Comfy Bedding Set, Comfy Textured 1 Comforter with 2 Pillow Shams, Black",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLLF95XY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Frb6zB2TL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7BHGBMN",
+    "name": "HORIMOTE HOME 100% Cotton Quilt Queen Size, Charcoal Soft Lightweight Cotton Bedspread Coverlet 3 Pieces Scalloped Edge Geometric Stitching Quilt Bedding Set with 2 Sham for All Season, 90 x 96 inches",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B0G7BHGBMN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81opUTp4QDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXHJ42BR",
+    "name": "Queen Comforter Set Quilted Stripe Bedding Bundle \u2013 Comforter, Mattress Protector, Sheets with Pockets on the Side & Built-in Corner Strap \u2013 Fitted Sheet Media Pocket for Devices, Black/Charcoal",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0FXHJ42BR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PP6yn4MDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09NN1YCK3",
+    "name": "CozyLux Queen Comforter Set Black, 7 Pieces Seersucker Textured Luxury Bed in a Bag Queen, All Seasons Soft Bedding Sets with Down Alternative Comforter, Sheets, Pillowcases & Shams, Home Gift",
+    "normalized_price": 55.79,
+    "buy_url": "https://www.amazon.com/dp/B09NN1YCK3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yhBLUAFdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2NDRHP4",
+    "name": "Dinjoy Queen Comforter Set Dark Gray Boho,Soft 7 Piece Bed in a Bag Queen Size Lightweight Black Bedding Sets Striped Comforters with Plaid Bed Set with Sheets for Men All Season",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0D2NDRHP4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816ngMPgVjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F59RL17V",
+    "name": "JOLLYVOGUE Black Queen Comforter Set, 3 Pieces Seersucker Comforters Queen Size, Lightweight & Fluffy Bedding Sets Queen for All Season with 1 Ruffle Comforter and 2 Ruffle Pillowshams",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0F59RL17V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818pbjbfl6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3Q8Y3HN",
+    "name": "ROYALE LINENS Reversible Comforter - Queen Size Duvet Insert - All Season Soft Quilted Comforters with 8 Corner Tabs - Down Alternative Bedding Comforter - Duvet Insert (Black/Charcoal, Queen 88\"x88\")",
+    "normalized_price": 26.99,
+    "buy_url": "https://www.amazon.com/dp/B0D3Q8Y3HN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71c5v8NFC+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG96723K",
+    "name": "Love's cabin Seersucker Black Queen Comforter Set, 7-Piece All Season Lightweight Bed in a Bag Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases and Shams",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0CG96723K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81fu2AlJcJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09BFLLTKL",
+    "name": "KAREVER Black Comforter Queen Fluffy Bedding Set Solid Dark Color Soft Durable Queen Blanket Women 3 Pieces Breathable Lightweight Black Comforter Set Queen Size",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B09BFLLTKL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71YdsGMEoVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FM7QVNYK",
+    "name": "Bedsure Black Queen Comforter Set - 7 Pieces Floral Bedding Sets Queen Bed in a Bag with Reversible Botanical Flowers Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0FM7QVNYK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/916F8y5d0JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHGRCS8K",
+    "name": "Wake In Cloud - Boho Comforter Set, Farmhouse Bohemian Western Aztec Neutral Aesthetic, Soft Lightweight Bedding, 3 Pieces, Charcoal Black, Queen Size",
+    "normalized_price": 20.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHGRCS8K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81H6aqVev3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2DP87FC",
+    "name": "Love's cabin Queen Comforter Set Ash Black, 7 Pieces Queen Bed in a Bag, All Season Bedding Sets with 1 Comforter, 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcase and 2 Pillow Sham | Soft",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2DP87FC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71acejNk29L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CR5WFBVP",
+    "name": "HIMEET Queen Comforter Set Black - 7 Pieces Pintuck Bed in a Bag, Pinch Pleat Modern Room Decor, All-Season Soft Bedding Gift with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0CR5WFBVP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/7146GvHslIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCKVPLRM",
+    "name": "MaiR\u00eave Charcoal Grey Queen Comforter Set, Textured Design Grey Crinkle Bed in A Bag Queen Size, Queen Comforter Set with 7 Pieces with Comforter, Sheets, Pillowcases & Shams 90\"x 90\"",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0CCKVPLRM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91wcZzB2TZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B076DH6NBR",
+    "name": "Bare Home Comforter Set - Queen Size - Ultra-Soft - Goose Down Alternative - Premium 1800 Series - All Season Warmth (Queen, Black)",
+    "normalized_price": 58.7,
+    "buy_url": "https://www.amazon.com/dp/B076DH6NBR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816h7jxjHdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C5X5P75C",
+    "name": "BEDELITE Fleece Queen Comforter Set -Super Soft & Warm Fluffy Black Bedding, Luxury Fuzzy Heavy Bed Set for All Season with 2 Pillow Cases",
+    "normalized_price": 45.1,
+    "buy_url": "https://www.amazon.com/dp/B0C5X5P75C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PF-GudVhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRRCL2LG",
+    "name": "Queen Comforter Set 7 Piece - Black Soft Bed in a Bag Queen Size Comforter Sets, Lightweight Bedding Sets with Down Alternative Comforter, Flat Sheet, Fitted Sheet, 2 Pillowcases & 2 Shams",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRRCL2LG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Y0xylo4cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNJC95LP",
+    "name": "HYMOKEGE Black Queen Comforter Set Seersucker 7 Pieces, All Season Luxury Bed in a Bag for Bedroom, Bedding Set with Comforters, Sheets, Pillowcases & Shams",
+    "normalized_price": 44.98,
+    "buy_url": "https://www.amazon.com/dp/B0BNJC95LP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81P-jA+G52L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGJFZHJT",
+    "name": "Bare Home Comforter Set - Oversized Queen - Ultra-Soft - Goose Down Alternative - Premium 1800 Series - All Season Warmth Comforter (Oversized Queen, Heathered Black)",
+    "normalized_price": 82.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGJFZHJT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bjhY2KqyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FX9T774D",
+    "name": "weigelia Fluffy Black Comforter Queen Set \u2013 Ultra Soft Plush Fleece Black Comforter Queen Size, Luxury Fuzzy Bedding Comforter with 2 Pillowcases, Cozy Heavy Faux Fur Comforter Sets for All Season",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0FX9T774D",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XzgdYidYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00KR6XFZY",
+    "name": "Madison Park Essentials Parkston Plaid Comforter Set Soft Brushed Microfiber College Bedding, 3M Scotchguard Stain Release Cover, Modern All Season Cabin Bedding, Full/Queen, Navy, 3 Piece",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B00KR6XFZY",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91ovdPFgvlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07V7QHH8M",
+    "name": "Eddie Bauer - Queen Comforter Set with Shams, Soft Microsuede Bedding, Down Alternative Fill, All-Season Warmth, Shasta Lake Navy",
+    "normalized_price": 73.98,
+    "buy_url": "https://www.amazon.com/dp/B07V7QHH8M",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91yLWOjlxIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B6SPQGVQ",
+    "name": "MaiR\u00eave Queen Size Comforter Set Navy Blue, Classic Plaid Farmhouse 7 Pieces Bedding Set, All Season Lightweight Bed in a Bag with Sheets, Pillowcases & Shams",
+    "normalized_price": 65.99,
+    "buy_url": "https://www.amazon.com/dp/B0B6SPQGVQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81D3w8rQXHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082GT7K44",
+    "name": "Wake In Cloud - Plaid Comforter Set, Scottish Tartan Check Geometric Modern Pattern Printed, Soft Lightweight Bedding, 3 Pieces, Dark Green, Queen Size",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B082GT7K44",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71MSL1OjCTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2HLCVQY",
+    "name": "CozyLux Queen Comforter Set with Sheets - 7 Pieces Plaid Bed in a Bag Set Grey, Soft Queen Bedding Sets Bed Set with All Season Quilted Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Pillow Shams",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2HLCVQY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71zHOJyjHiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHTYRMCN",
+    "name": "NSNLGSGC Queen Comforter Set, Tan Gingham Bedding Comforter Sets, Brown Grid Bed Comforter 3 Pieces (1 Comforter, 2 Pillowcases)",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B0CHTYRMCN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/7137xBiQZ9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FS36NSWJ",
+    "name": "Eddie Bauer - Queen Comforter Set, Soft & Smooth Printed Bedding with Solid Reverse, 3 Piece Bed Set with Matching Pillowcases (Huntley Plaid Brown)",
+    "normalized_price": 90.0,
+    "buy_url": "https://www.amazon.com/dp/B0FS36NSWJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/914XD52gi-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09QLWW9D2",
+    "name": "Basic Beyond Queen Comforter Set - Navy and Green Buffalo Plaid Comforter Set Queen Down Alternative Bed Comforter Queen Set for All Season(1 Comforter with 2 Pillow Shams, 88\" x 92\")",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B09QLWW9D2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71JqKoiRqxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00FLOU2L2",
+    "name": "Woolrich Comforter Set, Cabin Lodge, Warm Cover for Colder Season, Modern Cottage-Inspired Down Alternative Ultra Soft Microfiber Bedding, Matching Sham, Plaid Brown Full/Queen 4 Piece",
+    "normalized_price": 51.45,
+    "buy_url": "https://www.amazon.com/dp/B00FLOU2L2",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91HORV-PDNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09RCCP97L",
+    "name": "Madison Park Essentials Parkston Plaid Comforter Set Soft Brushed Microfiber College Bedding, 3M Scotchguard Stain Release Cover, Modern All Season Cabin Bedding, Full/Queen, Brown, 3 Piece",
+    "normalized_price": 45.24,
+    "buy_url": "https://www.amazon.com/dp/B09RCCP97L",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81REcTKOK-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CSDJJP4X",
+    "name": "AMBERSPACE Plaid Queen Comforter Set, Blue Grey Bedding Set 7 Piece for Boys Girls Teen, Classic Homestead-Style Kids Comforter Set Bed in A Bag with Sheets, Pillowcases & Shams",
+    "normalized_price": 75.99,
+    "buy_url": "https://www.amazon.com/dp/B0CSDJJP4X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81F1m6I-opL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08YYH6BJJ",
+    "name": "downluxe Lightweight Plaid Comforter Set (Queen) with 2 Pillow Shams - 3-Piece Set - Red/Black Plaid - Down Alternative Reversible Comforter",
+    "normalized_price": 34.5,
+    "buy_url": "https://www.amazon.com/dp/B08YYH6BJJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818TfIwWMxS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGPMDRB2",
+    "name": "Comforter Set Queen Size Plaid Patchwork Comforter Bedding-7 Piece Bed in a Bag,Soft Fluffy Reversible Microfiber Bedding Set(1 Comforter,1 Flat Sheet,1 Fitted Sheet,2 Pillowcases,2 Pillow Shams)",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGPMDRB2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dnYBTKhfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B074PLLP2G",
+    "name": "Eddie Bauer - Queen Comforter Set, Plaid Reversible Bedding, Stylish & Warm Home Decor (Normandy Grey, Queen)",
+    "normalized_price": 84.56,
+    "buy_url": "https://www.amazon.com/dp/B074PLLP2G",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91J5XHYMdRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08DHWCHS4",
+    "name": "SLEEPBELLA Comforter Queen Size, 600 Thread Count Cotton Navy Blue & Grey Buffalo Pattern Blue Plaid Comforter Sets,Down Alternative Bedding Set 3Pcs (Queen, Navy Plaid)",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B08DHWCHS4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81KcPJ6dcYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F13L8MHT",
+    "name": "mixinni Vintage Buffalo Plaid Duvet Cover Set Queen Size - 3 Piece Washed Cotton Bedding Set with Grid Pattern, Soft & Breathable Duvet Cover with Pillowcases for All Seasons,(Brown & Blue,Beige)",
+    "normalized_price": 68.09,
+    "buy_url": "https://www.amazon.com/dp/B0F13L8MHT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81K+OoAcrkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BRMXM3V9",
+    "name": "AIKASY Bed in a Bag 7 Piece Queen Size, Brown Plaid Design Soft Microfiber Reversible Bed Comforter Set for All Season (1 Comforter, 2 Pillow Shams, 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0BRMXM3V9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71on3K+sIXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D548N73B",
+    "name": "Intelligent Design Queen Comforter Set Plaid Classic Cabin Lodge Comforter Queen Size, Modern Casual, Lightweight All Season Bedding Set Queen, Sham, D\u00e9cor Pillows, Blake, Full/Queen, Tan/Gray 5 Piece",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B0D548N73B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81wVfaJ4h5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL2CC47H",
+    "name": "NSNLGSGC Tan Ruffle Gingham Comforter Set Queen, Pre-Washed Ruffled Taupe Plaid Checked Comforter Bedding, 3 Pieces Vintage Farmhouse Grid Bedding Set(Tan Gingham, Queen)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FL2CC47H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/710HE+jYLbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09RCBXBYW",
+    "name": "Madison Park Essentials Parkston Plaid Comforter, Matching Sham, 3M Scotchguard Stain Release Cover, Hypoallergenic All Season Bedding-Set, Full/Queen, Red, 3 Piece",
+    "normalized_price": 60.12,
+    "buy_url": "https://www.amazon.com/dp/B09RCBXBYW",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pseSAaesL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHPTSKW2",
+    "name": "100% Cotton Comforter Set Queen Size \u2013 Reversible Yarn-Dyed Checkered Design, Soft Washed Cotton on Both Sides, Lightweight All-Season Bedding, Machine Washable(Black Red Plaid, 90\u201dx90\u201d)",
+    "normalized_price": 76.49,
+    "buy_url": "https://www.amazon.com/dp/B0FHPTSKW2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZQPaePbCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07HMV9VPP",
+    "name": "Wake In Cloud - Grid Comforter Set, Preppy Geometric Plaid Checkered Modern Pattern Printed, Soft Lightweight Bedding, 3 Pieces, Navy, Queen Size",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B07HMV9VPP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71+uGR6RWuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BPH3WKBR",
+    "name": "Caressma Buffalo Plaid Comforter Set Queen, Black White Buffalo Plaid Comforter Bedding Set for All Seasons, Classic Gingham Pattern Print Soft Microfiber 3 Pieces Comforter with Pillowcases",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0BPH3WKBR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81IWJ9Irz3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B084T6XKTK",
+    "name": "Woolrich Mill Creek Reversible Quilt Set - Cottage Styling Reversed to Solid Color, All Season Lightweight Coverlet, Cozy Bedding Layer, Matching Shams, Oversized Full/Queen, Plaid Green 3 Piece",
+    "normalized_price": 80.99,
+    "buy_url": "https://www.amazon.com/dp/B084T6XKTK",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91i5XJbM9fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00CWCUTVE",
+    "name": "Woolrich Queen Comforter Set, Rustic Lodge Cabin Comforter, All Season Down Alternative Bedding with Matching Shams & Bedskirt, Soft Cozy Spun Fabric, Hadley Plaid, Multi",
+    "normalized_price": 91.88,
+    "buy_url": "https://www.amazon.com/dp/B00CWCUTVE",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mIQf6VpxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBTTPGS9",
+    "name": "Queen Comforter Set Plaid 3 Pieces Soft Crinkle Gauze Fabric Plaid Bedding, Vintage Style Checkered Gingham Comforter Set for All Seasons Luxury Warmth Comfy Breathable with 2 Pillowcases",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBTTPGS9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81AxXLozQsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08FXQC12R",
+    "name": "Amazon Basics 3-Piece Ultra-Soft Micromink Sherpa Bedding Set, Warm All Season Comforter, Full/Queen, Navy Plaid",
+    "normalized_price": 51.45,
+    "buy_url": "https://www.amazon.com/dp/B08FXQC12R",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91LXaSs6W6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHQMXTND",
+    "name": "Queen Comforter Set, Modern Plaid Checkered Bedding, Tan Gingham Brown Grid Bed Comforter, Soft Fluffy Breathable Farmhouse Dorm Bedding, All Seasons 3 Piece Set",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHQMXTND",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WnSQiSELL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8RHVP4J",
+    "name": "Wrangler - Queen Comforter Set, Soft & Reversible Bedding with Box-Stitch Design, Yellowstone Inspired Bedding, 3 Piece Bed Set with Matching Pillowcases (City Flats Plaid Navy)",
+    "normalized_price": 69.54,
+    "buy_url": "https://www.amazon.com/dp/B0C8RHVP4J",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91mRDfIw-UL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DY4LBDY6",
+    "name": "MKXI Plaid Comforter Set Queen Size, Geometric Checkered 3 Pieces Bedding Set Men Boys, Modern Style Comforter with 2 Pillow Shams All Season Soft Fluffy Bedding Set-(Tan,Dark Blue Grey,Khaki)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DY4LBDY6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HTLP6KZ1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHQX9LGB",
+    "name": "Queen Comforter Set, Modern Plaid Checkered Bedding, Green Gingham Brown Grid Bed Comforter, Soft Fluffy Breathable Farmhouse Dorm Bedding, All Seasons 3 Piece Set",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHQX9LGB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81VInXw2-LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082GTRDKM",
+    "name": "Wake In Cloud - Gingham Comforter Set, Plaid Buffalo Check Checkered Cottagecore Cute Geometric, Soft Lightweight Bedding, 3 Pieces, Beige, Queen Size",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B082GTRDKM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/613Ilt6cG-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FWXT3BNP",
+    "name": "Cyusri Cotton Plaid Queen Comforter Set - Soft Lightweight Bedding 3 Pieces Dyed Bed Set with 2 Pillow Shams,Reversible All Season Farmhouse Down Alternative(Queen Size 90\"x90\" Dark Green)",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0FWXT3BNP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NyVfQIBrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCJKNBVR",
+    "name": "CozyLux Queen Comforter Set Navy Blue, 3 Pieces Lightweight Comforters Queen Size Quilted Bedding Sets, All Season Breathable Solid Down Alternative Comforter with 2 Pillowcases, Bed Set Gift for Home",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCJKNBVR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71WWECO9p3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVWZ2RRQ",
+    "name": "MUXHOMO Queen Comforter Set, All Season Ultra Soft Down Alternative Bedding - 3 Piece Lightweight Bed Set Includes 1 Comforter (90\"x90\") and 2 Pillow Shams (20\"x26\"), Navy Blue",
+    "normalized_price": 25.49,
+    "buy_url": "https://www.amazon.com/dp/B0FVWZ2RRQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PRHEf8AHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJYL1LZL",
+    "name": "Amazon Basics 3-Piece Soft Microfiber Kid's Comforter and Pillow Sham Set, Full/Queen, Navy, Solid",
+    "normalized_price": 24.23,
+    "buy_url": "https://www.amazon.com/dp/B0CJYL1LZL",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71eMpz+mPcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQT3P733",
+    "name": "Sasttie Queen Comforter Set 7-Piece Navy Blue, Pre-Washed Crinkled Texture Bed in a Bag Queen with Ultra Soft Brushed Sheets, Aesthetic Fluffy Bedding Set for All Seasons",
+    "normalized_price": 29.98,
+    "buy_url": "https://www.amazon.com/dp/B0GQT3P733",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81m91IsXW4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08V85PSXR",
+    "name": "CozyLux Queen Comforter Set Navy Blue - Bed in a Bag Queen Size 7 Pieces, Luxury Soft Bed Set for All Seasons, Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 48.99,
+    "buy_url": "https://www.amazon.com/dp/B08V85PSXR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bKwvZ1e4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B088M511T6",
+    "name": "Cottonight Navy Blue Comforter Queen Set Dark Blue Bedding Comforter Set Full Solid Navy Blanket Quilts Men Boys Breathable Soft Navy Blue Comforter with 2 Pillowcases",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B088M511T6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71pzAzgle-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B096S11L9T",
+    "name": "Homelike Moment Queen Comforter Set, Soft Down Alternative Bedding Set, Lightweight 3Pcs All Season, Solid-Navy Blue, Full/Queen Size",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B096S11L9T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qRiE7TSLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B086QPF5VZ",
+    "name": "Basic Beyond Queen Comforter Set - Navy Blue Comforter Set Queen Size, Reversible Bed Comforter Queen Set for All Seasons, Navy/Grey, 1 Comforter (88\"x92\") and 2 Pillow Shams (20\"x26\"+2\")",
+    "normalized_price": 34.19,
+    "buy_url": "https://www.amazon.com/dp/B086QPF5VZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XVnwEboNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01EJ7AZO0",
+    "name": "Bedsure Quilts Queen Size - Lightweight Bedspreads Queen Size with Basket Weave Pattern, Soft Quilt Bedding Set, Navy Comforter Set Coverlet for All Seasons with 2 Pillow Shams (90\" x 96\")",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B01EJ7AZO0",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BeAlCmL2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1BXSGTH",
+    "name": "Bedsure Navy Blue Queen Comforter Set -Soft Bedding for All Seasons, Cationic Dyed Bed Set, 3 Pieces, 1 Queen Size Comforter (90\"x90\") and 2 Pillow Shams (20\"x26\"+2\")",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1BXSGTH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BjDxqkcXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFM8TKKM",
+    "name": "CozyLux Queen Comforter Set - 270GSM Navy Blue Bedding Sets for All Seasons, 3 Pieces Box Stitched Bed Set with 1 Down Alternative Comforter and 2 Pillow Shams, Soft, Lightweight, Breathable",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0DFM8TKKM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71lDD3EDPwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNJDJJM1",
+    "name": "HYMOKEGE Navy Blue Queen Comforter Set Seersucker 7 Pieces, All Season Luxury Bed in a Bag for Bedroom, Bedding Set with Comforters, Sheets, Pillowcases & Shams",
+    "normalized_price": 39.98,
+    "buy_url": "https://www.amazon.com/dp/B0BNJDJJM1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vItUrPWaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX6FTFXM",
+    "name": "Litanika Navy Blue Comforter Set Queen Size, 3 Pieces Lightweight Solid Bedding Comforter Set, All Season Fluffy Bed Set (90x90In Comforter & 2 Pillowcases)",
+    "normalized_price": 44.64,
+    "buy_url": "https://www.amazon.com/dp/B0DX6FTFXM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71FnTosVc7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXD2KJ4D",
+    "name": "HEVUMYI Navy Blue Queen Comforter Set - 7-Piece All Season Bed in a Bag Queen, Ultra Soft Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases, Pillow Shams, Navy Blue",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXD2KJ4D",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81S+KT4dc9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09C5HTKTH",
+    "name": "satisomnia Queen Comforter Set, Navy Blue Bedding Comforters Queen Size, 3 Pieces Down Alternative Bed Comforter Lightweight, Soft Quilted Bed Set Breathable, Reversible All Season Bedding Sets",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B09C5HTKTH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/717s9x7BdWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07N7GFJ55",
+    "name": "Utopia Bedding Queen Comforter Duvet Insert, Quilted Navy Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Queen Size 88 x 88 inches",
+    "normalized_price": 25.64,
+    "buy_url": "https://www.amazon.com/dp/B07N7GFJ55",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/715BfkHZXFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08B3DJ5CW",
+    "name": "Luxlovery Navy Blue Comforter Set Queen Men Boys Dark Blue Bedding Comforter Sets Comfy Blanket Quilts Cozy Breathable Solid Navy Queen Size Bedding Comforter Set",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B08B3DJ5CW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71U8Gn9O57L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCJ4KSHM",
+    "name": "CozyLux Queen Comforter Set Navy Blue, 7 Pieces Bed in a Bag Queen Comforter Set with Sheets, Luxury Soft Bedding Sets with Down Alternative Comforter, Fitted Sheet, Flat Sheet, Pillowcases & Shams",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0DCJ4KSHM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dxM+31-RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B079FP6MCQ",
+    "name": "Homelike Moment Comforters Queen Size - Blue Duvet Insert Down Alternative Bed Queen Comforter, Lightweight Bedding Comforter Full Size Quilted Soft All Season Reversible Navy/Light Blue",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B079FP6MCQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71h2Vg1ndtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B085DLHZQ1",
+    "name": "HORIMOTE HOME Quilt Set Queen Size Navy Blue, Classic Geometric Diamond Stitched Pattern, Ultra Soft Microfiber Lightweight Bedding Bedspread Coverlet for All Season with 1 Quilt 2 Pillow Shams",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B085DLHZQ1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vQq9x6aXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNWVN7FZ",
+    "name": "SunStyle Home Queen Comforter Set Navy Blue, 3 Pieces Lightweight Comforters Queen Size Solid Box Stitched Bedding Sets, Soft Breathable Down Alternative Bed Set with 2 Pillow Shams for All Seasons",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNWVN7FZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71cBzwGcPqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0893B1LGR",
+    "name": "Bedsure Blue Comforter Set Queen - 7 Pieces Reversible Navy Bed in a Bag, Blue Comforter Queen Bed Set for All Seasons with 1 Flat Sheet, 1 Fitted Sheet, 2 Pillowcases and 2 Pillow Shams",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0893B1LGR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Nbt3-61-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0861HPX54",
+    "name": "Bedsure Queen Comforter Set Navy - Bed in a Bag Queen Size Bedding 7 Pieces, GentleSoft\u2122 Pintuck Bed Set Gift for Family, All Season Down Alternative Comforter with Sheets, Pillowcases & Shams",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0861HPX54",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/915cyWAnY+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BYT3X77T",
+    "name": "Ubauba 7pc Bed Comforter Set Queen Size, 7 Piece Dark Blue Bedding Sets with Comforters and Sheets, Royal Blue Soft and Fluffy Bed in a Bag Set (Navy,Queen)",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B0BYT3X77T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KWeSP2lSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZHYJ2GL",
+    "name": "Navy Blue Bedding\uff0cCotton Queen Size Comforter Set\uff0cModern Farmhouse Bedspreads\uff0cSoft Cotton Quilt Solid Color Lightweight Bedspread All Seasons 3 Piece",
+    "normalized_price": 98.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZHYJ2GL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71V41u2JXnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYSMJGTY",
+    "name": "CozyLux Queen Comforter Set Navy Blue, 7 Pieces Seersucker Textured Luxury Bed in a Bag Queen, All Seasons Soft Bedding Sets with Down Alternative Comforter, Sheets, Pillowcases & Shams, Home Gift",
+    "normalized_price": 55.79,
+    "buy_url": "https://www.amazon.com/dp/B0DYSMJGTY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RAsPEzX0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C1GC2JQ5",
+    "name": "WDCOZY Navy Blue Queen Size Quilt Bedding Sets with Pillow Shams, Lightweight Soft Bedspread Coverlet, Quilted Blanket Thin Comforter Bed Cover, All Season Summer Spring, 3 Pieces, 90x90 inches",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0C1GC2JQ5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91U+xJbGqfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9PHJ8WW",
+    "name": "Queen Comforter Set Navy - Bed in a Bag Queen Size 7 Pieces, Soft Bedding Set for All Seasons, Premium Queen Comforter Set with Comforter, Sheets, Pillowcases & Shams",
+    "normalized_price": 38.98,
+    "buy_url": "https://www.amazon.com/dp/B0F9PHJ8WW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/619I19NQ37L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BP2WZF5Z",
+    "name": "Nautica - Queen Comforter Set, Peached Microfiber Bedding with Matching Shams, Lightweight for Year Round Use, Oeko-Tex Certified (Longdale Solid Navy)",
+    "normalized_price": 45.34,
+    "buy_url": "https://www.amazon.com/dp/B0BP2WZF5Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Xd4OQSXGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07P86QK9P",
+    "name": "Utopia Bedding Comforters Queen Size, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable (Navy)",
+    "normalized_price": 26.09,
+    "buy_url": "https://www.amazon.com/dp/B07P86QK9P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81pQloypi6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRS3VQB1",
+    "name": "Queen Comforter Set 7 Piece - Soft Bed in a Bag Queen Size Comforter Sets, Cozy Bedding Sets with Lightweight Comforter, Flat Sheet, Fitted Sheet, 2 Pillowcases & 2 Shams, Navy Blue",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRS3VQB1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71bqAsdWCEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY24YXF3",
+    "name": "PHF Ultra Soft Waffle Weave Comforter Set Queen Size, 3 Pieces Lightweight Breathable Comfy Bedding Set, Comfy Textured 1 Comforter with 2 Pillow Shams, Navy Blue",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0CY24YXF3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818ZqC+5XKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJY6YCR5",
+    "name": "Bedsure Queen Comforter Set Navy, Soft Prewashed Queen Size Bedding, Quilted Comforter with Circle Design, Down Alternative Comforter for All Seasons, 3 Pieces Bed Set with 2 Pillow Shams",
+    "normalized_price": 43.98,
+    "buy_url": "https://www.amazon.com/dp/B0FJY6YCR5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8191CPrktYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087YZ9RP2",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Queen Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, Navy Blue, Queen 88 x 88 Inches",
+    "normalized_price": 49.62,
+    "buy_url": "https://www.amazon.com/dp/B087YZ9RP2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bjaRexPBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DW45ZRQV",
+    "name": "MUXHOMO 7 Pieces Queen Comforter Set, Seersucker Bed in a Bag Queen Size, All Season Luxury Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Shams, Navy Blue",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B0DW45ZRQV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Ha2J56cQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08SPSJWHK",
+    "name": "HORIMOTE HOME 100% Cotton Quilt Set Queen Size, Navy Blue Pre-Washed 3-Piece Bedspread Coverlet Set, Cozy Lightweight Stitching Bedding Cover with 2 Shams in Geometric Pattern for All Season",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B08SPSJWHK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NSeWNV29S._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX77VFWP",
+    "name": "Sasttie Queen Comforter Set, 7-Piece Bed in a Bag, Pintuck Bedding Sets for All Season, Includes Comforter, Flat Sheet, Fitted Sheet, Pillowcases and Pillowshams, Navy",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX77VFWP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71j+KREY22L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQHK6Q58",
+    "name": "Bedsure Duvet Cover Queen Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 3 Pieces, Includes 1 Duvet Cover (90\"x90\") & 2 Pillow Shams, NO Comforter, Navy Blue",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0BQHK6Q58",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81rusrmmSEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRRTYT5Q",
+    "name": "Comforters Queen Size, All Season Quilted Bed Comforter, Ultra-Soft Down Alternative Duvet Insert with 4 Tabs, Lightweight Bedding Blanket - Machine Washable, Navy Blue",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRRTYT5Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/717oU3XOWJL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

@@ -12,15 +12,23 @@ items:
     required_specs: [bed_size]
   comforter:
     required_specs: [bed_size]
+  duvet_insert:
+    required_specs: [bed_size]
+  duvet_cover:
+    required_specs: [bed_size]
   pillows:
     required_specs: []
   shams:
     required_specs: [bed_size]
 
-  # Storage
+  # Storage / workspace
   nightstand:
     required_specs: []
   dresser:
+    required_specs: []
+  desk:
+    required_specs: []
+  desk_chair:
     required_specs: []
 
   # Seating
@@ -52,6 +60,8 @@ items:
     required_specs: []
   floor_lamp:
     required_specs: []
+  sconce:
+    required_specs: []
 
   # Decor
   wall_art:
@@ -65,7 +75,7 @@ items:
   bookshelf:
     required_specs: []
 
-  # Soft goods
+  # Soft goods / wall treatments
   rug:
     required_specs: []
   curtains:
@@ -74,41 +84,49 @@ items:
     required_specs: []
   throw_pillows:
     required_specs: []
+  wallpaper:
+    required_specs: []
 
 room_presets:
   bedroom:
     groups:
       bed:
-        budget_weight: 0.36
+        budget_weight: 0.40
         items:
-          bed_frame:    { required: true,  sub_weight: 0.37 }
-          mattress:     { required: true,  sub_weight: 0.34 }
-          sheets:       { required: true,  sub_weight: 0.14 }
-          comforter:    { required: true,  sub_weight: 0.08 }
-          pillows:      { required: true,  sub_weight: 0.07 }
+          bed_frame:    { required: true,  sub_weight: 0.42 }
+          mattress:     { required: true,  sub_weight: 0.30 }
+          sheets:       { required: true,  sub_weight: 0.12 }
+          comforter:    { required: false, sub_weight: 0.08 }
+          duvet_insert: { required: false, sub_weight: 0.04 }
+          duvet_cover:  { required: false, sub_weight: 0.06 }
+          pillows:      { required: true,  sub_weight: 0.06 }
       storage:
-        budget_weight: 0.15
+        budget_weight: 0.20
         items:
-          nightstand:   { required: true,  sub_weight: 0.50 }
-          dresser:      { required: false, sub_weight: 0.50 }
+          nightstand:   { required: true,  sub_weight: 0.30 }
+          dresser:      { required: false, sub_weight: 0.35 }
+          desk:         { required: false, sub_weight: 0.25 }
+          desk_chair:   { required: false, sub_weight: 0.10 }
       lighting:
-        budget_weight: 0.12
+        budget_weight: 0.10
         items:
-          ceiling_light: { required: true,  sub_weight: 0.40 }
-          table_lamp:    { required: false, sub_weight: 0.35 }
-          floor_lamp:    { required: false, sub_weight: 0.25 }
+          ceiling_light: { required: true,  sub_weight: 0.35 }
+          table_lamp:    { required: false, sub_weight: 0.30 }
+          floor_lamp:    { required: false, sub_weight: 0.20 }
+          sconce:        { required: false, sub_weight: 0.15 }
       decor:
-        budget_weight: 0.18
+        budget_weight: 0.10
         items:
-          wall_art:     { required: true,  sub_weight: 0.75 }
-          plants:       { required: false, sub_weight: 0.15 }
-          mirror:       { required: false, sub_weight: 0.10 }
+          wall_art:     { required: true,  sub_weight: 0.45 }
+          plants:       { required: false, sub_weight: 0.25 }
+          mirror:       { required: false, sub_weight: 0.30 }
       soft_goods:
-        budget_weight: 0.19
+        budget_weight: 0.20
         items:
           rug:             { required: true,  sub_weight: 0.40 }
-          curtains:        { required: false, sub_weight: 0.32 }
-          throw_blanket:   { required: false, sub_weight: 0.28 }
+          curtains:        { required: false, sub_weight: 0.25 }
+          throw_blanket:   { required: false, sub_weight: 0.15 }
+          wallpaper:       { required: false, sub_weight: 0.20 }
 
   living_room:
     groups:

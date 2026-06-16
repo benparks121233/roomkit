@@ -74,3 +74,11 @@ create table if not exists events (
 create index if not exists idx_events_run      on events (run_id);
 create index if not exists idx_events_type     on events (event_type);
 create index if not exists idx_events_created  on events (created_at);
+
+
+-- =========================================================================
+-- GRANTS — service_role needs explicit access to tables created by postgres
+-- =========================================================================
+grant all on selections to service_role;
+grant all on events to service_role;
+grant usage, select on all sequences in schema public to service_role;

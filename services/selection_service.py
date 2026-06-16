@@ -376,13 +376,26 @@ def _build_selection_prompts(
             neutral_tones = "beige, oatmeal, or warm cream"
         else:
             neutral_tones = "white, cream, or light grey"
-        neutral_instruction = (
-            f"- NEUTRAL STAPLES: Among your {pick_count} picks, include 2-3 clean "
-            f"neutral options ({neutral_tones} — solid/plain, no patterns) so the "
-            f"user always has a safe fallback. The MAJORITY of your picks should "
-            f"still be varied, characterful, and interesting — patterns, colors, "
-            f"textures. Do NOT make the list mostly neutral."
-        )
+
+        if slot.slot_id == "sheets":
+            # Sheets: neutrals MUST be in the top picks. Bold/colorful sheets
+            # are niche — most people want clean, subtle bedding.
+            neutral_instruction = (
+                f"- SHEETS — NEUTRAL FIRST: Your rank 1-2 picks MUST be clean "
+                f"neutral solid colors ({neutral_tones}). Avoid busy patterns, "
+                f"bold colors, or novelty prints in the top picks — those feel "
+                f"cheap and polarizing. Subtle texture (sateen sheen, linen "
+                f"weave) is great; loud patterns are not. Rank 3+ can be more "
+                f"varied but keep the majority neutral/subtle."
+            )
+        else:
+            neutral_instruction = (
+                f"- NEUTRAL STAPLES: Among your {pick_count} picks, include 2-3 clean "
+                f"neutral options ({neutral_tones} — solid/plain, no patterns) so the "
+                f"user always has a safe fallback. The MAJORITY of your picks should "
+                f"still be varied, characterful, and interesting — patterns, colors, "
+                f"textures. Do NOT make the list mostly neutral."
+            )
 
     rendered = (
         template_text

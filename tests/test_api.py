@@ -281,7 +281,8 @@ class TestOwnedSlots:
 # Density — minimal drops optional slots, layered keeps all
 # ---------------------------------------------------------------------------
 
-DENSITY_DROPPED_SLOTS = {"floor_lamp", "plants", "mirror", "curtains", "throw_blanket"}
+# Density-dropped at minimal: only ambient items, not preference-addressed slots.
+DENSITY_DROPPED_SLOTS = {"plants", "curtains", "throw_blanket"}
 
 
 class TestDensity:

@@ -25,6 +25,8 @@ interface ProductCardProps {
   alternatives?: ProductResult[];
   /** Called when user picks an alternative. */
   onSwap?: (product: ProductResult) => void;
+  /** Called when user clicks a buy link (for tracking). */
+  onBuyClick?: (product: ProductResult, slotId: string) => void;
 }
 
 export default function ProductCard({
@@ -32,6 +34,7 @@ export default function ProductCard({
   activeProduct,
   alternatives,
   onSwap,
+  onBuyClick,
 }: ProductCardProps) {
   const [imgError, setImgError] = useState(false);
   const [trayOpen, setTrayOpen] = useState(false);
@@ -126,6 +129,7 @@ export default function ProductCard({
           target="_blank"
           rel="noopener noreferrer"
           className="buy-btn"
+          onClick={() => onBuyClick?.(product, slot.slot_id)}
         >
           Buy on Amazon
         </a>

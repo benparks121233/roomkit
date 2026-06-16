@@ -39,6 +39,8 @@ export interface IntakeResult {
   budget: number;
   fullRoom: boolean;
   wants: string[];
+  excludedSlots: string[];
+  mirrorType: string | null;
   quiz: QuizOutput;
   summary: string;
 }
@@ -319,6 +321,73 @@ const Q_SUBS: QuizStepDef = {
 // Step definitions — FINISH
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Step definitions — PREFERENCES (slot-gating survey)
+// ---------------------------------------------------------------------------
+
+const Q_BEDDING_TYPE: QuizStepDef = {
+  id: "bedding_type",
+  question: "What goes on the bed?",
+  hint: "Comforter = single piece. Duvet = insert + decorative cover.",
+  selectMode: "single",
+  layout: "select-cards",
+  options: [
+    { key: "comforter", label: "Comforter", swatches: [] },
+    { key: "duvet",     label: "Duvet (insert + cover)", swatches: [] },
+  ],
+};
+
+const Q_LIGHTING_TYPES: QuizStepDef = {
+  id: "lighting_types",
+  question: "What lighting do you want?",
+  hint: "Pick all that apply.",
+  selectMode: "multi",
+  layout: "select-cards",
+  options: [
+    { key: "ceiling_light", label: "Overhead / Ceiling", swatches: [] },
+    { key: "table_lamp",    label: "Table Lamp", swatches: [] },
+    { key: "floor_lamp",    label: "Floor Lamp", swatches: [] },
+    { key: "sconce",        label: "Wall Sconce", swatches: [] },
+  ],
+};
+
+const Q_DESK_PREF: QuizStepDef = {
+  id: "desk_pref",
+  question: "Do you want a desk area?",
+  selectMode: "single",
+  layout: "select-cards",
+  options: [
+    { key: "yes", label: "Yes — desk + chair", swatches: [] },
+    { key: "no",  label: "No desk needed", swatches: [] },
+  ],
+};
+
+const Q_WALLPAPER_PREF: QuizStepDef = {
+  id: "wallpaper_pref",
+  question: "Interested in an accent wall?",
+  hint: "Peel-and-stick wallpaper — easy to apply and remove.",
+  selectMode: "single",
+  layout: "select-cards",
+  options: [
+    { key: "yes", label: "Yes — add wallpaper", swatches: [] },
+    { key: "no",  label: "No wallpaper", swatches: [] },
+  ],
+};
+
+const Q_MIRROR_PREF: QuizStepDef = {
+  id: "mirror_pref",
+  question: "What kind of mirror?",
+  selectMode: "single",
+  layout: "select-cards",
+  options: [
+    { key: "full_length", label: "Full-length / Standing", swatches: [] },
+    { key: "round",       label: "Round",       swatches: [] },
+    { key: "wall",        label: "Wall",         swatches: [] },
+    { key: "arched",      label: "Arched",       swatches: [] },
+    { key: "none",        label: "No mirror",    swatches: [] },
+  ],
+};
+
 const Q_SCOPE: QuizStepDef = {
   id: "scope",
   question: "How much of the room do you need?",
@@ -347,11 +416,11 @@ interface OwnershipGroup {
 
 const ROOM_OWNERSHIP_GROUPS: Record<string, OwnershipGroup[]> = {
   bedroom: [
-    { label: "Bed",        items: ["bed_frame", "mattress", "sheets", "comforter", "pillows"] },
-    { label: "Storage",    items: ["nightstand", "dresser"] },
-    { label: "Lighting",   items: ["ceiling_light", "table_lamp", "floor_lamp"] },
+    { label: "Bed",        items: ["bed_frame", "mattress", "sheets", "comforter", "duvet_insert", "duvet_cover", "pillows"] },
+    { label: "Storage & Workspace", items: ["nightstand", "dresser", "desk", "desk_chair"] },
+    { label: "Lighting",   items: ["ceiling_light", "table_lamp", "floor_lamp", "sconce"] },
     { label: "Decor",      items: ["wall_art", "plants", "mirror"] },
-    { label: "Soft Goods", items: ["rug", "curtains", "throw_blanket"] },
+    { label: "Soft Goods", items: ["rug", "curtains", "throw_blanket", "wallpaper"] },
   ],
   living_room: [
     { label: "Seating",       items: ["sofa", "armchair", "ottoman"] },
@@ -632,6 +701,13 @@ export default function StyleQuiz({ onComplete }: Props) {
   const [shape, setShape] = useState("");
   const [density, setDensity] = useState("");
 
+  // Preference state (slot-gating survey) — all start unselected.
+  const [beddingType, setBeddingType] = useState("");
+  const [lightingTypes, setLightingTypes] = useState<string[]>([]);
+  const [deskPref, setDeskPref] = useState("");
+  const [wallpaperPref, setWallpaperPref] = useState("");
+  const [mirrorPref, setMirrorPref] = useState("");
+
   // Interest state
   const [interests, setInterests] = useState<string[]>([]);
   const [interestTags, setInterestTags] = useState<Record<string, string[]>>({});
@@ -639,15 +715,27 @@ export default function StyleQuiz({ onComplete }: Props) {
 
   const [stepIndex, setStepIndex] = useState(0);
 
-  // Build step list — bed_size only for bedroom
+  // Build step list — scope gates preferences, density after preferences.
   function getSteps(): QuizStepDef[] {
     const steps: QuizStepDef[] = [Q_ROOM_TYPE];
     if (roomType === "bedroom") steps.push(Q_BED_SIZE);
     steps.push(
       Q_BUDGET,
-      Q_CORE, Q_MOOD, Q_PALETTE, Q_MATERIALS, Q_SHAPE, Q_DENSITY,
+      Q_CORE, Q_MOOD, Q_PALETTE, Q_MATERIALS, Q_SHAPE,
+    );
+    // Scope FIRST — gates whether preferences are asked
+    steps.push(Q_SCOPE);
+    // Preference steps — full-room + bedroom only.
+    // Partial-room users expressed preferences via the item picker in scope.
+    if (fullRoom && roomType === "bedroom") {
+      steps.push(Q_BEDDING_TYPE, Q_LIGHTING_TYPES, Q_DESK_PREF, Q_WALLPAPER_PREF, Q_MIRROR_PREF);
+    }
+    // Density AFTER preferences — controls ambient items (plants, curtains,
+    // throw) that preferences don't address.
+    steps.push(Q_DENSITY);
+    steps.push(
       Q_BRIDGE, Q_INTERESTS, Q_SUBS,
-      Q_SCOPE, Q_FREETEXT,
+      Q_FREETEXT,
     );
     return steps;
   }
@@ -690,6 +778,11 @@ export default function StyleQuiz({ onComplete }: Props) {
       case "materials": return materials;
       case "shape": return shape;
       case "density": return density;
+      case "bedding_type": return beddingType;
+      case "lighting_types": return lightingTypes;
+      case "desk_pref": return deskPref;
+      case "wallpaper_pref": return wallpaperPref;
+      case "mirror_pref": return mirrorPref;
       case "interests": return interests;
       default: return "";
     }
@@ -716,6 +809,16 @@ export default function StyleQuiz({ onComplete }: Props) {
         break;
       case "shape": setShape(key); break;
       case "density": setDensity(key); break;
+      case "bedding_type": setBeddingType(key); break;
+      case "lighting_types":
+        setLightingTypes((prev) => {
+          if (prev.includes(key)) return prev.filter((k) => k !== key);
+          return [...prev, key];
+        });
+        break;
+      case "desk_pref": setDeskPref(key); break;
+      case "wallpaper_pref": setWallpaperPref(key); break;
+      case "mirror_pref": setMirrorPref(key); break;
       case "interests":
         setInterests((prev) =>
           prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key],
@@ -769,6 +872,11 @@ export default function StyleQuiz({ onComplete }: Props) {
       case "materials": return materials.length > 0;
       case "shape": return shape !== "";
       case "density": return density !== "";
+      case "bedding_type": return beddingType !== "";
+      case "lighting_types": return lightingTypes.length > 0;
+      case "desk_pref": return deskPref !== "";
+      case "wallpaper_pref": return wallpaperPref !== "";
+      case "mirror_pref": return mirrorPref !== "";
       case "bridge": return true;
       case "interests": return true;
       case "interest_details": return true;
@@ -792,12 +900,40 @@ export default function StyleQuiz({ onComplete }: Props) {
         tags: interestTags[cat] ?? [],
       }));
 
+      // Compute excluded slots from preference answers.
+      // Only on full-room path — partial-room uses wants (item picker) instead.
+      const excluded: string[] = [];
+      if (fullRoom && roomType === "bedroom") {
+        // Bedding: comforter vs duvet — exclude the one not picked.
+        // Each direction explicitly named so empty state excludes nothing.
+        if (beddingType === "comforter") {
+          excluded.push("duvet_insert", "duvet_cover");
+        } else if (beddingType === "duvet") {
+          excluded.push("comforter");
+        }
+        // Lighting: exclude types not selected (only if user made a selection)
+        if (lightingTypes.length > 0) {
+          if (!lightingTypes.includes("ceiling_light")) excluded.push("ceiling_light");
+          if (!lightingTypes.includes("table_lamp")) excluded.push("table_lamp");
+          if (!lightingTypes.includes("floor_lamp")) excluded.push("floor_lamp");
+          if (!lightingTypes.includes("sconce")) excluded.push("sconce");
+        }
+        // Desk
+        if (deskPref === "no") excluded.push("desk", "desk_chair");
+        // Wallpaper
+        if (wallpaperPref === "no") excluded.push("wallpaper");
+        // Mirror
+        if (mirrorPref === "none") excluded.push("mirror");
+      }
+
       onComplete({
         roomType,
         bedSize,
         budget,
         fullRoom,
         wants,
+        excludedSlots: excluded,
+        mirrorType: mirrorPref && mirrorPref !== "none" ? mirrorPref : null,
         quiz: {
           style: { core, mood, palette, materials, shape, density, description },
           interests: interestOutput,

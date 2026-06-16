@@ -19,6 +19,8 @@ export interface DesignRequest {
   interests?: string[];
   full_room?: boolean;
   wants?: string[];
+  excluded_slots?: string[];
+  mirror_type?: string | null;
 }
 
 export interface ProductResult {
@@ -245,6 +247,12 @@ export const HOTSPOT_POSITIONS: Record<string, Record<string, { x: number; y: nu
     mirror:        { x: 0.82, y: 0.28, w: 0.12, h: 0.18 },
     ceiling_light: { x: 0.45, y: 0.06, w: 0.12, h: 0.10 },
     throw_blanket: { x: 0.42, y: 0.65, w: 0.25, h: 0.10 },
+    duvet_insert:  { x: 0.42, y: 0.54, w: 0.35, h: 0.18 },
+    duvet_cover:   { x: 0.42, y: 0.55, w: 0.35, h: 0.20 },
+    desk:          { x: 0.88, y: 0.50, w: 0.14, h: 0.22 },
+    desk_chair:    { x: 0.85, y: 0.60, w: 0.10, h: 0.18 },
+    sconce:        { x: 0.22, y: 0.30, w: 0.08, h: 0.12 },
+    wallpaper:     { x: 0.42, y: 0.15, w: 0.50, h: 0.30 },
   },
   living_room: {
     sofa:          { x: 0.38, y: 0.55, w: 0.40, h: 0.25 },
@@ -263,5 +271,21 @@ export const HOTSPOT_POSITIONS: Record<string, Record<string, { x: number; y: nu
     ceiling_light: { x: 0.45, y: 0.06, w: 0.12, h: 0.10 },
   },
 };
+
+// ---------------------------------------------------------------------------
+// Event tracking (fire-and-forget — never blocks or throws)
+// ---------------------------------------------------------------------------
+
+export function trackEvent(
+  runId: string,
+  eventType: string,
+  data: Record<string, unknown> = {},
+): void {
+  fetch(`${API_BASE}/track`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ run_id: runId, event_type: eventType, data }),
+  }).catch(() => {});  // swallow errors — tracking must never affect UX
+}
 
 export { API_BASE };

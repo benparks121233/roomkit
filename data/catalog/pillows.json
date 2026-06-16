@@ -2,7 +2,7 @@
   {
     "product_id": "B08DTH86Q2",
     "name": "Utopia Bedding Down Alternative Bed Pillows for Sleeping Queen Size (White), Set of 2, Soft & Fluffy Pillow with Cooling, Hotel Quality, Gusseted Pillow for Back, Stomach or Side Sleepers",
-    "normalized_price": 23.4,
+    "normalized_price": 28.89,
     "buy_url": "https://www.amazon.com/dp/B08DTH86Q2",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61fywr4RYhL._AC_UL320_.jpg",
@@ -20,7 +20,7 @@
   {
     "product_id": "B071DFDF9N",
     "name": "Utopia Bedding Bed Pillows for Sleeping Queen Size (White), Set of 2, Down Alternative Pillow for Sleeping, Cooling Hotel Quality Pillow Set for Back, Stomach or Side Sleepers",
-    "normalized_price": 25.16,
+    "normalized_price": 23.74,
     "buy_url": "https://www.amazon.com/dp/B071DFDF9N",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71pbS7L1IgL._AC_UL320_.jpg",
@@ -767,7 +767,7 @@
   {
     "product_id": "B07CNRG34Q",
     "name": "Tempur-Pedic TEMPUR-Cloud Dual Cooling Pillow, Queen, White",
-    "normalized_price": 149.0,
+    "normalized_price": 126.65,
     "buy_url": "https://www.amazon.com/dp/B07CNRG34Q",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71KeXuoonoL._AC_UL320_.jpg",
@@ -938,7 +938,7 @@
   {
     "product_id": "B0FX2MM64G",
     "name": "Bedsure Bed Pillows Queen Size Set of 2, Hotel-Quality Down Alternative Gusseted Pillows, PureWoven 100% Cotton Shell, Dual Chamber Construction for Fluffy Support, Ideal for Back & Stomach Sleepers",
-    "normalized_price": 59.99,
+    "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B0FX2MM64G",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81uz11zoHQL._AC_UL320_.jpg",
@@ -1184,13 +1184,13 @@
     "normalized_price": 31.99,
     "buy_url": "https://www.amazon.com/dp/B0D8KM58F2",
     "specs": {},
-    "image_url": "https://m.media-amazon.com/images/I/612+HW1NlpL._AC_UL320_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/610V8avfbZL._AC_UL320_.jpg",
     "source": "canopy"
   },
   {
     "product_id": "B09FTLNSYV",
     "name": "Queen Anne Hotel Pillows Queen Size Bed Pillows for Sleeping, Set of 2 \u2013 Adjustable Luxury Down Alternative for Side & Back Sleepers, Medium Support, Cooling, Hypoallergenic, Made in USA",
-    "normalized_price": 165.0,
+    "normalized_price": 167.0,
     "buy_url": "https://www.amazon.com/dp/B09FTLNSYV",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71JVsIVGPSL._AC_UL320_.jpg",
@@ -2877,6 +2877,897 @@
     "buy_url": "https://www.amazon.com/dp/B0DT5N6JPC",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81kAI9UsMaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09XSTN2Q4",
+    "name": "FluffCo Zen Fluff\u2122 Down Alternative Bed Pillow - Luxury Hotel Quality - 300 TC Cotton Shell - Pillows for Side, Back, and Stomach Sleepers - Made in USA - Standard/Queen Size 20\" x 28\", 1-Pack, Firm",
+    "normalized_price": 69.0,
+    "buy_url": "https://www.amazon.com/dp/B09XSTN2Q4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ldnIYqIHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00J7Z3XNU",
+    "name": "Queen Anne Luxury Hotel Down Alternative Pillow - Majesty Down - Synthetic Allergy Free Hypoallergenic Bed Pillow - Made in USA (Standard Medium)",
+    "normalized_price": 99.0,
+    "buy_url": "https://www.amazon.com/dp/B00J7Z3XNU",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7110Vwd21HL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09D8HWMLM",
+    "name": "DolceLuna Pillows Queen Size Set of 2, Bed Pillows for Sleeping 2 Pack, Queen Pillows Down Alternative Hotel Luxury Pillow for Side and Back Sleepers, Soft & Comfortable",
+    "normalized_price": 36.98,
+    "buy_url": "https://www.amazon.com/dp/B09D8HWMLM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61KKHxkobhS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CK41H431",
+    "name": "Pillows Queen Size Set of 2, Cooling Pillow Hotel Luxury Queen Bed Pillows 2 Pack for Back, Stomach or Side Sleeper, Fluffy Pillow with Down Alternative for Sleeping, Machine Washable",
+    "normalized_price": 48.99,
+    "buy_url": "https://www.amazon.com/dp/B0CK41H431",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/612CBj4AxbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CMDHFSCT",
+    "name": "MGM Down Alternative Pillow - Luxury Hotel Bedding - Medium Firm Comfort - Queen",
+    "normalized_price": 45.0,
+    "buy_url": "https://www.amazon.com/dp/B0CMDHFSCT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51T2aodb4YL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLCGJVQ3",
+    "name": "Globon Ultra Soft Down Pillow Queen Size Set of 2, Premium Down Filled Bed Pillow for Sleeping, 100% Cotton Shell 500 Thread Count 700 Fill Power, Soft Hotel Collection Down Feather Pillow 20\" x 30\"",
+    "normalized_price": 279.9,
+    "buy_url": "https://www.amazon.com/dp/B0FLCGJVQ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/519vRHjkwSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZC2PLT1",
+    "name": "Globon Ultra Soft Down Pillow Queen Size, Premium Down Filled Bed Pillow for Sleeping, 100% Cotton Shell 500 Thread Count 700 Fill Power, Soft Hotel Collection Down Feather Pillow 20\" x 30\" 1 Pack",
+    "normalized_price": 149.9,
+    "buy_url": "https://www.amazon.com/dp/B0DZC2PLT1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51KuEcMxb6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT4F5R3D",
+    "name": "Down Pillows Queen Size Set of 2, Luxury Hotel Collection Gusseted Bed Pillow for Sleeping, Soft and Fluffy Support, Cotton Cover, Breathable, for Side, Back and Stomach Sleepers",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0GT4F5R3D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71jVsTCangL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B1LMDNSX",
+    "name": "Sobel Westex Queen Size - Sobella Soft For Side Sleeper| Luxury Hotel & Resort Quality | 300 Thread Count 100% Cotton Cover | Down Alternative Fill | Machine Washable Pillow For Sleeping 20X30",
+    "normalized_price": 90.0,
+    "buy_url": "https://www.amazon.com/dp/B0B1LMDNSX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61AJ5ReFF6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06WCZQFGC",
+    "name": "Digital Decor 100% Cotton Luxury Hotel Pillows Queen Size Set of 2, Cooling Hypoallergenic Down Alternative Bed Pillows for Sleeping, Medium Support for Side & Back Sleepers, Made in USA, 30\" x 20\"",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B06WCZQFGC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/516omYVZnOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D366787V",
+    "name": "Coop Home Goods Essence Down Alternative Pillow Set of 2, Queen Size, Best Pillows for Sleeping, Adjustable Alternative to Down Pillows, Luxury Hotel Pillow for Back, Stomach or Side Sleepers",
+    "normalized_price": 89.0,
+    "buy_url": "https://www.amazon.com/dp/B0D366787V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51-DfoMka6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087D5T4JL",
+    "name": "The Ritz-Carlton Down Alternative Pillow - Supportive Hypoallergenic Pillow - Queen (30\" x 20\")",
+    "normalized_price": 85.0,
+    "buy_url": "https://www.amazon.com/dp/B087D5T4JL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41GzJ3u02pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H3ZPSNKQ",
+    "name": "Beautyrest Hotel Collection Luxury Queen Pillows Set of 2 - Premium 500 Thread Count Damask Stripe Embroidered Cotton Cover, Gusseted Soft Medium Down Alternative",
+    "normalized_price": 49.88,
+    "buy_url": "https://www.amazon.com/dp/B0H3ZPSNKQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/717BqGvPalL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQSZRBHS",
+    "name": "UNIKOME Ultra Soft Pillows Queen Size Set of 2 - Hotel Collection Luxury 100% Cotton Cover Down Alternative Bed Pillow, Fluffy Pillows for Back, Stomach or Side Sleepers",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQSZRBHS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61QRzbtYj5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B14M1617",
+    "name": "YOUR MOON Pillows Queen Size Set of 2, Soft Support Queen Pillows 2 Pack for Bed, Fluffy Down Alternative Pillow, Luxury Hotel Gel Pillow for Side Sleeping (White)",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0B14M1617",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+mws8vtGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8M97NX4",
+    "name": "Farm To Home 100% Organic Cotton Cover Pillows Queen/Standard Size Set of 2, Down Alternative Hotel Quality Soft Bed Pillow for Back & Side Sleepers, Machine Washable, 20\"x28\", White",
+    "normalized_price": 35.61,
+    "buy_url": "https://www.amazon.com/dp/B0F8M97NX4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51R206lfWLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJ6M6VLL",
+    "name": "puredown\u00ae Goose Feather Down Pillows, 100% Organic Cotton Cover, Luxury Hotel Collection Bed Pillows for Sleeping Set of 2, Queen Size",
+    "normalized_price": 58.99,
+    "buy_url": "https://www.amazon.com/dp/B0DJ6M6VLL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Jnlx6VBmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR9YHKBP",
+    "name": "Three Geese White Goose Feather Cotton Pillows Queen Size Set of 2 - Soft 600 Thread Count Organic Cotton Cover, Soft Goose Feather Down Pillows for Side and Back Sleepers, 20x28inches",
+    "normalized_price": 49.98,
+    "buy_url": "https://www.amazon.com/dp/B0GR9YHKBP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/613+tYi0zjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZGFK4HM",
+    "name": "Farm to Home Feather and Down Pillows, 100% Organic Cotton Cover Pillows, Luxury Hotel Collection Bed Pillows for Sleeping, 20\" x 28\" Queen/Jumbo Size Set of 2",
+    "normalized_price": 42.38,
+    "buy_url": "https://www.amazon.com/dp/B0FZGFK4HM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71rK73gphoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B003V5NNDM",
+    "name": "ORGANIC TEXTILES 100% Organic Cotton Pillow with Organic Cotton Cover - GOTS Certified, Adjustable Loft, Cooling and Breathable, Easy Care, Traveling and Long Flights - (Queen) - Pack of 1",
+    "normalized_price": 119.95,
+    "buy_url": "https://www.amazon.com/dp/B003V5NNDM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Uj8IrVynL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVXSPDKY",
+    "name": "puredown\u00ae Goose Feathers and Down Pillows, 100% Organic Cotton Cover, Gusseted Pillow for Sleeping Hotel Collection Bed Pillows, Queen, Set of 2",
+    "normalized_price": 64.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVXSPDKY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6163Ui5r9ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBWRDR44",
+    "name": "Goose Feather Down Pillows Queen Size Set of 1, Soft Pillows with 100% Organic Cotton Fabric, Luxury Hotel Quality Bed Pillow 1 Pack for Sleeping, Breathable & Fluffy (20\" x 30\")",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0FBWRDR44",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/716CL3GQiSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07KFVQPTW",
+    "name": "LOFE\u00ae Adjustable Organic Pillow 20x26, Organic Cotton Pillowcase & Shell | Non-Toxic Pearl Filling, Organic Pillow for Side Sleepers, Neck Pain Relief, Machine Washable, Bedroom&Travel&Couch",
+    "normalized_price": 39.95,
+    "buy_url": "https://www.amazon.com/dp/B07KFVQPTW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61w5DDMS4-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCC1MWSB",
+    "name": "Pacific Coast Goose Feather and Down Pillows, with 100% Organic Cotton Fabric, Standard Size Set of 2, Gusseted Design for Sleeping, Hotel Collection, Firm Pillows for Side and Back Sleepers",
+    "normalized_price": 86.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCC1MWSB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61fPYLeN9TL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1Z3RJSM",
+    "name": "BPC Goose Feather Down Pillows Queen Size Set of 2, Luxury Hotel Pillows with 100% Organic Cotton Cover, Bed Pillow for Medium Firm Support & Cloud-Like Comfort, 20\"x30\"",
+    "normalized_price": 69.9,
+    "buy_url": "https://www.amazon.com/dp/B0F1Z3RJSM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/717mCr4HbpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQ3R8SSK",
+    "name": "L LOVSOUL Goose Feather Down Pillow Queen Size of 2,Ultra Soft 100% Organic Cotton Fabric, 700TC,800 Fill Power, Luxury Hotel Collection Bed Gusseted Pillows for Back, Stomach or Side Sleepers",
+    "normalized_price": 74.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQ3R8SSK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71pIaq0i7mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BSGLVF4D",
+    "name": "California Design Den 100% Organic Cotton Pillow Cases Queen/Standard Set of 2, Soft & Crisp Percale Weave Cotton Pillowcases (Bright White)",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0BSGLVF4D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Bg-pHTsOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2LLZ97B",
+    "name": "Pacific Coast Down Pillow, Luxury Hotel Collection Bed Pillow for Sleeping, Queen Size of 1, 100% Organic Cotton Shell, 650 Fill Power, Soft Pillows, Suit for Stomach Sleepers",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2LLZ97B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61NTUFGKveL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BSGL8FQD",
+    "name": "California Design Den 100% Organic Cotton Pillow Cases Standard Size/Queen Size Set of 2, Soft & Crisp Percale Weave Cotton Pillowcases (Light Grey)",
+    "normalized_price": 19.49,
+    "buy_url": "https://www.amazon.com/dp/B0BSGL8FQD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81MLQJPujdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8MDJMJD",
+    "name": "Farm To Home 100% Organic Cotton Cover Pillows King Size Set of 2, Down Alternative Hotel Quality Soft Bed Pillow for Back & Side Sleepers, Machine Washable, 20\"x36\", White",
+    "normalized_price": 47.69,
+    "buy_url": "https://www.amazon.com/dp/B0F8MDJMJD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51R206lfWLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B005IAMSH0",
+    "name": "ORGANIC TEXTILES 100% Talalay Latex Bed Pillow with GOTS Certified Organic Cotton Cover (Queen Size - Medium) - Pack of 1",
+    "normalized_price": 115.95,
+    "buy_url": "https://www.amazon.com/dp/B005IAMSH0",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Jznw0-EfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G76ZCL57",
+    "name": "Cobnom\u00ae Goose Feather and Down Pillows Queen Size Set of 2, 3-Chamber Hybrid Bed Pillows with 750 Fill-Power Down Surrounded, 100% Organic Cotton Cover, Medium Firm for All Sleepers(20x30 Inch)",
+    "normalized_price": 89.9,
+    "buy_url": "https://www.amazon.com/dp/B0G76ZCL57",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61D-4gxoIIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07RY59C3W",
+    "name": "LANE LINEN Queen Sheets 100% Organic Cotton GOTS Certified Percale Weave Deep Pocket 4 Piece Soft Breathable Cooling Lightweight All Season Machine Washable Crisp - White",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B07RY59C3W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71hkbzRpMHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08S3MLPBB",
+    "name": "Goose Feathers Down Pillow for Sleeping,Hotel Collection Queen Size Soft Bed Pillow,100% Cotton Cover Queen Size (20X30IN) 1 Pack",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B08S3MLPBB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61CLRyA5+SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08Y97WWZW",
+    "name": "DWR Luxury Hotel Goose Feather Down Pillows Queen Size Set of 2, Medium Firm Bed Pillows for Sleeping, 100% Organic Cotton Cover, Soft Yet Supportive Polyester Surround, White 20\"x30\"",
+    "normalized_price": 49.8,
+    "buy_url": "https://www.amazon.com/dp/B08Y97WWZW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/514NuYAyRQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SJRDB7M",
+    "name": "APSMILE Organic Feather Down Pillows Set of 2, Queen Size Bed Pillows for Sleeping with 100% Cotton Cover, 3-Chamber Hybrid Feather Down Core Pillow Surrounded by Polyester for Cushions 20x30 Inches",
+    "normalized_price": 56.9,
+    "buy_url": "https://www.amazon.com/dp/B07SJRDB7M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51h6bpBrS5S._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FT3BP2L1",
+    "name": "Goose Feather Down Pillows Queen Size Set of 2, Ultra Soft 100% Organic Cotton Fabric 700TC, 900 Fill Power Luxury Hotel Collection Bed Gusseted Pillows 2 Pack for Back, Stomach or Side Sleepers",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B0FT3BP2L1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71l3EZofazL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B007MI2L1Y",
+    "name": "ZEN CHI Organic Queen Size Buckwheat Pillow for Sleeping (20X30)- Natural Cooling Technology, All Cotton Cover w Organic Buckwheat Hulls Comfortable Sleep, Naturally Adjusts to Head",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B007MI2L1Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61PYkJYCiIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00ZC10CTG",
+    "name": "White Lotus Home Green Cotton Sleep Pillow with Organic Sateen Outer Case | Queen 20x30",
+    "normalized_price": 75.0,
+    "buy_url": "https://www.amazon.com/dp/B00ZC10CTG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/816wB+ohCCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7B48JWD",
+    "name": "Goose Down Pillows Queen Size Set of 2 with 100% Organic Cotton Cover, Luxury Hotel Bed Pillows for Sleeping, 3-Chamber Design Medium Support for Side & Back Sleepers, 20x30 Inch",
+    "normalized_price": 89.9,
+    "buy_url": "https://www.amazon.com/dp/B0G7B48JWD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61mYgflGFSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B074R8WMGG",
+    "name": "Three Geese White Goose Feather & Cotton Pillows Queen/Standard Size Set of 2 - Soft 600 Thread Count 100% Cotton, Medium Firm, Soft Support, White Solid",
+    "normalized_price": 49.98,
+    "buy_url": "https://www.amazon.com/dp/B074R8WMGG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61j-FLAANAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DT4WFHTN",
+    "name": "Queen Size Bed Pillows Set of 2 - 100% Cotton Cover - Down Alternative Hypoallergenic Fill - Soft, Low Loft Support for Back & Stomach Sleepers - Breathable, Comfy, Cooling & Machine Washable - White",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0DT4WFHTN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61xFpGSPV8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F883M2XW",
+    "name": "Queen Size Goose Down Pillows Set of 2 - Hypoallergenic Bed Pillows 500 Fill Power with 100% Cotton Cover, Medium Firm Support",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0F883M2XW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51GmRplzZNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHHLMWBF",
+    "name": "Bed Pillows Set of 2 GOTS Certified Organic Cotton Sateen Shell, Down Alternative Fill, Hypoallergenic, Cooling & Breathable, GOTS + Oeko-TEX + GRS, Eco-Friendly, Standard 20\"x28\"",
+    "normalized_price": 79.0,
+    "buy_url": "https://www.amazon.com/dp/B0FHHLMWBF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61nyS4VimzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C3CSY5MY",
+    "name": "APSMILE Medium Firm Feathers Down Pillow Queen Size Set of 2, Luxury Feathers Pillow for Sleeping, 100% Organic Cotton Cover Hotel Bed Pillow for Side Sleeper (White, 20\"x30\")",
+    "normalized_price": 69.9,
+    "buy_url": "https://www.amazon.com/dp/B0C3CSY5MY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71h3Cw-h98L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B7SL2J24",
+    "name": "OrganicTextiles Natural Latex Pillow with Organic Cotton Cover (Queen Size, Extra Soft), GOTS Certified, Bed Pillow for Sleeping, Neck Pain Relief Help, Head Support, for Side Back Stomach Sleeper",
+    "normalized_price": 115.95,
+    "buy_url": "https://www.amazon.com/dp/B0B7SL2J24",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/712f9aWY6FL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4W7CBC3",
+    "name": "Farm to Home Feather and Down Pillows, 100% Organic Cotton Cover Pillows, Luxury Hotel Collection Bed Pillows for Sleeping, 20\" x 36\" King Size Set of 2",
+    "normalized_price": 45.97,
+    "buy_url": "https://www.amazon.com/dp/B0G4W7CBC3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71UWnJMWunL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08S6YF42P",
+    "name": "LOFE\u00ae Organic Buckwheat Pillow for Sleeping with Organic Cotton Pillowcase - 20''x26'' Adjustable Pillow, Breathable for Cool Sleep, Cervical Support for Back and Side Sleeper(Tartary Buckwheat Hulls)",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B08S6YF42P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61QaKzedRWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5Q4DCCD",
+    "name": "Alanzimo Goose Feathers Down Pillows Queen Size Set of 2, Hotel Collection Fluffy Bed Pillows for Sleeping, 100% Cotton Cover Soft Pillow 20x28 2 Pack",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0F5Q4DCCD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71xPImpJHeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DL64H4SS",
+    "name": "Wool Pillow \u2013 100% Cotton Cover, Breathable & Temperature Regulating Bed Pillow, Natural Sheep Wool Fill, Hypoallergenic Sleeping Pillow (Queen, Medium, Sheep Wool)",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B0DL64H4SS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61tu1Rb+CQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1YLKW8Q",
+    "name": "California Design Den 100% Organic Cotton Standard/Queen Pillow Cases 2, Soft Percale Weave Cotton Breathable Pillowcases - True Ivory",
+    "normalized_price": 19.49,
+    "buy_url": "https://www.amazon.com/dp/B0G1YLKW8Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71a3EV92HGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DR9W4J8P",
+    "name": "DreamyBlue Moon Pillow \u2022 Adjustable Loft, Luxury Cover, Shredded Memory Foam \u2022 for Back, Side and Combination Sleepers \u2022 Neutral Alignment for All \u2022 CertiPUR-US Certified Foam (Queen)",
+    "normalized_price": 92.0,
+    "buy_url": "https://www.amazon.com/dp/B0DR9W4J8P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71QPntfeeBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP6LRBW5",
+    "name": "Contour Memory Foam Pillow for Neck Pain Relief \u2013 3-Layer 5-Level Height Adjustable (Loft 1-6\u2033), Cervical Ergonomic Cooling Tencel Lyocell Cover High Loft Support for Side/Back/Stomach Sleepers, Queen",
+    "normalized_price": 34.98,
+    "buy_url": "https://www.amazon.com/dp/B0DP6LRBW5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71dWe4TMbQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNRYFR8K",
+    "name": "Memory Foam Pillow \u2013 Adjustable Loft Cooling Pillow Queen Size 1 Pack for Sleeping, Firm, Supportive, and Breathable Design for Hot, Side, Back, and Stomach Sleepers",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNRYFR8K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81gr81EvLBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP8JLVQD",
+    "name": "SLEEPDIARY Pillows Queen Size Set of 2 \u2013 Adjustable Shredded Memory Foam Cooling Bed Pillows, Custom Loft for Side, Back, and Stomach Sleepers, Shape-Retaining Support & Washable Cover",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP8JLVQD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91-nRGJOAYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GRFH95WT",
+    "name": "Nuzzle Queen Size Adjustable Firm Pillow \u2013 Hotel Luxury Neck Support, Height Adjust Soft Cooling Pillow for Back, Stomach or Side Sleepers-Home Gift",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0GRFH95WT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71M7KjGFGRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BDRBVVYP",
+    "name": "Meoflaw Cooling Pillows for Sleeping Queen Size Set of 2,Shredded Memory Foam Bed Pillow with Pillow Case-Double Sided Material,Adjustable Loft Queen Pillow for Side & Back Sleeper-Medium Firm",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BDRBVVYP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61H-tZYmjoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRD4BVD6",
+    "name": "Shredded Memory Foam Pillow Bed Pillows for Adults Adjustable Pillow Loft Medium Firm Pack of 1 Queen Size 19\"X28\"",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRD4BVD6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41UkixFoUJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNYC4K3P",
+    "name": "Cool Comfort Pillow \u2013 Dual-Sided Queen Pillows with Cooling Fabric & Adjustable Loft | for Side Sleeper, Back & Stomach Sleepers | Neck Pillow for Sleeping & Hotel-Quality Bed Pillows",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNYC4K3P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61CCSzT0LQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHHHPFD6",
+    "name": "ORGANIC TEXTILES Down Alternative Filled Adjustable Loft Bed Pillow with GOTS Certified Cotton Cover, (Queen, 20\"x31\") - Pack of 2",
+    "normalized_price": 114.95,
+    "buy_url": "https://www.amazon.com/dp/B0DHHHPFD6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51L9E5dM3GL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GV45SMRV",
+    "name": "Queen Size Adjustable Loft Shredded Memory Foam Pillows Set VS03111",
+    "normalized_price": 147.0,
+    "buy_url": "https://www.amazon.com/dp/B0GV45SMRV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71XzVnVoCRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6LQ5G48",
+    "name": "Adjustable Layer Pillows for Sleeping - Set of 2, Cooling, Luxury Pillows for Back, Stomach or Side Sleepers (Down Alternative, Queen (Pack of 2)) LM14222",
+    "normalized_price": 180.0,
+    "buy_url": "https://www.amazon.com/dp/B0G6LQ5G48",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/618LncoZ2cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6LDKQ2R",
+    "name": "Adjustable Layer Sleeping Pillows - Set of 2, Cooling, Luxury Pillows for Back, Stomach or Side Sleepers (Down Alternative, Queen Size) AG91310",
+    "normalized_price": 180.0,
+    "buy_url": "https://www.amazon.com/dp/B0G6LDKQ2R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/618LncoZ2cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F99DN6HY",
+    "name": "Adjustable Layer Pillows for Sleeping - Set of 2, Cooling, Luxury Pillows for Back, Stomach or Side Sleepers (Down Alternative, Queen (Pack of 2)) HL08374",
+    "normalized_price": 180.0,
+    "buy_url": "https://www.amazon.com/dp/B0F99DN6HY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/618LncoZ2cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQRXW73J",
+    "name": "Little Sleepy Head Queen Pillow for Sleeping, Adjustable Loft Bed Pillow with Hypoallergenic Down-Like Fill, Hotel Quality Comfort, Soft or Firm Support - Queen Size Pillow 1 Pack, 20x30",
+    "normalized_price": 39.95,
+    "buy_url": "https://www.amazon.com/dp/B0CQRXW73J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/518xOhG59yL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7HLRBLP",
+    "name": "Bedsure 3-in-1 Adjustable Pillow Queen Size for Back Stomach Side Sleepers, 3/5.5/7 Inches Custom Height, CertiPUR-US Memory Foam & Down Alternative Fill, 100% Cotton Cover, PureWoven, 26\"x17\",1 Pack",
+    "normalized_price": 65.98,
+    "buy_url": "https://www.amazon.com/dp/B0G7HLRBLP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/718TUkKUmKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GPWLC42K",
+    "name": "Cooling Shredded Memory Foam Pillows: Adjustable Bed Pillows for Hot Sleeping, Queen Size Set of 2, Customizable Loft & Firm Support for Side Back Stomach Sleepers",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0GPWLC42K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81jX13iVd2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGWZD3F9",
+    "name": "Sidney Sleep Set of 2 Queen Size Bed Pillows for Side and Back Sleepers - Adjustable Filling - Memory Foam Pillows for Neck and Shoulder Pain - Customizable Loft - Extra Foam Included (Grey)",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGWZD3F9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81dtIuF9biL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GPQWDTCY",
+    "name": "OLIXIS Memory Foam Pillow for Sleeping, 2 Pack Queen Bed Pillows, Pressure Relieving Cervical Support, Adjustable Loft, Removable Washable Cover, Gel Cooling Mesh, for Back Side Stomach Sleepers,White",
+    "normalized_price": 24.95,
+    "buy_url": "https://www.amazon.com/dp/B0GPQWDTCY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Z9VmWozyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GG9YVQPM",
+    "name": "Queen Pillows Set of 2, Adjustable Shredded Memory Foam Bed Pillows for Sleeping, Breathable Supportive Pillows with Removable Washable Covers, for Side Back Stomach Sleepers",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B0GG9YVQPM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713z1oWb0iL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRW75S98",
+    "name": "BLISSY Adjustable Memory Foam Pillow for Sleeping (Queen Size) - Cooling Gel Pillows for Side Sleepers with Shredded Foam for Customizable Loft - CertiPUR-US & Oeko-TEX",
+    "normalized_price": 74.98,
+    "buy_url": "https://www.amazon.com/dp/B0DRW75S98",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81anYoBBM8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1VXXWPQ",
+    "name": "DreamyBlue Gusseted SAPPHIRE Pillow \u2022 Adjustable Loft, Luxury Cover, Shredded Memory Foam Fill w/Airflow Beads \u2022Ideal For Wide Shoulders \u2022Neutral Alignment for All \u2022 CertiPUR-US Certified Foam (Queen)",
+    "normalized_price": 92.0,
+    "buy_url": "https://www.amazon.com/dp/B0D1VXXWPQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71cGVBxF4BL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTNX4CJ3",
+    "name": "Pacific Coast ArcticLayer Adjustable Cooling Pillow - Standard/Queen Size, Bed Pillow for Sleeping, 4-in-1 Customizable Loft Feather Pillow for Side, Back, Stomach Sleepers, Neck Pain Relief",
+    "normalized_price": 75.99,
+    "buy_url": "https://www.amazon.com/dp/B0GTNX4CJ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71sOw6ay8kL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C2KFDTZM",
+    "name": "Three Geese Adjustable Layer Pillows, Assembled 3 in 1 Bed Pillow,Soft Pillow Good for Side and Back Stomach Sleeper,Queen Size Pack of 1",
+    "normalized_price": 32.98,
+    "buy_url": "https://www.amazon.com/dp/B0C2KFDTZM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61HzkX0+ghL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZ7KPBGH",
+    "name": "Cooling Gel Memory Foam Pillows - 1-Pack - Standard Size Memory Foam Pillow For Sleeping - Firm Pillow - Back, Stomach & Side Sleeper - Shoulder & Back Pain Relief - Washable, Bamboo Viscose Cover",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZ7KPBGH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71sNH1l+ZyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01N6RQ4FF",
+    "name": "Weekender Cooling Gel Memory Foam Pillow for Sleeping \u2013 Standard Size, Ventilated Cooling Pillow for Side & Back Sleepers, Neck & Shoulder Support, Medium Firm, Washable Cover",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B01N6RQ4FF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61kieKGPs8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZZM95XC",
+    "name": "Sweetcrispy Back and Side Sleeper Support, White Gel Cooling Memory Foam Pillows for Sleeping, Bed Pillows for Adults with Breathable Mesh and Washable Cover \u2013 1 Pack",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZZM95XC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71VFONpefzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GY3D6M1P",
+    "name": "Cooling Bed Pillows for Sleeping, Gel Memory Foam Cooling Pillows for Hot Sleepers, Comfortable Fabric, Large, Soft Yet Supportive, White",
+    "normalized_price": 39.9,
+    "buy_url": "https://www.amazon.com/dp/B0GY3D6M1P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61DfOe5vRcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCF7PNN5",
+    "name": "ABLEGRID Memory Foam Cervical Neck Support Pillow,Contour Cooling Gel Pillow for Neck Shoulder Pain Relief,Odorless Ergonomic Orthopedic Adjustable Deep Sleep Bed Pillow for Side,Back,Stomach Sleepers",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B0GCF7PNN5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61GQ9KvkzrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVDNMLRR",
+    "name": "2026 New Cooling Memory Foam Pillow, Butterfly Shape Ergonomic Cervical Neck Support Pillow with Ice Silk Cover, Nature Cooling Gel Pillow for Hot Sleepers Night Sweats, Bed Pillow Side Sleepers(Blue)",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVDNMLRR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61pmUZ5hvtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09H8SMK17",
+    "name": "Technogel Deluxe Cooling Gel Pillow - Innovative Cool Gel Pillow with Comfortable Support Structure for Side, Back and Stomach Sleeper, Slim Standard Dimension with Washable Cover, 4.5\" (Medium)",
+    "normalized_price": 199.0,
+    "buy_url": "https://www.amazon.com/dp/B09H8SMK17",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81zI1+B4KpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR833KSD",
+    "name": "Cooling Cervical Neck Pillow for Pain Relief, Ergonomic Mellow Sleep Pillow for Neck Support | Adjustable | Memory Foam | Odorless Orthopedic Bed Pillow for Side Back Stomach Sleepers - Gift for Mom",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0GR833KSD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61F62PiMc3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2NP22VP",
+    "name": "Coop Home Goods Eden Crescent Bed Pillow for Side & Back Sleepers, Queen Size, Adjustable Medium Soft Memory Foam Pillow with Cooling Gel & Ergonomic Crescent Shape, CertiPUR-US/GREENGUARD Gold",
+    "normalized_price": 119.0,
+    "buy_url": "https://www.amazon.com/dp/B0G2NP22VP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61hJR4Uu8dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BGQ8VWRJ",
+    "name": "Coop Home Goods Original Crescent Adjustable Pillow, Queen Bed Pillows for Shoulder, Neck & Head Support, Crescent Foam Pillows - Medium Firm for Back & Side Sleeper, CertiPUR-US/GREENGUARD Gold",
+    "normalized_price": 99.0,
+    "buy_url": "https://www.amazon.com/dp/B0BGQ8VWRJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6133u7OmjrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXMY4DL4",
+    "name": "Coop Home Goods Essence Cooling Crescent Down Alternative Pillow Set of 2, Queen Size Adjustable Cooling Pillow for Back & Side Sleepers, Cool-Touch Luxury Hotel Pillow, Oeko-TEX Certified",
+    "normalized_price": 119.0,
+    "buy_url": "https://www.amazon.com/dp/B0GXMY4DL4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51o5FwR0N0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHF6T9KM",
+    "name": "Cooling Gel Pillow for Hot Sleepers, Keep Cool Memory Foam Pillows for Sleeping, Supportive Bed Pillow for Side Back&Stomach Sleepers with Cool Touch Cover, Removable Washable Cover, Standard, Blue",
+    "normalized_price": 35.74,
+    "buy_url": "https://www.amazon.com/dp/B0GHF6T9KM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Ztmku71NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQRBRVBF",
+    "name": "Coop Home Goods Cool+ Crescent Adjustable Pillow, Queen Size Plus Shaped Memory Foam Pillows with Cooling Gel, Neck Support, Back or Side Sleeper Pillow, CertiPUR US/GREENGUARD Gold",
+    "normalized_price": 159.0,
+    "buy_url": "https://www.amazon.com/dp/B0BQRBRVBF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51UQkCZgqBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVH4QL8T",
+    "name": "Cervical Neck Pillow for Pain Relief, Queen Size Cooling Hybrid Silicone Memory Foam Ergonomic Contour Sleeping Pillow for Side, Back & Stomach Sleepers, Fully Washable Bed Pillow",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVH4QL8T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/718I6Jt5xhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0884ZVCG7",
+    "name": "Purple Pillow - GelFlex Grid, Cooling Ergonomic Support for Side, Back, Stomach Sleepers - Adjustable Boosters for Personalized Height, Firm Feeling, Standard Size - Ultra-Durable",
+    "normalized_price": 249.0,
+    "buy_url": "https://www.amazon.com/dp/B0884ZVCG7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/514QH0JtK5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F27V9SZ6",
+    "name": "EUCIOR Cooling Gel Pillows for Neck and Shoulder,Cervical Pillow Cozy Sleeping,Odorless Ergonomic Contour Memory Foam Pillows for Side Back Stomach Sleepers with Pillowcase (Grey)",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0F27V9SZ6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/814bo0Q6XCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5GZDKQQ",
+    "name": "HighBeds Cervical Neck Pillow - Side Sleeper Pillow for Neck Pain Relief, Soft Ergonomic Memory Foam Pillows Ice Silk Zipperless Pillowcase, Eco-Friendly and Durable Material (White)",
+    "normalized_price": 65.67,
+    "buy_url": "https://www.amazon.com/dp/B0F5GZDKQQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/514wFEih8hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQRFVY4Z",
+    "name": "Coop Home Goods Cool+ Cut-Out Adjustable Pillow Queen with Cooling Gel & Shoulder Cut-Out for Head Support, Side Sleeper Pillow, Neck Support for Sleeping, CertiPUR-US/GREENGUARD Gold",
+    "normalized_price": 159.0,
+    "buy_url": "https://www.amazon.com/dp/B0BQRFVY4Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51lFlgOpOOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FK3MTRN1",
+    "name": "SAPHREAS Cooling Gel Memory Foam Pillow for Side, Back and Stomach Sleepers, Standard Size Cool Bed Pillow for Sleeping, Removable & Machine Washable, Light Grey",
+    "normalized_price": 42.79,
+    "buy_url": "https://www.amazon.com/dp/B0FK3MTRN1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71gQNRxtVYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FMFTMHXZ",
+    "name": "IWS I WANNA SLEEP Cervical Original Neck Plus Gel Premium Ergonomic Memory Foam Cooling Pillow for Neck Pain Relief \u2013 Orthopedic Cervical Neck Pillow for Side Sleepers and Neck & Shoulder Support",
+    "normalized_price": 79.0,
+    "buy_url": "https://www.amazon.com/dp/B0FMFTMHXZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/612CWJ7maTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07QNFF71J",
+    "name": "Side Sleeper Pillow - Bed Pillow - Cooling Pillow - My Skin Friendly Memory Foam Pillow - Pillow Cover Cervical Pillow Orthopedic Pillow Supports Posture Neck Bed Pillow Sleeping Pillow",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B07QNFF71J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/31hVdFX10DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFSNXZ9M",
+    "name": "Knee Pillow for Side Sleepers with Cooling Gel, Memory Foam Elevation Pillow for Spine Aligning, Sciatica, Back, Hip, Knee, Ankle Pain, Grey/Large",
+    "normalized_price": 13.97,
+    "buy_url": "https://www.amazon.com/dp/B0FFSNXZ9M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81qnq5a8WwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDH2L528",
+    "name": "Cooling Gel Memory Foam Pillows for Sleeping Standard Size, Bamboo Rayon Bed Pillow for Back Side Sleeper, Medium Firm Contoured Support for Neck Shoulder Pain Relief, Washable Breathable Dorm Twin XL",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDH2L528",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/712D-VGISnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7XTQ77H",
+    "name": "Cervical Neck Pillow - Ergonomic Side Sleeper Pillow for Pain Relief, Cooling Cervical Pillow for Sleeping, Contour Orthopedic Memory Foam Pillows for Back Stomach Sleepers",
+    "normalized_price": 21.98,
+    "buy_url": "https://www.amazon.com/dp/B0F7XTQ77H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Bt32fV8uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GC5TPCKR",
+    "name": "Cooling Pillows Queen Size Set of 2 Shredded Memory Foam Pillows for Side Back Stomach Sleepers, Two-Sided Cool Adjustable Firm or Soft Bed Pillow Luxury Gel Neck Pillow for Neck Shoulder Pain Relie",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GC5TPCKR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Jp-FgdLnL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

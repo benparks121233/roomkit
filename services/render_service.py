@@ -32,46 +32,69 @@ _RENDERS_DIR.mkdir(parents=True, exist_ok=True)
 _RENDER_SIZE = os.environ.get("RENDER_SIZE", "1536x1024")
 _RENDER_QUALITY = os.environ.get("RENDER_QUALITY", "medium")
 
-# ALL slots sent as image references — maximizes determinism by giving the AI
-# the actual product image for every item. Ordered by visual priority.
-_ALL_SLOTS = [
-    "bed_frame", "dresser", "nightstand", "floor_lamp", "rug",
-    "curtains", "wall_art", "table_lamp", "plants", "mirror",
-    "ceiling_light", "throw_blanket", "comforter", "pillows",
-    "sheets", "mattress",
-]
-
-# Room layout templates by room type.
-_ROOM_LAYOUTS: dict[str, str] = {
-    "bedroom": (
-        "PRODUCT PLACEMENT — place each item in its EXACT described position:\n"
-        "- BED (bed_frame + mattress + sheets + comforter + pillows): center of image, against the back wall, taking up ~40% of the frame width\n"
-        "- NIGHTSTAND: small table to the LEFT of the bed\n"
-        "- TABLE LAMP: sitting ON TOP of the nightstand\n"
-        "- DRESSER: against the RIGHT wall or right side of the room\n"
-        "- FLOOR LAMP: tall standing lamp in the RIGHT area, between bed and dresser\n"
-        "- RUG: on the floor UNDER and in front of the bed, visible at the bottom of the frame\n"
-        "- CURTAINS: framing the window(s) on the back wall, LEFT and RIGHT side panels\n"
-        "- WALL ART: framed prints/art on the wall ABOVE the bed — clearly visible, this is ESSENTIAL\n"
-        "- PLANTS: potted plant(s) in the FAR RIGHT corner on the floor\n"
-        "- MIRROR: on the wall to the RIGHT, above or near the dresser\n"
-        "- CEILING LIGHT: pendant/fixture hanging from the CEILING at the TOP CENTER of the image\n"
-        "- THROW BLANKET: draped over the foot of the bed\n"
-    ),
-    "living_room": (
-        "PRODUCT PLACEMENT — place each item in its EXACT described position:\n"
-        "- SOFA: center-left, facing toward the viewer, the focal point\n"
-        "- COFFEE TABLE: in front of the sofa, center of the seating area\n"
-        "- SIDE TABLE: to the right of the sofa\n"
-        "- TABLE LAMP: on the side table\n"
-        "- TV STAND: against the far wall, right side\n"
-        "- FLOOR LAMP: tall lamp in a corner, right side\n"
-        "- RUG: on the floor anchoring the seating area\n"
-        "- CURTAINS: framing the window(s)\n"
-        "- WALL ART: on the wall above the sofa — clearly visible, ESSENTIAL\n"
-        "- PLANTS: potted plants in a corner\n"
-    ),
+# Per-slot placement instructions — the render prompt is assembled dynamically
+# from only the slots that have selected products.  No fixed slot list.
+_SLOT_PLACEMENTS: dict[str, dict[str, str]] = {
+    "bedroom": {
+        "bed_frame":     "BED (bed_frame + mattress + sheets + bedding + pillows): center of image, against the back wall, taking up ~40% of the frame width",
+        "nightstand":    "NIGHTSTAND: small table to the LEFT of the bed",
+        "table_lamp":    "TABLE LAMP: sitting ON TOP of the nightstand",
+        "dresser":       "DRESSER: against the RIGHT wall or right side of the room",
+        "floor_lamp":    "FLOOR LAMP: tall standing lamp in the RIGHT area, between bed and dresser",
+        "rug":           "RUG: on the floor UNDER and in front of the bed, visible at the bottom of the frame",
+        "curtains":      "CURTAINS: framing the window(s) on the back wall, LEFT and RIGHT side panels",
+        "wall_art":      "WALL ART: framed prints/art on the wall ABOVE the bed — clearly visible, this is ESSENTIAL",
+        "plants":        "PLANTS: potted plant(s) in the FAR RIGHT corner on the floor",
+        "mirror":        "MIRROR: on the wall to the RIGHT, above or near the dresser",
+        "ceiling_light": "CEILING LIGHT: pendant/fixture hanging from the CEILING at the TOP CENTER of the image",
+        "throw_blanket": "THROW BLANKET: draped over the foot of the bed",
+        "comforter":     "COMFORTER: covering the bed surface, neatly spread",
+        "duvet_cover":   "DUVET COVER: covering the bed surface with the duvet insert inside, neatly spread",
+        "pillows":       "PILLOWS: arranged at the head of the bed against the headboard",
+        "sheets":        "SHEETS: visible at the bed edges where the comforter/duvet doesn't cover",
+        "mattress":      "MATTRESS: standard thickness (8-12 inches), sitting naturally on the bed frame",
+        "desk":          "DESK: against the LEFT wall, between the nightstand and the corner — a workspace area",
+        "desk_chair":    "DESK CHAIR: tucked under or in front of the desk",
+        "sconce":        "WALL SCONCE: mounted on the wall near the bed, one on each side or one beside the nightstand",
+        "wallpaper":     "WALLPAPER: accent wall pattern visible on the BACK WALL behind the bed — covers the full wall surface",
+        "duvet_insert":  "DUVET INSERT: inside the duvet cover (not separately visible — skip if duvet_cover is present)",
+    },
+    "living_room": {
+        "sofa":          "SOFA: center-left, facing toward the viewer, the focal point",
+        "coffee_table":  "COFFEE TABLE: in front of the sofa, center of the seating area",
+        "side_table":    "SIDE TABLE: to the right of the sofa",
+        "table_lamp":    "TABLE LAMP: on the side table",
+        "tv_stand":      "TV STAND: against the far wall, right side",
+        "floor_lamp":    "FLOOR LAMP: tall lamp in a corner, right side",
+        "rug":           "RUG: on the floor anchoring the seating area",
+        "curtains":      "CURTAINS: framing the window(s)",
+        "wall_art":      "WALL ART: on the wall above the sofa — clearly visible, ESSENTIAL",
+        "plants":        "PLANTS: potted plants in a corner",
+        "throw_pillows": "THROW PILLOWS: arranged on the sofa",
+        "throw_blanket": "THROW BLANKET: draped over the sofa arm",
+        "ceiling_light": "CEILING LIGHT: pendant/fixture from the ceiling",
+        "mirror":        "MIRROR: on the wall, decorative",
+        "armchair":      "ARMCHAIR: angled beside the sofa, part of the seating group",
+        "ottoman":       "OTTOMAN: in front of or beside the armchair",
+        "bookshelf":     "BOOKSHELF: against a wall, styled with books and objects",
+    },
 }
+
+
+def _build_layout_for_products(
+    room_type: str,
+    product_slot_ids: set[str],
+) -> str:
+    """Build a dynamic layout instruction using only the slots that have products."""
+    placements = _SLOT_PLACEMENTS.get(room_type, _SLOT_PLACEMENTS["bedroom"])
+    lines = ["PRODUCT PLACEMENT — place each item in its EXACT described position:"]
+    for slot_id, instruction in placements.items():
+        if slot_id in product_slot_ids:
+            # Skip duvet_insert when duvet_cover is present (it's inside)
+            if slot_id == "duvet_insert" and "duvet_cover" in product_slot_ids:
+                continue
+            lines.append(f"- {instruction}")
+    return "\n".join(lines)
 
 # Predetermined hotspot positions (normalized 0-1) for each slot by room type.
 # These match the render prompt layout directions above, so hotspots land
@@ -82,6 +105,8 @@ HOTSPOT_POSITIONS: dict[str, dict[str, dict]] = {
         "mattress":      {"x": 0.42, "y": 0.50, "w": 0.35, "h": 0.18},
         "sheets":        {"x": 0.42, "y": 0.52, "w": 0.30, "h": 0.12},
         "comforter":     {"x": 0.42, "y": 0.55, "w": 0.35, "h": 0.20},
+        "duvet_cover":   {"x": 0.42, "y": 0.55, "w": 0.35, "h": 0.20},
+        "duvet_insert":  {"x": 0.42, "y": 0.55, "w": 0.35, "h": 0.20},
         "pillows":       {"x": 0.42, "y": 0.38, "w": 0.25, "h": 0.10},
         "nightstand":    {"x": 0.14, "y": 0.55, "w": 0.12, "h": 0.18},
         "table_lamp":    {"x": 0.14, "y": 0.40, "w": 0.08, "h": 0.14},
@@ -94,6 +119,10 @@ HOTSPOT_POSITIONS: dict[str, dict[str, dict]] = {
         "mirror":        {"x": 0.82, "y": 0.28, "w": 0.12, "h": 0.18},
         "ceiling_light": {"x": 0.45, "y": 0.06, "w": 0.12, "h": 0.10},
         "throw_blanket": {"x": 0.42, "y": 0.65, "w": 0.25, "h": 0.10},
+        "desk":          {"x": 0.12, "y": 0.52, "w": 0.16, "h": 0.22},
+        "desk_chair":    {"x": 0.12, "y": 0.65, "w": 0.10, "h": 0.18},
+        "sconce":        {"x": 0.28, "y": 0.32, "w": 0.06, "h": 0.12},
+        "wallpaper":     {"x": 0.42, "y": 0.30, "w": 0.55, "h": 0.40},
     },
     "living_room": {
         "sofa":          {"x": 0.38, "y": 0.55, "w": 0.40, "h": 0.25},
@@ -169,14 +198,13 @@ def render_room(
         logger.info("Render cache hit for %s", run_id)
         return str(render_path)
 
-    # Download ALL product images as references for maximum accuracy.
-    # Multi-select slots send every selected item as a separate reference image.
+    # Download product images as references — iterate the caller's products dict
+    # directly so the render is dynamic per user's actual selections.
+    # Excluded/unselected slots simply aren't in the dict → not in the render.
     image_files = []
     product_labels = []
     text_fallbacks = []
-    for slot_id in _ALL_SLOTS:
-        if slot_id not in products:
-            continue
+    for slot_id in products:
         items = products[slot_id]
         for idx, product in enumerate(items):
             image_url = product.get("image_url", "")
@@ -206,10 +234,11 @@ def render_room(
         logger.error("Too few product images (%d) for render", len(image_files))
         return None
 
-    # Build the prompt.
+    # Build the prompt — dynamic layout based on which slots have products.
     prompt = _build_render_prompt(
         room_type, style_name, mood, keywords,
         product_labels, text_fallbacks,
+        product_slot_ids=set(products.keys()),
     )
 
     # Call OpenAI with timeout protection.
@@ -274,10 +303,16 @@ def _build_render_prompt(
     keywords: list[str],
     product_labels: list[str],
     text_products: list[str],
+    product_slot_ids: set[str] | None = None,
 ) -> str:
-    """Build the image generation prompt."""
+    """Build the image generation prompt.
+
+    Args:
+        product_slot_ids: The set of slot IDs that have products. Used to build
+            a dynamic layout instruction with only the relevant placements.
+    """
     style_desc = _STYLE_ROOMS.get(style_name, _STYLE_ROOMS["warm_minimalist"])
-    layout = _ROOM_LAYOUTS.get(room_type, _ROOM_LAYOUTS["bedroom"])
+    layout = _build_layout_for_products(room_type, product_slot_ids or set())
     kw_str = ", ".join(keywords[:8])
 
     product_section = "\n".join(product_labels)

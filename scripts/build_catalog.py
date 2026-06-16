@@ -10,7 +10,7 @@ that cache.
 Usage:
     python scripts/build_catalog.py                # dry-run: show plan, no calls
     python scripts/build_catalog.py --go           # execute after confirmation
-    python scripts/build_catalog.py --go --max 30  # lower request ceiling
+    python scripts/build_catalog.py --go --max 150 # lower request ceiling
     python scripts/build_catalog.py --go --limit 20  # fewer results per query
 
 Each query = 1 Canopy API request.  Free tier = 100 requests/month.
@@ -34,178 +34,266 @@ from services.sourcing.canopy_client import CanopyClient  # noqa: E402
 from services.sourcing.catalog_cache import merge_cache, read_cache  # noqa: E402
 
 # ---------------------------------------------------------------------------
-# Planned query set — bedroom slots × style variants
+# Comprehensive query set — all slots × per-aesthetic depth
 # ---------------------------------------------------------------------------
 # Each tuple: (slot_id, search_term)
-# Goal: 2-3 style variants per slot so the LLM has diverse candidates.
+# Organized: bedroom new → living room new → existing slot gap-filling.
+# Every decorative slot has per-aesthetic-family targeting.
+# Functional slots (duvet_insert, mattress, pillows) get spec/budget depth.
 
-BEDROOM_QUERIES: list[tuple[str, str]] = [
+CATALOG_QUERIES: list[tuple[str, str]] = [
     # =================================================================
-    # BED-GROUP CATEGORIES — already 200+ each, skip these entirely.
-    # bed_frame (296), mattress (238), sheets (242), comforter (268).
+    # SECTION 1: BEDROOM NEW SLOTS (zero catalog, 49 queries)
     # =================================================================
 
     # -----------------------------------------------------------------
-    # pillows — currently 40, target 150+
+    # desk — 0 cached, target 265+ (10 queries)
     # -----------------------------------------------------------------
-    ("pillows", "memory foam pillow queen size"),
-    ("pillows", "gel cooling pillow queen"),
-    ("pillows", "firm bed pillow queen 2 pack"),
-    ("pillows", "soft bed pillow queen 2 pack"),
-    ("pillows", "hotel quality pillow queen"),
-    ("pillows", "bamboo pillow queen size"),
-    ("pillows", "shredded memory foam pillow"),
-    ("pillows", "hypoallergenic pillow queen"),
+    ("desk", "writing desk home office small"),
+    ("desk", "computer desk bedroom compact"),
+    ("desk", "mid century modern writing desk walnut"),
+    ("desk", "japandi desk natural wood minimal"),
+    ("desk", "industrial metal desk black"),
+    ("desk", "dark wood desk traditional library"),
+    ("desk", "white desk modern minimalist"),
+    ("desk", "rustic farmhouse desk wood"),
+    ("desk", "gaming desk black LED"),
+    ("desk", "coastal white desk rattan"),
 
     # -----------------------------------------------------------------
-    # nightstand — currently 101, target 200+
+    # desk_chair — 0 cached, target 265+ (8 queries)
     # -----------------------------------------------------------------
-    ("nightstand", "mid century modern nightstand walnut"),
-    ("nightstand", "industrial metal nightstand"),
-    ("nightstand", "white nightstand coastal"),
-    ("nightstand", "nightstand with charging station"),
-    ("nightstand", "minimalist nightstand bedroom"),
-    ("nightstand", "farmhouse nightstand wood"),
+    ("desk_chair", "desk chair bedroom comfortable"),
+    ("desk_chair", "ergonomic desk chair home office"),
+    ("desk_chair", "mid century modern desk chair"),
+    ("desk_chair", "velvet desk chair gold legs"),
+    ("desk_chair", "industrial desk chair metal leather"),
+    ("desk_chair", "rattan desk chair natural"),
+    ("desk_chair", "gaming chair ergonomic black"),
+    ("desk_chair", "white desk chair modern minimalist"),
 
     # -----------------------------------------------------------------
-    # dresser — currently 72, target 200+
+    # sconce — 0 cached, target 265+ (8 queries)
     # -----------------------------------------------------------------
-    ("dresser", "mid century modern dresser walnut"),
-    ("dresser", "industrial metal dresser"),
-    ("dresser", "white dresser coastal bedroom"),
-    ("dresser", "tall dresser 5 drawer bedroom"),
-    ("dresser", "small dresser bedroom compact"),
-    ("dresser", "wide dresser 6 drawer"),
+    ("sconce", "wall sconce bedroom"),
+    ("sconce", "plug in wall sconce"),
+    ("sconce", "brass wall sconce modern"),
+    ("sconce", "industrial wall sconce black metal"),
+    ("sconce", "rattan wall sconce natural"),
+    ("sconce", "minimalist wall sconce LED"),
+    ("sconce", "rustic wood wall sconce"),
+    ("sconce", "vintage wall sconce antique brass"),
 
     # -----------------------------------------------------------------
-    # ceiling_light — currently 73, target 200+
+    # wallpaper — 0 cached, target 265+ (10 queries)
     # -----------------------------------------------------------------
-    ("ceiling_light", "mid century modern ceiling light"),
-    ("ceiling_light", "industrial ceiling light matte black"),
-    ("ceiling_light", "coastal flush mount ceiling light"),
-    ("ceiling_light", "minimalist flush mount ceiling light"),
-    ("ceiling_light", "bedroom ceiling light fixture"),
-    ("ceiling_light", "led flush mount light warm white"),
+    ("wallpaper", "peel and stick wallpaper bedroom"),
+    ("wallpaper", "removable wallpaper modern"),
+    ("wallpaper", "floral wallpaper peel and stick"),
+    ("wallpaper", "geometric wallpaper modern"),
+    ("wallpaper", "tropical wallpaper palm leaf"),
+    ("wallpaper", "dark wallpaper moody"),
+    ("wallpaper", "textured wallpaper neutral beige"),
+    ("wallpaper", "japandi wallpaper minimalist"),
+    ("wallpaper", "plaid wallpaper rustic"),
+    ("wallpaper", "abstract wallpaper bold colorful"),
 
     # -----------------------------------------------------------------
-    # table_lamp — currently 80, target 200+
+    # duvet_cover — 0 cached, target 265+ (8 queries)
     # -----------------------------------------------------------------
-    ("table_lamp", "mid century modern table lamp brass"),
-    ("table_lamp", "industrial table lamp matte black"),
-    ("table_lamp", "rattan table lamp boho"),
-    ("table_lamp", "small bedside lamp modern"),
-    ("table_lamp", "touch table lamp bedroom"),
-    ("table_lamp", "glass table lamp bedroom"),
+    ("duvet_cover", "duvet cover set queen"),
+    ("duvet_cover", "linen duvet cover queen"),
+    ("duvet_cover", "velvet duvet cover luxury"),
+    ("duvet_cover", "boho duvet cover colorful"),
+    ("duvet_cover", "white duvet cover minimalist"),
+    ("duvet_cover", "dark duvet cover charcoal black"),
+    ("duvet_cover", "plaid duvet cover flannel"),
+    ("duvet_cover", "tropical duvet cover palm"),
 
     # -----------------------------------------------------------------
-    # floor_lamp — currently 79, target 200+
+    # duvet_insert — 0 cached, target 175+ (5 queries, functional)
     # -----------------------------------------------------------------
-    ("floor_lamp", "mid century modern floor lamp brass"),
-    ("floor_lamp", "industrial floor lamp black metal"),
-    ("floor_lamp", "arc floor lamp minimalist"),
-    ("floor_lamp", "tripod floor lamp bedroom"),
-    ("floor_lamp", "reading floor lamp adjustable"),
-    ("floor_lamp", "dimmable floor lamp living room"),
+    ("duvet_insert", "duvet insert queen all season"),
+    ("duvet_insert", "down alternative duvet insert queen"),
+    ("duvet_insert", "lightweight duvet insert queen"),
+    ("duvet_insert", "cooling duvet insert queen"),
+    ("duvet_insert", "warm duvet insert queen winter"),
+
+    # =================================================================
+    # SECTION 2: LIVING ROOM SLOTS (zero catalog, 62 queries)
+    # =================================================================
 
     # -----------------------------------------------------------------
-    # wall_art — currently 98, target 250+ (style + interest variants)
+    # sofa — 0 cached, target 350+ (12 queries)
     # -----------------------------------------------------------------
-    # Style variants
-    ("wall_art", "mid century modern wall art print"),
-    ("wall_art", "industrial wall art metal"),
-    ("wall_art", "coastal wall art ocean print"),
-    ("wall_art", "japandi wall art minimalist print"),
-    ("wall_art", "dark academia wall art vintage"),
-    ("wall_art", "black and white photography wall art"),
-    ("wall_art", "boho wall art set framed"),
-    ("wall_art", "abstract wall art large canvas"),
-    # Interest: music
-    ("wall_art", "music wall art vinyl record print"),
-    ("wall_art", "vinyl record wall art decor"),
-    ("wall_art", "music notes wall art bedroom"),
-    ("wall_art", "concert poster wall art vintage"),
-    # Interest: sports
-    ("wall_art", "sports wall art basketball poster"),
-    ("wall_art", "sports wall art football baseball"),
-    ("wall_art", "athletic wall art motivational"),
-    # Interest: travel
-    ("wall_art", "travel world map wall art print"),
-    ("wall_art", "travel poster wall art vintage city"),
-    ("wall_art", "destination prints wall art framed"),
-    # Interest: art & film
-    ("wall_art", "movie poster wall art classic film"),
-    ("wall_art", "gallery wall art prints framed"),
-    ("wall_art", "fine art photography print framed"),
-    # Interest: books
-    ("wall_art", "literary wall art book quote print"),
-    ("wall_art", "library wall art vintage book print"),
-    # Interest: gaming
-    ("wall_art", "gaming wall art retro neon"),
-    ("wall_art", "video game wall art poster"),
-    # Interest: plants / nature
-    ("wall_art", "nature photography wall art landscape"),
-    ("wall_art", "botanical illustration wall art framed"),
+    ("sofa", "sofa living room modern"),
+    ("sofa", "couch apartment size"),
+    ("sofa", "sectional sofa small living room"),
+    ("sofa", "mid century modern sofa"),
+    ("sofa", "velvet sofa tufted"),
+    ("sofa", "leather sofa brown"),
+    ("sofa", "linen sofa neutral beige"),
+    ("sofa", "industrial sofa dark leather"),
+    ("sofa", "modern sofa sleek low profile"),
+    ("sofa", "rattan sofa natural"),
+    ("sofa", "cozy sofa deep seat"),
+    ("sofa", "futon sofa modern black"),
 
     # -----------------------------------------------------------------
-    # plants — currently 71, target 200+
+    # armchair — 0 cached, target 265+ (8 queries)
     # -----------------------------------------------------------------
-    ("plants", "artificial snake plant indoor"),
-    ("plants", "faux eucalyptus plant"),
-    ("plants", "fake pothos plant indoor"),
-    ("plants", "artificial bird of paradise"),
-    ("plants", "faux fiddle leaf fig tree"),
-    ("plants", "small artificial succulent plant set"),
-    ("plants", "artificial olive tree indoor"),
-    ("plants", "faux monstera plant"),
+    ("armchair", "accent chair living room"),
+    ("armchair", "armchair modern comfortable"),
+    ("armchair", "velvet accent chair"),
+    ("armchair", "leather armchair brown"),
+    ("armchair", "rattan accent chair"),
+    ("armchair", "mid century modern armchair"),
+    ("armchair", "cozy armchair sherpa"),
+    ("armchair", "modern accent chair geometric"),
 
     # -----------------------------------------------------------------
-    # mirror — currently 39, target 200+
+    # ottoman — 0 cached, target 200+ (6 queries)
     # -----------------------------------------------------------------
-    ("mirror", "mid century modern mirror brass"),
-    ("mirror", "industrial mirror metal frame"),
-    ("mirror", "arched mirror bedroom"),
-    ("mirror", "full length floor mirror standing"),
-    ("mirror", "round wall mirror gold"),
-    ("mirror", "black framed wall mirror rectangle"),
-    ("mirror", "vanity mirror bedroom"),
-    ("mirror", "oval wall mirror bathroom"),
+    ("ottoman", "ottoman living room"),
+    ("ottoman", "storage ottoman"),
+    ("ottoman", "velvet ottoman round"),
+    ("ottoman", "leather ottoman brown"),
+    ("ottoman", "pouf ottoman knit"),
+    ("ottoman", "modern ottoman minimalist"),
 
     # -----------------------------------------------------------------
-    # rug — currently 89, target 200+
+    # coffee_table — 0 cached, target 265+ (8 queries)
     # -----------------------------------------------------------------
-    ("rug", "mid century modern area rug 5x8"),
-    ("rug", "industrial area rug dark 5x8"),
-    ("rug", "coastal area rug blue white 5x8"),
-    ("rug", "boho area rug colorful 5x8"),
-    ("rug", "neutral area rug bedroom 8x10"),
-    ("rug", "washable area rug 5x8"),
-    ("rug", "shag area rug bedroom 5x8"),
-    ("rug", "geometric area rug modern 5x8"),
+    ("coffee_table", "coffee table living room"),
+    ("coffee_table", "coffee table with storage"),
+    ("coffee_table", "mid century modern coffee table walnut"),
+    ("coffee_table", "industrial coffee table metal wood"),
+    ("coffee_table", "glass coffee table modern"),
+    ("coffee_table", "rattan coffee table natural"),
+    ("coffee_table", "marble coffee table"),
+    ("coffee_table", "rustic coffee table wood"),
 
     # -----------------------------------------------------------------
-    # curtains — currently 70, target 200+
+    # side_table — 0 cached, target 200+ (6 queries)
     # -----------------------------------------------------------------
-    ("curtains", "mid century modern curtains"),
-    ("curtains", "velvet curtains bedroom"),
-    ("curtains", "sheer curtains white bedroom"),
-    ("curtains", "blackout curtains 84 inch"),
-    ("curtains", "linen curtains natural beige"),
-    ("curtains", "thermal insulated curtains bedroom"),
+    ("side_table", "side table living room"),
+    ("side_table", "end table modern"),
+    ("side_table", "mid century modern side table"),
+    ("side_table", "industrial side table metal"),
+    ("side_table", "rattan side table"),
+    ("side_table", "marble side table gold"),
 
     # -----------------------------------------------------------------
-    # throw_blanket — currently 66, target 200+
+    # tv_stand — 0 cached, target 265+ (8 queries)
     # -----------------------------------------------------------------
-    ("throw_blanket", "chunky knit throw blanket"),
-    ("throw_blanket", "cotton throw blanket minimalist"),
-    ("throw_blanket", "faux fur throw blanket"),
-    ("throw_blanket", "waffle weave throw blanket"),
-    ("throw_blanket", "fleece throw blanket soft"),
-    ("throw_blanket", "woven throw blanket boho"),
-    ("throw_blanket", "lightweight throw blanket summer"),
+    ("tv_stand", "tv stand living room"),
+    ("tv_stand", "tv console media cabinet"),
+    ("tv_stand", "mid century modern tv stand walnut"),
+    ("tv_stand", "industrial tv stand metal wood"),
+    ("tv_stand", "white tv stand modern"),
+    ("tv_stand", "rustic tv stand farmhouse"),
+    ("tv_stand", "floating tv stand wall mount"),
+    ("tv_stand", "dark wood tv stand traditional"),
+
+    # -----------------------------------------------------------------
+    # bookshelf — 0 cached, target 200+ (6 queries)
+    # -----------------------------------------------------------------
+    ("bookshelf", "bookshelf living room"),
+    ("bookshelf", "bookcase modern"),
+    ("bookshelf", "industrial bookshelf metal wood"),
+    ("bookshelf", "mid century modern bookshelf"),
+    ("bookshelf", "ladder bookshelf minimalist"),
+    ("bookshelf", "rustic bookshelf wood"),
+
+    # -----------------------------------------------------------------
+    # throw_pillows — 0 cached, target 265+ (8 queries)
+    # -----------------------------------------------------------------
+    ("throw_pillows", "throw pillow covers 18x18"),
+    ("throw_pillows", "decorative pillows living room"),
+    ("throw_pillows", "velvet throw pillows"),
+    ("throw_pillows", "boho throw pillows colorful"),
+    ("throw_pillows", "linen throw pillows neutral"),
+    ("throw_pillows", "leather throw pillows"),
+    ("throw_pillows", "plaid throw pillows"),
+    ("throw_pillows", "tropical throw pillows"),
+
+    # =================================================================
+    # SECTION 3: EXISTING SLOT GAP-FILLING (26 queries)
+    # =================================================================
+
+    # -----------------------------------------------------------------
+    # pillows — 320 cached, functional depth (4 queries)
+    # -----------------------------------------------------------------
+    ("pillows", "luxury hotel pillow queen down alternative"),
+    ("pillows", "organic cotton pillow queen"),
+    ("pillows", "adjustable loft pillow queen"),
+    ("pillows", "cooling gel pillow side sleeper"),
+
+    # -----------------------------------------------------------------
+    # sheets — 431 cached, sports/gamer/industrial thin (3 queries)
+    # -----------------------------------------------------------------
+    ("sheets", "dark sheets queen charcoal black"),
+    ("sheets", "flannel sheets queen plaid"),
+    ("sheets", "jersey sheets queen soft"),
+
+    # -----------------------------------------------------------------
+    # comforter — 596 cached, sports/gamer/industrial thin (3 queries)
+    # -----------------------------------------------------------------
+    ("comforter", "dark comforter set queen black charcoal"),
+    ("comforter", "plaid comforter set queen"),
+    ("comforter", "solid color comforter queen navy"),
+
+    # -----------------------------------------------------------------
+    # throw_blanket — 562 cached, industrial/gamer thin (2 queries)
+    # -----------------------------------------------------------------
+    ("throw_blanket", "sherpa throw blanket dark"),
+    ("throw_blanket", "weighted blanket throw"),
+
+    # -----------------------------------------------------------------
+    # mattress — 265 cached, functional (2 queries)
+    # -----------------------------------------------------------------
+    ("mattress", "mattress in a box queen"),
+    ("mattress", "hybrid mattress queen medium firm"),
+
+    # -----------------------------------------------------------------
+    # curtains — 689 cached, ski_lodge/jungle thin (2 queries)
+    # -----------------------------------------------------------------
+    ("curtains", "bamboo curtains natural"),
+    ("curtains", "plaid curtains flannel"),
+
+    # -----------------------------------------------------------------
+    # rug — 728 cached, ski_lodge/jungle thin (2 queries)
+    # -----------------------------------------------------------------
+    ("rug", "jute area rug natural 5x8"),
+    ("rug", "cowhide area rug"),
+
+    # -----------------------------------------------------------------
+    # ceiling_light — 703 cached (2 queries)
+    # -----------------------------------------------------------------
+    ("ceiling_light", "rattan ceiling light flush mount"),
+    ("ceiling_light", "rustic ceiling light wood"),
+
+    # -----------------------------------------------------------------
+    # floor_lamp — 441 cached (2 queries)
+    # -----------------------------------------------------------------
+    ("floor_lamp", "rattan floor lamp natural"),
+    ("floor_lamp", "tripod floor lamp wood"),
+
+    # -----------------------------------------------------------------
+    # mirror — 571 cached (2 queries)
+    # -----------------------------------------------------------------
+    ("mirror", "rattan mirror round"),
+    ("mirror", "rustic wood mirror"),
+
+    # -----------------------------------------------------------------
+    # plants — 982 cached (2 queries)
+    # -----------------------------------------------------------------
+    ("plants", "artificial cactus plant"),
+    ("plants", "artificial palm plant indoor"),
 ]
 
 DEFAULT_LIMIT = 40
-DEFAULT_MAX_REQUESTS = 120
+DEFAULT_MAX_REQUESTS = 150
 
 
 # ---------------------------------------------------------------------------
@@ -300,7 +388,6 @@ def run_build(
     print(f"\n{'─' * 72}")
     print(f"  Done. {requests_made} API request(s), "
           f"{total_added} new products added to cache.")
-    print(f"  Estimated remaining this month: ~{100 - requests_made}")
     print(f"{'─' * 72}")
 
 
@@ -310,7 +397,7 @@ def run_build(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Batch catalog builder with style-variant queries.",
+        description="Batch catalog builder with per-aesthetic queries.",
     )
     parser.add_argument(
         "--go", action="store_true",
@@ -326,7 +413,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    queries = BEDROOM_QUERIES
+    queries = CATALOG_QUERIES
 
     show_plan(queries, max_requests=args.max, limit=args.limit)
 

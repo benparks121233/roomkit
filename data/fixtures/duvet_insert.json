@@ -1,0 +1,42 @@
+[
+  {
+    "product_id": "DI-001",
+    "name": "Utopia Bedding Queen Duvet Insert – Lightweight Down Alternative, White",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B00NBYDUV1",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-duvet-insert-white.jpg"
+  },
+  {
+    "product_id": "DI-002",
+    "name": "Bedsure Queen Duvet Insert – All Season Down Alternative Comforter",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B07WGDUV2S",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/bedsure-duvet-insert-queen.jpg"
+  },
+  {
+    "product_id": "DI-003",
+    "name": "Utopia Bedding King Duvet Insert – All Season, White",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B00NBYDUVK",
+    "specs": {"bed_size": "king"},
+    "image_url": "https://m.media-amazon.com/images/I/utopia-duvet-insert-king.jpg"
+  },
+  {
+    "product_id": "DI-004",
+    "name": "CGK Unlimited Twin Duvet Insert – Lightweight Microfiber",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B08DUVTWIN",
+    "specs": {"bed_size": "twin"},
+    "image_url": "https://m.media-amazon.com/images/I/cgk-duvet-insert-twin.jpg"
+  },
+  {
+    "product_id": "DI-005",
+    "name": "LINENSPA All-Season Queen Duvet Insert – Reversible Down Alternative",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B01LNDUV05",
+    "specs": {"bed_size": "queen"},
+    "image_url": "https://m.media-amazon.com/images/I/linenspa-duvet-insert.jpg"
+  }
+]

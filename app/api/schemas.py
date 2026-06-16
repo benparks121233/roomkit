@@ -19,6 +19,8 @@ class DesignRequest(BaseModel):
     interests: list[str] = []
     full_room: bool = True
     wants: list[str] = []
+    excluded_slots: list[str] = []
+    mirror_type: str | None = None  # "full_length", "round", "wall", "arched", or None
 
 
 class ProductResult(BaseModel):

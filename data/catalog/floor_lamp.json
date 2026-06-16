@@ -506,7 +506,7 @@
   {
     "product_id": "B0DC67NWH5",
     "name": "Wood Tripod Floor Lamp for Bedroom, Farmhouse Wooden Floor lamp with 3 Color Temparature LED Bulb for Living Room, Office, Footswitch,ETL Listed/Brown Wood Color",
-    "normalized_price": 51.49,
+    "normalized_price": 54.49,
     "buy_url": "https://www.amazon.com/dp/B0DC67NWH5",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71gll83ObBL._AC_UL320_.jpg",
@@ -533,7 +533,7 @@
   {
     "product_id": "B0CTHN8HY8",
     "name": "BTP Wood Tripod Floor Lamp, Farmhouse Shelf Wooden Standing light Drum Shade for Living Room, Bedroom, Office, Footswitch,ETL Listed/Brown Wood Color, 3 Color Temparature LED Bulb Include",
-    "normalized_price": 54.99,
+    "normalized_price": 52.49,
     "buy_url": "https://www.amazon.com/dp/B0CTHN8HY8",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71ZeoEqXYcL._AC_UL320_.jpg",
@@ -1694,7 +1694,7 @@
   {
     "product_id": "B0FKH135DX",
     "name": "MIXL-Tripod Wooden Tall Floor Lamp,Fabric Drum Shade Corner Standing Lamp,Farmhouse Style Floor Light for Nursery and Study Room",
-    "normalized_price": 99.99,
+    "normalized_price": 109.99,
     "buy_url": "https://www.amazon.com/dp/B0FKH135DX",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/71yNlqWH3cL._AC_UL320_.jpg",
@@ -3233,7 +3233,7 @@
   {
     "product_id": "B0D7M1JYQ7",
     "name": "ROTTOGOON Dimmable Boho Floor Lamp - 3 Light Farmhouse Rattan Floor Lamp for Living Room, Industrial Tree Floor Lamps with 3 X 6W LED Bulbs, Rustic Standing Tall Lamp for Bedroom, Office, 68\", Black",
-    "normalized_price": 41.39,
+    "normalized_price": 42.99,
     "buy_url": "https://www.amazon.com/dp/B0D7M1JYQ7",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81Zu3vU7m3L._AC_UL320_.jpg",
@@ -3386,7 +3386,7 @@
   {
     "product_id": "B0FHJ476C3",
     "name": "Gold Boho Rattan Floor Lamp w/Remote, Dimmable (2700K - 6000K), 2 - in - 1 Wicker & Fabric Shade, Adjustable 165-172cm for Living Room & Bedroom",
-    "normalized_price": 47.49,
+    "normalized_price": 47.99,
     "buy_url": "https://www.amazon.com/dp/B0FHJ476C3",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/719SKI35T8L._AC_UL320_.jpg",
@@ -3431,7 +3431,7 @@
   {
     "product_id": "B0DT16VPGC",
     "name": "Oneach Arc Floor Lamp for Living Room,Rattan Boho Floor Lamp with Hand-Woven Shade, Foot Switch,Gold Metal Base & Pole,Farmhouse Standing Lamp for Bedroom Corner,Reading",
-    "normalized_price": 49.99,
+    "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0DT16VPGC",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81FPwCnG68L._AC_UL320_.jpg",
@@ -3966,6 +3966,285 @@
     "buy_url": "https://www.amazon.com/dp/B0CTH2QF23",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/61X1OBENlqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2N2DLKC",
+    "name": "Boho Rattan Floor Lamp with Shade \u2013 12W Bright Dimmable LED Bulb, Remote Control 3 Color Temperatures, Modern Farmhouse Handwoven Arc Standing Light for Living Room Bedroom",
+    "normalized_price": 43.69,
+    "buy_url": "https://www.amazon.com/dp/B0F2N2DLKC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Kco0ivaRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9H4BRF1",
+    "name": "Boho Floor Lamp, 68in. Rattan floor lamp with Natural Woven Shade, Rustic Standing Lamp for Coastal, Beach or Bohemian Style Decor, E26 Socket, On/Off Footswitch Lamp for Living room, Bedroom (Gold)",
+    "normalized_price": 94.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9H4BRF1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91nLDOc9IyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHJ4KDJX",
+    "name": "Rustic Woven Rattan Floor Lamp \u2013 Golden Finish, Arc Design, 12W LED (1 in use + 1 Spare), Remote & Dimmable 3-Color Temperature, Tall Standing Lamp for Living Room, Bedroom & Reading Corner",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHJ4KDJX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ctjU-sGCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPLZ547H",
+    "name": "Rattan Floor Lamp, 66in. Boho Floor Lamp with Natural Brown Rattan Shade, Rustic Arc Standing Lamp for Coastal, Beach or Bohemian Style Decor (Coastal-Black)",
+    "normalized_price": 109.99,
+    "buy_url": "https://www.amazon.com/dp/B0DPLZ547H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81f+wbzHCaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G29HTGX7",
+    "name": "OYEARS 65\" Boho Floor Lamps for Living Room, Rattan Floor Lamp, Pull Chain Switch, Gold Standing Lamp with Hand-Woven Shade, Farmhouse Tall Lamps for Nursery, Metal Base&Pole, Bulb not Included, Gold",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0G29HTGX7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71dOzAtxvKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZDQ1T7D",
+    "name": "Arc Floor Lamps for Living Room Rattan Boho Floor Lamp with Remote Control,Dimmable LED Floor Lamps Wicker Lamp Shades Black Standing Lamp with 3 Color Temperature Tall Floor Lamp For Bedroom Corner",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZDQ1T7D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81QllQ+qyPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL9G46R6",
+    "name": "PESRAE Rattan Floor Lamp for Living Room with Side Table, Farmhouse Arc Floor Lamp with 3 Color Temperatures and Rattan & Fabric Lamp Shades, Boho Standing Lamp for Living Room, Bedroom Corner",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0GL9G46R6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61o0mGiyG2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKWYZRQ8",
+    "name": "Gold Floor Lamps for Living Room with Remote & Dimmable LED Bulb, Modern Arc Floor Lamp with 3 Color Temperatures, Boho Standing Lamp with Rattan & Fabric Shades, Adjustable Tall Lamp for Bedroom",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0CKWYZRQ8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/7120-l2owtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6TN6GHJ",
+    "name": "LAMSU Oak Wood Tripod Floor Lamps for Living Room, Boho Floor Lamp with Shelves, Mid Century Rattan Standing Lamp with Fabric Shade, ON/Off Switch, Farmhouse Tall Floor Lamps for Bedroom Office",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6TN6GHJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71jq1obT5lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7XM9YH5",
+    "name": "Arc Floor Lamp for Living Room\uff0cRattan Boho Floor Lamp with Hand-Woven Wicker Shade, Foot Switch, Gold/Silvery Metal Base & Pole,Standing Lamp for Bedroom (Gold)",
+    "normalized_price": 86.99,
+    "buy_url": "https://www.amazon.com/dp/B0F7XM9YH5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71lTrec7WwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL4KV9Q1",
+    "name": "64'' Adjustable Arc Floor Lamp with Natural Rattan Woven Shade, Brushed Gold Mid-Century Modern Boho Floor Lamp, Retro Tall Standing Lamp for Living Room, Bedroom, Home Office, Bulb Included",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0GL4KV9Q1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71xyQJ6kxjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9TV3ZWC",
+    "name": "Ruiever Floor Lamp for Living Room,Farmhouse Floor lamp,Modern Standing lamp with Hand-Worked Rattan Shade (Double Shade-with Remote)",
+    "normalized_price": 33.24,
+    "buy_url": "https://www.amazon.com/dp/B0F9TV3ZWC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71QVcpT9gZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3C42TBC",
+    "name": "ILLMTW Rattan Floor Lamp for Living Room Bedroom Boho Arc Standing Lamp with Remote Dimmable Black Farmhouse Wicker Bamboo Lamp Shade Floor Light Tall Lamp Industrial Floor Lamps Bohemian Decor",
+    "normalized_price": 59.9,
+    "buy_url": "https://www.amazon.com/dp/B0D3C42TBC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/710MRq3by4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6MWVMX5",
+    "name": "Rattan Floor Lamp- Boho Standing Lamp with Remote Control and Dimmable Bulb, Hand-Worked Adjustable Rattan Shades, Black Farmhouse Tall Lamp, Boho Arc Floor Lamps for Living Room, Bedroom, Office",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0C6MWVMX5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/810kY79EKhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXWY4BX6",
+    "name": "Arc Floor Lamp for Living Room with Remote Control,Farmhouse Boho Floor Lamps with 3 Color Temperature,Rustic Standing Lamp with Rattan Wicker Shades,Adjustable Tall Lamp for Bedroom,Office,Reading",
+    "normalized_price": 67.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXWY4BX6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81+-UITfuAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4XD9266",
+    "name": "QIYIZM Floor Lamp for Living Room,Bedroom,3-Lights Boho Rattan Tree Floor Lights,Industrial Black Farmhouse Standing Lamp Wicker Rustic Tall Lamp,Woven Bamboo LampShade Floor Lamps Bohemian",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4XD9266",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71P1KBKtGVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08HVXF81V",
+    "name": "Artiva USA Phuket 51\" 2-Light Unique Handcrafted Twist Rattan Floor Lamp",
+    "normalized_price": 128.77,
+    "buy_url": "https://www.amazon.com/dp/B08HVXF81V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815d0QtStLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D7QCJ6GK",
+    "name": "Arc Rattan Floor Lamp for Living Room with Remote,Black Floor Lamps with 3 Color Temperature Dimmable Bulb,Farmhouse Boho Standing Lamp with Wicker Shade,Adjustable Tall Lamp for Bedroom Office Corner",
+    "normalized_price": 67.99,
+    "buy_url": "https://www.amazon.com/dp/B0D7QCJ6GK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Wl+9bFKYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDKP86RP",
+    "name": "ZECOXOL Gold Floor Lamps for Living Room Rattan Boho Floor Lamp with Remote Control & 3 Color Temperature,Dimmable Arc Floor Lamps Brass Standing Lamp Tall Floor Lamp for Bedroom Living Room Corner",
+    "normalized_price": 52.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDKP86RP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Gc26Ae9kL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2R72CXG",
+    "name": "Rattan Floor Lamp, Dimmable Arc Floor Lamps for Living Room, Boho Farmhouse Standing Lamp with Adjustable Head, Tall Pole Lamp Reading Light for Bedroom, Over Couch, Office, 9W LED Bulb Included",
+    "normalized_price": 67.99,
+    "buy_url": "https://www.amazon.com/dp/B0D2R72CXG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71a+Li7NzAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FD6YWMKB",
+    "name": "63\" Rattan Floor Lamp, 3-Light Gold Standing Lamp with Shelf, Dimmable Mid Century Modern Tall Lamp, 3000K E LED Bulbs Included, Industrial Boho Floor Lamps for Living Room Bedroom Office",
+    "normalized_price": 22.74,
+    "buy_url": "https://www.amazon.com/dp/B0FD6YWMKB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61WsPLjwluL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHSW5VG2",
+    "name": "JONATHAN Y 63.5\" Brown/Brass Gold LED Floor Lamp for Living Room Bedroom with Scalloped Rattan Shade, Coastal Bohemian Tall Standing Light, Pull Chain, LED Bulb Included JYL1153A",
+    "normalized_price": 155.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHSW5VG2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81qWuUoyHoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGQFVRSB",
+    "name": "BOBOMOMO 62\" Rustic Floor Lamp for Living Room, Retro Farmhouse Floor Lamp Rotary Switch, Resin Standing Lamp for Living Room, Corner, Dining Room, Bedroom, Home Decor",
+    "normalized_price": 59.99,
+    "buy_url": "https://www.amazon.com/dp/B0DGQFVRSB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81faAHU1h0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1XNRXRC",
+    "name": "Rattan Floor Lamp, Dimmable Boho Floor Lamp, Farmhouse Arc Standing Lamp with Adjustable Rattan & Fabric Shades, Modern Lamp Tall Lamp for Living Room Bedroom Office Reading Room, Bulb Included",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1XNRXRC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71oXZvyedLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVHJBX4J",
+    "name": "Buruis 60.6\" Solid Wood Tripod Floor Lamp with 15.7\" Large Linen Shade, Mid-Century Walnut Finish Standing Lamp for Living Room, Bedroom, Office, Corner, UL Listed, Bulb Not Included, Green",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVHJBX4J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8129tL3-KNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08D9N81R2",
+    "name": "Brightech Eden Tripod LED Floor Lamp \u2013 Mid Century Dimmable Modern Light for Contemporary Living Rooms - Tall Free Standing Lamp with Solid Wood Legs for Bedroom, Office - Classic Black",
+    "normalized_price": 89.43,
+    "buy_url": "https://www.amazon.com/dp/B08D9N81R2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71U6cai7v+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B076CFLVG1",
+    "name": "Decoluce Industrial Tripod Floor Table Lamp Vintage Wood Cinema Searchlight Standing Lighting Fixtures Nautical Spotlight Decorations-Not Include E26 Bulbs (Cinema)",
+    "normalized_price": 89.99,
+    "buy_url": "https://www.amazon.com/dp/B076CFLVG1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51xpllKqgSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08B1GCQZ1",
+    "name": "LEPOWER Tripod Floor Lamp, Mid Century Wood Standing Lamp, Modern Design Shelf Floor Lamp for Living Room, Bedroom, Office, Flaxen Linen Shade with E26 Lamp Base Walnut",
+    "normalized_price": 70.99,
+    "buy_url": "https://www.amazon.com/dp/B08B1GCQZ1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51F7Oz+iWIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP2VFP9C",
+    "name": "Wabi-sabi 50\" Wooden Tripod Floor Lamp Linen Floor Lamp Paper Lantern Inspired Fabric Standing Lamp With E26 3-Color Temperatures Solid Wood Tall Light For Living Room Bedroom (Includes Bulb)",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0FP2VFP9C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71-9lqYXEkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00HT89BTM",
+    "name": "Teamson Home 61.81 in. Postmodern Tripod Floor Lamp with Foot Switch, Minimalist Lighting Option for Ambient, Accent, or Reading, Faux Natural Wood Grain Finish and White Drum Shade",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B00HT89BTM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61dUn20dRyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKYF737W",
+    "name": "Industrial Tripod Floor Lamp for Living Room Weather Wood Standing Large Lighting Black Adjustable Cinema Metal Lampshade Studio Lights E27 Socket Retro Floor Light for Bedroom Office Reading",
+    "normalized_price": 131.99,
+    "buy_url": "https://www.amazon.com/dp/B0GKYF737W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ajHg1mRFL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

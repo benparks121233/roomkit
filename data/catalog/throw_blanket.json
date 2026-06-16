@@ -362,7 +362,7 @@
   {
     "product_id": "B0CPS22JVK",
     "name": "Bedsure Sherpa Throw Blanket for Couch - Super Soft, Comfort Cozy Fleece Thick Warm Blanket for Women, GentleSoft Plush & Fluffy Spring Throw Gift for Women, Room Decor, Beige, 50x60 Inches",
-    "normalized_price": 24.99,
+    "normalized_price": 21.99,
     "buy_url": "https://www.amazon.com/dp/B0CPS22JVK",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/91I559EsRvL._AC_UL320_.jpg",
@@ -1721,7 +1721,7 @@
   {
     "product_id": "B0158EQJSY",
     "name": "Bedsure GentleSoft Sherpa Fleece Throw Blanket for Couch, Non-Heated, Thick & Warm Cozy Blanket for Winter, Soft Fuzzy Plush Throw Gifts for Women and Men, Grey, 50x60 Inches",
-    "normalized_price": 18.99,
+    "normalized_price": 19.99,
     "buy_url": "https://www.amazon.com/dp/B0158EQJSY",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/91NGe4e8YXL._AC_UL320_.jpg",
@@ -5055,6 +5055,591 @@
     "buy_url": "https://www.amazon.com/dp/B0DRVQMQ2T",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/816tVP7cxeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0158EQE2K",
+    "name": "Bedsure GentleSoft Sherpa Fleece Throw Blanket for Couch, Non-Heated, Thick and Warm Throw for Women and Men, Soft Fuzzy Plush Weight Blanket for Winter, Navy, 50x60 Inches",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0158EQE2K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81AWZRWTwAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08P8GXHLF",
+    "name": "PU MEI Sherpa Fleece Throw Blanket 60\" x 80\" Reversible Plush Fluffy Large Big Blanket Lattice Flannel Blankets for Sofa Couch Bed (Grey-Soft Blue, 60\"*80\")",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B08P8GXHLF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-S45p1I5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01HTQQGHS",
+    "name": "Eddie Bauer - Sherpa Throw Blanket for Couch 50x60 \u2013 Ultra Soft Reversible Fleece & Plush Sherpa Blanket, Warm Cozy Plaid Throw Blanket for Sofa, Bed, Living Room, Cabin Decor",
+    "normalized_price": 12.47,
+    "buy_url": "https://www.amazon.com/dp/B01HTQQGHS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71-bxs-0qvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C4SXSMJY",
+    "name": "EverGrace Jacquard Boho Sherpa Fleece Throw Blanket for Couch, Super Soft Cozy Fuzzy Plush Blankets for Winter, Reversible Thick Warm Blanket for Bed, Sofa, Living Room, Off White, 50\" x 60\"",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B0C4SXSMJY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61nt7ccPh3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09X1QMF48",
+    "name": "Bedsure Gentlesoft Sherpa Fleece Throw Blanket for Couch - Fluffy & Cozy Cable Jacquard Tufted Throw Gifts for Women and Decor, Thick and Warm Blankets for Winter, Grey, 50x60 Inches",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B09X1QMF48",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/915oxr1rfQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07H7CS62P",
+    "name": "LOMAO Sherpa Fleece Blanket for Dad Cozy Soft Throw Blanket for Women Men Birthday Gifts Dual Sided Couch Sofa Bed Blanket (Grey,51x63)",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B07H7CS62P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71J3xIFNrOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BPPGK7TW",
+    "name": "Gracelife Sherpa Fleece Throw Blanket for Couch, Fluffy Plush Warm Fuzzy Blanket for Women and Men, Cozy Thick Soft Twin Blanket for Bed, Gray-Soft Blue, 60x80 Inches",
+    "normalized_price": 25.88,
+    "buy_url": "https://www.amazon.com/dp/B0BPPGK7TW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61IQEspM4pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8HQS6TD",
+    "name": "Burnt Orange Sherpa Fleece Throw Blanket 50\u201d\u00d760\u201d for Couch Sofa Bed,Double Side Soft Fuzzy Cozy Plush Thick Flannel Blanket with Striped Design Gift for Mother Woman",
+    "normalized_price": 13.99,
+    "buy_url": "https://www.amazon.com/dp/B0F8HQS6TD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81vojC4EmRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07B61HC12",
+    "name": "Pavilia Taupe Plaid Sherpa Throw Blanket - Plus Plush Flannel Fleece Blanket - Warm Cabin Sofa Bed Winter Throws 50x60",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B07B61HC12",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uBZhFBcxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CR677SJ",
+    "name": "PAVILIA Taupe Plaid Sherpa Throw Blanket for Couch Twins, Soft Fuzzy Cabin Blanket and Throws, Warm Cozy Winter Gift Blanket, 60x80",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B07CR677SJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uBZhFBcxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B077QCVTFP",
+    "name": "SOCHOW Sherpa Fleece Throw Blanket, Reversible Super Soft Luxurious Plush Blanket Twin Size, Brown(60inch X80'')",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B077QCVTFP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71jdaMYu0IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00NA83RQI",
+    "name": "Eddie Bauer - Sherpa Throw Blanket for Couch 50x60 \u2013 Ultra Soft Reversible Fleece & Plush Sherpa Blanket, Warm Cozy Plaid Throw Blanket for Sofa, Bed, Living Room, Cabin Decor",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B00NA83RQI",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81bmnt+71WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09JN4DRBG",
+    "name": "Sherpa Throw Blanket Super Soft Reversible Ultra Luxurious Plush Blanket, 50 x 60 inches, Black/Gray",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B09JN4DRBG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71FCeJf-zlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CP8393GF",
+    "name": "Sherpa Blanket Throw - Soft Cozy Fleece, Warm for Winter, Reversible for Sofa, Grey, 50 x 60 Inches",
+    "normalized_price": 12.84,
+    "buy_url": "https://www.amazon.com/dp/B0CP8393GF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71yOJ7KSmBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087T3GQHG",
+    "name": "Ultra Soft Cozy Sherpa Throw Blanket, 2 Tones Ombre Light Brown Pattern Reversible, Light Weight Warm Decorative Boho Style Throw Blanket Cover for Sofa, Couch, Bedroom,Travel, 50\u201dx60\u201d",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B087T3GQHG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81iIgzt3mEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGZRDK26",
+    "name": "INFIIXSO Sherpa Throw Blanket for Couch - Super Soft & Warm Striped Fleece Blanket, Cozy Plush Fluffy Blanket All Season Use (Navy Blue, 50x60 Inches)",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGZRDK26",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8187ACkFWxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DNQ2K9DG",
+    "name": "Amazon Basics Reversible Sherpa Throw Blanket, Dark Gray, 50\"x60\", Ultra Soft, Plush",
+    "normalized_price": 17.09,
+    "buy_url": "https://www.amazon.com/dp/B0DNQ2K9DG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81X5+SMGQ5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07W77KKPX",
+    "name": "Bedsure GentleSoft Sherpa Fluffy Throw Blanket - Fleece Warm and Cozy Throw for Women Gift, Plush & Fuzzy Faux Fur Blanket for Couch, Sofa, Bed Decor, Tie Dye Design, Grey, 50x60 Inches",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B07W77KKPX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81c+tTV2w3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJNK37Z1",
+    "name": "Exclusivo Mezcla Reversible Sherpa Throw Blanket for Couch, Thick and Warm Fleece Blankets for Winter, Soft Plush Fluffy, 50x60 Inches, Brown/Khaki",
+    "normalized_price": 16.14,
+    "buy_url": "https://www.amazon.com/dp/B0CJNK37Z1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81YqZ+3PpAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXW8SVN",
+    "name": "Touchat Sherpa Red and Black Buffalo Plaid Christmas Twin Blanket 60\" X 70\", Fuzzy Fluffy Soft Cozy Throw Blanket, Fleece Flannel Plush Microfiber Blanket for Couch Bed Sofa",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B08CXW8SVN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Q3bXAFKtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQ46WZZN",
+    "name": "WDCOZY Sherpa Fleece Blankets Fuzzy Warm Throw Blanket Thick Super Soft Reversible Luxurious Fluffy Plush for Sofa Couch Bed Home Decor All Seasons Winter Blankets Tan Camel Beige 50\"x60\"",
+    "normalized_price": 12.99,
+    "buy_url": "https://www.amazon.com/dp/B0FQ46WZZN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6148xVHtwCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHR4SHXM",
+    "name": "Royal Luxe Micromink Sherpa Throw Blanket for Couch, Fluffy Plush Reversible Throw Blanket for Sofa Bed Chair Room Decor - Luxury Soft Cozy Gifts for Women, 50 x 60 Inches, Red",
+    "normalized_price": 14.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHR4SHXM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Glrz8FSkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SW7Z21B",
+    "name": "Bare Home Sherpa Fleece Blanket - Twin/Twin Extra Long - Blanket for Bed, Sofa, and Couch - Warm & Lightweight - Fluffy & Soft - Reversible (Twin/Twin XL, Grey)",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B07SW7Z21B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81gbFwdlqhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8C17MCT",
+    "name": "Wrangler - Throw Blanket with Sherpa Reverse, Super Soft Plush Bedding, Oeko-Tex Certified, Dorm Room Essentials, 50x60, Coyote Sands Brown",
+    "normalized_price": 18.19,
+    "buy_url": "https://www.amazon.com/dp/B0C8C17MCT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/9143yWb9-FL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQPC5PFG",
+    "name": "Cozy Bliss Luxury Sherpa Throw Blanket for Couch, Premium Reversible Buffalo Plaid Thick Throw, Warm Cozy Soft Blanket for Home and Gifts (Light Blue, 50\" x 60\")",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQPC5PFG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81wsC1btP8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07533RV7W",
+    "name": "Eddie Bauer - Blanket, Super Soft Reversible Sherpa & Brushed Fleece Bedding, Throw Blankets for Couch, Ideal for Lounging (Cabin Plaid Black)",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B07533RV7W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81VOLuPX8mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1XRKH2P",
+    "name": "Bedsure Sherpa Throw Blanket for Couch - Super Soft, Cozy Fleece Thick Warm Blanket for Winter, GentleSoft Plush & Fluffy Spring Throw Gift for Women, Room Decor, Pink, 50x60 Inches",
+    "normalized_price": 28.99,
+    "buy_url": "https://www.amazon.com/dp/B0D1XRKH2P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91Q3PoX0foL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FG2TC81V",
+    "name": "BEDELITE Sherpa Twin Blanket for Couch \u2013 Ultra Soft & Cozy Plush Blanket for Sofa, Bed & Room Decor, Thick Fluffy Throw Gifts for Women, Men, Mom, Dad, 60x80 inch, Light Grey",
+    "normalized_price": 15.98,
+    "buy_url": "https://www.amazon.com/dp/B0FG2TC81V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81g2Qvw+JmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01HTQQDMQ",
+    "name": "Eddie Bauer - Sherpa Throw Blanket for Couch 50x60 \u2013 Ultra Soft Reversible Fleece & Plush Sherpa Blanket, Warm Cozy Geometric Throw for Sofa, Bed, Living Room Decor",
+    "normalized_price": 25.0,
+    "buy_url": "https://www.amazon.com/dp/B01HTQQDMQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61SolupRY9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GBZ4PFYN",
+    "name": "BEARPAW Sherpa Throw Blanket - Ultra Soft Plush Warm Reversible Fluffy Blanket for Bed Couch Sofa & Living Room Decor, House Decor, Room Decor Gifts for Women - 50\"x70\" (Green, Throw - 50\" x 70\")",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0GBZ4PFYN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71CiYDzFWIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1XRNR12",
+    "name": "Pink Sherpa Throw Blanket for Couch, Flannel Cozy Soft Thick Blanket Warm Twin Blanket for Bed - Fleece, Pink, Home Decor Gifts for Women, 60x80 Inches",
+    "normalized_price": 25.88,
+    "buy_url": "https://www.amazon.com/dp/B0D1XRNR12",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TBvr6kceL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CX9NCDY",
+    "name": "Touchat Sherpa Plaid Throw Blanket, 60\" X 70\"Fuzzy Fluffy Cozy Soft Blanket, Fleece Flannel Plush Twin Size Microfiber Blanket for Couch Bed Sofa (Brown)",
+    "normalized_price": 24.69,
+    "buy_url": "https://www.amazon.com/dp/B08CX9NCDY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/717lz0Odc0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B7B94D2B",
+    "name": "EMME Soft Sherpa Throw Blanket Fleece Reversible Plush Fluffy Blanket, Light Weight Warm Decorative Boho Blanket Cover for Sofa, Couch, Bedroom,Travel(Plush Navy,50\"x60\")",
+    "normalized_price": 18.89,
+    "buy_url": "https://www.amazon.com/dp/B0B7B94D2B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/710ptUPDf+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07381K8TM",
+    "name": "Utopia Bedding Sherpa Blanket Queen Size (Grey, 90x90 Inches) - Soft Warm Plush Fleece Reversible Blanket for Bed, Sofa, Couch, Camping and Travel",
+    "normalized_price": 22.72,
+    "buy_url": "https://www.amazon.com/dp/B07381K8TM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71MwIC3aWML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXDKVX2K",
+    "name": "520GSM Sherpa Fleece Throw Blanket, Heavyweight Double Layer Striped Plush Blanket for Couch Sofa Bed, Soft Warm Reversible Fuzzy Flannel Throw, Oeko-TEX Certified, 50x60 Inches, Dark Grey",
+    "normalized_price": 9.97,
+    "buy_url": "https://www.amazon.com/dp/B0FXDKVX2K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81woKGv-FUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B097DK6ZCR",
+    "name": "L'AGRATY Weighted Blanket for Adults- Dark Grey, 48\"x72\", 15lbs, Twin Full Size Heavy Throw Blanket, Cooling, Breathable, Microfiber with Glass Beads, Big, Washable, All-Season",
+    "normalized_price": 27.54,
+    "buy_url": "https://www.amazon.com/dp/B097DK6ZCR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61lsjtPDcxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CR14YJ23",
+    "name": "Mr. Sandman Weighted Blanket for Adults Queen Size 15 lbs, Soft Cooling Heavy Minky Blanket for Sleep, Washable Throw Blanket with Glass Beads, 60 x 80 Inches, Grey",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0CR14YJ23",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81GSOCXzt-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073429DV2",
+    "name": "YnM 15lbs Weighted Blanket for Adults, Heavy Bed Throw Blanket with Cooling Glass Beads for All Season Use, Ideal for ~140lbs (48x72 Inches, Twin/Full, Dark Grey)",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B073429DV2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61wqo9sOcAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0869NWJ6Q",
+    "name": "Uttermara Weighted Blankets for Adults Queen Size, 15lbs 60x80 inches Blanket with Soft Warm Plush Sherpa Fleece, Washable Thick Heavy Throw for Sleeping and Calming, Grey",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B0869NWJ6Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71lEpIQSOJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQYQWRSY",
+    "name": "Topblan Weighted Blanket for Adults 12lbs, Soft Cooling Breathable Weighted Throw for Sleeping, Machine Washable Heavy Blanket with Glass Beads for Summer, Sofa Bed, 48\"x72\" Twin Size, Grey",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQYQWRSY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61OYmcByggL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B4VW9CZ1",
+    "name": "Guohaoi Knitted Weighted Blanket for Adults (Light Grey 60\"x80\" 15lbs) No Beads Cooling Throw Blanket for Hot Sleepers, Home Decor Breathable Chunky Knit Heavy Blanket Use on Queen/King Size Bed",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0B4VW9CZ1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81wDU9UwIXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D944QHZH",
+    "name": "Knitted Weighted Blanket for Adult, No Beads Heavy Blanket 48\u201d x 72'' 12lbs, Breathable Chunky Knit Blanket, Cooling Weighted Blanket for Hot Sleepers, Christmas Home Decor (Ivory White)",
+    "normalized_price": 66.99,
+    "buy_url": "https://www.amazon.com/dp/B0D944QHZH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71-GKtV2fCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087PJZX3V",
+    "name": "Wemore Sherpa Fleece Weighted Blanket for Adult, 15 lbs Dual Sided Cozy Fluffy Heavy Blanket, Ultra Fuzzy Throw Blanket with Soft Plush Flannel Top, 60 x 80 inches Grey on Both Sides",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B087PJZX3V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Ng16ep33L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08SVY9CKN",
+    "name": "Weighted Blanket for Adults 20lbs, 48\"x72\", Twin Full Size Cooling Heavy Throw Blanket for 180-220lbs, Microfiber Soft Thick Big Blankets Weighted Comforter Breathable Gift for Sleeping, Grey",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B08SVY9CKN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71MR6okGyTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKH41JLF",
+    "name": "Anysay Knitted Weighted Blanket for Adult, Chunky Knit Weighted Throw for Sleep 60\"*80\" 20lbs, Cooling Breathable Machine Washable Fall Heavy Blanket for Room Decor (Beige, Queen)",
+    "normalized_price": 99.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKH41JLF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81bN5JwUOKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D22SN9Y1",
+    "name": "Wemore Fleece Weighted Blanket for Adults (60\" x 80\" 15lbs, Cream White), Dual Sided Cozy Soft Sherpa Heavy Blanket with 3D Imitation Turtle Shell Warm Jacquard Flannel for Couch and Bed",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B0D22SN9Y1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71W9UGk1s+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB7L2C82",
+    "name": "Topblan Weighted Lap Blanket 7lbs for Adults, Small Weighted Blanket Throw for Napping, Relaxation, Calming and Travel, Skin Friendly & Machine Washable for All-Season Sleeping, Grey 24x29 inches",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB7L2C82",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71r+BPu1rsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087PJK8TZ",
+    "name": "Wemore Sherpa Fleece Weighted Blanket for Adult, 15 lbs Dual Sided Cozy Fluffy Heavy Blanket, Ultra Fuzzy Throw Blanket with Soft Plush Flannel Top, 48 x 72 inches, Grey on Both Sides",
+    "normalized_price": 59.14,
+    "buy_url": "https://www.amazon.com/dp/B087PJK8TZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Ng16ep33L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7Y83PW3",
+    "name": "Sherpa Fleece Adult Weighted Blanket Great for Sleep, 15 lbs Dual Sided Soft Fuzzy Heavy Blankets for Couch Bed Sofa, Cozy Warm Arched Jacquard Throw for Winter (Cream White, 48\" x 72\", 15 Pounds)",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0F7Y83PW3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71pD2O2cZFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DD3R14ZJ",
+    "name": "Super Fuzzy Soft Fleece Sherpa Weighted Blanket 20 lbs for Adults, 3D Imitation Turtle Shell Luxury Weighted Throw for Better Sleep, Dual Sided Cozy Heavy Blankets for Couch Bed, Grey, 60\" x 80\"",
+    "normalized_price": 62.99,
+    "buy_url": "https://www.amazon.com/dp/B0DD3R14ZJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81pBZdd4tKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVFJWPWC",
+    "name": "Smart Queen Weighted Blanket for Adults (15 lbs, 48\u201d x 72\u201d, Twin Size) Breathable Heavy Throw Blanket for 120-160 lbs, Soft Thick Blankets with Cooling Glass Beads, All Season, Machine Washable, Grey",
+    "normalized_price": 21.98,
+    "buy_url": "https://www.amazon.com/dp/B0GVFJWPWC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61WbaA-GdpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BPH9P5JQ",
+    "name": "CuteKing Weighted Blanket (7lbs, 40\"x 60\", Grey) Heavy Blanket for 60-80lbs, Weighted Blanket for Cooling & Heating with Premium Glass Beads, Thick Blanket All-Season",
+    "normalized_price": 21.99,
+    "buy_url": "https://www.amazon.com/dp/B0BPH9P5JQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71HaGB7nwSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B074BX8YMW",
+    "name": "Weighted Idea Weighted Blanket for Adults (Dark Grey,48\"x72\",15lbs) Cooling Breathable Heavy Blanket with Premium Glass Beads All-Season Soft Thick Blanket",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B074BX8YMW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71BzcOVreZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJ51JPVV",
+    "name": "Kaisa Weighted Lap Blanket 7 lbs 41\" x 53\", Cozy Luxury Crystal Velvet Small Weighted Blanket for Adults, Portable Travel Weighted Blanket for Relaxation, All-Season Blanket, Machine Washable, Green",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJ51JPVV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81a7DwEAdML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C6KPBVKG",
+    "name": "Wemore Weighted Lap Blanket 7lbs for Adults, Small Weighted Blanket Throw for Travel, Soft Weighted Lap Pad for Relaxation, Calming, Napping and Sleeping, Machine Washable, Light Grey 29\" x 24\"",
+    "normalized_price": 25.99,
+    "buy_url": "https://www.amazon.com/dp/B0C6KPBVKG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/716rtGvxySL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B7JTHWL3",
+    "name": "Cottonblue Weighted Lap Blanket 7lbs, Cozy Luxury Crystal Velvet Weighted Blanket for Adults, Small Weighted Blanket for Relaxation, Sleeping, Travel, Grey, 29\" x 24\"",
+    "normalized_price": 26.98,
+    "buy_url": "https://www.amazon.com/dp/B0B7JTHWL3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71K6pEMFOYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08DCTNCBQ",
+    "name": "Cottonblue Weighted Blanket Queen Size 15lbs, Sherpa Weighted Blankets for Adults, Fuzzy Soft Flannel Bedding Blanket Throw, Cozy Plush Blanket for Sofa Bed, 60 x 80 inches, Blush Pink",
+    "normalized_price": 56.78,
+    "buy_url": "https://www.amazon.com/dp/B08DCTNCBQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71LY+JRdfRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJ78XSNH",
+    "name": "Weighted Lap Blanket 7 lbs for Adults, Luxury Soft Small Weighted Blanket, Compact Portable Weighted Lap Pad for Relaxation, Sleeping, Travel, All-Season Use, Forest Green, 40\" x 52\"",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0DJ78XSNH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71DZqadv5gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08SR1H5TM",
+    "name": "Huloo Sleep Weighted Blanket Twin 15lbs for Adult(48\"\u00d778\",Gray) Breathable Soft Minky Weighted Throw Blanket for All Season,Heavy Blanket with Premium Glass Beads",
+    "normalized_price": 43.69,
+    "buy_url": "https://www.amazon.com/dp/B08SR1H5TM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51KFvyF3JhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDKWT87L",
+    "name": "Mr. Sandman Weighted Blankets for Adults Queen Size 15lbs, Warm Sherpa Fleece Throw Blanket for Sleep and Calm, Soft Cozy Heavy Bed Blanket with Jacquard Flannel, 60 x 80 Inches, Cream White",
+    "normalized_price": 45.89,
+    "buy_url": "https://www.amazon.com/dp/B0FDKWT87L",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/719WzR8CioL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B092LZLLGF",
+    "name": "yescool Weighted Blanket for Adults (20 lbs, 60\u201d x 80\u201d, Grey) Cooling Heavy Blanket for Sleeping Perfect for 190-210 lbs, Queen Size Breathable Blanket with Premium Glass Bead, Machine Washable",
+    "normalized_price": 43.99,
+    "buy_url": "https://www.amazon.com/dp/B092LZLLGF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61heqwhPQyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C3CRP7ZX",
+    "name": "yescool Weighted Blanket 5 Pounds Cooling Weighted Lap Blanket, Grey Heavy Blanket for Sleeping, Weighted Throw Blanket Gifts for 40-60lbs, 36\"x48\"",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B0C3CRP7ZX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71FzhqQiOKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08BL8BJ11",
+    "name": "Wemore Shaggy Long Fur Faux Fur Weighted Blanket, Cozy and Fluffy Plush Sherpa Long Hair Blanket for Adult 15lbs, Fluffy Fuzzy Sherpa Reverse Heavy Blankets for Bed, Couch, Cream White, 48 x 72 Inches",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B08BL8BJ11",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71WKtmrsyDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9KK2FC2",
+    "name": "Kivik Breathable Weighted Blanket for Adults, 15 lbs Ultra Soft Minky Dot Heavy Blankets, Reversible Cooling and Warm Blanket for All Seasons, Machine Washable, 60\"x80\" Queen Size, Grey",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0D9KK2FC2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71WcsKG0GPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZRTH5WD",
+    "name": "Drewin Weighted Blanket 15lbs Queen Size, Soft and Thick Jacquard Sherpa Throw Blanket for Calm and Relax, Dual Sided Ultra Cozy Fluffy Heavy Blankets with Ceramic Beads, 60 x 80 inches, Cream White",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZRTH5WD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61CZYWyiKUL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

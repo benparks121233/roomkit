@@ -1,0 +1,42 @@
+[
+  {
+    "product_id": "SCN-001",
+    "name": "Viluxy Modern Wall Sconce – Plug-In or Hardwire, Gold Brass with White Globe",
+    "normalized_price": 29.99,
+    "buy_url": "https://www.amazon.com/dp/B08SCN001A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/viluxy-sconce-gold.jpg"
+  },
+  {
+    "product_id": "SCN-002",
+    "name": "STGLIGHTING Industrial Wall Sconce – Plug-In, Matte Black with Glass Shade",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B08SCN002A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/stglighting-sconce-black.jpg"
+  },
+  {
+    "product_id": "SCN-003",
+    "name": "Henn&Hart Swing Arm Wall Sconce – Brass, Adjustable, Plug-In",
+    "normalized_price": 44.99,
+    "buy_url": "https://www.amazon.com/dp/B08SCN003A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/hennhart-sconce-brass.jpg"
+  },
+  {
+    "product_id": "SCN-004",
+    "name": "Nathan James Juno Wall Sconce – Wood and Fabric Shade, Warm White",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B08SCN004A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/nathan-sconce-wood.jpg"
+  },
+  {
+    "product_id": "SCN-005",
+    "name": "Kira Home Cambridge Swing Arm Wall Sconce – Brushed Nickel, Plug-In",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B08SCN005A",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/kira-sconce-nickel.jpg"
+  }
+]

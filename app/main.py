@@ -13,6 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 
 from app.api.routes import router  # noqa: E402
+from app.api.admin import router as admin_router  # noqa: E402
 
 app = FastAPI(title="RoomKit", version="0.1.0")
 
@@ -26,6 +27,7 @@ app.add_middleware(
 )
 
 app.include_router(router)
+app.include_router(admin_router)
 
 # Serve rendered room images as static files.
 _renders_dir = Path(__file__).parent.parent / "data" / "renders"
