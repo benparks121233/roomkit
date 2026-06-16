@@ -90,6 +90,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             slot_plan,
             slots_results=[],
             gate_error=gate_error,
+            user_budget=req.budget,
         )
 
     # 5. Sourcing + selection — parallel LLM calls for non-owned slots.
@@ -127,6 +128,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             spec_hints,
             interests=room_request.interests or None,
         )
+        logger.info("Sourced %s: %d candidates (budget $%.2f)", slot.slot_id, len(candidates), slot.allocated_budget)
 
         # Mirror type filter: if user selected a mirror type (e.g. "round",
         # "full_length"), prefer candidates whose name matches that type.
@@ -223,6 +225,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
         style_profile,
         slot_plan,
         slots_results=slot_results,
+        user_budget=req.budget,
     )
     _designs[response.run_id] = response
 
@@ -560,6 +563,7 @@ def _build_response(
     *,
     slots_results: list[SlotResult],
     gate_error: str | None = None,
+    user_budget: float = 1500.0,
 ) -> DesignResponse:
     """Assemble a DesignResponse from pipeline outputs."""
     total_spent = sum(
@@ -579,6 +583,7 @@ def _build_response(
             fallback=style_profile.fallback,  # type: ignore[attr-defined]
         ),
         target_budget=slot_plan.target_budget,  # type: ignore[attr-defined]
+        user_budget=user_budget,
         total_spent=total_spent,
         is_feasible=slot_plan.is_feasible if not gate_error else False,  # type: ignore[attr-defined]
         slots=slots_results,

@@ -110,10 +110,10 @@ room_presets:
       lighting:
         budget_weight: 0.10
         items:
-          ceiling_light: { required: true,  sub_weight: 0.35 }
+          ceiling_light: { required: true,  sub_weight: 0.20 }
           table_lamp:    { required: false, sub_weight: 0.30 }
-          floor_lamp:    { required: false, sub_weight: 0.20 }
-          sconce:        { required: false, sub_weight: 0.15 }
+          floor_lamp:    { required: false, sub_weight: 0.25 }
+          sconce:        { required: false, sub_weight: 0.25 }
       decor:
         budget_weight: 0.10
         items:

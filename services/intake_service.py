@@ -109,6 +109,9 @@ def parse_intake(raw_input: dict) -> RoomRequest:
     # --- Mirror type preference ------------------------------------------------
     mirror_type: str | None = raw_input.get("mirror_type") or None
 
+    # --- Over-budget option ---------------------------------------------------
+    allow_over_budget: bool = bool(raw_input.get("allow_over_budget", False))
+
     # --- Merge survey-driven excluded_slots into already_have ---------------
     # The frontend computes which slots to exclude from survey answers (e.g.
     # user picks "comforter" → exclude duvet_insert, duvet_cover).
@@ -134,5 +137,6 @@ def parse_intake(raw_input: dict) -> RoomRequest:
         already_have=already_have,
         must_have=must_have,
         mirror_type=mirror_type,
+        allow_over_budget=allow_over_budget,
         created_at=datetime.now(tz=timezone.utc),
     )

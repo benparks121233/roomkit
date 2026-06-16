@@ -21,6 +21,7 @@ class DesignRequest(BaseModel):
     wants: list[str] = []
     excluded_slots: list[str] = []
     mirror_type: str | None = None  # "full_length", "round", "wall", "arched", or None
+    allow_over_budget: bool = False  # If True, allow up to 130% of stated budget
 
 
 class ProductResult(BaseModel):
@@ -59,6 +60,7 @@ class DesignResponse(BaseModel):
     room_type: str
     style: StyleResult
     target_budget: float
+    user_budget: float  # The user's stated budget (before any over-budget multiplier)
     total_spent: float
     is_feasible: bool
     slots: list[SlotResult]

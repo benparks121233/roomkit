@@ -41,6 +41,7 @@ export interface IntakeResult {
   wants: string[];
   excludedSlots: string[];
   mirrorType: string | null;
+  allowOverBudget: boolean;
   quiz: QuizOutput;
   summary: string;
 }
@@ -701,6 +702,9 @@ export default function StyleQuiz({ onComplete }: Props) {
   const [shape, setShape] = useState("");
   const [density, setDensity] = useState("");
 
+  // Budget options
+  const [allowOverBudget, setAllowOverBudget] = useState(false);
+
   // Preference state (slot-gating survey) — all start unselected.
   const [beddingType, setBeddingType] = useState("");
   const [lightingTypes, setLightingTypes] = useState<string[]>([]);
@@ -934,6 +938,7 @@ export default function StyleQuiz({ onComplete }: Props) {
         wants,
         excludedSlots: excluded,
         mirrorType: mirrorPref && mirrorPref !== "none" ? mirrorPref : null,
+        allowOverBudget,
         quiz: {
           style: { core, mood, palette, materials, shape, density, description },
           interests: interestOutput,
@@ -1008,6 +1013,31 @@ export default function StyleQuiz({ onComplete }: Props) {
             <span>$0</span>
             <span>$5,000</span>
           </div>
+
+          {/* Over-budget toggle */}
+          <label className="over-budget-toggle" style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "1.25rem", cursor: "pointer", fontSize: "0.9rem" }}>
+            <input
+              type="checkbox"
+              checked={allowOverBudget}
+              onChange={(e) => setAllowOverBudget(e.target.checked)}
+              style={{ width: "1.1rem", height: "1.1rem" }}
+            />
+            <span>
+              Allow up to 30% over budget for better options
+              {allowOverBudget && budget > 0 && (
+                <span style={{ opacity: 0.7 }}> (max ${Math.round(budget * 1.3).toLocaleString()})</span>
+              )}
+            </span>
+          </label>
+
+          {/* Full-room minimum budget warning */}
+          {fullRoom && budget > 0 && budget < 1000 && (
+            <div style={{ marginTop: "1rem", padding: "0.75rem 1rem", background: "rgba(255, 170, 0, 0.1)", border: "1px solid rgba(255, 170, 0, 0.3)", borderRadius: "0.5rem", fontSize: "0.88rem", lineHeight: 1.5 }}>
+              <strong>A full room needs at least $1,000 for good coverage.</strong>
+              {" "}At ${budget.toLocaleString()}, some categories will have limited options.
+              We recommend choosing specific pieces instead for budgets under $1,000.
+            </div>
+          )}
         </div>
       );
     }

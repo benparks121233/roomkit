@@ -161,6 +161,42 @@ _CHEUGY_PATTERNS = [
     r"\bdo\s+not\s+disturb.*gam(e|ing)\b",
     r"\bkill\s+streak\b.*\b(sign|poster)\b",
     r"\bRGB\s+(rug|carpet)\b",
+    # Generic sports merch — ball art, boys room sports, sports canvas sets
+    r"\bsports\s+(canvas|poster|wall\s*art|print|decor|theme)\b",
+    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bsports\b",
+    r"\bbasketball\s+(canvas|poster|wall\s*art|print|decor)\b",
+    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bbasketball\b",
+    r"\bfootball\s+(canvas|poster|wall\s*art|print|decor)\b",
+    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bfootball\b",
+    r"\bbaseball\s+(canvas|poster|wall\s*art|print|decor)\b",
+    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bbaseball\b",
+    r"\bsoccer\s+(canvas|poster|wall\s*art|print|decor)\b",
+    r"\bboys\s+room\b.*\b(sports|ball|football|basketball|baseball)\b",
+    r"\b(sports|ball|football|basketball|baseball)\b.*\bboys\s+room\b",
+    r"\bgraffiti\s+sport",
+    r"\bsports\s+ball",
+    r"\bball\s+(theme|themed)\b",
+    r"\blocker\s+room\b",
+    r"\bjersey\s+(poster|canvas|wall|print)\b",
+    r"\b(slam\s+dunk|touchdown|home\s+run)\b",
+    r"\bgame\s+day\b.*\b(sign|poster|canvas|decor)\b",
+    r"\bsports\s+christian\b",
+    r"\bsports\s+inspirational\b",
+    r"\bstadium\s+(blueprint|poster|canvas|print|wall)\b",
+    # Generic movie/anime merch — cheap licensed posters
+    r"\bmovie\s+poster\b",
+    r"\bfilm\s+poster\b",
+    # Remaining sports merch catchall
+    r"\bbasketball\s+poster",
+    r"\bbasketball\s+room\s+decor\b",
+    r"\bbaseball\s+(vintage|retro|patent|nursery|bats)\b",
+    r"\bfootball\s+poster",
+    r"\bsoccer\s+poster",
+    r"\bsport\s+superstar\b",
+    r"\bsports\s+car\s+poster\b",
+    r"\bnba\s+(poster|room|decor)\b",
+    r"\bnfl\s+(poster|room|decor)\b",
+    r"\bmlb\s+(poster|room|decor)\b",
 ]
 _CHEUGY_RE = re.compile("|".join(_CHEUGY_PATTERNS), re.IGNORECASE)
 
@@ -209,9 +245,16 @@ _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
     "desk": [
         "standing desk converter", "desk organizer", "desk pad", "desk mat",
         "desk lamp", "desk light", "task light", "reading light", "clip light",
-        "clip on light", "book light", "led light",
+        "clip on light", "book light",
         "desk shelf", "monitor stand", "laptop stand",
         "keyboard tray", "cable management",
+        # Contamination: non-desk furniture
+        "console table", "entryway table", "sofa table",
+        "nightstand", "night stand", "bedside table", "end table",
+        "sideboard", "buffet cabinet", "coffee bar",
+        "vanity desk", "vanity table", "makeup vanity", "dressing table",
+        # Contamination: table lamps that aren't desks
+        "table lamp", "bedside lamp", "rattan lamp", "wicker lamp",
     ],
     "desk_chair": [
         "chair cushion", "chair pad", "chair cover", "chair mat",

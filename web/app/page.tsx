@@ -118,6 +118,7 @@ export default function IntakePage() {
       wants: pendingResult.wants,
       excluded_slots: pendingResult.excludedSlots,
       mirror_type: pendingResult.mirrorType,
+      allow_over_budget: pendingResult.allowOverBudget,
     };
 
     try {

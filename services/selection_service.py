@@ -194,6 +194,7 @@ def select_products(
 
     # Empty candidate list.
     if not candidates:
+        logger.warning("Slot %s: 0 candidates from sourcing", slot.slot_id)
         return [], [], "no_candidate"
 
     # Double-check: filter candidates by slot's required specs and price band.
@@ -204,6 +205,11 @@ def select_products(
     within_budget = [c for c in spec_valid if c.normalized_price <= slot.allocated_budget]
     stretch_pool = [c for c in spec_valid
                     if slot.allocated_budget < c.normalized_price <= slot.allocated_budget * 1.5]
+    logger.info(
+        "Slot %s: %d raw candidates → %d spec_valid → %d within_budget ($%.2f) → %d stretch",
+        slot.slot_id, len(candidates), len(spec_valid), len(within_budget),
+        slot.allocated_budget, len(stretch_pool),
+    )
     if not within_budget:
         if not spec_valid:
             return [], [], "no_spec_match"

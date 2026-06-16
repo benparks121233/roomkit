@@ -74,7 +74,7 @@ def extract_specs(slot_id: str, title: str, bullets: list[str]) -> dict[str, str
     specs: dict[str, str] = {}
 
     # Bed-size extraction (bed_frame, mattress, sheets, comforter, bedding).
-    if slot_id in ("bed_frame", "mattress", "sheets", "comforter", "bedding"):
+    if slot_id in ("bed_frame", "mattress", "sheets", "comforter", "bedding", "duvet_insert", "duvet_cover"):
         match = _BED_SIZE_RE.search(text)
         if match:
             raw = match.group(1).lower().strip()

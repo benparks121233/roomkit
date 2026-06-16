@@ -21,6 +21,7 @@ export interface DesignRequest {
   wants?: string[];
   excluded_slots?: string[];
   mirror_type?: string | null;
+  allow_over_budget?: boolean;
 }
 
 export interface ProductResult {
@@ -55,6 +56,7 @@ export interface DesignResponse {
   room_type: string;
   style: StyleResult;
   target_budget: number;
+  user_budget: number;  // User's stated budget (before over-budget multiplier)
   total_spent: number;
   is_feasible: boolean;
   slots: SlotResult[];

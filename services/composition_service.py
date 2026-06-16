@@ -447,7 +447,14 @@ def plan_composition(
     budget_policies = load_budget_policies()
 
     room_preset = room_request.room_type or "bedroom"
-    target_budget = room_request.budget or 1000.0
+    base_budget = room_request.budget or 1000.0
+    # Over-budget option: 130% of stated budget, never-exceed holds at 130%.
+    _OVER_BUDGET_MULTIPLIER = 1.3
+    target_budget = (
+        base_budget * _OVER_BUDGET_MULTIPLIER
+        if getattr(room_request, "allow_over_budget", False)
+        else base_budget
+    )
     run_id = room_request.run_id
 
     system_prompt, user_message = _build_composition_prompts(

@@ -4,7 +4,9 @@
     "name": "Utopia Bedding Duvet Cover Queen Size - 3 Piece with Zipper Closure - 1 Comforter Cover 90X90 Inches & 2 Pillow Shams 20X26 Inches (White) Comforter Not Included",
     "normalized_price": 19.39,
     "buy_url": "https://www.amazon.com/dp/B00NWPUKMS",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/814QNNcuAeL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -13,7 +15,9 @@
     "name": "DEITAS 100% Cotton Duvet Covers - 1200 Thread Count, Luxury Egyptian Cotton Comforter Cover, Hotel Bedding Duvet Covers 3 Piece (Queen,White)",
     "normalized_price": 109.99,
     "buy_url": "https://www.amazon.com/dp/B0GDFQQZ9C",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71WtYfDcrSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -22,7 +26,9 @@
     "name": "Bare Home Bedding Duvet Cover Queen Size - Premium 1800 Super Soft Duvet Covers Collection - Lightweight, Cooling Duvet Cover - Soft Breathable Bedding (Queen, Grey)",
     "normalized_price": 36.99,
     "buy_url": "https://www.amazon.com/dp/B01N0QXJ9O",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/812jd3Gl+WL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -31,7 +37,9 @@
     "name": "JSELF 100% Viscose Derived from Bamboo Duvet Cover Set - Hotel Luxury Cooling Bed Sheets for Hot Sleepers & Night Sweats with Two Pillow Shams, Soft & Breathable, No Insert, Oeko-TEX (Queen)",
     "normalized_price": 159.99,
     "buy_url": "https://www.amazon.com/dp/B0GZW162JP",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/7152hzinjiL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -40,7 +48,9 @@
     "name": "Bedsure Duvet Cover Queen Size - 3 Pieces Prewashed Extra Soft Bedding Set, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure & 2 Pillow Shams, Linen, Comforter Not Included",
     "normalized_price": 27.99,
     "buy_url": "https://www.amazon.com/dp/B09YM372LR",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81+ka8pM5eL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -49,7 +59,9 @@
     "name": "Bedsure Olive Green Duvet Cover Queen Size - 3 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure & 2 Pillow Shams, No Comforter",
     "normalized_price": 27.99,
     "buy_url": "https://www.amazon.com/dp/B089S5J7ZB",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81i3IGYiQSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -58,7 +70,9 @@
     "name": "Bedsure White Duvet Cover Queen Size - 3 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure & 2 Pillow Shams, Comforter Not Included",
     "normalized_price": 26.99,
     "buy_url": "https://www.amazon.com/dp/B07PCQKTCN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81IOPcVQNLL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -67,7 +81,9 @@
     "name": "PURE ERA Jersey Knit Duvet Cover Set 100% T-Shirt Cotton Super Soft Comfy 3pc Bedding Set with Zipper Closure (Heather Charcoal Grey, Queen)",
     "normalized_price": 64.99,
     "buy_url": "https://www.amazon.com/dp/B07MQ8GQ11",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81oG0hB7mJL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -76,7 +92,9 @@
     "name": "Bella Coterie Luxury Bamboo Viscose Queen Size Duvet Cover Set | 100% Organically Grown | Corner Ties | Ultra Soft | Cooling | Two Pillow Shams | 106 x 94 | No Insert [Dune]",
     "normalized_price": 119.99,
     "buy_url": "https://www.amazon.com/dp/B0CM9WXYYX",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/7141P0JbTqL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -85,7 +103,9 @@
     "name": "Brooklinen Luxury Sateen Duvet Cover - 100% Cotton, Full/Queen Size in Slate Grey with Extra-Long Corner Ties and Button Closure - Best Full/Queen Duvet Covers",
     "normalized_price": 179.0,
     "buy_url": "https://www.amazon.com/dp/B0DD1QZYSS",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71Erzk-JDuL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -94,7 +114,9 @@
     "name": "Brooklinen Luxury Percale Duvet Cover \u2013 100% Cotton, Cool, Crisp, Extra-Long Corner Ties, Button Closure, Soft & Breathable \u2013 Machine Washable, Duvet Cover Full/Queen Bed Sizes (White)",
     "normalized_price": 169.0,
     "buy_url": "https://www.amazon.com/dp/B0BTQLLX95",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71zd8MkdaDL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -103,7 +125,9 @@
     "name": "MUXHOMO Duvet Cover Queen Size, Reversible Floral Green Duvet Cover Set with Zipper Closure, 3 Pieces Botanical Patterns Soft Microfiber Bedding Set with 4 Ties (90\"x90\", 2 Pillow Cases)",
     "normalized_price": 19.86,
     "buy_url": "https://www.amazon.com/dp/B0CL9X4CTT",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81dyXoeCJcL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -112,7 +136,9 @@
     "name": "Utopia Bedding Duvet Cover Set with Pillowcases - 3 Pieces Bedding Duvet Cover with Zipper Closure - 1 Duvet Cover with 2 Pillowcases - Soft Brushed Microfiber (Queen, White)",
     "normalized_price": 15.99,
     "buy_url": "https://www.amazon.com/dp/B0DWK4ZSGK",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/812qp2yoe-L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -121,7 +147,9 @@
     "name": "Bedsure White Duvet Cover Queen Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 3 Pieces, Includes 1 Duvet Cover (90\"x90\") & 2 Pillow Shams, NO Comforter",
     "normalized_price": 26.99,
     "buy_url": "https://www.amazon.com/dp/B08CXJCX3H",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/8167xAJl5-L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -130,7 +158,9 @@
     "name": "BESTOUCH Duvet Cover Set 100% Washed Cotton Linen Feel Super Soft Comfortable Chic Lightweight 3 PCs Home Bedding Set Cornflower Blue Queen",
     "normalized_price": 69.99,
     "buy_url": "https://www.amazon.com/dp/B096VJGR9P",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/815YXaoy1oL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -148,7 +178,9 @@
     "name": "HYMOKEGE Dark Grey Duvet Cover Queen Size, Ultra Soft 3-Piece Seersucker Duvet Cover Set with Zipper Closure, Soft Brushed Microfiber Bedding Set with 8 Corner Ties (90\"x90\", 2 Pillowshams)",
     "normalized_price": 21.98,
     "buy_url": "https://www.amazon.com/dp/B0BZ767YVF",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81zxQ0An6rL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -157,7 +189,9 @@
     "name": "PHF Waffle Weave Duvet Cover Set Queen Size, No Snagging Ultra Soft Luxury Textured Breathable Comforter Cover for All Season 3pcs, Durable Bedding Duvet Set with 2 Pillow Shams, 90\"x90\", Linen",
     "normalized_price": 42.29,
     "buy_url": "https://www.amazon.com/dp/B0CM5SSX98",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81UU9VRmU7L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -166,7 +200,9 @@
     "name": "Bella Coterie Luxury Bamboo Viscose Queen Size Duvet Cover Set | 100% Organically Grown | Corner Ties | Ultra Soft | Cooling | Two Pillow Shams | 106 x 94 | No Insert [Sea Glass]",
     "normalized_price": 119.99,
     "buy_url": "https://www.amazon.com/dp/B0CM9VJF4J",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/710EgWSpz8L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -175,7 +211,9 @@
     "name": "MooMee Bedding Duvet Cover Set 100% Washed Cotton Linen Like Textured Breathable Durable Soft Comfy (Heathered Tannish Linen Grey, Queen 90\"x90\")",
     "normalized_price": 69.99,
     "buy_url": "https://www.amazon.com/dp/B07QK9CTXR",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91UeJli0YwL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -184,7 +222,9 @@
     "name": "Utopia Bedding Queen Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Queen Size 88 x 88 inches",
     "normalized_price": 24.21,
     "buy_url": "https://www.amazon.com/dp/B00S1TC442",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/813dSy5zzWL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -193,7 +233,9 @@
     "name": "Bedsure Cotton Duvet Cover Queen - 100% Cotton Waffle Weave Khaki Duvet Cover Queen Size, PureWoven Breathable Tan Bedding Set for All Season, 3 Pieces, 90\"x90\"",
     "normalized_price": 84.99,
     "buy_url": "https://www.amazon.com/dp/B08CXCMWXL",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91pIYXKCtQL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -202,7 +244,9 @@
     "name": "California Design Den Duvet Cover Queen Size/Full Size -Winner Good Housekeeping Best Bedding Awards 2025, 400 Thread Count Sateen, 100% Cotton Bedding Duvet Covers,Button Closure & Corner Ties -White",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B089DF5522",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81qMhSMnQKL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -211,7 +255,9 @@
     "name": "Bedsure Duvet Cover Queen Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 3 Pieces, Includes 1 Duvet Cover (90\"x90\") & 2 Pillow Shams, NO Comforter, Linen",
     "normalized_price": 25.99,
     "buy_url": "https://www.amazon.com/dp/B0B8J8TNP4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81QZeWVjcKL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -220,7 +266,9 @@
     "name": "BOLL & BRANCH Signature Hemmed Duvet Set - Full/Queen, Stone - Luxury 100% Organic Cotton - 1 Duvet Cover, 2 Shams - Buttery Soft, Hidden Closures",
     "normalized_price": 349.0,
     "buy_url": "https://www.amazon.com/dp/B0BJFLQCV9",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61bEZa64ZBL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -229,7 +277,9 @@
     "name": "Oli Anderson Beige Duvet Cover Queen Size - Pleated Queen Duvet Cover, 3PCS Soft and Breathable Textured Bedding Set with Zipper Closure(Beige,90\"x90\")",
     "normalized_price": 28.25,
     "buy_url": "https://www.amazon.com/dp/B0B1CTYC4L",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91t76QHAz3L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -238,7 +288,9 @@
     "name": "Bedsure Cotton Duvet Cover Queen - 100% Cotton Waffle Weave Charcoal Duvet Cover Queen Size, PureWoven Breathable Bedding Set for All Season, 3 Pieces, 90\"x90\"",
     "normalized_price": 86.99,
     "buy_url": "https://www.amazon.com/dp/B0B87VHSCF",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91+i7GwHoRL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -247,7 +299,9 @@
     "name": "Bedsure Duvet Cover Queen Size - Gingham Reversible Buffalo Plaid Duvet Cover Set with Zipper Closure, 3 Pieces Blue Bedding Set with 8 Corner Ties and 2 Pillow Shams 20\"x26\"",
     "normalized_price": 28.99,
     "buy_url": "https://www.amazon.com/dp/B09Z2LBYLN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91eyefcrHHL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -256,7 +310,9 @@
     "name": "Bedsure 100% Washed Cotton Duvet Cover Queen Size - Oatmeal Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons (Oatmeal, Queen, 90\"x90\")",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0C1CQ52K5",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/818ffNaNKyL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -265,7 +321,9 @@
     "name": "HYMOKEGE Queen Comforter Set Seersucker 7 Pieces, All Season Luxury Bed in a Bag for Bedroom, Bedding Set with Comforters, Sheets, Pillowcases & Shams, Dark Grey",
     "normalized_price": 31.97,
     "buy_url": "https://www.amazon.com/dp/B0BNJDPSF7",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81VVMnTq4aL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -274,7 +332,9 @@
     "name": "mixinni Retro Striped Duvet Cover Set Queen - 100% Natural Cotton 3-Piece Vintage Red Stripes Pattern Printed Bedding Set, Soft Breathable Comforter Cover with Zipper Closure & Corner Ties, Queen Size",
     "normalized_price": 58.09,
     "buy_url": "https://www.amazon.com/dp/B0DYNW3MG5",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81ICIFniCbL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -283,7 +343,9 @@
     "name": "Utopia Bedding Duvet Cover Queen Size - 3 Piece with Zipper Closure - 1 Comforter Cover 90X90 Inches & 2 Pillow Shams 20X26 Inches (Black) Comforter Not Included",
     "normalized_price": 18.99,
     "buy_url": "https://www.amazon.com/dp/B0854JMK3W",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81dZCM0CgtL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -292,7 +354,9 @@
     "name": "Duvet Cover Queen Size Set - Extra Soft Queen Duvet Cover 90\" x 90\" with 2 Pillow Shams for Women, Men, Kids & Teens - Hotel Luxury, Easy-Care w/Zipper Closures & Ties - Comfy and Breathable (White)",
     "normalized_price": 24.99,
     "buy_url": "https://www.amazon.com/dp/B0CV4JLMJ1",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81D8dUkkHbL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -301,7 +365,9 @@
     "name": "Bedsure Floral Duvet Cover Queen Size - 100% Cotton Reversible Flowers and Birds Pattern Duvet Cover Set, 3 Pieces Soft & Breathable PureWoven Bedding Set with 2 Pillow Shams (Green Garden, 90\"x90\")",
     "normalized_price": 84.99,
     "buy_url": "https://www.amazon.com/dp/B0FN7L9FPZ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81H9+WAnUvL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -310,7 +376,9 @@
     "name": "JELLYMONI Washed Cotton Duvet Cover Queen Size \u2013 Breathable & Cozy Bedding Set for Modern Homes, Dorms & Guest Rooms, Blue Striped Comforter Cover with Button Closure, 1 Duvet Cover & 2 Pillowcases",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B0878F2QBG",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91RRWsWptJL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -319,7 +387,9 @@
     "name": "ATLINIA 100% Flax Linen Duvet Cover Set - Stone Washed Pure French Linen Organic Fabric for Farmhouse Comforter Boho Bedding Included 1 Duvet Cover 2 Pillow Shams(Natural, Queen)",
     "normalized_price": 139.99,
     "buy_url": "https://www.amazon.com/dp/B0FCXSJ5BR",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91in1jDLOaL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -328,7 +398,9 @@
     "name": "SIJO Premium Stone Washed Organic French Linen Duvet Cover, GOTS Certified Organic, Small Batch Sourced from Normandy, Best Cooling Linen Sheet Award by Sleep Foundation (Classic, Full/Queen)",
     "normalized_price": 208.25,
     "buy_url": "https://www.amazon.com/dp/B08BNTKPSZ",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81Wzn+uiecL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -337,7 +409,9 @@
     "name": "EVERLY 100% Pure Linen Duvet Cover Set Queen Size 90X90Inch 3pcs (1 Duvet Cover,2 Pillowcases) Soft and Breathable for All Season with Coconut Button Closure, Suitable for Hot Sleepers-White-Queen",
     "normalized_price": 142.99,
     "buy_url": "https://www.amazon.com/dp/B08ZMHQG8Z",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91ZltzM-gHL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -346,7 +420,9 @@
     "name": "Bedsure 100% Washed Cotton Duvet Cover Queen Size - Olive Green Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons (Olive Green, Queen, 90\"x90\")",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0CG63F3JH",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/810L+l4zVEL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -355,7 +431,9 @@
     "name": "100% Pure French Flax Linen Blend Duvet Cover Set Queen Size, 3-Piece Breathable Bedding Set with Long Zipper Closure & Corner Ties, Soft, Lightweight & Durable Bedding Ideal for Hot Sleepers",
     "normalized_price": 119.0,
     "buy_url": "https://www.amazon.com/dp/B0GHS9ZGDJ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81HAjDhw+JL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -364,7 +442,9 @@
     "name": "EVERLY 100% Pure Linen Duvet Cover Set Queen Size90X90Inch 3pcs (1 Duvet Cover,2 Pillowcases) Soft and Breathable for All Season with Coconut Button Closure, Suitable for Hot Sleepers-Linen-Queen",
     "normalized_price": 145.99,
     "buy_url": "https://www.amazon.com/dp/B08ZMGFFHD",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91uC2JTk3OL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -373,7 +453,9 @@
     "name": "Simple&Opulence 100% Linen Duvet Cover Set 3pcs Basic Style Natural French Washed Flax Solid Color Soft Breathable Farmhouse Bedding with Button Closure - Linen, King",
     "normalized_price": 146.0,
     "buy_url": "https://www.amazon.com/dp/B01IMZLNBE",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81NUbEWbQXL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -382,7 +464,9 @@
     "name": "JIYUAN Queen Size Duvet Cover Set, 3-Piece - 100% Washed Cotton, Linen-Like Soft & Breathable with Zipper Closure, Includes 90x90 Inch Cover & 2 Pillowcases, Heathered Beige",
     "normalized_price": 69.99,
     "buy_url": "https://www.amazon.com/dp/B0CSVN516Z",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81bQzmAJW7L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -391,7 +475,9 @@
     "name": "BESTOUCH Duvet Cover Set 100% Washed Cotton Linen Feel Super Soft Comfortable Chic Lightweight 3 PCs Home Bedding Set Solid Light Grey Super King Plus",
     "normalized_price": 114.99,
     "buy_url": "https://www.amazon.com/dp/B0DPQ3WV47",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81TF5LfxJaL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -400,7 +486,9 @@
     "name": "Bailix Muslin Duvet Cover Set Queen Size, 100% Washed Cotton Gauze Duvet Cover for All Seasons, Linen Like, 3 PCS, 1 Fluffy Duvet Cover(90\"x90\") with 2 Pillow Shams(20\"x26\"), White",
     "normalized_price": 54.99,
     "buy_url": "https://www.amazon.com/dp/B0DSLFQM6R",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81gU9GHiyyL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -409,7 +497,9 @@
     "name": "Simple&Opulence 100% Linen Duvet Cover Set with Embroidery Border Washed - 3 Pieces (1 Duvet Cover with 2 Pillow Shams) with Button Closure Soft Breathable Farmhouse - Linen, Queen Size",
     "normalized_price": 135.99,
     "buy_url": "https://www.amazon.com/dp/B01L8FHTMW",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71+B-QgK4fL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -418,7 +508,9 @@
     "name": "LBRO2M 100% France Linen Duvet Cover Set 3 Pcs Including 1 Flax Comforter Cover with Zipper Closure, 2 Pillowcase, Cozy Duvet Cover Queen Size, Linen Color",
     "normalized_price": 112.24,
     "buy_url": "https://www.amazon.com/dp/B0FJVXSN32",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71MYnAojjqL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -427,7 +519,9 @@
     "name": "DAPU 100% Linen Duvet Cover Queen, Natural French Flax Breathable Duvet Cover 3 Pcs Set with Long Zipper Closure, Soft Lightweight Durable Linen Bedding for Hot Sleepers (Natural Linen, Queen)",
     "normalized_price": 118.99,
     "buy_url": "https://www.amazon.com/dp/B07FYJ5G9N",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71YS2zOnVTL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -436,7 +530,9 @@
     "name": "SONORO KATE 100% French Linen Duvet Cover Queen Size, Soft Breathable for Hot Sleepers, Moisture Wicking & Durable Cover Set - Zipper Closure & 4 Corner Ties Duvet Covers 3 Piece (Linen,Queen)",
     "normalized_price": 119.99,
     "buy_url": "https://www.amazon.com/dp/B0DRFMCH7T",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71Co67xLwEL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -445,7 +541,9 @@
     "name": "Bedsure Cotton Duvet Cover Queen - 100% Cotton Waffle Weave Linen Color Duvet Cover Queen Size, PureWoven Breathable Bedding Set for All Season, 3 Pieces, 90\"x90\"",
     "normalized_price": 84.99,
     "buy_url": "https://www.amazon.com/dp/B0BLYJM6JP",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91CcEvnf0dL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -454,7 +552,9 @@
     "name": "XZ XIFA Olive Green 100% Linen Queen Size Bedding Set, Cooling Duvet Cover with Natural Washed French Flax\uff0cSoft,Breathable,Textured,Fluffy Duvet Cover (1 Duvet Cover,2 Pillow Shams)",
     "normalized_price": 132.99,
     "buy_url": "https://www.amazon.com/dp/B0B51G7SYL",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81FK9Rsyt9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -463,7 +563,9 @@
     "name": "Bedsure 100% Washed Cotton Duvet Cover Queen Size - Natural White Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons (Natural White, Queen, 90\"x90\")",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0BP6DZ862",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91nVFvXzR6L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -472,7 +574,9 @@
     "name": "Simple&Opulence 100% Washed Linen Duvet Cover with Embroidered,3 Pieces Soft Farmhouse Comforter Set with Button Closure,1 Duvet Cover and 2 Pillowshams(Queen,Natural Linen)",
     "normalized_price": 133.99,
     "buy_url": "https://www.amazon.com/dp/B0126HEC9O",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/718sW2CiXoL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -481,7 +585,9 @@
     "name": "TOSMO 100% Linen Duvet Cover Set with Button Closure, 3 Pieces (1 Duvet Cover with 2 Pillowcases), Soft Breathable Durable Farmhouse Bedding - Queen, White",
     "normalized_price": 143.0,
     "buy_url": "https://www.amazon.com/dp/B0CHM4WTNQ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/7158xWG78SL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -490,7 +596,9 @@
     "name": "NEXHOME PRO Terracotta Burnt Orange Duvet Cover Set Queen Size Linen Textured Organic Natural 100% Washed Cotton Duvet Cover Caramel 3 Pieces Bedding Set with Zipper Closure Soft (No Comforter)",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0BBR5F4CQ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/715CIwPXWeL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -499,7 +607,9 @@
     "name": "Simple&Opulence 100% Linen Duvet Cover Set, 3 PCS Natural French Flax Ruffle Duvet Cover Queen Size, Breathable Comfy Linen Bedding Comforter Cover with 2 Pillowcases (Natural Linen, 88\" X 92\")",
     "normalized_price": 134.99,
     "buy_url": "https://www.amazon.com/dp/B089VKJ74Y",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71Kr5TPRplL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -508,7 +618,9 @@
     "name": "100% Pure Linen Duvet Cover Set Queen Size 3 Pcs Natural Linen Bedding Zipper Closure Breathable Soft Comforter Cover Sets, Cozy for All Season (Queen, Linen)",
     "normalized_price": 109.99,
     "buy_url": "https://www.amazon.com/dp/B0G7GHBKN4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71MxO3H7uKL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -517,7 +629,9 @@
     "name": "Bedsure Linen Duvet Cover Queen - Linen Cotton Blend Duvet Cover, PureWoven Cooling & Breathable Bedding Set for Hot Sleepers, Moisture Wicking & Durable Cover Set 3 Piece (Natural Color)",
     "normalized_price": 119.99,
     "buy_url": "https://www.amazon.com/dp/B07GFGPHRG",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91OvTUO41VL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -526,7 +640,9 @@
     "name": "Wake In Cloud - Cotton Duvet Cover Set, 100% Washed Cotton, Linen Like Textured, Breathable Durable Comfy Farmhouse Neutral Bedding Set, 3 Pieces, Denim Blue, Queen Size",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B07HMBWVYN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81qqtAefloL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -535,7 +651,9 @@
     "name": "Simple&Opulence French Linen Duvet Cover Set 88\" x 92\"- 3 Pieces (1 Comforter Cover,2 Pillowcases)- Natural Flax Cotton Blend-Solid Color Breathable Farmhouse Bedding-Rust, Queen",
     "normalized_price": 79.99,
     "buy_url": "https://www.amazon.com/dp/B094JF7TSK",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/714jnwvSm+L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -544,7 +662,9 @@
     "name": "FALUCA 100% Linen Duvet Cover - Organic Breathable Bedding Set for All Seasons, Soft Comfotable Duvet Cover Natural Flax Farmhouse Bedding (Dark Grey, Queen)",
     "normalized_price": 139.99,
     "buy_url": "https://www.amazon.com/dp/B0F9DVY814",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81evOIBBn8L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -553,7 +673,9 @@
     "name": "Simple&Opulence 100% Linen Duvet Cover Set 3pcs Basic Style Natural French Washed Flax Solid Color Soft Breathable Farmhouse Bedding with Button Closure - Linen, Queen",
     "normalized_price": 142.99,
     "buy_url": "https://www.amazon.com/dp/B01IMZLO5E",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81tuEjgLIpL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -562,7 +684,9 @@
     "name": "Simple&Opulence 100% Linen Duvet Cover Set, 3 PCS Natural French Flax White Duvet Cover Queen Size, Breathable Soft Comfy Linen Bedding Comforter Cover with 2 Pillowcases(White, 88\"x92\")",
     "normalized_price": 124.99,
     "buy_url": "https://www.amazon.com/dp/B015PC71HW",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71y7LOqxj4L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -571,7 +695,9 @@
     "name": "WDCOZY Beige Queen Size Jacquard Duvet Cover Set with Zipper Closure, Modern Washed Soft Striped Bedding, Textured Seersucker Like Cotton Linen, 1 Duvet Cover and 2 Pillow Shams, No Comforter",
     "normalized_price": 26.39,
     "buy_url": "https://www.amazon.com/dp/B0FPXCG98J",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91PFxUIllAL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -580,7 +706,9 @@
     "name": "Ivellow Velvet Duvet Cover King Set Dark Green Comforter Cover 3Pcs Ultra Soft Cover Breathable Solid Luxury Flannel Velour Duvet Cover Zipper Closure Corner Tie",
     "normalized_price": 47.82,
     "buy_url": "https://www.amazon.com/dp/B0DF7BMX23",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71EnWW5sioL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -589,7 +717,9 @@
     "name": "PHF Truly Velvet Duvet Cover Set Queen Size, 3pcs Ultra Soft Breathable Comforter Cover Set, Luxury Cozy Flannel Duvet Cover with Pillow Shams Bedding Collection, 90\" x 90\", Dark Grey",
     "normalized_price": 54.99,
     "buy_url": "https://www.amazon.com/dp/B07QG8XLFD",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81y6g0NrOrL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -598,7 +728,9 @@
     "name": "Sophia-Art 3 Pcs Ultra Luxury Rayon Velvet Bedding Boho Solid Duvet Cover UO Comforter Cover (Maroon, Queen 90\"x90\")",
     "normalized_price": 109.99,
     "buy_url": "https://www.amazon.com/dp/B08Y6WGZGP",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/713bHWKDn7L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -607,7 +739,9 @@
     "name": "TUMEI 3PCS Velvet Duvet Cover Queen, Comforter Duvet Cover Set Queen Size, Luxury Bedding Soft Fluffy Velvet Zipper Closure, Blush Pink (Queen,No Comforter)",
     "normalized_price": 35.14,
     "buy_url": "https://www.amazon.com/dp/B0DF92XYXL",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61yckx0i1uL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -616,7 +750,9 @@
     "name": "WARMDERN Black Velvet Duvet Cover Set Queen Size, Luxury Milk Velvet Bedding Duvet Cover with Zipper Closure, 3pcs Ultra Soft Duvet Covers for All Seasons, 90\" x 90\", Black",
     "normalized_price": 27.34,
     "buy_url": "https://www.amazon.com/dp/B0FJBRCT8M",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81RuBm696DL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -625,7 +761,9 @@
     "name": "Tribeca Living Velvet Duvet Cover Queen Oversized 3 Piece Set with 2 Shams, 260-GSM Luxury Plush Velvet Duvet Cover with Microfiber Reverse in Venice Gold Color",
     "normalized_price": 42.49,
     "buy_url": "https://www.amazon.com/dp/B088NM433Q",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81VqpbZf2XL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -634,7 +772,9 @@
     "name": "WARMDERN Peacock Blue Flannel Velvet Duvet Cover King Size Duvet Cover Bedding Sets, 3pcs Ultra Soft Luxury Textured Modern Crystal Velvet Duvet Covers with Zipper Closure(Peacock Blue, King)",
     "normalized_price": 59.49,
     "buy_url": "https://www.amazon.com/dp/B0D3GCTQY9",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71M5kCEGmwL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -643,7 +783,9 @@
     "name": "Tribeca Living Velvet Duvet Cover Queen Oversized 3 Piece Set with 2 Shams, 260-GSM Luxury Plush Velvet Duvet Cover with Microfiber Reverse in Venice Plum Color",
     "normalized_price": 53.99,
     "buy_url": "https://www.amazon.com/dp/B088NMFR6J",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91esq3ivRWL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -652,7 +794,9 @@
     "name": "GLORY SEASON Velvet Duvet Cover Set Retro Ruffle Flounces Trim Luxurious Solid Golden Camel Farmhouse Vintage Comforter Cover Bedding Sets, Matching Shams for Home Bedroom Decor,King 104\"x90\"",
     "normalized_price": 89.99,
     "buy_url": "https://www.amazon.com/dp/B0DBPWZS6D",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/713czrv+j+L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -670,7 +814,9 @@
     "name": "Velvet Duvet Cover, Luxury Ultra Soft Comforter Cover with 2 Pillowcases, Cozy Warmth, No Shedding, Zipper Closure, 3PC, Queen Size, Teal",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0CGX1RNFM",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71RFqkjktBL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -679,7 +825,9 @@
     "name": "Chanasya Premium Velour Velvet Duvet Cover Set - Duvet Cover (90\u201d x 90\u201d) & 2 Pillow Shams (20\u201d x 26\u201d) - 3-Piece Set - Mink, Queen Size",
     "normalized_price": 64.99,
     "buy_url": "https://www.amazon.com/dp/B098BQBTSG",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91w2Zad4HTS._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -688,7 +836,9 @@
     "name": "FLXXIE Velvet Duvet Cover Set, 3 Pieces Luxury Ultra Soft Zippered Flannel Comforter Cover Set, Camel, King",
     "normalized_price": 50.99,
     "buy_url": "https://www.amazon.com/dp/B08CRPWXV2",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81oedNlgKcL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -697,7 +847,9 @@
     "name": "The Harry Creations 3 Pcs Set Solid Pattern Velvet Bedding Ultra Donna Crushed Luxury Boho Duvet Cover (Crush- Gold, Queen 90\" x 90\")",
     "normalized_price": 150.99,
     "buy_url": "https://www.amazon.com/dp/B09BKZ6JM7",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/714BqdMN9CL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -715,7 +867,9 @@
     "name": "Velvet Duvet Cover Double/King Luxury Ultra Soft Comforter Cover with Zipper Closure Cozy Warmth 4 Pieces Bedding Set(Dark Pink,220x240245x265cm)",
     "normalized_price": 234.54,
     "buy_url": "https://www.amazon.com/dp/B0G4K4LJTK",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71rshpX9skL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -724,7 +878,9 @@
     "name": "XeGe Plush Shaggy Duvet Cover Luxury Ultra Soft Crystal Velvet Bedding 1PC(1 Faux Fur Duvet Cover),Zipper Closure (Queen, Black)",
     "normalized_price": 46.99,
     "buy_url": "https://www.amazon.com/dp/B083RDYWVB",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81OVEVb1wuL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -733,7 +889,9 @@
     "name": "PHF Super Soft Velvet Duvet Cover Queen Size, 3pcs Luxurious Warm Velour Fluffy Bedding Set with 8 Ties, Cozy Breathable Flannel Comforter Cover with Pillow Shams, Zipper Closure, 90\"x90\", Cream",
     "normalized_price": 27.5,
     "buy_url": "https://www.amazon.com/dp/B0D17YRJV7",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71TWHgrF4rL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -742,7 +900,9 @@
     "name": "JELLYMONI Khaki Velvet Duvet Cover Queen Size - 3 Piece Ultra Soft Plush Bedding Set, Luxury Fluffy Comforter Cover with Zipper Closure & 8 Corner Ties for Bedroom",
     "normalized_price": 28.49,
     "buy_url": "https://www.amazon.com/dp/B0DMN8YCLD",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81bWSKi+tIL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -751,7 +911,9 @@
     "name": "Super Soft Velvet Textured Duvet Cover Set Queen, 3 Pcs Floral Patterned Comforter Cover Set with Button Closure, Luxury Bedding Duvet Covers for All Seasons, 90 x 90 inches\uff08Olive Green, Queen Size\uff09",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0F1C2R35X",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81hCiUxT4uL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -760,7 +922,9 @@
     "name": "EverGrace Velvet Quilt Set King Size, Luxurious Soft Striped Channel Bedding Set, Lightweight Velvet Comforter for All Season, Oversized Bedspread Coverlet with 2 Matching Shams, Mocha Brown",
     "normalized_price": 87.39,
     "buy_url": "https://www.amazon.com/dp/B0D14L8P87",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81KzreT-2oL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -769,7 +933,9 @@
     "name": "RECYCO Luxury Velvet Quilt Set Full Queen Size Bedding Sets, Ultra Soft Velvet Comforter Set, Lightweight Channel Box Stitch Oversized Bedspread Coverlet for All Season, with 2 Shams, Beige",
     "normalized_price": 84.99,
     "buy_url": "https://www.amazon.com/dp/B0D14RCH3L",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71WIz28WT4L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -778,7 +944,9 @@
     "name": "YINFUNG Velvet Duvet Cover Burnt Orange Fall Terracotta Rust Gold King Pumpkin Crushed Velvet Duvet Cover Boho Luxury Textured Sparkle Glitter Bedding Set Autumn Winter Thick Quilt Cover",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0CF1RP8D7",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81IjbmFBmRL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -787,7 +955,9 @@
     "name": "Lush Decor x Chuks Collins Pleated Groove Velvet Duvet Cover 3 Piece Set King Green - Velvet Bedding Set - Duvet Cover King - Green Duvet - Luxury Bedding",
     "normalized_price": 169.99,
     "buy_url": "https://www.amazon.com/dp/B0F91YLYLN",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/818y6e+VT3L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -796,7 +966,9 @@
     "name": "Betsey Johnson - Full/Queen Duvet Cover Set, Velvet Bedding with Matching Shams, Chic Bedding Set, Ideal Bed Essentials (Velvet Solid Black, Full/Queen)",
     "normalized_price": 37.0,
     "buy_url": "https://www.amazon.com/dp/B0DC1VVJVC",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81PK3MTDFEL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -805,7 +977,9 @@
     "name": "Intelligent Design King Duvet Cover Set, Velvet King Duvet Set, Luxury Diamond Quilting Grey Duvet Cover, Fluffy Duvet Cover with Decorative Pillow and 2 Shams, 4 Pieces, Grey, King/Cal King",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B08HXBSPJJ",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81s6XSiRWwL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -814,7 +988,9 @@
     "name": "Velvet Plush Shaggy Duvet Cover Set,Luxury Ultra Soft Fluffy Duvet Cover Set,Winter Fuzzy Duvet Cover Set, (1 Faux Fur Duvet Cover +2 Faux Fur Pillow,King,Smoky Grey)",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0D9LKKSBN",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61+XmjmAKoL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -823,7 +999,9 @@
     "name": "CAROMIO Velvet Duvet Cover Bedding Set Queen Size, Luxury Ultra Soft Velvet Comforter Cover 3 Pieces (1 Duvet Cover + 2 Pillow Shams, Grey)",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B09H48JRDK",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71wB3hloVtL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -832,7 +1010,9 @@
     "name": "EverGrace Luxury Ruched Velvet Quilt Queen Size, Ultra Soft Bedspread Coverlet Set, Lightweight Velvet Comforter, Quilted Bedding Cover with 2 Matching Shams for All Season, Olive Green",
     "normalized_price": 66.49,
     "buy_url": "https://www.amazon.com/dp/B0CLY9ZB88",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81pP91Cv4lL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -841,7 +1021,9 @@
     "name": "SE SOFTEXLY Velvet Duvet Cover Queen Size, Ultra Soft Flannel Duvet Cover 3Pcs Solid Breathable Silky Velour Comforter Cover, Luxury Cozy Winter Duvet Cover Set with 2 Pillowcases, 90\" x 90\", Yellow",
     "normalized_price": 39.0,
     "buy_url": "https://www.amazon.com/dp/B0CJXX5JKL",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81+c74F5JYL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -850,7 +1032,9 @@
     "name": "HiEnd Accents Stella Faux Silk Velvet 3 Piece Duvet Cover Set with 2 Pillow Shams, King, Slate, Romantic Western Modern Traditional Style Luxury Bedding, 1 Comforter Cover and 2 Pillow Cases",
     "normalized_price": 379.0,
     "buy_url": "https://www.amazon.com/dp/B09W5YD7SY",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91ZrXgin1JL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -859,7 +1043,9 @@
     "name": "Fluffy Velvet Duvet Cover Set Light Grey Queen Size Fall Winter Soft Warm Flannel Comforter Cover Silver Gray 90\" x 90\" Luxury Cozy Plush Fleece Full Reversible Bedding Duvet Cover Set 3pcs",
     "normalized_price": 56.99,
     "buy_url": "https://www.amazon.com/dp/B0CLRQG92L",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81JVuUoB6uL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -868,7 +1054,9 @@
     "name": "Nayoroom Fluffy Faux Fur Duvet Cover Queen Size Velvet Flannel Olive Green Striped Reversible Comforter Cover Winter Warm 3 Pcs Luxury Soft Shaggy Plush Fuzzy Bedding Set with Zipper Closure",
     "normalized_price": 64.99,
     "buy_url": "https://www.amazon.com/dp/B0CJJJHLD3",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71f8IKycD5L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -877,7 +1065,9 @@
     "name": "Crushed Velvet Duvet Cover Set, Ultra Soft Bedding cover Set Luxurious Breathable Comforter Cover, 2 Pillow Covers, Zipper Closure & 4 Corner Ties, Color- Crushed Rust, Size -King 90\" x 104\"",
     "normalized_price": 137.0,
     "buy_url": "https://www.amazon.com/dp/B0F7LB9SGQ",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81sk-lDTnYL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -886,7 +1076,9 @@
     "name": "Gray Velvet Duvet Cover Queen Set - Ultra Soft Velvet Bedding Sets 3 Pieces (1 Duvet Cover + 2 Pillow Cases) Comforter Cover Set",
     "normalized_price": 19.99,
     "buy_url": "https://www.amazon.com/dp/B0CPFS6V8L",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71gTnhUuHAL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -895,7 +1087,9 @@
     "name": "NTBAY Velvet Queen Flannel Duvet Cover Set, 3 Pieces Zippered Comforter Cover Set, Charcoal Grey",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B07TRKGP8J",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91e27KqrPXL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -904,7 +1098,9 @@
     "name": "BEDELITE Velvet Quilt Set King Size, Luxury Velvet Comforter Bedding Set 3 Pieces, Lightweight Soft Cozy Taupe Oversized Bedspread Coverlet for All Season with 2 Pillow Shams",
     "normalized_price": 61.99,
     "buy_url": "https://www.amazon.com/dp/B0GHTP22XC",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81pJzIRcYiL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -913,7 +1109,9 @@
     "name": "Velvet Comforter Set Full 3 Piece (Comforter + 2 Pillowcases) Black 600 GSM",
     "normalized_price": 161.0,
     "buy_url": "https://www.amazon.com/dp/B0B135Q7ZF",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71TL6MTAJlL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -922,7 +1120,9 @@
     "name": "EverGrace Luxury Velvet Quilt Set Queen Size 3 Piece, Soft Cross-Stitch Velvet Comforter Set with Pillow Shams, Lightweight Coverlet Bedspread Bedding Set for All Seasons, Tobacco Brown",
     "normalized_price": 75.99,
     "buy_url": "https://www.amazon.com/dp/B0F1MHC8SY",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/817f0gnOJ2L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -931,7 +1131,9 @@
     "name": "BEDSUM Velvet Duvet Cover Set Queen Size, 3 Pieces Zippered Flannel Soft Bedding Set, 90\"x90\", Includes 1 Duvet Cover (90\"x90\") & 2 Pillow Shams (20\"x26\"), No Comforter, Camel",
     "normalized_price": 36.79,
     "buy_url": "https://www.amazon.com/dp/B08CN78XGF",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81rLEK004xL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -940,7 +1142,9 @@
     "name": "Boho Duvet Cover Queen, Brushed Microfiber 3 Pieces Bedding Sets 1 Duvet Cover +2 Pillowcases, Bohemian Colorful Retro Print Duvet, with Zipper Closure, Durable Easy Care",
     "normalized_price": 27.99,
     "buy_url": "https://www.amazon.com/dp/B0G1MFJ6MQ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71dfG2Mt-1L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -949,7 +1153,9 @@
     "name": "Boho Queen Duvet Cover Soft Cotton 3 Pieces Bedding Sets Queen Boho Exotic Colorful Chic Style Teal Orange Bohemian Retro Print Duvet Cover Queen, with Zipper Closure (NO Comforter)",
     "normalized_price": 55.99,
     "buy_url": "https://www.amazon.com/dp/B0CZ9D5QD4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71dfG2Mt-1L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -958,7 +1164,9 @@
     "name": "Levtex Home - Mackenzie Duvet Cover Set - Full/Queen Duvet Cover + Two Standard Pillow Cases - Bohemian - Teal, Orange, Yellow, Green, Blue - Duvet Cover (90x94in) and Pillow Case (26x20in) - Cotton",
     "normalized_price": 107.99,
     "buy_url": "https://www.amazon.com/dp/B0C7LQ3F48",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91dWl6vLwSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -967,7 +1175,9 @@
     "name": "Boho Duvet Cover Queen Microfiber Boho Chic 3 Pieces Colorful Bohemian Bedding Set for All Seasons, 1 Duvet Cover and 2 Pillowcases with Zipper Closure Breathable Easy Care",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0BNVGLM3P",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71C-EjAlGFL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -976,7 +1186,9 @@
     "name": "Boho Duvet Cover King, 100% Microfiber Ethnic Boho Colorful Bedding Set for Men Women, Blue Yellow Orange Modern Geo Aztec Print Duvet Cover, with Zipper Closure Luxury Soft Durable (King, 3pcs)",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0816GK8JR",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71ZGKCntBML._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -985,7 +1197,9 @@
     "name": "Omelas Bohemian Queen Duvet Cover Set Colorful Boho Floral Bedding Super Soft Microfiber Duvets Cover Queen Size Zipper Closure Tribal Exotic Comforter Cover (MJH,Q,3pcs)",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B07H4MVSPL",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71ojaQVHFLL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -994,7 +1208,9 @@
     "name": "Cupocupa Duvet Cover Queen Size Set Boho Floral Pattern Duvet Cover Queen for Queen Size Bed Vintage Soft Bedding Leaf Print Paisley with Pillowcases",
     "normalized_price": 26.59,
     "buy_url": "https://www.amazon.com/dp/B09FSWHL1S",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61Ie-DvgS4L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1003,7 +1219,9 @@
     "name": "FADFAY Boho Duvet Cover Set 100% Brushed Cotton Colorful Stripe Exotic Style Bohemian Bedding Set Soft and Warm Bedding with Hidden Zipper Closure, 3 Pieces King/California King",
     "normalized_price": 103.5,
     "buy_url": "https://www.amazon.com/dp/B07KJ539KF",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91r1++uLvmL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1012,7 +1230,9 @@
     "name": "Erosebridal Hippie Boho Comforter Cover Queen Size,Rainbow Flower Bedding Set,Ethnic Floral Duvet Cover,Nordic Style Mexican Bedspread Cover with 2 Pillow Cases Bedroom Decor with Zipper Closure",
     "normalized_price": 37.99,
     "buy_url": "https://www.amazon.com/dp/B0DPQT24F1",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81KXsZU0yZL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1021,7 +1241,9 @@
     "name": "Boho Queen Duvet Cover, 100% Microfiber Ethnic Bohemian Colorful Bedding Set for Men Women, Yellow Orange Modern Geo Bohemian Print Duvet Cover, with Zipper Closure Luxury Soft Durable (Queen, 3pcs)",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B07ZZ88VRY",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71z8aBp5LlL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1030,7 +1252,9 @@
     "name": "Lush Decor Boho Chic Reversible Cotton Duvet Cover Queen Size 3 Piece Set Full/Queen Turquoise & Navy - Colorful Bedding Set Queen Duvet - Boho Decor",
     "normalized_price": 86.99,
     "buy_url": "https://www.amazon.com/dp/B0B8BC2MV1",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81DOH6PEEtL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1039,7 +1263,9 @@
     "name": "MUXHOMO Duvet Cover Queen Size Floral Duvet Cover Set with Zipper Closure, Boho Flower Bedding Set, 3 Pieces, 1 Duvet Cover 90\"x90\" with 4 Corner Ties and 2 Pillowcases 20\"x30\"",
     "normalized_price": 27.98,
     "buy_url": "https://www.amazon.com/dp/B0CL9YV629",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91-kprkd7+L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1048,7 +1274,9 @@
     "name": "Jane yre Boho Duvet Cover Queen, Brushed Microfiber 3 Pieces Bedding Sets 1 Duvet Cover +2 Pillowcases, Bohemian Colorful Retro Print Duvet, with Zipper Closure, Durable Easy Care",
     "normalized_price": 27.99,
     "buy_url": "https://www.amazon.com/dp/B07S7SPS2M",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71OipkhFR5L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1057,7 +1285,9 @@
     "name": "NANKO Queen Duvet Cover Set Boho Red and Green Colorful Vintage Striped Print 3pc 90 x 90 Luxury Soft Microfiber Down Comforter Quilt Bedding Cover with Zipper Ties - Bohemian Exotic for Men and Women",
     "normalized_price": 25.59,
     "buy_url": "https://www.amazon.com/dp/B08FLYDXZL",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81gUwQ3CtCL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1066,7 +1296,9 @@
     "name": "EAVD Colorful Striped Duvet Cover Queen Soft 100% Cotton Vintage Pink Green Yellow Stripes Printed Bedding Set with 2 Pillowcases Retro Reversible Geometric Comforter Cover with Zipper Corner Ties",
     "normalized_price": 58.99,
     "buy_url": "https://www.amazon.com/dp/B0G1YP5XJB",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81RllMYlAML._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1075,7 +1307,9 @@
     "name": "Faincy Bohemian Duvet Cover Queen Size - Boho Paisley Green Floral Pattern Printed Microfiber Comforter Cover Set - 3PC 90 X 90 Soft and Lightweight Quilt Cover, Retro Farmhouse Style for Women Men",
     "normalized_price": 22.1,
     "buy_url": "https://www.amazon.com/dp/B0D4LYXRRB",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71mFT53RF9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1084,7 +1318,9 @@
     "name": "Cupocupa Queen Duvet Cover Set, Modern Industrial Luxury Bedding with Zipper Closure & Corner Ties, Soft Breathable Navy Teal Orange Floral Comforter Cover for Bedroom Guest Room Vintage Paisley",
     "normalized_price": 23.79,
     "buy_url": "https://www.amazon.com/dp/B09FSXL4RK",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/7151aTLdYeL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1093,7 +1329,9 @@
     "name": "Levtex Home - Jules Duvet Cover Set - Full/Queen Duvet Cover (90 x 94in.) + Two Standard Pillow Cases (26 x 20in.) - Bohemian - Teal, Orange, Yellow, Green, Blue, Red, Navy - Cotton",
     "normalized_price": 95.0,
     "buy_url": "https://www.amazon.com/dp/B0CLPJM4KL",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91hIxZANo9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1102,7 +1340,9 @@
     "name": "100% Cotton Bohemian Duvet Cover Set Queen Colorful Floral Boho Striped Bedding Set Ultra Soft Microfiber Double Duvet Cover Southwestern Indian Tribal Reversible Bedding Exotic Boho Comforter Cover",
     "normalized_price": 62.1,
     "buy_url": "https://www.amazon.com/dp/B0C6QPG921",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/810EN21zaYL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1111,7 +1351,9 @@
     "name": "Erosebridal Boho Duvet Cover Queen Bohemian Wavy Bedding Set Rainbow Embroidered Waves Comforter Cover Geometric Tribal Ethnic Bedroom Decor Colorful Abstract Quilt Cover for Adult",
     "normalized_price": 36.09,
     "buy_url": "https://www.amazon.com/dp/B0C9C4L7QQ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81kePRhrfkL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1120,7 +1362,9 @@
     "name": "Wake In Cloud - Boho Duvet Cover Set, Floral Farmhouse Botanical Western Style with Colorful Flowers and Tropical Leaves, Soft Lightweight Bedding, 3-Piece, Amber Gold, Full Size",
     "normalized_price": 11.99,
     "buy_url": "https://www.amazon.com/dp/B0FWBQ5TKX",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81pAgZBBHmL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1129,7 +1373,9 @@
     "name": "Bohemian Style Printed Duvet Cover and Pillowcase Set,Soft Colorful Printed Microfiber Comforter Cover with Corner Ties. (Red Boho, Queen (U.S. Standard))",
     "normalized_price": 22.42,
     "buy_url": "https://www.amazon.com/dp/B0F8HP8S3C",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71MDCVHOa4L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1138,7 +1384,9 @@
     "name": "Zusbest Boho Duvet Cover Set Queen Size 100% Cotton Floral Bohemian Comforter Cover Teal Green Printed Reversible Orange Bedding Luxury Crisp Soft French Country Bedding 3Pcs, Queen",
     "normalized_price": 62.69,
     "buy_url": "https://www.amazon.com/dp/B0CSBH314G",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81Ck8Vi1SKL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1147,7 +1395,9 @@
     "name": "Boho Duvet Cover Queen Size, 3pc Bohemian Chic Exotic Quilt Cover Set, Vintage Orange Blue Red Mandala Printed Duvet Cover with Zipper (90x90), Colorful",
     "normalized_price": 32.99,
     "buy_url": "https://www.amazon.com/dp/B0GK5P5XVM",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71vyEdAeaML._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1156,7 +1406,9 @@
     "name": "Wake In Cloud - Boho Duvet Cover Set, Floral Farmhouse Bohemian Chic Style with Colorful Sunflowers and Birds Pattern, Soft Lightweight Bedding, 3-Piece, Amber Beige, Queen Size",
     "normalized_price": 15.99,
     "buy_url": "https://www.amazon.com/dp/B0G23CLZKB",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91n8eS5a3BL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1165,7 +1417,9 @@
     "name": "YuHeGuoJi Colorful Paisley Duvet Cover Queen 100% Cotton 3 Pcs Set 1 Orange Blue Boho Duvet Cover with Zipper Ties 2 Pillowcases Vintage Bohemian Paisley Floral Bedding Set Soft",
     "normalized_price": 50.99,
     "buy_url": "https://www.amazon.com/dp/B08BC1G9ZY",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81JKS5uL-WL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1174,7 +1428,9 @@
     "name": "FADFAY Exotic Boho Duvet Cover Set Queen 100% Brushed Cotton Soft Bohemian Bedding Red Teal Mandala Printed Bedding Reversible Striped Zipper Bed Comforter Cover + 2 Pillowshams- Queen, 3 Pcs",
     "normalized_price": 105.0,
     "buy_url": "https://www.amazon.com/dp/B09B26ZYRT",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81hPT2OhaRL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1183,7 +1439,9 @@
     "name": "YuHeGuoJi Black Botanical Duvet Cover King 100% Cotton 3 Pcs Set 1 Colorful Bohemian Floral Duvet Cover with Zipper Ties 2 Pillowcases Farmhouse Blue Yellow Tropical Leaves Print Bedding Set",
     "normalized_price": 54.14,
     "buy_url": "https://www.amazon.com/dp/B08BC48D7P",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91WOfAz2MoL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1192,7 +1450,9 @@
     "name": "Oli Anderson Boho Duvet Cover Set Queen Size, Beige and Terracotta Color Clash 3 Pieces Microfiber Bedding Set, Durable and Super Soft Duvet Covers with Zipper and Ties, 90\"*90\"",
     "normalized_price": 48.59,
     "buy_url": "https://www.amazon.com/dp/B0CXPWJS8V",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/912j6kRxR8L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1201,7 +1461,9 @@
     "name": "mixinni 100% Cotton Double Layer Yarn Duvet Cover Set, Vintage Patchwork Floral Jacquard Textured Comforter Cover, Reversible Boho Bedding Set with Pillowcases for All Season-Queen Size",
     "normalized_price": 79.99,
     "buy_url": "https://www.amazon.com/dp/B0GTLZH6CJ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81NUJowXVxL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1210,7 +1472,9 @@
     "name": "100% Organic Cotton Boho Duvet Cover Queen Bohemian Wavy Bedding Set Rainbow Embroidered Waves Comforter Cover Geometric Tribal Ethnic Bedroom Decor Colorful Abstract Quilt Cover For Adult",
     "normalized_price": 59.0,
     "buy_url": "https://www.amazon.com/dp/B0C9DQFLY8",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81iKgev4hHL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1219,7 +1483,9 @@
     "name": "MAG 3pcs Floral Bedding Duvet Cover Set Twin,Boho Duvet Cover Colorful,Flower Duvet Cover Set for Toddler, Kids, Girls, Super Cute Microfiber (no Comforter) (Yellow, Twin)",
     "normalized_price": 17.99,
     "buy_url": "https://www.amazon.com/dp/B0D8HP2PWF",
-    "specs": {},
+    "specs": {
+      "bed_size": "twin"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81q3FrP4TuL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1228,7 +1494,9 @@
     "name": "Brushed Cotton Bohemian Duvet Cover and Fitted Sheet Sets Queen Size 4 Pieces, Bohemia Exotic Striped Bedding Sets, Boho Comforter Cover Sets,NO Comforter (Fitted Sheet Sets, Queen)",
     "normalized_price": 85.99,
     "buy_url": "https://www.amazon.com/dp/B0797LDK9C",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/812DerjYBvL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1237,7 +1505,9 @@
     "name": "VM VOUGEMARKET Bohemia Duvet Cover Set King,3 Piece Long Staple Cotton Comforter Cover with Zipper Closure,Green Golden Elegant Bedding Set-Carol,King",
     "normalized_price": 78.09,
     "buy_url": "https://www.amazon.com/dp/B07F5KTJ37",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71mtwKdJpKL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1246,7 +1516,9 @@
     "name": "Pangzi Bohemian Duvet Cover Set Lightweight Microfiber Bedding Set Boho Floral Print Comforter Cover with Zipper Closure (Queen)",
     "normalized_price": 31.99,
     "buy_url": "https://www.amazon.com/dp/B07G3FRSY8",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81MbN-hvCOL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1255,7 +1527,9 @@
     "name": "Vintage Style Duvet Cover Set,5 PCS Boho Comforter Cover Set,Paisley Floral Bedding Set,Green Floral Duvet Cover,Queen Duvet Cover,Soft Reversible Design(Autumn,Queen)",
     "normalized_price": 58.86,
     "buy_url": "https://www.amazon.com/dp/B0BWYXQVZ2",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81iZ8m35aHL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1264,7 +1538,9 @@
     "name": "Boho Queen Duvet Cover Cotton 3 Pieces Exotic Red Teal Bohemian Colorful Retro Printed Luxury Breathable Comfy",
     "normalized_price": 55.99,
     "buy_url": "https://www.amazon.com/dp/B0G1N2SZHX",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71dfG2Mt-1L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1273,7 +1549,9 @@
     "name": "YuHeGuoJi Colorful Boho Feather Duvet Cover Queen 100% Cotton 3 Pcs Set 1 Blue Brown Bird Plume Pattern Duvet Cover with Zipper Ties 2 Pillowcases White Bohemian Bedding Set Soft",
     "normalized_price": 50.99,
     "buy_url": "https://www.amazon.com/dp/B07LBJGHW5",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71NNI6PhMcL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1282,7 +1560,9 @@
     "name": "FAUNNA 100% Cotton Duvet Cover, Hypoallergenic Bed Bug Proof White Minimalist Comforter Cover Zipper,Featuring Antimicrobial Product Protection for Enhanced Freshness Breathable Duvet Protector(Full)",
     "normalized_price": 54.99,
     "buy_url": "https://www.amazon.com/dp/B0FKBG1GDL",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61WWEEVPCCL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1291,7 +1571,9 @@
     "name": "Bedsure Duvet Cover Queen Size - Only Includes 1 Duvet Cover (90\"x90\"), Hotel Luxury Soft Double Brushed All Season Bedding for Kids & Adults, Zipper Closure, White (No Comforter, No Pillow Shams)",
     "normalized_price": 25.99,
     "buy_url": "https://www.amazon.com/dp/B0FLJF42XF",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81bPcHg62tL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1300,7 +1582,9 @@
     "name": "Brooklinen Luxury Sateen Duvet Cover - 100% Cotton, Full/Queen Size in White with Extra-Long Corner Ties and Button Closure | Best Luxury Sheets",
     "normalized_price": 179.0,
     "buy_url": "https://www.amazon.com/dp/B07D1BBZBK",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/614iWkRGHOL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1309,7 +1593,9 @@
     "name": "PHF Cotton Muslin Duvet Cover Queen Size, 3-Layer Ultra-Soft Lightweight Breathable Textured Guaze, Skin-Friendly Minimalist Comforter Cover Set for All Season, with 2 Pillow Shams, 90\"x90\", White",
     "normalized_price": 76.99,
     "buy_url": "https://www.amazon.com/dp/B0G6Y3Z7RY",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/714I8JMQoxL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1318,7 +1604,9 @@
     "name": "Brooklinen Luxury Percale Duvet Cover \u2013 100% Cotton, Cool, Crisp, Extra-Long Corner Ties, Button Closure, Soft & Breathable \u2013 Machine Washable, Duvet Cover Full/Queen Bed Sizes (Cream)",
     "normalized_price": 165.0,
     "buy_url": "https://www.amazon.com/dp/B0BTQQB2GQ",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71YJUewkAhL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1327,7 +1615,9 @@
     "name": "California Design Den 3 Pc Full/Queen Duvet Cover Set - Winner Good Housekeeping Best Bedding Awards 2025, 400 Thread Count Sateen, 100% Cotton Duvet Cover Queen Size,Button Closure,Corner Ties -White",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B07D2G8C9Q",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71lpkS601LL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1336,7 +1626,9 @@
     "name": "Bedsure 100% Stone Washed Cotton Duvet Cover Queen Size - White Minimalist Cotton Duvet Cover Linen Like for All Seasons - GentleSoft\u2122 Plain Simple Bedding (White, Queen, 90\"x90\")",
     "normalized_price": 63.64,
     "buy_url": "https://www.amazon.com/dp/B0CSM8FC7X",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81vYfmEp6gL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1345,7 +1637,9 @@
     "name": "Bedsure Boho Duvet Cover Queen Size - White Breathable & Soft Boho Bedding, Machine Washable Comforter Cover for All Seasons, Includes 1 Duvet Cover 90\"x90\" with 2 Pillow Shams & Zipper Closure",
     "normalized_price": 37.99,
     "buy_url": "https://www.amazon.com/dp/B08CXRHJZD",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91mHxvQPB9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1354,7 +1648,9 @@
     "name": "Bedsure Textured Duvet Cover Queen Size - Cotton-Like Polyester Jacquard Duvet Cover Set for All Seasons - 3 Pieces Elevated Textured Dobby Soft Bedding Set, NO Comforter (White, Queen, 90\"x 90\")",
     "normalized_price": 36.99,
     "buy_url": "https://www.amazon.com/dp/B0G782Z1WS",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91gDw37Yg-L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1363,7 +1659,9 @@
     "name": "SE SOFTEXLY Muslin Duvet Cover Queen Size, 100% Washed Cotton Duvet Cover Set, Ultra Soft Comforter Cover Linen Like, 3 Pieces Minimalist Gauze Duvet Cover with 2 Pillowcases, 90\"x90\", White",
     "normalized_price": 79.99,
     "buy_url": "https://www.amazon.com/dp/B0CTKN85Z5",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91yClIxVb0L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1372,7 +1670,9 @@
     "name": "SUSYBAO Single White Duvet Cover Twin 100% Cotton 2 Pcs Set 1 Classic Hotel Collection Duvet Cover with Zipper Ties 1 Pillow Sham Minimalist Soft White Bedding Set Lightweight",
     "normalized_price": 42.99,
     "buy_url": "https://www.amazon.com/dp/B01LNSPII6",
-    "specs": {},
+    "specs": {
+      "bed_size": "twin"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71zWdUZdJvL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1381,7 +1681,9 @@
     "name": "NEXHOME PRO Duvet Cover Queen Size, White 3 Pieces Boho Tufted Duvet Cover Set, Soft and Lightweight Microfiber Comforter Cover Set for All Season (White Queen, 90 x 90)-No Comforter",
     "normalized_price": 33.24,
     "buy_url": "https://www.amazon.com/dp/B0C65G4RNS",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71QN0eMz4XL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1399,7 +1701,9 @@
     "name": "EMME Cream White Muslin Duvet Cover Queen Size, 100% Cotton Soft Gauze Bedding Set with 2 Pillowcases, Breathable Lightweight All Season Comforter Cover with Zipper & Corner Ties, 90\"x90\"",
     "normalized_price": 64.99,
     "buy_url": "https://www.amazon.com/dp/B0F1Y1KXWL",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81LBfzYVxlL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1408,7 +1712,9 @@
     "name": "Bedsure 100% Washed Cotton Duvet Cover Queen Size - Bright White Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons (Bright White, Queen, 90\"x90\")",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0CHRC3G6C",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81FNOXF9AsL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1417,7 +1723,9 @@
     "name": "Bedsure Duvet Cover Queen Size - 100% Washed Cotton, Linen-Like Minimalist Bedding - PureWoven Plain Soft Comforter Cover for All Seasons, 1 Duvet Cover Only (Bright White, 90\" x 90\")",
     "normalized_price": 58.99,
     "buy_url": "https://www.amazon.com/dp/B0GL78HSHQ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81956TftAtL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1426,7 +1734,9 @@
     "name": "100% Pure Cotton Linen Feel Natural White Muslin Duvet Cover Queen Size, Plain Weave Duvet Cover Set, Soft Comforter Cover Linen Like, Minimalist Gauze Duvet Cover with 2 Pillowcases, 90\"x90\"",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B0G1M3Y4YX",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71W8jw1cQTL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1435,7 +1745,9 @@
     "name": "3-Piece Duvet Cover Set, 100% Cotton Solid Color - Modern Minimalist Bedding Set with 1 Duvet Cover & 2 Pillowcases(White, Queen)",
     "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B0G43SFT97",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61cUuPC6eUL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1444,7 +1756,9 @@
     "name": "PHF Cotton Muslin Duvet Cover Queen Size, 3-Layer Soft Lightweight & Breathable Textured Gauze, Skin-Friendly Minimalist All-Season Comforter Cover Set with 2 Pillowcases, 90\"x90\", White",
     "normalized_price": 84.99,
     "buy_url": "https://www.amazon.com/dp/B0GD6V42F5",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71he6eBU9VL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1453,7 +1767,9 @@
     "name": "SE SOFTEXLY Muslin Duvet Cover King Size, 100% Washed Cotton Duvet Cover Set, Ultra Soft Comforter Cover Linen Like, 3 Pieces Minimalist Gauze Duvet Cover with 2 Pillowcases, 90\"x104\", White",
     "normalized_price": 89.99,
     "buy_url": "https://www.amazon.com/dp/B0D625Z1R6",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91yClIxVb0L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1462,7 +1778,9 @@
     "name": "PHF 100% Natural Cotton Muslin Duvet Cover Set Queen Size, Ultra Soft Breathable Absorbent, Luxurious Minimalist Gauze Bedding for All Season, Duvet Set with 2 Pillow Shams, 90\" x 90\", Snow White",
     "normalized_price": 44.99,
     "buy_url": "https://www.amazon.com/dp/B0DN1G36N7",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81d5ShPyi8L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1471,7 +1789,9 @@
     "name": "Amazon Basics Lightweight Wrinkle-Resistant Microfiber 3 Piece Duvet Cover Set with Zipper Closure, Full/Queen, Bright White",
     "normalized_price": 20.36,
     "buy_url": "https://www.amazon.com/dp/B0835673K5",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71-p4Jf81kL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1480,7 +1800,9 @@
     "name": "Bare Home 100% Organic Cotton Queen Duvet Cover Set - Crisp Percale Weave - Lightweight & Breathable - Cooling Duvet Cover Set (Queen, White)",
     "normalized_price": 84.99,
     "buy_url": "https://www.amazon.com/dp/B08FRS5PRK",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81tG59Xv+AL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1489,7 +1811,9 @@
     "name": "Off White Duvet Cover Queen Size, 100% Sandwashed Cotton Soft Queen Duvet Cover Set 3 Pieces with Zipper Clousre & Corner Buttons (Off White, Queen 90 x 90)",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0DPHHDMXY",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81KPNaBZxML._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1498,7 +1822,9 @@
     "name": "Simple&Opulence Linen Muslin Duvet Cover Set Twin Size, 3Pcs White Linen Cotton 3-Layer Gauze Minimalist Comforter Cover 68\u201dx86\u201d, Ultra Soft Breathable Seersucker Bedding Set with 1 Pillowcase",
     "normalized_price": 65.99,
     "buy_url": "https://www.amazon.com/dp/B0F83821YS",
-    "specs": {},
+    "specs": {
+      "bed_size": "twin"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91wOXSUSVcL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1507,7 +1833,9 @@
     "name": "Amazon Basics Duvet Cover Set with Jacquard Geometric Pattern, 3-Piece with 1 Duvet Cover and 2 Pillow Shams, Comforter Not Included, Queen, White",
     "normalized_price": 21.99,
     "buy_url": "https://www.amazon.com/dp/B0FX4QPWB4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71-jwGU4bpL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1516,7 +1844,9 @@
     "name": "JELLYMONI White Duvet Cover Queen Size, 3pcs Washed Microfiber Bedding Set, Soft Breathable Seersucker Duvet Cover Set with Zipper Closure and Corner Ties for All Seasons",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0CMR4C7YW",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81GvHYUV8PL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1525,7 +1855,9 @@
     "name": "White Classic White Queen Duvet Cover Set, Microfiber Duvet Cover with Zipper, Duvet Cover Set of 1 Down Comforter Cover with 2 Pillow Shams, Luxury Comforter Cover Queen Size | Comforter Not Included",
     "normalized_price": 11.49,
     "buy_url": "https://www.amazon.com/dp/B0BTR5KW4T",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81NkFVOCpSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1534,7 +1866,9 @@
     "name": "JELLYMONI Duvet Cover Queen Size White - 3PCS Boho Striped Duvet Cover Set Polyester Tufted Bohemian Textured Comforter Cover 90\u00d790in with Corner Ties & Zipper and 2 Pillowcases",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0B1LW6FKH",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/716ZoJW5xdL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1543,7 +1877,9 @@
     "name": "AveLom White Duvet Cover Queen Size, Textured Seersucker Duvet Cover Set, Soft Washed Microfiber with Zipper Closure and Corner Ties, 3 Pieces, 90\" x 90\" Duvet Cover & 2 Pillowcases",
     "normalized_price": 32.99,
     "buy_url": "https://www.amazon.com/dp/B07YGVJTJG",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/619f+8o-stL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1552,7 +1888,9 @@
     "name": "Bedsure Duvet Cover Queen Size Only - Prewashed Cotton-Like Polyester Extra Soft All Season Bedding, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure, White, (No Comforter)",
     "normalized_price": 19.98,
     "buy_url": "https://www.amazon.com/dp/B0FJYB3JV2",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91JMiWbueYL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1561,7 +1899,9 @@
     "name": "Cozyide White Duvet Cover Queen Size, Soft 3-Piece Seersucker Queen Duvet Cover Set, All Seasons Bedding Set with Zipper Closure and Corner Ties(90\"x90\", 2 Pillow Cases 20\"x26\")",
     "normalized_price": 32.99,
     "buy_url": "https://www.amazon.com/dp/B0B2J4L8XG",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81kCi-otjkL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1570,7 +1910,9 @@
     "name": "Bedsure 100% Washed Cotton Duvet Cover Queen Size - Charcoal Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons (Charcoal, Queen, 90\"x90\")",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0F6VJ7NFJ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81CvMUQLkyL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1579,7 +1921,9 @@
     "name": "Bedsure Black Duvet Cover Queen Size - 3 Pieces Prewashed Extra Soft Bedding Set, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure & 2 Pillow Shams, Comforter Not Included",
     "normalized_price": 28.99,
     "buy_url": "https://www.amazon.com/dp/B07KNZPN5B",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81aSBc+s1hL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1588,7 +1932,9 @@
     "name": "Bedsure Black Duvet Cover King Size - 3 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 104x90 Inches with Zipper Closure & 2 Pillow Shams, Comforter Not Included",
     "normalized_price": 31.99,
     "buy_url": "https://www.amazon.com/dp/B07KP1B5Q5",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81aSBc+s1hL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1597,7 +1943,9 @@
     "name": "PHF Waffle Weave Duvet Cover Set Queen Size, No Snagging Ultra Soft Luxury Textured Breathable Comforter Cover for All Season 3pcs, Durable Bedding Duvet Set with 2 Pillow Shams, 90\"x90\", Black",
     "normalized_price": 44.99,
     "buy_url": "https://www.amazon.com/dp/B0CY54GK9K",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81RVNLO1YCL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1606,7 +1954,9 @@
     "name": "MooMee Bedding Duvet Cover Set 100% Washed Cotton Linen Like Textured Breathable Durable Soft Comfy (Solid Black, Queen 90\"x90\")",
     "normalized_price": 69.99,
     "buy_url": "https://www.amazon.com/dp/B0BGHCGZGY",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81d1xvyTi2L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1615,7 +1965,9 @@
     "name": "VACVELT 3PCS Cooling Duvet Cover Full/Queen Size, 60% Tencel Lyocell + 40% Cotton Comforter Cover Set for Hot Sleeper, Moisture Wicking & Silky, Hotel Bedding Set, Soft & Breathable, Charcoal Black",
     "normalized_price": 45.99,
     "buy_url": "https://www.amazon.com/dp/B0FKGRYCHX",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/719vyNuqwUL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1624,7 +1976,9 @@
     "name": "VACVELT 5 Piece Pinch Pleated Duvet Cover King Size Set, Charcoal Black Pintuck Duvet Cover with Zipper & 8 Ties, Shabby Chic Microfiber + 2 Pillow Shams + 2 Pillowcases, No Comforter",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0FHPZDBYV",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81UIKxc3eJL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1633,7 +1987,9 @@
     "name": "King Duvet Cover by Pure Bamboo, 3 Piece Set, Genuine 100% Organic Viscose Derived from Bamboo, Luxuriously Soft and Cooling, 2 Pillowcases (King, Charcoal)",
     "normalized_price": 99.99,
     "buy_url": "https://www.amazon.com/dp/B07N46KBQZ",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71O3vR5IdcL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1642,7 +1998,9 @@
     "name": "LOVQUE Bedding Duvet Cover Queen Size, 100% Washed Cotton Linen Like Natural Bedding Set with Zipper Closure (No Comforter), 90x90, Black",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0D4DYC4YC",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71gLPv9YnsL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1651,7 +2009,9 @@
     "name": "HYMOKEGE Black Duvet Cover Queen Size, Ultra Soft 3-Piece Seersucker Duvet Cover Set with Zipper Closure, Soft Brushed Microfiber Bedding Set with 8 Corner Ties (90\"x90\", 2 Pillowshams)",
     "normalized_price": 26.98,
     "buy_url": "https://www.amazon.com/dp/B0BZ76KMH6",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81eG5pe0pFL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1660,7 +2020,9 @@
     "name": "Simple&Opulence 100% Washed Linen Duvet Cover with Embroidered, 3 Pieces Soft Farmhouse Comforter Set with Button Closure,1 Duvet Cover and 2 Pillowshams(King,Charcoal Grey)",
     "normalized_price": 134.99,
     "buy_url": "https://www.amazon.com/dp/B0126HECB2",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71uwLpRMZFL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1669,7 +2031,9 @@
     "name": "Bedsure Cotton Duvet Cover Queen Size - 100% Cotton Waffle Weave Black Duvet Cover Queen Size, PureWoven Breathable Bedding Set for All Season, 3 Pieces, 90\"x90\"",
     "normalized_price": 84.99,
     "buy_url": "https://www.amazon.com/dp/B0F21KXS7S",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/811cX6-PWVL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1678,7 +2042,9 @@
     "name": "BESTOUCH Duvet Cover Set 100% Washed Cotton Linen Feel Super Soft Comfortable Chic Lightweight 2 PCs Home Bedding Set Solid Deep Black Twin/Twin XL",
     "normalized_price": 59.99,
     "buy_url": "https://www.amazon.com/dp/B0BMFGSGGY",
-    "specs": {},
+    "specs": {
+      "bed_size": "twin"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71ryrt7fmbL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1687,7 +2053,9 @@
     "name": "Bare Home Bedding Duvet Cover Queen Size - Premium 1800 Super Soft Collection - Lightweight, Cooling Duvet Cover - Soft Breathable Bedding (Queen, Black)",
     "normalized_price": 36.99,
     "buy_url": "https://www.amazon.com/dp/B01N2U1C91",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81cnszhcLdL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1696,7 +2064,9 @@
     "name": "Duvet Cover Queen Size Set - Extra Soft Queen Duvet Cover 90\" x 90\" with 2 Pillow Shams for Women, Men, Kids & Teens - Hotel Luxury, Easy-Care w/ Zipper Closures & Ties - Comfy and Breathable (Black)",
     "normalized_price": 24.99,
     "buy_url": "https://www.amazon.com/dp/B0CV4HXDBS",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81sWp1H50RL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1705,7 +2075,9 @@
     "name": "Oli Anderson Black Duvet Cover King Size - Pleated King Duvet Cover, 3PCS Soft and Breathable Textured Bedding Set with Zipper Closure(Black,104\"x90\")",
     "normalized_price": 35.35,
     "buy_url": "https://www.amazon.com/dp/B0CDBSLCFB",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81QUsHACMBL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1714,7 +2086,9 @@
     "name": "Bedsure Cotton Duvet Cover King - 100% Cotton Waffle Weave Black Duvet Cover King Size, PureWoven Breathable Bedding Set for All Season, 3 Pieces, 104\"x90\"",
     "normalized_price": 94.99,
     "buy_url": "https://www.amazon.com/dp/B0F21HFK2C",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/811cX6-PWVL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1723,7 +2097,9 @@
     "name": "Andency Black Duvet Cover Queen Size, 3 Pieces Ruffle Duvet Cover Set, Soft Polyester Queen Duvet Cover Bedding Set with Zipper Closure",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0BGNT7LFN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81EjhuWNMEL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1732,7 +2108,9 @@
     "name": "Utopia Bedding Duvet Cover King Size - 3 Piece with Zipper Closure - 1 Comforter Cover 104X90 Inches & 2 Pillow Shams 20X36 Inches (Black) Comforter Not Included",
     "normalized_price": 17.49,
     "buy_url": "https://www.amazon.com/dp/B0854CQVR8",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81dZCM0CgtL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1741,7 +2119,9 @@
     "name": "SLEEP ZONE Boho Duvet Cover Set King Size, Jacquard Leaf 3 Pieces Luxury Soft Breathable Duvet Cover with 2 Pillow Shams, Bedding Set for All Season, 104\" \u00d7 90\", Black",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0DZHRZ64X",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71KOg4ioYlL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1750,7 +2130,9 @@
     "name": "Olive + Crate Tencel King Duvet Cover Set - Hypoallergenic, Cooling Lyocell, Eucalyptus Duvet Cover for Hot Sleepers with Two Pillowcases - Charcoal 3-Piece",
     "normalized_price": 129.99,
     "buy_url": "https://www.amazon.com/dp/B0D328C52L",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61PU9mDFTJL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1759,7 +2141,9 @@
     "name": "Bedsure Boho Duvet Cover King Size, Soft & Comfortable Elegant Design Boho Bedding for Decoration, Machine Washable Comforter Cover for All Seasons,Includes 1 Duvet Cover & 2 Pillow Shams,Black",
     "normalized_price": 64.99,
     "buy_url": "https://www.amazon.com/dp/B0DJSBWBPT",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91OwSFqp7SL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1768,7 +2152,9 @@
     "name": "RUVANTI 100% Cotton Waffle Duvet Cover Queen Size Set, Soft Pre-Washed Textured Bedding with 8 Corner Ties & Button Closure, Breathable All Season Comforter Cover Set, 3 Piece, Charcoal",
     "normalized_price": 69.99,
     "buy_url": "https://www.amazon.com/dp/B0F7RK5NNT",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/919ZtbnL8IL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1777,7 +2163,9 @@
     "name": "Striped Duvet Cover Set 100% Washed Cotton Linen Like Soft Feelling Breathable Bedding(Strip-Black/White,Queen)",
     "normalized_price": 64.99,
     "buy_url": "https://www.amazon.com/dp/B0DZBVLX41",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/816tcIIwlDL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1786,7 +2174,9 @@
     "name": "Bedsure Duvet Cover Queen Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 3 Pieces, Includes 1 Duvet Cover (90\"x90\") & 2 Pillow Shams, NO Comforter, Black",
     "normalized_price": 27.99,
     "buy_url": "https://www.amazon.com/dp/B08CXGK957",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81UPk0NQQwL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1795,7 +2185,9 @@
     "name": "Bedsure Duvet Cover Queen Size - Reversible Black Queen Duvet Cover Set with Zipper Closure, 3 Pieces Floral Patterned Bedding Set with 8 Corner Ties and 2 Pillow Shams",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0CDL7HV4W",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91IgMDYrl4L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1804,7 +2196,9 @@
     "name": "JIYUAN Queen Size Duvet Cover Set, 3-Piece - 100% Washed Cotton, Linen-Like Soft & Breathable with Zipper Closure, Includes 90x90 Inch Cover & 2 Pillowcases, Solid Black",
     "normalized_price": 69.99,
     "buy_url": "https://www.amazon.com/dp/B0D3HGV8LS",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71Os9fffWqL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1813,7 +2207,9 @@
     "name": "BDEAR 3 Pieces Black Duvet Cover Set Queen Size 90'' L x 90'' W, 100% Washed Cotton Duvet Cover with Zipper Closure Plus 2 Pillowcases, Oeko TEX Standard 100 Certificated, Cozy Feel, and Cozy",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B0D1CPHGBH",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71u6jkh8+fL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1822,7 +2218,9 @@
     "name": "PHF Truly Velvet Duvet Cover Set Queen Size, 3pcs Ultra Soft Breathable Comforter Cover Set, Luxury Cozy Flannel Duvet Cover with Pillow Shams Bedding Collection, 90\" x 90\", Black",
     "normalized_price": 46.74,
     "buy_url": "https://www.amazon.com/dp/B0977ZWP4V",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71ZlpvvXGnL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1831,7 +2229,9 @@
     "name": "Bedsure Waffle Weave Duvet Cover Queen Size, Luxury, Soft & Breathable Comforter Cover for All Season, 3 Pieces Wrinkle-Resistant Zipper Bedding with 8 Corner Ties, Black",
     "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B0FWK54CKR",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91runVMR8+L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1840,7 +2240,9 @@
     "name": "MooMee Duvet Cover Set, 100% Extra Long Staple Cotton 600 Thread Count Sateen Smooth Luxury Breathable Hotel Quality Cooling Bedding for All Season, 3 Pieces (Black, King 104\"x90\")",
     "normalized_price": 79.99,
     "buy_url": "https://www.amazon.com/dp/B0C2BWCL7F",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81KEjiFCSWL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1849,7 +2251,9 @@
     "name": "Bedsure 100% Washed Cotton Duvet Cover King Size - Black Minimalist Bedding Set Linen Like - PureWoven Plain Simple & Soft Comforter Cover for All Seasons (Black, King, 104\"x90\")",
     "normalized_price": 71.24,
     "buy_url": "https://www.amazon.com/dp/B0DQTZC3LB",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81EwQ5NneIL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1858,7 +2262,9 @@
     "name": "NSNLGSGC Gray Plaid Duvet Cover Set Twin,Charcoal Grid Simple Geometric Square Pattern Comforter Cover,Soft Washed Microfiber Bedding Cover (2PCS,Twin)",
     "normalized_price": 26.99,
     "buy_url": "https://www.amazon.com/dp/B0BZZ9PN59",
-    "specs": {},
+    "specs": {
+      "bed_size": "twin"
+    },
     "image_url": "https://m.media-amazon.com/images/I/710YN1-iE0L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1867,7 +2273,9 @@
     "name": "EMME Muslin Cotton Duvet Cover Set Black Queen Size Linen Like Soft Breathable Lightweight Summer Comforter Cover Set with Zipper Closure (Black, Queen, 90\"x90\")",
     "normalized_price": 69.89,
     "buy_url": "https://www.amazon.com/dp/B0GCHJ4L3X",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81GcjMCGmLL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1876,7 +2284,9 @@
     "name": "NSNLGSGC Gray Plaid Duvet Cover Set Queen,Charcoal Grid Simple Geometric Square Pattern Comforter Cover,Soft Washed Microfiber Bedding Cover (3PCS,Queen)",
     "normalized_price": 29.99,
     "buy_url": "https://www.amazon.com/dp/B0BZZ9Q7DM",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/710YN1-iE0L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1885,7 +2295,9 @@
     "name": "BISELINA 100% Cotton Duvet Cover Set Waffle Weave 3PCS (1 Comforter Cover, 2 Pillow Shams) Reversible Soft Skin-Friendly Breathable Shabby Chic Bedding for All Season - Charcoal Grey, Queen Size",
     "normalized_price": 52.99,
     "buy_url": "https://www.amazon.com/dp/B0DD6Q3XJ5",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81wFztRnq6L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1894,7 +2306,9 @@
     "name": "Janlive Washed Cotton Duvet Cover Set Linen Feel Textured Ultra Soft 100% Cotton Solid Color Charcoal Gray Duvet Cover Set with Zipper Closure -3 Pieces Dark Grey Queen",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B08FX3FDTN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81oMA-6r6eL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1903,7 +2317,9 @@
     "name": "LEMIROE Vintage 100% Cotton Duvet Cover King Size,Grey & Taupe Paisley Floral Patterns on Grey, Luxurious Reversible Gray Bed Sets 3Pcs,Button Closure",
     "normalized_price": 61.99,
     "buy_url": "https://www.amazon.com/dp/B0D432PMS1",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81lGsVv4usL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1912,7 +2328,9 @@
     "name": "Bare Home Flannel Duvet Cover Set - Queen - 100% Cotton, Velvety Soft Heavyweight Premium Flannel, Double Brushed - Includes Sham Pillow Covers (Queen, Buffalo Plaid - Red/Black)",
     "normalized_price": 62.99,
     "buy_url": "https://www.amazon.com/dp/B09P1S3D9X",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81jNYYxDcJL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1921,7 +2339,9 @@
     "name": "Eddie Bauer - Queen Duvet Cover Set with Shams, 100% Cotton Reversible Bedding, Button Closure with Corner Ties, Dorm Room Essentials, Alder Plaid Grey/Red",
     "normalized_price": 46.99,
     "buy_url": "https://www.amazon.com/dp/B074PMMZ7V",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81uHMY7FI9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1930,7 +2350,9 @@
     "name": "Bare Home Flannel Duvet Cover Set - Queen - 100% Cotton, Velvety Soft Heavyweight Premium Flannel, Double Brushed - Includes Sham Pillow Covers (Queen, Stirling Plaid - Grey/White)",
     "normalized_price": 62.99,
     "buy_url": "https://www.amazon.com/dp/B09T8C96XF",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91Q+jZ+zm0L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1939,7 +2361,9 @@
     "name": "Eddie Bauer - King Duvet Cover Set, Cotton Reversible Bedding with Matching Shams, Plaid Bedding Set (Timbers Evergreen, King)",
     "normalized_price": 66.0,
     "buy_url": "https://www.amazon.com/dp/B07R53J778",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91Dzz1DL-OL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1948,7 +2372,9 @@
     "name": "Bare Home Flannel Duvet Cover Set - Queen - 100% Cotton, Velvety Soft Heavyweight Premium Flannel, Double Brushed - Includes Sham Pillow Covers (Queen, Tartan Plaid)",
     "normalized_price": 62.99,
     "buy_url": "https://www.amazon.com/dp/B09L5GY9C8",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81dVYjZbLPL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1957,7 +2383,9 @@
     "name": "MKXI Buffalo Plaid Duvet Cover Set 3 Piece Vintage Bedding in Kelly Green, Navy & Red | 100% Washed Cotton Reversible Design with Zipper Closure & Corner Ties,Shabby Chic Aesthetic for Queen",
     "normalized_price": 66.19,
     "buy_url": "https://www.amazon.com/dp/B0F2J1HLDP",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/714MQDUsoRL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1966,7 +2394,9 @@
     "name": "Pointehaven Flannel Oversized Duvet Set, Full/Queen, Ashby Plaid",
     "normalized_price": 47.99,
     "buy_url": "https://www.amazon.com/dp/B01J1AV6KC",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/A16SZ9chkSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1975,7 +2405,9 @@
     "name": "mixinni Vintage Buffalo Plaid Duvet Cover Set Queen Size - 3 Piece Washed Cotton Bedding Set with Grid Pattern, Soft & Breathable Duvet Cover with Pillowcases for All Seasons,(Brown & Blue,Beige)",
     "normalized_price": 68.09,
     "buy_url": "https://www.amazon.com/dp/B0F13L8MHT",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81K+OoAcrkL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1984,7 +2416,9 @@
     "name": "Eddie Bauer - Queen Duvet Cover Set, Cotton Reversible Bedding, Buffalo Plaid Bedding Set (Red/Black, Queen)",
     "normalized_price": 35.72,
     "buy_url": "https://www.amazon.com/dp/B013F3X3X4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91JbjYXpNBL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -1993,7 +2427,9 @@
     "name": "EAVD Vintage Red&Black Gingham Plaid Duvet Cover Queen Soft 100% Cotton Muslin Green Geometric Grid Checkered Bedding Set with 2 Pillowcases Reversible Gingham Duvet Cover with Zipper Closure",
     "normalized_price": 72.99,
     "buy_url": "https://www.amazon.com/dp/B0F8VNCCD4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81pc4+-8erL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2002,7 +2438,9 @@
     "name": "Eddie Bauer - King Duvet Cover Set, Reversible Bedding with Matching Shams, Plaid Bedding Set (Port Gamble Blue, King)",
     "normalized_price": 53.38,
     "buy_url": "https://www.amazon.com/dp/B013F3Y2ES",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91B73Re6vZL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2011,7 +2449,9 @@
     "name": "MKXI Queen Size Blue, Brown & Green Buffalo Plaid Duvet Cover Set - 3 Piece Vintage Aesthetic Bedding Set, 100% Washed Cotton, Minimalist Design, Soft & Breathable Duvet Cover with Zipper Closure",
     "normalized_price": 68.09,
     "buy_url": "https://www.amazon.com/dp/B0DXNYJ79G",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81K+OoAcrkL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2020,7 +2460,9 @@
     "name": "Plaid Duvet Cover Full Size 3 Pieces Blue Brown Buffalo Gingham Comforter Cover Set Vintage Grid Checkered Soft Breathable Microfiber Bedding Set with Zipper Closure and 2 Pillowcases",
     "normalized_price": 32.99,
     "buy_url": "https://www.amazon.com/dp/B0FJ2FQQ4Q",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71pnjDp+6RL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2029,7 +2471,9 @@
     "name": "Nayoroom Gingham Duvet Cover Queen Size Brown Tan Plaid Checkered Comforter Cover Grid Farmhouse Bedding Set 3 Pcs Soft Breathable Washed Microfiber Gifts for Women Men",
     "normalized_price": 29.89,
     "buy_url": "https://www.amazon.com/dp/B0DYTY8VDV",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71Epj4+jilL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2038,7 +2482,9 @@
     "name": "Nayoroom Gingham Duvet Cover Queen Size 100% Washed Cotton Brown Tan Plaid Checkered Comforter Cover 3 Pcs Soft Breathable Grid Farmhouse Dorm Bedding Set for All Seasons",
     "normalized_price": 49.89,
     "buy_url": "https://www.amazon.com/dp/B0F8BMC8KP",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/813kBZSbNQL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2047,7 +2493,9 @@
     "name": "Duvet Cover Queen Size Set - Extra Soft Queen Duvet Cover 90\" x 90\" with 2 Pillow Shams for Women, Men, Kids & Teens - Hotel Luxury w/Zipper Closures & Ties - Comfy, Cozy & Breathable (Blue Stripes)",
     "normalized_price": 24.99,
     "buy_url": "https://www.amazon.com/dp/B0CV4J3SK4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/917Gs5-2OoL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2056,7 +2504,9 @@
     "name": "Levtex Home - Spencer Plaid Neutral - Full/Queen Duvet Cover (90x94in.) + Two Standard Shams (20x26in.) - Plaid - Beige Tan Cream - Reversible - Brushed Flannel",
     "normalized_price": 97.99,
     "buy_url": "https://www.amazon.com/dp/B0FKJRVT1F",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81D2GHrqwSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2065,7 +2515,9 @@
     "name": "Heritage Plaid 170-GSM Flannel Printed Duvet Cover Set Queen",
     "normalized_price": 55.99,
     "buy_url": "https://www.amazon.com/dp/B01M3572I9",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91FQhMvbYKL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2074,7 +2526,9 @@
     "name": "TOCOMOA Tan Gingham Duvet Cover Bedding Set 100% Washed Cotton Like Linen Feel Super Soft Comfy 3 Piece Brown Vintage Plaid Checkered Fall Comforter Cover Set (Queen 90\"x90\", Comforter Not Included)",
     "normalized_price": 53.99,
     "buy_url": "https://www.amazon.com/dp/B0F6LQVY6N",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91vxLAcTUkL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2083,7 +2537,9 @@
     "name": "Eddie Bauer - King Duvet Cover Set, Reversible Flannel Bedding with Matching Shams, Luxurious Bedding Set for Colder Months (Preston Grey, King)",
     "normalized_price": 49.04,
     "buy_url": "https://www.amazon.com/dp/B071JZ4NG8",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91vIzZC5EvL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2092,7 +2548,9 @@
     "name": "Bare Home Bedding Duvet Cover Set Queen Size - Premium 1800 Super Soft Collection - Lightweight, Duvet Cover - Soft Textured Bedding (Queen, Modern Plaid - Midnight Blue/White)",
     "normalized_price": 36.99,
     "buy_url": "https://www.amazon.com/dp/B0DMG6KTPN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71pF1g7NJ1L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2101,7 +2559,9 @@
     "name": "Levtex Home - Spencer Plaid Neutral - King Duvet Cover (106x94in.) + Two King Shams (20x36in.) - Plaid - Beige Tan Cream - Reversible - Brushed Flannel",
     "normalized_price": 159.99,
     "buy_url": "https://www.amazon.com/dp/B0FKJJ2XVF",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81D2GHrqwSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2110,7 +2570,9 @@
     "name": "Simple&Opulence 100% Cotton Buffalo Check Plaid Printed Duvet Cover Set, 3 Pieces Bedding Set Including 1 Comforter Cover and 2 Pillow Shams, Soft and Comfortable (King,Red)",
     "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B0BCV88HCH",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81F45Yl6IrL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2119,7 +2581,9 @@
     "name": "Green Plaid Duvet Cover Queen Soft Cotton Grid Plaid Bedding Set 3 Pieces Checkered Gingham Comforter Cover for Men Boys Modern Bedding Set Simple Plaid Comforter Cover with Zipper Closure 4 Ties",
     "normalized_price": 58.09,
     "buy_url": "https://www.amazon.com/dp/B0D5HP1KKZ",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81yYBa8d8BL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2128,7 +2592,9 @@
     "name": "Intelligent Design Queen Duvet Cover Set Plaid Classic Cabin Lodge Duvet Cover Queen Size, Modern Casual Lightweight All Season Bedding Cover Queen, Matching Shams, Blake, Full/Queen Tan/Gray 3 Piece",
     "normalized_price": 33.99,
     "buy_url": "https://www.amazon.com/dp/B0DHVBGXWT",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81sKiU9GulL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2137,7 +2603,9 @@
     "name": "LEMIROE Tartan Plaid 100% Cotton Duvet Cover Queen Size 3PC\u2013 Textured Classic Plaid Design in Muted Bluish-Green, Light Blue & Charcoal, Luxurious Essential Bedding Sets with Button Closure (90\"\u00d790\")",
     "normalized_price": 56.99,
     "buy_url": "https://www.amazon.com/dp/B0DPTCN1F4",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71v7+lGa3ML._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2146,7 +2614,9 @@
     "name": "Bedsure Duvet Cover Queen Size - Reversible Plaid Duvet Cover Set with Zipper Closure, 3 Pieces Dark Grey Bedding Set with 8 Corner Ties and 2 Pillow Shams 20\"x26\"",
     "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B0BX95FNW9",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91VB8jfAW7L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2155,7 +2625,9 @@
     "name": "Plaid Duvet Cover Set Queen Size 3 Piece Blue Brown Buffalo Plaid Comforter Cover Vintage Grid Checkered Pattern Soft Breathable Microfiber Bedding Set with Zipper Closure and 2 Pillowcases",
     "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B0FJ285JBX",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71pnjDp+6RL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2164,7 +2636,9 @@
     "name": "Wake In Cloud - Gingham Cotton Duvet Cover Set, Plaid Buffalo Check Checkered Farmhouse, 100% Washed Cotton Textured Bedding Set, 3 Pieces, Red Black, Queen Size",
     "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B07PT7S4S3",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81axAfNEkCL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2173,7 +2647,9 @@
     "name": "CLOTHKNOW Blue Plaid Queen Duvet Cover Set Tartan Bedding Sets Geometric Bedding Duvet Cover Sets Checker Buffalo Bedding with 2 x Pillow Cases",
     "normalized_price": 58.5,
     "buy_url": "https://www.amazon.com/dp/B07CMJ84P7",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71lvYxuUC5L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2182,7 +2658,9 @@
     "name": "Kenneth Cole New York - King Duvet Cover Set, Cotton Bedding with Matching Shams, All Season Home Decor (Sussex Flannel Black, King)",
     "normalized_price": 76.0,
     "buy_url": "https://www.amazon.com/dp/B08KWP4FTX",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/A18PAPs8h9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2191,7 +2669,9 @@
     "name": "Superior Plaid Flannel Cotton Duvet Set, Fuzzy Warm Duvet Cover, Rustic Farmhouse Bedding, Basics, Comforter or Duvet Insert Cover, Includes 1 Duvet Cover, 2 Pillow Shams, Full/Queen, Beige",
     "normalized_price": 65.97,
     "buy_url": "https://www.amazon.com/dp/B0CVH2FPBD",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91K23uLVbuL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2200,7 +2680,9 @@
     "name": "Gingham Duvet Cover Set Queen Size Brown Blue Bedding Set for Girls Boys,Vintage Buffalo Plaid Duvet Comforter Cover with Grid Pattern with Zipper Closure and 2 Pillowcases",
     "normalized_price": 34.99,
     "buy_url": "https://www.amazon.com/dp/B0FX2X2L85",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71mIYzPFIlL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2209,7 +2691,9 @@
     "name": "MUXHOMO Duvet Cover Queen Size, 3 Pieces Plaid Duvet Cover Set, Reversible Dark Green Bedding Set with Dual-Zipper & 8 Corner Ties (90\"x90\", 2 Pillowcases)",
     "normalized_price": 19.99,
     "buy_url": "https://www.amazon.com/dp/B0DJVXY22P",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81dpZy1seOL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2218,7 +2702,9 @@
     "name": "Eddie Bauer - King Duvet Cover Set, Soft & Reversible Cotton Bedding with Button Closure, 3 Piece Bed Set with Matching Pillowcases (Woodland Tartan Green)",
     "normalized_price": 56.11,
     "buy_url": "https://www.amazon.com/dp/B07THW5S81",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/919+Xba+y8L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2227,7 +2713,9 @@
     "name": "Wake In Cloud - Grid Cotton Duvet Cover Set, Plaid Checkered Geometric Farmhouse, 100% Washed Cotton Textured Bedding Set, 3 Pieces, Navy Blue, Twin/Twin XL Size",
     "normalized_price": 30.99,
     "buy_url": "https://www.amazon.com/dp/B07FVP27T4",
-    "specs": {},
+    "specs": {
+      "bed_size": "twin"
+    },
     "image_url": "https://m.media-amazon.com/images/I/819eXupCFYL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2236,7 +2724,9 @@
     "name": "Royal Hotel Bedding Heavy Soft 100% Cotton Flannel Duvet Covers, 3 Pieces Duvet Cover Set, Button Closer, Thick, Heavy and Ultra Soft Cotton Flannel, Dessines Plaid, King/California-King",
     "normalized_price": 79.99,
     "buy_url": "https://www.amazon.com/dp/B08W8M8HZD",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61guwdHAC9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2245,7 +2735,9 @@
     "name": "DELANNA Flannel Reversible Duvet Cover Set 100% Cotton 1 Duvet Cover 102\" x 90\" and 2 Shams 20\" x 36\" (King, SAGE Plaid)",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B07J1P7H56",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91zCfq29LjL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2254,7 +2746,9 @@
     "name": "Nayoroom Brown Gingham Duvet Cover Queen Size Tan White Plaid Checkered Duvet Cover 3 Pieces Grid Dorm Bedding Set with 2 Pillowcases, Soft Breathable Washed Microfiber",
     "normalized_price": 29.69,
     "buy_url": "https://www.amazon.com/dp/B0FFT29S93",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71iZcNUbTwL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2263,7 +2757,9 @@
     "name": "YuHeGuoJi Tropical Duvet Cover King 100% Cotton Blue Botanical Duvet Cover Soft 3 Pcs Set 1 Palm Leaves Plant Print Duvet Cover with Zipper 2 Pillowcases Botanical Bedding Breathable Comfortable",
     "normalized_price": 56.99,
     "buy_url": "https://www.amazon.com/dp/B08BF5HMQS",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81tgfeSmR3S._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2272,7 +2768,9 @@
     "name": "Tommy Bahama- King Duvet Cover Set, Reversible Cotton Bedding Set with Matching Shams, Coastal Inspired Bedding Essentials (Canyon Palms Green, King)",
     "normalized_price": 70.0,
     "buy_url": "https://www.amazon.com/dp/B0BZQMWQRH",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91Ii7qKE8RL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2281,7 +2779,9 @@
     "name": "SUSYBAO Blue Tropical Duvet Cover King 100% Cotton 3 Pcs Set 1 Hawaiian Botanical Duvet Cover with Zipper Ties 2 Pillowcases Modern Coastal Navy Blue Palm Leaves Pattern Bedding Set Soft",
     "normalized_price": 55.99,
     "buy_url": "https://www.amazon.com/dp/B07KFC91J3",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81NRBCBue5L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2290,7 +2790,9 @@
     "name": "Lekesky Queen Duvet Cover Set, Tropical Blue Palm Pattern Duvet Cover Queen Size, 3 Pieces White Bedding Sets with Zipper, Ultra Soft Microfiber Reversible Floral Queen Size Comforter Cover",
     "normalized_price": 30.39,
     "buy_url": "https://www.amazon.com/dp/B0DK1W6PN8",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71FrXPzCjqL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2299,7 +2801,9 @@
     "name": "Lekesky King Duvet Cover Set, Tropical Blue Palm Pattern Duvet King Size, 3-Piece White Bedding Set with Zipper, Ultra Soft Microfiber Reversible Floral King Size Comforter",
     "normalized_price": 31.34,
     "buy_url": "https://www.amazon.com/dp/B0DK1WYF9X",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71FrXPzCjqL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2308,7 +2812,9 @@
     "name": "Tommy Bahama - King Duvet Cover Set, Soft Yarn-Dyed Cotton Bedding with Lightweight Feel, 3 Piece Bed Set with Matching Pillowcases (Jungle Palms Beige)",
     "normalized_price": 68.0,
     "buy_url": "https://www.amazon.com/dp/B0DQFFG3LV",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91ILY14EZ2L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2317,7 +2823,9 @@
     "name": "Tommy Bahama - Queen Duvet Cover Set, Cotton Sateen Bedding with Matching Shams & Button Closure, Super Soft Bedding Set (Palmiers Green, Queen)",
     "normalized_price": 66.0,
     "buy_url": "https://www.amazon.com/dp/B077T6R4CC",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/61-M1eX0FDL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2326,7 +2834,9 @@
     "name": "Tropical Tree Plant Duvet Cover Set Queen Size with Zipper Closure, Watercolor Red Hibiscus Flower Pattern Printed Comforter Cover,Palm Leaves Bedding Sets with 2 Pillow Cases,Soft,Green Pink",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B08FDH34XF",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71DAONee8LL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2335,7 +2845,9 @@
     "name": "Lekesky King Duvet Cover Set, White and Gold Tropical Palm Leaf Pattern Comforter Cover King Size, 3 Pieces Soft Microfiber Bedding Sets with Zipper & 2 Pillowcases, Comforter Not Included",
     "normalized_price": 31.34,
     "buy_url": "https://www.amazon.com/dp/B0DRCR3L29",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81BXZZz6mqL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2344,7 +2856,9 @@
     "name": "Tommy Bahama - Full/Queen Duvet Cover Set, Super Soft Cotton Bedding Set with Matching Shams, Oeko-Tex Certified (Vintage Palms Green, Full/Queen)",
     "normalized_price": 60.0,
     "buy_url": "https://www.amazon.com/dp/B0DH6L5CMP",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91XIhdKC3rL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2353,7 +2867,9 @@
     "name": "Tommy Bahama - Duvet Cover Set, Luxuriously Soft Bedding with Matching Shams, All-Cotton Yarn-Dye Fabric, Coastal Inspired Bedding Essentials (Jungle Palms Beige, Full/Queen)",
     "normalized_price": 53.0,
     "buy_url": "https://www.amazon.com/dp/B0DQFCGPQ4",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91ILY14EZ2L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2362,7 +2878,9 @@
     "name": "MILDLY 100% Long-Staple Cotton Duvet Cover Set King Size Green Palm Leaf Printed Luxury Comforter Cover Set Reversible Tropical Ultra Soft",
     "normalized_price": 99.82,
     "buy_url": "https://www.amazon.com/dp/B07D5JP9PW",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71Kjas2u7xL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2371,7 +2889,9 @@
     "name": "VM VOUGEMARKET Leaves Duvet Cover Set Queen,3 Piece Soft Premium Cotton Green Tropical Palm Tree Comforter Cover with Zipper Closure,Botanical Bedding Set Queen",
     "normalized_price": 68.99,
     "buy_url": "https://www.amazon.com/dp/B072L12W1F",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81XqrC+8wHL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2380,7 +2900,9 @@
     "name": "YuHeGuoJi Black White Tropical Duvet Cover Queen 100% Cotton 3 Pcs Set 1 Hawaiian Botanical Duvet Cover with Zipper Ties 2 Pillowcases Farmhouse Coastal Palm Leaves Pattern Bedding Set",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B0C89P13Z8",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81u44XA24rL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2389,7 +2911,9 @@
     "name": "SUSYBAO Plant Patterned Duvet Cover Queen 100% Cotton 3 Pieces Set 1 Hawaiian Tropical Botanical Duvet Cover with Zipper Ties 2 Pillowcases Farmhouse Navy Blue Palm Leaves Print Bedding Set Soft",
     "normalized_price": 49.99,
     "buy_url": "https://www.amazon.com/dp/B07KFBZSK3",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81NRBCBue5L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2398,7 +2922,9 @@
     "name": "OAITE Duvet Cover King Size,Reversible Summer Leaf Green Duvet Cover Set with Zipper Closure, 3 Pieces Modern Patterns Soft Microfiber Bedding Set with 8 Ties(104\u2019\u2019*90\u2019\u2019,2 Pillow Cases)",
     "normalized_price": 23.99,
     "buy_url": "https://www.amazon.com/dp/B0DRBZ9F1F",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81S-ihd-tcL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2407,7 +2933,9 @@
     "name": "FADFAY Hawaiian Style Red Hibiscus Palm Leaves Tropical Duvet Cover Set Summer Bedding Super Soft 100% Cotton,1 Duvet Cover & 2 Pillow Shames, King Size",
     "normalized_price": 85.0,
     "buy_url": "https://www.amazon.com/dp/B07CMXR2LY",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91NwBFf6pxL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2416,7 +2944,9 @@
     "name": "YuHeGuoJi Tropical Green Duvet Cover Queen 100% Cotton Coastal Monstera Leaves Duvet Cover 3 Pcs Set 1 Hawaiian Botanical Duvet Cover with Zipper Ties 2 Pillowcases Plant Print Bedding Set Soft",
     "normalized_price": 50.99,
     "buy_url": "https://www.amazon.com/dp/B081DQQDM7",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81w7StK2L-L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2425,7 +2955,9 @@
     "name": "LONAVA King Tropical 3 Pcs Duvet Cover Set, Breathable Soft Microfiber Sage Green Lining Comforter Cover with Zipper Closure, and 2 Anti-Pilling, Fade Resistant Pillowcases, Summer Tree",
     "normalized_price": 23.99,
     "buy_url": "https://www.amazon.com/dp/B0F2MVFMNZ",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81xjmMVluOL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2443,7 +2975,9 @@
     "name": "HORIMOTE HOME Tropical Plants Quilt Set Queen Size 3 Pieces, Green Palm Leaves Rainforest Style Fine Printed Reversible Bedspreads Bedding Sets, Soft and Lightweight Bed Coverlet for All Season",
     "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B0BGS9N4VW",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71icvF6fJLL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2452,7 +2986,9 @@
     "name": "Tommy Bahama - Queen Duvet Cover Set, Soft & Breathable Bedding with Matching Shams, Tropical Bedding Set, Oeko-Tex Certified (Art of Palms Blue Lagoon, Queen)",
     "normalized_price": 51.0,
     "buy_url": "https://www.amazon.com/dp/B0D321KNKX",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/814CppjvJkL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2461,7 +2997,9 @@
     "name": "MILDLY 100% Long Staple Cotton Queen Duvet Cover Set, Green Palm Leaves Tropical Floral Comforter Cover Set",
     "normalized_price": 89.53,
     "buy_url": "https://www.amazon.com/dp/B086ZLV1XN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/8114ZeP4DhS._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2470,7 +3008,9 @@
     "name": "Luxury Palm Leaves Duvet Cover Set Tropical Bedding Set with Pillowcases Modern Green Comforter-Cover Bed Set King Size",
     "normalized_price": 36.99,
     "buy_url": "https://www.amazon.com/dp/B0DCC7S8PZ",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71r5SSxqNSL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2479,7 +3019,9 @@
     "name": "Tommy Bahama - Queen Duvet Cover Set, Soft Cotton Bedding with Matching Shams, Tropical Bedding Set with Solid Reverse (Raw Coast Green, Queen)",
     "normalized_price": 77.35,
     "buy_url": "https://www.amazon.com/dp/B0CH7BXNMN",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/A1-OTEYgXnL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2488,7 +3030,9 @@
     "name": "Harbor House King Duvet Cover Set, Tropical Palm Print, Soft Cotton Oversized Duvet Cover for a King-Size Bed, Coastal Bedding Cover, 2 Shams, 2 D\u00e9cor Pillows, Kiawah Island, King/Cal King Blue",
     "normalized_price": 146.24,
     "buy_url": "https://www.amazon.com/dp/B0CZPSWFNX",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/816pAbDrNoL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2497,7 +3041,9 @@
     "name": "Tropical Pink Floral Percale Duvet Cover, King Green Palm Leaf Reversible Zipper Duvet Cover Set, Daisy Patterned 100% Cotton Soft Bed Set, Shabby Garden Chic Neutral Bedding, White, 3Pcs",
     "normalized_price": 31.92,
     "buy_url": "https://www.amazon.com/dp/B0F2GDLB3Z",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/818BtqGcgYL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2506,7 +3052,9 @@
     "name": "Lush Decor Bali Tropical Leaves Gauze Jacquard Duvet Cover 3 Piece Set King Neutral - Tropical Bedding Sets - Brown Duvet Cover - Coastal Decor",
     "normalized_price": 110.99,
     "buy_url": "https://www.amazon.com/dp/B0F2GTD63T",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91O1MYTFObL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2515,7 +3063,9 @@
     "name": "Eikei Palm Leaves Duvet Cover and Pillowcases Set Tropical Exotic Island Flowers Trees Branches Paradise Birds Bedding Jungle Plants Modern Botanical Print Long Staple Cotton (White, King)",
     "normalized_price": 75.8,
     "buy_url": "https://www.amazon.com/dp/B07KCK84ZN",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81V+lc-ZVEL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2524,7 +3074,9 @@
     "name": "Bedsure Duvet Cover King Size - 100% Cotton Reversible Floral King Duvet Cover Set with Zipper Closure, 3 Pieces Soft & Breathable PureWoven Green Milieu Bedding Set with 2 Pillow Shams 20\"x36\"",
     "normalized_price": 42.99,
     "buy_url": "https://www.amazon.com/dp/B0DRP27WVW",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/917bj0QT8XL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2533,7 +3085,9 @@
     "name": "Southshore Fine Living, Inc. Oversized Tropicall California King/King Duvet Cover Set \u2013 Hotel Quality, Easy Care, Fade-Resistant Bedding \u2013 Includes 1 Duvet Cover and 2 Pillow Shams, Tropic Leaf Blue",
     "normalized_price": 44.99,
     "buy_url": "https://www.amazon.com/dp/B0CJ8H9H25",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91-gaLySpjL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2542,7 +3096,9 @@
     "name": "100% Natural Cotton Palm Leaf Bedding Set Monstera Duvet Cover Tropical Leaves Branch Comforter Cover Hawaiian Hippie Botanical Bedspread Cover for Kids Adult, Decor 3Pcs Queen Size, Soft Microfiber",
     "normalized_price": 62.1,
     "buy_url": "https://www.amazon.com/dp/B0C9J5LKJ3",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/719-GmltmnL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2551,7 +3107,9 @@
     "name": "Castle Fairy Wild Birds 100% Natural Cotton Comforter Cover Watercolor Palm Trees Tropical Plants Duvet Cover Set Queen Size for Bedroom Cute Toucan Monkey Animal Jungle Style Quilt Cover Set 3 PCS",
     "normalized_price": 65.55,
     "buy_url": "https://www.amazon.com/dp/B0C7BZNT4W",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71rGHcukZwL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2560,7 +3118,9 @@
     "name": "Tommy Bahama - Queen Duvet Cover Set, Cotton Bedding with Matching Shams & Button Closure, Super Soft Bedding Set (Bakers Bluff Blue, Queen)",
     "normalized_price": 63.0,
     "buy_url": "https://www.amazon.com/dp/B09VJ36V3W",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/91vyeVPzGuL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2569,7 +3129,9 @@
     "name": "Palm Leaves Bedding Queen Duvet Cover \u2013 Luxury Tropical Bedding with Green & Gold Leaves",
     "normalized_price": 38.99,
     "buy_url": "https://www.amazon.com/dp/B0GCSPJN71",
-    "specs": {},
+    "specs": {
+      "bed_size": "queen"
+    },
     "image_url": "https://m.media-amazon.com/images/I/7167ChDFVnL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2578,7 +3140,9 @@
     "name": "SUSYBAO Tropical Botanical Duvet Cover King 100% Egyptian Cotton 3 Pcs Set 1 Banana Leaves Patterned Duvet Cover with Zipper Ties 2 Pillowcases Luxury Soft Hawaiian Colorful Floral Bedding Set",
     "normalized_price": 64.99,
     "buy_url": "https://www.amazon.com/dp/B07RLB1W5L",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81EGdhcfbJL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2587,7 +3151,9 @@
     "name": "Erosebridal Palm Tree Bedding Set Vintage Red Flower Duvet Cover Hawaiian Tropical Leaves Comforter Cover Plant Petals Green Branches Bedspread Cover for Kid Adult, Decor 3 Pcs Full Size",
     "normalized_price": 19.94,
     "buy_url": "https://www.amazon.com/dp/B08BRXR2GS",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71ks1GjCWkL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2596,7 +3162,9 @@
     "name": "Erosebridal Ocean Duvet Cover Summer Beach Decor Hawaiian Vacation Style Bedding Set Palm Trees Tropical Nature Sea Theme Home Decor Comforter Cover Set, 1 Duvet Cover with 2 Pillow Cases King Size",
     "normalized_price": 42.99,
     "buy_url": "https://www.amazon.com/dp/B0872BP5KY",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/81vXYpeCGEL._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2605,7 +3173,9 @@
     "name": "SLEEP ZONE Tropical Plants Duvet Cover Sets, 120gsm Ultra Soft Printed Farmhouse Bedding Set All Season with Zipper Closure 8 Corner Ties Green 2 Pillow Shams, Full",
     "normalized_price": 13.49,
     "buy_url": "https://www.amazon.com/dp/B0CRKTLK2K",
-    "specs": {},
+    "specs": {
+      "bed_size": "full"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71ZoP6RUD9L._AC_UL320_.jpg",
     "source": "canopy"
   },
@@ -2614,7 +3184,9 @@
     "name": "Feelyou Tropical Leaves Bedding Set King Size Kids Palm Tree Print Comforter Cover Set for Boys Girls Teens Leaf Pattern Duvet Cover Botanical Leaf Branches Bedspread Cover Botanical Quilt Cover",
     "normalized_price": 36.09,
     "buy_url": "https://www.amazon.com/dp/B0D2NXGLJC",
-    "specs": {},
+    "specs": {
+      "bed_size": "king"
+    },
     "image_url": "https://m.media-amazon.com/images/I/71OjSjvgulL._AC_UL320_.jpg",
     "source": "canopy"
   }

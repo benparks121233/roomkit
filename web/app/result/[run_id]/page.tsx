@@ -70,14 +70,20 @@ function getGroupForSlot(slotId: string, roomType: string): GroupDef | null {
 
 // Decor/accessory slots show fewer options (4) so the page isn't overwhelming.
 // Anchor furniture slots show the full list.
-const _TRIMMED_SLOTS = new Set(["wall_art", "plants", "mirror", "throw_blanket"]);
-const _TRIM_COUNT = 4;
+// Per-slot display caps — upper bound on listings shown (not selection limit).
+// Selection limit is max_quantity on the slot (separate concern).
+const _DISPLAY_CAPS: Record<string, number> = {
+  wall_art: 24,
+  plants: 18,
+  mirror: 18,
+  throw_blanket: 12,
+};
 
 function getChoicesForSlot(slot: SlotResult): ProductResult[] {
   if (!slot.product) return [];
   const all = [slot.product, ...slot.alternatives];
-  if (_TRIMMED_SLOTS.has(slot.slot_id)) return all.slice(0, _TRIM_COUNT);
-  return all;
+  const cap = _DISPLAY_CAPS[slot.slot_id];
+  return cap ? all.slice(0, cap) : all;
 }
 
 function upgradeAmazonImage(url: string): string {
@@ -280,7 +286,8 @@ export default function ResultPage() {
           .filter(([id]) => id !== currentSlotId)
           .flatMap(([, prods]) => prods)
           .reduce((sum, p) => sum + p.normalized_price, 0);
-        const wouldExceed = design && (otherSpend + product.normalized_price > design.target_budget * 1.05);
+        const budgetCap = design ? (design.user_budget ?? design.target_budget) : 0;
+        const wouldExceed = design && (otherSpend + product.normalized_price > budgetCap * 1.05);
 
         if (wouldExceed) {
           // Show over-budget warning — let user confirm or pick again
@@ -859,7 +866,7 @@ export default function ResultPage() {
         />
       )}
 
-      <BudgetMeter total={totalSpent} target={design.target_budget} />
+      <BudgetMeter total={totalSpent} target={design.target_budget} userBudget={design.user_budget} />
 
       {/* Export all to Amazon cart */}
       <ExportToCartButton selections={selections} runId={runId} />

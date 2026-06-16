@@ -327,8 +327,8 @@ def test_fit_budget_feasible_total_never_exceeds_budget():
 def test_fit_budget_drops_optional_when_tight():
     """A heavy optional pushes the floor above budget; it must be dropped."""
     weights = dict(_bedroom_weights_exact())  # required only
-    # Add a heavy optional that pushes total_w > 1.0
-    weights["dresser"] = 0.50  # total_w > 1.0 → floor > $500
+    # Add a heavy optional that pushes total_w > 1.0 enough that floor > $520.
+    weights["dresser"] = 0.55  # total_w > 1.08 → floor > $520
     # Budget $520 < floor-with-dresser, but >= $500 (floor without dresser).
     plan = fit_slots_to_budget(weights, 520.0, "bedroom", TAXONOMY, BUDGET_POLICIES)
 

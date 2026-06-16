@@ -55,7 +55,7 @@ _SLOT_PLACEMENTS: dict[str, dict[str, str]] = {
         "mattress":      "MATTRESS: standard thickness (8-12 inches), sitting naturally on the bed frame",
         "desk":          "DESK: against the LEFT wall, between the nightstand and the corner — a workspace area",
         "desk_chair":    "DESK CHAIR: tucked under or in front of the desk",
-        "sconce":        "WALL SCONCE: mounted on the wall near the bed, one on each side or one beside the nightstand",
+        "sconce":        "WALL SCONCE: CLEARLY VISIBLE wall-mounted light fixture(s) flanking the bed headboard — these MUST be prominent and recognizable, not hidden or tiny",
         "wallpaper":     "WALLPAPER: accent wall pattern visible on the BACK WALL behind the bed — covers the full wall surface",
         "duvet_insert":  "DUVET INSERT: inside the duvet cover (not separately visible — skip if duvet_cover is present)",
     },
@@ -81,9 +81,34 @@ _SLOT_PLACEMENTS: dict[str, dict[str, str]] = {
 }
 
 
+_MIRROR_SHAPES = ["round", "arched", "oval", "rectangular", "square", "full length", "full-length", "floor"]
+
+# Dimensional patterns like "24x36" → rectangular, "24x24" → square
+import re
+_DIM_PATTERN = re.compile(r"(\d+)\s*x\s*(\d+)")
+
+
+def _detect_mirror_shape(product_name: str) -> str | None:
+    """Extract mirror shape from the product name, if recognizable."""
+    name_lower = product_name.lower()
+    for shape in _MIRROR_SHAPES:
+        if shape in name_lower:
+            return shape.replace("-", " ").title()
+    # Infer from dimensions: WxH where W≈H → square, W≠H → rectangular
+    m = _DIM_PATTERN.search(name_lower)
+    if m:
+        w, h = int(m.group(1)), int(m.group(2))
+        if abs(w - h) <= 2:
+            return "Square"
+        elif w >= h * 1.3 or h >= w * 1.3:
+            return "Rectangular"
+    return None
+
+
 def _build_layout_for_products(
     room_type: str,
     product_slot_ids: set[str],
+    products: dict[str, list[dict]] | None = None,
 ) -> str:
     """Build a dynamic layout instruction using only the slots that have products."""
     placements = _SLOT_PLACEMENTS.get(room_type, _SLOT_PLACEMENTS["bedroom"])
@@ -93,6 +118,12 @@ def _build_layout_for_products(
             # Skip duvet_insert when duvet_cover is present (it's inside)
             if slot_id == "duvet_insert" and "duvet_cover" in product_slot_ids:
                 continue
+            # Mirror: inject the actual shape from the selected product name
+            if slot_id == "mirror" and products and "mirror" in products:
+                mirror_name = products["mirror"][0].get("name", "")
+                shape = _detect_mirror_shape(mirror_name)
+                if shape:
+                    instruction = instruction.rstrip() + f" — the mirror is {shape.upper()} shaped, render it as a {shape.upper()} mirror"
             lines.append(f"- {instruction}")
     return "\n".join(lines)
 
@@ -239,6 +270,7 @@ def render_room(
         room_type, style_name, mood, keywords,
         product_labels, text_fallbacks,
         product_slot_ids=set(products.keys()),
+        products=products,
     )
 
     # Call OpenAI with timeout protection.
@@ -304,15 +336,17 @@ def _build_render_prompt(
     product_labels: list[str],
     text_products: list[str],
     product_slot_ids: set[str] | None = None,
+    products: dict[str, list[dict]] | None = None,
 ) -> str:
     """Build the image generation prompt.
 
     Args:
         product_slot_ids: The set of slot IDs that have products. Used to build
             a dynamic layout instruction with only the relevant placements.
+        products: The full products dict (slot_id → items) for shape/detail extraction.
     """
     style_desc = _STYLE_ROOMS.get(style_name, _STYLE_ROOMS["warm_minimalist"])
-    layout = _build_layout_for_products(room_type, product_slot_ids or set())
+    layout = _build_layout_for_products(room_type, product_slot_ids or set(), products=products)
     kw_str = ", ".join(keywords[:8])
 
     product_section = "\n".join(product_labels)
