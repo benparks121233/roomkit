@@ -4,23 +4,42 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel
+from typing import Literal
+
+from pydantic import BaseModel, Field, field_validator
 
 
 class DesignRequest(BaseModel):
     """Input to POST /design."""
-    room_type: str = "bedroom"
-    budget: float = 1500.0
-    style_description: str = ""
-    core_aesthetic: str | None = None  # Direct style profile id from quiz (e.g. "quiet_luxury")
-    bed_size: str | None = None
+    room_type: Literal["bedroom", "living_room"] = "bedroom"
+    budget: float = Field(1500.0, ge=100, le=25000)
+    style_description: str = Field("", max_length=2000)
+    core_aesthetic: str | None = Field(None, max_length=100)
+    bed_size: str | None = Field(None, max_length=50)
     qa_answers: dict[str, str] = {}
-    density: str = "balanced"
-    interests: list[str] = []
+    density: str = Field("balanced", max_length=50)
+    interests: list[str] = Field(default=[])
     full_room: bool = True
-    wants: list[str] = []
-    excluded_slots: list[str] = []
-    mirror_type: str | None = None  # "full_length", "round", "wall", "arched", or None
+    wants: list[str] = Field(default=[])
+    excluded_slots: list[str] = Field(default=[])
+    mirror_type: str | None = Field(None, max_length=50)
+
+    @field_validator("interests", "wants", "excluded_slots")
+    @classmethod
+    def cap_list_length(cls, v: list[str]) -> list[str]:
+        if len(v) > 30:
+            raise ValueError("List exceeds maximum of 30 items")
+        return v
+
+    @field_validator("qa_answers")
+    @classmethod
+    def cap_qa_answers(cls, v: dict[str, str]) -> dict[str, str]:
+        if len(v) > 30:
+            raise ValueError("Too many QA answers (max 30)")
+        for key, val in v.items():
+            if len(key) > 100 or len(val) > 500:
+                raise ValueError("QA key or value too long")
+        return v
 
 
 class ProductResult(BaseModel):

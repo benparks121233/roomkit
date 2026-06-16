@@ -13,10 +13,12 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
-_ADMIN_SECRET = os.environ.get("ADMIN_SECRET", "roomkit-internal-2024")
+_ADMIN_SECRET = os.environ.get("ADMIN_SECRET")
 
 
 def _check_auth(secret: str | None):
+    if not _ADMIN_SECRET:
+        raise HTTPException(status_code=503, detail="Admin not configured")
     if secret != _ADMIN_SECRET:
         raise HTTPException(status_code=401, detail="Unauthorized")
 

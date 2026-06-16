@@ -382,15 +382,13 @@ class TestDesignErrors:
         })
         assert resp.status_code == 422
 
-    @_patch_llms
-    def test_tiny_budget_not_feasible(self, _s, _c, _sel):
+    def test_tiny_budget_rejected_by_validation(self):
+        """Budget below $100 is rejected at the Pydantic validation layer."""
         resp = client.post("/design", json={
             "room_type": "bedroom",
             "budget": 10.0,
         })
-        data = resp.json()
-        # With $10 total, the composition gate should flag infeasible.
-        assert data["is_feasible"] is False
+        assert resp.status_code == 422  # Unprocessable Entity
 
 
 # ---------------------------------------------------------------------------

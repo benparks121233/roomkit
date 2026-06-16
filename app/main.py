@@ -17,11 +17,18 @@ from app.api.admin import router as admin_router  # noqa: E402
 
 app = FastAPI(title="RoomKit", version="0.1.0")
 
-# CORS — allow the Next.js dev server (port 3000) to reach the API (port 8000).
-# In production, tighten origins to the actual domain.
+# CORS — allow the Next.js frontend to reach the API.
+# In production, set CORS_ORIGINS to the actual domain(s), comma-separated.
+# Defaults to localhost dev servers only.
+import os as _os  # noqa: E402
+_cors_origins = _os.environ.get(
+    "CORS_ORIGINS",
+    "http://localhost:3000,http://localhost:3001",
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],
+    allow_origins=[o.strip() for o in _cors_origins],
     allow_methods=["*"],
     allow_headers=["*"],
 )
