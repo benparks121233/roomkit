@@ -410,7 +410,8 @@ class TestGetDesign:
         assert get_resp.json() == post_resp.json()
 
     def test_get_unknown_returns_404(self):
-        resp = client.get("/design/nonexistent-id")
+        with patch("services.design_store.load_design", side_effect=KeyError("nonexistent-id")):
+            resp = client.get("/design/nonexistent-id")
         assert resp.status_code == 404
 
 
@@ -504,9 +505,10 @@ class TestValidateSelections:
         assert slots["bed_frame"]["max_quantity"] == 1
 
     def test_validate_unknown_run_id_returns_404(self):
-        resp = client.post("/design/nonexistent/validate-selections", json={
-            "selections": [],
-        })
+        with patch("services.design_store.load_design", side_effect=KeyError("nonexistent")):
+            resp = client.post("/design/nonexistent/validate-selections", json={
+                "selections": [],
+            })
         assert resp.status_code == 404
 
     @_patch_llms

@@ -42,9 +42,43 @@ from validators.budget_rules import validate_pool_spend
 router = APIRouter()
 
 # ---------------------------------------------------------------------------
-# In-memory design storage (v1 — ephemeral, lives as long as uvicorn process)
+# In-memory design cache + Supabase persistence (Phase 3)
+# _designs is the fast in-process cache.  Supabase is the durable store.
+# Write path: save to both.  Read path: cache first, Supabase fallback.
 # ---------------------------------------------------------------------------
 _designs: dict[str, DesignResponse] = {}
+
+
+def _get_design(run_id: str) -> DesignResponse:
+    """Retrieve a design: cache first, then Supabase, with three-outcome handling.
+
+    Returns the DesignResponse on success.
+    Raises HTTPException 404 if the design genuinely doesn't exist anywhere.
+    Raises HTTPException 503 if the Supabase query failed (retry-able).
+    """
+    # 1. Fast path: in-memory cache
+    if run_id in _designs:
+        return _designs[run_id]
+
+    # 2. Slow path: Supabase lookup
+    from services.design_store import DesignStoreError, load_design
+
+    try:
+        design = load_design(run_id)
+    except KeyError:
+        # Row genuinely absent — nowhere to find it
+        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+    except DesignStoreError as exc:
+        # Connection/query failure — might exist but we can't reach it
+        logger.warning("_get_design: Supabase read failed for %s: %s", run_id, exc)
+        raise HTTPException(
+            status_code=503,
+            detail="Storage temporarily unavailable — please retry",
+        )
+
+    # Populate cache for subsequent fast reads
+    _designs[run_id] = design
+    return design
 
 
 # ---------------------------------------------------------------------------
@@ -256,6 +290,10 @@ async def create_design(req: DesignRequest) -> DesignResponse:
     )
     _designs[response.run_id] = response
 
+    # Persist to Supabase (write-through). Failure is logged but non-blocking.
+    from services.design_store import save_design
+    save_design(response)
+
     # Track: design completed + selections.
     _elapsed = time.monotonic() - _start_time
     # Estimate API cost: ~16 Haiku selection calls + 1 Sonnet style + 1 Sonnet composition.
@@ -301,9 +339,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
 @router.get("/design/{run_id}", response_model=DesignResponse)
 async def get_design(run_id: str) -> DesignResponse:
     """Re-fetch a previously generated design board."""
-    if run_id not in _designs:
-        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
-    return _designs[run_id]
+    return _get_design(run_id)
 
 
 # ---------------------------------------------------------------------------
@@ -323,9 +359,7 @@ async def validate_selections(
     Prices are looked up from the stored design — the client sends only
     product_ids, never prices.  Unknown or tampered product_ids are rejected.
     """
-    if run_id not in _designs:
-        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
-    design = _designs[run_id]
+    design = _get_design(run_id)
 
     # Build product price lookup from the stored design (source of truth).
     # Keys: (slot_id, product_id) → price.  Includes primary + alternatives.
@@ -424,8 +458,7 @@ async def generate_render(run_id: str, body: RenderRequest | None = None) -> dic
     """
     from services.render_service import render_room, render_exists, get_render_path
 
-    if run_id not in _designs:
-        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+    design = _get_design(run_id)  # 404 or 503 if unavailable
 
     log_event(run_id, "render_requested")
 
@@ -433,8 +466,6 @@ async def generate_render(run_id: str, body: RenderRequest | None = None) -> dic
     if render_exists(run_id):
         log_event(run_id, "render_generated", {"render_cost": 0.0, "cached": True}, api_cost=0.0)
         return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": True}
-
-    design = _designs[run_id]
     user_selections = body.selections if body else {}
 
     # Build product lookup: all products (primary + alternatives) by (slot_id, product_id).
@@ -513,8 +544,7 @@ async def detect_hotspots(run_id: str) -> dict:
     from services.render_service import render_exists, get_render_path
     from services.hotspot_service import detect_product_hotspots, hotspots_exist, load_hotspots
 
-    if run_id not in _designs:
-        raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+    design = _get_design(run_id)  # 404 or 503 if unavailable
 
     if not render_exists(run_id):
         raise HTTPException(status_code=400, detail="Render not yet generated")
@@ -522,8 +552,6 @@ async def detect_hotspots(run_id: str) -> dict:
     # Return cached hotspots.
     if hotspots_exist(run_id):
         return {"run_id": run_id, "hotspots": load_hotspots(run_id), "cached": True}
-
-    design = _designs[run_id]
 
     # Build product info for the hotspot detector.
     products: dict[str, dict] = {}
