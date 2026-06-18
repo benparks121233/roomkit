@@ -118,6 +118,8 @@ export default function IntakePage() {
       wants: pendingResult.wants,
       excluded_slots: pendingResult.excludedSlots,
       mirror_type: pendingResult.mirrorType,
+      screen_size: pendingResult.screenSize,
+      tv_priority: pendingResult.tvPriority,
     };
 
     try {

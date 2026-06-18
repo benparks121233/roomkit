@@ -20,7 +20,7 @@ import os
 from pathlib import Path
 
 import requests
-from PIL import Image as PILImage
+from PIL import Image as PILImage, ImageDraw, ImageFont
 
 logger = logging.getLogger(__name__)
 
@@ -63,7 +63,9 @@ _SLOT_PLACEMENTS: dict[str, dict[str, str]] = {
         "coffee_table":  "COFFEE TABLE: in front of the sofa, center of the seating area",
         "side_table":    "SIDE TABLE: to the right of the sofa",
         "table_lamp":    "TABLE LAMP: on the side table",
-        "tv_stand":      "TV STAND: against the far wall, right side",
+        "tv":            "TV: mounted on or sitting above the TV stand/wall, screen facing the seating area",
+        "tv_stand":      "TV STAND: against the far wall, right side, with the TV on top",
+        "tv_mount":      "TV MOUNT: TV wall-mounted on the far wall, right side — no TV stand, clean floating look",
         "floor_lamp":    "FLOOR LAMP: tall lamp in a corner, right side",
         "rug":           "RUG: on the floor anchoring the seating area",
         "curtains":      "CURTAINS: framing the window(s)",
@@ -72,9 +74,7 @@ _SLOT_PLACEMENTS: dict[str, dict[str, str]] = {
         "throw_pillows": "THROW PILLOWS: arranged on the sofa",
         "throw_blanket": "THROW BLANKET: draped over the sofa arm",
         "ceiling_light": "CEILING LIGHT: pendant/fixture from the ceiling",
-        "mirror":        "MIRROR: on the wall, decorative",
         "armchair":      "ARMCHAIR: angled beside the sofa, part of the seating group",
-        "ottoman":       "OTTOMAN: in front of or beside the armchair",
         "bookshelf":     "BOOKSHELF: against a wall, styled with books and objects",
     },
 }
@@ -158,16 +158,20 @@ HOTSPOT_POSITIONS: dict[str, dict[str, dict]] = {
         "coffee_table":  {"x": 0.40, "y": 0.72, "w": 0.22, "h": 0.12},
         "side_table":    {"x": 0.65, "y": 0.55, "w": 0.10, "h": 0.15},
         "table_lamp":    {"x": 0.65, "y": 0.40, "w": 0.08, "h": 0.14},
+        "tv":            {"x": 0.82, "y": 0.38, "w": 0.16, "h": 0.14},
         "tv_stand":      {"x": 0.82, "y": 0.50, "w": 0.18, "h": 0.20},
+        "tv_mount":      {"x": 0.82, "y": 0.35, "w": 0.16, "h": 0.14},
+        "sound_bar":     {"x": 0.82, "y": 0.48, "w": 0.14, "h": 0.05},
         "floor_lamp":    {"x": 0.88, "y": 0.35, "w": 0.08, "h": 0.30},
         "rug":           {"x": 0.40, "y": 0.78, "w": 0.40, "h": 0.15},
         "curtains":      {"x": 0.40, "y": 0.22, "w": 0.50, "h": 0.15},
         "wall_art":      {"x": 0.38, "y": 0.18, "w": 0.25, "h": 0.16},
         "plants":        {"x": 0.90, "y": 0.60, "w": 0.12, "h": 0.22},
-        "mirror":        {"x": 0.82, "y": 0.25, "w": 0.12, "h": 0.18},
+        "bookshelf":     {"x": 0.12, "y": 0.45, "w": 0.14, "h": 0.30},
         "throw_pillows": {"x": 0.35, "y": 0.48, "w": 0.15, "h": 0.10},
         "throw_blanket": {"x": 0.42, "y": 0.58, "w": 0.18, "h": 0.10},
         "ceiling_light": {"x": 0.45, "y": 0.06, "w": 0.12, "h": 0.10},
+        "armchair":      {"x": 0.14, "y": 0.58, "w": 0.16, "h": 0.20},
     },
 }
 
@@ -299,8 +303,9 @@ def render_room(
 
         raw_bytes = base64.b64decode(b64_data)
 
-        # Compress and save as JPEG.
+        # Compress and save as JPEG (with watermark for free tier).
         img = PILImage.open(io.BytesIO(raw_bytes)).convert("RGB")
+        img = _apply_watermark(img)
         img.save(render_path, "JPEG", quality=85, optimize=True)
 
         size_kb = render_path.stat().st_size // 1024
@@ -318,6 +323,59 @@ def render_room(
 # ---------------------------------------------------------------------------
 # Private helpers
 # ---------------------------------------------------------------------------
+
+_FONT_PATH = Path(__file__).parent.parent / "assets" / "fonts" / "DMSans-Variable.ttf"
+
+
+def _apply_watermark(img: PILImage.Image) -> PILImage.Image:
+    """Bake a subtle 'Made with RoomKit' watermark into the bottom-right corner.
+
+    Spec: DM Sans Bold, ~2.5% image height, white at 45% opacity,
+    dark drop shadow for readability on light rooms, 20px margin.
+    """
+    width, height = img.size
+    font_size = max(16, int(height * 0.05))
+    margin = 30
+    text = "Made with RoomKit"
+
+    # Load font — fall back to default if DM Sans is missing.
+    try:
+        font = ImageFont.truetype(str(_FONT_PATH), size=font_size)
+        # Set bold weight on variable font axis.
+        try:
+            font.set_variation_by_axes([font_size, 700])  # opsz, wght
+        except Exception:
+            pass  # Non-variable build or unsupported — regular weight is fine.
+    except (OSError, IOError):
+        logger.warning("DM Sans font not found at %s, using default", _FONT_PATH)
+        font = ImageFont.load_default()
+
+    # Measure text bounding box.
+    dummy_draw = ImageDraw.Draw(img)
+    bbox = dummy_draw.textbbox((0, 0), text, font=font)
+    text_w = bbox[2] - bbox[0]
+    text_h = bbox[3] - bbox[1]
+
+    # Position: bottom-right with margin.
+    x = width - text_w - margin
+    y = height - text_h - margin
+
+    # Compositing via RGBA overlay for true alpha blending.
+    overlay = PILImage.new("RGBA", img.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+
+    # Drop shadow: 2px offset, 30% opacity black.
+    shadow_alpha = int(255 * 0.30)
+    draw.text((x + 2, y + 2), text, font=font, fill=(0, 0, 0, shadow_alpha))
+
+    # Main text: white at 45% opacity.
+    text_alpha = int(255 * 0.45)
+    draw.text((x, y), text, font=font, fill=(255, 255, 255, text_alpha))
+
+    # Composite and convert back to RGB for JPEG save.
+    composited = PILImage.alpha_composite(img.convert("RGBA"), overlay)
+    return composited.convert("RGB")
+
 
 def _download_image(url: str, timeout: int = 10) -> PILImage.Image | None:
     """Download an image URL and return a PIL Image."""

@@ -21,6 +21,8 @@ export interface DesignRequest {
   wants?: string[];
   excluded_slots?: string[];
   mirror_type?: string | null;
+  screen_size?: string | null;
+  tv_priority?: boolean;
 }
 
 export interface ProductResult {
@@ -39,6 +41,7 @@ export interface SlotResult {
   max_quantity: number; // >1 enables multi-select (e.g. wall_art: 4)
   product: ProductResult | null;
   alternatives: ProductResult[];
+  selected_products: ProductResult[]; // user's final picks (set at finalize)
   null_reason: string | null; // "owned" | "no_candidate" | "no_spec_match" | "llm_error"
 }
 
@@ -58,6 +61,7 @@ export interface DesignResponse {
   total_spent: number;
   is_feasible: boolean;
   slots: SlotResult[];
+  finalized_at: string | null; // ISO timestamp; set once at finalize
 }
 
 // ---------------------------------------------------------------------------
@@ -171,6 +175,35 @@ export async function validateSelections(
 }
 
 // ---------------------------------------------------------------------------
+// Design finalization (freeze curated selections)
+// ---------------------------------------------------------------------------
+
+/**
+ * PATCH /design/{run_id}/finalize — freeze the user's curated selections.
+ * Called once when selections are settled (auto-fill or guided curation).
+ * Returns the updated DesignResponse with selected_products and finalized_at set.
+ * Returns 409 if already finalized (safe to ignore — idempotent).
+ */
+export async function finalizeDesign(
+  runId: string,
+  selections: Record<string, string[]>,
+  skippedSlots: string[],
+): Promise<DesignResponse | null> {
+  const res = await fetch(`${API_BASE}/design/${runId}/finalize`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ selections, skipped_slots: skippedSlots }),
+  });
+  // 409 = already finalized — not an error, but no valid DesignResponse body
+  if (res.status === 409) return null;
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.detail ?? `Finalize error ${res.status}`);
+  }
+  return (await res.json()) as DesignResponse;
+}
+
+// ---------------------------------------------------------------------------
 // Room render (AI-generated photorealistic room image)
 // ---------------------------------------------------------------------------
 
@@ -199,13 +232,11 @@ export interface HotspotsResponse {
 
 /**
  * POST /design/{run_id}/render — generate AI room render.
- * Sends the user's actual product selections so the render uses those,
- * not the server's default rank-1 picks.
+ * Reads selected_products from the finalized design server-side.
  * Takes ~15-60s on first call; cached after that.
  */
 export async function generateRender(
   runId: string,
-  selections: Record<string, string[]>,
 ): Promise<RenderResponse> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 120_000);
@@ -213,7 +244,7 @@ export async function generateRender(
     const res = await fetch(`${API_BASE}/design/${runId}/render`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ selections }),
+      body: JSON.stringify({}),
       signal: controller.signal,
     });
     if (!res.ok) {
@@ -258,16 +289,19 @@ export const HOTSPOT_POSITIONS: Record<string, Record<string, { x: number; y: nu
     coffee_table:  { x: 0.40, y: 0.72, w: 0.22, h: 0.12 },
     side_table:    { x: 0.65, y: 0.55, w: 0.10, h: 0.15 },
     table_lamp:    { x: 0.65, y: 0.40, w: 0.08, h: 0.14 },
+    tv:            { x: 0.82, y: 0.38, w: 0.16, h: 0.14 },
     tv_stand:      { x: 0.82, y: 0.50, w: 0.18, h: 0.20 },
+    tv_mount:      { x: 0.82, y: 0.35, w: 0.16, h: 0.14 },
     floor_lamp:    { x: 0.88, y: 0.35, w: 0.08, h: 0.30 },
     rug:           { x: 0.40, y: 0.78, w: 0.40, h: 0.15 },
     curtains:      { x: 0.40, y: 0.22, w: 0.50, h: 0.15 },
     wall_art:      { x: 0.38, y: 0.18, w: 0.25, h: 0.16 },
     plants:        { x: 0.90, y: 0.60, w: 0.12, h: 0.22 },
-    mirror:        { x: 0.82, y: 0.25, w: 0.12, h: 0.18 },
+    bookshelf:     { x: 0.12, y: 0.45, w: 0.14, h: 0.30 },
     throw_pillows: { x: 0.35, y: 0.48, w: 0.15, h: 0.10 },
     throw_blanket: { x: 0.42, y: 0.58, w: 0.18, h: 0.10 },
     ceiling_light: { x: 0.45, y: 0.06, w: 0.12, h: 0.10 },
+    armchair:      { x: 0.14, y: 0.58, w: 0.16, h: 0.20 },
   },
 };
 

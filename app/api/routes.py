@@ -11,6 +11,7 @@
 from __future__ import annotations
 
 import logging
+import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -31,6 +32,7 @@ from app.api.schemas import (
     ValidateSelectionsRequest,
     ValidateSelectionsResponse,
 )
+from schemas.product import Product
 from services.composition_gate import validate_composition
 from services.composition_service import plan_composition
 from services.intake_service import parse_intake
@@ -200,6 +202,27 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             ]
             if typed:
                 candidates = typed
+
+        # Screen size range filter: map user's bucket to inch ranges and
+        # keep only TVs whose screen_size spec falls within the range.
+        # Catalog stores screen_size as e.g. "55 inch"; we parse the number.
+        _SCREEN_SIZE_RANGES: dict[str, tuple[int, int]] = {
+            "small":  (32, 43),
+            "medium": (50, 55),
+            "large":  (65, 65),
+            "xl":     (75, 85),
+        }
+        if slot.slot_id == "tv" and room_request.screen_size:
+            size_range = _SCREEN_SIZE_RANGES.get(room_request.screen_size)
+            if size_range:
+                lo, hi = size_range
+                def _in_range(c: Product) -> bool:
+                    raw = c.specs.get("screen_size", "")
+                    m = re.match(r"(\d+)", raw)
+                    return lo <= int(m.group(1)) <= hi if m else False
+                filtered = [c for c in candidates if _in_range(c)]
+                if filtered:
+                    candidates = filtered
 
         sourceable_slots.append((slot, candidates))
 
@@ -441,20 +464,97 @@ async def validate_selections(
 
 
 # ---------------------------------------------------------------------------
+# PATCH /design/{run_id}/finalize — freeze the user's curated selections
+# ---------------------------------------------------------------------------
+
+class FinalizeRequest(BaseModel):
+    """Body for PATCH /design/{run_id}/finalize."""
+    selections: dict[str, list[str]]  # slot_id → [product_id, ...]
+    skipped_slots: list[str] = []
+
+
+@router.patch("/design/{run_id}/finalize")
+async def finalize_design(run_id: str, body: FinalizeRequest) -> DesignResponse:
+    """Freeze the user's curated selections as the authoritative design.
+
+    This is the single persist point for the settled room — called once when
+    the user finishes selection (auto-fill or guided curation).  Sets
+    selected_products on each slot, recomputes total_spent, and marks the
+    design as finalized.  Subsequent calls return 409 (already frozen).
+    """
+    from datetime import datetime, timezone
+    from services.design_store import save_design
+
+    design = _get_design(run_id)  # 404 or 503 if unavailable
+
+    # Already finalized — idempotent reject.
+    if design.finalized_at is not None:
+        raise HTTPException(status_code=409, detail="Design already finalized")
+
+    # Build product lookup: all products (primary + alternatives) by (slot_id, product_id).
+    product_lookup: dict[tuple[str, str], ProductResult] = {}
+    for slot in design.slots:
+        if slot.product:
+            product_lookup[(slot.slot_id, slot.product.product_id)] = slot.product
+        for alt in slot.alternatives:
+            product_lookup[(slot.slot_id, alt.product_id)] = alt
+
+    skipped = set(body.skipped_slots)
+
+    # Resolve selections to full ProductResult objects per slot.
+    for slot in design.slots:
+        if slot.owned or slot.product is None:
+            continue
+        if slot.slot_id in skipped:
+            slot.selected_products = []
+            continue
+        selected_ids = body.selections.get(slot.slot_id, [])
+        if not selected_ids:
+            continue
+        resolved = []
+        for pid in selected_ids:
+            prod = product_lookup.get((slot.slot_id, pid))
+            if prod:
+                resolved.append(prod)
+        slot.selected_products = resolved
+
+    # Recompute total_spent from curated selections.
+    design.total_spent = sum(
+        p.normalized_price
+        for slot in design.slots
+        for p in slot.selected_products
+    )
+    design.finalized_at = datetime.now(timezone.utc).isoformat()
+
+    # Persist to both in-memory cache and Supabase.
+    _designs[run_id] = design
+    save_design(design)
+
+    log_event(run_id, "design_finalized", {
+        "total_spent": design.total_spent,
+        "slot_count": sum(1 for s in design.slots if s.selected_products),
+        "skipped_count": len(skipped),
+    })
+
+    return design
+
+
+# ---------------------------------------------------------------------------
 # POST /design/{run_id}/render — generate AI room render
 # ---------------------------------------------------------------------------
 
 class RenderRequest(BaseModel):
     """Body for POST /design/{run_id}/render."""
-    selections: dict[str, list[str]] = {}  # slot_id → [product_id, ...]
+    selections: dict[str, list[str]] = {}  # slot_id → [product_id, ...] (legacy, ignored if finalized)
 
 
 @router.post("/design/{run_id}/render")
 async def generate_render(run_id: str, body: RenderRequest | None = None) -> dict:
-    """Generate a photorealistic AI room render from the user's selected products.
+    """Generate a photorealistic AI room render from the finalized design.
 
-    The request body contains the user's actual selections (slot_id → product_ids)
-    so the render uses exactly what the user picked, not server defaults.
+    Reads selected_products from the persisted design — the render always
+    matches the frozen, finalized room.  Returns 400 if design is not
+    yet finalized.
     """
     from services.render_service import render_room, render_exists, get_render_path
 
@@ -466,46 +566,19 @@ async def generate_render(run_id: str, body: RenderRequest | None = None) -> dic
     if render_exists(run_id):
         log_event(run_id, "render_generated", {"render_cost": 0.0, "cached": True}, api_cost=0.0)
         return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": True}
-    user_selections = body.selections if body else {}
 
-    # Build product lookup: all products (primary + alternatives) by (slot_id, product_id).
-    product_lookup: dict[tuple[str, str], ProductResult] = {}
-    for slot in design.slots:
-        if slot.product:
-            product_lookup[(slot.slot_id, slot.product.product_id)] = slot.product
-        for alt in slot.alternatives:
-            product_lookup[(slot.slot_id, alt.product_id)] = alt
+    # Require finalized design — render operates on frozen state only.
+    if design.finalized_at is None:
+        raise HTTPException(status_code=400, detail="Design must be finalized before rendering")
 
-    # Resolve the user's selections to actual product data.
-    # For multi-select slots (wall_art, plants, etc.), include ALL selected
-    # products so the render shows every item the user picked.
+    # Build render product list from persisted selected_products.
     products: dict[str, list[dict]] = {}
     for slot in design.slots:
-        slot_id = slot.slot_id
-        selected_ids = user_selections.get(slot_id, [])
-
-        if selected_ids:
-            items = []
-            for pid in selected_ids:
-                prod = product_lookup.get((slot_id, pid))
-                if prod:
-                    items.append({
-                        "name": prod.name,
-                        "image_url": prod.image_url,
-                    })
-            if items:
-                products[slot_id] = items
-                continue
-
-        # Fallback to rank-1 default — but only when the client sent no
-        # selections at all (legacy/auto path).  If the client DID send a
-        # selections dict, absent slots were explicitly skipped by the user
-        # and should NOT appear in the render.
-        if not user_selections and slot.product:
-            products[slot_id] = [{
-                "name": slot.product.name,
-                "image_url": slot.product.image_url,
-            }]
+        if slot.selected_products:
+            products[slot.slot_id] = [
+                {"name": p.name, "image_url": p.image_url}
+                for p in slot.selected_products
+            ]
 
     render_path = render_room(
         run_id=run_id,

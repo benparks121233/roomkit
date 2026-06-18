@@ -13,8 +13,9 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-import { getDesign, validateSelections, generateRender, trackEvent, API_BASE, HOTSPOT_POSITIONS } from "@/lib/api";
-import type { DesignResponse, ProductResult, SlotResult, Hotspot } from "@/lib/api";
+import { getDesign, validateSelections, generateRender, finalizeDesign, trackEvent, API_BASE } from "@/lib/api";
+import type { DesignResponse, ProductResult, SlotResult } from "@/lib/api";
+import ShareButton from "@/components/ShareButton";
 import SlotPicker from "@/components/SlotPicker";
 import ProductCard from "@/components/ProductCard";
 import BudgetMeter from "@/components/BudgetMeter";
@@ -32,6 +33,24 @@ interface GroupDef {
   slotIds: string[];
 }
 
+// Room-type-keyed aesthetic display names (internal key → user-facing label)
+const AESTHETIC_LABELS: Record<string, Record<string, string>> = {
+  bedroom: {
+    cottagecore: "Cottagecore", dark_academia: "Dark Academia", japandi: "Japandi",
+    coastal: "Coastal", industrial: "Industrial", quiet_luxury: "Quiet Luxury",
+    sports_den: "Sports Den", city_modern: "City Modern", ski_lodge: "Ski Lodge",
+    jungle_oasis: "Jungle Oasis", gamer_den: "Gamer Den", poster_maximalist: "Poster Maximalist",
+    warm_minimalist: "Warm Minimalist",
+  },
+  living_room: {
+    cottagecore: "Country Parlor", dark_academia: "Library Lounge", japandi: "Still Room",
+    coastal: "Shore House", industrial: "Warehouse Loft", quiet_luxury: "The Salon",
+    sports_den: "The Den", city_modern: "High Rise", ski_lodge: "Fireside",
+    jungle_oasis: "Greenhouse", gamer_den: "Command Center", poster_maximalist: "The Gallery",
+    warm_minimalist: "Warm Minimalist",
+  },
+};
+
 const BEDROOM_GROUPS: GroupDef[] = [
   { key: "bed", label: "Bed", slotIds: ["bed_frame", "mattress", "sheets", "comforter", "duvet_insert", "duvet_cover", "pillows"] },
   { key: "storage", label: "Storage & Workspace", slotIds: ["nightstand", "dresser", "desk", "desk_chair"] },
@@ -41,11 +60,11 @@ const BEDROOM_GROUPS: GroupDef[] = [
 ];
 
 const LIVING_ROOM_GROUPS: GroupDef[] = [
-  { key: "seating", label: "Seating", slotIds: ["sofa", "armchair", "ottoman"] },
-  { key: "entertainment", label: "Entertainment", slotIds: ["tv", "tv_stand", "sound_bar"] },
+  { key: "seating", label: "Seating", slotIds: ["sofa", "armchair"] },
+  { key: "entertainment", label: "Entertainment", slotIds: ["tv", "tv_stand", "tv_mount"] },
   { key: "tables", label: "Tables", slotIds: ["coffee_table", "side_table"] },
   { key: "lighting", label: "Lighting", slotIds: ["ceiling_light", "floor_lamp", "table_lamp"] },
-  { key: "decor", label: "Decor", slotIds: ["wall_art", "plants", "mirror", "bookshelf"] },
+  { key: "decor", label: "Decor", slotIds: ["wall_art", "plants", "bookshelf"] },
   { key: "soft_goods", label: "Soft Goods", slotIds: ["rug", "curtains", "throw_pillows", "throw_blanket"] },
 ];
 
@@ -110,13 +129,39 @@ export default function ResultPage() {
   // Validation runs silently — errors logged to console, never shown to user.
   const validationRan = useRef(false);
   const [skippedSlots, setSkippedSlots] = useState<Set<string>>(new Set());
+  const [furthestIndex, setFurthestIndex] = useState(0);
   const [overBudgetProduct, setOverBudgetProduct] = useState<ProductResult | null>(null);
+
+  // Finalized state — true once selections are frozen and persisted.
+  const [isFinalized, setIsFinalized] = useState(false);
 
   // AI render state
   const [renderUrl, setRenderUrl] = useState<string | null>(null);
-  const [hotspots, setHotspots] = useState<Hotspot[]>([]);
   const [renderLoading, setRenderLoading] = useState(false);
   const [renderFailed, setRenderFailed] = useState(false);
+
+  // Persist curated selections to server. Called at every path to phase="complete".
+  const persistFinalize = useCallback(
+    (finalSelections: Record<string, ProductResult[]>, finalSkipped: Set<string>) => {
+      if (!runId) return;
+      const selectionIds: Record<string, string[]> = {};
+      for (const [slotId, products] of Object.entries(finalSelections)) {
+        selectionIds[slotId] = products.map((p) => p.product_id);
+      }
+      finalizeDesign(runId, selectionIds, Array.from(finalSkipped))
+        .then((updated) => {
+          if (updated) {
+            setDesign(updated);
+          }
+          // null = 409 (already finalized) — still mark as finalized locally
+          setIsFinalized(true);
+        })
+        .catch((err) => {
+          console.error("Finalize failed:", err);
+        });
+    },
+    [runId],
+  );
 
   // Fetch design
   useEffect(() => {
@@ -128,10 +173,29 @@ export default function ResultPage() {
       );
   }, [runId]);
 
+  // Reload seeding: if design is already finalized, restore selections from
+  // persisted selected_products and jump to complete (read-only).
+  const reloadApplied = useRef(false);
+  useEffect(() => {
+    if (!design || reloadApplied.current) return;
+    if (design.finalized_at) {
+      reloadApplied.current = true;
+      const restored: Record<string, ProductResult[]> = {};
+      for (const slot of design.slots) {
+        if (slot.selected_products && slot.selected_products.length > 0) {
+          restored[slot.slot_id] = slot.selected_products;
+        }
+      }
+      setSelections(restored);
+      setIsFinalized(true);
+      setPhase("complete");
+    }
+  }, [design]);
+
   // Auto mode: skip guided selection, fill all defaults, jump to complete
   const autoModeApplied = useRef(false);
   useEffect(() => {
-    if (isAutoMode && design && !autoModeApplied.current) {
+    if (isAutoMode && design && !autoModeApplied.current && !design.finalized_at) {
       autoModeApplied.current = true;
       // Fill all slots with up to max_quantity defaults (rank-1 + top alternatives)
       const defaults: Record<string, ProductResult[]> = {};
@@ -144,12 +208,13 @@ export default function ResultPage() {
       }
       setSelections(defaults);
       setPhase("complete");
+      persistFinalize(defaults, new Set());
     }
-  }, [isAutoMode, design]);
+  }, [isAutoMode, design, persistFinalize]);
 
   // Build ordered active slot IDs (slots with products, in taxonomy order)
   const activeSlotIds = useMemo(() => {
-    if (!design) return [];
+    if (!design?.slots) return [];
     const ordered = getOrderedSlotIds(design.room_type);
     const sMap = new Map(design.slots.map((s) => [s.slot_id, s]));
     return ordered.filter((id) => {
@@ -159,7 +224,7 @@ export default function ResultPage() {
   }, [design]);
 
   const slotMap = useMemo(() => {
-    if (!design) return new Map<string, SlotResult>();
+    if (!design?.slots) return new Map<string, SlotResult>();
     return new Map(design.slots.map((s) => [s.slot_id, s]));
   }, [design]);
 
@@ -223,13 +288,18 @@ export default function ResultPage() {
   const advanceWithTransition = useCallback(() => {
     const next = currentIndex + 1;
     if (next >= activeSlotIds.length) {
-      setSelections((prev) => fillDefaults(prev));
+      setSelections((prev) => {
+        const filled = fillDefaults(prev);
+        persistFinalize(filled, skippedSlots);
+        return filled;
+      });
       setPhase("complete");
     } else {
       setCurrentIndex(next);
+      setFurthestIndex((prev) => Math.max(prev, next));
       setPhase("selecting");
     }
-  }, [currentIndex, activeSlotIds, fillDefaults]);
+  }, [currentIndex, activeSlotIds, fillDefaults, persistFinalize, skippedSlots]);
 
   // Alias for skip buttons that call advanceToNext
   const advanceToNext = advanceWithTransition;
@@ -337,46 +407,14 @@ export default function ResultPage() {
       });
   }, [phase, runId, selections]);
 
-  // Build hotspots DETERMINISTICALLY from the user's actual selections.
-  // Every label/link comes directly from what the user picked — impossible
-  // to link an item that wasn't selected.
-  useEffect(() => {
-    if (phase !== "complete" || !design) return;
-    const positions = HOTSPOT_POSITIONS[design.room_type] ?? HOTSPOT_POSITIONS.bedroom;
-    const built: Hotspot[] = [];
-
-    for (const [slotId, products] of Object.entries(selections)) {
-      const pos = positions[slotId];
-      if (!pos || products.length === 0) continue;
-      // Use first selected product for hotspot label/link
-      const prod = products[0];
-      built.push({
-        slot_id: slotId,
-        x: pos.x,
-        y: pos.y,
-        w: pos.w,
-        h: pos.h,
-        product_name: prod.name,
-        price: prod.normalized_price,
-        buy_url: prod.buy_url,
-      });
-    }
-
-    setHotspots(built);
-  }, [phase, design, selections]);
-
   // On-demand render — only generate when the user explicitly requests it.
   // This avoids paying ~$0.10-0.30 per render for users who bail before viewing.
+  // Render reads from persisted selected_products — no selections sent.
   const triggerRender = useCallback(() => {
     if (!runId || renderUrl || renderLoading) return;
     setRenderLoading(true);
 
-    const selectionIds: Record<string, string[]> = {};
-    for (const [slotId, products] of Object.entries(selections)) {
-      selectionIds[slotId] = products.map((p) => p.product_id);
-    }
-
-    generateRender(runId, selectionIds)
+    generateRender(runId)
       .then((renderResp) => {
         setRenderUrl(`${API_BASE}${renderResp.render_url}`);
         if (runId) trackEvent(runId, "render_viewed");
@@ -388,7 +426,7 @@ export default function ResultPage() {
       .finally(() => {
         setRenderLoading(false);
       });
-  }, [runId, renderUrl, renderLoading, selections]);
+  }, [runId, renderUrl, renderLoading]);
 
   // --- Error state ---
   if (error) {
@@ -435,7 +473,11 @@ export default function ResultPage() {
             type="button"
             className="skip-to-results-btn"
             onClick={() => {
-              setSelections((prev) => fillDefaults(prev));
+              setSelections((prev) => {
+                const filled = fillDefaults(prev);
+                persistFinalize(filled, skippedSlots);
+                return filled;
+              });
               setPhase("complete");
             }}
           >
@@ -480,19 +522,58 @@ export default function ResultPage() {
               {currentIndex + 1} of {activeSlotIds.length} items
               {currentGroup ? ` · ${currentGroup.label}` : ""}
             </span>
+            {currentIndex < furthestIndex && (
+              <button
+                type="button"
+                onClick={() => {
+                  let target = currentIndex + 1;
+                  while (target <= furthestIndex && skippedSlots.has(activeSlotIds[target])) {
+                    target++;
+                  }
+                  if (target <= furthestIndex) setCurrentIndex(target);
+                }}
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "#8B6F5C",
+                  cursor: "pointer",
+                  fontSize: "0.82rem",
+                  fontWeight: 500,
+                  padding: "4px 8px",
+                  borderRadius: 6,
+                  transition: "background 0.15s",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "#F5F2EE"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+              >
+                Forward →
+              </button>
+            )}
           </div>
           <div style={{ display: "flex", gap: 3 }}>
-            {activeSlotIds.map((id, i) => (
-              <div
-                key={id}
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  background: i < currentIndex ? "#B8A080" : i === currentIndex ? "#8B6F5C" : "#E2DED6",
-                }}
-              />
-            ))}
+            {activeSlotIds.map((id, i) => {
+              const visited = i <= furthestIndex;
+              const isCurrent = i === currentIndex;
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  disabled={!visited}
+                  onClick={() => { if (visited && !isCurrent) setCurrentIndex(i); }}
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: "50%",
+                    border: "none",
+                    padding: 0,
+                    background: isCurrent ? "#8B6F5C" : i < currentIndex ? "#B8A080" : visited ? "#C4B8A8" : "#E2DED6",
+                    cursor: visited && !isCurrent ? "pointer" : "default",
+                    transition: "background 0.15s",
+                  }}
+                  aria-label={`Go to slot ${i + 1}`}
+                />
+              );
+            })}
           </div>
         </div>
 
@@ -667,7 +748,8 @@ export default function ResultPage() {
         <h1>Your {design.room_type.replace(/_/g, " ")}</h1>
         <div className="style-badge">
           <span className="style-name">
-            {design.style.style_name.replace(/_/g, " ")}
+            {AESTHETIC_LABELS[design.room_type]?.[design.style.style_name]
+              ?? design.style.style_name.replace(/_/g, " ")}
           </span>
           <span className="style-mood">{design.style.mood}</span>
         </div>
@@ -700,14 +782,13 @@ export default function ResultPage() {
       )}
 
       {renderUrl && (
-        <InteractiveRoomRender
-          renderUrl={renderUrl}
-          hotspots={hotspots}
-          onHotspotClick={(hs) => {
-            if (runId) trackEvent(runId, "hotspot_clicked", {
-              slot_id: hs.slot_id, product_name: hs.product_name, price: hs.price,
-            });
-          }}
+        <InteractiveRoomRender renderUrl={renderUrl} />
+      )}
+
+      {renderUrl && (
+        <ShareButton
+          renderImageUrl={renderUrl}
+          pageUrl={typeof window !== "undefined" ? window.location.href : ""}
         />
       )}
 
@@ -738,14 +819,14 @@ export default function ResultPage() {
                 const allChoices = getChoicesForSlot(slot);
 
                 if (isMulti && slotSelections.length > 0) {
-                  // Multi-select gallery
+                  // Multi-select gallery — read-only after finalize
                   return (
                     <MultiSelectGallery
                       key={slot.slot_id}
                       slot={slot}
                       selected={slotSelections}
                       allChoices={allChoices}
-                      onRemove={(pid) => {
+                      onRemove={isFinalized ? undefined : (pid) => {
                         setSelections((prev) => ({
                           ...prev,
                           [slot.slot_id]: (prev[slot.slot_id] ?? []).filter(
@@ -753,7 +834,7 @@ export default function ResultPage() {
                           ),
                         }));
                       }}
-                      onAdd={(product) => {
+                      onAdd={isFinalized ? undefined : (product) => {
                         setSelections((prev) => {
                           const current = prev[slot.slot_id] ?? [];
                           if (current.length >= slot.max_quantity) return prev;
@@ -780,7 +861,7 @@ export default function ResultPage() {
                     activeProduct={activeProduct}
                     alternatives={alternatives}
                     onSwap={
-                      alternatives.length > 0
+                      !isFinalized && alternatives.length > 0
                         ? (product) => handleSwap(slot.slot_id, product)
                         : undefined
                     }
@@ -814,8 +895,8 @@ function MultiSelectGallery({
   slot: SlotResult;
   selected: ProductResult[];
   allChoices: ProductResult[];
-  onRemove: (productId: string) => void;
-  onAdd: (product: ProductResult) => void;
+  onRemove?: (productId: string) => void;
+  onAdd?: (product: ProductResult) => void;
 }) {
   const [showAddTray, setShowAddTray] = useState(false);
   const label = slot.slot_id.replace(/_/g, " ");
@@ -844,13 +925,13 @@ function MultiSelectGallery({
           <GalleryItem
             key={product.product_id}
             product={product}
-            onRemove={() => onRemove(product.product_id)}
+            onRemove={onRemove ? () => onRemove(product.product_id) : undefined}
           />
         ))}
       </div>
 
-      {/* Add more button */}
-      {!atCap && addable.length > 0 && (
+      {/* Add more button — hidden when finalized (onAdd undefined) */}
+      {onAdd && !atCap && addable.length > 0 && (
         <>
           <button
             type="button"
@@ -884,7 +965,7 @@ function GalleryItem({
   onRemove,
 }: {
   product: ProductResult;
-  onRemove: () => void;
+  onRemove?: () => void;
 }) {
   const [imgErr, setImgErr] = useState(false);
   const showImg = product.image_url && !imgErr;
@@ -905,14 +986,16 @@ function GalleryItem({
         ) : (
           <div className="gallery-item-placeholder" />
         )}
-        <button
-          type="button"
-          className="gallery-item-remove"
-          onClick={onRemove}
-          aria-label={`Remove ${product.name}`}
-        >
-          ×
-        </button>
+        {onRemove && (
+          <button
+            type="button"
+            className="gallery-item-remove"
+            onClick={onRemove}
+            aria-label={`Remove ${product.name}`}
+          >
+            ×
+          </button>
+        )}
       </div>
       <p className="gallery-item-name">{product.name}</p>
       <p className="gallery-item-price">${product.normalized_price.toFixed(2)}</p>

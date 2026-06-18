@@ -41,6 +41,8 @@ export interface IntakeResult {
   wants: string[];
   excludedSlots: string[];
   mirrorType: string | null;
+  screenSize: string | null;
+  tvPriority: boolean;
   quiz: QuizOutput;
   summary: string;
 }
@@ -79,9 +81,10 @@ const Q_ROOM_TYPE: QuizStepDef = {
   question: "What room are we designing?",
   selectMode: "single",
   layout: "select-cards",
+  imageDir: "shared",
   options: [
-    { key: "bedroom",     label: "Bedroom",     swatches: [] },
-    { key: "living_room", label: "Living Room",  swatches: [] },
+    { key: "bedroom",     label: "Bedroom",     swatches: [], image: "room_bedroom.jpg" },
+    { key: "living_room", label: "Living Room",  swatches: [], image: "room_living_room.jpg" },
   ],
 };
 
@@ -106,9 +109,10 @@ const Q_BUDGET: QuizStepDef = {
 // Step definitions — STYLE questions
 // ---------------------------------------------------------------------------
 
-const Q_CORE: QuizStepDef = {
+const Q_CORE_BEDROOM: QuizStepDef = {
   id: "core",
   question: "What\u2019s your aesthetic?",
+  hint: "These are for inspiration \u2014 we\u2019ll source real products that match your vibe.",
   selectMode: "single",
   layout: "cards",
   imageDir: "room",
@@ -125,6 +129,29 @@ const Q_CORE: QuizStepDef = {
     { key: "jungle_oasis", label: "Jungle Oasis",  description: "Lush + tropical",    swatches: ["#4A6741", "#C4A882"], image: "core_jungle_oasis.jpg" },
     { key: "gamer_den",    label: "Gamer Den",     description: "Dark + techy",       swatches: ["#1A1A2E", "#7B5EA7"], image: "core_gamer_den.jpg" },
     { key: "poster_maximalist", label: "Poster Maximalist", description: "Eclectic + expressive", swatches: ["#C67B5C", "#E8C547"], image: "core_poster_maximalist.jpg" },
+  ],
+};
+
+const Q_CORE_LIVING_ROOM: QuizStepDef = {
+  id: "core",
+  question: "What\u2019s your aesthetic?",
+  hint: "These are for inspiration \u2014 we\u2019ll source real products that match your vibe.",
+  selectMode: "single",
+  layout: "cards",
+  imageDir: "room",
+  options: [
+    { key: "cottagecore",   label: "Country Parlor",   description: "Soft + collected",   swatches: ["#F5F0E8", "#D4A9A1"], image: "core_cottagecore.jpg" },
+    { key: "dark_academia", label: "Library Lounge",    description: "Moody + scholarly",  swatches: ["#3B2F2F", "#8B6F47"], image: "core_dark_academia.jpg" },
+    { key: "japandi",       label: "Still Room",        description: "Calm + intentional", swatches: ["#E8E2D8", "#B8A99A"], image: "core_japandi.jpg" },
+    { key: "coastal",       label: "Shore House",       description: "Breezy + sun-washed", swatches: ["#FFFFFF", "#A8C4B8"], image: "core_coastal.jpg" },
+    { key: "industrial",    label: "Warehouse Loft",    description: "Raw + open",         swatches: ["#3A3A3A", "#6B6B6B"], image: "core_industrial.jpg" },
+    { key: "quiet_luxury",  label: "The Salon",         description: "Polished + refined", swatches: ["#F5F0E8", "#C4A882"], image: "core_quiet_luxury.jpg" },
+    { key: "sports_den",    label: "The Den",           description: "Dark + loungey",     swatches: ["#2A2A2A", "#8B6F47"], image: "core_sports_den.jpg" },
+    { key: "city_modern",   label: "High Rise",         description: "Sleek + angular",    swatches: ["#3A3A3A", "#FFFFFF"], image: "core_city_modern.jpg" },
+    { key: "ski_lodge",     label: "Fireside",          description: "Warm + alpine",      swatches: ["#8B6F47", "#D4B896"], image: "core_ski_lodge.jpg" },
+    { key: "jungle_oasis", label: "Greenhouse",         description: "Lush + wild",        swatches: ["#4A6741", "#C4A882"], image: "core_jungle_oasis.jpg" },
+    { key: "gamer_den",    label: "Command Center",     description: "Dark + immersive",   swatches: ["#1A1A2E", "#7B5EA7"], image: "core_gamer_den.jpg" },
+    { key: "poster_maximalist", label: "The Gallery",   description: "Eclectic + layered", swatches: ["#C67B5C", "#E8C547"], image: "core_poster_maximalist.jpg" },
   ],
 };
 
@@ -241,8 +268,8 @@ const Q_DENSITY: QuizStepDef = {
 
 const Q_BRIDGE: QuizStepDef = {
   id: "bridge",
-  question: "Almost done \u2014 tell us what you're into.",
-  hint: "These don't affect your furniture \u2014 they'll help us pick art, prints, and decor that actually feel like you.",
+  question: "Here\u2019s your vibe.",
+  hint: "Next up: tell us what you\u2019re into so we can nail the art, prints, and decor.",
   selectMode: "single",
   layout: "bridge",
   options: [],
@@ -330,10 +357,11 @@ const Q_BEDDING_TYPE: QuizStepDef = {
   question: "What goes on the bed?",
   hint: "Comforter = single piece. Duvet = insert + decorative cover.",
   selectMode: "single",
-  layout: "select-cards",
+  layout: "cards",
+  imageDir: "shared",
   options: [
-    { key: "comforter", label: "Comforter", swatches: [] },
-    { key: "duvet",     label: "Duvet (insert + cover)", swatches: [] },
+    { key: "comforter", label: "Comforter", swatches: [], image: "bedding_comforter.jpg" },
+    { key: "duvet",     label: "Duvet (insert + cover)", swatches: [], image: "bedding_duvet.jpg" },
   ],
 };
 
@@ -342,12 +370,13 @@ const Q_LIGHTING_TYPES: QuizStepDef = {
   question: "What lighting do you want?",
   hint: "Pick all that apply.",
   selectMode: "multi",
-  layout: "select-cards",
+  layout: "cards",
+  imageDir: "shared",
   options: [
-    { key: "ceiling_light", label: "Overhead / Ceiling", swatches: [] },
-    { key: "table_lamp",    label: "Table Lamp", swatches: [] },
-    { key: "floor_lamp",    label: "Floor Lamp", swatches: [] },
-    { key: "sconce",        label: "Wall Sconce", swatches: [] },
+    { key: "ceiling_light", label: "Overhead / Ceiling", swatches: [], image: "lighting_ceiling.jpg" },
+    { key: "table_lamp",    label: "Table Lamp", swatches: [], image: "lighting_table_lamp.jpg" },
+    { key: "floor_lamp",    label: "Floor Lamp", swatches: [], image: "lighting_floor_lamp.jpg" },
+    { key: "sconce",        label: "Wall Sconce", swatches: [], image: "lighting_sconce.jpg" },
   ],
 };
 
@@ -366,14 +395,92 @@ const Q_MIRROR_PREF: QuizStepDef = {
   id: "mirror_pref",
   question: "What kind of mirror?",
   selectMode: "single",
+  layout: "cards",
+  imageDir: "shared",
+  options: [
+    { key: "round",       label: "Round",        swatches: [], image: "mirror_round.jpg" },
+    { key: "arched",      label: "Arched",       swatches: [], image: "mirror_arched.jpg" },
+    { key: "rectangular", label: "Rectangular",  swatches: [], image: "mirror_rectangular.jpg" },
+    { key: "full_length", label: "Full-length",  swatches: [], image: "mirror_full_length.jpg" },
+    { key: "any",         label: "No preference", swatches: [], image: "mirror_wall.jpg" },
+    { key: "none",        label: "None",          swatches: [], image: "mirror_none.jpg" },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Step definitions — LIVING ROOM PREFERENCES
+// ---------------------------------------------------------------------------
+
+const Q_ENTERTAINMENT_PREF: QuizStepDef = {
+  id: "entertainment_pref",
+  question: "Do you want an entertainment space?",
+  selectMode: "single",
   layout: "select-cards",
   options: [
-    { key: "round",       label: "Round",        swatches: [] },
-    { key: "arched",      label: "Arched",       swatches: [] },
-    { key: "rectangular", label: "Rectangular",  swatches: [] },
-    { key: "full_length", label: "Full-length",  swatches: [] },
-    { key: "any",         label: "No preference", swatches: [] },
-    { key: "none",        label: "None",          swatches: [] },
+    { key: "yes", label: "Yes \u2014 TV setup", swatches: [] },
+    { key: "no",  label: "No TV", swatches: [] },
+  ],
+};
+
+const Q_SCREEN_SIZE: QuizStepDef = {
+  id: "screen_size",
+  question: "What size TV?",
+  selectMode: "single",
+  layout: "select-cards",
+  options: [
+    { key: "small",  label: "Small (32\u201343\")",  swatches: [] },
+    { key: "medium", label: "Medium (50\u201355\")", swatches: [] },
+    { key: "large",  label: "Large (65\")",       swatches: [] },
+    { key: "xl",     label: "Extra Large (75\"+)", swatches: [] },
+  ],
+};
+
+const Q_TV_PLACEMENT: QuizStepDef = {
+  id: "tv_placement",
+  question: "TV stand or wall mount?",
+  selectMode: "single",
+  layout: "cards",
+  imageDir: "shared",
+  options: [
+    { key: "stand", label: "TV Stand",    swatches: [], image: "tv_stand.jpg" },
+    { key: "mount", label: "Wall Mount",  swatches: [], image: "tv_mount.jpg" },
+  ],
+};
+
+const Q_BOOKSHELF_PREF: QuizStepDef = {
+  id: "bookshelf_pref",
+  question: "Do you want a bookshelf?",
+  selectMode: "single",
+  layout: "select-cards",
+  options: [
+    { key: "yes", label: "Yes", swatches: [] },
+    { key: "no",  label: "No",  swatches: [] },
+  ],
+};
+
+const Q_SEATING_PREF: QuizStepDef = {
+  id: "seating_pref",
+  question: "What seating do you want beyond a sofa?",
+  selectMode: "single",
+  layout: "cards",
+  imageDir: "shared",
+  options: [
+    { key: "armchair",  label: "Armchair",        swatches: [], image: "seating_armchair.jpg" },
+    { key: "sofa_only", label: "Just the sofa",   swatches: [], image: "seating_sofa_only.jpg" },
+  ],
+};
+
+const Q_LR_LIGHTING_TYPES: QuizStepDef = {
+  id: "lr_lighting_types",
+  question: "What lighting do you want?",
+  hint: "Pick all that apply.",
+  selectMode: "multi",
+  layout: "cards",
+  imageDir: "shared",
+  options: [
+    { key: "ceiling_light", label: "Overhead / Ceiling", swatches: [], image: "lighting_ceiling.jpg" },
+    { key: "floor_lamp",    label: "Floor Lamp", swatches: [], image: "lighting_floor_lamp.jpg" },
+    { key: "table_lamp",    label: "Table Lamp", swatches: [], image: "lighting_table_lamp.jpg" },
   ],
 };
 
@@ -412,11 +519,11 @@ const ROOM_OWNERSHIP_GROUPS: Record<string, OwnershipGroup[]> = {
     { label: "Soft Goods", items: ["rug", "curtains", "throw_blanket"] },
   ],
   living_room: [
-    { label: "Seating",       items: ["sofa", "armchair", "ottoman"] },
-    { label: "Entertainment", items: ["tv", "tv_stand", "sound_bar"] },
+    { label: "Seating",       items: ["sofa", "armchair"] },
+    { label: "Entertainment", items: ["tv", "tv_stand", "tv_mount"] },
     { label: "Tables",        items: ["coffee_table", "side_table"] },
     { label: "Lighting",      items: ["ceiling_light", "floor_lamp", "table_lamp"] },
-    { label: "Decor",         items: ["wall_art", "plants", "mirror", "bookshelf"] },
+    { label: "Decor",         items: ["wall_art", "plants", "bookshelf"] },
     { label: "Soft Goods",    items: ["rug", "curtains", "throw_pillows", "throw_blanket"] },
   ],
 };
@@ -507,10 +614,18 @@ function assembleDescription(
   return desc;
 }
 
-const CORE_LABELS: Record<string, string> = {
+const CORE_LABELS_BEDROOM: Record<string, string> = {
   cottagecore: "Cottagecore", dark_academia: "Dark Academia", japandi: "Japandi",
   coastal: "Coastal", industrial: "Industrial", quiet_luxury: "Quiet Luxury",
   sports_den: "Sports Den", city_modern: "City Modern", ski_lodge: "Ski Lodge",
+  jungle_oasis: "Jungle Oasis", gamer_den: "Gamer Den", poster_maximalist: "Poster Maximalist",
+};
+
+const CORE_LABELS_LIVING_ROOM: Record<string, string> = {
+  cottagecore: "Country Parlor", dark_academia: "Library Lounge", japandi: "Still Room",
+  coastal: "Shore House", industrial: "Warehouse Loft", quiet_luxury: "The Salon",
+  sports_den: "The Den", city_modern: "High Rise", ski_lodge: "Fireside",
+  jungle_oasis: "Greenhouse", gamer_den: "Command Center", poster_maximalist: "The Gallery",
 };
 
 const MOOD_LABELS: Record<string, string> = {
@@ -527,8 +642,9 @@ const PALETTE_LABELS: Record<string, string> = {
   verdant: "Verdant", electric: "Electric",
 };
 
-function buildSummary(core: string, mood: string, palette: string): string {
-  return [CORE_LABELS[core], MOOD_LABELS[mood], PALETTE_LABELS[palette]].filter(Boolean).join(" \u00b7 ");
+function buildSummary(core: string, mood: string, palette: string, roomType: string): string {
+  const coreLabels = roomType === "living_room" ? CORE_LABELS_LIVING_ROOM : CORE_LABELS_BEDROOM;
+  return [coreLabels[core], MOOD_LABELS[mood], PALETTE_LABELS[palette]].filter(Boolean).join(" \u00b7 ");
 }
 
 // ---------------------------------------------------------------------------
@@ -649,10 +765,12 @@ function SelectCard({
   option,
   selected,
   onClick,
+  imagePrefix,
 }: {
   option: QuizOption;
   selected: boolean;
   onClick: () => void;
+  imagePrefix?: string;
 }) {
   return (
     <button
@@ -661,6 +779,17 @@ function SelectCard({
       onClick={onClick}
     >
       <span className="quiz-select-card-label">{option.label}</span>
+      {option.image && imagePrefix && (
+        <div className="quiz-select-card-image">
+          <Image
+            src={`${imagePrefix}${option.image}`}
+            alt={option.label}
+            width={320}
+            height={200}
+            style={{ objectFit: "cover", width: "100%", height: "100%", borderRadius: "6px" }}
+          />
+        </div>
+      )}
     </button>
   );
 }
@@ -691,10 +820,19 @@ export default function StyleQuiz({ onComplete }: Props) {
   const [density, setDensity] = useState("");
 
   // Preference state (slot-gating survey) — all start unselected.
+  // Bedroom prefs
   const [beddingType, setBeddingType] = useState("");
   const [lightingTypes, setLightingTypes] = useState<string[]>([]);
   const [deskPref, setDeskPref] = useState("");
   const [mirrorPref, setMirrorPref] = useState("");
+  // Living room prefs
+  const [entertainmentPref, setEntertainmentPref] = useState("");
+  const [screenSize, setScreenSize] = useState("");
+  const [tvPriority, setTvPriority] = useState(false);
+  const [tvPlacement, setTvPlacement] = useState("");
+  const [bookshelfPref, setBookshelfPref] = useState("");
+  const [seatingPref, setSeatingPref] = useState("");
+  const [lrLightingTypes, setLrLightingTypes] = useState<string[]>([]);
 
   // Interest state
   const [interests, setInterests] = useState<string[]>([]);
@@ -707,16 +845,24 @@ export default function StyleQuiz({ onComplete }: Props) {
   function getSteps(): QuizStepDef[] {
     const steps: QuizStepDef[] = [Q_ROOM_TYPE];
     if (roomType === "bedroom") steps.push(Q_BED_SIZE);
+    const qCore = roomType === "living_room" ? Q_CORE_LIVING_ROOM : Q_CORE_BEDROOM;
     steps.push(
       Q_BUDGET,
-      Q_CORE, Q_MOOD, Q_PALETTE, Q_MATERIALS, Q_SHAPE,
+      qCore, Q_MOOD, Q_PALETTE, Q_MATERIALS, Q_SHAPE,
     );
     // Scope FIRST — gates whether preferences are asked
     steps.push(Q_SCOPE);
-    // Preference steps — full-room + bedroom only.
+    // Preference steps — full-room only.
     // Partial-room users expressed preferences via the item picker in scope.
     if (fullRoom && roomType === "bedroom") {
       steps.push(Q_BEDDING_TYPE, Q_LIGHTING_TYPES, Q_DESK_PREF, Q_MIRROR_PREF);
+    }
+    if (fullRoom && roomType === "living_room") {
+      steps.push(Q_ENTERTAINMENT_PREF);
+      if (entertainmentPref === "yes") {
+        steps.push(Q_SCREEN_SIZE, Q_TV_PLACEMENT);
+      }
+      steps.push(Q_BOOKSHELF_PREF, Q_SEATING_PREF, Q_LR_LIGHTING_TYPES);
     }
     // Density AFTER preferences — controls ambient items (plants, curtains,
     // throw) that preferences don't address.
@@ -770,6 +916,12 @@ export default function StyleQuiz({ onComplete }: Props) {
       case "lighting_types": return lightingTypes;
       case "desk_pref": return deskPref;
       case "mirror_pref": return mirrorPref;
+      case "entertainment_pref": return entertainmentPref;
+      case "screen_size": return screenSize;
+      case "tv_placement": return tvPlacement;
+      case "bookshelf_pref": return bookshelfPref;
+      case "seating_pref": return seatingPref;
+      case "lr_lighting_types": return lrLightingTypes;
       case "interests": return interests;
       default: return "";
     }
@@ -805,6 +957,17 @@ export default function StyleQuiz({ onComplete }: Props) {
         break;
       case "desk_pref": setDeskPref(key); break;
       case "mirror_pref": setMirrorPref(key); break;
+      case "entertainment_pref": setEntertainmentPref(key); break;
+      case "screen_size": setScreenSize(key); setTvPriority(false); break;
+      case "tv_placement": setTvPlacement(key); break;
+      case "bookshelf_pref": setBookshelfPref(key); break;
+      case "seating_pref": setSeatingPref(key); break;
+      case "lr_lighting_types":
+        setLrLightingTypes((prev) => {
+          if (prev.includes(key)) return prev.filter((k) => k !== key);
+          return [...prev, key];
+        });
+        break;
       case "interests":
         setInterests((prev) =>
           prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key],
@@ -879,6 +1042,12 @@ export default function StyleQuiz({ onComplete }: Props) {
       case "lighting_types": return lightingTypes.length > 0;
       case "desk_pref": return deskPref !== "";
       case "mirror_pref": return mirrorPref !== "";
+      case "entertainment_pref": return entertainmentPref !== "";
+      case "screen_size": return screenSize !== "";
+      case "tv_placement": return tvPlacement !== "";
+      case "bookshelf_pref": return bookshelfPref !== "";
+      case "seating_pref": return seatingPref !== "";
+      case "lr_lighting_types": return lrLightingTypes.length > 0;
       case "bridge": return true;
       case "interests": return true;
       case "interest_details": return true;
@@ -896,7 +1065,7 @@ export default function StyleQuiz({ onComplete }: Props) {
       const description = assembleDescription(
         core, roomType, mood, materials, palette, shape, density, freeText,
       );
-      const summary = buildSummary(core, mood, palette);
+      const summary = buildSummary(core, mood, palette, roomType);
       const interestOutput = interests.map((cat) => ({
         category: cat,
         tags: interestTags[cat] ?? [],
@@ -926,6 +1095,29 @@ export default function StyleQuiz({ onComplete }: Props) {
         if (mirrorPref === "none") excluded.push("mirror");
       }
 
+      if (fullRoom && roomType === "living_room") {
+        // Mirror — always excluded from living room
+        excluded.push("mirror");
+        // Entertainment
+        if (entertainmentPref === "no") {
+          excluded.push("tv", "tv_stand", "tv_mount");
+        } else {
+          // Stand XOR mount
+          if (tvPlacement === "stand") excluded.push("tv_mount");
+          if (tvPlacement === "mount") excluded.push("tv_stand");
+        }
+        // Bookshelf
+        if (bookshelfPref === "no") excluded.push("bookshelf");
+        // Seating
+        if (seatingPref === "sofa_only") excluded.push("armchair");
+        // Lighting
+        if (lrLightingTypes.length > 0) {
+          if (!lrLightingTypes.includes("ceiling_light")) excluded.push("ceiling_light");
+          if (!lrLightingTypes.includes("floor_lamp")) excluded.push("floor_lamp");
+          if (!lrLightingTypes.includes("table_lamp")) excluded.push("table_lamp");
+        }
+      }
+
       onComplete({
         roomType,
         bedSize,
@@ -934,6 +1126,8 @@ export default function StyleQuiz({ onComplete }: Props) {
         wants,
         excludedSlots: excluded,
         mirrorType: mirrorPref && mirrorPref !== "none" && mirrorPref !== "any" ? mirrorPref : null,
+        screenSize: entertainmentPref === "yes" && screenSize ? screenSize : null,
+        tvPriority: tvPriority,
         quiz: {
           style: { core, mood, palette, materials, shape, density, description },
           interests: interestOutput,
@@ -953,9 +1147,47 @@ export default function StyleQuiz({ onComplete }: Props) {
   const imagePrefix = getImagePrefix(current);
 
   function renderStep() {
-    // Bridge — no options
+    // Bridge — style recap + transition to interests
     if (current.layout === "bridge") {
-      return null;
+      const coreStep = roomType === "living_room" ? Q_CORE_LIVING_ROOM : Q_CORE_BEDROOM;
+      const coreOpt = coreStep.options.find((o) => o.key === core);
+      const moodOpt = Q_MOOD.options.find((o) => o.key === mood);
+      const paletteOpt = Q_PALETTE.options.find((o) => o.key === palette);
+      const coreImg = coreOpt?.image
+        ? `/quiz/${roomType}/${coreOpt.image}`
+        : null;
+
+      return (
+        <div className="bridge-preview">
+          {coreImg && (
+            <div className="bridge-image">
+              <Image
+                src={coreImg}
+                alt={coreOpt?.label ?? "Your aesthetic"}
+                width={400}
+                height={400}
+                style={{ objectFit: "cover", width: "100%", height: "100%", borderRadius: "10px" }}
+              />
+            </div>
+          )}
+          <div className="bridge-details">
+            {coreOpt && (
+              <span className="bridge-aesthetic">{coreOpt.label}</span>
+            )}
+            {moodOpt && (
+              <span className="bridge-mood">{moodOpt.label}</span>
+            )}
+            {paletteOpt && (
+              <div className="bridge-swatches">
+                {paletteOpt.swatches.map((c, i) => (
+                  <div key={i} className="bridge-swatch" style={{ background: c }} />
+                ))}
+                <span className="bridge-palette-label">{paletteOpt.label}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      );
     }
 
     // Budget slider
@@ -1106,7 +1338,7 @@ export default function StyleQuiz({ onComplete }: Props) {
     // Interest sub-options — grouped by category
     if (current.id === "interest_details") {
       if (interests.length === 0) {
-        return <p className="quiz-hint">You didn&apos;t pick any \u2014 hit Next to skip.</p>;
+        return <p className="quiz-hint">No interests selected. Hit Next to continue.</p>;
       }
       return (
         <div className="interest-subs">
@@ -1156,8 +1388,40 @@ export default function StyleQuiz({ onComplete }: Props) {
       );
     }
 
-    // Select cards (room type, bed size)
+    // Select cards (room type, bed size, yes/no prefs)
     if (current.layout === "select-cards") {
+      // Budget thresholds per TV size tier.
+      // normal: standard 35% entertainment cap (recommended minimum).
+      // priority: raised 45% cap — lean room but TV is funded.
+      const TV_MIN_BUDGETS: Record<string, number> = {
+        small: 750, medium: 950, large: 1250, xl: 2200,
+      };
+      const TV_PRIORITY_MIN: Record<string, number> = {
+        small: 820, medium: 900, large: 1040, xl: 1420,
+      };
+      const TIER_DOWN: Record<string, string> = {
+        xl: "large", large: "medium", medium: "small",
+      };
+      const SIZE_LABELS: Record<string, string> = {
+        small: "32–43\"", medium: "50–55\"", large: "65\"", xl: "75\"+",
+      };
+
+      const belowNormal =
+        current.id === "screen_size" &&
+        screenSize !== "" &&
+        TV_MIN_BUDGETS[screenSize] !== undefined &&
+        budget < TV_MIN_BUDGETS[screenSize];
+      const canPrioritize =
+        belowNormal &&
+        TV_PRIORITY_MIN[screenSize] !== undefined &&
+        budget >= TV_PRIORITY_MIN[screenSize];
+      // Warning shows if below normal threshold AND user hasn't resolved it
+      // by clicking "Prioritize" (which is only valid when canPrioritize).
+      const tvBudgetWarning = belowNormal && !(tvPriority && canPrioritize);
+      const tvPriorityConfirmed = belowNormal && tvPriority && canPrioritize;
+      const tvMinBudget = TV_MIN_BUDGETS[screenSize] ?? 0;
+      const smallerTier = TIER_DOWN[screenSize] ?? "";
+
       return (
         <div className="quiz-select-grid">
           {options.map((opt) => (
@@ -1166,8 +1430,65 @@ export default function StyleQuiz({ onComplete }: Props) {
               option={opt}
               selected={isSelected(current.id, opt.key)}
               onClick={() => toggleSelection(current.id, opt.key)}
+              imagePrefix={imagePrefix}
             />
           ))}
+          {tvBudgetWarning && (
+            <div style={{ gridColumn: "1 / -1", marginTop: "0.5rem", padding: "0.75rem 1rem", background: "rgba(180, 83, 9, 0.08)", border: "1px solid rgba(180, 83, 9, 0.25)", borderRadius: "0.5rem", fontSize: "0.88rem", lineHeight: 1.5, color: "#78350F" }}>
+              <strong>Tight fit.</strong>{" "}
+              A {SIZE_LABELS[screenSize] ?? screenSize} TV works best with a
+              ${tvMinBudget.toLocaleString()}+ budget.
+              <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.75rem", flexWrap: "wrap" }}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBudget(tvMinBudget);
+                    setBudgetText(tvMinBudget.toLocaleString());
+                    setTvPriority(false);
+                  }}
+                  style={{ padding: "0.4rem 0.85rem", borderRadius: "0.375rem", border: "1px solid rgba(180, 83, 9, 0.4)", background: "rgba(180, 83, 9, 0.12)", color: "#78350F", cursor: "pointer", fontSize: "0.84rem", fontWeight: 500 }}
+                >
+                  Expand budget to ${tvMinBudget.toLocaleString()}
+                </button>
+                {smallerTier && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setScreenSize(smallerTier);
+                      setTvPriority(false);
+                    }}
+                    style={{ padding: "0.4rem 0.85rem", borderRadius: "0.375rem", border: "1px solid rgba(180, 83, 9, 0.4)", background: "rgba(180, 83, 9, 0.12)", color: "#78350F", cursor: "pointer", fontSize: "0.84rem", fontWeight: 500 }}
+                  >
+                    Go {SIZE_LABELS[smallerTier] ?? smallerTier} instead
+                  </button>
+                )}
+                {canPrioritize && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setTvPriority(true);
+                    }}
+                    style={{ padding: "0.4rem 0.85rem", borderRadius: "0.375rem", border: "1px solid rgba(180, 83, 9, 0.4)", background: "rgba(180, 83, 9, 0.12)", color: "#78350F", cursor: "pointer", fontSize: "0.84rem", fontWeight: 500 }}
+                  >
+                    Prioritize the TV (leaner room)
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+          {tvPriorityConfirmed && (
+            <div style={{ gridColumn: "1 / -1", marginTop: "0.5rem", padding: "0.75rem 1rem", background: "rgba(22, 101, 52, 0.08)", border: "1px solid rgba(22, 101, 52, 0.25)", borderRadius: "0.5rem", fontSize: "0.88rem", lineHeight: 1.5, color: "#14532D" }}>
+              <strong>TV prioritized.</strong>{" "}
+              Your room will be leaner to fund the {SIZE_LABELS[screenSize] ?? screenSize} screen.
+              <button
+                type="button"
+                onClick={() => setTvPriority(false)}
+                style={{ marginLeft: "0.75rem", padding: "0.25rem 0.6rem", borderRadius: "0.375rem", border: "1px solid rgba(22, 101, 52, 0.3)", background: "transparent", color: "#14532D", cursor: "pointer", fontSize: "0.82rem" }}
+              >
+                Undo
+              </button>
+            </div>
+          )}
         </div>
       );
     }
@@ -1188,9 +1509,9 @@ export default function StyleQuiz({ onComplete }: Props) {
       );
     }
 
-    // Image cards (core, mood, palette, materials, shape)
+    // Image cards (core, mood, palette, materials, shape, preferences)
     return (
-      <div className="quiz-card-grid">
+      <div className="quiz-card-grid" data-count={options.length}>
         {options.map((opt) => (
           <QuizImageCard
             key={opt.key}
@@ -1207,13 +1528,22 @@ export default function StyleQuiz({ onComplete }: Props) {
   const progressPct = ((stepIndex + 1) / totalSteps) * 100;
   const isLastStep = stepIndex === totalSteps - 1;
 
+  // Section label based on current step
+  const SETUP_IDS = new Set(["room_type", "bed_size", "budget"]);
+  const STYLE_IDS = new Set(["core", "mood", "palette", "materials", "shape"]);
+  const PREF_IDS = new Set(["scope", "bedding_type", "lighting_types", "desk_pref", "mirror_pref", "entertainment_pref", "screen_size", "tv_placement", "bookshelf_pref", "seating_pref", "lr_lighting_types", "density"]);
+  const sectionLabel = SETUP_IDS.has(current.id) ? "Setup"
+    : STYLE_IDS.has(current.id) ? "Style"
+    : PREF_IDS.has(current.id) ? "Preferences"
+    : "Finishing up";
+
   return (
     <div className="quiz-container">
       <div className="quiz-progress">
         <div className="quiz-progress-track">
           <div className="quiz-progress-fill" style={{ width: `${progressPct}%` }} />
         </div>
-        <span className="quiz-progress-label">{stepIndex + 1} / {totalSteps}</span>
+        <span className="quiz-progress-label">{sectionLabel}</span>
       </div>
 
       <h2 className="quiz-question">{current.question}</h2>

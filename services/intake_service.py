@@ -109,6 +109,11 @@ def parse_intake(raw_input: dict) -> RoomRequest:
     # --- Mirror type preference ------------------------------------------------
     mirror_type: str | None = raw_input.get("mirror_type") or None
 
+    # --- Screen size bucket (living room entertainment) -----------------------
+    screen_size: str | None = raw_input.get("screen_size") or None
+    if screen_size is not None and screen_size not in ("small", "medium", "large", "xl"):
+        screen_size = None
+
     # --- Merge survey-driven excluded_slots into already_have ---------------
     # The frontend computes which slots to exclude from survey answers (e.g.
     # user picks "comforter" → exclude duvet_insert, duvet_cover).
@@ -134,5 +139,7 @@ def parse_intake(raw_input: dict) -> RoomRequest:
         already_have=already_have,
         must_have=must_have,
         mirror_type=mirror_type,
+        screen_size=screen_size,
+        tv_priority=bool(raw_input.get("tv_priority")),
         created_at=datetime.now(tz=timezone.utc),
     )

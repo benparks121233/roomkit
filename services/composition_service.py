@@ -50,7 +50,6 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
     "mattress": 80.00,
     "mirror": 14.80,
     "nightstand": 11.99,
-    "ottoman": 34.99,
     "pillows": 5.59,
     "plants": 4.89,
     "rug": 17.99,
@@ -58,7 +57,6 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
     "sheets": 9.97,
     "side_table": 29.99,
     "sofa": 199.99,
-    "sound_bar": 49.99,
     "table_lamp": 9.89,
     "throw_blanket": 8.54,
     "throw_pillows": 10.99,
@@ -80,6 +78,7 @@ def allocate_budget(
     taxonomy: RoomTaxonomy,
     run_id: str = "",
     required_override: list[str] | None = None,
+    floor_overrides: dict[str, float] | None = None,
 ) -> SlotPlan:
     """Allocate target_budget across slots according to weights.  Pure, no LLM.
 
@@ -108,6 +107,10 @@ def allocate_budget(
         required_override: If provided, use this list of slot ids as the required
                            set instead of the preset's required_items().
                            Used by fit_slots_to_budget for have/need logic.
+        floor_overrides:   Per-slot price floor overrides.  When TV-size reweight
+                           inflates the TV allocation, the TV floor must match the
+                           size-specific catalog minimum (not the generic $149.99)
+                           so headroom scaling doesn't compress it back down.
 
     Returns:
         SlotPlan where total_allocated <= target_budget always.
@@ -169,27 +172,28 @@ def allocate_budget(
     # optional slot back below its floor, drop it (budget goes to others).
     # Required slots are never dropped — they keep their scaled share.
     required_set = set(required_slot_ids)
+    overrides = floor_overrides or {}
+
+    def _get_floor(sid: str) -> float:
+        return overrides.get(sid, _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR))
 
     def _apply_floors(alloc: dict[str, float]) -> dict[str, float]:
         out = dict(alloc)
         for sid in out:
-            floor = _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
+            floor = _get_floor(sid)
             if out[sid] < floor:
                 out[sid] = floor
         total = sum(out.values())
         if total > target_budget:
             # Scale only the headroom above each slot's floor so that
             # every slot stays at or above its floor after scaling.
-            floor_total = sum(
-                _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
-                for sid in out
-            )
+            floor_total = sum(_get_floor(sid) for sid in out)
             headroom_budget = target_budget - floor_total
             headroom_total = total - floor_total
             if headroom_total > 0 and headroom_budget > 0:
                 scale = headroom_budget / headroom_total
                 for sid in out:
-                    floor = _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
+                    floor = _get_floor(sid)
                     out[sid] = floor + (out[sid] - floor) * scale
             else:
                 # Budget can't cover all floors — uniform scale as fallback.
@@ -205,7 +209,7 @@ def allocate_budget(
         to_drop = [
             sid for sid in allocated
             if sid not in required_set
-            and allocated[sid] < _CATEGORY_PRICE_FLOORS.get(sid, _DEFAULT_PRICE_FLOOR)
+            and allocated[sid] < _get_floor(sid)
         ]
         if not to_drop:
             break
@@ -258,6 +262,7 @@ def fit_slots_to_budget(
     run_id: str = "",
     already_have: set[str] | None = None,
     must_have: set[str] | None = None,
+    floor_overrides: dict[str, float] | None = None,
 ) -> SlotPlan:
     """Return a feasible SlotPlan, dropping optional slots if needed.
 
@@ -345,6 +350,7 @@ def fit_slots_to_budget(
                 active, target_budget, room_preset, taxonomy,
                 run_id=run_id,
                 required_override=list(effective_required),
+                floor_overrides=floor_overrides,
             )
             # Append owned slots at $0 for render/coherence.
             owned_slots = _build_owned_slots(already_have, taxonomy)
@@ -387,6 +393,85 @@ def fit_slots_to_budget(
         is_feasible=False,
         minimum_viable_budget=mvb,
     )
+
+
+# ---------------------------------------------------------------------------
+# TV-size dynamic entertainment reweight
+# ---------------------------------------------------------------------------
+
+# Minimum viable TV price per size bucket (from catalog data).
+_TV_PRICE_FLOORS: dict[str, float] = {
+    "small":  90.0,
+    "medium": 160.0,
+    "large":  300.0,
+    "xl":     550.0,
+}
+
+# Baseline share of total budget for tv_stand and tv_mount (from taxonomy:
+# entertainment 12% × sub_weights 35% and 15%).  These stay fixed even when
+# entertainment inflates to fund a bigger TV.
+_STAND_BASE_SHARE = 0.042   # 12% × 35%
+_MOUNT_BASE_SHARE = 0.018   # 12% × 15%
+_ENT_BASE_TOTAL = 0.12      # baseline entertainment group weight
+
+# Hard caps — beyond these, the rest of the room collapses.
+_ENT_MAX_SHARE = 0.35          # normal cap
+_ENT_MAX_SHARE_PRIORITY = 0.45  # raised cap when user chose "Prioritize TV"
+
+
+def _apply_tv_size_reweight(
+    weights: dict[str, float],
+    screen_size: str,
+    target_budget: float,
+    *,
+    tv_priority: bool = False,
+) -> dict[str, float]:
+    """Inflate entertainment weights so the TV slot can fund its price floor.
+
+    Only the TV's weight grows.  tv_stand and tv_mount keep their baseline
+    dollar amounts (you don't need a fancier console for a bigger TV).
+
+    The excess is stolen proportionally from all non-entertainment slots.
+    Capped at _ENT_MAX_SHARE (or _ENT_MAX_SHARE_PRIORITY if tv_priority)
+    to prevent room collapse.
+    """
+    tv_floor = _TV_PRICE_FLOORS.get(screen_size)
+    if tv_floor is None or target_budget <= 0:
+        return weights
+
+    tv_share_needed = tv_floor / target_budget
+    ent_needed = tv_share_needed + _STAND_BASE_SHARE + _MOUNT_BASE_SHARE
+
+    if ent_needed <= _ENT_BASE_TOTAL:
+        return weights  # default weights already fund this TV size
+
+    cap = _ENT_MAX_SHARE_PRIORITY if tv_priority else _ENT_MAX_SHARE
+    ent_weight = min(ent_needed, cap)
+
+    # TV gets whatever entertainment has after stand/mount take their baseline.
+    tv_share = ent_weight - _STAND_BASE_SHARE - _MOUNT_BASE_SHARE
+
+    # Current non-entertainment weight total (for proportional scaling).
+    ent_slots = {"tv", "tv_stand", "tv_mount"}
+    current_non_ent = sum(w for s, w in weights.items() if s not in ent_slots)
+
+    if current_non_ent <= 0:
+        return weights
+
+    # Scale non-entertainment slots to fill (1 - ent_weight).
+    scale = (1.0 - ent_weight) / current_non_ent
+
+    new_weights: dict[str, float] = {}
+    for sid, w in weights.items():
+        if sid not in ent_slots:
+            new_weights[sid] = w * scale
+
+    # Entertainment: TV inflates, stand/mount stay at baseline dollar share.
+    new_weights["tv"] = tv_share
+    new_weights["tv_stand"] = _STAND_BASE_SHARE
+    new_weights["tv_mount"] = _MOUNT_BASE_SHARE
+
+    return new_weights
 
 
 def _build_owned_slots(already_have: set[str], taxonomy: RoomTaxonomy) -> list[Slot]:
@@ -459,6 +544,24 @@ def plan_composition(
     except Exception:
         weights = _taxonomy_default_weights(room_preset, taxonomy)
 
+    # TV-size dynamic reweight: inflate entertainment to fund the selected
+    # TV size floor.  Only the TV weight grows — stand/mount stay at their
+    # baseline dollar amounts.  Applied deterministically after LLM weights.
+    #
+    # floor_overrides: when reweight is active, the TV's price floor must
+    # match the size-specific catalog minimum, not the generic $149.99.
+    # Without this, headroom scaling in allocate_budget can compress the TV
+    # allocation below the cheapest real TV of that size.
+    floor_overrides: dict[str, float] | None = None
+    if room_preset == "living_room" and room_request.screen_size:
+        weights = _apply_tv_size_reweight(
+            weights, room_request.screen_size, target_budget,
+            tv_priority=room_request.tv_priority,
+        )
+        tv_floor = _TV_PRICE_FLOORS.get(room_request.screen_size)
+        if tv_floor is not None:
+            floor_overrides = {"tv": tv_floor}
+
     # Density: treat density-dropped slots as "already owned" so they get
     # $0 budget and are excluded from sourcing.  Density only controls
     # ambient items (plants, curtains, throw) — survey-gated items are
@@ -491,6 +594,7 @@ def plan_composition(
         run_id=run_id,
         already_have=already_have,
         must_have=must_have,
+        floor_overrides=floor_overrides,
     )
 
 

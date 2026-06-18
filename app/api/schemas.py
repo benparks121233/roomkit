@@ -23,6 +23,8 @@ class DesignRequest(BaseModel):
     wants: list[str] = Field(default=[])
     excluded_slots: list[str] = Field(default=[])
     mirror_type: str | None = Field(None, max_length=50)
+    screen_size: str | None = Field(None, max_length=50)
+    tv_priority: bool = False
 
     @field_validator("interests", "wants", "excluded_slots")
     @classmethod
@@ -60,6 +62,7 @@ class SlotResult(BaseModel):
     max_quantity: int = 1  # >1 enables multi-select (e.g. wall_art: 6)
     product: ProductResult | None = None
     alternatives: list[ProductResult] = []
+    selected_products: list[ProductResult] = []  # user's final picks (set at finalize)
     null_reason: str | None = None  # "owned" | "no_candidate" | "no_spec_match" | "llm_error"
 
 
@@ -81,6 +84,7 @@ class DesignResponse(BaseModel):
     total_spent: float
     is_feasible: bool
     slots: list[SlotResult]
+    finalized_at: str | None = None  # ISO timestamp; set once at finalize, never cleared
 
 
 # ---------------------------------------------------------------------------

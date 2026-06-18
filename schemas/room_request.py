@@ -70,5 +70,16 @@ class RoomRequest(BaseModel):
     # selection_service to filter mirror candidates.
     mirror_type: Optional[str] = None
 
+    # Screen size bucket from the survey (living room only).
+    # Values: "small" (32-43"), "medium" (50-55"), "large" (65"+).
+    # None if no entertainment setup or not specified.  Used by
+    # selection_service to filter TV candidates by size range.
+    screen_size: Optional[str] = None
+
+    # When True, entertainment cap is raised from 35% to 45%, producing a
+    # leaner room that prioritizes the TV.  Set by the quiz when the user
+    # explicitly chooses "Prioritize the TV" on an under-budget TV size.
+    tv_priority: bool = False
+
     # Timestamp set by intake_service at parse time (UTC).
     created_at: datetime

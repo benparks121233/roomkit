@@ -100,14 +100,29 @@ _PLANT_STAND_PHRASES = [
     "grow light",
     "grow kit",
     "propagation",
+    # Accessories / filler that aren't plants
+    "glass beads", "glass pebbles", "river rocks", "decorative stones",
+    "decorative pebbles", "vase filler", "gravel filler", "aquarium gravel",
+    "potting soil", "plant food",
 ]
+
+# Bulk-pack pot detection: quantity indicators + pot words = empty pots, not plants.
+# "24 Pack Colorful Flower Pots Succulent Planter" contains plant indicator words
+# but is obviously a pot multi-pack, not a plant.  Catch these before the
+# pot+plant-indicator exemption can save them.
+_BULK_POT_RE = re.compile(
+    r"\b(?:\d+\s*(?:pack|pcs|piece|set of|count))\b.*"
+    r"\b(?:pot|pots|planter|planters|flower\s*pot|plant\s*pot)\b",
+    re.IGNORECASE,
+)
 
 # Empty pot/planter detection for the plants slot.
 # Products with these words are pots/planters/vessels.  We keep them ONLY
 # if the name also contains a plant indicator (artificial, faux, tree, etc.).
 _POT_PLANTER_WORDS = re.compile(
-    r"\b(?:planter|plant\s*pot|flower\s*pot|ceramic\s*pot|garden\s*pot"
-    r"|cachepot|jardiniere|nursery\s*pot|planting\s*pot)\b",
+    r"\b(?:planters?|plant\s*pots?|flower\s*pots?|ceramic\s*pots?|garden\s*pots?"
+    r"|cachepot|jardiniere|nursery\s*pot|planting\s*pot"
+    r"|(?:plastic|metal|resin|terracotta|clay|concrete|stone)\s+pots?)\b",
     re.IGNORECASE,
 )
 _PLANT_INDICATOR_WORDS = re.compile(
@@ -239,6 +254,13 @@ _FLORAL_SHEET_PHRASES = [
 # Per-slot exclusion phrases — consolidated contamination filters.
 # Checked case-insensitively against product names during fetch_candidates().
 _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
+    "wall_art": [
+        "5 piece canvas", "5 panel", "5-panel", "5-piece canvas",
+        "3 piece canvas", "3 panel", "3-panel", "3-piece canvas",
+        "4 piece canvas", "4 panel", "4-panel", "4-piece canvas",
+        "canvas art set of", "panel wall art set", "multi panel",
+        "split canvas", "canvas set of", "panels canvas",
+    ],
     "ceiling_light": [
         "kitchen", "utility", "garage", "workshop", "closet", "pantry",
         "laundry", "basement", "stairwell", "outdoor", "porch", "barn light",
@@ -295,6 +317,21 @@ _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
     "desk_chair": [
         "chair cushion", "chair pad", "chair cover", "chair mat",
         "stool", "bar stool", "dining chair", "folding chair",
+    ],
+    "sofa": [
+        # Standalone covers/slipcovers (not slipcovered sofas)
+        "sofa slipcover", "couch slipcover", "stretch sofa cover",
+        "stretch couch cover", "sofa cover furniture protector",
+        "couch cover for dogs", "waterproof sofa cover",
+        "waterproof couch cover", "furniture protector couch",
+        "recliner slipcover", "recliner cover",
+        "seat protector", "cushion slipcover",
+        # Standalone recliners (not reclining sofas)
+        "recliner chair", "power lift recliner",
+        "rocker recliner", "swivel recliner", "glider recliner",
+        # Non-sofa seating
+        "floor chair", "meditation chair", "meditation cushion",
+        "legless floor", "tatami chair",
     ],
     "sconce": [
         "outdoor", "porch", "garage", "bathroom vanity light",
@@ -396,8 +433,13 @@ class AmazonAdapter(SourcingAdapter):
                 name_lower = raw.get("name", "").lower()
                 if any(ph in name_lower for ph in _PLANT_STAND_PHRASES):
                     continue
-                # Exclude empty pots/planters that don't include an actual plant.
+                # Bulk pot packs (e.g. "24 Pack Flower Pots Succulent Planter")
+                # are always empty pots — exclude even if plant indicator words
+                # are present (they're marketing keywords, not actual plants).
                 raw_name = raw.get("name", "")
+                if _BULK_POT_RE.search(raw_name):
+                    continue
+                # Exclude empty pots/planters that don't include an actual plant.
                 if _POT_PLANTER_WORDS.search(raw_name) and not _PLANT_INDICATOR_WORDS.search(raw_name):
                     continue
 

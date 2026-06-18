@@ -36,17 +36,14 @@ items:
     required_specs: []
   armchair:
     required_specs: []
-  ottoman:
-    required_specs: []
 
   # Entertainment
   tv:
     required_specs: [screen_size]
   tv_stand:
     required_specs: []
-  sound_bar:
+  tv_mount:
     required_specs: []
-
   # Tables
   coffee_table:
     required_specs: []
@@ -132,15 +129,19 @@ room_presets:
       seating:
         budget_weight: 0.44
         items:
-          sofa:         { required: true,  sub_weight: 0.60 }
-          armchair:     { required: false, sub_weight: 0.27 }
-          ottoman:      { required: false, sub_weight: 0.13 }
-      tables:
-        budget_weight: 0.24
+          sofa:         { required: true,  sub_weight: 0.75 }
+          armchair:     { required: false, sub_weight: 0.25 }
+      entertainment:
+        budget_weight: 0.12
         items:
-          coffee_table: { required: true,  sub_weight: 0.36 }
-          side_table:   { required: false, sub_weight: 0.19 }
-          tv_stand:     { required: true,  sub_weight: 0.45 }
+          tv:           { required: false, sub_weight: 0.50 }
+          tv_stand:     { required: false, sub_weight: 0.35 }
+          tv_mount:     { required: false, sub_weight: 0.15 }
+      tables:
+        budget_weight: 0.12
+        items:
+          coffee_table: { required: true,  sub_weight: 0.65 }
+          side_table:   { required: false, sub_weight: 0.35 }
       lighting:
         budget_weight: 0.09
         items:
@@ -150,9 +151,9 @@ room_presets:
       decor:
         budget_weight: 0.12
         items:
-          wall_art:     { required: true,  sub_weight: 0.22 }
-          plants:       { required: false, sub_weight: 0.27 }
-          mirror:       { required: false, sub_weight: 0.51 }
+          wall_art:     { required: true,  sub_weight: 0.30 }
+          plants:       { required: false, sub_weight: 0.35 }
+          bookshelf:    { required: false, sub_weight: 0.35 }
       soft_goods:
         budget_weight: 0.11
         items:
