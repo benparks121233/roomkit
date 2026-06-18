@@ -40,13 +40,27 @@ def save_design(response: DesignResponse) -> bool:
         "is_feasible": response.is_feasible,
         "style": response.style.model_dump(),
         "slots": [s.model_dump() for s in response.slots],
+        "finalized_at": response.finalized_at,
     }
 
     try:
         client.table("designs").upsert(row).execute()
         logger.info("design_store: persisted design %s", response.run_id)
         return True
-    except Exception:
+    except Exception as exc:
+        # If finalized_at column doesn't exist yet, retry without it.
+        if "finalized_at" in str(exc):
+            logger.warning(
+                "design_store: finalized_at column missing — persisting without it. "
+                "Run: ALTER TABLE designs ADD COLUMN finalized_at text;"
+            )
+            row.pop("finalized_at", None)
+            try:
+                client.table("designs").upsert(row).execute()
+                logger.info("design_store: persisted design %s (without finalized_at)", response.run_id)
+                return True
+            except Exception:
+                pass
         logger.warning(
             "design_store: FAILED to persist design %s — design is in memory "
             "but will be lost on restart",
@@ -82,7 +96,7 @@ def load_design(run_id: str) -> DesignResponse:
     except Exception as exc:
         raise DesignStoreError(f"Supabase query failed: {exc}") from exc
 
-    if resp.data is None:
+    if resp is None or resp.data is None:
         raise KeyError(run_id)
 
     row = resp.data
@@ -94,4 +108,5 @@ def load_design(run_id: str) -> DesignResponse:
         is_feasible=row["is_feasible"],
         style=StyleResult(**row["style"]),
         slots=[SlotResult(**s) for s in row["slots"]],
+        finalized_at=row.get("finalized_at"),
     )

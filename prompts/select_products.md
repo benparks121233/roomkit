@@ -97,6 +97,9 @@ Rules:
     • For wall_art: see the WALL ART rule above — match the aesthetic.
       Avoid: mall-kiosk canvas, motivational posters, generic clip-art,
       and safe "neutral abstract beige" that ignores the room's style.
+      NEVER pick multi-panel canvas sets (3-piece, 5-piece, split panel) —
+      these are mass-market filler, not curated design. Pick single
+      statement pieces or curated pairs over canvas-set bulk.
     • For interest-based wall_art picks — curated and cool, NOT generic merch:
       - SPORTS → vintage/retro team posters, classic stadium photography,
         retro sports prints, tasteful team-color graphic art

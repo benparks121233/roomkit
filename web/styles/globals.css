@@ -229,8 +229,29 @@ h1, h2, h3 {
 
 .quiz-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: var(--space-2);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+/* On desktop, expand grids beyond 2-col where it makes sense */
+@media (min-width: 640px) {
+  /* 3 options — three equal columns */
+  .quiz-card-grid[data-count="3"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 6 options — 3x2 grid */
+  .quiz-card-grid[data-count="6"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 4+ options (materials, seating, lighting, core, mood, palette) — 4 columns on desktop */
+  .quiz-card-grid[data-count="4"],
+  .quiz-card-grid[data-count="5"],
+  .quiz-card-grid[data-count="8"],
+  .quiz-card-grid[data-count="12"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .quiz-card {
@@ -360,9 +381,10 @@ h1, h2, h3 {
 
 .quiz-select-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-6) var(--space-4);
+  justify-content: flex-start;
+  padding: var(--space-4);
   border: 1.5px solid var(--color-border);
   border-radius: 10px;
   background: var(--color-surface);
@@ -386,6 +408,15 @@ h1, h2, h3 {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--color-text);
+}
+
+.quiz-select-card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: var(--space-2);
+  pointer-events: none;
 }
 
 /* Budget step (slider + input) */
@@ -573,6 +604,64 @@ h1, h2, h3 {
   font-size: 0.72rem;
   color: var(--color-text-secondary);
   line-height: 1.3;
+}
+
+/* Bridge preview — style recap before interests */
+
+.bridge-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.bridge-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.bridge-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.bridge-aesthetic {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.bridge-mood {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.bridge-swatches {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.bridge-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+}
+
+.bridge-palette-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-left: var(--space-1);
 }
 
 /* Quiz free text */
@@ -2234,6 +2323,112 @@ h1, h2, h3 {
 }
 
 /* ---------------------------------------------------------------------------
+   Share button
+   --------------------------------------------------------------------------- */
+
+.share-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0 12px;
+}
+
+.share-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.share-primary-btn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.share-primary-btn:active {
+  transform: translateY(0);
+}
+
+.share-mobile-row {
+  display: flex;
+  gap: 8px;
+}
+
+.share-target-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.share-target-btn:hover {
+  background: #f5f5f5;
+  border-color: #bbb;
+}
+
+.share-pinterest {
+  color: #E60023;
+  border-color: #E60023;
+}
+
+.share-pinterest:hover {
+  background: #fef0f0;
+}
+
+.share-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  padding: 6px 0;
+  min-width: 200px;
+  margin-top: 4px;
+}
+
+.share-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+}
+
+.share-dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+/* ---------------------------------------------------------------------------
    Responsive
    --------------------------------------------------------------------------- */
 
@@ -2276,6 +2471,7 @@ h1, h2, h3 {
   .slot-picker-question {
     font-size: 1.1rem;
   }
+
 }
 
 @media (max-width: 420px) {

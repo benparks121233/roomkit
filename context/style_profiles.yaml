@@ -45,7 +45,7 @@ profiles:
   - id: quiet_luxury
     display_name: Quiet Luxury
     keywords: [cashmere, marble, brushed gold, understated, tailored, bouclé, fine grain]
-    sourcing_terms: [marble, gold, cream, ivory, velvet, linen, fluted, upholstered, boucle, bouclé, elegant, luxe, taupe, champagne, silk, satin, brass, curved, plush, soft, cashmere, refined, sophisticated]
+    sourcing_terms: [marble, gold, cream, ivory, velvet, linen, fluted, upholstered, boucle, bouclé, elegant, luxe, taupe, champagne, silk, satin, brass, curved, plush, soft, cashmere, refined, sophisticated, framed art, abstract art, gallery]
     color_palette: [ivory, taupe, champagne, warm grey, soft gold accent]
     mood: polished, serene, effortlessly refined
 
@@ -80,14 +80,14 @@ profiles:
   - id: gamer_den
     display_name: Gamer Den
     keywords: [LED, dark, minimalist, tech, gaming, RGB, matte black, sleek, acoustic]
-    sourcing_terms: [LED, dark, gaming, RGB, black, matte, tech, gamer, neon, light, minimalist, sleek, carbon, metal, modern, cool, futuristic, electric, desk, monitor, headset]
+    sourcing_terms: [LED, dark, gaming, RGB, black, matte, tech, gamer, neon, light, minimalist, sleek, carbon, metal, modern, cool, futuristic, electric]
     color_palette: [charcoal black, deep purple, electric blue, dark grey, neon accent]
     mood: moody, immersive, futuristic
 
   - id: poster_maximalist
     display_name: Poster Maximalist
     keywords: [eclectic, maximalist, collage, posters, fairy lights, vines, layered, colorful, expressive]
-    sourcing_terms: [eclectic, colorful, poster, boho, bright, vibrant, gallery, collage, artistic, mixed, bold, vintage, retro, funky, abstract, print, neon, bohemian, tapestry, whimsical, quirky, patterned]
+    sourcing_terms: [eclectic, colorful, poster, boho, bright, vibrant, gallery, collage, artistic, mixed, bold, vintage, retro, funky, abstract, print, neon, bohemian, tapestry, whimsical, quirky, patterned, velvet, mid-century, colorful throw]
     color_palette: [warm amber, terracotta, mustard yellow, dusty pink, mixed brights]
     mood: expressive, personal, youthful, maximalist
 

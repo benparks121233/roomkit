@@ -1,17 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Hotspot } from "@/lib/api";
 
 interface Props {
   renderUrl: string;
-  hotspots: Hotspot[];
-  onHotspotClick?: (hotspot: Hotspot) => void;
 }
 
 type ZoomMode = "idle" | "marquee";
 
-export default function InteractiveRoomRender({ renderUrl, hotspots, onHotspotClick }: Props) {
+export default function InteractiveRoomRender({ renderUrl }: Props) {
   // Zoom/pan state
   const [scale, setScale] = useState(1);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
@@ -30,9 +27,6 @@ export default function InteractiveRoomRender({ renderUrl, hotspots, onHotspotCl
 
   // Fullscreen
   const [fullscreen, setFullscreen] = useState(false);
-
-  // Hotspot hover
-  const [hoveredSlot, setHoveredSlot] = useState<string | null>(null);
 
   // Image loaded
   const [loaded, setLoaded] = useState(false);
@@ -187,9 +181,6 @@ export default function InteractiveRoomRender({ renderUrl, hotspots, onHotspotCl
     return () => window.removeEventListener("keydown", handler);
   }, [fullscreen]);
 
-  const trimName = (name: string, max = 45) =>
-    name.length > max ? name.slice(0, max) + "…" : name;
-
   const renderContent = (isFullscreenView: boolean) => (
     <div
       className={`room-render-container ${isFullscreenView ? "room-render-fullscreen" : ""}`}
@@ -222,38 +213,6 @@ export default function InteractiveRoomRender({ renderUrl, hotspots, onHotspotCl
           draggable={false}
         />
 
-        {/* Hotspot overlays */}
-        {loaded && hotspots.map((hs) => (
-          <a
-            key={hs.slot_id}
-            href={hs.buy_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`room-hotspot ${hoveredSlot === hs.slot_id ? "hovered" : ""}`}
-            style={{
-              left: `${(hs.x - hs.w / 2) * 100}%`,
-              top: `${(hs.y - hs.h / 2) * 100}%`,
-              width: `${hs.w * 100}%`,
-              height: `${hs.h * 100}%`,
-            }}
-            onMouseEnter={() => setHoveredSlot(hs.slot_id)}
-            onMouseLeave={() => setHoveredSlot(null)}
-            onClick={(e) => {
-              if (mode === "marquee" || (scale > 1 && dragging)) {
-                e.preventDefault();
-              } else {
-                onHotspotClick?.(hs);
-              }
-            }}
-          >
-            {hoveredSlot === hs.slot_id && (
-              <div className="room-hotspot-tooltip">
-                <span className="room-hotspot-name">{trimName(hs.product_name)}</span>
-                <span className="room-hotspot-price">${hs.price.toFixed(0)}</span>
-              </div>
-            )}
-          </a>
-        ))}
       </div>
 
       {/* Marquee selection overlay */}
@@ -335,11 +294,6 @@ export default function InteractiveRoomRender({ renderUrl, hotspots, onHotspotCl
         </div>
       )}
 
-      {loaded && mode === "idle" && scale <= 1 && !isFullscreenView && (
-        <div className="room-render-zoom-hint">
-          Hover items to shop
-        </div>
-      )}
     </div>
   );
 

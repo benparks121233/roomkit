@@ -3,21 +3,83 @@
 Single source of truth. Merges engine status, foundation/security hardening,
 growth sequence, and scale — in one numbered sequence with dependencies.
 
-**Goal:** Launch DEEP and credible — bedroom + living room, Amazon + 2 retailers,
-shareable, dual-revenue (generation fee + affiliate). Depth > speed.
+**Goal:** Launch DEEP and credible — bedroom + living room, Amazon-only,
+shareable, affiliate-first revenue with room-pack upsell. Depth > speed.
 
 **Target:** Small beta in weeks, solo founder.
 
+**Retailer strategy:** Amazon Associates at launch — single adapter, proven
+attribution, immediate revenue. Multi-retailer expansion (Wayfair, Target, etc.)
+moves to post-launch via affiliate aggregator (Skimlinks or Sovrn Commerce).
+Aggregators accept newer sites with less traffic history than direct programs
+like CJ/Wayfair. Do NOT assume non-Amazon retailers will out-earn Amazon despite
+higher per-item rates — volume and conversion matter more than commission %.
+
 **Principle:** The foundation (auth, RLS, rate limiting) must be in place before
-any feature that stores user identity or charges money. The viral share loop is
-anonymous (no account needed to share or view), so it can come before auth — but
-persistent design storage must exist first (shared URLs can't break on redeploy).
+any public deploy. The viral share loop is built auth-ready (clean seams for
+Phase 6 insertion) but structurally unenforceable until accounts exist.
+
+---
+
+## Revenue Model — The Core Inversion
+
+**Affiliate is the profit engine, not fees.** The result page shows the AI render
+with all products below it (correct images + prices) and an "ADD ALL TO CART"
+button that adds every product to the user's Amazon cart in one action. A
+converted ~$1,300 room at 3% (Amazon) drives far more revenue than any
+render/pack fee.
+
+**Fees exist to cover cost + qualify intent, NOT to be the profit center.**
+Every gating decision must minimize friction on the affiliate funnel. When
+fee-protection and affiliate-funnel-flow conflict, affiliate wins.
+
+**Cost structure (per from-scratch room):**
+
+| Component | Cost | Notes |
+|---|---|---|
+| Composition (LLM) | ~$0.20–0.27 | Sunk cost every user incurs; $0.27 worst case (full 21-slot room) |
+| Free render (medium) | $0.10 | gpt-image-1, quality="medium" |
+| Paid render (high) | $0.30 | gpt-image-1, quality="high" |
+| **Free-tier all-in** | **~$0.37** | Composition + free render. The "37c law" — free-tier ceiling. |
+| **Paid-tier all-in** | **~$0.57** | Composition + paid render. First render for a paid room. |
+| **Paid re-render** | **$0.30** | Marginal cost per re-roll (composition already sunk). |
+
+Beta pricing note: room pack unit price must comfortably clear the $0.57
+paid all-in. Trivially true given affiliate is the primary engine, but the
+number must be on record so pack pricing isn't set against the wrong cost.
+
+### Tier Structure
+
+**Accounts are REQUIRED to access the product.** (Enforcement: Phase 6.)
+
+| | Free | Paid (room packs) |
+|---|---|---|
+| Rooms | 1 per account (bedroom) | N rooms (pack size TBD) |
+| Render | Full, WATERMARKED (subtle corner mark) | Full, NO watermark |
+| Resolution | Standard (must still look great as OG/social preview) | High |
+| Room types | Bedroom only | + living room, bathroom, etc. (beta access) |
+| Re-renders | Unlimited | Unlimited |
+| Buy links | Full | Full |
+| Expiry | N/A | Non-expiring packs |
+
+**Pack unit = ROOMS, not render-credits.** Each room = unlimited re-renders
+(uncapped re-rolling surfaces more products = more affiliate clicks; never meter
+renders).
+
+**Paid upgrade stacks three kinds of value:** vanity (no watermark), utility
+(hi-res), and access/scarcity (new room types). Room-type gating is the
+strongest lever — self-enforcing regardless of abuse vectors.
+
+**NO consumer subscription.** Low-frequency episodic tool (people furnish one
+room in a burst, not monthly). A monthly allowance would churn out of resentment
+AND cap the affiliate funnel. DEFERRED: "pro" lane for realtors/STR
+hosts/designers who furnish repeatedly — do not build or architect now.
 
 ---
 
 ## What's Done (engine state as of 2026-06-16)
 
-**Core pipeline — WORKING (305 tests pass):**
+**Core pipeline — WORKING (318 tests pass):**
 - [x] Intake → Style → Composition → Sourcing → Selection → Render → Assembly
 - [x] Budget enforcement: code-enforced, p75-proportional weights, decor 50% cap
 - [x] Aesthetic matching: 13 profiles with sourcing_terms, verified across all
@@ -26,18 +88,18 @@ persistent design storage must exist first (shared URLs can't break on redeploy)
 - [x] AI render generation + interactive hotspots
 - [x] Instrumentation: events + selections logging (Supabase), /admin dashboard, cost tracking
 - [x] Desk/chair/sconce/duvet slots added, density-gated
+- [x] Phase 2: Input validation + secrets audit (Pydantic constraints, fail-closed admin, CORS env var)
+- [x] Phase 3: Persistent design storage (Supabase, write-through cache, RLS default-deny, lossless round-trip verified)
 
 **Recent fixes (aesthetic + budget + polish batch):**
-- [x] Phase 1: Aesthetic filter — sourcing_terms across all 13 aesthetics
-- [x] Phase 2: Mattress/duvet_insert — aesthetic-agnostic + reweighted
-- [x] Phase 3: Budget overhaul — p75-proportional, decor cap, +30% option removed
-- [x] Phase 4: Mirror type filter — synonym mapping + threshold fix
-- [x] Polish: $1000 min label removed (red warning stays)
-- [x] Polish: Mirror options → Round/Arched/Rectangular/Full-length/No preference/None
-- [x] Polish: Floral sheets filter
-- [x] Polish: Dresser near-duplicate dedup
-- [x] Polish: Cartoon room graphic fully removed (component + assets + route + CSS)
-- [x] Polish: "Your room so far" reference panel (thumbnails during selection)
+- [x] Aesthetic filter — sourcing_terms across all 13 aesthetics
+- [x] Mattress/duvet_insert — aesthetic-agnostic + reweighted
+- [x] Budget overhaul — p75-proportional, decor cap, +30% option removed
+- [x] Mirror type filter — synonym mapping + threshold fix
+- [x] Polish: $1000 min label removed, floral sheets filter, dresser dedup
+- [x] Polish: Cartoon room graphic removed, "Your room so far" panel
+- [x] Per-aesthetic soft goods color profiles (inclusion-only)
+- [x] Back button in guided selection, bedding exclusivity, empty pot filter
 
 ---
 
@@ -59,72 +121,251 @@ persistent design storage must exist first (shared URLs can't break on redeploy)
 
 ---
 
-## Phase 2 — Input Validation + Secrets Audit
+## Phase 2 — Input Validation + Secrets Audit ✓ DONE
 
-*Tiny. Hardens the existing API before anything public-facing. ~1 hour.*
-
-- [ ] **Server-side input validation:** Add Pydantic `Field` constraints to `DesignRequest`
-      (app/api/schemas.py):
-      - `budget: float = Field(1500.0, ge=100, le=25000)`
-      - `style_description: str = Field("", max_length=2000)`
-      - `room_type` → Literal["bedroom", "living_room"]
-      - `interests: list[str] = Field([], max_length=10)` with per-item cap
-      - `wants`, `excluded_slots` — bounded lists
-- [ ] **Remove hardcoded admin secret fallback:** `app/api/admin.py:16` currently falls
-      back to `"roomkit-internal-2024"` if `ADMIN_SECRET` env var isn't set. Change to
-      fail closed (raise error if not set).
-- [ ] **Tighten CORS:** `app/main.py:22-27` — add production domain alongside localhost.
-- [ ] **Confirm secrets clean:** `.env` in `.gitignore`, never committed (already verified),
-      `SUPABASE_SERVICE_KEY` backend-only.
-
-**Exit:** API rejects out-of-bounds input. Admin endpoint locked. CORS ready for production.
+- [x] Server-side input validation (Pydantic Field constraints on DesignRequest)
+- [x] Remove hardcoded admin secret fallback (fail closed)
+- [x] CORS origins driven by env var
+- [x] Secrets clean (.env in .gitignore, service key backend-only)
 
 ---
 
-## Phase 3 — Persistent Design Storage
+## Phase 3 — Persistent Design Storage ✓ DONE
 
-*Designs currently live in an in-memory dict that dies on every deploy. The viral
-share loop (Phase 4) depends on shared URLs surviving restarts. This is a storage
-migration — no auth/user identity yet.*
-
-**Dependency: MUST complete before Phase 4 (viral loop). Shared URLs are worthless
-if the design disappears on redeploy.**
-
-- [ ] Create `designs` table in Supabase (run_id, room_type, style, target_budget,
-      total_spent, slots JSON, created_at). No `user_id` column yet — added in Phase 6.
-- [ ] Migrate `_designs` dict → Supabase writes (POST /design saves to DB).
-- [ ] Migrate GET /design/{run_id} → Supabase read.
-- [ ] Verify: create a design, restart the backend, confirm GET still returns it.
-- [ ] Keep in-memory dict as a fast cache layer (read from memory first, fall back to DB).
-
-**Exit:** Designs survive restarts. Shared URLs are durable.
+- [x] `designs` table in Supabase (nullable user_id for Phase 6, RLS default-deny)
+- [x] Write-through cache: _designs dict + Supabase persistence
+- [x] _get_design() helper: cache → Supabase → 404/503 three-outcome handling
+- [x] Verified: lossless round-trip (field-by-field, 342 prices, model_dump equality)
+- [x] Verified: restart-survival (fresh process loads from Supabase, identical)
+- [x] Verified: RLS blocks anon role (default-deny confirmed)
 
 ---
 
-## Phase 4 — Viral Share Loop
+## Phase 4 — Viral Share Loop + Add-All-to-Cart
 
-*Anonymous — no account needed to share or view. Build now, activate when product
-is deep + correct. Absorbs the share mechanic from the old Phase 2.*
+*Build auth-ready, not auth-blind. The share mechanic + affiliate checkout flow.
+Built and tested locally / private-beta. NOT publicly deployed until Phase 6
+delivers auth + rate limiting (see Hard Gates below).*
 
-- [ ] "Share my room" button on the result page.
-- [ ] Self-promoting "Made with RoomKit · [url]" watermark on every render.
-- [ ] Shareable URL → opens the interactive shoppable room viewer.
-      OG image (og:image meta) + link preview for social platforms.
-- [ ] Share targets: Pinterest (priority for home design), TikTok/IG, X.
-- [ ] Click-to-design-your-own CTA from a shared render (viral re-entry).
-- [ ] **Mobile polish (cross-cutting):** Guided flow, render viewer, product cards,
-      share flow — all must work well on phones. Most social/share traffic lands
-      on mobile. Do this BEFORE activating the share loop.
+**Sharing model:** Every free user gets a full watermarked render. The
+watermarked render IS the share asset and OG image. There is no "unrendered
+design" state — no grid/mood-board/preview pipeline needed.
 
-**Exit:** A user can generate → share → recipient views shoppable room → clicks
-"design your own." The loop exists, dormant until product quality passes.
+- [ ] **Watermark on renders:** Subtle "Made with RoomKit" in corner. Must stay
+      light enough that the room still feels real and shoppable (a heavy mark
+      cheapens the room that monetizes via affiliate). Free tier = watermarked,
+      paid tier = clean. Render service produces both variants.
+- [ ] **"Share my room" button** on the result page.
+- [ ] **OG meta tags:** Dynamic `generateMetadata()` on result page — fetch design,
+      set `og:image` to render URL, `og:title` to room description. The render is
+      served via the public `/renders/{run_id}.jpg` StaticFiles path (confirmed
+      unauthenticated, crawler-reachable).
+- [ ] **Share targets:** Pinterest (priority — home design), then X, iMessage/link copy.
+- [ ] **Click-to-design-your-own CTA** on the shared view (viral re-entry).
+- [ ] **"ADD ALL TO CART" — verify existing + confirm affiliate tag carries.**
+      Button already exists (`ExportToCartButton` in result page). Uses Amazon's
+      `gp/aws/cart/add.html` with `tag=roomkitai-20`. MUST smoke-test: does the
+      associate tag actually create an attribution session? Check Associates
+      dashboard after clicking. If tag drops, try `AssociateTag` param instead.
+      This is the revenue mechanic — verify before building anything on top.
+- [ ] **Mobile polish:** Guided flow, render viewer, product cards, share flow —
+      all verified on actual phone before activating.
+
+**Auth-ready seams (built now, enforced in Phase 6):**
+- Render watermark is driven by a `tier` field (hardcoded "free" now, checked
+  against account tier in Phase 6).
+- "One free room" limit: designs table already has nullable `user_id`. Phase 6
+  populates it + adds a count check. The data model supports it today.
+- Share visibility: all shares are public (no auth to view). This is deliberate
+  and permanent — shared rooms are the viral surface.
+
+**Exit:** Full loop working locally: generate → render (watermarked) → share →
+recipient views shoppable room with OG preview → clicks "design your own."
+Add-all-to-cart functional with affiliate tag.
+
+---
+
+## Phase 4B — Platform-Adaptive Visual Layer
+
+*Scoped per the LIGHT model: ONE product, one backend, one source of truth.
+Only the visual/presentation layer adapts. No forks, no divergent flows.*
+
+### Decision Log
+
+**1. Platform detection: client-tells-server (no user-agent sniffing)**
+
+The render is generated via `POST /design/{run_id}/render`, triggered by the
+user clicking "See your room" on the client. The client already knows its own
+viewport. The cleanest path: the client sends the desired aspect (portrait vs
+landscape) as a parameter on the render request. The server passes it through
+to `render_room()` which maps it to the gpt-image-1 size string.
+
+Why NOT user-agent sniffing: Next.js can read `User-Agent` in server
+components / middleware, but the render is generated asynchronously from page
+load (user-initiated button click → POST). By the time the render fires, we
+have a client JS context that knows `window.innerWidth` precisely — more
+reliable than parsing UA strings, which lie (tablets, desktop-mode mobile
+browsers, bots). User-agent adds complexity with no benefit here.
+
+What this enables: device-appropriate render dimensions, Pinterest-optimal
+OG images, future flexibility (square for Instagram, etc.) — all from one
+parameter on an existing endpoint.
+
+What this does NOT cover: server-side `generateMetadata()` for OG tags runs
+without a client viewport. OG image selection uses a stored preference or
+default, not live device detection (see item 4 below).
+
+**2. Device-appropriate render: landscape desktop, portrait mobile**
+
+gpt-image-1 natively supports exactly three sizes:
+- `1024x1024` (square)
+- `1536x1024` (landscape, current default)
+- `1024x1536` (portrait, 2:3 — Pinterest's preferred ratio)
+
+Key finding: `1024x1536` is native 2:3, which is Pinterest's preferred
+format. No cropping or post-processing needed — the API generates it directly
+at zero additional cost ($0.10 either way at medium quality).
+
+**DECISION: Client-chosen aspect, device-appropriate defaults.**
+- Desktop (viewport ≥ 768px): landscape `1536x1024` — the room fills the
+  wide screen naturally, hero asset for the buying decision surface.
+- Mobile (viewport < 768px): portrait `1024x1536` — fills the phone,
+  Pinterest-native 2:3.
+
+Why NOT portrait-everywhere: the desktop result page is where the render's
+job is to make the room feel real enough to buy. A room is spatial — wide
+landscape shows it the way you perceive a room. Portrait-on-desktop shrinks
+the hero into a narrow strip with dead margin, sacrificing the buying surface
+to optimize the share path. The OG image and on-screen render are decoupled
+(bots have no viewport), so there's no forced tradeoff.
+
+Options evaluated for cropping/dual-render:
+
+**(a) Crop landscape to portrait:** Cuts ~55% of the image — amputates
+furniture. Not viable.
+
+**(b) Two renders per room (both aspects):** Doubles cost from $0.10 to $0.20,
+breaches the 37c free ceiling. Rejected.
+
+**(c) Re-render on aspect switch:** User re-renders to switch aspect. Already
+unlimited, one file per run_id (overwrite). Clean and free.
+
+The one code touch needed: `InteractiveRoomRender.tsx` line 44 hardcodes
+`(containerW * 1024) / 1536` for the image aspect ratio. This must read the
+actual image dimensions (via `onLoad` → `naturalWidth/naturalHeight`) instead
+of a hardcoded ratio. Works for both orientations automatically.
+
+Cost impact: zero (same $0.10 per render, just a different size string).
+
+**3. Mobile UX: elevate from "polish checkbox" to explicit Phase 4 step**
+
+Current state: mobile is scoped as "verified on actual phone before
+activating" — a verification checkbox, not a build task. But mobile is the
+PRIMARY traffic surface. The current CSS has three breakpoints (768/640/420px)
+covering basic layout collapse, but no mobile-specific interaction patterns.
+
+What already works well:
+- Render viewer: pinch-zoom implemented, `width: 100%` is fluid
+- Product grid: collapses to 2-col at 640px, 1-col at 420px
+- Guided flow: collapses to single column at 768px
+
+What needs a real pass (visual-layer-only, not product forks):
+- Touch targets: some interactive elements likely < 44px min touch target
+- Share flow: mobile share should use `navigator.share()` (native share
+  sheet) rather than a desktop-style share dropdown
+- Product cards at phone width: price, name, image, buy link density
+- Result page scroll: verify the product list below the render is
+  usable on a 375px viewport without the render consuming all visible space
+- Quiz/intake: verify input fields, sliders, buttons are thumb-friendly
+
+**RECOMMENDATION:** Add an explicit "4C — Mobile Visual Pass" step in Phase 4,
+between the share button build and the affiliate verification. Concrete scope:
+touch targets, navigator.share(), product card density, result page scroll.
+This is 1-2 sessions of CSS + one JS change (navigator.share), not a rewrite.
+
+**4. OG image: serves whatever render exists, decoupled from viewing**
+
+The OG image is fetched by bots (Googlebot, Pinterest crawler, Twitter card
+fetcher). Bots have no viewport — they just GET the URL in the meta tag.
+The OG image and the on-screen render are ALREADY DECOUPLED: the user sees
+whatever aspect their device generated, the bot sees whatever URL is in the
+meta tag. No forced tradeoff.
+
+In practice, the majority of shares originate on mobile → portrait render →
+portrait OG (Pinterest-optimal). Desktop sharers produce a landscape OG,
+which is suboptimal for Pinterest but functional on all platforms.
+
+**Desktop-sharer wrinkle:** A desktop user generates landscape for viewing,
+then shares. Their on-disk render is landscape. What does the OG point to?
+
+Options evaluated:
+- **(a) Generate separate portrait for OG (double-cost):** Extra $0.10 only
+  for desktop sharers. Requires second file (`{run_id}_og.jpg`), share
+  button blocks 15-20s on render generation. Bad UX on the share action.
+- **(b) Accept landscape OG for desktop sharers:** generateMetadata serves
+  whatever render exists. Zero complexity. Landscape is suboptimal for
+  Pinterest but not broken — Pinterest handles it, just letterboxed.
+- **(c) Share action triggers background portrait re-render:** Fire-and-forget
+  portrait generation on share click. Problem: Pinterest caches aggressively
+  — the first pin sets the image permanently. Lazy generation doesn't help
+  for the one channel where portrait matters most.
+
+**DECISION: (b) — accept landscape OG for desktop sharers.**
+
+Rationale: mobile is the primary share surface (share-driven, social lands
+on mobile). The overwhelming majority of shares originate on mobile →
+portrait OG automatically. Desktop sharers are a minority of a minority.
+The complexity of (a) or (c) — second file variant, async generation,
+blocking UX or Pinterest cache race — buys optimized unfurls for a small
+slice of shares on the less-likely path. If Pinterest analytics later show
+desktop-originated shares are significant, (a) can be added as a targeted
+optimization: one new parameter on `render_room()`, one `_og.jpg` suffix,
+generateMetadata prefers it if it exists. Clean incremental addition.
+
+Edge case — user shares before rendering: share button is gated behind
+`renderUrl` existence (decided in prior session). No render = no share.
+
+### Build Items (not yet built — pending approval)
+
+- [ ] **4B-1: Aspect parameter on render endpoint.** Add optional `aspect`
+      field to `RenderRequest` (`"portrait"` | `"landscape"`, default
+      `"landscape"` — preserves current behavior when no aspect sent).
+      Map to gpt-image-1 size: portrait → `1024x1536`, landscape →
+      `1536x1024`. Pass through to `render_room()`.
+- [ ] **4B-2: Frontend aspect detection.** Client sends `aspect: "landscape"`
+      when viewport width ≥ 768px, `"portrait"` otherwise. One conditional
+      on the existing render-trigger callback.
+- [ ] **4B-3: Fix hardcoded aspect ratio in InteractiveRoomRender.** Replace
+      `(containerW * 1024) / 1536` with actual `naturalWidth/naturalHeight`
+      from the loaded image. Works for both orientations automatically.
+- [ ] **4B-4: Mobile visual pass.** Touch targets (44px min), `navigator.share()`
+      on mobile, product card density at phone width, result page scroll
+      behavior. CSS + one JS API. 1-2 sessions.
+- [ ] **4B-5: OG image serves whatever render exists.** When `generateMetadata()`
+      is built (Phase 4 OG meta tags item), it serves whatever render exists.
+      Mobile-default means most OG images are portrait (Pinterest-optimal)
+      automatically. Desktop-originated landscape OG is accepted — see
+      decision 4 above.
+
+### Resolved Questions
+
+- **Default aspect per device:** Landscape on desktop (≥768px), portrait on
+  mobile (<768px). Desktop preserves the buying surface; mobile fills the
+  phone and is Pinterest-native.
+- **Re-render aspect switch:** Overwrite. One file per run_id, re-renders
+  are unlimited. User can re-render to switch aspect if desired.
+- **Existing renders:** Stay as-is (1536x1024 landscape). No migration.
+  New renders follow device-appropriate defaults. Phase 7C render storage
+  migration is the natural point to regenerate old renders if needed.
+- **Desktop-sharer OG:** Accept landscape OG (option b). Revisit with
+  dedicated portrait OG file (option a) only if Pinterest analytics show
+  desktop-originated shares are hurting conversion.
 
 ---
 
 ## Phase 5 — Full Audit + Living Room Build
 
-*Biggest build phase. Two parallel tracks: audit bedroom depth, build living room.
-Start retailer applications NOW (lead time).*
+*Biggest build phase. Two parallel tracks: audit bedroom depth, build living room.*
 
 ### 5A — Comprehensive Bedroom Audit
 - [ ] End-to-end audit across multiple aesthetics + budgets: selection quality,
@@ -144,38 +385,45 @@ Start retailer applications NOW (lead time).*
 - [ ] Living-room budget weights in composition service (sofa ~30-40%).
 - [ ] Test + tune living room render layout with real products.
 
-### 5C — Start Retailer Applications (parallel, external lead time)
-- [ ] Apply to Wayfair (via Commission Junction).
-- [ ] Apply to one additional retailer.
-- [ ] These run in parallel with 5A/5B — approval takes weeks.
-
-**Exit:** Bedroom audited and polished. Living room end-to-end working. Retailer
-apps submitted.
+**Exit:** Bedroom audited and polished. Living room end-to-end working.
 
 ---
 
 ## Phase 6 — Foundation Layer (Auth + RLS + Security)
 
-*The load-bearing wall. Everything after this that involves user identity, saved
-rooms, payments, or stored personal data depends on auth being in place.*
+*The load-bearing wall. Everything public depends on this.*
 
-**Dependency: MUST complete before Phase 7 (revenue/Stripe), Phase 8 (deploy with
-login gating), and any "saved rooms" feature. NOT required for the viral share
-loop (Phase 4), which is anonymous.**
+**HARD PRE-DEPLOY GATE:** Account-gating + rate limiting must BOTH land before
+ANY public deploy. Until Phase 6 completes, the $0.37/room cost is uncapped to
+the entire internet with no free-room limit. Phase 4 can be built and tested
+locally / private-beta, but NOTHING ships publicly until this phase delivers.
+(See also: rate-limiting pre-deploy gate from Phase 3 security review.)
+
+**Auth sequencing consequence:** Between Phase 4 and Phase 6, the tier/gating
+model is structurally UNENFORCEABLE. No accounts = no "one free room" limit, no
+pack gating, no access wall. The model is DESIGNED in Phase 4, ENFORCED in Phase 6.
 
 ### 6A — Supabase Auth (2-3 sessions)
 - [ ] Add `@supabase/ssr` to Next.js for client-side auth (email/password + Google).
 - [ ] Auth middleware on protected Next.js pages.
 - [ ] Backend JWT verification on FastAPI endpoints that need identity.
-- [ ] Add `user_id` column to `designs`, `events`, `selections` tables.
+- [ ] Populate `user_id` on `designs` table (column already exists, nullable).
+      Add to `events`, `selections` tables.
 - [ ] Login/signup UI — clean, minimal.
+- [ ] **Free-room enforcement:** Count designs where user_id = current user.
+      If count >= 1 (free tier), block new design generation. Upgrade CTA.
 - [ ] **Verification:** Create two test accounts, confirm account A cannot see
       account B's designs via API.
 
 ### 6B — Row-Level Security (1-2 sessions, depends on 6A)
-- [ ] Enable RLS on `designs`, `events`, `selections`.
-- [ ] Policy: `user_id = auth.uid()` on all user-data tables.
+- [ ] RLS already enabled on `designs` (Phase 3, default-deny). Add user-scoped
+      SELECT policy: `user_id = auth.uid()`.
+- [ ] Enable RLS on `events`, `selections` with same pattern.
 - [ ] Service-role key stays backend-only (for admin/tracking writes).
+- [ ] **Critical: `/renders/` StaticFiles path must be EXPLICITLY EXCLUDED from
+      any auth middleware.** This path serves OG images to social crawlers. If
+      blocked, every shared link loses its preview. Document as a permanent
+      exclusion.
 - [ ] **Verification:** Use Supabase anon key to attempt cross-user data access —
       must fail. Actually test this, don't assume.
 
@@ -189,88 +437,98 @@ loop (Phase 4), which is anonymous.**
 
 ### 6D — Rate Limiting (1 session)
 - [ ] Add `slowapi` (or similar) to FastAPI.
-- [ ] `POST /design`: 5/min per IP (~$0.27/run — unprotected = budget burn).
+- [ ] `POST /design`: 5/min per IP ($0.37/run — unprotected = budget burn).
 - [ ] `POST /design/{run_id}/render`: 3/min per IP.
 - [ ] `POST /design/{run_id}/hotspots`: 3/min per IP.
 - [ ] **Verification:** Exceed the limit, confirm 429 response.
 
-*Note: Rate limiting was previously in old Phase 6 (deploy). Absorbed here.*
+### 6E — Tier Enforcement
+- [ ] Watermark toggle: render service checks user tier, produces watermarked
+      (free) or clean (paid) variant.
+- [ ] Room-type gating: free tier = bedroom only. Paid tier unlocks others.
+- [ ] Pack ledger: user has N rooms remaining. Decrement on design creation.
+      Non-expiring.
 
-**Exit:** Users have accounts. Designs are user-scoped. Cross-user access blocked.
-Privacy/terms live. Account deletion works. Expensive endpoints rate-limited.
+**Exit:** Users have accounts. Designs are user-scoped. Free-room limit enforced.
+Tier gating active. Cross-user access blocked. Privacy/terms live. Account
+deletion works. Expensive endpoints rate-limited. `/renders/` stays public for
+crawlers.
 
 ---
 
-## Phase 7 — Dual Revenue + Retailer Integration
+## Phase 7 — Revenue Activation + Compliance
 
-*Requires auth (Phase 6) for payment identity. Requires retailer approvals
-(submitted in Phase 5C) to have come through.*
+*Requires auth (Phase 6) for payment identity and tier enforcement.*
 
-### 7A — "Build Free, Pay to Render" (Stripe)
+### 7A — Stripe Integration (Room Packs)
 
-**Model:** Room composition + product selection is FREE. The AI room render is the
-paid gate. Users build their entire room (pick every item, see budget, feel
-ownership) before hitting the paywall. The render — the visualization of "their"
-room — is the wow-moment reward they pay to unlock.
+**Model:** Packs of rooms. Each pack grants N additional room designs with
+hi-res watermark-free renders + access to new room types. Non-expiring. Pricing
+TBD in beta.
 
-**Why this works:**
-- **Endowment effect:** Users invest effort picking items, build attachment to
-  "their" room, THEN pay to see it rendered. Conversion psychology is maximized.
-- **Cost structure is clean:** A non-paying user costs only ~$0.27 (composition
-  LLM calls — acceptable CAC). The render (~$0.20, the most expensive operation)
-  fires ONLY for paying users. Zero render cost on tire-kickers.
-- **Healthy margin:** Render is 100% monetized. Any reasonable pack price easily
-  clears the ~$0.20/render cost.
+- [ ] Stripe Checkout for pack purchase.
+- [ ] Pack ledger: increment room count on successful payment.
+- [ ] Upgrade CTA when free-room limit hit.
+- [ ] Webhook for payment confirmation (don't trust client-side redirect).
 
-**Flow:**
-1. FREE: Quiz → composition → guided selection → full room built out (products,
-   budget, the whole curated set visible).
-2. GATE: "Render your room" button → payment required. Buy-links also gated
-   behind render (incentivizes payment + ensures affiliate revenue is tied to
-   paying users).
-3. PAID: AI render unlocks + shoppable buy-links activate.
+### 7B — Render Storage (Supabase Storage)
+
+**Resolves the render persistence gap found in Phase 3:**
+- Renders are currently local JPEGs at `data/renders/{run_id}.jpg` — die on
+  ephemeral redeploy.
+- Phase 7 introduces TWO render variants: watermarked-standard-res (free) and
+  clean-hi-res (paid). Both need durable storage.
+- Uncapped paid re-renders need durable storage.
 
 **Build:**
-- [ ] Stripe integration: render credit packs (e.g. $X for N renders — pricing
-      TBD, validate in beta). Each render costs ~$0.20, so margin is strong at
-      any reasonable price point.
-- [ ] Payment gate on POST /design/{run_id}/render — check credits before firing.
-- [ ] Credit ledger tied to user account (requires auth from Phase 6).
-- [ ] Buy-links gated: only shown/clickable after render is paid for.
-- [ ] UI: clear "render your room" CTA after selection completes. Show what they
-      get (the AI visualization of their picks). Don't hide that it costs money —
-      be transparent, the value is obvious.
-- [ ] Free tier for beta validation: give early users N free renders to prove
-      the loop before optimizing pricing.
+- [ ] Supabase Storage public bucket for renders.
+- [ ] Add `render_url` column to `designs` table — the durable record of render
+      fulfillment. Written via `save_design()` after successful render.
+      **NOTE:** Phase 4's `generateMetadata()` checks render existence. When
+      `render_url` lands in the design row, switch metadata to read existence
+      from the design row (already fetched), NOT a HEAD probe to storage.
+      Avoids a network round-trip to the bucket on every crawler hit.
+- [ ] Public bucket URL = crawler-reachable OG image URL, fully decoupled from
+      API server (Phase 6 auth/rate-limiting can never accidentally gate it).
+- [ ] Migrate from local `StaticFiles` serving to Supabase Storage URLs.
 
-**Rate limiting note (Phase 6D):** POST /design (composition) stays rate-limited
-against bot abuse (~$0.27/call), but stakes are lower now — the expensive render
-is payment-gated. Do NOT gate composition itself; keeping it free is the
-conversion engine.
+### 7C — FTC / Amazon Associates Compliance (PRE-LAUNCH BLOCKER)
 
-### 7B — Retailer Integration
-- [ ] Integrate approved retailers: API/feed, buy-link format, affiliate attribution.
-- [ ] Catalog matching/dedup across retailers (or distinct products per retailer).
-- [ ] Margin-aware routing: favor higher-margin in-stock option where quality is equal.
+**Elevated to pre-launch review.** Affiliate is primary revenue — an Associates
+ban is existential, not cosmetic.
 
-### 7C — FTC Affiliate Disclosure (launch-blocker, legal)
 - [ ] Visible "We earn from qualifying purchases" disclosure on result/buy pages.
-- [ ] Required the moment affiliate links are live to real users.
+- [ ] Price display rules compliance review.
+- [ ] Image-use rules: confirm AI-composited renders using product images are
+      compliant (or that renders use only style/mood, not actual product photos).
+- [ ] Price freshness compliance (24h window already enforced in code).
+- [ ] **ADD-ALL-TO-CART affiliate tag verification:** Cart-add button already
+      exists (Phase 4 scope = verify, not build). Smoke-test can happen NOW:
+      open a real cart-add URL, check Associates dashboard for attribution.
+      Known risk: `tag` param vs `AssociateTag` param — Amazon docs are
+      inconsistent on which creates an attribution session through the cart-add
+      endpoint. If `gp/aws/cart/add.html` is fully deprecated in your region,
+      fall back to individual buy links (already working, tag confirmed on each).
 
-**Exit:** Revenue flows from two sources. Multi-retailer affiliate live. FTC compliant.
+**Exit:** Revenue active (Stripe + Amazon affiliate). Render storage durable.
+FTC + Associates compliant.
 
 ---
 
 ## Phase 8 — Deploy + Gate
 
-*Make it real and reachable. Absorbs items from the old Phase 6.*
+*Make it real and reachable.*
 
 - [ ] Buy domain.
-- [ ] Deploy to production host (Railway or equivalent).
+- [ ] Deploy to production host (TBD — not decided yet).
 - [ ] Production CORS locked to real domain.
 - [ ] Production env vars set (all secrets via host config, not git).
-- [ ] **Login gating:** Gate AFTER the render/wow moment — the user sees their room,
-      THEN is prompted to create an account to save it. Protects funnel conversion.
+      **REQUIRED production env vars (localhost defaults silently break):**
+      - `NEXT_PUBLIC_SITE_URL` — public frontend URL (OG fallback images point here)
+      - `NEXT_PUBLIC_API_URL` — public backend URL (render URLs, design API)
+      - `CORS_ORIGINS` — lock to real domain
+- [ ] **Account wall:** Users must create account to access product. Gate at
+      entry (before quiz) or after first interaction (TBD — test which converts).
 - [ ] **Silent API-failure handling (launch-blocker):** When selection LLM calls fail
       en masse (e.g. exhausted credits), detect and show user-facing error + alert.
       Never serve blank rooms in production.
@@ -279,7 +537,7 @@ conversion engine.
 - [ ] Product analytics (GA / Plausible) for traffic, referrers, channel/funnel analysis
       at scale (Supabase dashboard is internal-only).
 
-**Exit:** Live site, reachable, login-gated after wow moment, error handling solid.
+**Exit:** Live site, reachable, account-gated, error handling solid.
 
 ---
 
@@ -328,6 +586,8 @@ conversion engine.
 
 - [ ] End-to-end on live site: both room types, multiple aesthetics, payment flow,
       share flow, affiliate links — all working.
+- [ ] Amazon Associates compliance verified (see Phase 7D checklist).
+- [ ] Add-all-to-cart: affiliate tag confirmed carrying through cart-add flow.
 - [ ] Error handling / graceful degradation: pipeline fails mid-run, product out of
       stock, render timeout — all degrade gracefully, systematically tested.
 - [ ] Mobile verification: full flow on actual phone (not just responsive preview).
@@ -338,16 +598,44 @@ conversion engine.
 
 ---
 
-## Phase 11 — Scale (post-launch)
+## Phase 11 — Multi-Retailer Expansion (post-launch)
 
-*After launch, driven by real usage data.*
+*After launch, with real traffic data to satisfy aggregator requirements.*
 
+### 11A — Affiliate Aggregator Integration
+- [ ] Apply to Skimlinks or Sovrn Commerce (aggregators accept newer sites with
+      less traffic history than direct programs like CJ/Wayfair).
+- [ ] Integrate aggregator SDK/API — replaces raw Amazon links with
+      highest-commission retailer when available.
+- [ ] Catalog matching/dedup across retailers (or distinct products per retailer).
+- [ ] Margin-aware routing: favor higher-commission in-stock option where quality
+      is equal.
+- [ ] **Monitor:** Don't assume non-Amazon retailers out-earn Amazon despite higher
+      per-item rates. Volume and conversion matter more than commission %. Track
+      revenue-per-click by retailer.
+
+### 11B — Scale
 - [ ] Cost-per-room optimization: cache LLM responses, reduce calls per design.
 - [ ] Per-user rate limits (not just IP) for logged-in users.
 - [ ] Throughput management as traffic grows.
 - [ ] Formal access-control matrix (admin roles, operator accounts, partner API keys).
-- [ ] Operator pivot readiness: subscription + sourcing spread when segment with
-      validated WTP exists.
+- [ ] DEFERRED: "Pro" subscription tier for realtors/STR hosts/designers. Only
+      build if segment with validated WTP exists in usage data.
+
+---
+
+## Hard Gates (cannot be bypassed)
+
+These are NON-NEGOTIABLE prerequisites for public deploy. They exist because
+the product's cost structure ($0.37/room) creates unbounded financial exposure
+without them.
+
+| Gate | What it blocks | Why |
+|---|---|---|
+| Phase 6 Auth + Rate Limiting | ANY public deploy | $0.37/room uncapped to the internet without accounts + rate limits |
+| Phase 6 Account Wall | Public access | Free-room limit unenforceable without accounts |
+| Phase 7C Associates Compliance | Launch with affiliate links | Ban = revenue to zero; must verify before real traffic |
+| Phase 10 Full Verification | Launch | Correctness gate — no silent failures in prod |
 
 ---
 
@@ -356,32 +644,32 @@ conversion engine.
 ```
 Phase 1  Browser verification
   ↓
-Phase 2  Input validation + secrets audit
+Phase 2  Input validation + secrets audit ✓
   ↓
-Phase 3  Persistent design storage ──────────────────┐
-  ↓                                                   │
-Phase 4  Viral share loop (ANONYMOUS — no auth needed)│
-  ↓                                                   │
-Phase 5  Full audit + living room + retailer apps     │
-  ↓                                                   │
-Phase 6  Foundation layer (auth, RLS, privacy, rates) │
-  ↓      ↑ requires persistent storage from Phase 3 ──┘
+Phase 3  Persistent design storage ✓ ───────────────────┐
+  ↓                                                      │
+Phase 4  Viral share loop + add-all-to-cart (AUTH-READY) │
+  ↓      + 4B Platform-adaptive visual layer             │
+  ↓      Built locally. NOT publicly deployable yet.     │
+  ↓                                                      │
+Phase 5  Full audit + living room build                  │
+  ↓                                                      │
+Phase 6  Foundation layer (auth, RLS, tiers, rates) ─────┘
+  ↓      ↑ HARD GATE: must complete before public deploy
+  ↓      ↑ Enforces: free-room limit, tier gating, rate limiting
+  ↓      ↑ Inserts into Phase 4's auth-ready seams
   ↓
-Phase 7  Dual revenue (Stripe) + retailer integration
+Phase 7  Revenue activation (Stripe packs, render storage, compliance)
   ↓      ↑ requires auth from Phase 6
-  ↓      ↑ requires retailer approvals from Phase 5C
   ↓
-Phase 8  Deploy + gate (login gating, landing page)
-  ↓      ↑ requires auth from Phase 6
+Phase 8  Deploy + gate
+  ↓      ↑ requires auth from Phase 6 (HARD GATE)
   ↓
-Phase 9  Hardening + AI-native instrumentation (parallel with 8)
+Phase 9  Hardening + instrumentation (parallel with 8)
   ↓
-Phase 10 Pre-launch verification
+Phase 10 Pre-launch verification (HARD GATE)
   ↓
-Phase 11 Scale (post-launch)
+Phase 11 Multi-retailer expansion + scale (POST-LAUNCH)
+         ↑ Amazon-only at launch
+         ↑ Add retailers via aggregator (Skimlinks/Sovrn) with real traffic data
 ```
-
-**Key dependency:** The viral share loop (Phase 4) is anonymous and does NOT
-require auth. It requires only persistent design storage (Phase 3) so shared
-URLs survive restarts. Auth (Phase 6) is required for saved rooms, login gating,
-payments, and any feature that ties data to a user identity.

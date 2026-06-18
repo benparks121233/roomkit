@@ -25,6 +25,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from pathlib import Path
 
 # Ensure project root is on sys.path for imports.
@@ -45,7 +46,7 @@ _BED_SIZE_RE = re.compile(
     r"\b(twin\s*xl|twin|full|queen|king|cal(?:ifornia)?\s*king)\b",
     re.IGNORECASE,
 )
-_SCREEN_SIZE_RE = re.compile(r"\b(\d{2,3})\s*(?:inch|in\b|[\"″\u201D\u201C])", re.IGNORECASE)
+_SCREEN_SIZE_RE = re.compile(r"\b(\d{2,3})\s*[-\s]?\s*(?:inch|in\b|[\"″\u201D\u201C]|class)", re.IGNORECASE)
 _RUG_DIM_RE = re.compile(r"\b(\d+)\s*[x×X]\s*(\d+)\b")
 
 # Normalize bed-size strings to canonical form.
@@ -182,6 +183,10 @@ def main() -> None:
     parser.add_argument(
         "--max-price", type=float, default=None, help="Max price filter",
     )
+    parser.add_argument(
+        "--delay", type=float, default=2.0,
+        help="Seconds to wait between API requests (default 2.0)",
+    )
     args = parser.parse_args()
 
     # Determine jobs.
@@ -202,6 +207,8 @@ def main() -> None:
     total_requests = 0
     total_products = 0
 
+    # Filter out comment-only entries (no slot_id key).
+    jobs = [j for j in jobs if "slot_id" in j]
     print(f"Refreshing {len(jobs)} slot(s)...\n")
 
     for job in jobs:
@@ -227,8 +234,10 @@ def main() -> None:
             total_requests += 1
             print(f"ERROR: {exc}")
 
+        if args.delay > 0 and job is not jobs[-1]:
+            time.sleep(args.delay)
+
     print(f"\nDone. {total_requests} API request(s), {total_products} products cached.")
-    print(f"  Free tier budget: ~{100 - total_requests} requests remaining this month (estimate)")
 
 
 if __name__ == "__main__":

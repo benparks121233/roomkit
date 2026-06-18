@@ -274,12 +274,14 @@ class TestSaveDesign:
 class TestLoadDesign:
     """Test load_design three-outcome handling."""
 
-    def test_load_not_found(self):
-        """Genuinely absent row raises KeyError."""
+    def test_load_not_found_bare_none(self):
+        """Genuinely absent row raises KeyError.
+
+        Real Supabase returns bare None from maybe_single().execute()
+        when no row matches — NOT a response object with .data = None.
+        """
         mock_client = MagicMock()
-        mock_resp = MagicMock()
-        mock_resp.data = None
-        mock_client.table.return_value.select.return_value.eq.return_value.maybe_single.return_value.execute.return_value = mock_resp
+        mock_client.table.return_value.select.return_value.eq.return_value.maybe_single.return_value.execute.return_value = None
         with patch("services.supabase_client.get_client", return_value=mock_client):
             with pytest.raises(KeyError):
                 load_design("nonexistent-id")
@@ -360,6 +362,24 @@ class TestGetDesignHelper:
         with patch("services.design_store.load_design", side_effect=KeyError("ghost-id")):
             with pytest.raises(HTTPException) as exc_info:
                 _get_design("ghost-id")
+            assert exc_info.value.status_code == 404
+
+    def test_not_found_end_to_end_404(self):
+        """Absent row in Supabase (bare None) produces 404 through the route.
+
+        This is the contract test that would have caught the original bug:
+        real Supabase returns None (not mock.data=None), which must flow
+        through load_design → KeyError → _get_design → 404.
+        """
+        from app.api.routes import _designs, _get_design
+
+        _designs.pop("absent-id", None)
+        mock_client = MagicMock()
+        # Real Supabase behavior: maybe_single().execute() returns bare None
+        mock_client.table.return_value.select.return_value.eq.return_value.maybe_single.return_value.execute.return_value = None
+        with patch("services.supabase_client.get_client", return_value=mock_client):
+            with pytest.raises(HTTPException) as exc_info:
+                _get_design("absent-id")
             assert exc_info.value.status_code == 404
 
     def test_connection_failure_503(self):

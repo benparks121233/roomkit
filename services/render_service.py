@@ -188,7 +188,7 @@ _STYLE_ROOMS: dict[str, str] = {
     "ski_lodge": "alpine retreat — exposed timber beams, stone, plaid wool, warm firelight",
     "warm_minimalist": "calm simplicity — cream walls, light oak floors, natural textures, bright morning light",
     "jungle_oasis": "tropical retreat — lush greens, rattan, natural wood, warm earthy light",
-    "gamer_den": "immersive tech space — dark matte surfaces, LED accents, moody atmospheric lighting",
+    "gamer_den": "immersive gaming cockpit — dark matte walls with LED strip accents casting colored glow (blue, purple, or teal), sleek minimal furniture visible in the ambient light, moody but well-lit by RGB and neon — the room is dark-themed but every piece of furniture is clearly visible",
     "poster_maximalist": "expressive gallery — dense wall art, mixed patterns, colorful layered textiles, warm string lights",
 }
 
