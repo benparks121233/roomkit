@@ -21,6 +21,30 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 
 ---
 
+## Phase Index
+
+| Phase | Description | Status |
+|---|---|---|
+| 1 | Browser verification | ✅ Done |
+| 2 | Input validation + secrets audit | ✅ Done |
+| 3 | Persistent design storage | ✅ Done |
+| 4 | Viral share loop + add-all-to-cart | TODO |
+| 4B | Platform-adaptive visual layer | TODO |
+| 5A | Comprehensive bedroom audit | ✅ Done |
+| 5B | Living room build | ✅ Done |
+| 5C | Maintainability gate (magic-number docs + regression tests) | TODO |
+| 5D | Staging environment (Railway + Supabase staging) | TODO |
+| 6 | Foundation layer (auth, RLS, tiers, rates) | **Pre-deploy gate** |
+| 6F | Scaling architecture (workers, async, concurrency) | **Pre-deploy gate** |
+| 7 | Revenue activation (Stripe, render storage, compliance) | **Pre-deploy gate** |
+| 8 | Deploy + gate | TODO |
+| 9 | Hardening + AI-native instrumentation | Fast-follow |
+| 10A | Pre-launch full verification | **Pre-launch gate** |
+| 10B | Gated beta (50-100 invite-only users) | **Pre-launch gate** |
+| 11 | Multi-retailer expansion + scale | Post-launch |
+
+---
+
 ## Revenue Model — The Core Inversion
 
 **Affiliate is the profit engine, not fees.** The result page shows the AI render
@@ -77,9 +101,9 @@ hosts/designers who furnish repeatedly — do not build or architect now.
 
 ---
 
-## What's Done (engine state as of 2026-06-16)
+## What's Done (engine state as of 2026-06-23)
 
-**Core pipeline — WORKING (318 tests pass):**
+**Core pipeline — WORKING (319 tests pass):**
 - [x] Intake → Style → Composition → Sourcing → Selection → Render → Assembly
 - [x] Budget enforcement: code-enforced, p75-proportional weights, decor 50% cap
 - [x] Aesthetic matching: 13 profiles with sourcing_terms, verified across all
@@ -363,29 +387,99 @@ Edge case — user shares before rendering: share button is gated behind
 
 ---
 
-## Phase 5 — Full Audit + Living Room Build
+## Phase 5 — Full Audit + Living Room Build ✓ DONE
 
 *Biggest build phase. Two parallel tracks: audit bedroom depth, build living room.*
 
-### 5A — Comprehensive Bedroom Audit
-- [ ] End-to-end audit across multiple aesthetics + budgets: selection quality,
+### 5A — Comprehensive Bedroom Audit ✓
+- [x] End-to-end audit across multiple aesthetics + budgets: selection quality,
       budget never-exceed, render correctness (all items present), hotspots/links
       match selections, cart button, zoom, full-room display.
-- [ ] Instrumentation capturing data correctly (check /admin dashboard).
-- [ ] Fix whatever surfaces.
+- [x] Instrumentation capturing data correctly (check /admin dashboard).
+- [x] Fix whatever surfaced.
 
-### 5B — Living Room Build
-- [ ] Define/confirm living room slots (sofa, coffee_table, side_table, tv_stand,
-      tv, armchair, bookshelf, ottoman, etc.).
-- [ ] Deep catalog fetch: all aesthetics × all living-room slots (~130 cells,
-      500-1000 Canopy queries) + dedup + contamination filtering.
-- [ ] Top up thin slots: tv_stand (245), side_table (202), ottoman (195),
-      bookshelf (188) — noted as needed from prior fetch.
-- [ ] Per-slot taste filtering, price floors, contamination filters (esp. sofas).
-- [ ] Living-room budget weights in composition service (sofa ~30-40%).
-- [ ] Test + tune living room render layout with real products.
+### 5B — Living Room Build ✓
+- [x] Define/confirm living room slots (sofa, coffee_table, side_table, tv_stand,
+      tv, tv_mount, armchair, bookshelf, rug, floor_lamp, curtains, throw_pillows,
+      throw_blanket, wall_art, plants, ceiling_light, sconce).
+- [x] Deep catalog fetch: all aesthetics × all living-room slots + dedup +
+      contamination filtering. 15,122+ products / 30 slots.
+- [x] Per-slot contamination filters: recliners from sofa, pillow covers from
+      throw pillows, empty pots from plants, outdoor furniture, loveseat combos,
+      bulk pot packs, cheugy products, bathroom mirrors, floral sheets.
+- [x] Living-room budget weights in composition service. TV-size dynamic
+      entertainment reweight with 35% cap (45% with "Prioritize TV").
+- [x] TV price floors from real catalog data ($90/$160/$300/$550 by size).
+- [x] 3x priority-term weighting in sourcing adapter for aesthetic differentiation.
+- [x] Furniture palettes with rank 1-2 anchors: safe-center auto-generate defaults
+      that coordinate across slots per aesthetic. Rank 3+ explores broader palette.
+- [x] Per-aesthetic soft goods color profiles (inclusion-only).
+- [x] Test + tune living room render layout with real products.
 
 **Exit:** Bedroom audited and polished. Living room end-to-end working.
+319 tests passing.
+
+---
+
+## Phase 5C — Maintainability Gate
+
+*Document the non-obvious magic numbers and add regression tests before the
+codebase gets harder to reason about. This is cheap now and expensive later.*
+
+### Intent comments on magic numbers
+- [ ] `_ENT_MAX_SHARE = 0.35` — why 35%: the empirical breakpoint where remaining
+      slots collapse below their cheapest viable products.
+- [ ] `_ENT_MAX_SHARE_PRIORITY = 0.45` — why 45%: raised cap when user explicitly
+      prioritizes TV; accepts thinner furniture to fund it.
+- [ ] `_TV_PRICE_FLOORS` ($90/$160/$300/$550) — why these values: real catalog
+      minimums per size bucket as of 2026-06. Below these, zero viable candidates.
+- [ ] `_PRIORITY_WEIGHT = 3` — why 3x: without it, generic terms ("wood", "brown")
+      dominate shortlists and all aesthetics converge. 3x was the minimum multiplier
+      that reliably differentiated aesthetics in candidate ranking.
+- [ ] Feasibility breakpoints in `fit_slots_to_budget()` — document the MVB
+      (minimum viable budget) calculation and the optional-dropping waterfall.
+- [ ] TV quiz thresholds — document which budget/screen-size combos trigger the
+      feasibility warning and why those boundaries exist.
+
+### Adapter filter regression tests
+- [ ] Cheugy pattern exclusion: test that `_CHEUGY_RE` catches known bad products
+      and does not false-positive on legitimate ones.
+- [ ] Per-slot exclusion phrases: at least one positive + one negative test per
+      slot in `_SLOT_EXCLUDE_PHRASES` (recliner blocked from sofa, pillow cover
+      blocked from throw_pillows, outdoor blocked from rug, etc.).
+- [ ] Priority-terms weighting: test that a product matching a priority term scores
+      3x a generic match; verify shortlist ordering changes with/without priority.
+
+### TV reweight unit tests
+- [ ] Test `_apply_tv_size_reweight()` at each size bucket: verify entertainment
+      share inflates correctly and caps at 35%/45%.
+- [ ] Test that non-entertainment slots scale proportionally (not clipped).
+- [ ] Edge case: budget so low that TV floor exceeds the cap — verify graceful
+      degradation (capped, not crash).
+
+**Exit:** Every magic number has a one-line "why" comment. Adapter filters and
+TV reweight have regression tests. Future contributors can modify thresholds
+without archaeology.
+
+---
+
+## Phase 5D — Staging Environment
+
+*Verify the full pipeline on real infrastructure before building auth on top.
+Catches CORS, connectivity, render storage, and env-var issues early.*
+
+- [ ] Railway staging service (separate from production).
+- [ ] Supabase staging project (separate database, separate auth).
+- [ ] `.env.staging` with staging-specific values; document in `.env.example`.
+- [ ] Deploy current main to staging. Verify:
+  - [ ] CORS allows staging frontend origin.
+  - [ ] Supabase connectivity (design save + load round-trip).
+  - [ ] Render generation works (gpt-image-1 call from Railway worker).
+  - [ ] Affiliate links carry `tag=roomkitai-20` through to Amazon.
+- [ ] Staging stays alive through launch — used for pre-deploy smoke tests.
+
+**Exit:** Full pipeline working on Railway + Supabase staging. No localhost
+dependencies.
 
 ---
 
@@ -449,10 +543,42 @@ pack gating, no access wall. The model is DESIGNED in Phase 4, ENFORCED in Phase
 - [ ] Pack ledger: user has N rooms remaining. Decrement on design creation.
       Non-expiring.
 
-**Exit:** Users have accounts. Designs are user-scoped. Free-room limit enforced.
-Tier gating active. Cross-user access blocked. Privacy/terms live. Account
-deletion works. Expensive endpoints rate-limited. `/renders/` stays public for
-crawlers.
+### 6F — Scaling Architecture (PRE-DEPLOY GATE)
+
+*The current synchronous single-worker pipeline breaks at ~10 concurrent users,
+not 1000. This must land before public deploy.*
+
+- [ ] **Multi-worker uvicorn:** `--workers N` (2-4 for Railway's RAM). Verify
+      no shared mutable state across workers (in-memory _designs cache is
+      write-through to Supabase, so safe).
+- [ ] **Async render with client polling:** Render generation takes 15-25s.
+      Move to background task, return `202 Accepted` with `run_id`, client
+      polls `GET /design/{run_id}/render/status` until ready. Frees the
+      worker thread for other requests.
+- [ ] **Global Claude API concurrency semaphore:** Cap concurrent LLM calls
+      across all workers. An in-process `asyncio.Semaphore` only caps per-worker
+      — size it to `api_concurrency_limit / num_workers`, or use a cross-process
+      mechanism (Redis counter or pg advisory lock) if precise global control
+      is needed. Prevents bursts from exhausting API quota or hitting rate limits.
+- [ ] **Retry + backoff on LLM calls:** Style, composition, and selection service
+      calls to Claude API get exponential backoff (3 retries, 1s/2s/4s). Render
+      calls to gpt-image-1 get the same. Currently a single 429 or timeout kills
+      the entire pipeline.
+- [ ] **Shared Anthropic client:** Single `anthropic.Anthropic()` instance per
+      worker (connection pooling). Currently each service call may create its own.
+- [ ] **Structured pipeline logging:** Per-stage timing (style_ms, composition_ms,
+      sourcing_ms, selection_ms, render_ms), adapter filter stats (candidates_before,
+      candidates_after per slot), logged per run_id. Essential for diagnosing
+      production bottlenecks.
+
+**Exit:** Pipeline handles 10+ concurrent users without thread starvation or API
+quota exhaustion. Render is non-blocking. LLM calls retry on transient failures.
+Per-stage timing is logged.
+
+**Exit (Phase 6 overall):** Users have accounts. Designs are user-scoped.
+Free-room limit enforced. Tier gating active. Cross-user access blocked.
+Privacy/terms live. Account deletion works. Expensive endpoints rate-limited.
+`/renders/` stays public for crawlers. Pipeline scales to beta traffic.
 
 ---
 
@@ -497,7 +623,12 @@ TBD in beta.
 **Elevated to pre-launch review.** Affiliate is primary revenue — an Associates
 ban is existential, not cosmetic.
 
-- [ ] Visible "We earn from qualifying purchases" disclosure on result/buy pages.
+- [ ] **Affiliate disclosure on every page with buy links:** "As an Amazon
+      Associate, RoomKit earns from qualifying purchases." Must be visible
+      without scrolling on result page. Also add to footer site-wide.
+- [ ] **`rel="nofollow sponsored"` on all affiliate links.** Google requires
+      `rel="sponsored"` on paid/affiliate links; `nofollow` is belt-and-suspenders.
+      Apply in `_inject_affiliate_tag()` output and in the React `<a>` tags.
 - [ ] Price display rules compliance review.
 - [ ] Image-use rules: confirm AI-composited renders using product images are
       compliant (or that renders use only style/mood, not actual product photos).
@@ -536,6 +667,10 @@ FTC + Associates compliant.
       + SEO + a place for share/SEO traffic to land.
 - [ ] Product analytics (GA / Plausible) for traffic, referrers, channel/funnel analysis
       at scale (Supabase dashboard is internal-only).
+- [ ] **Structured pipeline logging in production:** Verify per-stage timing
+      (from 6F) is flowing to logs. Set up log aggregation (Railway logs or
+      external sink) so pipeline bottlenecks and failure patterns are visible
+      from day one.
 
 **Exit:** Live site, reachable, account-gated, error handling solid.
 
@@ -580,13 +715,13 @@ FTC + Associates compliant.
 
 ---
 
-## Phase 10 — Pre-Launch Full Verification
+## Phase 10A — Pre-Launch Full Verification
 
 *On the LIVE deployed site. Nothing ships until this passes.*
 
 - [ ] End-to-end on live site: both room types, multiple aesthetics, payment flow,
       share flow, affiliate links — all working.
-- [ ] Amazon Associates compliance verified (see Phase 7D checklist).
+- [ ] Amazon Associates compliance verified (see Phase 7C checklist).
 - [ ] Add-all-to-cart: affiliate tag confirmed carrying through cart-add flow.
 - [ ] Error handling / graceful degradation: pipeline fails mid-run, product out of
       stock, render timeout — all degrade gracefully, systematically tested.
@@ -594,7 +729,33 @@ FTC + Associates compliant.
 - [ ] Confirm instrumentation captures data + dashboard shows it on live.
 - [ ] Final quality + credibility pass: is the result genuinely share-worthy?
 
-**Exit:** Launch-ready. Activate the viral share loop.
+**Exit:** Verified on live infra. Ready for gated beta.
+
+---
+
+## Phase 10B — Gated Beta
+
+*50-100 invite-only users. Validate the product with real humans before opening
+the floodgates.*
+
+- [ ] **Invite mechanism:** Manual invite codes or allowlisted email domains.
+      No public signup yet.
+- [ ] **Monitor affiliate conversion:** Track clicks → Amazon purchases in
+      Associates dashboard. This is the revenue validation — if conversion is
+      zero, diagnose before scaling.
+- [ ] **Monitor error rates:** Pipeline failures, LLM timeouts, render failures,
+      Supabase write errors. Target: <2% pipeline failure rate.
+- [ ] **Monitor pipeline timing:** End-to-end p50/p95 per room type. Identify
+      bottleneck stages. Target: <60s end-to-end for composition + selection.
+- [ ] **Collect qualitative feedback:** Are rooms share-worthy? Do products feel
+      on-style? Is the budget allocation intuitive? Direct conversations with
+      beta users, not surveys.
+- [ ] **Fix what surfaces.** Beta exists to find the gaps — budget 1-2 sessions
+      for fixes before wide launch.
+
+**Exit:** Affiliate conversion confirmed non-zero. Error rate <2%. Pipeline
+timing acceptable. Beta users find the product genuinely useful. Ready for
+public launch.
 
 ---
 
@@ -634,42 +795,51 @@ without them.
 |---|---|---|
 | Phase 6 Auth + Rate Limiting | ANY public deploy | $0.37/room uncapped to the internet without accounts + rate limits |
 | Phase 6 Account Wall | Public access | Free-room limit unenforceable without accounts |
+| Phase 6F Scaling Architecture | Public deploy | Sync single-worker breaks at ~10 concurrent users |
 | Phase 7C Associates Compliance | Launch with affiliate links | Ban = revenue to zero; must verify before real traffic |
-| Phase 10 Full Verification | Launch | Correctness gate — no silent failures in prod |
+| Phase 10A Full Verification | Public beta | Correctness gate — no silent failures in prod |
+| Phase 10B Gated Beta | Wide launch | Must validate affiliate conversion + error rates with real users first |
 
 ---
 
 ## Dependency Map
 
 ```
-Phase 1  Browser verification
+Phase 1   Browser verification ✓
   ↓
-Phase 2  Input validation + secrets audit ✓
+Phase 2   Input validation + secrets audit ✓
   ↓
-Phase 3  Persistent design storage ✓ ───────────────────┐
+Phase 3   Persistent design storage ✓ ──────────────────┐
   ↓                                                      │
-Phase 4  Viral share loop + add-all-to-cart (AUTH-READY) │
-  ↓      + 4B Platform-adaptive visual layer             │
-  ↓      Built locally. NOT publicly deployable yet.     │
+Phase 4   Viral share loop + add-all-to-cart (AUTH-READY)│
+  ↓       + 4B Platform-adaptive visual layer            │
+  ↓       Built locally. NOT publicly deployable yet.    │
   ↓                                                      │
-Phase 5  Full audit + living room build                  │
+Phase 5   Full audit + living room build ✓               │
   ↓                                                      │
-Phase 6  Foundation layer (auth, RLS, tiers, rates) ─────┘
-  ↓      ↑ HARD GATE: must complete before public deploy
-  ↓      ↑ Enforces: free-room limit, tier gating, rate limiting
-  ↓      ↑ Inserts into Phase 4's auth-ready seams
+Phase 5C  Maintainability gate (docs + regression tests) │
+  ↓                                                      │
+Phase 5D  Staging environment (Railway + Supabase)       │
+  ↓                                                      │
+Phase 6   Foundation layer (auth, RLS, tiers, rates) ────┘
+  ↓       + 6F Scaling architecture (workers, async, semaphore)
+  ↓       ↑ HARD GATE: must complete before public deploy
+  ↓       ↑ Enforces: free-room limit, tier gating, rate limiting
+  ↓       ↑ Inserts into Phase 4's auth-ready seams
   ↓
-Phase 7  Revenue activation (Stripe packs, render storage, compliance)
-  ↓      ↑ requires auth from Phase 6
+Phase 7   Revenue activation (Stripe, render storage, compliance)
+  ↓       ↑ requires auth from Phase 6
   ↓
-Phase 8  Deploy + gate
-  ↓      ↑ requires auth from Phase 6 (HARD GATE)
+Phase 8   Deploy + gate
+  ↓       ↑ requires Phase 6 + 6F (HARD GATE)
   ↓
-Phase 9  Hardening + instrumentation (parallel with 8)
+Phase 9   Hardening + instrumentation (parallel with 8)
   ↓
-Phase 10 Pre-launch verification (HARD GATE)
+Phase 10A Pre-launch verification (HARD GATE)
   ↓
-Phase 11 Multi-retailer expansion + scale (POST-LAUNCH)
-         ↑ Amazon-only at launch
-         ↑ Add retailers via aggregator (Skimlinks/Sovrn) with real traffic data
+Phase 10B Gated beta — 50-100 invite-only users (HARD GATE)
+  ↓
+Phase 11  Multi-retailer expansion + scale (POST-LAUNCH)
+          ↑ Amazon-only at launch
+          ↑ Add retailers via aggregator (Skimlinks/Sovrn)
 ```

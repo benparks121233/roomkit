@@ -339,11 +339,18 @@ def fit_slots_to_budget(
         ]
         return sorted(droppable, key=lambda sid: default_weights.get(sid, 0.0))
 
+    # Partial room: user explicitly chose a subset of items.  The $500
+    # full-room minimum doesn't apply — a $300 budget for just a sofa is fine.
+    is_partial = bool(already_have)
+
     # Drop optionals until feasible or none left.
     active = dict(weights)
     while True:
         total_w = sum(active.values())
-        floor = max(total_w, 1.0) * multiplier
+        # Full room: clamp to 1.0 so the floor never drops below $500 (the
+        # multiplier was calibrated for weight-sum=1.0).  Partial room: use
+        # proportional floor — fewer items = lower viable budget.
+        floor = total_w * multiplier if is_partial else max(total_w, 1.0) * multiplier
         if target_budget >= floor:
             # Feasible — delegate budget math to allocate_budget().
             plan = allocate_budget(
@@ -370,7 +377,7 @@ def fit_slots_to_budget(
         default_weights.get(sid, 0.05)
         for sid in effective_required
     )
-    mvb = max(req_weight_sum, 1.0) * multiplier
+    mvb = req_weight_sum * multiplier if is_partial else max(req_weight_sum, 1.0) * multiplier
 
     infeasible_slots = [
         Slot(
@@ -399,7 +406,8 @@ def fit_slots_to_budget(
 # TV-size dynamic entertainment reweight
 # ---------------------------------------------------------------------------
 
-# Minimum viable TV price per size bucket (from catalog data).
+# Minimum viable TV price per size bucket.  From real Amazon catalog
+# minimums (2026-06).  Below these, zero candidates exist in the catalog.
 _TV_PRICE_FLOORS: dict[str, float] = {
     "small":  90.0,
     "medium": 160.0,
@@ -414,9 +422,10 @@ _STAND_BASE_SHARE = 0.042   # 12% × 35%
 _MOUNT_BASE_SHARE = 0.018   # 12% × 15%
 _ENT_BASE_TOTAL = 0.12      # baseline entertainment group weight
 
-# Hard caps — beyond these, the rest of the room collapses.
-_ENT_MAX_SHARE = 0.35          # normal cap
-_ENT_MAX_SHARE_PRIORITY = 0.45  # raised cap when user chose "Prioritize TV"
+# Hard caps — beyond 35%, non-entertainment slots compress below their
+# cheapest viable products (sofa < $200, rug < $50).  Found empirically.
+_ENT_MAX_SHARE = 0.35
+_ENT_MAX_SHARE_PRIORITY = 0.45  # user explicitly chose "Prioritize TV"; accepts thinner furniture
 
 
 def _apply_tv_size_reweight(

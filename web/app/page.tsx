@@ -111,7 +111,7 @@ export default function IntakePage() {
       budget: pendingResult.budget,
       style_description: pendingResult.quiz.style.description,
       core_aesthetic: pendingResult.quiz.style.core,
-      bed_size: pendingResult.roomType === "bedroom" ? pendingResult.bedSize : null,
+      bed_size: pendingResult.roomType === "bedroom" && pendingResult.bedSize ? pendingResult.bedSize : null,
       density: pendingResult.quiz.style.density,
       interests: pendingResult.quiz.interests.map((i) => i.category),
       full_room: pendingResult.fullRoom,

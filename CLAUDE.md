@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 RoomKit is a whole-room AI design and commerce engine. Given a room photo or dimensions plus style/budget inputs, it generates a coherent, fully-budgeted, shoppable room design. The core product is the **cart, not the picture** — a set of real, buyable products with live purchase links and a running total that never exceeds the user's budget. Revenue is affiliate referral (v1), evolving to subscription and operator sourcing spreads.
 
-The build plan is documented in `docs/RoomKit_Founder_Build_Packet_v2.md` (12 phases with exit criteria). The repo is currently pre-implementation (docs only); code is being scaffolded now.
+The build plan is documented in `LAUNCH_PLAN.md` (master launch plan with phases, dependencies, and hard gates). **Phase 5 complete** — bedroom + living room are production-ready (319 tests). Entering the launch-readiness track (auth, security, compliance, deploy, beta).
 
 ## Stack
 
@@ -81,6 +81,22 @@ This is the most important architectural constraint:
 
 **Refresh Worker** (`services/refresh_worker.py`) — single idempotent cron job with an advisory lock (no double-run, no deadlock). Re-validates active designs' snapshots. Must not re-run LLM logic.
 
+## Key Engine Logic (and WHY)
+
+These are the non-obvious design decisions baked into the engine. They exist because real catalog data + real budget math forced them — not because they're round numbers.
+
+**35% entertainment cap** (`composition_service.py:_ENT_MAX_SHARE`): When a user wants a large TV, the entertainment group's budget share inflates to fund the TV's price floor. Capped at 35% (45% with "Prioritize TV") because beyond that, the remaining slots collapse — sofas, rugs, lighting all compress below their cheapest viable products. The cap was found empirically: 35% is the breakpoint where the rest of the room still works.
+
+**TV price floors** (`_TV_PRICE_FLOORS`): $90 small, $160 medium, $300 large, $550 XL. These come from real catalog minimums — the cheapest real TV at each size bucket. Without floors, budget allocation gives a $40 TV slot that has zero viable candidates.
+
+**3x priority-term weighting** (`amazon_adapter.py:_PRIORITY_WEIGHT = 3`): Aesthetic-differentiating terms (e.g. "farmhouse", "cottage", "rattan") score 3x vs generic style terms ("wood", "brown") when ranking candidates. Without this, generic terms dominate the shortlist and every aesthetic converges to the same bland products.
+
+**Safe-center ranking** (selection service): Rank 1-2 for each slot MUST be safe aesthetic-appropriate defaults — these go in unchecked during auto-generate. Rank 3+ can explore the broader palette. This is enforced per-aesthetic via furniture palettes and soft-goods color profiles.
+
+**Furniture palettes** (`selection_service.py:_FURNITURE_PALETTES`): Per-aesthetic material/color anchors injected into selection prompts so all furniture in a room draws from the same palette. Dark academia = dark leather + walnut + brass across sofa, armchair, tables. Without this, the LLM picks individually coherent but room-incoherent furniture.
+
+**Contamination filtering** (`amazon_adapter.py:_SLOT_EXCLUDE_PHRASES`): Per-slot exclusion lists block recliners from sofa results, pillow covers from throw pillows, empty pots from plants, outdoor furniture, loveseat combos, bulk pot packs, and cheugy products. Each filter exists because real Amazon catalog data surfaced these as the top-ranked results without it.
+
 ## Context Files (Configuration as Code)
 
 These files in `context/` drive the pipeline — they are not prompts:
@@ -105,6 +121,18 @@ Tests gate each implementation phase:
 - Evals (`evals/`) use `composition_eval_set.csv` against a coherence rubric
 
 No live affiliate calls in tests. Use fixtures in `data/fixtures/`.
+
+## Current Status
+
+**Phase 5 complete — bedroom + living room production-ready.**
+- 319 tests passing (validators, composition, selection, sourcing, snapshots, refresh, API)
+- 13 aesthetic profiles with sourcing_terms + priority_terms, furniture palettes, soft-goods color profiles
+- Living room: full slot taxonomy (sofa, coffee_table, side_table, tv_stand, tv, tv_mount, armchair, bookshelf, rug, floor_lamp, curtains, throw_pillows, throw_blanket, wall_art, plants, ceiling_light, sconce)
+- Deep contamination filtering across all slots
+- Safe-center auto-generate defaults (rank 1-2 anchors)
+- Amazon catalog: 15,122+ products across 30 slots
+
+**Now entering launch-readiness track:** Phase 6 (auth + RLS + rate limiting) → Phase 7 (Stripe + render storage + compliance) → Phase 8 (deploy). Auth + rate limiting is the hard pre-deploy gate — $0.37/room is uncapped to the internet without it.
 
 ## Working in This Repo
 

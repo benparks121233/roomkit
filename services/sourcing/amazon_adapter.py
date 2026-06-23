@@ -624,6 +624,9 @@ class AmazonAdapter(SourcingAdapter):
 
         # --- Pool 1: style-relevant ---
         kw_lower = [k.lower() for k in style_keywords]
+        # Aesthetic-differentiating terms ("farmhouse", "rattan") score 3x vs
+        # generic terms ("wood", "brown").  Without this, all aesthetics converge
+        # to the same bland shortlist.  3x was the minimum that reliably separated them.
         _PRIORITY_WEIGHT = 3
         priority_set = {t.lower() for t in (priority_terms or [])}
 

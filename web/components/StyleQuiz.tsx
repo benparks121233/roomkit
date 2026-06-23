@@ -2,7 +2,7 @@
 
 // Unified intake wizard — every field is a paginated step.
 //
-// SETUP: room_type → bed_size (bedroom only) → budget
+// SETUP: room_type → scope (full/pieces) → bed_size (if bed items needed) → budget
 // STYLE: core → mood → palette → materials → shape → density
 // INTERESTS: bridge → categories → sub-options
 // FINISH: ownership → free text → submit
@@ -861,15 +861,21 @@ export default function StyleQuiz({ onComplete }: Props) {
 
   // Build step list — scope gates preferences, density after preferences.
   function getSteps(): QuizStepDef[] {
+    const _BED_SIZE_SLOTS = new Set([
+      "bed_frame", "mattress", "sheets", "comforter",
+      "duvet_insert", "duvet_cover", "pillows", "shams",
+    ]);
+    const needsBedSize = fullRoom || wants.some((w) => _BED_SIZE_SLOTS.has(w));
+
     const steps: QuizStepDef[] = [Q_ROOM_TYPE];
-    if (roomType === "bedroom") steps.push(Q_BED_SIZE);
+    // Scope first — gates budget minimum and whether bed_size is needed.
+    steps.push(Q_SCOPE);
+    if (roomType === "bedroom" && needsBedSize) steps.push(Q_BED_SIZE);
     const qCore = roomType === "living_room" ? Q_CORE_LIVING_ROOM : Q_CORE_BEDROOM;
     steps.push(
       Q_BUDGET,
       qCore, Q_MOOD, Q_PALETTE, Q_MATERIALS, Q_SHAPE,
     );
-    // Scope FIRST — gates whether preferences are asked
-    steps.push(Q_SCOPE);
     // Preference steps — full-room only.
     // Partial-room users expressed preferences via the item picker in scope.
     if (fullRoom && roomType === "bedroom") {
@@ -1049,7 +1055,11 @@ export default function StyleQuiz({ onComplete }: Props) {
     switch (current.id) {
       case "room_type": return roomType !== "";
       case "bed_size": return bedSize !== "";
-      case "budget": return !(fullRoom && budget > 0 && budget < 1000);
+      case "budget": {
+        if (budget <= 0) return false;
+        if (fullRoom) return budget >= 1000;
+        return true;
+      }
       case "core": return core !== "";
       case "mood": return mood !== "";
       case "palette": return palette !== "";
@@ -1259,11 +1269,16 @@ export default function StyleQuiz({ onComplete }: Props) {
             <span>$5,000</span>
           </div>
 
-          {/* Full-room minimum budget warning */}
+          {/* Budget warnings */}
           {fullRoom && budget > 0 && budget < 1000 && (
             <div style={{ marginTop: "1rem", padding: "0.75rem 1rem", background: "rgba(185, 28, 28, 0.08)", border: "1px solid rgba(185, 28, 28, 0.25)", borderRadius: "0.5rem", fontSize: "0.88rem", lineHeight: 1.5, color: "#7F1D1D" }}>
-              <strong>Full-room designs require a minimum budget of $1,000.</strong>
+              <strong>Full-room designs need at least $1,000.</strong>
               {" "}Increase your budget or go back and choose specific pieces instead.
+            </div>
+          )}
+          {!fullRoom && budget > 0 && budget < 500 && (
+            <div style={{ marginTop: "1rem", padding: "0.75rem 1rem", background: "rgba(180, 83, 9, 0.08)", border: "1px solid rgba(180, 83, 9, 0.25)", borderRadius: "0.5rem", fontSize: "0.88rem", lineHeight: 1.5, color: "#78350F" }}>
+              At low budgets, some items may not generate — we&#39;ll do our best with what&#39;s available.
             </div>
           )}
         </div>
@@ -1281,8 +1296,8 @@ export default function StyleQuiz({ onComplete }: Props) {
               className={`scope-choice-card primary ${fullRoom ? "selected" : ""}`}
               onClick={() => { setFullRoom(true); setWants([]); }}
             >
-              <span className="scope-choice-label">Design my whole room</span>
-              <span className="scope-choice-desc">We'll source everything from scratch.</span>
+              <span className="scope-choice-label"><strong>Design my whole room</strong> <span style={{ fontWeight: 400, fontSize: "0.8rem", opacity: 0.55 }}>(recommended)</span></span>
+              <span className="scope-choice-desc">We&#39;ll source everything from scratch.</span>
             </button>
             <button
               type="button"
@@ -1408,9 +1423,11 @@ export default function StyleQuiz({ onComplete }: Props) {
 
     // Select cards (room type, bed size, yes/no prefs)
     if (current.layout === "select-cards") {
-      // Budget thresholds per TV size tier.
-      // normal: standard 35% entertainment cap (recommended minimum).
-      // priority: raised 45% cap — lean room but TV is funded.
+      // Budget thresholds per TV size tier.  These are HIGHER than the raw
+      // feasibility math (floor / cap) because a technically feasible room
+      // with $200 left for all non-TV furniture is junk.  Thresholds are set
+      // so the remaining budget after TV produces a decent room.
+      // normal: 35% entertainment cap.  priority: 45% cap (user chose lean room).
       const TV_MIN_BUDGETS: Record<string, number> = {
         small: 750, medium: 1500, large: 2000, xl: 3000,
       };
