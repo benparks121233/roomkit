@@ -27,6 +27,12 @@ class StyleProfile(BaseModel):
     # Product-name-friendly terms for sourcing adapter scoring (separate from
     # LLM keywords to match how Amazon products are actually named).
     sourcing_terms: list[str] = []
+    # Terms scored at 3x weight in the sourcing adapter so fetch pulls
+    # products that DISTINGUISH this aesthetic from overlapping ones.
+    priority_terms: list[str] = []
+    # One-liner fed into the LLM selection prompt so the LLM picks with the
+    # right CHARACTER, not just keyword overlap.
+    selection_feel: str = ""
     color_palette: list[str]
 
     # One-phrase mood description (e.g. "calm, grounded, uncluttered").

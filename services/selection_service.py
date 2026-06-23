@@ -334,6 +334,8 @@ def _build_selection_prompts(
         f"color_palette: {', '.join(style_profile.color_palette)}\n"
         f"mood: {style_profile.mood}"
     )
+    if style_profile.selection_feel:
+        style_summary += f"\nselection_feel: {style_profile.selection_feel}"
 
     # Build a minimal candidates JSON for the prompt (id, name, price, specs).
     candidates_for_prompt = [
@@ -402,15 +404,16 @@ def _build_selection_prompts(
             "Think: converted loft with utilitarian textiles"
         ),
         "quiet_luxury": (
-            "ivory, champagne, taupe, soft gold, cream, warm white, "
-            "blush, cashmere tones. Premium fabric is the star — sateen, "
-            "silk, high-thread-count cotton. "
-            "Think: five-star hotel suite"
+            "white, off-white, ivory, cream, warm white — these MUST dominate "
+            "ranks 1-3 for sheets and comforter. Champagne and blush acceptable "
+            "at rank 4+. Grey is WRONG for this aesthetic — skip grey entirely. "
+            "Premium fabric is the star — sateen, silk, high-thread-count cotton. "
+            "Think: five-star hotel suite with crisp white bedding"
         ),
         "sports_den": (
-            "deep navy, cognac brown, charcoal, dark green, burgundy, "
-            "rich warm neutrals. "
-            "Think: refined gentlemen's lounge"
+            "deep navy, charcoal, dark grey, brown, team colors welcome. "
+            "Casual and comfortable — microfiber, jersey knit, fleece. "
+            "Think: man cave game-day vibes, not a formal study"
         ),
         "city_modern": (
             "black, white, cool grey, high-contrast monochrome, "
@@ -418,9 +421,12 @@ def _build_selection_prompts(
             "Think: sleek high-rise apartment"
         ),
         "ski_lodge": (
-            "deep red, forest green, cream, buffalo check/plaid, "
-            "warm brown, burnt orange, chunky knit textures. "
-            "Think: cozy alpine cabin by the fire"
+            "deep red, forest green, cream, warm brown, burnt orange. "
+            "PATTERNS: buffalo check, plaid, tartan — these are your anchors. "
+            "TEXTURES: chunky knit, sherpa, faux fur, fleece, flannel. "
+            "Every textile should scream 'mountain cabin' — nothing plain, "
+            "nothing modern, nothing that could belong in a city apartment. "
+            "Think: ski chalet after a powder day"
         ),
         "jungle_oasis": (
             "deep green, terracotta, warm cream, botanical prints, "
@@ -444,6 +450,122 @@ def _build_selection_prompts(
         ),
     }
 
+    # ── Per-aesthetic FURNITURE material/color palettes ──────────────
+    # Same mechanism as soft goods: inject per-aesthetic guidance so the
+    # LLM picks furniture that matches the room's aesthetic AND coordinates
+    # across slots (sofa, armchair, tables all draw from the same anchor).
+    _FURNITURE_SLOTS = {
+        "sofa", "armchair", "coffee_table", "side_table", "tv_stand",
+        "bed_frame", "dresser", "nightstand", "desk", "desk_chair",
+    }
+    _FURNITURE_PALETTES: dict[str, str] = {
+        "dark_academia": (
+            "RANK 1-2 ANCHOR: dark brown leather OR espresso/walnut wood with brass hardware. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: aged leather, tufted velvet, dark walnut, mahogany, brass pulls/legs. "
+            "Colors: dark brown, espresso, oxblood, deep forest green. "
+            "Think: antique library — every piece looks like it's been in a professor's study for decades. "
+            "Bedroom: walnut dresser/nightstand with brass hardware, dark wood or upholstered bed frame."
+        ),
+        "cottagecore": (
+            "RANK 1-2 ANCHOR: cream/soft white linen upholstery OR light natural/painted wood. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: linen/cotton slipcover, painted wood, turned legs, whitewash, distressed light wood. "
+            "Colors: cream, soft white, light natural wood, sage green accents. "
+            "Think: farmhouse vintage — soft, inviting, looks handmade or inherited. "
+            "Bedroom: white/cream painted dresser, light wood nightstand, soft upholstered bed."
+        ),
+        "coastal": (
+            "RANK 1-2 ANCHOR: white/sandy beige linen upholstery OR light natural wood with clean lines. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: light wood, rattan accents, linen upholstery, whitewash finish, woven details. "
+            "Colors: white, sandy beige, light natural wood, soft blue accents. "
+            "Think: breezy beach house — light, airy, nothing heavy or dark. "
+            "Bedroom: light wood dresser, white/natural nightstand, clean-line bed frame."
+        ),
+        "japandi": (
+            "RANK 1-2 ANCHOR: light oak with clean minimal lines, no ornament. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: light oak, natural ash, clean-line upholstery in neutral tones, minimal/hidden hardware. "
+            "Colors: light oak, warm grey, oatmeal, muted beige. "
+            "Think: serene simplicity — every piece is quiet, functional, beautiful in its restraint. "
+            "Bedroom: light oak dresser, minimal floating-style nightstand, platform bed frame."
+        ),
+        "industrial": (
+            "RANK 1-2 ANCHOR: black metal frame + dark wood top/shelf, OR dark leather with metal legs. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: black metal, iron pipe, reclaimed/dark wood, distressed leather, raw steel. "
+            "Colors: black, dark brown, raw wood tones, matte metal. "
+            "Think: converted factory loft — exposed structure is the design. "
+            "Bedroom: metal frame bed, dark wood dresser with metal pulls, industrial nightstand."
+        ),
+        "quiet_luxury": (
+            "RANK 1-2 ANCHOR: cream/ivory bouclé upholstery OR solid walnut with brass/gold hardware. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: marble tops, brass/gold hardware, bouclé, solid walnut, fluted wood panels, cream leather. "
+            "Colors: ivory, warm white, champagne, walnut brown, gold accents. "
+            "Think: five-star hotel lobby — understated wealth, nothing cheap, nothing loud. "
+            "Bedroom: upholstered bed in cream, walnut dresser with brass pulls, marble-top nightstand."
+        ),
+        "sports_den": (
+            "RANK 1-2 ANCHOR: dark faux leather OR charcoal/navy microfiber, oversized and deep-seated. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: microfiber, faux leather, dark wood, heavy cushion, reclining mechanism. "
+            "Colors: charcoal, navy, dark brown, black. "
+            "Think: man cave — sink-in comfort, nothing precious, built for lounging. "
+            "Bedroom: dark wood dresser, casual dark nightstand, sturdy simple bed frame."
+        ),
+        "city_modern": (
+            "RANK 1-2 ANCHOR: black or white upholstery with chrome/steel legs, clean geometric lines. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: chrome legs, glass/metal, clean leather or structured fabric, lacquer, high-gloss. "
+            "Colors: black, white, cool grey, chrome silver. "
+            "Think: sleek high-rise apartment — sharp, minimal, contemporary. "
+            "Bedroom: platform bed with clean lines, glossy white/black dresser, glass-top nightstand."
+        ),
+        "ski_lodge": (
+            "RANK 1-2 ANCHOR: warm brown rustic wood OR cabin-style dark leather with wood frame. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: knotty pine, reclaimed wood, heavy timber, dark leather, wrought iron accents. "
+            "Colors: warm brown, honey wood, dark wood, cream/natural accents. "
+            "Think: mountain cabin — heavy, substantial, handcrafted feel. "
+            "Bedroom: rustic wood bed frame, knotty pine dresser, log/timber nightstand."
+        ),
+        "jungle_oasis": (
+            "RANK 1-2 ANCHOR: natural rattan/cane OR dark tropical wood (teak, mango). "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: rattan, cane weave, bamboo, dark tropical wood, woven natural fiber, live-edge. "
+            "Colors: natural rattan tan, dark wood, warm brown, terracotta accents. "
+            "Think: tropical retreat — organic textures, every piece looks like it grew. "
+            "Bedroom: rattan or cane bed frame, dark wood dresser, woven-front nightstand."
+        ),
+        "gamer_den": (
+            "RANK 1-2 ANCHOR: matte black with clean modern lines, no RGB or 'GAMER' branding. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: matte black finish, dark metal, dark faux leather, carbon-fiber look, black glass. "
+            "Colors: black, dark charcoal, matte dark grey. "
+            "Think: stealth tech setup — sleek and dark, the gear is the focal point, not the furniture. "
+            "Bedroom: black platform bed, dark modern dresser, minimal black nightstand."
+        ),
+        "poster_maximalist": (
+            "RANK 1-2 ANCHOR: warm-toned mid-century wood OR velvet upholstery in a warm color "
+            "(mustard, dusty pink, warm amber). "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: mid-century wood, velvet upholstery, mixed warm tones, retro shapes, tapered legs. "
+            "Colors: warm wood, mustard, dusty pink, amber, warm teal. "
+            "Think: eclectic collector's apartment — personality in every piece, curated not chaotic. "
+            "Bedroom: mid-century wood dresser, colorful upholstered bed, retro nightstand."
+        ),
+        "warm_minimalist": (
+            "RANK 1-2 ANCHOR: light oak or natural wood with Scandinavian clean lines. "
+            "Both sofa and armchair defaults MUST land on the same material family. "
+            "Materials: light oak, natural ash, linen upholstery, minimal hardware, soft curves. "
+            "Colors: light oak, warm white, soft beige, natural linen. "
+            "Think: calm Scandinavian home — warm wood, soft light, nothing extra. "
+            "Bedroom: light oak bed frame, natural wood dresser, floating-shelf nightstand."
+        ),
+    }
+
     neutral_instruction = ""
     if slot.slot_id in _SOFT_GOODS_SLOTS:
         style_name = (style_profile.style_name or "").lower()
@@ -460,6 +582,21 @@ def _build_selection_prompts(
             f"  When characterful options cost less than plain basics,\n"
             f"  PREFER the characterful option — a $45 burgundy velvet curtain\n"
             f"  that nails dark_academia beats a $90 plain white linen panel."
+        )
+    elif slot.slot_id in _FURNITURE_SLOTS:
+        style_name = (style_profile.style_name or "").lower()
+        furn_palette = _FURNITURE_PALETTES.get(
+            style_name,
+            _FURNITURE_PALETTES.get("warm_minimalist", ""),
+        )
+        neutral_instruction = (
+            f"- **FURNITURE — MATCH THE AESTHETIC AND COORDINATE:**\n"
+            f"  Furniture sets the room's material foundation. All furniture in\n"
+            f"  this room draws from the SAME palette so pieces coordinate.\n"
+            f"  {style_name} furniture: {furn_palette}\n"
+            f"  Rank 1-2 MUST follow the anchor above — these are auto-generate\n"
+            f"  defaults that go in unchecked, so they must match other furniture\n"
+            f"  in the room. Rank 3+ can explore the broader palette."
         )
 
     rendered = (

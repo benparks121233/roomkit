@@ -5,12 +5,19 @@ version: 1
 # Add new profiles here; do not embed style definitions inside prompts.
 #
 # warm_minimalist is the fallback when the LLM can't make a confident match.
+#
+# priority_terms: terms scored at 3x weight in the sourcing adapter so
+# fetch pulls products that DISTINGUISH this aesthetic from overlapping ones.
+# selection_feel: one-liner fed into the LLM selection prompt so the LLM
+# picks with the right CHARACTER, not just keyword overlap.
 
 profiles:
   - id: cottagecore
     display_name: Cottagecore
     keywords: [vintage, floral, distressed wood, soft linen, handmade, cozy, pastoral]
     sourcing_terms: [vintage, floral, distressed, linen, handmade, cozy, shabby, antique, farmhouse, cottage, rustic, cream, lace, ruffled, quilt, patchwork, wicker, ceramic, rose]
+    priority_terms: [farmhouse, cottage, floral, shabby, distressed, cozy, rustic, country, wicker]
+    selection_feel: "Charming and handmade — choose pieces that look collected over time, not bought in one trip. Soft florals, warm textures, nothing too polished."
     color_palette: [dusty rose, sage green, cream, warm white, soft blush]
     mood: gentle, nostalgic, handcrafted
 
@@ -18,6 +25,8 @@ profiles:
     display_name: Dark Academia
     keywords: [dark walnut, leather-bound, antique brass, rich velvet, scholarly, moody]
     sourcing_terms: [walnut, dark, brass, antique, velvet, tufted, leather, vintage, mahogany, espresso, brown, traditional, classic, gothic, ornate, bronze, library, aged, dark brown, gold, wood, rich]
+    priority_terms: [velvet, antique, gothic, ornate, mahogany, traditional, tufted]
+    selection_feel: "Scholarly and austere — choose pieces that feel like a professor's private study. Rich, moody, old-world. Favor tufted leather, dark wood, antique brass. Nothing casual or sporty."
     color_palette: [deep brown, burgundy, forest green, antique gold, espresso]
     mood: intellectual, atmospheric, richly layered
 
@@ -25,6 +34,8 @@ profiles:
     display_name: Japandi
     keywords: [minimalist, zen, matte, ash wood, clean lines, negative space, organic]
     sourcing_terms: [minimalist, zen, matte, oak, bamboo, natural, japanese, clean, organic, simple, neutral, wood, ash, low profile, wabi, ceramic, stone, linen, beige, light]
+    priority_terms: [minimalist, zen, bamboo, organic, low profile, slim, clean, japanese]
+    selection_feel: "Serene and intentional — choose the quietest, most refined option. Negative space matters. Favor matte finishes, organic shapes, nothing ornate."
     color_palette: [warm grey, off-white, pale oak, stone, charcoal accent]
     mood: serene, intentional, quietly refined
 
@@ -32,6 +43,8 @@ profiles:
     display_name: Coastal
     keywords: [whitewash, woven rattan, crisp linen, sea glass, driftwood, airy, natural]
     sourcing_terms: [rattan, woven, white, natural, driftwood, beach, sea, blue, linen, bamboo, wicker, coastal, nautical, sand, whitewash, light, stripe, shell, jute, airy, ocean]
+    priority_terms: [rattan, wicker, nautical, driftwood, whitewash, beach, jute, coastal]
+    selection_feel: "Breezy and textured — choose pieces that feel sun-bleached and lived-in. Natural fibers over polished surfaces. Light, airy, never heavy."
     color_palette: [white, soft blue, sand, seafoam, natural rattan]
     mood: breezy, relaxed, sun-washed
 
@@ -39,6 +52,8 @@ profiles:
     display_name: Industrial
     keywords: [exposed metal, concrete, raw steel, dark wood, Edison bulbs, utilitarian, matte black]
     sourcing_terms: [metal, iron, black, pipe, edison, industrial, steel, rustic, wood, reclaimed, loft, matte black, warehouse, raw, dark, vintage, distressed, cage, exposed, urban, riveted, factory]
+    priority_terms: [industrial, pipe, reclaimed, distressed, rustic, urban, loft, iron, weathered]
+    selection_feel: "Raw and utilitarian — choose pieces with visible construction: metal frames, rivets, reclaimed wood. Nothing precious or delicate."
     color_palette: [charcoal, steel grey, dark walnut, black, warm amber accent]
     mood: edgy, urban, raw
 
@@ -46,41 +61,53 @@ profiles:
     display_name: Quiet Luxury
     keywords: [cashmere, marble, brushed gold, understated, tailored, bouclé, fine grain]
     sourcing_terms: [marble, gold, cream, ivory, velvet, linen, fluted, upholstered, boucle, bouclé, elegant, luxe, taupe, champagne, silk, satin, brass, curved, plush, soft, cashmere, refined, sophisticated, framed art, abstract art, gallery]
+    priority_terms: [luxury, luxurious, elegant, marble, bouclé, premium, refined, fluted, brass]
+    selection_feel: "Understated and expensive-looking — choose the piece that whispers quality. Favor real materials over faux, clean tailoring over decoration. Nothing loud."
     color_palette: [ivory, taupe, champagne, warm grey, soft gold accent]
     mood: polished, serene, effortlessly refined
 
   - id: sports_den
     display_name: Sports Den
-    keywords: [leather, dark tones, masculine, bold, lounge, warm wood, club]
-    sourcing_terms: [leather, dark, brown, cognac, navy, tufted, wood, brass, industrial, lounge, recliner, chesterfield, vintage, walnut, cigar, whiskey, den, rich, studded, nailhead, wingback, classic]
-    color_palette: [deep navy, cognac brown, charcoal, dark green, warm brass]
-    mood: confident, relaxed, den-like
+    keywords: [oversized, casual, comfortable, dark tones, masculine, bold, lounge, warm wood]
+    sourcing_terms: [sectional, reclining, recliner, microfiber, oversized, plush, overstuffed, deep seat, fabric, lounger, dark, brown, navy, wood, industrial, lounge, distressed, sports, pub, bar, game room, game day, den, casual, comfortable, big, cushion]
+    priority_terms: [sectional, reclining, recliner, microfiber, oversized, plush, overstuffed, deep seat, lounger, comfortable, casual]
+    selection_feel: "Man-cave comfortable — choose the biggest, squishiest, most sink-into-it option. Oversized sectionals, reclining sofas, deep plush cushions. Casual and lived-in, never formal. Nothing that belongs in a study — no tufted Chesterfields, no velvet, no wingbacks. Think game-day couch you never want to leave."
+    color_palette: [deep navy, charcoal, dark grey, brown, warm brass accent]
+    mood: confident, relaxed, casual, man-cave
 
   - id: city_modern
     display_name: City Modern
     keywords: [sleek, glass, monochrome, polished chrome, high-contrast, angular, modern]
     sourcing_terms: [modern, glass, chrome, sleek, contemporary, metal, black, white, minimalist, geometric, angular, acrylic, polished, steel, slim, clean, abstract, monochrome, lacquer, gloss]
+    priority_terms: [modern, contemporary, sleek, chrome, glass, angular, geometric, minimalist, slim]
+    selection_feel: "Sharp and editorial — choose pieces that look like they belong in a design magazine apartment. High contrast, clean geometry, one bold accent. Nothing rustic."
     color_palette: [black, white, cool grey, chrome silver, accent cobalt]
     mood: sharp, metropolitan, curated
 
   - id: ski_lodge
     display_name: Ski Lodge
-    keywords: [timber, wool plaid, chunky knit, warm, rustic, hearth, cabin, fur]
-    sourcing_terms: [rustic, wood, cabin, plaid, warm, fur, cozy, lodge, timber, flannel, knit, pine, cedar, reclaimed, sheepskin, sherpa, buffalo check, wool, antler, stone, log, mountain]
+    keywords: [timber, wool plaid, chunky knit, warm, rustic, hearth, cabin, fur, sherpa]
+    sourcing_terms: [rustic, wood, cabin, plaid, warm, fur, cozy, lodge, timber, flannel, knit, pine, cedar, reclaimed, sheepskin, sherpa, buffalo check, wool, antler, stone, log, mountain, chunky, fleece, faux fur, heavy, thick, woven, brown, cream, red]
+    priority_terms: [cabin, lodge, plaid, flannel, sherpa, faux fur, chunky, rustic, buffalo check, fleece, cozy, thick]
+    selection_feel: "Mountain cabin warmth — every piece should feel like it belongs in a ski chalet. Chunky knits, faux fur, plaid flannel, heavy wood, warm brown leather. The room should feel CONSISTENTLY alpine — no modern minimalist pieces sneaking in, no sleek/slim profiles. Beds with thick wooden headboards, heavy plaid bedding, sherpa throws. Nothing that reads as urban, coastal, or delicate."
     color_palette: [warm brown, deep red, cream, forest green, burnt orange]
-    mood: warm, inviting, alpine cozy
+    mood: warm, inviting, consistently alpine cabin
 
   - id: jungle_oasis
     display_name: Jungle Oasis
     keywords: [tropical, rattan, monstera, botanical, natural wood, jute, macrame, earthy, lush]
     sourcing_terms: [rattan, tropical, botanical, green, natural, jute, macrame, bamboo, woven, boho, monstera, plant, palm, leaf, wood, wicker, earthy, terracotta, cane, vine, fern]
+    priority_terms: [tropical, botanical, rattan, macrame, bamboo, natural, organic, wicker]
+    selection_feel: "Lush and grounding — choose pieces with natural texture and organic warmth. Rattan, jute, greenery. The room should feel like an indoor garden."
     color_palette: [deep green, terracotta, warm cream, natural tan, olive]
     mood: lush, grounding, tropical retreat
 
   - id: gamer_den
     display_name: Gamer Den
     keywords: [LED, dark, minimalist, tech, gaming, RGB, matte black, sleek, acoustic]
-    sourcing_terms: [LED, dark, gaming, RGB, black, matte, tech, gamer, neon, light, minimalist, sleek, carbon, metal, modern, cool, futuristic, electric]
+    sourcing_terms: [LED, dark, gaming, black, matte, tech, gamer, neon, minimalist, sleek, carbon, metal, modern, cool, futuristic, low profile, smoked glass, mesh, dark grey, matte black, ambient light, ergonomic, racing]
+    priority_terms: [gaming, gamer, LED, ergonomic, racing, sleek, low profile, mesh, carbon]
+    selection_feel: "Immersive and moody — choose the darkest, sleekest option. The room should feel like a cockpit: matte black surfaces, atmospheric lighting, minimal clutter. Cool-toned accents over warm."
     color_palette: [charcoal black, deep purple, electric blue, dark grey, neon accent]
     mood: moody, immersive, futuristic
 
@@ -88,6 +115,8 @@ profiles:
     display_name: Poster Maximalist
     keywords: [eclectic, maximalist, collage, posters, fairy lights, vines, layered, colorful, expressive]
     sourcing_terms: [eclectic, colorful, poster, boho, bright, vibrant, gallery, collage, artistic, mixed, bold, vintage, retro, funky, abstract, print, neon, bohemian, tapestry, whimsical, quirky, patterned, velvet, mid-century, colorful throw]
+    priority_terms: [vintage, bold, eclectic, colorful, retro, bohemian, mid century, statement]
+    selection_feel: "Expressive and layered — choose pieces with personality and pattern. More is more. Mix eras, colors, textures. The room should look lived-in and curated by someone interesting."
     color_palette: [warm amber, terracotta, mustard yellow, dusty pink, mixed brights]
     mood: expressive, personal, youthful, maximalist
 
@@ -96,5 +125,7 @@ profiles:
     display_name: Warm Minimalist
     keywords: [natural wood, linen, neutral tones, clean lines, cozy simplicity]
     sourcing_terms: [wood, natural, linen, oak, minimal, simple, neutral, beige, cream, clean, organic, warm, light, matte, scandinavian, white, cotton, pine, birch, soft, understated]
+    priority_terms: [minimalist, modern, clean, natural, organic, soft, slim, mid century]
+    selection_feel: "Calm and grounded — choose the simplest, warmest option. Natural materials, neutral tones, nothing that demands attention. The room should feel like a deep breath."
     color_palette: [cream, warm white, light oak, terracotta accent]
     mood: calm, grounded, uncluttered

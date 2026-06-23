@@ -49,17 +49,49 @@ Rules:
 - PRICE RANGE: Include a mix of price points. Your picks should span from
   affordable options (around 35% of the allocated budget) up to premium options
   (up to 100% of budget). Do not cluster all picks in the same price tier.
-- TOP PICKS MUST FEEL PREMIUM: Your rank 1-4 picks are the first things the
-  user sees. They MUST be upscale and well-curated — not cheap or generic.
-  But "premium" does NOT mean "plain neutral." Premium means elevated
-  execution of the aesthetic. A premium cottagecore duvet has beautiful
-  florals on quality cotton — that IS premium for that style. Pick products
-  that look like they belong in the aesthetic, not products that could
-  belong in any room. Niche, eccentric, or polarizing designs can appear
-  at rank 5+ but never in the top 4.
+- RANK 1-2 MUST BE SAFE CENTER (AUTO-GENERATE DEFAULTS): Ranks 1-2 are
+  used as automatic defaults when the user lets AI generate their room —
+  they go in UNCHECKED. These picks MUST be the safest, most universally
+  appealing expression of the aesthetic. Still aesthetic-appropriate (not
+  generic), but never adventurous, bold, polarizing, or surprising.
+  Think: "this is what 90% of people who like this aesthetic would love."
+  Wildcard/statement pieces belong at rank 5+ where users actively browse.
+  Example: for cottagecore sheets, rank 1 = beautiful soft floral cotton;
+  rank 7 = bold patchwork quilt pattern. Both fit the aesthetic — but only
+  the floral is safe for auto-generate.
+- RANKS 3-4 STILL PREMIUM: Ranks 3-4 are shown as top alternatives. They
+  should be upscale and well-curated — not cheap or generic. "Premium"
+  means elevated execution of the aesthetic, not plain neutral. A premium
+  cottagecore duvet has beautiful florals on quality cotton — that IS
+  premium for that style. Pick products that look like they belong in the
+  aesthetic, not products that could belong in any room.
+- RANKS 5+ CAN BE ADVENTUROUS: Niche, eccentric, or polarizing designs
+  can appear at rank 5+ but never in ranks 1-4. This is where variety
+  and surprise live — users who browse deeper are actively choosing.
+- BIG FABRIC SLOTS — SOLIDS LEAD (sheets, comforter, duvet_cover, curtains):
+  Ranks 1-2 for these four slots MUST be solid/plain colors — no patterns,
+  no plaid, no stripes, no prints. These are the large fabric surfaces that
+  dominate the room visually; a patterned default overwhelms the space
+  before the user chose it. Patterned options (plaid, floral, striped,
+  geometric) can appear at rank 3+ for users who actively browse and choose.
+  This applies to ALL aesthetics — even ski lodge (solid warm brown or cream
+  comforter leads; plaid comforter available at rank 3+). Small accent slots
+  (throw_pillows, throw_blanket) are exempt — patterns are fine as defaults
+  for accents.
 - FURNITURE slots (bed_frame, dresser, nightstand, desk, desk_chair, sofa,
   coffee_table, side_table, tv_stand): prefer muted, understated versions.
   Ranks 1-4 clean and broadly appealing. Color/pattern fine at rank 5+.
+  **FURNITURE COORDINATION:** All furniture in a room must look like it
+  belongs together — same material family, coordinated colors. If a
+  furniture_instruction is provided below, follow its RANK 1-2 ANCHOR
+  strictly: the anchor specifies the exact material+color that rank 1-2
+  defaults MUST use, so that sofa, armchair, and tables all converge on
+  the same look when auto-generated.
+- **SOFA — FULL-SIZE LEADS, LOVESEATS RANK 3+:** For the sofa slot, ranks
+  1-2 MUST be a full-size sofa (3-seat), never a loveseat or 2-seater.
+  Loveseats are legitimate products (small spaces need them), so keep them
+  in the pool — but they belong at rank 3+ where users actively browse.
+  The auto-generate default should always be a full sofa.
 - SOFT GOODS and DECOR slots (wall_art, throw_blanket, throw_pillows,
   comforter, duvet_cover, curtains, rug, plants): these carry the room's
   character. Include patterns, colors, and textures that are distinctive
@@ -147,7 +179,11 @@ Rules:
 ## User
 
 Slot: {{slot_id}}
-Style profile: {{style_profile_summary}}
+Style profile:
+{{style_profile_summary}}
+If a selection_feel line is present above, use it as your primary guide for
+the CHARACTER of your picks — it tells you what this aesthetic FEELS like,
+not just what keywords to match.
 Allocated budget for this slot: ${{allocated_budget}}
 Price band: ${{min_price}} – ${{max_price}}
 Required specs: {{required_specs}}

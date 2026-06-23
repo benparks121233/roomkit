@@ -146,14 +146,17 @@ _BATHROOM_MIRROR_PHRASES = [
 ]
 
 # Slots where user interests influence product selection.
-_INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket"}
+_INTEREST_SLOTS = {"wall_art", "plants", "throw_blanket", "throw_pillows", "rug", "bookshelf"}
 
 # Cheugy / low-taste product name patterns filtered at the catalog level.
 # These never reach the LLM.  Patterns are checked case-insensitively.
 _CHEUGY_PATTERNS = [
     r"live\s*,?\s*laugh\s*,?\s*love",
-    r"motivational\b",
-    r"inspirational\b",
+    # motivational/inspirational only when paired with generic quote/text signals
+    r"motivational\s+(quote|wall\s*art|poster|sign|canvas)\b",
+    r"inspirational\s+(quote|wall\s*art|sign|canvas)\b",
+    r"\b(quote|sign|canvas)\b.*\bmotivational\b",
+    r"\b(quote|sign|canvas)\b.*\binspirational\b",
     r"\bbless(ed)?\s+(this|our)\b",
     r"\bhome\s+sweet\s+home\b",
     r"\bman\s+cave\b",
@@ -194,42 +197,20 @@ _CHEUGY_PATTERNS = [
     r"\bdo\s+not\s+disturb.*gam(e|ing)\b",
     r"\bkill\s+streak\b.*\b(sign|poster)\b",
     r"\bRGB\s+(rug|carpet)\b",
-    # Generic sports merch — ball art, boys room sports, sports canvas sets
-    r"\bsports\s+(canvas|poster|wall\s*art|print|decor|theme)\b",
-    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bsports\b",
-    r"\bbasketball\s+(canvas|poster|wall\s*art|print|decor)\b",
-    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bbasketball\b",
-    r"\bfootball\s+(canvas|poster|wall\s*art|print|decor)\b",
-    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bfootball\b",
-    r"\bbaseball\s+(canvas|poster|wall\s*art|print|decor)\b",
-    r"\b(canvas|poster|wall\s*art|print|decor)\b.*\bbaseball\b",
-    r"\bsoccer\s+(canvas|poster|wall\s*art|print|decor)\b",
+    # Sports: only kill the worst offenders, NOT all sports art.
+    # Sports art is legitimate when users have sports interests.
     r"\bboys\s+room\b.*\b(sports|ball|football|basketball|baseball)\b",
     r"\b(sports|ball|football|basketball|baseball)\b.*\bboys\s+room\b",
     r"\bgraffiti\s+sport",
     r"\bsports\s+ball",
     r"\bball\s+(theme|themed)\b",
     r"\blocker\s+room\b",
-    r"\bjersey\s+(poster|canvas|wall|print)\b",
-    r"\b(slam\s+dunk|touchdown|home\s+run)\b",
-    r"\bgame\s+day\b.*\b(sign|poster|canvas|decor)\b",
     r"\bsports\s+christian\b",
-    r"\bsports\s+inspirational\b",
-    r"\bstadium\s+(blueprint|poster|canvas|print|wall)\b",
+    r"\bsport\s+superstar\b",
+    r"\bsports\s+car\s+poster\b",
     # Generic movie/anime merch — cheap licensed posters
     r"\bmovie\s+poster\b",
     r"\bfilm\s+poster\b",
-    # Remaining sports merch catchall
-    r"\bbasketball\s+poster",
-    r"\bbasketball\s+room\s+decor\b",
-    r"\bbaseball\s+(vintage|retro|patent|nursery|bats)\b",
-    r"\bfootball\s+poster",
-    r"\bsoccer\s+poster",
-    r"\bsport\s+superstar\b",
-    r"\bsports\s+car\s+poster\b",
-    r"\bnba\s+(poster|room|decor)\b",
-    r"\bnfl\s+(poster|room|decor)\b",
-    r"\bmlb\s+(poster|room|decor)\b",
 ]
 _CHEUGY_RE = re.compile("|".join(_CHEUGY_PATTERNS), re.IGNORECASE)
 
@@ -251,15 +232,36 @@ _FLORAL_SHEET_PHRASES = [
     "garden print",
 ]
 
+# Plaid excluded from sheets slot only. Plaid throws/comforters are fine —
+# only plaid SHEETS produce wildcards in auto-generate (alpine plaid sheets).
+_PLAID_SHEET_PHRASES = [
+    "plaid",
+    "tartan",
+    "buffalo check",
+    "checker",
+    "gingham",
+]
+
 # Per-slot exclusion phrases — consolidated contamination filters.
 # Checked case-insensitively against product names during fetch_candidates().
 _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
     "wall_art": [
+        # Multi-panel / multi-pack exclusions
         "5 piece canvas", "5 panel", "5-panel", "5-piece canvas",
         "3 piece canvas", "3 panel", "3-panel", "3-piece canvas",
         "4 piece canvas", "4 panel", "4-panel", "4-piece canvas",
         "canvas art set of", "panel wall art set", "multi panel",
         "split canvas", "canvas set of", "panels canvas",
+        "set of 3", "set of 4", "set of 5", "set of 6",
+        "set of 7", "set of 8", "set of 9", "set of 10", "set of 12",
+        "3pcs", "4pcs", "5pcs", "6pcs", "8pcs", "10pcs", "12pcs",
+        "3 pcs", "4 pcs", "5 pcs", "6 pcs",
+        "3 pieces", "4 pieces", "5 pieces", "6 pieces",
+        "3 piece ", "4 piece ", "5 piece ", "6 piece ",
+        # Generic gaming canvas / video game merch
+        "gaming canvas", "video game wall", "video game canvas",
+        "gamer canvas", "gaming poster set", "game room canvas",
+        "retro video game", "retro gaming canvas",
     ],
     "ceiling_light": [
         "kitchen", "utility", "garage", "workshop", "closet", "pantry",
@@ -284,6 +286,12 @@ _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
     "sheets": [
         "toddler sheet", "crib sheet", "paper towel", "sheet music",
         "sticker sheet", "coloring sheet",
+    ],
+    "throw_pillows": [
+        "pillow cover", "pillowcase", "pillow case", "cover only",
+        "covers only", "no insert", "without insert", "cushion cover",
+        "pillow sham", "sham", "cover set", "covers set",
+        "replacement cover", "pillow shell",
     ],
     "bed_frame": ["bunk bed", "daybed", "day bed", "toddler bed", "loft bed", "crib"],
     "throw_blanket": [
@@ -332,6 +340,18 @@ _SLOT_EXCLUDE_PHRASES: dict[str, list[str]] = {
         # Non-sofa seating
         "floor chair", "meditation chair", "meditation cushion",
         "legless floor", "tatami chair",
+        # Bundled sets (sofa + armchair/loveseat combos, not sectionals)
+        "sofa set", "couch set", "living room set", "furniture set",
+        "with armchair", "with accent chair",
+        "sofa and loveseat", "couch and loveseat",
+        "sofa and chair", "couch and chair",
+        # Outdoor / patio furniture
+        "outdoor", "patio",
+    ],
+    "armchair": [
+        # Multi-piece sets (set of 2, set of 3, etc.)
+        "set of 2", "set of 3", "set of 4",
+        "2 pack", "2-pack", "pair of",
     ],
     "sconce": [
         "outdoor", "porch", "garage", "bathroom vanity light",
@@ -347,7 +367,8 @@ _INTEREST_KEYWORDS: dict[str, list[str]] = {
               "retro music", "tour poster"],
     "sports": ["sports", "basketball", "football", "baseball", "athletic",
                "soccer", "hockey", "tennis", "golf", "vintage sports",
-               "retro sports", "stadium", "pennant"],
+               "retro sports", "stadium", "pennant", "sport",
+               "nba", "nfl", "mlb", "kobe", "jordan", "lebron"],
     "travel": ["travel", "map", "world", "destination", "city", "globe",
                "adventure", "wanderlust", "passport", "vintage travel",
                "retro travel"],
@@ -397,6 +418,7 @@ class AmazonAdapter(SourcingAdapter):
         price_band: tuple[float, float],
         required_specs: dict,
         interests: list[str] | None = None,
+        priority_terms: list[str] | None = None,
     ) -> list[Product]:
         raw_products = self._load_products(slot_id)
         min_price, max_price = price_band
@@ -483,6 +505,18 @@ class AmazonAdapter(SourcingAdapter):
                 logging.getLogger(__name__).info(
                     "sheets: removed %d floral candidate(s)", removed
                 )
+            # Plaid sheets exclusion — plaid throws/comforters are fine,
+            # only plaid sheets produce wildcards in auto-generate.
+            before = len(candidates)
+            candidates = [
+                p for p in candidates
+                if not any(ph in p.name.lower() for ph in _PLAID_SHEET_PHRASES)
+            ]
+            removed = before - len(candidates)
+            if removed:
+                logging.getLogger(__name__).info(
+                    "sheets: removed %d plaid candidate(s)", removed
+                )
 
         # Diversity pass: remove near-duplicate products whose names
         # differ only in size, color, or minor descriptors.  Keeps the first
@@ -498,6 +532,7 @@ class AmazonAdapter(SourcingAdapter):
         )
         return self._build_shortlist(
             candidates, style_keywords, max_price, slot_interests, slot_id,
+            priority_terms=priority_terms,
         )
 
     # ------------------------------------------------------------------
@@ -552,6 +587,7 @@ class AmazonAdapter(SourcingAdapter):
         max_price: float,
         interests: list[str] | None,
         slot_id: str = "",
+        priority_terms: list[str] | None = None,
     ) -> list[Product]:
         """Build a capped shortlist blending style, interests, and price spread.
 
@@ -588,10 +624,16 @@ class AmazonAdapter(SourcingAdapter):
 
         # --- Pool 1: style-relevant ---
         kw_lower = [k.lower() for k in style_keywords]
+        _PRIORITY_WEIGHT = 3
+        priority_set = {t.lower() for t in (priority_terms or [])}
 
         def style_score(p: Product) -> int:
             name = p.name.lower()
-            return sum(1 for kw in kw_lower if kw in name)
+            score = 0
+            for kw in kw_lower:
+                if kw in name:
+                    score += _PRIORITY_WEIGHT if kw in priority_set else 1
+            return score
 
         # --- Pool 2: interest-matched ---
         interest_kw_lower: list[str] = []

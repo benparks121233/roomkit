@@ -178,17 +178,17 @@ HOTSPOT_POSITIONS: dict[str, dict[str, dict]] = {
 # Style-to-room-description mapping for the prompt.
 _STYLE_ROOMS: dict[str, str] = {
     "cottagecore": "vintage pastoral cottage — soft florals, distressed white wood, warm golden light",
-    "dark_academia": "scholarly sanctuary — dark walnut paneling, rich leather, warm moody lamplight",
+    "dark_academia": "scholarly sanctuary — dark walnut paneling, rich leather, warm golden lamplight filling the room — moody atmosphere but WELL-LIT enough that every piece of furniture is clearly visible and detailed",
     "japandi": "zen minimalist — light ash wood, clean lines, generous negative space, serene natural light",
     "coastal": "breezy beach house — whitewashed wood, rattan, seafoam accents, bright natural sunlight",
-    "industrial": "converted loft — exposed brick, black metal, concrete, warm Edison bulb glow",
+    "industrial": "converted loft — exposed brick, black metal, concrete, warm Edison bulb glow throughout — industrial but well-lit, every piece of furniture clearly visible",
     "quiet_luxury": "understated elegance — cream upholstery, marble accents, brushed gold, serene diffused light",
-    "sports_den": "refined lounge — dark charcoal walls, cognac leather, warm amber accents",
+    "sports_den": "man cave den — dark charcoal walls, comfortable oversized furniture, warm amber lighting filling the room — every piece of furniture clearly visible and detailed",
     "city_modern": "sleek high-rise — polished surfaces, monochrome palette, one bold accent color",
-    "ski_lodge": "alpine retreat — exposed timber beams, stone, plaid wool, warm firelight",
+    "ski_lodge": "alpine retreat — exposed timber beams, stone, plaid wool, warm firelight and overhead lighting that fills the room — cozy cabin atmosphere but bright enough that every piece of furniture is clearly visible",
     "warm_minimalist": "calm simplicity — cream walls, light oak floors, natural textures, bright morning light",
     "jungle_oasis": "tropical retreat — lush greens, rattan, natural wood, warm earthy light",
-    "gamer_den": "immersive gaming cockpit — dark matte walls with LED strip accents casting colored glow (blue, purple, or teal), sleek minimal furniture visible in the ambient light, moody but well-lit by RGB and neon — the room is dark-themed but every piece of furniture is clearly visible",
+    "gamer_den": "immersive gaming cockpit — dark matte walls with LED strip accents casting colored glow (blue, purple, or teal), generous ambient light from LEDs and overhead lighting so every piece of furniture is CLEARLY VISIBLE and detailed — dark-themed but well-illuminated, not murky",
     "poster_maximalist": "expressive gallery — dense wall art, mixed patterns, colorful layered textiles, warm string lights",
 }
 
@@ -428,7 +428,7 @@ CRITICAL RULES:
 2. For multi-select items (e.g. wall_art_1, wall_art_2, wall_art_3): show ALL of them. Multiple wall art pieces form a gallery wall. Multiple plants are grouped together. Each must be recognizably distinct.
 3. The furniture must be RECOGNIZABLY the same items from the reference images — same shapes, materials, colors, and proportions. This is a product showcase.
 4. The room must feel like a REAL, LIVED-IN space — natural and believable, not a sterile product display.
-5. Lighting should be bright, natural, and magazine-quality — the room should feel inviting.
+5. Lighting MUST be bright enough that EVERY piece of furniture is clearly visible and detailed — even in dark/moody aesthetics, the viewer must be able to see all products. For light aesthetics: bright natural light. For dark aesthetics (gamer, dark academia, industrial, sports den, ski lodge): warm ambient light that fills the room while preserving the moody atmosphere. NEVER so dark that furniture disappears into shadows.
 6. The overall composition should match the {style_name} aesthetic perfectly.
 7. Show the FULL room wall-to-wall in a wide-angle editorial interior photograph, straight-on at eye level.
 8. Leave a thin strip of empty floor/wall at the very bottom of the image.

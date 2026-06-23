@@ -23,6 +23,8 @@ class StyleProfileEntry(BaseModel):
     display_name: str
     keywords: list[str]
     sourcing_terms: list[str] = []  # Product-name-friendly terms for adapter scoring
+    priority_terms: list[str] = []  # Terms scored at 3x weight in the sourcing adapter
+    selection_feel: str = ""        # One-liner fed into the LLM selection prompt
     color_palette: list[str]
     mood: str
 

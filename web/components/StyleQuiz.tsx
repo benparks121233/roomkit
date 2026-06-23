@@ -242,7 +242,7 @@ const Q_SHAPE: QuizStepDef = {
   question: "Straight lines or soft curves?",
   selectMode: "single",
   layout: "cards",
-  imageDir: "shared",
+  imageDir: "room",
   options: [
     { key: "clean_straight", label: "Straight lines",  swatches: ["#E8E2D8"], image: "shape_straight.jpg" },
     { key: "organic_curved", label: "Curves + arches", swatches: ["#E8E2D8"], image: "shape_curved.jpg" },
@@ -651,16 +651,33 @@ function buildSummary(core: string, mood: string, palette: string, roomType: str
 // Image card with swatch fallback
 // ---------------------------------------------------------------------------
 
+function SelectIndicator({ mode, selected }: { mode: SelectMode; selected: boolean }) {
+  if (mode === "multi") {
+    return (
+      <span className={`select-indicator checkbox ${selected ? "checked" : ""}`}>
+        {selected && <svg width="10" height="10" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+      </span>
+    );
+  }
+  return (
+    <span className={`select-indicator radio ${selected ? "checked" : ""}`}>
+      {selected && <span className="radio-dot" />}
+    </span>
+  );
+}
+
 function QuizImageCard({
   option,
   selected,
   onClick,
   imagePrefix,
+  selectMode = "single",
 }: {
   option: QuizOption;
   selected: boolean;
   onClick: () => void;
   imagePrefix: string;
+  selectMode?: SelectMode;
 }) {
   const [imgFailed, setImgFailed] = useState(false);
   const hasImage = option.image && !imgFailed;
@@ -684,6 +701,7 @@ function QuizImageCard({
         ) : (
           <SwatchFallback colors={option.swatches} />
         )}
+        <SelectIndicator mode={selectMode} selected={selected} />
       </div>
       <div className="quiz-card-body">
         <span className="quiz-card-label">{option.label}</span>
@@ -1394,10 +1412,10 @@ export default function StyleQuiz({ onComplete }: Props) {
       // normal: standard 35% entertainment cap (recommended minimum).
       // priority: raised 45% cap — lean room but TV is funded.
       const TV_MIN_BUDGETS: Record<string, number> = {
-        small: 750, medium: 950, large: 1250, xl: 2200,
+        small: 750, medium: 1500, large: 2000, xl: 3000,
       };
       const TV_PRIORITY_MIN: Record<string, number> = {
-        small: 820, medium: 900, large: 1040, xl: 1420,
+        small: 820, medium: 1000, large: 1250, xl: 1750,
       };
       const TIER_DOWN: Record<string, string> = {
         xl: "large", large: "medium", medium: "small",
@@ -1519,6 +1537,7 @@ export default function StyleQuiz({ onComplete }: Props) {
             selected={isSelected(current.id, opt.key)}
             onClick={() => toggleSelection(current.id, opt.key, current.maxSelect)}
             imagePrefix={imagePrefix}
+            selectMode={current.selectMode}
           />
         ))}
       </div>
@@ -1547,7 +1566,11 @@ export default function StyleQuiz({ onComplete }: Props) {
       </div>
 
       <h2 className="quiz-question">{current.question}</h2>
-      {current.hint && <p className="quiz-hint">{current.hint}</p>}
+      {(current.hint || current.selectMode === "multi") && (
+        <p className="quiz-hint">
+          {current.hint || (current.maxSelect ? `Pick up to ${current.maxSelect}` : "Select all that apply")}
+        </p>
+      )}
 
       {renderStep()}
 

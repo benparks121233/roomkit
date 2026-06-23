@@ -879,9 +879,9 @@ IMAGES: list[tuple[str, str]] = [
         "color harmony. " + _LR_COLOR_DETAIL_SUFFIX,
     ),
 
-    # ── SHAPE (3) — decor-rich room shots, shared/room-agnostic ──────────
+    # ── SHAPE (3 bedroom + 3 living room) — room-specific ──────────────
     (
-        "shape_straight.jpg",
+        "bedroom/shape_straight.jpg",
         "A richly styled modern bedroom emphasizing STRAIGHT LINES and "
         "GEOMETRIC SHAPES. Rectangular platform bed with a crisp upholstered "
         "headboard, angular nightstands, a square-framed mirror, grid-pattern "
@@ -891,7 +891,7 @@ IMAGES: list[tuple[str, str]] = [
         + _ROOM_WIDE_SUFFIX,
     ),
     (
-        "shape_curved.jpg",
+        "bedroom/shape_curved.jpg",
         "A richly styled bedroom emphasizing SOFT CURVES and ARCHES. An "
         "arched upholstered headboard, round nightstand, oval mirror, curved "
         "table lamp with a mushroom shade, an arched doorway or niche in the "
@@ -901,7 +901,7 @@ IMAGES: list[tuple[str, str]] = [
         + _ROOM_WIDE_SUFFIX,
     ),
     (
-        "shape_mixed.jpg",
+        "bedroom/shape_mixed.jpg",
         "A richly styled bedroom showing a DELIBERATE MIX of straight lines "
         "and soft curves. Rectangular bed frame with an arched headboard, "
         "angular bookshelf next to a round side table, square window with "
@@ -909,6 +909,36 @@ IMAGES: list[tuple[str, str]] = [
         "between sharp and soft is the point. Warm neutral palette, layered "
         "with plants, books, candles, and ceramics. "
         + _ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "living_room/shape_straight.jpg",
+        "A richly styled modern living room emphasizing STRAIGHT LINES and "
+        "GEOMETRIC SHAPES. A clean rectangular sofa with structured cushions, "
+        "angular coffee table, geometric shelving unit, rectangular framed art "
+        "on the wall, and a linear floor lamp. Everything is intentionally "
+        "rectilinear — no curves anywhere. Warm neutral palette, layered with "
+        "books, candles, and small objects on the coffee table and shelves. "
+        + _LR_ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "living_room/shape_curved.jpg",
+        "A richly styled living room emphasizing SOFT CURVES and ARCHES. A "
+        "curved bouclé sofa, round coffee table, arched floor lamp, oval "
+        "mirror on the wall, an arched doorway or niche, and round throw "
+        "pillows. Every piece is deliberately organic and rounded — no sharp "
+        "right angles. Warm neutral palette, styled with trailing plants, "
+        "ceramic vases, and stacked books on the coffee table. "
+        + _LR_ROOM_WIDE_SUFFIX,
+    ),
+    (
+        "living_room/shape_mixed.jpg",
+        "A richly styled living room showing a DELIBERATE MIX of straight "
+        "lines and soft curves. Rectangular sofa with rounded throw pillows, "
+        "angular bookshelf next to a round side table, square window with "
+        "billowing curtains, geometric art above an arched mirror. The tension "
+        "between sharp and soft is the point. Warm neutral palette, layered "
+        "with plants, books, candles, and ceramics on the coffee table. "
+        + _LR_ROOM_WIDE_SUFFIX,
     ),
 ]
 

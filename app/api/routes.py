@@ -180,6 +180,7 @@ async def create_design(req: DesignRequest) -> DesignResponse:
             (0.0, max_price),
             spec_hints,
             interests=room_request.interests or None,
+            priority_terms=style_profile.priority_terms or None,
         )
         logger.info("Sourced %s: %d candidates (budget $%.2f)", slot.slot_id, len(candidates), slot.allocated_budget)
 
