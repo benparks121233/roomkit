@@ -55,8 +55,7 @@ def health_check() -> dict:
         # Try to read from a table — will fail if table doesn't exist yet,
         # but the connection itself succeeding proves auth + connectivity.
         client.table("events").select("id").limit(1).execute()
-        raw = os.environ.get("SUPABASE_SCHEMA")
-        return {"status": "ok", "schema": _schema, "env_raw": raw}
+        return {"status": "ok", "schema": _schema}
     except Exception as e:
         err = str(e)
         # "relation does not exist" means connection works, table just isn't created yet
