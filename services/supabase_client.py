@@ -35,7 +35,7 @@ def get_client():
         global _schema
         _schema = os.environ.get("SUPABASE_SCHEMA", "public")
         _client = create_client(url, key, options=ClientOptions(schema=_schema))
-        logger.info("Supabase client initialized (schema=%s)", schema)
+        logger.info("Supabase client initialized (schema=%s)", _schema)
         return _client
     except Exception:
         logger.exception("Failed to initialize Supabase client")
