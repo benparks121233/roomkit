@@ -30,9 +30,10 @@ def get_client():
         return None
 
     try:
-        from supabase import create_client
-        _client = create_client(url, key)
-        logger.info("Supabase client initialized")
+        from supabase import ClientOptions, create_client
+        schema = os.environ.get("SUPABASE_SCHEMA", "public")
+        _client = create_client(url, key, options=ClientOptions(schema=schema))
+        logger.info("Supabase client initialized (schema=%s)", schema)
         return _client
     except Exception:
         logger.exception("Failed to initialize Supabase client")
