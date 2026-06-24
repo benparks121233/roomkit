@@ -10,6 +10,7 @@ import os
 logger = logging.getLogger(__name__)
 
 _client = None
+_schema = "public"
 
 
 def get_client():
@@ -31,8 +32,9 @@ def get_client():
 
     try:
         from supabase import ClientOptions, create_client
-        schema = os.environ.get("SUPABASE_SCHEMA", "public")
-        _client = create_client(url, key, options=ClientOptions(schema=schema))
+        global _schema
+        _schema = os.environ.get("SUPABASE_SCHEMA", "public")
+        _client = create_client(url, key, options=ClientOptions(schema=_schema))
         logger.info("Supabase client initialized (schema=%s)", schema)
         return _client
     except Exception:
@@ -53,7 +55,7 @@ def health_check() -> dict:
         # Try to read from a table — will fail if table doesn't exist yet,
         # but the connection itself succeeding proves auth + connectivity.
         client.table("events").select("id").limit(1).execute()
-        return {"status": "ok"}
+        return {"status": "ok", "schema": _schema}
     except Exception as e:
         err = str(e)
         # "relation does not exist" means connection works, table just isn't created yet
