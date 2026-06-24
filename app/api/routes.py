@@ -15,10 +15,12 @@ import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
+
+from app.rate_limit import limiter
 
 from services.tracking import log_event, log_selections
 
@@ -88,7 +90,8 @@ def _get_design(run_id: str) -> DesignResponse:
 # ---------------------------------------------------------------------------
 
 @router.post("/design", response_model=DesignResponse)
-async def create_design(req: DesignRequest) -> DesignResponse:
+@limiter.limit("5/minute")
+async def create_design(request: Request, req: DesignRequest) -> DesignResponse:
     """Run the full RoomKit pipeline and return a shoppable board.
 
     This makes real LLM calls (~17 total) and can take 60-90 seconds.
@@ -550,7 +553,8 @@ class RenderRequest(BaseModel):
 
 
 @router.post("/design/{run_id}/render")
-async def generate_render(run_id: str, body: RenderRequest | None = None) -> dict:
+@limiter.limit("3/minute")
+async def generate_render(request: Request, run_id: str, body: RenderRequest | None = None) -> dict:
     """Generate a photorealistic AI room render from the finalized design.
 
     Reads selected_products from the persisted design — the render always
@@ -608,7 +612,8 @@ async def generate_render(run_id: str, body: RenderRequest | None = None) -> dic
 # ---------------------------------------------------------------------------
 
 @router.post("/design/{run_id}/hotspots")
-async def detect_hotspots(run_id: str) -> dict:
+@limiter.limit("3/minute")
+async def detect_hotspots(request: Request, run_id: str) -> dict:
     """Use a vision model to detect product bounding boxes in the room render.
 
     Returns approximate hotspot coordinates (0-1 fractions) for each

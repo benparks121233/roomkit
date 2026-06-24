@@ -8,14 +8,27 @@ load_dotenv()
 
 from pathlib import Path  # noqa: E402
 
-from fastapi import FastAPI  # noqa: E402
+from fastapi import FastAPI, Request  # noqa: E402
 from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
+from fastapi.responses import JSONResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
+from slowapi.errors import RateLimitExceeded  # noqa: E402
 
+from app.rate_limit import limiter  # noqa: E402
 from app.api.routes import router  # noqa: E402
 from app.api.admin import router as admin_router  # noqa: E402
 
 app = FastAPI(title="RoomKit", version="0.1.0")
+app.state.limiter = limiter
+
+
+@app.exception_handler(RateLimitExceeded)
+async def _rate_limit_handler(request: Request, exc: RateLimitExceeded):
+    return JSONResponse(
+        status_code=429,
+        content={"detail": "Rate limit exceeded. Please try again later."},
+        headers={"Retry-After": str(exc.detail)},
+    )
 
 # CORS — allow the Next.js frontend to reach the API.
 # In production, set CORS_ORIGINS to the actual domain(s), comma-separated.

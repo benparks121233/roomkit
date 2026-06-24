@@ -529,11 +529,11 @@ pack gating, no access wall. The model is DESIGNED in Phase 4, ENFORCED in Phase
 - [ ] **Verification:** Delete a test account, confirm all their data is gone from
       every table.
 
-### 6D — Rate Limiting (1 session)
-- [ ] Add `slowapi` (or similar) to FastAPI.
-- [ ] `POST /design`: 5/min per IP ($0.37/run — unprotected = budget burn).
-- [ ] `POST /design/{run_id}/render`: 3/min per IP.
-- [ ] `POST /design/{run_id}/hotspots`: 3/min per IP.
+### 6D — Rate Limiting (1 session) ✅
+- [x] Add `slowapi` (or similar) to FastAPI.
+- [x] `POST /design`: 5/min per IP ($0.37/run — unprotected = budget burn).
+- [x] `POST /design/{run_id}/render`: 3/min per IP.
+- [x] `POST /design/{run_id}/hotspots`: 3/min per IP.
 - [ ] **Verification:** Exceed the limit, confirm 429 response.
 
 ### 6E — Tier Enforcement
@@ -551,6 +551,10 @@ not 1000. This must land before public deploy.*
 - [ ] **Multi-worker uvicorn:** `--workers N` (2-4 for Railway's RAM). Verify
       no shared mutable state across workers (in-memory _designs cache is
       write-through to Supabase, so safe).
+- [ ] **Rate-limit state → Redis:** `slowapi` currently uses in-memory storage
+      (accurate for single-worker). With N workers, each counts independently,
+      so "5/min per IP" becomes ~5×N/min. Switch to Redis backend when adding
+      multi-worker. Same fix as the concurrency semaphore below.
 - [ ] **Async render with client polling:** Render generation takes 15-25s.
       Move to background task, return `202 Accepted` with `run_id`, client
       polls `GET /design/{run_id}/render/status` until ready. Frees the
