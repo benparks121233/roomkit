@@ -607,18 +607,6 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
     matches the frozen, finalized room.  Returns 400 if design is not
     yet finalized.
     """
-    import traceback as _tb
-    try:
-        return await _generate_render_inner(request, run_id, user, body)
-    except HTTPException:
-        raise
-    except Exception as exc:
-        detail = f"{type(exc).__name__}: {exc}\n{''.join(_tb.format_exception(exc))}"
-        logger.error("render 500: %s", detail)
-        raise HTTPException(500, detail=detail[:2000])
-
-
-async def _generate_render_inner(request: Request, run_id: str, user: dict, body: RenderRequest | None) -> dict:
     from services.render_service import render_room, render_exists, get_render_path
 
     design = _get_design(run_id, user)  # 404 or 503 if unavailable
