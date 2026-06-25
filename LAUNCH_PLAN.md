@@ -534,7 +534,7 @@ pack gating, no access wall. The model is DESIGNED in Phase 4, ENFORCED in Phase
 - [x] `POST /design`: 5/min per IP ($0.37/run — unprotected = budget burn).
 - [x] `POST /design/{run_id}/render`: 3/min per IP.
 - [x] `POST /design/{run_id}/hotspots`: 3/min per IP.
-- [ ] **Verification:** Exceed the limit, confirm 429 response.
+- [x] **Verification:** Exceed the limit, confirm 429 response.
 
 ### 6E — Tier Enforcement
 - [ ] Watermark toggle: render service checks user tier, produces watermarked
