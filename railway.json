@@ -2,6 +2,14 @@
   "$schema": "https://railway.app/railway.schema.json",
   "services": [
     {
+      "name": "frontend",
+      "source": { "root": "web" },
+      "build": { "builder": "nixpacks" },
+      "deploy": {
+        "startCommand": "npm start"
+      }
+    },
+    {
       "name": "web",
       "source": { "root": "." },
       "build": { "builder": "nixpacks" },
