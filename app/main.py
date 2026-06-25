@@ -57,7 +57,7 @@ app.mount("/renders", StaticFiles(directory=str(_renders_dir)), name="renders")
 
 @app.get("/health")
 def health() -> dict:
-    return {"status": "ok", "limiter_enabled": limiter.enabled}
+    return {"status": "ok"}
 
 
 @app.get("/health/supabase")
