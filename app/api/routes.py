@@ -11,6 +11,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -20,6 +21,7 @@ from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
 
+from app.auth import CurrentUser
 from app.rate_limit import limiter
 
 from services.tracking import log_event, log_selections
@@ -53,34 +55,53 @@ router = APIRouter()
 _designs: dict[str, DesignResponse] = {}
 
 
-def _get_design(run_id: str) -> DesignResponse:
+def _get_design(run_id: str, user: dict | None = None) -> DesignResponse:
     """Retrieve a design: cache first, then Supabase, with three-outcome handling.
 
+    If user is provided, enforces ownership:
+      - Cache hit: checks user_id matches (defense-in-depth)
+      - Cache miss: uses RLS-enforced read (anon key + JWT, database enforces)
+
     Returns the DesignResponse on success.
-    Raises HTTPException 404 if the design genuinely doesn't exist anywhere.
+    Raises HTTPException 404 if the design doesn't exist or belongs to another user.
     Raises HTTPException 503 if the Supabase query failed (retry-able).
     """
+    from services.design_store import DesignStoreError, load_design, load_design_as_user
+
     # 1. Fast path: in-memory cache
     if run_id in _designs:
-        return _designs[run_id]
+        cached = _designs[run_id]
+        if user and hasattr(cached, "user_id") and cached.user_id:
+            if cached.user_id != user["user_id"]:
+                raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
+        return cached
 
     # 2. Slow path: Supabase lookup
-    from services.design_store import DesignStoreError, load_design
-
+    # RLS-enforced read (anon key + JWT) is the ONLY path in staging/prod.
+    # If the anon key is missing outside tests, that's a 503 — never
+    # silently fall back to service key, which would bypass RLS.
     try:
-        design = load_design(run_id)
+        if user and user.get("token"):
+            try:
+                design = load_design_as_user(run_id, user["token"])
+            except DesignStoreError as exc:
+                if "anon key not configured" in str(exc) and os.environ.get("TESTING") == "1":
+                    design = load_design(run_id)
+                    if design.user_id and design.user_id != user["user_id"]:
+                        raise KeyError(run_id)
+                else:
+                    raise
+        else:
+            design = load_design(run_id)
     except KeyError:
-        # Row genuinely absent — nowhere to find it
         raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
     except DesignStoreError as exc:
-        # Connection/query failure — might exist but we can't reach it
         logger.warning("_get_design: Supabase read failed for %s: %s", run_id, exc)
         raise HTTPException(
             status_code=503,
             detail="Storage temporarily unavailable — please retry",
         )
 
-    # Populate cache for subsequent fast reads
     _designs[run_id] = design
     return design
 
@@ -91,12 +112,35 @@ def _get_design(run_id: str) -> DesignResponse:
 
 @router.post("/design", response_model=DesignResponse)
 @limiter.limit("5/minute")
-async def create_design(request: Request, req: DesignRequest) -> DesignResponse:
+async def create_design(request: Request, req: DesignRequest, user: CurrentUser) -> DesignResponse:
     """Run the full RoomKit pipeline and return a shoppable board.
 
     This makes real LLM calls (~17 total) and can take 60-90 seconds.
+    Requires authentication — user_id is stamped on the design.
     """
-    # 0. Track: design started.
+    # 0. Free-room enforcement: count user's existing designs.
+    # App-layer check. Race window is sub-second; blast radius is $0.27.
+    # 6E adds a DB-level unique partial index for airtight enforcement.
+    from services.supabase_client import get_client as _get_svc_client
+    _svc = _get_svc_client()
+    if _svc:
+        try:
+            _count_resp = (
+                _svc.table("designs")
+                .select("run_id", count="exact")
+                .eq("user_id", user["user_id"])
+                .execute()
+            )
+            if _count_resp.count and _count_resp.count >= 1:
+                raise HTTPException(
+                    status_code=403,
+                    detail="Free tier: 1 room limit. Upgrade for more.",
+                )
+        except HTTPException:
+            raise
+        except Exception:
+            logger.warning("Free-room count check failed — allowing request", exc_info=True)
+
     _start_time = time.monotonic()
 
     # 1. Intake — validate and produce a RoomRequest.
@@ -315,11 +359,12 @@ async def create_design(request: Request, req: DesignRequest) -> DesignResponse:
         slot_plan,
         slots_results=slot_results,
     )
+    response.user_id = user["user_id"]
     _designs[response.run_id] = response
 
     # Persist to Supabase (write-through). Failure is logged but non-blocking.
     from services.design_store import save_design
-    save_design(response)
+    save_design(response, user_id=user["user_id"])
 
     # Track: design completed + selections.
     _elapsed = time.monotonic() - _start_time
@@ -364,9 +409,9 @@ async def create_design(request: Request, req: DesignRequest) -> DesignResponse:
 # ---------------------------------------------------------------------------
 
 @router.get("/design/{run_id}", response_model=DesignResponse)
-async def get_design(run_id: str) -> DesignResponse:
-    """Re-fetch a previously generated design board."""
-    return _get_design(run_id)
+async def get_design(run_id: str, user: CurrentUser) -> DesignResponse:
+    """Re-fetch a previously generated design board. Auth-required, user-scoped."""
+    return _get_design(run_id, user)
 
 
 # ---------------------------------------------------------------------------
@@ -380,13 +425,14 @@ async def get_design(run_id: str) -> DesignResponse:
 async def validate_selections(
     run_id: str,
     req: ValidateSelectionsRequest,
+    user: CurrentUser,
 ) -> ValidateSelectionsResponse:
     """Validate user's product selections against per-slot pool budgets.
 
     Prices are looked up from the stored design — the client sends only
     product_ids, never prices.  Unknown or tampered product_ids are rejected.
     """
-    design = _get_design(run_id)
+    design = _get_design(run_id, user)
 
     # Build product price lookup from the stored design (source of truth).
     # Keys: (slot_id, product_id) → price.  Includes primary + alternatives.
@@ -478,7 +524,7 @@ class FinalizeRequest(BaseModel):
 
 
 @router.patch("/design/{run_id}/finalize")
-async def finalize_design(run_id: str, body: FinalizeRequest) -> DesignResponse:
+async def finalize_design(run_id: str, body: FinalizeRequest, user: CurrentUser) -> DesignResponse:
     """Freeze the user's curated selections as the authoritative design.
 
     This is the single persist point for the settled room — called once when
@@ -489,7 +535,7 @@ async def finalize_design(run_id: str, body: FinalizeRequest) -> DesignResponse:
     from datetime import datetime, timezone
     from services.design_store import save_design
 
-    design = _get_design(run_id)  # 404 or 503 if unavailable
+    design = _get_design(run_id, user)  # 404 or 503 if unavailable
 
     # Already finalized — idempotent reject.
     if design.finalized_at is not None:
@@ -554,7 +600,7 @@ class RenderRequest(BaseModel):
 
 @router.post("/design/{run_id}/render")
 @limiter.limit("3/minute")
-async def generate_render(request: Request, run_id: str, body: RenderRequest | None = None) -> dict:
+async def generate_render(request: Request, run_id: str, user: CurrentUser, body: RenderRequest | None = None) -> dict:
     """Generate a photorealistic AI room render from the finalized design.
 
     Reads selected_products from the persisted design — the render always
@@ -563,7 +609,7 @@ async def generate_render(request: Request, run_id: str, body: RenderRequest | N
     """
     from services.render_service import render_room, render_exists, get_render_path
 
-    design = _get_design(run_id)  # 404 or 503 if unavailable
+    design = _get_design(run_id, user)  # 404 or 503 if unavailable
 
     log_event(run_id, "render_requested")
 
@@ -613,7 +659,7 @@ async def generate_render(request: Request, run_id: str, body: RenderRequest | N
 
 @router.post("/design/{run_id}/hotspots")
 @limiter.limit("3/minute")
-async def detect_hotspots(request: Request, run_id: str) -> dict:
+async def detect_hotspots(request: Request, run_id: str, user: CurrentUser) -> dict:
     """Use a vision model to detect product bounding boxes in the room render.
 
     Returns approximate hotspot coordinates (0-1 fractions) for each
@@ -623,7 +669,7 @@ async def detect_hotspots(request: Request, run_id: str) -> dict:
     from services.render_service import render_exists, get_render_path
     from services.hotspot_service import detect_product_hotspots, hotspots_exist, load_hotspots
 
-    design = _get_design(run_id)  # 404 or 503 if unavailable
+    design = _get_design(run_id, user)  # 404 or 503 if unavailable
 
     if not render_exists(run_id):
         raise HTTPException(status_code=400, detail="Render not yet generated")
@@ -680,7 +726,7 @@ _ALLOWED_CLIENT_EVENTS = {
 
 
 @router.post("/track")
-async def track_event(req: TrackEventRequest) -> dict:
+async def track_event(req: TrackEventRequest, user: CurrentUser) -> dict:
     """Log a client-side funnel event. Always returns 200 — never fails the client."""
     if req.event_type not in _ALLOWED_CLIENT_EVENTS:
         return {"ok": False, "reason": "unknown_event_type"}

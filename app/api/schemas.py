@@ -85,6 +85,7 @@ class DesignResponse(BaseModel):
     is_feasible: bool
     slots: list[SlotResult]
     finalized_at: str | None = None  # ISO timestamp; set once at finalize, never cleared
+    user_id: str | None = None
 
 
 # ---------------------------------------------------------------------------

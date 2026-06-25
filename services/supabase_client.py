@@ -1,6 +1,10 @@
 # services/supabase_client.py
-# Singleton Supabase client for server-side writes (service key).
-# Used by the tracking module — never exposed to the frontend.
+# Two-tier Supabase access:
+#   get_client()        → service key (bypasses RLS) — for WRITES only
+#   get_user_client(jwt)→ anon key + user JWT (RLS enforced) — for READS
+#
+# This split ensures RLS SELECT policies are real enforcement,
+# not decorative. The service key never touches user-facing reads.
 
 from __future__ import annotations
 
@@ -40,6 +44,30 @@ def get_client():
     except Exception:
         logger.exception("Failed to initialize Supabase client")
         return None
+
+
+def get_user_postgrest(user_jwt: str):
+    """Return a per-request PostgREST client using the ANON key + user JWT.
+
+    RLS policies fire on this client — auth.uid() is set from the JWT.
+    Use for all user-facing READS. Never use for writes (use get_client()).
+    Returns None if anon key is not configured.
+    """
+    url = os.environ.get("SUPABASE_URL")
+    anon_key = os.environ.get("SUPABASE_ANON_KEY")
+    if not url or not anon_key:
+        logger.warning("SUPABASE_URL or SUPABASE_ANON_KEY not set — RLS reads unavailable")
+        return None
+
+    from postgrest import SyncPostgrestClient
+
+    schema = os.environ.get("SUPABASE_SCHEMA", "public")
+    client = SyncPostgrestClient(
+        base_url=f"{url}/rest/v1",
+        headers={"apikey": anon_key, "Authorization": f"Bearer {user_jwt}"},
+        schema=schema,
+    )
+    return client
 
 
 def health_check() -> dict:

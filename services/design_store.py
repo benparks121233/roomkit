@@ -16,10 +16,11 @@ class DesignStoreError(Exception):
     """Raised when a Supabase operation fails (connection, query, etc.)."""
 
 
-def save_design(response: DesignResponse) -> bool:
+def save_design(response: DesignResponse, user_id: str | None = None) -> bool:
     """Persist a design to Supabase.  Returns True on success, False on failure.
 
     Never raises — callers should log the failure but not block the response.
+    Uses the SERVICE KEY (bypasses RLS) — this is a write path.
     """
     from services.supabase_client import get_client
 
@@ -42,6 +43,8 @@ def save_design(response: DesignResponse) -> bool:
         "slots": [s.model_dump() for s in response.slots],
         "finalized_at": response.finalized_at,
     }
+    if user_id:
+        row["user_id"] = user_id
 
     try:
         client.table("designs").upsert(row).execute()
@@ -71,9 +74,10 @@ def save_design(response: DesignResponse) -> bool:
 
 
 def load_design(run_id: str) -> DesignResponse:
-    """Load a design from Supabase.
+    """Load a design from Supabase using the SERVICE KEY (no RLS).
 
-    Returns the deserialized DesignResponse on success.
+    For internal/admin use only. User-facing reads should use
+    load_design_as_user() which enforces RLS.
 
     Raises:
         DesignStoreError: on connection/query failure (caller should 503).
@@ -99,7 +103,44 @@ def load_design(run_id: str) -> DesignResponse:
     if resp is None or resp.data is None:
         raise KeyError(run_id)
 
-    row = resp.data
+    return _row_to_response(resp.data)
+
+
+def load_design_as_user(run_id: str, user_jwt: str) -> DesignResponse:
+    """Load a design using the ANON KEY + user JWT (RLS enforced).
+
+    The RLS SELECT policy filters by auth.uid() = user_id, so this
+    returns KeyError if the design belongs to a different user — the
+    database enforces isolation, not app code.
+
+    Raises:
+        DesignStoreError: on connection/query failure (caller should 503).
+        KeyError: when the row doesn't exist OR belongs to another user.
+    """
+    from services.supabase_client import get_user_postgrest
+
+    pg = get_user_postgrest(user_jwt)
+    if pg is None:
+        raise DesignStoreError("Supabase anon key not configured")
+
+    try:
+        resp = (
+            pg.from_("designs")
+            .select("*")
+            .eq("run_id", run_id)
+            .maybe_single()
+            .execute()
+        )
+    except Exception as exc:
+        raise DesignStoreError(f"Supabase query failed: {exc}") from exc
+
+    if resp is None or resp.data is None:
+        raise KeyError(run_id)
+
+    return _row_to_response(resp.data)
+
+
+def _row_to_response(row: dict) -> DesignResponse:
     return DesignResponse(
         run_id=row["run_id"],
         room_type=row["room_type"],
@@ -109,4 +150,5 @@ def load_design(run_id: str) -> DesignResponse:
         style=StyleResult(**row["style"]),
         slots=[SlotResult(**s) for s in row["slots"]],
         finalized_at=row.get("finalized_at"),
+        user_id=row.get("user_id"),
     )

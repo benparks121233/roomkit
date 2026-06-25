@@ -11,7 +11,11 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.api.routes import _designs
+from app.auth import get_current_user
 from app.main import app
+
+_TEST_USER = {"user_id": "test-user-aaa-111", "email": "test@example.com", "token": "fake"}
+app.dependency_overrides[get_current_user] = lambda: _TEST_USER
 
 client = TestClient(app)
 
