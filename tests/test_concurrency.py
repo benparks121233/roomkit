@@ -219,3 +219,112 @@ class TestRouteIntegration:
         assert "busy" in resp.json()["detail"].lower()
 
         app.dependency_overrides.pop(get_current_user, None)
+
+
+# ---------------------------------------------------------------------------
+# Render semaphore: Redis + local fallback
+# ---------------------------------------------------------------------------
+
+class TestRenderSemaphoreRedis:
+    """Redis-backed render concurrency semaphore (1 slot per render)."""
+
+    def test_acquire_under_cap(self):
+        mock_redis = MagicMock()
+        mock_redis.incrby.return_value = 2  # under default cap of 4
+
+        with patch("services.redis_client.get_redis", return_value=mock_redis):
+            from services.concurrency import acquire_render_slot
+            assert acquire_render_slot() is True
+
+        mock_redis.incrby.assert_called_once_with("roomkit:render_active", 1)
+        mock_redis.expire.assert_called_once_with("roomkit:render_active", 300)
+
+    def test_release_decrements(self):
+        mock_redis = MagicMock()
+        mock_redis.decrby.return_value = 1
+
+        with patch("services.redis_client.get_redis", return_value=mock_redis):
+            from services.concurrency import release_render_slot
+            release_render_slot()
+
+        mock_redis.decrby.assert_called_once_with("roomkit:render_active", 1)
+
+    def test_release_floors_at_zero(self):
+        mock_redis = MagicMock()
+        mock_redis.decrby.return_value = -1
+
+        with patch("services.redis_client.get_redis", return_value=mock_redis):
+            from services.concurrency import release_render_slot
+            release_render_slot()
+
+        mock_redis.set.assert_called_once_with("roomkit:render_active", 0)
+
+    def test_over_cap_backs_off_then_succeeds(self):
+        mock_redis = MagicMock()
+        mock_redis.incrby.side_effect = [5, 3]  # first over cap=4, second under
+
+        with patch("services.redis_client.get_redis", return_value=mock_redis), \
+             patch("services.concurrency.time.sleep"):
+            from services.concurrency import acquire_render_slot
+            assert acquire_render_slot() is True
+
+        assert mock_redis.incrby.call_count == 2
+        mock_redis.decrby.assert_called_once_with("roomkit:render_active", 1)
+
+    def test_over_cap_timeout_returns_false(self):
+        mock_redis = MagicMock()
+        mock_redis.incrby.return_value = 10  # always over cap
+
+        with patch("services.redis_client.get_redis", return_value=mock_redis), \
+             patch("services.concurrency.time.sleep"):
+            from services.concurrency import acquire_render_slot
+            # Pass short timeout — default is 600s (renders queue, not fail)
+            assert acquire_render_slot(timeout=1.0) is False
+
+    def test_redis_exception_falls_back_to_local(self):
+        mock_redis = MagicMock()
+        mock_redis.incrby.side_effect = Exception("connection lost")
+
+        with patch("services.redis_client.get_redis", return_value=mock_redis):
+            import services.concurrency as sc
+            sc._render_local_semaphore = None
+            with patch.dict(os.environ, {"RENDER_CONCURRENCY_CAP": "4", "UVICORN_WORKERS": "1"}):
+                result = sc.acquire_render_slot()
+
+        assert result is True
+        sc._render_local_semaphore = None
+
+
+class TestRenderSemaphoreLocal:
+    """Local fallback for render semaphore."""
+
+    def test_local_bounded(self):
+        import services.concurrency as sc
+        sc._render_local_semaphore = None
+
+        with patch("services.redis_client.get_redis", return_value=None), \
+             patch.dict(os.environ, {"RENDER_CONCURRENCY_CAP": "2", "UVICORN_WORKERS": "1"}):
+            sc._render_local_semaphore = None
+            assert sc.acquire_render_slot() is True
+            assert sc.acquire_render_slot() is True
+            assert sc.acquire_render_slot(timeout=0.3) is False
+            sc.release_render_slot()
+            sc.release_render_slot()
+
+        sc._render_local_semaphore = None
+
+    def test_local_per_worker_sizing(self):
+        import services.concurrency as sc
+        sc._render_local_semaphore = None
+
+        with patch("services.redis_client.get_redis", return_value=None), \
+             patch.dict(os.environ, {"RENDER_CONCURRENCY_CAP": "4", "UVICORN_WORKERS": "2"}):
+            sc._render_local_semaphore = None
+            # 4 // 2 = 2 per worker
+            assert sc.acquire_render_slot() is True
+            assert sc.acquire_render_slot() is True
+            assert sc.acquire_render_slot(timeout=0.3) is False
+            sc.release_render_slot()
+            sc.release_render_slot()
+
+        sc._render_local_semaphore = None

@@ -273,7 +273,7 @@ async function pollRenderStatus(
   jobId: string,
 ): Promise<RenderResponse> {
   const headers = await authHeaders();
-  const maxAttempts = 40;
+  const maxAttempts = 60;
   const intervalMs = 3_000;
 
   for (let i = 0; i < maxAttempts; i++) {

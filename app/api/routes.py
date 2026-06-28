@@ -646,12 +646,29 @@ def _render_worker(
     products: dict[str, list[dict]],
     user_id: str,
 ) -> None:
-    """Background thread: run the synchronous render and update Redis status."""
+    """Background thread: wait for render semaphore slot, run render, update Redis.
+
+    Renders are async (user already has 202, frontend polls). The worker just
+    waits for a slot — no hard failure on contention. The 600s acquire timeout
+    is a safety net for stuck keys, not a normal path. If it somehow fires,
+    we log it as an error but still don't set status="failed" — we proceed
+    without the semaphore so the render completes (OpenAI may 429 us, but
+    that's better than a dead-end error for the user).
+    """
     from services.redis_client import get_redis
     from services.render_service import render_room
+    from services.concurrency import acquire_render_slot, release_render_slot
 
     r = get_redis()
+    acquired = False
     try:
+        acquired = acquire_render_slot()
+        if not acquired:
+            logger.error(
+                "Render semaphore 600s timeout for job %s (run %s) — proceeding without slot",
+                job_id, run_id,
+            )
+
         if r:
             r.hset(f"render_job:{job_id}", "status", "rendering")
 
@@ -698,6 +715,9 @@ def _render_worker(
                 })
         except Exception:
             pass
+    finally:
+        if acquired:
+            release_render_slot()
 
 
 @router.post("/design/{run_id}/render")
