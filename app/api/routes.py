@@ -303,6 +303,9 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
     if not acquire_llm_slots(slot_count):
         raise HTTPException(status_code=503, detail="Server busy — too many concurrent design requests. Please retry in a moment.")
 
+    _timing["semaphore_wait_ms"] = round((time.monotonic() - _t) * 1000, 1)
+    _t_llm = time.monotonic()
+
     try:
         with ThreadPoolExecutor(max_workers=slot_count) as pool:
             futures = {
@@ -318,6 +321,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
     finally:
         release_llm_slots(slot_count)
 
+    _timing["selection_llm_ms"] = round((time.monotonic() - _t_llm) * 1000, 1)
     _timing["selection_ms"] = round((time.monotonic() - _t) * 1000, 1)
     logger.info(
         "Selected %d slots in %.1fs (parallel)",
