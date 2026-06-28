@@ -778,6 +778,16 @@ real-device tested. One cohesive product, not a collection of standalone pages.
       (from 6F) is flowing to logs. Set up log aggregation (Railway logs or
       external sink) so pipeline bottlenecks and failure patterns are visible
       from day one.
+- [ ] **Incremental semaphore slot release (scaling fix):** The concurrency
+      semaphore currently holds all ~15 slots all-or-nothing for the entire
+      selection phase (~15s), releasing only when the slowest LLM call finishes
+      — even though individual calls finish in 2-5s. This wastes slot capacity
+      and serializes designs under high concurrency. Fix: release each slot's
+      permit as its `select_products()` call returns, so a design's held-slot
+      count drops as faster calls complete, letting queued designs fit sooner.
+      Needed when sustained concurrent selections exceed ~3-4 (beyond beta
+      scale). Changes the acquire/release contract — test against multi-worker
+      staging when implemented.
 - [ ] **Custom SMTP for auth emails:** Production email provider (Resend or
       Postmark) from the real domain. Configure SPF/DKIM DNS records. Replace
       Supabase default email service in Dashboard → Auth → SMTP. Needed before

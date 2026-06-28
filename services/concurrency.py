@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 _REDIS_KEY = "roomkit:llm_active"
 _KEY_TTL = 120
-_ACQUIRE_TIMEOUT = 30.0
+_ACQUIRE_TIMEOUT = 60.0
 _ACQUIRE_POLL_INTERVAL = 0.5
 
 _local_semaphore: threading.Semaphore | None = None

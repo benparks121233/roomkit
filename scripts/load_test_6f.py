@@ -218,39 +218,28 @@ def test_rate_limits(
 
 def test_semaphore_throttling(
     base_url: str, token: str, redis_url: str | None,
-    concurrency_cap: int = 20,
+    concurrency_cap: int = 30,
 ) -> bool:
-    """Prove the concurrency semaphore THROTTLES when load exceeds the cap.
+    """Prove the concurrency semaphore coordinates under real load.
 
-    SETUP REQUIRED: Temporarily set LLM_CONCURRENCY_CAP=20 on staging.
-    (Restore to 30 after the test.)
+    Run at PRODUCTION cap (default 30). Each bedroom design requests
+    ~12-15 LLM slots. At cap=30, two designs fit simultaneously (30
+    slots), the 3rd waits ~15s then fits, the 4th waits ~17s then fits.
+    All 4 should complete (200) — the semaphore queues excess demand
+    and serves it as slots free up.
 
-    WHY 20: Each bedroom design requests ~12-15 LLM slots AT ONCE via
-    a single INCRBY. The cap must be >= one design's slot count (otherwise
-    no design can ever acquire — guaranteed 503, which tests nothing).
-    Cap=20 lets ONE design fit (~15 slots < 20) but TWO overlapping
-    designs exceed it (~30 > 20), forcing the second to wait.
+    What we're proving:
+    1. Semaphore writes to Redis (roomkit:llm_active > 0)
+    2. Designs COMPLETE under concurrent load (200s, not all-503)
+    3. Elapsed-time spread shows serialization (later designs waited)
 
-    Strategy: Fire 4 concurrent bedroom designs. With cap=20, the first
-    design that hits selection acquires ~15 slots. The second design's
-    INCRBY pushes the counter to ~30, exceeding 20, so it backs off
-    and waits — that's the throttling proof.
-
-    IMPORTANT — transient peak vs steady-state:
-    The INCRBY-check-DECRBY cycle means the Redis counter transiently
-    spikes above the cap (design INCRBYs 15, sees >20, DECRBYs 15).
-    The test measures the STEADY-STATE (counter after successful
-    acquires, between INCRBY-check cycles) not the transient spikes.
-    A peak ABOVE cap is expected churn, not a semaphore failure.
-
-    Proof criteria:
-    1. roomkit:llm_active is observed > 0 (semaphore writes to Redis)
-    2. At least one design completes 200 (cap is high enough to fit)
-    3. Elapsed-time spread or 503s show throttling (second design waited)
+    Transient peak note: the INCRBY-check-DECRBY acquire cycle causes
+    the Redis counter to spike above cap momentarily. This is expected
+    churn (rollback in progress), not a cap violation.
 
     NOTE: Fires 4 real designs (~$1.08 in LLM costs). One-time cost.
-    NOTE: Cross-region Redis adds latency. Judge by throttling behavior,
-    not raw timing.
+    NOTE: Cross-region Redis adds latency. Judge by completion and
+    serialization, not raw timing.
     """
     section("TEST B: Semaphore — Throttling Under Load")
 
@@ -715,7 +704,7 @@ def main():
     parser.add_argument("--password", default=os.environ.get("TEST_PASSWORD"), help="Test account password")
     parser.add_argument("--delete-email", default=os.environ.get("DELETE_TEST_EMAIL"), help="Sacrificial account email for deletion test")
     parser.add_argument("--delete-password", default=os.environ.get("DELETE_TEST_PASSWORD"), help="Sacrificial account password")
-    parser.add_argument("--concurrency-cap", type=int, default=10, help="LLM_CONCURRENCY_CAP on staging (default 10)")
+    parser.add_argument("--concurrency-cap", type=int, default=30, help="LLM_CONCURRENCY_CAP on staging (default 30)")
     parser.add_argument("--test", help="Run a specific test (a/b/c/d/e)", default="all")
     args = parser.parse_args()
 
