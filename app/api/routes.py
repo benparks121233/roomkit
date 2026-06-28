@@ -13,10 +13,12 @@ from __future__ import annotations
 import logging
 import os
 import re
+import threading
 import time
+import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Query, Request
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -84,8 +86,8 @@ def _get_design(run_id: str, user: dict | None = None) -> DesignResponse:
         if user and user.get("token"):
             try:
                 design = load_design_as_user(run_id, user["token"])
-            except DesignStoreError as exc:
-                if "anon key not configured" in str(exc) and os.environ.get("TESTING") == "1":
+            except DesignStoreError:
+                if os.environ.get("TESTING") == "1":
                     design = load_design(run_id)
                     if design.user_id and design.user_id != user["user_id"]:
                         raise KeyError(run_id)
@@ -142,24 +144,31 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             logger.warning("Free-room count check failed — allowing request", exc_info=True)
 
     _start_time = time.monotonic()
+    _timing: dict[str, float] = {}
 
     # 1. Intake — validate and produce a RoomRequest.
+    _t = time.monotonic()
     try:
         room_request = parse_intake(req.model_dump())
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
+    _timing["intake_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
     log_event(room_request.run_id, "design_started", {
         "room_type": room_request.room_type or "bedroom",
         "budget": req.budget,
         "aesthetic": req.core_aesthetic or "",
-    })
+    }, user_id=user["user_id"])
 
     # 2. Style interpretation — real LLM call.
+    _t = time.monotonic()
     style_profile = interpret_style(room_request)
+    _timing["style_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
     # 3. Composition — real LLM call for weight proposal, deterministic budget math.
+    _t = time.monotonic()
     slot_plan = plan_composition(room_request, style_profile)
+    _timing["composition_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
     # 4. Composition gate — deterministic validation.
     slot_plan, gate_error = validate_composition(slot_plan)
@@ -176,6 +185,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
         )
 
     # 5. Sourcing + selection — parallel LLM calls for non-owned slots.
+    _t = time.monotonic()
     adapter = AmazonAdapter()
     slot_results: list[SlotResult] = []
 
@@ -212,9 +222,13 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
         # Fetch candidates up to 1.5x the slot budget so the user sees more
         # variety. The LLM and UI will handle budget enforcement — items above
         # the slot budget are shown but flagged if they'd blow the total.
+        # Duvet slots get 2.0x to widen the thin pool (insert is hidden inside
+        # the cover; both benefit from seeing more price range).
         # For decor slots, cap at 50% of the total decor pool to prevent
         # one expensive item eating the entire decor allocation.
-        max_price = slot.allocated_budget * 1.5
+        _WIDE_SOURCING_SLOTS = {"duvet_insert", "duvet_cover"}
+        sourcing_mult = 2.0 if slot.slot_id in _WIDE_SOURCING_SLOTS else 1.5
+        max_price = slot.allocated_budget * sourcing_mult
         if slot.slot_id in _DECOR_SLOTS and decor_item_cap > 0:
             max_price = min(max_price, decor_item_cap)
 
@@ -274,30 +288,40 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
 
         sourceable_slots.append((slot, candidates))
 
+    _timing["sourcing_ms"] = round((time.monotonic() - _t) * 1000, 1)
+
     # Fire all selection LLM calls in parallel.
     # Each call returns (ranked_products, fit_reasons, null_reason).
     selection_results: dict[str, tuple[list, list, str | None]] = {}
-    t0 = time.monotonic()
+    _t = time.monotonic()
 
     interests = room_request.interests
 
-    with ThreadPoolExecutor(max_workers=len(sourceable_slots) or 1) as pool:
-        futures = {
-            pool.submit(
-                select_products, slot, style_profile, cands, interests,
-                pick_count_for_slot(slot.slot_id),
-            ): slot.slot_id
-            for slot, cands in sourceable_slots
-        }
-        for future in as_completed(futures):
-            sid = futures[future]
-            selection_results[sid] = future.result()
+    from services.concurrency import acquire_llm_slots, release_llm_slots
+    slot_count = len(sourceable_slots) or 1
+    if not acquire_llm_slots(slot_count):
+        raise HTTPException(status_code=503, detail="Server busy — too many concurrent design requests. Please retry in a moment.")
 
-    elapsed = time.monotonic() - t0
+    try:
+        with ThreadPoolExecutor(max_workers=slot_count) as pool:
+            futures = {
+                pool.submit(
+                    select_products, slot, style_profile, cands, interests,
+                    pick_count_for_slot(slot.slot_id),
+                ): slot.slot_id
+                for slot, cands in sourceable_slots
+            }
+            for future in as_completed(futures):
+                sid = futures[future]
+                selection_results[sid] = future.result()
+    finally:
+        release_llm_slots(slot_count)
+
+    _timing["selection_ms"] = round((time.monotonic() - _t) * 1000, 1)
     logger.info(
         "Selected %d slots in %.1fs (parallel)",
         len(sourceable_slots),
-        elapsed,
+        _timing["selection_ms"] / 1000,
     )
 
     # Build SlotResults for sourceable slots.
@@ -368,38 +392,25 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
 
     # Track: design completed + selections.
     _elapsed = time.monotonic() - _start_time
+    _timing["total_ms"] = round(_elapsed * 1000, 1)
+
     # Estimate API cost: ~16 Haiku selection calls + 1 Sonnet style + 1 Sonnet composition.
     _sel_count = len(sourceable_slots)
     _est_cost = round(0.012 * _sel_count + 0.02, 4)  # ~$0.012/selection + ~$0.02 style+comp
+
+    logger.info(
+        "Pipeline timing for %s: %s",
+        response.run_id,
+        " | ".join(f"{k}={v}" for k, v in _timing.items()),
+    )
 
     log_event(response.run_id, "design_completed", {
         "slot_count": len(slot_results),
         "total_spent": response.total_spent,
         "elapsed_s": round(_elapsed, 1),
         "api_cost": _est_cost,
-    }, api_cost=_est_cost)
-
-    # Log per-slot selections (default rank-1 picks).
-    _slot_products = []
-    for sr in slot_results:
-        if sr.product:
-            _slot_products.append({
-                "slot_id": sr.slot_id,
-                "product_id": sr.product.product_id,
-                "product_name": sr.product.name,
-                "product_price": float(sr.product.normalized_price),
-                "is_multiselect": (sr.max_quantity or 1) > 1,
-            })
-    log_selections(
-        run_id=response.run_id,
-        room_type=response.room_type,
-        aesthetic=response.style.style_name,
-        mood=response.style.mood,
-        color_palette=getattr(style_profile, "color_palette", []),
-        keywords=response.style.keywords,
-        budget=response.target_budget,
-        slot_products=_slot_products,
-    )
+        "timing": _timing,
+    }, api_cost=_est_cost, user_id=user["user_id"])
 
     return response
 
@@ -578,13 +589,35 @@ async def finalize_design(run_id: str, body: FinalizeRequest, user: CurrentUser)
 
     # Persist to both in-memory cache and Supabase.
     _designs[run_id] = design
-    save_design(design)
+    save_design(design, user_id=user["user_id"])
 
     log_event(run_id, "design_finalized", {
         "total_spent": design.total_spent,
         "slot_count": sum(1 for s in design.slots if s.selected_products),
         "skipped_count": len(skipped),
-    })
+    }, user_id=user["user_id"])
+
+    _slot_products = []
+    for slot in design.slots:
+        for p in slot.selected_products:
+            _slot_products.append({
+                "slot_id": slot.slot_id,
+                "product_id": p.product_id,
+                "product_name": p.name,
+                "product_price": float(p.normalized_price),
+                "is_multiselect": len(slot.selected_products) > 1,
+            })
+    log_selections(
+        run_id=run_id,
+        room_type=design.room_type,
+        aesthetic=design.style.style_name,
+        mood=design.style.mood,
+        color_palette=design.style.keywords[:3],
+        keywords=design.style.keywords,
+        budget=design.target_budget,
+        slot_products=_slot_products,
+        user_id=user["user_id"],
+    )
 
     return design
 
@@ -598,31 +631,92 @@ class RenderRequest(BaseModel):
     selections: dict[str, list[str]] = {}  # slot_id → [product_id, ...] (legacy, ignored if finalized)
 
 
+def _render_worker(
+    job_id: str,
+    run_id: str,
+    room_type: str,
+    style_name: str,
+    mood: str,
+    keywords: list[str],
+    products: dict[str, list[dict]],
+    user_id: str,
+) -> None:
+    """Background thread: run the synchronous render and update Redis status."""
+    from services.redis_client import get_redis
+    from services.render_service import render_room
+
+    r = get_redis()
+    try:
+        if r:
+            r.hset(f"render_job:{job_id}", "status", "rendering")
+
+        _render_t = time.monotonic()
+        render_path = render_room(
+            run_id=run_id,
+            room_type=room_type,
+            style_name=style_name,
+            mood=mood,
+            keywords=keywords,
+            products=products,
+        )
+        _render_ms = round((time.monotonic() - _render_t) * 1000, 1)
+
+        if render_path is None:
+            if r:
+                r.hset(f"render_job:{job_id}", mapping={
+                    "status": "failed",
+                    "error": "Room render generation failed",
+                })
+            logger.info("Render failed for %s in %.1fms", run_id, _render_ms)
+            return
+
+        _render_quality = os.environ.get("RENDER_QUALITY", "medium")
+        _render_cost = 0.10 if _render_quality == "medium" else 0.30
+        logger.info("Render completed for %s: render_ms=%.1f", run_id, _render_ms)
+        log_event(run_id, "render_generated", {
+            "render_cost": _render_cost, "cached": False,
+            "render_ms": _render_ms,
+        }, api_cost=_render_cost, user_id=user_id)
+
+        if r:
+            r.hset(f"render_job:{job_id}", mapping={
+                "status": "complete",
+                "render_url": f"/renders/{run_id}.jpg",
+            })
+    except Exception:
+        logger.exception("Render worker failed for job %s (run %s)", job_id, run_id)
+        try:
+            if r:
+                r.hset(f"render_job:{job_id}", mapping={
+                    "status": "failed",
+                    "error": "Room render generation failed",
+                })
+        except Exception:
+            pass
+
+
 @router.post("/design/{run_id}/render")
 @limiter.limit("3/minute")
 async def generate_render(request: Request, run_id: str, user: CurrentUser, body: RenderRequest | None = None) -> dict:
     """Generate a photorealistic AI room render from the finalized design.
 
-    Reads selected_products from the persisted design — the render always
-    matches the frozen, finalized room.  Returns 400 if design is not
-    yet finalized.
+    Returns 200 with render_url if cached, or 202 with job_id if queued
+    for async generation. Falls back to synchronous if Redis unavailable.
     """
-    from services.render_service import render_room, render_exists, get_render_path
+    from services.redis_client import get_redis
+    from services.render_service import render_room, render_exists
 
-    design = _get_design(run_id, user)  # 404 or 503 if unavailable
+    design = _get_design(run_id, user)
 
-    log_event(run_id, "render_requested")
+    log_event(run_id, "render_requested", user_id=user["user_id"])
 
-    # Return cached render if it exists.
     if render_exists(run_id):
-        log_event(run_id, "render_generated", {"render_cost": 0.0, "cached": True}, api_cost=0.0)
-        return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": True}
+        log_event(run_id, "render_generated", {"render_cost": 0.0, "cached": True}, api_cost=0.0, user_id=user["user_id"])
+        return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "status": "complete", "cached": True}
 
-    # Require finalized design — render operates on frozen state only.
     if design.finalized_at is None:
         raise HTTPException(status_code=400, detail="Design must be finalized before rendering")
 
-    # Build render product list from persisted selected_products.
     products: dict[str, list[dict]] = {}
     for slot in design.slots:
         if slot.selected_products:
@@ -631,6 +725,30 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
                 for p in slot.selected_products
             ]
 
+    r = get_redis()
+    if r is not None:
+        job_id = str(uuid.uuid4())
+        r.hset(f"render_job:{job_id}", mapping={
+            "status": "pending",
+            "run_id": run_id,
+        })
+        r.expire(f"render_job:{job_id}", 3600)
+
+        t = threading.Thread(
+            target=_render_worker,
+            args=(job_id, run_id, design.room_type, design.style.style_name,
+                  design.style.mood, design.style.keywords, products, user["user_id"]),
+            daemon=True,
+        )
+        t.start()
+
+        from starlette.responses import JSONResponse
+        return JSONResponse(
+            status_code=202,
+            content={"job_id": job_id, "run_id": run_id, "status": "pending"},
+        )
+
+    # Fallback: no Redis → synchronous render (current behavior for local dev)
     render_path = render_room(
         run_id=run_id,
         room_type=design.room_type,
@@ -643,14 +761,42 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
     if render_path is None:
         raise HTTPException(status_code=500, detail="Room render generation failed")
 
-    import os
     _render_quality = os.environ.get("RENDER_QUALITY", "medium")
     _render_cost = 0.10 if _render_quality == "medium" else 0.30
     log_event(run_id, "render_generated", {
         "render_cost": _render_cost, "cached": False,
-    }, api_cost=_render_cost)
+    }, api_cost=_render_cost, user_id=user["user_id"])
 
-    return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "cached": False}
+    return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "status": "complete", "cached": False}
+
+
+@router.get("/design/{run_id}/render/status")
+@limiter.limit("10/minute")
+async def render_status(request: Request, run_id: str, user: CurrentUser, job_id: str | None = Query(None)) -> dict:
+    """Poll render job status. Returns current state of an async render."""
+    from services.redis_client import get_redis
+    from services.render_service import render_exists
+
+    if render_exists(run_id):
+        return {"status": "complete", "render_url": f"/renders/{run_id}.jpg"}
+
+    if job_id is None:
+        return {"status": "unknown"}
+
+    r = get_redis()
+    if r is None:
+        return {"status": "unknown"}
+
+    data = r.hgetall(f"render_job:{job_id}")
+    if not data:
+        return {"status": "unknown"}
+
+    result: dict = {"status": data.get("status", "unknown")}
+    if data.get("render_url"):
+        result["render_url"] = data["render_url"]
+    if data.get("error"):
+        result["error"] = data["error"]
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -698,6 +844,167 @@ async def detect_hotspots(request: Request, run_id: str, user: CurrentUser) -> d
 
 
 # ---------------------------------------------------------------------------
+# DELETE /account — full account + data deletion cascade
+# ---------------------------------------------------------------------------
+
+class DeleteAccountResponse(BaseModel):
+    deleted: bool
+    completed_steps: list[str]
+    failed_step: str | None = None
+    message: str
+
+
+def _invalidate_user_cache(user_id: str) -> int:
+    """Remove all designs belonging to user_id from the in-memory cache."""
+    to_remove = [
+        rid for rid, design in _designs.items()
+        if hasattr(design, "user_id") and design.user_id == user_id
+    ]
+    for rid in to_remove:
+        del _designs[rid]
+    return len(to_remove)
+
+
+@router.delete("/account", response_model=DeleteAccountResponse)
+async def delete_account(user: CurrentUser) -> DeleteAccountResponse:
+    """Delete the caller's account and all associated data.
+
+    Cascade order (designed for safe partial failure):
+      1. Query run_ids from designs (read-only, needed for render cleanup)
+      2. Delete auth user (PII first — email + password hash)
+      3. Delete render files from disk (idempotent)
+      4. DELETE selections WHERE user_id
+      5. DELETE events WHERE user_id
+      6. DELETE designs WHERE user_id
+      7. Invalidate in-memory cache (can't fail)
+
+    Auth is deleted BEFORE app data so PII is removed even if later
+    steps fail. The JWT remains valid (~1h) for retry after auth deletion.
+    """
+    from pathlib import Path
+    from app.auth import mark_user_deleted
+    from services.supabase_client import get_client, delete_user
+
+    user_id = user["user_id"]
+    user_token = user["token"]
+    completed: list[str] = []
+    auth_deleted = False
+
+    # Step 1: Query run_ids (need these before deleting designs rows)
+    run_ids: list[str] = []
+    client = get_client()
+    if client is None:
+        return DeleteAccountResponse(
+            deleted=False,
+            completed_steps=[],
+            failed_step="init",
+            message="Account deletion failed — storage unavailable. Please try again or contact support.",
+        )
+
+    try:
+        resp = (
+            client.table("designs")
+            .select("run_id")
+            .eq("user_id", user_id)
+            .execute()
+        )
+        run_ids = [row["run_id"] for row in (resp.data or [])]
+        completed.append("query_run_ids")
+    except Exception as exc:
+        logger.error("delete_account: failed to query run_ids for %s: %s", user_id, exc)
+        return DeleteAccountResponse(
+            deleted=False,
+            completed_steps=completed,
+            failed_step="query_run_ids",
+            message="Account deletion failed and could not complete. No data was removed. Please try again or contact support.",
+        )
+
+    # Step 2: Revoke sessions + delete auth user (PII — email, password hash, metadata)
+    try:
+        try:
+            client.auth.admin.sign_out(user_token, scope="global")
+        except Exception:
+            pass  # Best-effort; delete_user is the critical call
+        delete_user(user_id)
+        mark_user_deleted(user_id)
+        auth_deleted = True
+        completed.append("auth_delete")
+    except Exception as exc:
+        logger.error("delete_account: auth deletion failed for %s: %s", user_id, exc)
+        return DeleteAccountResponse(
+            deleted=False,
+            completed_steps=completed,
+            failed_step="auth_delete",
+            message="Account deletion failed and could not complete. No data was removed. Please try again or contact support.",
+        )
+
+    # From here on, auth IS deleted. Failure message changes accordingly.
+    def _partial_failure(step: str) -> DeleteAccountResponse:
+        return DeleteAccountResponse(
+            deleted=False,
+            completed_steps=completed,
+            failed_step=step,
+            message="Your login credentials have been removed. Please try again to clean up remaining data, or contact support.",
+        )
+
+    # Step 3: Delete render files (idempotent — missing_ok)
+    renders_dir = Path(__file__).parent.parent.parent / "data" / "renders"
+    try:
+        for rid in run_ids:
+            (renders_dir / f"{rid}.jpg").unlink(missing_ok=True)
+            (renders_dir / f"{rid}_hotspots.json").unlink(missing_ok=True)
+        completed.append("render_files")
+    except Exception as exc:
+        logger.error("delete_account: render cleanup failed for %s: %s", user_id, exc)
+        return _partial_failure("render_files")
+
+    # Step 4: DELETE selections
+    try:
+        client.table("selections").delete().eq("user_id", user_id).execute()
+        completed.append("selections")
+    except Exception as exc:
+        if "does not exist" in str(exc) or "42P01" in str(exc):
+            completed.append("selections")
+        else:
+            logger.error("delete_account: selections delete failed for %s: %s", user_id, exc)
+            return _partial_failure("selections")
+
+    # Step 5: DELETE events
+    try:
+        client.table("events").delete().eq("user_id", user_id).execute()
+        completed.append("events")
+    except Exception as exc:
+        if "does not exist" in str(exc) or "42P01" in str(exc):
+            completed.append("events")
+        else:
+            logger.error("delete_account: events delete failed for %s: %s", user_id, exc)
+            return _partial_failure("events")
+
+    # Step 6: DELETE designs
+    try:
+        client.table("designs").delete().eq("user_id", user_id).execute()
+        completed.append("designs")
+    except Exception as exc:
+        if "does not exist" in str(exc) or "42P01" in str(exc):
+            completed.append("designs")
+        else:
+            logger.error("delete_account: designs delete failed for %s: %s", user_id, exc)
+            return _partial_failure("designs")
+
+    # Step 7: Invalidate in-memory cache (can't fail)
+    evicted = _invalidate_user_cache(user_id)
+    completed.append("cache_invalidate")
+    logger.info("delete_account: fully deleted user %s (%d cached designs evicted)", user_id, evicted)
+
+    return DeleteAccountResponse(
+        deleted=True,
+        completed_steps=completed,
+        failed_step=None,
+        message="Your account and all associated data have been permanently deleted.",
+    )
+
+
+# ---------------------------------------------------------------------------
 # POST /click — stub for later
 # ---------------------------------------------------------------------------
 
@@ -730,7 +1037,7 @@ async def track_event(req: TrackEventRequest, user: CurrentUser) -> dict:
     """Log a client-side funnel event. Always returns 200 — never fails the client."""
     if req.event_type not in _ALLOWED_CLIENT_EVENTS:
         return {"ok": False, "reason": "unknown_event_type"}
-    log_event(req.run_id, req.event_type, req.data)
+    log_event(req.run_id, req.event_type, req.data, user_id=user["user_id"])
     return {"ok": True}
 
 

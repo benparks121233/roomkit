@@ -32,6 +32,8 @@ _LLM_MAX_TOKENS = 2048  # 25-pick slots need ~1600 tokens; 2048 is generous head
 _RETRY_MAX = 3
 _RETRY_BACKOFF_BASE = 1.0  # seconds; doubles each retry
 
+_anthropic_client: anthropic.Anthropic | None = None
+
 # Number of ranked picks to REQUEST from the LLM. We over-request by ~30%
 # because the diversity filter (brand dedup) typically removes 2-4 items.
 _DEFAULT_PICK_COUNT = 14
@@ -197,14 +199,15 @@ def select_products(
         logger.warning("Slot %s: 0 candidates from sourcing", slot.slot_id)
         return [], [], "no_candidate"
 
-    # Double-check: filter candidates by slot's required specs and price band.
-    # The LLM sees only candidates within the allocation so it can never pick
-    # something that breaks the never-exceed guarantee.  Alternatives up to 1.5x
-    # are appended AFTER the LLM picks (user can choose them with UI warnings).
+    # Filter candidates by slot's required specs and price band.
+    # The LLM sees candidates up to 1.15x allocation (per-slot stretch — a budget
+    # is a target, not a hard ceiling; a great $115 product for a $100 slot is fine).
+    # Alternatives up to 1.5x are appended AFTER the LLM picks as premium options.
+    _LLM_STRETCH = 1.15
     spec_valid = [c for c in candidates if _satisfies_specs(c, slot.required_specs)]
-    within_budget = [c for c in spec_valid if c.normalized_price <= slot.allocated_budget]
+    within_budget = [c for c in spec_valid if c.normalized_price <= slot.allocated_budget * _LLM_STRETCH]
     stretch_pool = [c for c in spec_valid
-                    if slot.allocated_budget < c.normalized_price <= slot.allocated_budget * 1.5]
+                    if slot.allocated_budget * _LLM_STRETCH < c.normalized_price <= slot.allocated_budget * 1.5]
     logger.info(
         "Slot %s: %d raw candidates → %d spec_valid → %d within_budget ($%.2f) → %d stretch",
         slot.slot_id, len(candidates), len(spec_valid), len(within_budget),
@@ -291,13 +294,30 @@ def select_product(
 # Private helpers
 # ---------------------------------------------------------------------------
 
+def _get_anthropic_client() -> anthropic.Anthropic:
+    global _anthropic_client
+    if _anthropic_client is None:
+        _anthropic_client = anthropic.Anthropic()
+    return _anthropic_client
+
+
+def _is_retryable(exc: Exception) -> bool:
+    if isinstance(exc, anthropic.RateLimitError):
+        return True
+    if isinstance(exc, anthropic.APITimeoutError):
+        return True
+    if isinstance(exc, anthropic.InternalServerError) and getattr(exc, "status_code", 0) >= 500:
+        return True
+    return False
+
+
 def _call_selection_llm(system_prompt: str, user_message: str) -> str:
     """Send a request to the Anthropic API.  Isolated for test patching.
 
-    Retries up to ``_RETRY_MAX`` times on 429 (rate-limit) or 529
-    (overloaded) responses with exponential backoff.
+    Retries up to ``_RETRY_MAX`` times on 429 (rate-limit), 529
+    (overloaded), and timeout with exponential backoff.
     """
-    client = anthropic.Anthropic()
+    client = _get_anthropic_client()
     for attempt in range(_RETRY_MAX):
         try:
             message = client.messages.create(
@@ -308,11 +328,11 @@ def _call_selection_llm(system_prompt: str, user_message: str) -> str:
                 messages=[{"role": "user", "content": user_message}],
             )
             return message.content[0].text
-        except anthropic.RateLimitError:
-            if attempt == _RETRY_MAX - 1:
+        except Exception as exc:
+            if not _is_retryable(exc) or attempt == _RETRY_MAX - 1:
                 raise
             wait = _RETRY_BACKOFF_BASE * (2 ** attempt)
-            logger.warning("Selection LLM rate-limited, retrying in %.1fs", wait)
+            logger.warning("Selection LLM transient error (%s), retrying in %.1fs", type(exc).__name__, wait)
             time.sleep(wait)
     raise RuntimeError("unreachable")
 
@@ -411,9 +431,11 @@ def _build_selection_prompts(
             "Think: five-star hotel suite with crisp white bedding"
         ),
         "sports_den": (
-            "deep navy, charcoal, dark grey, brown, team colors welcome. "
-            "Casual and comfortable — microfiber, jersey knit, fleece. "
-            "Think: man cave game-day vibes, not a formal study"
+            "deep navy, charcoal, dark grey, brown, team colors welcome (red, "
+            "green, orange as accents). Casual and comfortable — microfiber, "
+            "jersey knit, fleece, sherpa. Bold solids and simple stripes OK. "
+            "Think: man cave game-day vibes, team-color throw pillows, "
+            "nothing formal or delicate"
         ),
         "city_modern": (
             "black, white, cool grey, high-contrast monochrome, "
@@ -508,11 +530,13 @@ def _build_selection_prompts(
             "Bedroom: upholstered bed in cream, walnut dresser with brass pulls, marble-top nightstand."
         ),
         "sports_den": (
-            "RANK 1-2 ANCHOR: dark faux leather OR charcoal/navy microfiber, oversized and deep-seated. "
+            "RANK 1-2 ANCHOR (sofa): oversized deep-seated plush sectional OR overstuffed recliner-sofa "
+            "in charcoal/navy microfiber or soft fabric — wide, sink-in, man-cave comfort. "
+            "NO leather or sleek/structured pieces at rank 1-2 (leather OK at rank 3+). "
             "Both sofa and armchair defaults MUST land on the same material family. "
-            "Materials: microfiber, faux leather, dark wood, heavy cushion, reclining mechanism. "
+            "Materials: soft microfiber, plush fabric, chenille, heavy cushion, reclining mechanism, dark wood. "
             "Colors: charcoal, navy, dark brown, black. "
-            "Think: man cave — sink-in comfort, nothing precious, built for lounging. "
+            "Think: man cave — oversized sink-in comfort, nothing firm or precious, built for game-day lounging. "
             "Bedroom: dark wood dresser, casual dark nightstand, sturdy simple bed frame."
         ),
         "city_modern": (
@@ -540,11 +564,14 @@ def _build_selection_prompts(
             "Bedroom: rattan or cane bed frame, dark wood dresser, woven-front nightstand."
         ),
         "gamer_den": (
-            "RANK 1-2 ANCHOR: matte black with clean modern lines, no RGB or 'GAMER' branding. "
+            "RANK 1-2 ANCHOR (sofa): oversized deep-seated plush sectional OR overstuffed cloud sofa "
+            "in dark charcoal/black soft microfiber or fabric — wide, sink-in, immersive comfort. "
+            "NO leather or sleek/structured pieces at rank 1-2 (leather OK at rank 3+). "
             "Both sofa and armchair defaults MUST land on the same material family. "
-            "Materials: matte black finish, dark metal, dark faux leather, carbon-fiber look, black glass. "
+            "Materials: soft microfiber, plush fabric, matte black finish, dark metal accents, black glass. "
             "Colors: black, dark charcoal, matte dark grey. "
-            "Think: stealth tech setup — sleek and dark, the gear is the focal point, not the furniture. "
+            "Think: immersive gaming den — sink-in comfort for marathon sessions, stealth dark aesthetic, "
+            "the gear is the focal point not the furniture. No RGB or 'GAMER' branding. "
             "Bedroom: black platform bed, dark modern dresser, minimal black nightstand."
         ),
         "poster_maximalist": (

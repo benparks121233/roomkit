@@ -13,7 +13,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
-import { getDesign, validateSelections, generateRender, finalizeDesign, trackEvent, API_BASE } from "@/lib/api";
+import { getDesign, validateSelections, generateRender, checkRenderStatus, RenderTimeoutError, finalizeDesign, trackEvent, API_BASE } from "@/lib/api";
 import type { DesignResponse, ProductResult, SlotResult } from "@/lib/api";
 import ShareButton from "@/components/ShareButton";
 import SlotPicker from "@/components/SlotPicker";
@@ -139,6 +139,9 @@ export default function ResultPage() {
   const [renderUrl, setRenderUrl] = useState<string | null>(null);
   const [renderLoading, setRenderLoading] = useState(false);
   const [renderFailed, setRenderFailed] = useState(false);
+  const [renderTimedOut, setRenderTimedOut] = useState(false);
+  const [timeoutJobId, setTimeoutJobId] = useState<string | null>(null);
+  const [checkingAgain, setCheckingAgain] = useState(false);
 
   // Persist curated selections to server. Called at every path to phase="complete".
   const persistFinalize = useCallback(
@@ -413,6 +416,8 @@ export default function ResultPage() {
   const triggerRender = useCallback(() => {
     if (!runId || renderUrl || renderLoading) return;
     setRenderLoading(true);
+    setRenderFailed(false);
+    setRenderTimedOut(false);
 
     generateRender(runId)
       .then((renderResp) => {
@@ -420,13 +425,36 @@ export default function ResultPage() {
         if (runId) trackEvent(runId, "render_viewed");
       })
       .catch((err) => {
-        console.error("Render generation failed:", err);
-        setRenderFailed(true);
+        if (err instanceof RenderTimeoutError) {
+          setRenderTimedOut(true);
+          setTimeoutJobId(err.jobId);
+        } else {
+          console.error("Render generation failed:", err);
+          setRenderFailed(true);
+        }
       })
       .finally(() => {
         setRenderLoading(false);
       });
   }, [runId, renderUrl, renderLoading]);
+
+  const handleCheckAgain = useCallback(() => {
+    if (!runId || !timeoutJobId) return;
+    setCheckingAgain(true);
+    checkRenderStatus(runId, timeoutJobId)
+      .then((status) => {
+        if (status.status === "complete" && status.render_url) {
+          setRenderUrl(`${API_BASE}${status.render_url}`);
+          setRenderTimedOut(false);
+          if (runId) trackEvent(runId, "render_viewed");
+        } else if (status.status === "failed") {
+          setRenderTimedOut(false);
+          setRenderFailed(true);
+        }
+        // pending/rendering/unknown → stay on "check again" screen
+      })
+      .finally(() => setCheckingAgain(false));
+  }, [runId, timeoutJobId]);
 
   // --- Error state ---
   if (error) {
@@ -777,8 +805,22 @@ export default function ResultPage() {
         </button>
       )}
 
-      {renderLoading && !renderUrl && !renderFailed && (
+      {renderLoading && !renderUrl && !renderFailed && !renderTimedOut && (
         <RenderLoadingScreen />
+      )}
+
+      {renderTimedOut && !renderUrl && (
+        <div className="render-timeout-banner">
+          <p>Your render is taking longer than expected.</p>
+          <button
+            type="button"
+            className="render-cta-btn"
+            onClick={handleCheckAgain}
+            disabled={checkingAgain}
+          >
+            {checkingAgain ? "Checking..." : "Check again"}
+          </button>
+        </div>
       )}
 
       {renderUrl && (

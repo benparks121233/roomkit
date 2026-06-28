@@ -1,8 +1,18 @@
-// web/lib/api.ts
-// Typed fetch client for all FastAPI endpoints.
-// All API calls go through this module — never raw fetch in components.
+import { getSupabaseBrowserClient } from "@/lib/supabase";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+
+async function authHeaders(): Promise<Record<string, string>> {
+  const supabase = getSupabaseBrowserClient();
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session?.access_token) {
+    return {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${session.access_token}`,
+    };
+  }
+  return { "Content-Type": "application/json" };
+}
 
 // ---------------------------------------------------------------------------
 // Types — mirrors app/api/schemas.py
@@ -102,9 +112,10 @@ export async function createDesign(request: DesignRequest): Promise<DesignRespon
   const timeout = setTimeout(() => controller.abort(), 120_000);
 
   try {
+    const headers = await authHeaders();
     const res = await fetch(`${API_BASE}/design`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
       body: JSON.stringify(request),
       signal: controller.signal,
     });
@@ -124,7 +135,8 @@ export async function createDesign(request: DesignRequest): Promise<DesignRespon
  * GET /design/{run_id} — retrieve a saved board.
  */
 export async function getDesign(runId: string): Promise<DesignResponse> {
-  const res = await fetch(`${API_BASE}/design/${runId}`);
+  const headers = await authHeaders();
+  const res = await fetch(`${API_BASE}/design/${runId}`, { headers });
   if (!res.ok) {
     const body = await res.json().catch(() => null);
     throw new Error(body?.detail ?? `API error ${res.status}`);
@@ -162,9 +174,10 @@ export async function validateSelections(
   runId: string,
   selections: SlotSelection[],
 ): Promise<ValidateSelectionsResponse> {
+  const headers = await authHeaders();
   const res = await fetch(`${API_BASE}/design/${runId}/validate-selections`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify({ selections }),
   });
   if (!res.ok) {
@@ -189,9 +202,10 @@ export async function finalizeDesign(
   selections: Record<string, string[]>,
   skippedSlots: string[],
 ): Promise<DesignResponse | null> {
+  const headers = await authHeaders();
   const res = await fetch(`${API_BASE}/design/${runId}/finalize`, {
     method: "PATCH",
-    headers: { "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify({ selections, skipped_slots: skippedSlots }),
   });
   // 409 = already finalized — not an error, but no valid DesignResponse body
@@ -213,6 +227,30 @@ export interface RenderResponse {
   cached: boolean;
 }
 
+export class RenderTimeoutError extends Error {
+  runId: string;
+  jobId: string;
+  constructor(runId: string, jobId: string) {
+    super("Render is taking longer than expected");
+    this.name = "RenderTimeoutError";
+    this.runId = runId;
+    this.jobId = jobId;
+  }
+}
+
+class RenderFailedError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "RenderFailedError";
+  }
+}
+
+interface RenderStatusResponse {
+  status: "pending" | "rendering" | "complete" | "failed" | "unknown";
+  render_url?: string;
+  error?: string;
+}
+
 export interface Hotspot {
   slot_id: string;
   x: number;      // 0-1 fraction of image width (center)
@@ -230,31 +268,85 @@ export interface HotspotsResponse {
   cached: boolean;
 }
 
+async function pollRenderStatus(
+  runId: string,
+  jobId: string,
+): Promise<RenderResponse> {
+  const headers = await authHeaders();
+  const maxAttempts = 40;
+  const intervalMs = 3_000;
+
+  for (let i = 0; i < maxAttempts; i++) {
+    await new Promise((r) => setTimeout(r, intervalMs));
+    try {
+      const res = await fetch(
+        `${API_BASE}/design/${runId}/render/status?job_id=${jobId}`,
+        { headers },
+      );
+      if (!res.ok) continue;
+      const data: RenderStatusResponse = await res.json();
+
+      if (data.status === "complete" && data.render_url) {
+        return { run_id: runId, render_url: data.render_url, cached: false };
+      }
+      if (data.status === "failed") {
+        throw new RenderFailedError(data.error ?? "Render generation failed");
+      }
+      // pending, rendering, unknown → keep polling
+    } catch (e) {
+      if (e instanceof RenderFailedError) throw e;
+      // Network blip, JSON parse error, etc. → keep polling
+      continue;
+    }
+  }
+
+  throw new RenderTimeoutError(runId, jobId);
+}
+
 /**
  * POST /design/{run_id}/render — generate AI room render.
- * Reads selected_products from the finalized design server-side.
- * Takes ~15-60s on first call; cached after that.
+ * Handles both sync (200) and async (202 + poll) responses transparently.
+ * Throws RenderTimeoutError if polling exhausts — caller should show
+ * "taking longer than expected" with a "check again" option, not a hard failure.
  */
 export async function generateRender(
   runId: string,
 ): Promise<RenderResponse> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 120_000);
-  try {
-    const res = await fetch(`${API_BASE}/design/${runId}/render`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({}),
-      signal: controller.signal,
-    });
-    if (!res.ok) {
-      const body = await res.json().catch(() => null);
-      throw new Error(body?.detail ?? `Render error ${res.status}`);
-    }
-    return (await res.json()) as RenderResponse;
-  } finally {
-    clearTimeout(timeout);
+  const headers = await authHeaders();
+  const res = await fetch(`${API_BASE}/design/${runId}/render`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({}),
+  });
+
+  if (res.status === 202) {
+    const body = await res.json();
+    return pollRenderStatus(runId, body.job_id);
   }
+
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.detail ?? `Render error ${res.status}`);
+  }
+
+  const body = await res.json();
+  return { run_id: body.run_id, render_url: body.render_url, cached: body.cached ?? false };
+}
+
+/**
+ * Check render status — used by "check again" button after RenderTimeoutError.
+ */
+export async function checkRenderStatus(
+  runId: string,
+  jobId: string,
+): Promise<RenderStatusResponse> {
+  const headers = await authHeaders();
+  const res = await fetch(
+    `${API_BASE}/design/${runId}/render/status?job_id=${jobId}`,
+    { headers },
+  );
+  if (!res.ok) return { status: "unknown" };
+  return await res.json();
 }
 
 // Predetermined hotspot positions — same layout the render prompt specifies.
@@ -314,11 +406,15 @@ export function trackEvent(
   eventType: string,
   data: Record<string, unknown> = {},
 ): void {
-  fetch(`${API_BASE}/track`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ run_id: runId, event_type: eventType, data }),
-  }).catch(() => {});  // swallow errors — tracking must never affect UX
+  authHeaders()
+    .then((headers) =>
+      fetch(`${API_BASE}/track`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ run_id: runId, event_type: eventType, data }),
+      }),
+    )
+    .catch(() => {});
 }
 
 export { API_BASE };

@@ -17,10 +17,11 @@ import base64
 import io
 import logging
 import os
+import time
 from pathlib import Path
 
 import requests
-from PIL import Image as PILImage, ImageDraw, ImageFont
+from PIL import Image as PILImage, ImageDraw, ImageEnhance, ImageFont, ImageStat
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +32,10 @@ _RENDERS_DIR.mkdir(parents=True, exist_ok=True)
 # Defaults: 1536x1024 medium ($0.10) instead of high ($0.30).
 _RENDER_SIZE = os.environ.get("RENDER_SIZE", "1536x1024")
 _RENDER_QUALITY = os.environ.get("RENDER_QUALITY", "medium")
+_RENDER_RETRY_MAX = 2
+_RENDER_RETRY_BACKOFF = 5.0
+
+_openai_client = None  # lazy singleton; initialized on first call
 
 # Per-slot placement instructions — the render prompt is assembled dynamically
 # from only the slots that have selected products.  No fixed slot list.
@@ -178,17 +183,17 @@ HOTSPOT_POSITIONS: dict[str, dict[str, dict]] = {
 # Style-to-room-description mapping for the prompt.
 _STYLE_ROOMS: dict[str, str] = {
     "cottagecore": "vintage pastoral cottage — soft florals, distressed white wood, warm golden light",
-    "dark_academia": "scholarly sanctuary — dark walnut paneling, rich leather, warm golden lamplight filling the room — moody atmosphere but WELL-LIT enough that every piece of furniture is clearly visible and detailed",
+    "dark_academia": "scholarly sanctuary — dark walnut paneling, rich leather, warm golden lamplight. Moody low-key ambient lighting — dim but every piece of furniture is visible and detailed. NOT a bright showroom",
     "japandi": "zen minimalist — light ash wood, clean lines, generous negative space, serene natural light",
     "coastal": "breezy beach house — whitewashed wood, rattan, seafoam accents, bright natural sunlight",
-    "industrial": "converted loft — exposed brick, black metal, concrete, warm Edison bulb glow throughout — industrial but well-lit, every piece of furniture clearly visible",
+    "industrial": "converted loft — exposed brick, black metal, concrete, warm Edison bulb glow. Moody industrial ambient lighting — dim but every piece of furniture is visible and detailed. NOT a bright showroom",
     "quiet_luxury": "understated elegance — cream upholstery, marble accents, brushed gold, serene diffused light",
-    "sports_den": "man cave den — dark charcoal walls, comfortable oversized furniture, warm amber lighting filling the room — every piece of furniture clearly visible and detailed",
+    "sports_den": "man cave sports den — dark charcoal walls, comfortable oversized furniture, vintage sports memorabilia on walls, warm amber accent lighting. Moody low-key den lighting — dim but every piece of furniture is visible and detailed. NOT a bright showroom",
     "city_modern": "sleek high-rise — polished surfaces, monochrome palette, one bold accent color",
-    "ski_lodge": "alpine retreat — exposed timber beams, stone, plaid wool, warm firelight and overhead lighting that fills the room — cozy cabin atmosphere but bright enough that every piece of furniture is clearly visible",
+    "ski_lodge": "alpine retreat — exposed timber beams, stone, plaid wool, warm firelight glow. Moody cabin ambient lighting — dim but every piece of furniture is visible and detailed. NOT a bright showroom",
     "warm_minimalist": "calm simplicity — cream walls, light oak floors, natural textures, bright morning light",
     "jungle_oasis": "tropical retreat — lush greens, rattan, natural wood, warm earthy light",
-    "gamer_den": "immersive gaming cockpit — dark matte walls with LED strip accents casting colored glow (blue, purple, or teal), generous ambient light from LEDs and overhead lighting so every piece of furniture is CLEARLY VISIBLE and detailed — dark-themed but well-illuminated, not murky",
+    "gamer_den": "immersive gaming cockpit — dark matte walls with LED strip accents casting colored glow (blue, purple, or teal). Moody low-key ambient lighting from LEDs — dim but every piece of furniture is visible and detailed. NOT a bright showroom, NOT murky",
     "poster_maximalist": "expressive gallery — dense wall art, mixed patterns, colorful layered textiles, warm string lights",
 }
 
@@ -244,6 +249,15 @@ def render_room(
             # Label: wall_art_1.png, wall_art_2.png, etc. for multi-select
             suffix = f"_{idx + 1}" if len(items) > 1 else ""
             file_label = f"{slot_id}{suffix}"
+
+            # Mattress images show a retailer-styled bed frame that conflicts
+            # with the selected bed_frame. Pass as text-only so the product
+            # name (with its actual thickness) informs the render without
+            # injecting a competing frame reference.
+            if slot_id == "mattress":
+                text_fallbacks.append(f"- {file_label}: {product['name'][:120]}")
+                continue
+
             if not image_url:
                 text_fallbacks.append(f"- {file_label}: {product['name'][:80]}")
                 continue
@@ -275,26 +289,44 @@ def render_room(
         products=products,
     )
 
-    # Call OpenAI with timeout protection.
+    # Call OpenAI with timeout protection and retry.
     try:
         from dotenv import load_dotenv
         load_dotenv()
-        from openai import OpenAI
-        client = OpenAI(timeout=90.0)  # 90s max for the API call
+
+        global _openai_client
+        if _openai_client is None:
+            from openai import OpenAI
+            _openai_client = OpenAI(timeout=90.0)
 
         logger.info(
             "Generating room render for %s (%d reference images)",
             run_id, len(image_files),
         )
 
-        response = client.images.edit(
-            model="gpt-image-1",
-            image=image_files,
-            prompt=prompt,
-            size=_RENDER_SIZE,
-            quality=_RENDER_QUALITY,
-            n=1,
-        )
+        response = None
+        for attempt in range(_RENDER_RETRY_MAX):
+            try:
+                response = _openai_client.images.edit(
+                    model="gpt-image-1",
+                    image=image_files,
+                    prompt=prompt,
+                    size=_RENDER_SIZE,
+                    quality=_RENDER_QUALITY,
+                    n=1,
+                )
+                break
+            except Exception as api_exc:
+                is_retryable = "rate" in str(api_exc).lower() or "429" in str(api_exc) or "timeout" in str(api_exc).lower()
+                if not is_retryable or attempt == _RENDER_RETRY_MAX - 1:
+                    raise
+                wait = _RENDER_RETRY_BACKOFF * (2 ** attempt)
+                logger.warning("Render API error (attempt %d), retrying in %.0fs: %s", attempt + 1, wait, api_exc)
+                time.sleep(wait)
+
+        if response is None:
+            logger.error("Render returned no response for %s", run_id)
+            return None
 
         b64_data = response.data[0].b64_json
         if not b64_data:
@@ -303,8 +335,13 @@ def render_room(
 
         raw_bytes = base64.b64decode(b64_data)
 
-        # Compress and save as JPEG (with watermark for free tier).
         img = PILImage.open(io.BytesIO(raw_bytes)).convert("RGB")
+
+        logger.info(
+            "Render brightness: style=%s avg=%.1f run=%s",
+            style_name, ImageStat.Stat(img.convert("L")).mean[0], run_id,
+        )
+
         img = _apply_watermark(img)
         img.save(render_path, "JPEG", quality=85, optimize=True)
 
@@ -314,7 +351,6 @@ def render_room(
 
     except Exception:
         logger.exception("Room render failed for %s", run_id)
-        # Clean up partial file if it exists.
         if render_path.exists():
             render_path.unlink()
         return None
@@ -428,10 +464,10 @@ CRITICAL RULES:
 2. For multi-select items (e.g. wall_art_1, wall_art_2, wall_art_3): show ALL of them. Multiple wall art pieces form a gallery wall. Multiple plants are grouped together. Each must be recognizably distinct.
 3. The furniture must be RECOGNIZABLY the same items from the reference images — same shapes, materials, colors, and proportions. This is a product showcase.
 4. The room must feel like a REAL, LIVED-IN space — natural and believable, not a sterile product display.
-5. Lighting MUST be bright enough that EVERY piece of furniture is clearly visible and detailed — even in dark/moody aesthetics, the viewer must be able to see all products. For light aesthetics: bright natural light. For dark aesthetics (gamer, dark academia, industrial, sports den, ski lodge): warm ambient light that fills the room while preserving the moody atmosphere. NEVER so dark that furniture disappears into shadows.
+5. Lighting: every piece of furniture MUST be visible and its materials legible — no product may disappear into shadow. For light aesthetics: bright natural light. For dark/moody aesthetics: keep the low-key ambient mood but ensure visibility — NOT a bright showroom, NOT near-black.
 6. The overall composition should match the {style_name} aesthetic perfectly.
 7. Show the FULL room wall-to-wall in a wide-angle editorial interior photograph, straight-on at eye level.
 8. Leave a thin strip of empty floor/wall at the very bottom of the image.
-9. The MATTRESS should be a standard thickness (8-12 inches) — not exaggerated or paper-thin. It sits naturally on top of the bed frame.
+9. The MATTRESS sits naturally on top of the bed frame at its real thickness (described in the mattress text label). The bed_frame reference image is the SOLE source for the bed's frame, headboard, and structure.
 
 Professional interior design magazine photograph. Photorealistic. No text, no watermarks, no logos."""

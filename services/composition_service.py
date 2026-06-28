@@ -18,7 +18,9 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
+import time
 from pathlib import Path
 
 import anthropic
@@ -66,9 +68,15 @@ _CATEGORY_PRICE_FLOORS: dict[str, float] = {
 }
 _DEFAULT_PRICE_FLOOR = 15.0
 
+logger = logging.getLogger(__name__)
+
 _PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 _LLM_MODEL = "claude-sonnet-4-6"
 _LLM_MAX_TOKENS = 512
+_RETRY_MAX = 3
+_RETRY_BACKOFF_BASE = 1.0
+
+_anthropic_client: anthropic.Anthropic | None = None
 
 
 def allocate_budget(
@@ -611,21 +619,46 @@ def plan_composition(
 # Private helpers — LLM isolation + prompt building
 # ---------------------------------------------------------------------------
 
+def _get_anthropic_client() -> anthropic.Anthropic:
+    global _anthropic_client
+    if _anthropic_client is None:
+        _anthropic_client = anthropic.Anthropic()
+    return _anthropic_client
+
+
+def _is_retryable(exc: Exception) -> bool:
+    if isinstance(exc, anthropic.RateLimitError):
+        return True
+    if isinstance(exc, anthropic.APITimeoutError):
+        return True
+    if isinstance(exc, anthropic.InternalServerError) and getattr(exc, "status_code", 0) >= 500:
+        return True
+    return False
+
+
 def _call_composition_llm(system_prompt: str, user_message: str) -> str:
     """Send a request to the Anthropic API and return the raw text.
 
-    Isolated here so tests can patch
-    services.composition_service._call_composition_llm without importing
-    or instantiating the Anthropic client.
+    Retries up to ``_RETRY_MAX`` times on 429 (rate-limit), 529
+    (overloaded), and timeout with exponential backoff.
     """
-    client = anthropic.Anthropic()
-    message = client.messages.create(
-        model=_LLM_MODEL,
-        max_tokens=_LLM_MAX_TOKENS,
-        system=system_prompt,
-        messages=[{"role": "user", "content": user_message}],
-    )
-    return message.content[0].text
+    client = _get_anthropic_client()
+    for attempt in range(_RETRY_MAX):
+        try:
+            message = client.messages.create(
+                model=_LLM_MODEL,
+                max_tokens=_LLM_MAX_TOKENS,
+                system=system_prompt,
+                messages=[{"role": "user", "content": user_message}],
+            )
+            return message.content[0].text
+        except Exception as exc:
+            if not _is_retryable(exc) or attempt == _RETRY_MAX - 1:
+                raise
+            wait = _RETRY_BACKOFF_BASE * (2 ** attempt)
+            logger.warning("Composition LLM transient error (%s), retrying in %.1fs", type(exc).__name__, wait)
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
 
 
 def _build_composition_prompts(

@@ -15,12 +15,12 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
+import time
 from pathlib import Path
 
 import anthropic
-
-import logging
 
 from schemas.room_request import RoomRequest
 from schemas.style_profile import StyleProfile
@@ -39,6 +39,10 @@ _LOW_CONFIDENCE_THRESHOLD = 0.6
 # Anthropic model and token budget for style interpretation.
 _LLM_MODEL = "claude-sonnet-4-6"
 _LLM_MAX_TOKENS = 512
+_RETRY_MAX = 3
+_RETRY_BACKOFF_BASE = 1.0
+
+_anthropic_client: anthropic.Anthropic | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -122,20 +126,46 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
 # Private helpers
 # ---------------------------------------------------------------------------
 
+def _get_anthropic_client() -> anthropic.Anthropic:
+    global _anthropic_client
+    if _anthropic_client is None:
+        _anthropic_client = anthropic.Anthropic()
+    return _anthropic_client
+
+
+def _is_retryable(exc: Exception) -> bool:
+    if isinstance(exc, anthropic.RateLimitError):
+        return True
+    if isinstance(exc, anthropic.APITimeoutError):
+        return True
+    if isinstance(exc, anthropic.InternalServerError) and getattr(exc, "status_code", 0) >= 500:
+        return True
+    return False
+
+
 def _call_llm(system_prompt: str, user_message: str) -> str:
     """Send a request to the Anthropic API and return the raw text.
 
-    Isolated here so tests can patch services.style_service._call_llm
-    without importing or instantiating the Anthropic client.
+    Retries up to ``_RETRY_MAX`` times on 429 (rate-limit), 529
+    (overloaded), and timeout with exponential backoff.
     """
-    client = anthropic.Anthropic()
-    message = client.messages.create(
-        model=_LLM_MODEL,
-        max_tokens=_LLM_MAX_TOKENS,
-        system=system_prompt,
-        messages=[{"role": "user", "content": user_message}],
-    )
-    return message.content[0].text
+    client = _get_anthropic_client()
+    for attempt in range(_RETRY_MAX):
+        try:
+            message = client.messages.create(
+                model=_LLM_MODEL,
+                max_tokens=_LLM_MAX_TOKENS,
+                system=system_prompt,
+                messages=[{"role": "user", "content": user_message}],
+            )
+            return message.content[0].text
+        except Exception as exc:
+            if not _is_retryable(exc) or attempt == _RETRY_MAX - 1:
+                raise
+            wait = _RETRY_BACKOFF_BASE * (2 ** attempt)
+            logger.warning("Style LLM transient error (%s), retrying in %.1fs", type(exc).__name__, wait)
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
 
 
 def _build_prompts(

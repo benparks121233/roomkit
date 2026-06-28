@@ -64,3 +64,16 @@ def health() -> dict:
 def supabase_health() -> dict:
     from services.supabase_client import health_check
     return health_check()
+
+
+@app.get("/health/redis")
+def redis_health() -> dict:
+    from services.redis_client import get_redis
+    r = get_redis()
+    if r is None:
+        return {"status": "not_configured"}
+    try:
+        r.ping()
+        return {"status": "ok"}
+    except Exception as exc:
+        return {"status": "error", "detail": str(exc)[:200]}

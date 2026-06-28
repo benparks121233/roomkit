@@ -1297,8 +1297,8 @@ h1, h2, h3 {
   background: var(--color-warning);
 }
 
-.budget-bar-fill.budget-over {
-  background: var(--color-error);
+.budget-bar-fill.budget-near {
+  background: var(--color-warning);
 }
 
 .budget-remaining {
@@ -1315,8 +1315,8 @@ h1, h2, h3 {
   color: var(--color-warning);
 }
 
-.budget-remaining.remaining-over {
-  color: var(--color-error);
+.budget-remaining.remaining-near {
+  color: var(--color-warning);
 }
 
 /* ---------------------------------------------------------------------------
@@ -2271,6 +2271,21 @@ h1, h2, h3 {
 }
 .render-cta-btn:active {
   transform: translateY(0);
+}
+
+/* Render timeout / "check again" */
+.render-timeout-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+.render-timeout-banner p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 /* Render loading screen */
