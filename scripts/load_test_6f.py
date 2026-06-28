@@ -218,31 +218,46 @@ def test_rate_limits(
 
 def test_semaphore_throttling(
     base_url: str, token: str, redis_url: str | None,
-    concurrency_cap: int = 30,
+    concurrency_cap: int = 10,
 ) -> bool:
     """Prove the concurrency semaphore THROTTLES when load exceeds the cap.
 
-    Strategy: Fire 4 concurrent bedroom designs. Each bedroom has ~12
-    sourceable slots, so 4 designs request ~48 concurrent LLM calls —
-    well over the default cap of 30. The semaphore MUST throttle.
+    SETUP REQUIRED: Temporarily set LLM_CONCURRENCY_CAP=10 on staging.
+    (Restore to 30 after the test.)
+
+    Strategy: Fire 4 concurrent bedroom designs. Each has ~12 sourceable
+    slots, so 4 designs request ~48 LLM calls. Against cap=10, even
+    modest overlap between selection phases forces throttling — we don't
+    need all 48 to arrive simultaneously.
 
     Three-part proof:
-    1. Redis roomkit:llm_active peak value is <= cap (enforced)
-    2. Peak value is near the cap, NOT near 48 (contention happened)
-    3. At least one design takes notably longer (it waited for slots)
+    1. Peak roomkit:llm_active HITS the cap (≥cap) — proves demand
+       exceeded supply and the semaphore was the bottleneck
+    2. Peak never EXCEEDS the cap — proves the semaphore held
+    3. 503s or elapsed-time spread confirm requests waited
 
-    A broken semaphore (always returns True / no Redis writes) would
-    show peak=0 or peak=48 and similar elapsed times — that's FAIL.
+    Verdicts:
+    - peak ≥ cap AND peak ≤ cap → PASS (throttled at exactly the cap)
+    - peak > cap → FAIL (semaphore didn't enforce)
+    - peak > 0 but < cap → INCONCLUSIVE (semaphore active but never
+      hit the cap — didn't prove throttling, lower cap or add designs)
+    - peak = 0 → FAIL (semaphore not writing to Redis at all)
 
     NOTE: Fires 4 real designs (~$1.08 in LLM costs). One-time cost.
     NOTE: Cross-region Redis adds latency. Judge by cap enforcement
-    (did peak stay ≤30?), not raw speed.
+    (did peak hit and hold at cap?), not raw timing.
     """
     section("TEST B: Semaphore — Throttling Under Load")
 
+    if concurrency_cap > 15:
+        print(f"  WARNING: LLM_CONCURRENCY_CAP={concurrency_cap} is too high")
+        print(f"  to reliably trigger throttling with 4 designs.")
+        print(f"  Set LLM_CONCURRENCY_CAP=10 on staging, redeploy, then re-run.")
+        print(f"  (Restore to 30 after the test.)\n")
+
     print(f"  Concurrency cap: {concurrency_cap}")
     print(f"  Firing 4 concurrent bedroom designs (~12 slots each = ~48 total)")
-    print(f"  48 requested vs cap {concurrency_cap} → MUST throttle")
+    print(f"  Against cap {concurrency_cap}: even partial overlap exceeds it")
     print(f"  (costs ~$1.08 in LLM calls — one-time verification)\n")
 
     design_body = {
@@ -314,12 +329,10 @@ def test_semaphore_throttling(
         print(f"  {r['label']}: status={r['status']} elapsed={r['elapsed_s']}s")
 
     # Categorize outcomes
-    ok_statuses = {200, 403, 429}
     status_values = [r["status"] for r in results if isinstance(r["status"], int)]
     has_500 = 500 in status_values
     has_503 = 503 in status_values
     has_errors = any(isinstance(r["status"], str) for r in results)
-    succeeded = [r for r in results if r["status"] in (200, 403)]
     elapsed_200 = [r["elapsed_s"] for r in results if r["status"] == 200]
 
     print()
@@ -329,9 +342,8 @@ def test_semaphore_throttling(
         return False
 
     if has_503:
-        print(f"  NOTE: Got 503 (semaphore timeout) — semaphore IS active and")
-        print(f"  enforcing, but timeout is too short for 4 concurrent designs.")
-        print(f"  This still proves the semaphore works (it blocked and timed out).")
+        print(f"  NOTE: Got 503 (semaphore acquire timeout) — this IS throttling.")
+        print(f"  The semaphore blocked requests that exceeded the cap.")
 
     # --- PART 1: Redis peak check ---
     print(f"  --- PART 1: Peak Concurrency ---")
@@ -340,7 +352,7 @@ def test_semaphore_throttling(
         print(f"  Without Redis inspection, can't prove cap enforcement")
         return True
 
-    if peak == 0:
+    if peak == 0 and not has_503:
         print(f"  FAIL: Redis roomkit:llm_active never exceeded 0")
         print(f"  Semaphore is not writing to Redis at all")
         print(f"  (broken semaphore — always returns True without Redis)")
@@ -354,19 +366,24 @@ def test_semaphore_throttling(
         print(f"  Semaphore is not enforcing the cap")
         return False
 
-    # --- PART 2: Contention evidence ---
-    print(f"\n  --- PART 2: Contention Evidence ---")
+    # Did peak actually HIT the cap? That's the throttling proof.
+    hit_cap = peak >= concurrency_cap
 
-    # Peak near the cap proves contention (requests competed for slots)
-    # "Near" = within 50% of cap (generous, since timing of samples is imprecise)
-    near_cap = peak >= concurrency_cap * 0.5
-    if near_cap:
-        print(f"  Peak {peak} is near cap {concurrency_cap} — contention confirmed")
+    # --- PART 2: Throttling evidence ---
+    print(f"\n  --- PART 2: Throttling Evidence ---")
+
+    if hit_cap:
+        print(f"  Peak {peak} HIT cap {concurrency_cap} — demand exceeded supply")
+        print(f"  Semaphore was the bottleneck (throttling confirmed)")
+    elif has_503:
+        print(f"  503 responses prove throttling — semaphore blocked and timed out")
+        hit_cap = True  # 503 is definitive throttling proof
     else:
-        print(f"  Peak {peak} is well below cap {concurrency_cap}")
-        print(f"  Possible: designs didn't overlap enough, or cap is much higher")
+        print(f"  Peak {peak} stayed BELOW cap {concurrency_cap}")
+        print(f"  Designs didn't overlap enough to hit the cap")
+        print(f"  Semaphore is active (peak>0) but throttling NOT proven")
 
-    # --- PART 3: Elapsed time spread ---
+    # --- PART 3: Elapsed time spread (supporting) ---
     print(f"\n  --- PART 3: Elapsed Time Spread ---")
     if len(elapsed_200) >= 2:
         fastest = min(elapsed_200)
@@ -376,31 +393,34 @@ def test_semaphore_throttling(
         print(f"  Slowest design: {slowest}s")
         print(f"  Spread: {spread:.1f}s")
         if spread > 5.0:
-            print(f"  Throttling evidence: {spread:.1f}s spread shows waiting")
+            print(f"  Spread confirms waiting (slower designs queued for slots)")
         else:
-            print(f"  Tight spread — may not show obvious waiting")
-            print(f"  (cross-region Redis latency can mask timing differences)")
+            print(f"  Tight spread — cross-region latency may mask wait time")
     elif has_503:
-        print(f"  503s prove throttling — requests were blocked at the semaphore")
+        print(f"  503s are direct proof of blocking — elapsed spread N/A")
     else:
-        print(f"  Only {len(elapsed_200)} successful design(s) — limited spread data")
+        print(f"  Only {len(elapsed_200)} successful design(s) — limited data")
 
     # --- Verdict ---
     print(f"\n  --- Verdict ---")
-    capped = peak <= concurrency_cap
-    active = peak > 0
-
-    if capped and active:
-        print(f"  PASS: Peak {peak} ≤ cap {concurrency_cap}, semaphore active")
-        print(f"  Cap enforcement proven — 48 slots requested, peak held at {peak}")
-        if has_503:
-            print(f"  503s further confirm: semaphore blocked excess requests")
+    if peak > 0 and peak <= concurrency_cap and hit_cap:
+        print(f"  PASS: Peak hit cap {concurrency_cap} and held — throttling proven")
+        print(f"  Semaphore enforced: ~48 slots requested, peak clamped at {peak}")
         return True
-    elif not active:
-        print(f"  FAIL: Semaphore not writing to Redis (peak=0)")
+    elif peak > 0 and peak <= concurrency_cap and not hit_cap:
+        print(f"  INCONCLUSIVE: Semaphore active (peak={peak}) but never hit")
+        print(f"  cap {concurrency_cap} — can't confirm throttling behavior")
+        if concurrency_cap > 15:
+            print(f"  FIX: Set LLM_CONCURRENCY_CAP=10, redeploy, re-run")
+        else:
+            print(f"  FIX: Try more concurrent designs (6-8) to increase overlap")
         return False
+    elif peak == 0 and has_503:
+        print(f"  PASS: 503s prove semaphore blocked (peak sampling may have")
+        print(f"  missed the spike, but blocking behavior is confirmed)")
+        return True
     else:
-        print(f"  FAIL: Peak {peak} exceeded cap {concurrency_cap}")
+        print(f"  FAIL: Peak {peak}, cap {concurrency_cap}")
         return False
 
 
@@ -669,6 +689,7 @@ def main():
     parser.add_argument("--password", default=os.environ.get("TEST_PASSWORD"), help="Test account password")
     parser.add_argument("--delete-email", default=os.environ.get("DELETE_TEST_EMAIL"), help="Sacrificial account email for deletion test")
     parser.add_argument("--delete-password", default=os.environ.get("DELETE_TEST_PASSWORD"), help="Sacrificial account password")
+    parser.add_argument("--concurrency-cap", type=int, default=10, help="LLM_CONCURRENCY_CAP on staging (default 10)")
     parser.add_argument("--test", help="Run a specific test (a/b/c/d/e)", default="all")
     args = parser.parse_args()
 
@@ -731,6 +752,7 @@ def main():
     if "b" in tests_to_run and token:
         results["B: Semaphore"] = test_semaphore_throttling(
             args.base_url, token, args.redis_url,
+            concurrency_cap=args.concurrency_cap,
         )
 
     if "c" in tests_to_run and token and run_id:
