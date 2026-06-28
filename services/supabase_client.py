@@ -70,6 +70,28 @@ def get_user_postgrest(user_jwt: str):
     return client
 
 
+def delete_user(user_id: str) -> bool:
+    """Delete a user from Supabase auth.users via admin API.
+
+    Returns True on success, False if the client is unavailable.
+    Raises Exception on API failure (caller handles).
+    Treats 'user not found' as success (idempotent).
+    """
+    client = get_client()
+    if client is None:
+        raise RuntimeError("Supabase client not configured")
+
+    try:
+        client.auth.admin.delete_user(user_id)
+        logger.info("supabase_client: deleted auth user %s", user_id)
+        return True
+    except Exception as exc:
+        if "not found" in str(exc).lower() or "404" in str(exc):
+            logger.info("supabase_client: auth user %s already deleted (idempotent)", user_id)
+            return True
+        raise
+
+
 def health_check() -> dict:
     """Quick connectivity check — tries a simple query.
 

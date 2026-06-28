@@ -40,11 +40,12 @@ def log_event(
     event_type: str,
     data: dict[str, Any] | None = None,
     api_cost: float | None = None,
+    user_id: str | None = None,
 ) -> None:
     """Log a funnel event. Non-blocking — returns immediately."""
     if _is_disabled():
         return
-    _bg(_log_event_sync, run_id, event_type, data or {}, api_cost)
+    _bg(_log_event_sync, run_id, event_type, data or {}, api_cost, user_id)
 
 
 def _log_event_sync(
@@ -52,6 +53,7 @@ def _log_event_sync(
     event_type: str,
     data: dict[str, Any],
     api_cost: float | None,
+    user_id: str | None,
 ) -> None:
     try:
         client = _get_client()
@@ -64,6 +66,8 @@ def _log_event_sync(
         }
         if api_cost is not None:
             row["api_cost"] = api_cost
+        if user_id:
+            row["user_id"] = user_id
         client.table("events").insert(row).execute()
     except Exception:
         logger.warning("Failed to log event %s for %s", event_type, run_id, exc_info=True)
@@ -82,6 +86,7 @@ def log_selections(
     keywords: list[str],
     budget: float,
     slot_products: list[dict[str, Any]],
+    user_id: str | None = None,
 ) -> None:
     """Log all slot selections for a design run. Non-blocking."""
     if _is_disabled():
@@ -89,7 +94,7 @@ def log_selections(
     _bg(
         _log_selections_sync,
         run_id, room_type, aesthetic, mood,
-        color_palette, keywords, budget, slot_products,
+        color_palette, keywords, budget, slot_products, user_id,
     )
 
 
@@ -102,6 +107,7 @@ def _log_selections_sync(
     keywords: list[str],
     budget: float,
     slot_products: list[dict[str, Any]],
+    user_id: str | None,
 ) -> None:
     try:
         client = _get_client()
@@ -109,7 +115,7 @@ def _log_selections_sync(
             return
         rows = []
         for sp in slot_products:
-            rows.append({
+            row: dict[str, Any] = {
                 "run_id": run_id,
                 "room_type": room_type,
                 "aesthetic": aesthetic,
@@ -123,7 +129,10 @@ def _log_selections_sync(
                 "product_price": sp["product_price"],
                 "retailer": sp.get("retailer", "amazon"),
                 "is_multiselect": sp.get("is_multiselect", False),
-            })
+            }
+            if user_id:
+                row["user_id"] = user_id
+            rows.append(row)
         if rows:
             client.table("selections").insert(rows).execute()
             logger.info("Logged %d selections for run %s", len(rows), run_id)
