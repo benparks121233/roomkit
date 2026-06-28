@@ -1223,7 +1223,7 @@
   {
     "product_id": "B00Q5MSQQM",
     "name": "Bare Home Comforter Set - Twin Extra Long Size - Ultra-Soft - Goose Down Alternative - Premium 1800 Series - All Season Warmth (Twin/Twin XL, Grey)",
-    "normalized_price": 47.99,
+    "normalized_price": 39.97,
     "buy_url": "https://www.amazon.com/dp/B00Q5MSQQM",
     "specs": {
       "bed_size": "twin"
@@ -1278,7 +1278,7 @@
   {
     "product_id": "B01947QQCU",
     "name": "Amazon Basics Twin/Twin XL Comforter Set with Sheets, 5-Piece Blue Calvin Striped Bedding, Lightweight Microfiber Bed-in-a-Bag, Machine Washable",
-    "normalized_price": 38.0,
+    "normalized_price": 35.0,
     "buy_url": "https://www.amazon.com/dp/B01947QQCU",
     "specs": {
       "bed_size": "twin"
@@ -1421,7 +1421,7 @@
   {
     "product_id": "B08FRJVZ4H",
     "name": "Amazon Basics 5-Piece Lightweight Microfiber Comforter Set with Sheets, Bed-in-a-Bag, Gray Calvin Striped Bedding, Twin/Twin XL",
-    "normalized_price": 34.99,
+    "normalized_price": 35.0,
     "buy_url": "https://www.amazon.com/dp/B08FRJVZ4H",
     "specs": {
       "bed_size": "twin"
@@ -1432,7 +1432,7 @@
   {
     "product_id": "B08FRJMC6M",
     "name": "Amazon Basics 5-Piece Lightweight Microfiber Comforter Bedding Set with Sheet, Twin XL, Blue Stripe, Bed-in-a-Bag",
-    "normalized_price": 35.99,
+    "normalized_price": 30.09,
     "buy_url": "https://www.amazon.com/dp/B08FRJMC6M",
     "specs": {
       "bed_size": "twin xl"
@@ -1465,7 +1465,7 @@
   {
     "product_id": "B0CF4FLY91",
     "name": "Bedsure Tufted Boho Comforter Set Twin Size - Beige Boho Bed Set, GentleSoft\u2122 2 Pieces Farmhouse-Style Embroidery Bedding, Gifts for Woman, Soft Jacquard Kids' Twin Comforter for All Seasons",
-    "normalized_price": 52.99,
+    "normalized_price": 38.94,
     "buy_url": "https://www.amazon.com/dp/B0CF4FLY91",
     "specs": {
       "bed_size": "twin"
@@ -1476,7 +1476,7 @@
   {
     "product_id": "B09VT1L5JK",
     "name": "Bedsure Twin XL Comforter Set Pink - Dorm Room Essentials for Girls, Extra Long Twin XL Bedding Set with Sheets, All Season Down Alternative Comforter with Sheets, Pillowcase & Sham",
-    "normalized_price": 49.99,
+    "normalized_price": 39.99,
     "buy_url": "https://www.amazon.com/dp/B09VT1L5JK",
     "specs": {
       "bed_size": "twin xl"
@@ -7695,6 +7695,281 @@
       "bed_size": "queen"
     },
     "image_url": "https://m.media-amazon.com/images/I/717oU3XOWJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CMDDRFW",
+    "name": "ViscoSoft Twin/Twin XL Comforter - Cloud-Soft Down Alternative Duvet Insert, All Season Cooling Lightweight Reversible Quilted Blanket for Dorm & Guest Bed, Oeko-TEX Certified, Light/Dark Gray",
+    "normalized_price": 27.74,
+    "buy_url": "https://www.amazon.com/dp/B07CMDDRFW",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Pggn4vj+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXCYXP18",
+    "name": "HEVUMYI Twin-XL Comforter Set - 5-Piece All Season Bed in a Bag Twin-XL, Ultra Soft Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases, Pillow Shams, Dark Grey",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXCYXP18",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816UXElzggL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08BL9DK3T",
+    "name": "HIG 3pc Green Twin/Twin XL Comforter Set - All Season Reversible Down Alternative Bedding Comforter - Quilted Duvet Insert with Corner Tabs - Box Stitched Blanket - Breathable, Soft, Fluffy",
+    "normalized_price": 25.31,
+    "buy_url": "https://www.amazon.com/dp/B08BL9DK3T",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813Ni2HICJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C51PWLSN",
+    "name": "Dorm Room Essentials College Bedding Comforter Set 5 Piece Twin XL Size Bed in a Bag for College Students Boys and Girls, Twin XL, Ivory",
+    "normalized_price": 30.68,
+    "buy_url": "https://www.amazon.com/dp/B0C51PWLSN",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81azJkpO5eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3LJLFBP",
+    "name": "ENJOHOS Pink Twin/Twin XL Comforter Bedding Set for College Girls - Tufted Extra Long Twin Comforter with Rainbow Design, Cute Dorm Bedding for All Season, Lightweight Fluffy Bed Set",
+    "normalized_price": 36.09,
+    "buy_url": "https://www.amazon.com/dp/B0D3LJLFBP",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-FhlQNLIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q5MSQO4",
+    "name": "Bare Home Comforter Set - Twin/Twin Extra Long Size - Ultra-Soft - Goose Down Alternative - Premium 1800 Series - All Season Warmth (Twin/Twin XL, Black)",
+    "normalized_price": 42.02,
+    "buy_url": "https://www.amazon.com/dp/B00Q5MSQO4",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NegXBIHBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXS47QG",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Twin XL Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, White, Twin XL 92 x 68 Inches",
+    "normalized_price": 37.79,
+    "buy_url": "https://www.amazon.com/dp/B08CXS47QG",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813hOP9DbjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XM834N6",
+    "name": "Utopia Bedding Comforters Twin XL Size, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable (White)",
+    "normalized_price": 21.59,
+    "buy_url": "https://www.amazon.com/dp/B07XM834N6",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LCTp2OHnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZMQ29RH",
+    "name": "Bedsure Twin XL Comforter Set - White Comforter, Boho Tufted Distressed Vintage Bedding for Kids, 2 Pieces Farmhouse-Style Bed Set for All Seasons, Fluffy Soft Bedding with 1 Pillow Sham",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZMQ29RH",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vZV3NckeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DXF3MXJP",
+    "name": "JOLLYVOGUE Twin XL Comforter Set, Ultra-Soft Bed in a Bag Twin XL Size 5 Pieces, Oeko-TEX Certified Bedding Set with Down Alternative Comforter, Sheets, Pillowcases & Shams, Black",
+    "normalized_price": 32.29,
+    "buy_url": "https://www.amazon.com/dp/B0DXF3MXJP",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vtTE9nrQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q7OFAU8",
+    "name": "Amazon Basics Comforter Blanket, Reversible, Lightweight Microfiber, All Season, Soft Plush, Machine Washable, Twin/Twin XL, Black/Grey",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B00Q7OFAU8",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nBSh3oJ8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07R77BTWR",
+    "name": "Bedsure Twin XL Comforter Set - 5 Pieces Reversible Grey Bed in a Bag, Twin XL Bedding Comforter Set College Dorm Essentials for Guys with 1 Flat Sheet, 1 Fitted Sheet, 1 Pillowcase and 1 Pillow Sham",
+    "normalized_price": 35.14,
+    "buy_url": "https://www.amazon.com/dp/B07R77BTWR",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91J8U6W7AtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGLPPH6Q",
+    "name": "Bedsure Twin/Twin XL Comforter Set, Dark Green Soft Prewashed Bedding for All Seasons, 2 Pieces GentleSoft\u2122 Bed Set, 1 Lightweight Comforter (68\"x88\") and 1 Pillowcase (20\"x26\")",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0CGLPPH6Q",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817rLi2A1IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08FCP1WJY",
+    "name": "Amazon Basics Twin/Twin XL Size Ultra-Soft Lightweight Microfiber Reversible 2-Piece Bedding Comforter Set, Blue Denim/Beige Stripes",
+    "normalized_price": 36.99,
+    "buy_url": "https://www.amazon.com/dp/B08FCP1WJY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91hVbCBYdHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJTNM2TV",
+    "name": "Bedsure Twin/Twin XL Comforter Set - Infinity Blue Comforter, Cute Floral Bedding Comforter Sets, Gifts for Woman, 2 Pieces, 1 Soft Reversible Botanical Flowers Comforter and 1 Pillow Sham",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJTNM2TV",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91sW7P4H5UL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGH29MX9",
+    "name": "WRENSONGE Twin-XL Comforter Set with Sheets - 5 Pieces Olive Green Tufted Bed in a Bag Twin-XL Shabby Chic Bedding Sets with 1 Comforter, 2 Sheets, 1 Pillowcase & 1 Sham",
+    "normalized_price": 47.48,
+    "buy_url": "https://www.amazon.com/dp/B0GGH29MX9",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81to8qqk8PL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQZ1MP6R",
+    "name": "CozyLux Twin XL Comforter Set Beige - 5 Pieces Bed in a Bag, Modern Vertical Quilted Room Decor, Soft All-Season Bedding Gift with Comforter, Sheets, Pillowcase & Sham",
+    "normalized_price": 30.59,
+    "buy_url": "https://www.amazon.com/dp/B0GQZ1MP6R",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xl8V9z3DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BWLVNBJT",
+    "name": "Bedsure Twin XL Comforter Set Sage Green - Dorm Room Essentials, Extra Long Twin XL Bedding Set with Sheets, All Season Down Alternative Comforter with Sheets, Pillowcase & Sham",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0BWLVNBJT",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81eKd+MRuUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCW9LNF2",
+    "name": "CozyLux Twin XL Comforter Set for College Dorm, 5 Pieces White Seersucker Twin Extra Long Bed in a Bag, Down Alternative Bedding Set with Comforter, Sheets, Pillowcase & Sham, Back to School Bed Set",
+    "normalized_price": 39.98,
+    "buy_url": "https://www.amazon.com/dp/B0CCW9LNF2",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818nLjvhz9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNQ3W8JG",
+    "name": "CozyLux Twin XL Comforter Set Dark Grey - 5 Pieces Twin Extra Long Bed in a Bag for College Dorm, All Season Bedding Set for Girls and Boys, Soft Bed Set with Comforter, Sheets, Pillowcase & Sham",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0BNQ3W8JG",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71uUab2uIoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZN8D9BH",
+    "name": "HYMOKEGE Twin XL Comforter Set Seersucker 5 Pieces, All Season Luxury Bed in a Bag for Bedroom, Bedding Set with Comforter, Sheet, Pillowcase & Sham, Dark Grey",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZN8D9BH",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BYCgSXzRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00U2WFYSE",
+    "name": "Amazon Basics 5-Piece Lightweight Microfiber Comforter Set with Sheets, Bed-in-a-Bag, Navy with Grey Plaid Bedding, Twin/Twin XL",
+    "normalized_price": 28.24,
+    "buy_url": "https://www.amazon.com/dp/B00U2WFYSE",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818WmTNIdiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08P4TBSWM",
+    "name": "Bedsure Twin/Twin XL Comforter Set- Sage Green Bed Set, 2 Pieces Lightweight Summer Cute Floral Bedding, 1 Soft Reversible Botanical Flowers Comforter and 1 Pillow Sham",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B08P4TBSWM",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vyvzj-OxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FVWZ4LRJ",
+    "name": "MUXHOMO Beige Twin/Twin XL Comforter Set, All Season Ultra Soft Down Alternative Bedding - 2 Piece Lightweight Bed Set Includes 1 Comforter (68\"x88\") and 1 Pillow Shams (20\"x26\")",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0FVWZ4LRJ",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71pbN-XK1OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F18NR9RM",
+    "name": "MUXHOMO 5 Pieces Twin XL Comforter Set, Reversible Bed in a Bag Twin XL Size, All Season Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases & Shams, Red & Black",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0F18NR9RM",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71pYw8rQGRL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

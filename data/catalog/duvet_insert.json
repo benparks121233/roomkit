@@ -24,7 +24,7 @@
   {
     "product_id": "B0CLLCX4MX",
     "name": "Olive + Crate Cooling Down Alternative Comforter - Hypoallergenic Queen Size Duvet Insert Lightweight - All Seasons Plush Design Bamboo Comforter - 100% Bamboo Viscose Outer Cover - White 88\"x90\"",
-    "normalized_price": 109.99,
+    "normalized_price": 99.99,
     "buy_url": "https://www.amazon.com/dp/B0CLLCX4MX",
     "specs": {
       "bed_size": "queen"
@@ -35,7 +35,7 @@
   {
     "product_id": "B07YKLSMFM",
     "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Queen Size, All Season Duvet, GentleSoft Down Alternative Bedding Blanket, with 8 Tabs, Gifts for Women/Men, White, Queen 88 x 88 Inches",
-    "normalized_price": 29.75,
+    "normalized_price": 28.07,
     "buy_url": "https://www.amazon.com/dp/B07YKLSMFM",
     "specs": {
       "bed_size": "queen"
@@ -79,7 +79,7 @@
   {
     "product_id": "B00S1TC442",
     "name": "Utopia Bedding Queen Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Queen Size 88 x 88 inches",
-    "normalized_price": 24.21,
+    "normalized_price": 22.46,
     "buy_url": "https://www.amazon.com/dp/B00S1TC442",
     "specs": {
       "bed_size": "queen"
@@ -101,7 +101,7 @@
   {
     "product_id": "B0GQWK2D7L",
     "name": "Mellow Marshmellow Comforter Full/Queen - Extra Fluffy Double-Stuffed Down Alternative Duvet Insert, All-Season Temperature-Balancing, Oeko-TEX Class I Fabric, Box-Stitch, Machine Washable",
-    "normalized_price": 139.99,
+    "normalized_price": 104.99,
     "buy_url": "https://www.amazon.com/dp/B0GQWK2D7L",
     "specs": {
       "bed_size": "full"
@@ -144,8 +144,8 @@
   },
   {
     "product_id": "B081DFRSCN",
-    "name": "DOWNCOOL Comforters Queen Size, Duvet Insert, White All Season Duvet, Lightweight Quilt, Down Alternative Hotel Comforter with Corner Tabs (White, Queen 88x92 Inches)",
-    "normalized_price": 21.99,
+    "name": "DOWNCOOL Comforters Queen Size, White Duvet Insert, Lightweight Quilt | All Season Duvet, Down Alternative Hotel Comforter with Corner Tabs, Queen 88x92 Inches",
+    "normalized_price": 18.98,
     "buy_url": "https://www.amazon.com/dp/B081DFRSCN",
     "specs": {
       "bed_size": "queen"
@@ -299,7 +299,7 @@
   {
     "product_id": "B0DHV6DQBW",
     "name": "Hotel Grand Luxury White Goose Feather Down Fiber Comforter Full Queen Size, 100% Cotton All Season Duvet Insert Queen, Medium Warmth Bedding Comforter with 8 Corner Loops, White 90x90 Inch",
-    "normalized_price": 59.49,
+    "normalized_price": 56.49,
     "buy_url": "https://www.amazon.com/dp/B0DHV6DQBW",
     "specs": {
       "bed_size": "full"
@@ -354,7 +354,7 @@
   {
     "product_id": "B071F2V3KT",
     "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, Full/Queen, Light",
-    "normalized_price": 25.42,
+    "normalized_price": 25.91,
     "buy_url": "https://www.amazon.com/dp/B071F2V3KT",
     "specs": {
       "bed_size": "full"
@@ -585,7 +585,7 @@
   {
     "product_id": "B09WMDWQ9R",
     "name": "Down Alternative Comforter Queen/Full Size White, Queen Bed Quilted Comforter with Corner Tab, Warm, Lightweight, All Season, Plush Siliconized Fiber Filling - Box Stitched",
-    "normalized_price": 22.99,
+    "normalized_price": 21.99,
     "buy_url": "https://www.amazon.com/dp/B09WMDWQ9R",
     "specs": {
       "bed_size": "queen"
@@ -662,7 +662,7 @@
   {
     "product_id": "B0835C2BXV",
     "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, Full/Queen, All-Season",
-    "normalized_price": 25.42,
+    "normalized_price": 25.91,
     "buy_url": "https://www.amazon.com/dp/B0835C2BXV",
     "specs": {
       "bed_size": "full"
@@ -728,7 +728,7 @@
   {
     "product_id": "B01DE29JW0",
     "name": "Utopia Bedding King Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters King Size 90 x 102 inches",
-    "normalized_price": 34.09,
+    "normalized_price": 38.98,
     "buy_url": "https://www.amazon.com/dp/B01DE29JW0",
     "specs": {
       "bed_size": "king"
@@ -860,7 +860,7 @@
   {
     "product_id": "B087YZZLVS",
     "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Full Size, All Season Duvet, GentleSoft Down Alternative Bedding Blanket, with 8 Tabs, Gifts for Women/Men, White, Full 86 x 82 Inches",
-    "normalized_price": 39.99,
+    "normalized_price": 37.98,
     "buy_url": "https://www.amazon.com/dp/B087YZZLVS",
     "specs": {
       "bed_size": "full"
@@ -992,7 +992,7 @@
   {
     "product_id": "B09N7TZHQS",
     "name": "Miracle Made All-Season Duvet Insert Comforter \u2013 Silver-Treated Breathable Cotton Fabric, Pet Hair Resistant, Cool-to-The-Touch Bedding \u2013 Fits Full/Queen Bed Cover, White",
-    "normalized_price": 139.99,
+    "normalized_price": 111.99,
     "buy_url": "https://www.amazon.com/dp/B09N7TZHQS",
     "specs": {
       "bed_size": "full"
@@ -1174,6 +1174,1612 @@
       "bed_size": "queen"
     },
     "image_url": "https://m.media-amazon.com/images/I/613eUs7taXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07YKLXB3Y",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters King Size, All Season Duvet, GentleSoft Down Alternative Bedding Blanket, with 8 Tabs, Gifts for Women/Men, White, King 90 x 102 Inches",
+    "normalized_price": 41.99,
+    "buy_url": "https://www.amazon.com/dp/B07YKLXB3Y",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dtvJt9zKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPKB6T8N",
+    "name": "APSMILE All Season Down Feather Fibers Comforter King Size - Ultra-Soft High Fill-Power Hotel Collection Duvet Insert, Fluffy Medium Warm Quilt Comforter with Corner Tabs(106x90, White)",
+    "normalized_price": 128.39,
+    "buy_url": "https://www.amazon.com/dp/B0DPKB6T8N",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71X2aA+92WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTHWK75B",
+    "name": "L LOVSOUL Premium Goose Down Comforter King Size, 100% Organic Cotton Fabric, All Season Hotel Luxury Bedding Comforters, 1200TC, 850+FP, White Duvet Insert with 8 Corner Tabs",
+    "normalized_price": 111.99,
+    "buy_url": "https://www.amazon.com/dp/B0GTHWK75B",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81XHIO-osiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5GD6DJW",
+    "name": "APSMILE Lightweight King Size Down Feather Fibers Comforter, Fluffy Duvet Insert for Warm/Hot Sleepers - Ultra-Soft High Fill-Power Hotel Collection Comforter, 39 Oz Duvet Blanket(White, 106\"x90\")",
+    "normalized_price": 128.39,
+    "buy_url": "https://www.amazon.com/dp/B0F5GD6DJW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Et11lnQQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01JPECPZE",
+    "name": "Utopia Bedding White Comforter King Size, Duvet Insert, Down Alternative Comforter",
+    "normalized_price": 27.91,
+    "buy_url": "https://www.amazon.com/dp/B01JPECPZE",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8165xvhYdJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GBWPHXPP",
+    "name": "TOPGREEN 100% Organic Feather Down Comforter King Size, Luxury Extra-Fluffy Duvet Insert, All Season Bed Comforter with Ultra-Soft Organic Cotton Case (106x90 Inch, Ivory White)",
+    "normalized_price": 127.99,
+    "buy_url": "https://www.amazon.com/dp/B0GBWPHXPP",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61NAoO4OiCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHJSN3SH",
+    "name": "Goose Feather Down Comforter King Size,100% Organic Cotton Duvet Insert,All-Season Luxury Duvet Insert with Baffle Box Design, 750+Fill Power Hotel Collection Bedding Comforter",
+    "normalized_price": 111.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHJSN3SH",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81DNMwr-FYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGMCXKB6",
+    "name": "Pacific Coast Lightweight Goose Feather Down Fiber Comforters King Size, Summer Duvet Insert, Ultra Soft, Breathable, Hotel Luxury Bedding Comforter with 8 Tabs, White, 106 x 90 inches",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGMCXKB6",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71oXpGx9UPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CCV97BYS",
+    "name": "Vesta All-Season Silk Comforter, Quilt and Duvet Insert for Hot Sleepers, 100% Silk Fill with 100% Cotton Shell, Luxuriously Soft, Moisture-Wicking, King Size (White, Silk Weight: 3.7lbs)",
+    "normalized_price": 237.4,
+    "buy_url": "https://www.amazon.com/dp/B0CCV97BYS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61nrX+y7ZlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F5HK83GY",
+    "name": "Three Geese Luxury Down Comforter Palatial King Size, All-Season Duvet Insert 120x98 Inch with 100% Cotton Cover, Medium Warmth & High Fill Power, 88 Oz White Hotel Collection Comforter",
+    "normalized_price": 110.49,
+    "buy_url": "https://www.amazon.com/dp/B0F5HK83GY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nEqxXX6YL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B081DFK9CQ",
+    "name": "DOWNCOOL Comforters King Size, White Duvet Insert, Lightweight Quilt | All Season Duvet, Down Alternative Hotel Comforter with Corner Tabs, King 102x90 Inches",
+    "normalized_price": 27.45,
+    "buy_url": "https://www.amazon.com/dp/B081DFK9CQ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/712UffLy73L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073F1JHQG",
+    "name": "L LOVSOUL Down Alternative Comforter King Size Duvet Insert,All Season Duvet Insert with Corner Tabs,White Comforter King 106x90Inches",
+    "normalized_price": 29.69,
+    "buy_url": "https://www.amazon.com/dp/B073F1JHQG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Z6Xb8GosL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082YK1T8M",
+    "name": "Serta Goose Feather Down Fiber Comforter King Size - 100% Cotton Cover Duvet Insert - Hotel Luxury Hypoallergenic Bedding Comforter Light Warmth 106 x 90 Inch White",
+    "normalized_price": 81.49,
+    "buy_url": "https://www.amazon.com/dp/B082YK1T8M",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Wv8swJcOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1Q4QKSK",
+    "name": "Beckham Hotel Collection Feather Down Comforter \u2013 All Season Duvet Insert with Baffle Box Construction, 400 Thread Count Cotton Blend, Responsibly Sourced Down, King/Cal King",
+    "normalized_price": 164.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1Q4QKSK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mv0Ge-4aL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXWYDWN5",
+    "name": "Bella Coterie Bamboo Viscose Duvet Insert King/Cal King Size | A Luxury Down Alternative Comforter | All Season Cooling for Hot Sleepers | Ultra Soft & Breathable | Machine Washable | 106\"x94\" [White]",
+    "normalized_price": 139.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXWYDWN5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/710+qp+7qaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CWRQVK2",
+    "name": "EASELAND King Size Down Alternative Comforter - Quilted Duvet Insert for All Seasons, Soft Lightweight with Corner Tabs, Summer Winter Warm Bedding, White 90x102 Inches",
+    "normalized_price": 39.97,
+    "buy_url": "https://www.amazon.com/dp/B07CWRQVK2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B-k6LdYnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01JD5WE74",
+    "name": "LUX D\u00e9cor King Comforter \u2013 102x90 Ultra-Soft Down Alternative Duvet Insert with Corner Tabs & Box Stitching, Hotel Quality Plush Hypoallergenic Microfiber, Oeko-TEX Certified \u2013 White",
+    "normalized_price": 24.64,
+    "buy_url": "https://www.amazon.com/dp/B01JD5WE74",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61UQmKBdSoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP42WQ2B",
+    "name": "Globon Summer Down Comforter King Size, Extra Lightweight Blanket/Duvet Insert for Hot Sleepers, Noiseless & Extra Soft,106x90 inches,White",
+    "normalized_price": 103.99,
+    "buy_url": "https://www.amazon.com/dp/B0DP42WQ2B",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71N4S9UlhOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2LDLQ7S",
+    "name": "Pacific Coast Luxury White Goose Feather Down Fiber Comforter King Size, All Season Hotel Collection Duvet Insert, Ultra Soft, Breathable Bedding Comforter with 8 Corner Tabs, 106x90 Inch White",
+    "normalized_price": 128.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2LDLQ7S",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61XOWN8yZJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHR8KYVW",
+    "name": "REST\u00ae Evercool\u00ae Cooling Comforter, King/Cali King, Blanket for Hot Sleepers, All Season Bedding to Keep Cool for Night Sweats, Breathable Lightweight Duvet, 106x90 Inches, Arctic White",
+    "normalized_price": 161.85,
+    "buy_url": "https://www.amazon.com/dp/B0CHR8KYVW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61HJhjaVyBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BB19PJ46",
+    "name": "DOWNCOOL Comforters Oversize King Size, White Duvet Insert, Lightweight | All Season Comforter, Down Alternative Hotel Comforter with Corner Tabs, Oversize King 116x98 Inches",
+    "normalized_price": 34.71,
+    "buy_url": "https://www.amazon.com/dp/B0BB19PJ46",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/712UffLy73L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BTHK7NW4",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Oversized King Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, White, Oversized King 116 x 98 Inches",
+    "normalized_price": 65.65,
+    "buy_url": "https://www.amazon.com/dp/B0BTHK7NW4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71aiJP6KoEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07C5PHY7V",
+    "name": "COHOME King Size Cooling Comforter, All-Season Quilted Down Alternative Duvet Insert, Luxury Hotel Breathable GentleSoft Comforter with Anti-Clump Tech & 8 Tab - Reversible - White 90 x 102 inches",
+    "normalized_price": 39.81,
+    "buy_url": "https://www.amazon.com/dp/B07C5PHY7V",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Or-wTToUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLLDLDSV",
+    "name": "Olive + Crate Cooling Down Alternative Comforter - Hypoallergenic King Size Duvet Insert Lightweight - All Seasons Plush Design Bamboo Comforter - 100% Bamboo Viscose Outer Cover - White 102\"x90\"",
+    "normalized_price": 104.49,
+    "buy_url": "https://www.amazon.com/dp/B0CLLDLDSV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/717JQeRp43L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDDLNK3P",
+    "name": "Brooklinen Heavyweight Down Alternative Comforter - King/Cali King - Extra Warm Winter Duvet Insert - Thick, Cozy 100% Cotton Sateen Shell, Baffle Box Construction - Luxury Plush Bedding",
+    "normalized_price": 409.0,
+    "buy_url": "https://www.amazon.com/dp/B0GDDLNK3P",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71iNik635bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDDKLW37",
+    "name": "Brooklinen Luxury All-Season Down Alternative Comforter - King/Cali King - Soft Cloud-Like Duvet Insert - 100% Cotton Sateen Shell, Recycled Fill, Baffle Box Construction - Breathable All-Year Bedding",
+    "normalized_price": 288.15,
+    "buy_url": "https://www.amazon.com/dp/B0GDDKLW37",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71iNik635bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQGZG3W4",
+    "name": "Pacific Coast Goose Feather Down Fiber Comforters King Size, Extra Fluffy White Duvet Insert, Ultra-Soft, Breathable, All Season Hotel Luxury Bedding Comforters, 8 Corner & Center Loops (106\"x90\")",
+    "normalized_price": 149.99,
+    "buy_url": "https://www.amazon.com/dp/B0DQGZG3W4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gNI3ZA4zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLJJN4WV",
+    "name": "Luxury Down Feather Fiber Comforter King Size - Ultra-Soft Egyptian Cotton Blend Cover, Fluffy High Fill-Power All Season Hotel Duvet Insert(106x90 inch, White)",
+    "normalized_price": 104.12,
+    "buy_url": "https://www.amazon.com/dp/B0FLJJN4WV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/715igHmgH+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQW2KR1B",
+    "name": "Mellow Marshmellow Comforter King/Cal King - Extra Fluffy Double-Stuffed Down Alternative Duvet Insert, All-Season Temperature-Balancing, Oeko-TEX Class I Fabric, Box-Stitch, Machine Washable",
+    "normalized_price": 111.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQW2KR1B",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Ir67SD3ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08D3W7TFM",
+    "name": "TEXARTIST Premium 2100 Series King Comforter All Season Breathable Grey Comforter Soft 4D Spiral Fiber Quilted Lightweight Down Alternative Duvet Insert with Corner Tabs Hotel Summer Style (90\"x102\")",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B08D3W7TFM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71dg35SWd9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B5TG8ZVW",
+    "name": "REST\u00ae Evercool\u00ae Cooling Comforter, King/Cali King, Blanket for Hot Sleepers, All Season Bedding for Night Sweats, Breathable Lightweight Duvet, 106x90 Inches, Cool Gray",
+    "normalized_price": 161.85,
+    "buy_url": "https://www.amazon.com/dp/B0B5TG8ZVW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hHyI4f4WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C1YPN5YS",
+    "name": "MEELUS Lightweight Comforter Cooling White, All Season Duvet Insert Breathable King Size Summer Bedding, Soft Microfiber Cool Down Alternative Quilt with Corner Tabs, 102x90 inch",
+    "normalized_price": 35.1,
+    "buy_url": "https://www.amazon.com/dp/B0C1YPN5YS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71hAtCsodtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B098RF5VW9",
+    "name": "Serta Down Illusion All Season Hypoallergenic Down Alternative Comforter with Corner Loops, King/Cal King, White",
+    "normalized_price": 94.75,
+    "buy_url": "https://www.amazon.com/dp/B098RF5VW9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819Xqm5Se7S._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01LX5UR58",
+    "name": "Down Alternative Comforter King Size - Fluffy Duvet Insert - Premium Plush All Season - Luxury Breathable Hotel Cooling Comforter - King, White, 104x86 inches - Comes Compressed Packaging",
+    "normalized_price": 103.97,
+    "buy_url": "https://www.amazon.com/dp/B01LX5UR58",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71nRwRxCslL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLNS8PZG",
+    "name": "Bedsure Duvet Insert King Size - Lightweight Comforter, Quilted Cooling Duvet Insert, Down Alternative Summer Comforter with 8 Tabs, Ultra Soft Blanket, Striped, King, Light Grey, 90x102 inches",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0CLNS8PZG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-uaoQIIRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09P7FN56S",
+    "name": "Bedsure Duvet Insert King Size - Lightweight Comforter, Quilted Cooling Duvet Insert, Down Alternative Summer Comforter with 8 Tabs, Ultra Soft Blanket, Striped, King, White, 90x102 inches",
+    "normalized_price": 56.79,
+    "buy_url": "https://www.amazon.com/dp/B09P7FN56S",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91I9UlhXieL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTGF44JD",
+    "name": "Bedsure Comforters King Size Duvet Insert, Quilted Down Alternative Bedding, Ultra Soft Lightweight Comforter Blanket for Bed, with 8 Tabs, Machine Washable, 90x102 in, White",
+    "normalized_price": 36.98,
+    "buy_url": "https://www.amazon.com/dp/B0CTGF44JD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81waNqjPEuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0835CQKRZ",
+    "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, King, All-Season, 102 x 90 inches",
+    "normalized_price": 25.38,
+    "buy_url": "https://www.amazon.com/dp/B0835CQKRZ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71wwDpuvR7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZBB9Q6G",
+    "name": "Lightweight King Down Comforter for Hot Sleepers & Summer - Noiseless Luxury Duvet Insert with 8 Corner Loops, White 106\"x90\"",
+    "normalized_price": 90.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZBB9Q6G",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51c3CKXD6KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPSV2QHB",
+    "name": "Globon Ultra-Soft Lightweight Down Feather Comforter King Size,Breathable Light Duvet Insert for Hot Sleeper/Warm Weather,Noiseless Shell,700 Fill Power with Corner Tabs,White",
+    "normalized_price": 118.48,
+    "buy_url": "https://www.amazon.com/dp/B0CPSV2QHB",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71VySVGMvlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV79L2WF",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters King Size, All Season Duvet, GentleSoft Down Alternative Bedding Blanket, with 8 Tabs, Gifts for Women/Men, Linen, King 90 x 102 Inches",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CV79L2WF",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81S0jOOR8WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082YJHXWQ",
+    "name": "Serta Goose Feather Down Fiber Comforter King Size - 100% Cotton Cover Duvet Insert - Hotel Luxury Hypoallergenic Bedding Comforter All Season Medium Warmth 106 x 90 Inch White",
+    "normalized_price": 65.75,
+    "buy_url": "https://www.amazon.com/dp/B082YJHXWQ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812eXAE210L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XY66Q22",
+    "name": "Utopia Bedding Comforters California King Size, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable (White)",
+    "normalized_price": 29.59,
+    "buy_url": "https://www.amazon.com/dp/B07XY66Q22",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71tZL1DRjCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6TTKWKV",
+    "name": "Martha Stewart White Goose King Size Feathers Down Fiber Comforter, 100% Cotton Duvet Insert King, Hotel Luxury Hypoallergenic Comforter 68oz All Season Medium Warmth 106 x 90 Inch",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B0D6TTKWKV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61HQfYMAGHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHV7JW3N",
+    "name": "Hotel Grand Luxury White Goose Feather Down Fiber Comforter King Size, 100% Cotton All Season Duvet Insert King, Fluffy Medium Warmth Bedding Comforter with 8 Corner Loops, White 106x90 Inch",
+    "normalized_price": 79.99,
+    "buy_url": "https://www.amazon.com/dp/B0DHV7JW3N",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71A1wlNt9uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH4GC36H",
+    "name": "Cosybay King Size Feather Down Fiber Comforter - All Season White Duvet Insert - Luxury Medium Warmth Hotel Bedding Comforter,100% Cotton Cover-King, 106 x 90 Inch",
+    "normalized_price": 59.97,
+    "buy_url": "https://www.amazon.com/dp/B0FH4GC36H",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71cEfV4zkYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GK9776YF",
+    "name": "Cooling Comforter for Hot Sleepers, Queen 90x90, Silver Gray | Cooling blanket feel, Q-Max >0.4 cool touch, double-sided cooling, Sorona fill, for night sweats, lightweight & breathable",
+    "normalized_price": 75.99,
+    "buy_url": "https://www.amazon.com/dp/B0GK9776YF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61859HweXCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F43PXSG4",
+    "name": "Lightweight Feather Down Fiber Comforters King Size,Summer Duvet Insert for Hot Sleepers,Hypoallergenic Soft Breathable Cooling Comforter, Hotel Luxury Mellow Sleep Comforter for All Seasons Grey",
+    "normalized_price": 40.99,
+    "buy_url": "https://www.amazon.com/dp/B0F43PXSG4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qQ+zxgEiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFVYBW4M",
+    "name": "Bedsure Cooling Comforter King Size - GentleSoft Moisture Wicking Cooling Blanket for Hot Sleepers, Breathable Lightweight Duvet Insert, Dual-Sided Summer Blanket, White, 102x90 Inches",
+    "normalized_price": 71.38,
+    "buy_url": "https://www.amazon.com/dp/B0DFVYBW4M",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81S0obnxTsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CMTZS4NV",
+    "name": "Bedsure Cooling Comforter King Size - Cooling Blankets for Hot Sleepers, Lightweight Comforter for Summer with Dual-Sided Cool Tech, Soft Breathable Cold Blanket for Sleeping, Grey, 102x90 Inches",
+    "normalized_price": 94.98,
+    "buy_url": "https://www.amazon.com/dp/B0CMTZS4NV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vjD7ylpjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZ78MKHK",
+    "name": "Bedtter Cooling Comforter King Size, Cooling Blankets for Hot Sleepers & Night Sweats, Dual-Sided Cool Tech, Lightweight Breathable & Soft Summer Comforter, Cold Bed Blanket, 106x90 Inches, Grey",
+    "normalized_price": 128.39,
+    "buy_url": "https://www.amazon.com/dp/B0CZ78MKHK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Jz97LzGQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PPNT73Q",
+    "name": "Utopia Bedding California King Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters California King Size 96 x 102 inches",
+    "normalized_price": 51.49,
+    "buy_url": "https://www.amazon.com/dp/B07PPNT73Q",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813dSy5zzWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1MFF8N9",
+    "name": "EASELAND Down Alternative Comforter King Size - Quilted Duvet Insert for All Seasons, Soft Cozy with Corner Tabs, Summer Winter Warm Bedding, Pure White 90x102",
+    "normalized_price": 34.25,
+    "buy_url": "https://www.amazon.com/dp/B0G1MFF8N9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/714TyS4vMlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GK9HQNKG",
+    "name": "CozyLux Oversized King Comforter Duvet Insert White, All Season Quilted Bed Comforter, Box Stitched Down Alternative Duvet with 8 Corner Tabs, Gifts for Women Men, 116 x 98 Inches (White)",
+    "normalized_price": 45.99,
+    "buy_url": "https://www.amazon.com/dp/B0GK9HQNKG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71NQn6c5QAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D56X698W",
+    "name": "Luxurious Oversized Super King 120\" x 120\" Size Goose Down Fiber Waterfowl Feather Fiber Comforter Duvet, 100% Egyptian Cotton Cover, 90 oz. Fill Weight, Baffle Box Design, White Solid",
+    "normalized_price": 107.89,
+    "buy_url": "https://www.amazon.com/dp/B0D56X698W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71WB6Cale+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09JJYZWMF",
+    "name": "TEXARTIST Premium 2100 Series King Comforter All Season Breathable White Comforter Soft 4D Spiral Fiber Lightweight Quilted Down Alternative Duvet Insert with Corner Tabs Hotel Summer Style (90\"x102\")",
+    "normalized_price": 48.42,
+    "buy_url": "https://www.amazon.com/dp/B09JJYZWMF",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fNK34id5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2LKJVZ1",
+    "name": "Pacific Coast Premium Goose Down Fiber Comforter King Size, 420TC 100% Australian Cotton Shell, All-Season Comforter with Hidden Baffle Box & Double-Stitched Piping (106\"x90\")",
+    "normalized_price": 135.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2LKJVZ1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61b15ZcNKCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB11Z3SG",
+    "name": "Globon Ultra-Soft Down Feather Comforter King Size,Luxury Hotel Collection Duvet Insert for All Season,Noiseless Shell,700 Fill Power,Medium Weight with Corner Tabs, White",
+    "normalized_price": 135.97,
+    "buy_url": "https://www.amazon.com/dp/B0CB11Z3SG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71BcncE3CxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F47YVGWN",
+    "name": "Hungarian Down Feather Comforter King Size,Hotel Style Bedding Comforter,1200TC,100% Organic Cotton Fabric,All Season White Duvet Insert with 8 Corner Tabs",
+    "normalized_price": 87.99,
+    "buy_url": "https://www.amazon.com/dp/B0F47YVGWN",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71CFpHtVf-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01BUOSMP4",
+    "name": "SNOWMAN Premium Down Fiber Comforter King Size, Luxurious All Season Duvet Insert with Cotton Blended Fabric, 3D Baffle Box Design Hotel Bedding Comforter (Khaki,106\"x90\")",
+    "normalized_price": 101.99,
+    "buy_url": "https://www.amazon.com/dp/B01BUOSMP4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/719PhF0-4VL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GK8MQZ9Z",
+    "name": "Martha Stewart Luxury White Goose Feathers Down Fiber Duvet Insert King Size - Hotel Collection 100% Cotton Cover Comforter, All Season Medium Warmth, Breathable, Hypoallergenic, 106 x 90 Inch",
+    "normalized_price": 76.4,
+    "buy_url": "https://www.amazon.com/dp/B0GK8MQZ9Z",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71NmNg6XvXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF2H69SG",
+    "name": "Three Geese Luxury Down Comforter King Size, All-Season Duvet Insert 106x90 Inch with 100% Cotton Cover, 72 Oz Weight",
+    "normalized_price": 90.09,
+    "buy_url": "https://www.amazon.com/dp/B0GF2H69SG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nEqxXX6YL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01GUZ08MI",
+    "name": "Luxurious King/California King Size Goose Down Fiber Waterfowl Feather Fiber Comforter Duvet, 100% Cotton Cover, 58 oz. Fill Weight, Baffle Box Design, White Solid",
+    "normalized_price": 124.46,
+    "buy_url": "https://www.amazon.com/dp/B01GUZ08MI",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51+RJuRVXPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZT9JFH1",
+    "name": "L LOVSOUL Goose Feather Down Fiber Comforter King Size, 100% Organic Cotton Fabric Duvet Insert,1200TC,750+Fill Power, Hotel Collection, All Season Grey Bedding Comforters with 8 Tabs",
+    "normalized_price": 84.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZT9JFH1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71i0FMLTOnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5CGVHV4",
+    "name": "Hotel Luxury All Season Feather Down Comforter King Size, Silky Soft Egyptian Cotton Blend Cover, Fluffy Ethically Sourced Feather & Down Fibers Filled Duvet Insert with Corner Ties, 106x90 Inch White",
+    "normalized_price": 63.9,
+    "buy_url": "https://www.amazon.com/dp/B0D5CGVHV4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xlR3JoGLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT1TV196",
+    "name": "Goose Down Comforters 100% Cotton Shell King Size Comforter Luxury Duvet Insert, All Season White Bed Comforter Medium Warmth Goose Down Duvet,430 Thread (King 106x90)",
+    "normalized_price": 87.39,
+    "buy_url": "https://www.amazon.com/dp/B0GT1TV196",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61fmb1S-qoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL25VYJD",
+    "name": "Three Geese Cal King Size Goose Feather Down Fiber Comforter - Ultra Soft All-Season Down Duvet Insert Fluffy Baffle Box Design with 8 Corner Loops for Warmth and Softness.",
+    "normalized_price": 63.99,
+    "buy_url": "https://www.amazon.com/dp/B0FL25VYJD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Ua-4RUZjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYNL3MYW",
+    "name": "TOPGREEN Organic Feather Down Comforter California King, Luxury Extra-Fluffy Duvet Insert, All Season Bed Comforter with Ultra-Soft Organic Cotton Case (104x96 Inch, Ivory White)",
+    "normalized_price": 128.26,
+    "buy_url": "https://www.amazon.com/dp/B0DYNL3MYW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61NAoO4OiCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DT46134Z",
+    "name": "Serta Goose Feathers Down Fiber Comforter King Size Duvet Insert,100% Cotton Cover, Hotel Luxury Hypoallergenic Comforter All Season Medium Warmth 106 x 90 in White",
+    "normalized_price": 63.13,
+    "buy_url": "https://www.amazon.com/dp/B0DT46134Z",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61akdaaSEPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B071KK798X",
+    "name": "Globon Winter White Goose Down Comforter King Size,Down Duvet Insert, 800 Fill Power, 420 Thread Count,Ultra Soft Noiseless Shell with Corner Tabs, White",
+    "normalized_price": 237.59,
+    "buy_url": "https://www.amazon.com/dp/B071KK798X",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71iJGZKBzaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FG2HMYV9",
+    "name": "Lightweight White Goose Down Comforter King Size - All Season Luxury Down Duvet Insert Hotel Bedding Comforters Oeko Certified 480 Thread Count High Fill Power - King 106x90 Inches",
+    "normalized_price": 199.99,
+    "buy_url": "https://www.amazon.com/dp/B0FG2HMYV9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81EvXcyIriL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B002XZ4704",
+    "name": "Luxurious Hungarian Goose Down Comforter Duvet Insert - King/Cal King Size, 75 oz. Fill Weight, Premium Baffle Box, 100% Egyptian Cotton Cover (White)",
+    "normalized_price": 148.95,
+    "buy_url": "https://www.amazon.com/dp/B002XZ4704",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81flqyyTI1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBLKCTJH",
+    "name": "DOWNCOOL Feather Comforter King Size, 100% Cotton Cover Ultra Soft Fluffy Duvet Insert King, All Season Luxurious Hotel Bedding Comforters with Corner Tabs, White 106\"x90\"",
+    "normalized_price": 56.98,
+    "buy_url": "https://www.amazon.com/dp/B0DBLKCTJH",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Un-MUM7WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZ2VKFH8",
+    "name": "Goose Down Fiber Comforter King Size \u2013 All Season Naturally Breathable Down Comforters, Luxury Hotel Collection Duvet Insert with 8 Corner Tabs, Cotton Fabric & Baffle Box (White,65oz Fill)",
+    "normalized_price": 101.92,
+    "buy_url": "https://www.amazon.com/dp/B0GZ2VKFH8",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yOHacLfyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B078MGRF6N",
+    "name": "WhatsBedding Feather Comforter,Filled with Feather and Down Fiber, White King Size All Season Duvet Insert, Luxurious Hotel Bed Comforter, 100% Cotton Cover,Medium Warmth with Corner Tabs,106x90 Inch",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B078MGRF6N",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HFnd6i8tL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CD6V7YFN",
+    "name": "Hungarian Down Feather Fiber Comforter Cal King Size,Hotel Style Bedding Comforter,750+ Fill Power,1200TC,100% Organic Cotton Fabric,All Season White Duvet Insert with 8 Corner Tabs",
+    "normalized_price": 83.99,
+    "buy_url": "https://www.amazon.com/dp/B0CD6V7YFN",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71CFpHtVf-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWDPW8XK",
+    "name": "UNIKOME All Season Goose Feather Down Fiber Comforter King Size - 100% Organic Cotton Cover Natural Breathable Duvet Insert, 750+ Fill Power, Hotel Luxury Bedding Comforter (104\"x90\")",
+    "normalized_price": 93.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWDPW8XK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813x7bHFV4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07NZPHQ1B",
+    "name": "Utopia Bedding Full Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Full Size 82 x 86 inches",
+    "normalized_price": 23.4,
+    "buy_url": "https://www.amazon.com/dp/B07NZPHQ1B",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813dSy5zzWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGTFZQL6",
+    "name": "TOPGREEN Organic Feathers Down Comforter Full Size, All Season Duvet Insert with 100% Organic Cotton Cover, Medium Warm Bed Comforter with Corner Tabs(82x86, White)",
+    "normalized_price": 63.74,
+    "buy_url": "https://www.amazon.com/dp/B0DGTFZQL6",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61BsdsDTkML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLJ52MV3",
+    "name": "Cosybay Full Size Feather Down Fiber Comforter - Ultra Soft 100% Cotton Duvet Insert, All Season Hotel Luxury Bedding with Corner Tabs, 82\"x86\" White",
+    "normalized_price": 67.98,
+    "buy_url": "https://www.amazon.com/dp/B0FLJ52MV3",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71cEfV4zkYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09WRJ8TWM",
+    "name": "Utopia Bedding Comforters Full Size, All Season Duvet Insert, Down Alternative Full Comforter with Corner Tabs, Machine Washable Bed Comforter 82 x 86 Inches (White)",
+    "normalized_price": 19.98,
+    "buy_url": "https://www.amazon.com/dp/B09WRJ8TWM",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FUM7BUI2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYNHR8F9",
+    "name": "TOPGREEN Feather Down Comforter Queen Size, Luxury Extra-Fluffy Duvet Insert, All Season Bed Comforter with Ultra-Soft Organic Cotton Case (90x90 Inch, Ivory White)",
+    "normalized_price": 107.99,
+    "buy_url": "https://www.amazon.com/dp/B0DYNHR8F9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61NAoO4OiCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPQYH52H",
+    "name": "Bedsure White Bed Comforter Full, Breathable Mellow Marshmallow Comforter, 4 Pieces Prewashed Soft Bedding Set for All Seasons Use, Includes 1 Duvet Cover, 1 Comforter, 2 Pillow Shams",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0FPQYH52H",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813DHT9-HBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PQJNTBT",
+    "name": "Utopia Bedding Comforter Full Size 82 x 86 Inches White, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable",
+    "normalized_price": 22.98,
+    "buy_url": "https://www.amazon.com/dp/B07PQJNTBT",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71tZL1DRjCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08R8NPS9R",
+    "name": "HYLEORY All Season Full Size Bed Comforter - Cooling Goose Down Alternative Quilted Duvet Insert with Corner Tabs - Winter Warm - Machine Washable - White",
+    "normalized_price": 25.07,
+    "buy_url": "https://www.amazon.com/dp/B08R8NPS9R",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71n49zmgtFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PYPCJRY",
+    "name": "EASELAND Full Size Down Alternative Comforter - Quilted Duvet Insert for All Seasons, Soft Lightweight with Corner Tabs, Summer Winter Warm Bedding, White 82\u00d786 Inches",
+    "normalized_price": 37.9,
+    "buy_url": "https://www.amazon.com/dp/B07PYPCJRY",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B-k6LdYnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3Q7WW9L",
+    "name": "ROYALE LINENS Comforter - Full Size Duvet Insert - All Season Soft Quilted Comforters with 8 Corner Tabs - Down Alternative Bedding Comforter - Box Stitched Duvet Insert (White, Full 82\"x86\")",
+    "normalized_price": 17.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3Q7WW9L",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XL94nHVIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00VGR50EW",
+    "name": "Linenspa White Down Alternative Comforter and Duvet Insert, for Full Size Bed \u2013 All-Season Comforter with Box Stitch and 8 Duvet Loops \u2013 Bedding for Kids, Teens, and Adults",
+    "normalized_price": 28.79,
+    "buy_url": "https://www.amazon.com/dp/B00VGR50EW",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Smh6me7CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CN7F8QWM",
+    "name": "Serta Memory Flex Full/Queen Size Comforter, All Season Duvet Insert, Breathable and Stain Resistant Down Alternative Comforter, Machine Washable, 90 in x 90 in, White",
+    "normalized_price": 55.99,
+    "buy_url": "https://www.amazon.com/dp/B0CN7F8QWM",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81DGk2GrWqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07TP7LN3R",
+    "name": "COHOME Premium Full Size Comforter, All-Season Quilted Down Alternative Duvet Insert, Luxury Hotel GentleSoft Comforter with Anti-Clump Tech & 8 Tabs - Reversible - White 82x86 inches",
+    "normalized_price": 36.71,
+    "buy_url": "https://www.amazon.com/dp/B07TP7LN3R",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Or-wTToUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGYTS4RW",
+    "name": "Hotel Suite Feather Down Comforter, Natural Fluffy Duvet Insert, Luxurious Hotel Collection Quilts, All Season Bedding Comforter, 100% Cotton Cover\uff08Full/Queen Size, 88 x 88 Inch, White\uff09",
+    "normalized_price": 44.98,
+    "buy_url": "https://www.amazon.com/dp/B0GGYTS4RW",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xlBvPRCQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09PYVFHT5",
+    "name": "Duvet Insert Cotton Comforter Full Size White Down Alternative Duvet Insert 100% Cotton Shell Quilted Fluffy Comforter Lightweight All Season 4 Corner Tabs Durable Breathable Noiseless",
+    "normalized_price": 41.39,
+    "buy_url": "https://www.amazon.com/dp/B09PYVFHT5",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91D+IOraZdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08D3WDMV1",
+    "name": "TEXARTIST Premium 2100 Series Full Comforter All Season Breathable White Comforter Soft 4D Spiral Fiber Quilted Down Alternative Duvet with Corner Tabs Luxury Hotel Style (82\"x86\")",
+    "normalized_price": 39.09,
+    "buy_url": "https://www.amazon.com/dp/B08D3WDMV1",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fNK34id5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGQ4J39Y",
+    "name": "APSMILE Goose Feather Down Fibers Comforter Full Size, Organic Cotton Duvet Insert, All Season Warmth, Baffle Box, Quill-Free Soft Fluffy Hotel Bed Comforter (Ivory White, 82x86 Inch)",
+    "normalized_price": 69.9,
+    "buy_url": "https://www.amazon.com/dp/B0GGQ4J39Y",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711w9n3b-OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SYZHD9R",
+    "name": "Cozynight Down Alternative Comforter-All Season Full Comforters Duvet Insert with Corner Tabs-Lightweight Breathable Reversible White Comforter 82x86 inches",
+    "normalized_price": 31.91,
+    "buy_url": "https://www.amazon.com/dp/B07SYZHD9R",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61s08PZ4DlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXX3MVRX",
+    "name": "KARISSA MAE Luxury Down Alternative Comforter Queen/Full Size | Bamboo Viscose Duvet Insert | All Season Cooling for Hot Sleepers | Ultra Soft & Breathable | Machine Washable | 90\"x94\" [White]",
+    "normalized_price": 119.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXX3MVRX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71yCE9QiHJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLJK4829",
+    "name": "Luxury Down Feather Fiber Comforter Full Size - Ultra-Soft Egyptian Cotton Blend Cover, Fluffy High Fill-Power All Season Hotel Duvet Insert(82x86 inch, White)",
+    "normalized_price": 89.9,
+    "buy_url": "https://www.amazon.com/dp/B0FLJK4829",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/715igHmgH+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07T6HHXWN",
+    "name": "Cozynight Soft Comforter Full Size Duvet Insert-Lightweight Down Alternative Comforter with Corner Tabs- Breathable Machine Washable Diamond Stitching (White,82\"x86\")",
+    "normalized_price": 25.3,
+    "buy_url": "https://www.amazon.com/dp/B07T6HHXWN",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61vq4mqgoVS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXWQ13M8",
+    "name": "Bella Coterie Bamboo Viscose Duvet Insert Queen/Full Size | A Luxury Down Alternative Comforter | All Season Cooling for Hot Sleepers | Ultra Soft & Breathable | Machine Washable | 90\"x94\" [White]",
+    "normalized_price": 129.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXWQ13M8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/710+qp+7qaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS5VY7VM",
+    "name": "COHOME Premium Full Size Comforter, All-Season Quilted Down Alternative Duvet Insert, Luxury Hotel GentleSoft Comforter with Anti-Clump Tech & 8 Tabs - Reversible - Sage Green 82x86 inches",
+    "normalized_price": 45.9,
+    "buy_url": "https://www.amazon.com/dp/B0GS5VY7VM",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NDzSG2YpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBLK2R95",
+    "name": "DOWNCOOL Full Size Feather Down Fiber Comforter, 100% Cotton Ultra Soft Fluffy Duvet Insert Full, All Season Luxurious Hotel Bed Comforter with Corner Tabs, White 82 x 86 Inch",
+    "normalized_price": 56.52,
+    "buy_url": "https://www.amazon.com/dp/B0DBLK2R95",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Un-MUM7WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XXTGKPJ",
+    "name": "Cosybay Down Alternative Comforter (Blue/Grey, Full) - All Season Soft Quilted Full Size Bed Comforter - Duvet Insert with Corner Tabs -Winter Summer Warm Fluffy, 82x86 inches",
+    "normalized_price": 26.63,
+    "buy_url": "https://www.amazon.com/dp/B07XXTGKPJ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KCXpRem4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4CNZ2P1",
+    "name": "WhatsBedding Feather Down Fiber Comforter, White, Full Size 82\"x86\" | All Season, Ultra Soft 100% Cotton, Duvet Insert, Luxury Bed Comforter",
+    "normalized_price": 47.99,
+    "buy_url": "https://www.amazon.com/dp/B0F4CNZ2P1",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61ZEbe7YVML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08R8PN1XP",
+    "name": "HYLEORY All Season Full Size Bed Comforter - Cooling Down Alternative Quilted Duvet Insert with Corner Tabs - Winter Warm - Machine Washable - Dark Grey",
+    "normalized_price": 28.4,
+    "buy_url": "https://www.amazon.com/dp/B08R8PN1XP",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711sskBJ5JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT4SZT1G",
+    "name": "Ubauba Goose Feather Down Comforter Full Size - 100% Cotton Ultra Fluffy Duvet Insert Full, 1200TC, 850+FP, All Season Luxurious Hotel Bedding Comforter with 8 Tabs, White 82 x 86 Inch",
+    "normalized_price": 56.98,
+    "buy_url": "https://www.amazon.com/dp/B0GT4SZT1G",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81DxchgXvjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PSGJ3R7",
+    "name": "Homelike Moment Comforters Queen Size - Grey Duvet Insert Down Alternative Bed Queen Comforter, Lightweight Bedding Comforters Full Size Quilted Soft All Season Reversible Dark Gray/Light Grey",
+    "normalized_price": 25.63,
+    "buy_url": "https://www.amazon.com/dp/B07PSGJ3R7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71jwim7N3YL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B071S1B8P4",
+    "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, Twin, Light",
+    "normalized_price": 24.03,
+    "buy_url": "https://www.amazon.com/dp/B071S1B8P4",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71EwvyC4A1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00S1TC3V6",
+    "name": "Utopia Bedding Twin Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Twin Size 64 x 88 inches",
+    "normalized_price": 26.48,
+    "buy_url": "https://www.amazon.com/dp/B00S1TC3V6",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813dSy5zzWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XM834N6",
+    "name": "Utopia Bedding Comforters Twin XL Size, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable (White)",
+    "normalized_price": 21.59,
+    "buy_url": "https://www.amazon.com/dp/B07XM834N6",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LCTp2OHnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01JPECQF8",
+    "name": "Utopia Bedding Comforter Twin Size 64 x 88 Inches, All Season Duvet Insert, Down Alternative Box Stitched Bed Comforter with Corner Tabs, Machine Washable",
+    "normalized_price": 22.89,
+    "buy_url": "https://www.amazon.com/dp/B01JPECQF8",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LCTp2OHnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07YKMNXDH",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Twin Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, White, Twin 88 x 68 Inches",
+    "normalized_price": 37.62,
+    "buy_url": "https://www.amazon.com/dp/B07YKMNXDH",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sNr0fMpxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00U85CBAY",
+    "name": "Modern Threads Down Alternative Reversible Comforter White/White Twin",
+    "normalized_price": 18.03,
+    "buy_url": "https://www.amazon.com/dp/B00U85CBAY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71RZg7GydcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082YJJ62M",
+    "name": "Serta Goose Feather Down Fiber Comforter Twin Size - 100% Cotton Cover Duvet Insert - Hotel Luxury Hypoallergenic Bedding Comforter All Season Medium Warmth 68 x 90 Inch White",
+    "normalized_price": 54.58,
+    "buy_url": "https://www.amazon.com/dp/B082YJJ62M",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Wv8swJcOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0835CJ87M",
+    "name": "Amazon Basics White Down Alternative Comforter and Duvet Insert with Corner Tabs, Machine Washable, Twin, All-Season",
+    "normalized_price": 22.84,
+    "buy_url": "https://www.amazon.com/dp/B0835CJ87M",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71wwDpuvR7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CB9W3696",
+    "name": "Maple&Stone Twin Feather Down Comforter All Season White Down Duvet Insert Ultra Soft 100% Cotton Cover Fluffy Twin Comforter 68 x 90 Inches",
+    "normalized_price": 54.99,
+    "buy_url": "https://www.amazon.com/dp/B0CB9W3696",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71YsTDHjp8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07N7SJT7K",
+    "name": "Utopia Bedding Comforters Twin Size, All Season Duvet Insert, Down Alternative Twin Comforter with Corner Tabs, Machine Washable Bed Comforter 64 x 88 Inches (White)",
+    "normalized_price": 23.64,
+    "buy_url": "https://www.amazon.com/dp/B07N7SJT7K",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81FUM7BUI2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08QVBY9N5",
+    "name": "HYLEORY All Season Twin Size Bed Comforter - Cooling Goose Down Alternative Quilted Duvet Insert with Corner Tabs - Winter Warm - Machine Washable - White",
+    "normalized_price": 23.19,
+    "buy_url": "https://www.amazon.com/dp/B08QVBY9N5",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71n49zmgtFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08MLCS7HG",
+    "name": "LUX D\u00e9cor Twin Comforter \u2013 92x68 Ultra-Soft Down Alternative Duvet Insert with Corner Tabs & Box Stitching, Hotel Quality Plush Hypoallergenic Microfiber, Oeko-TEX Certified \u2013 White",
+    "normalized_price": 20.91,
+    "buy_url": "https://www.amazon.com/dp/B08MLCS7HG",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61MAevYXRaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PQSJGW9",
+    "name": "Utopia Bedding Twin XL Comforter Duvet Insert, Quilted White Comforter with Corner Tabs, Box Stitched Down Alternative Comforters Twin XL Size 68 x 92 inches",
+    "normalized_price": 27.89,
+    "buy_url": "https://www.amazon.com/dp/B07PQSJGW9",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81O2lg6zG8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRV55NLY",
+    "name": "Cosybay Twin Size Feather Down Fiber Comforter - Ultra Soft 100% Cotton Duvet Insert, All Season Hotel Luxury Bedding with Corner Tabs, 68\"x90\" White",
+    "normalized_price": 56.98,
+    "buy_url": "https://www.amazon.com/dp/B0DRV55NLY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71cEfV4zkYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXS47QG",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Twin XL Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, White, Twin XL 92 x 68 Inches",
+    "normalized_price": 37.79,
+    "buy_url": "https://www.amazon.com/dp/B08CXS47QG",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813hOP9DbjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHV68MWX",
+    "name": "Hotel Grand Luxury White Goose Feather Down Fiber Comforter Twin Size, 100% Cotton All Season Duvet Insert Twin, Medium Warmth Bedding Comforter with 8 Corner Loops, White 68x90 Inch",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B0DHV68MWX",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71A1wlNt9uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B075GGR33G",
+    "name": "EASELAND Twin Size Down Alternative Comforter - Quilted Duvet Insert for All Seasons, Soft Lightweight with Corner Tabs, Summer Winter Warm Bedding, White 64\u00d788 Inches",
+    "normalized_price": 32.22,
+    "buy_url": "https://www.amazon.com/dp/B075GGR33G",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B-k6LdYnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP2DHXML",
+    "name": "WhatsBedding Feather Down Fiber Comforter, White, Twin 68\"x90\" | All Season, Luxury Bed Comforter, Ultra Soft, Duvet Insert",
+    "normalized_price": 37.99,
+    "buy_url": "https://www.amazon.com/dp/B0DP2DHXML",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61lztXh5-ML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09PYPYCTC",
+    "name": "Duvet Insert Cotton Comforter Twin Size White Down Alternative Duvet Insert 100% Cotton Shell Quilted Fluffy Comforter Lightweight All Season 4 Corner Tabs Durable Breathable Noiseless",
+    "normalized_price": 38.24,
+    "buy_url": "https://www.amazon.com/dp/B09PYPYCTC",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91D+IOraZdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6TQM131",
+    "name": "Martha Stewart Luxurious Goose Feathers Down Fiber Comforter Twin Size 100% Cotton Duvet Insert, Hotel Quality Hypoallergenic Comforter, 43 oz All Seasons Medium Warmth 68 x 90 Inch White",
+    "normalized_price": 63.56,
+    "buy_url": "https://www.amazon.com/dp/B0D6TQM131",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61HQfYMAGHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJH8W1TP",
+    "name": "Casual Living Duvet Insert Twin XL Comforter Cooling Blanket Lightweight Hypoallergenic Reversible White Comforter with Box Stitching Fluffy Bedding Down Alternative Machine Washable, Twin XL, White.",
+    "normalized_price": 23.06,
+    "buy_url": "https://www.amazon.com/dp/B0CJH8W1TP",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61lN4SzfgPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01GF5HNSU",
+    "name": "Linenspa White Down Alternative Comforter and Duvet Insert, for Twin XL Size Bed \u2013 All-Season Comforter with Box Stitch and 8 Duvet Loops \u2013 Bedding for Kids, Teens, and Adults",
+    "normalized_price": 27.99,
+    "buy_url": "https://www.amazon.com/dp/B01GF5HNSU",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Smh6me7CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BYNJCGSB",
+    "name": "EASELAND Twin XL Down Alternative Comforter - Quilted Duvet Insert for All Seasons, Soft Lightweight with Corner Tabs, Summer Winter Warm Bedding, White 68\u00d792 Inches",
+    "normalized_price": 33.83,
+    "buy_url": "https://www.amazon.com/dp/B0BYNJCGSB",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61B-k6LdYnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B079FT5GHG",
+    "name": "Homelike Moment Twin Comforter Duvet Insert - White Down Alternative Bed Comforter Twin Size, Lightweight Bedding Comforters Quilted Soft All Season with Coner Tabs White Square Embossed",
+    "normalized_price": 23.99,
+    "buy_url": "https://www.amazon.com/dp/B079FT5GHG",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/815akcP8TXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLZ3TT8C",
+    "name": "Bare Home Duvet Insert Comforter - Twin/Twin Extra Long - 8 Duvet Loops - Goose Down Alternative - Ultra-Soft - Premium 1800 Series - All Season Warmth - Bedding Comforter (Twin/Twin XL, Dark Blue)",
+    "normalized_price": 41.14,
+    "buy_url": "https://www.amazon.com/dp/B0CLZ3TT8C",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61xN6P+v2cL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07CMDDRFW",
+    "name": "ViscoSoft Twin/Twin XL Comforter - Cloud-Soft Down Alternative Duvet Insert, All Season Cooling Lightweight Reversible Quilted Blanket for Dorm & Guest Bed, Oeko-TEX Certified, Light/Dark Gray",
+    "normalized_price": 27.74,
+    "buy_url": "https://www.amazon.com/dp/B07CMDDRFW",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Pggn4vj+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08KFHR28L",
+    "name": "sunflower Comforter Twin Duvet Insert White Twin XL Comforter Down Alternative Filling 100% Cotton Shell All Season for Dorm Hypoallergenic Warm Breathable Noiseless Machine Washable with Corner Taps",
+    "normalized_price": 45.21,
+    "buy_url": "https://www.amazon.com/dp/B08KFHR28L",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71J0rn+Ou1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZLMMWSD",
+    "name": "Mellow Marshmellow Comforter \u2013 Extra Fluffy Double-Stuffed Down Alternative Duvet Insert, All-Season Temperature Balancing, Oeko-TEX Fabric, Box Stitch, Machine Washable (Gray, Twin/Twin XL)",
+    "normalized_price": 97.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZLMMWSD",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71aoK9eOwUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK7K97H9",
+    "name": "Olive + Crate Twin XL | Twin Size Comforter - 100% Outer Shell Viscose Derived from Bamboo Comforter - Hypoallergenic, Cooling Duvet Insert for Twin Bedding - White Dorm Bedding - 62\"x90\"",
+    "normalized_price": 85.49,
+    "buy_url": "https://www.amazon.com/dp/B0DK7K97H9",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/717JQeRp43L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D7S59N76",
+    "name": "ROYALE LINENS Reversible Comforter - Twin XL Duvet Insert - All Season Soft Quilted Comforters with 8 Corner Tabs - Down Alternative Bedding Comforter - Duvet Insert (Chocolate/Sand, Twin XL 68\"x92\")",
+    "normalized_price": 12.0,
+    "buy_url": "https://www.amazon.com/dp/B0D7S59N76",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/718Ssq8u85L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08DLSFNCN",
+    "name": "Cozynight Soft Comforter Twin XL Size Duvet Insert-Down Alternative Comforter with Corner Tabs-Lightweight Washable Diamond Stitched (White,68\u201cx92\u201d)",
+    "normalized_price": 24.03,
+    "buy_url": "https://www.amazon.com/dp/B08DLSFNCN",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61vq4mqgoVS._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07ZN31RJ1",
+    "name": "Cozynight Down Alternative Comforter-All Season Twin XLComforter Duvet Insert with Corner Tabs-Breathable-Box Stitched Reversible White Comforter 68x90 inches",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B07ZN31RJ1",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61s08PZ4DlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q5O59H4",
+    "name": "Bare Home Duvet Insert Kids Comforter - Extra Long - Goose Down Alternative - Ultra-Soft - Premium 1800 Series - All Season Warmth - Bedding Comforter (Twin/Twin XL, White)",
+    "normalized_price": 39.97,
+    "buy_url": "https://www.amazon.com/dp/B00Q5O59H4",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61QbxhowBzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09P7G6SGS",
+    "name": "Bedsure Duvet Insert Twin XL Size - Lightweight Comforter, Quilted Cooling Duvet Insert, Down Alternative Summer Comforter with 8 Tabs, College Dorm Essentials, Machine Washable, White, 68x92 inches",
+    "normalized_price": 42.99,
+    "buy_url": "https://www.amazon.com/dp/B09P7G6SGS",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81nydpLzC5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV7F3W84",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Twin XL Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, Pink, Twin XL 92 x 68 Inches",
+    "normalized_price": 35.95,
+    "buy_url": "https://www.amazon.com/dp/B0CV7F3W84",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810lPYz6o-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTGF1JJ6",
+    "name": "Bedsure Twin XL Comforter Duvet Insert, All Season Bed Comforter, Quilted Down Alternative Duvet, Box Stitched Comforters with Corner Tabs, Machine Washable, 68 x 92 Inches (White)",
+    "normalized_price": 49.99,
+    "buy_url": "https://www.amazon.com/dp/B0CTGF1JJ6",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HdpWJsAoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZLPD8LR",
+    "name": "Mellow Marshmellow Comforter \u2013 Extra Fluffy Double-Stuffed Down Alternative Duvet Insert, All-Season Temperature Balancing, Oeko-TEX Fabric, Box Stitch, Machine Washable (Sand, Twin/Twin XL)",
+    "normalized_price": 97.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZLPD8LR",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71-sKJ7txfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C2KMS21N",
+    "name": "COHOME Premium Twin XL Size Cooling Comforter, All-Season Quilted Down Alternative Duvet Insert, Luxury Hotel GentleSoft Comforter with Anti-Clump Tech & 8 Tabs - Reversible - White 68x92 inches",
+    "normalized_price": 31.92,
+    "buy_url": "https://www.amazon.com/dp/B0C2KMS21N",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Or-wTToUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXSL285",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Twin XL Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, Grey, Twin XL 92 x 68 Inches",
+    "normalized_price": 35.39,
+    "buy_url": "https://www.amazon.com/dp/B08CXSL285",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91FNUIeDc6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQWL8BDQ",
+    "name": "Mellow Marshmellow Comforter Twin/Twin XL - Extra Fluffy Double-Stuffed Down Alternative Duvet Insert, All-Season Temperature-Balancing, Oeko-TEX Class I Fabric, Box-Stitch, Machine Washable",
+    "normalized_price": 97.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQWL8BDQ",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Ir67SD3ZL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

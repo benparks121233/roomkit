@@ -106,6 +106,10 @@ Rules:
       vintage library/scholarly art, rich dark tones
     • japandi → minimalist ink wash, zen landscapes, simple line art, wabi-sabi
     • coastal → ocean photography, watercolor seascapes, nautical prints
+    • sports_den → vintage sports posters, retro team prints, classic stadium
+      photography, sports memorabilia art, pennant-style graphics, bold
+      team-color graphic art. Even WITHOUT user sports interests, default
+      to sports-themed art — this IS a sports den.
     • gamer_den → sleek graphic art, minimalist gaming art, dark abstract
     • industrial → architectural prints, blueprint art, urban photography
     • warm_minimalist → textured abstract, earthy tones, organic shapes

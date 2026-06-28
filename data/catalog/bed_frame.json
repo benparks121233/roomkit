@@ -3927,7 +3927,7 @@
   {
     "product_id": "B0F8P95M45",
     "name": "Round Bed Frame with Fireplace and TV Stand - Velvet Circle Bed with Tufted Headboard & Footboard, Upholstered Sleigh Bed Queen Size, Luxury Bedframe with Side Storage Stools for Bedroom Furniture",
-    "normalized_price": 1818.88,
+    "normalized_price": 1798.88,
     "buy_url": "https://www.amazon.com/dp/B0F8P95M45",
     "specs": {
       "bed_size": "queen"
@@ -7676,6 +7676,2823 @@
       "bed_size": "queen"
     },
     "image_url": "https://m.media-amazon.com/images/I/81w8ynUjNKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0758QPBZD",
+    "name": "Meridian Furniture Bliss Collection Modern | Contemporary Velvet Upholstered Bed with Deep Button Tufting and Storage Compartments in Rails and Footboard, Queen, Navy",
+    "normalized_price": 1025.61,
+    "buy_url": "https://www.amazon.com/dp/B0758QPBZD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/513GQcdhsRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5XKY34K",
+    "name": "Furniture of America Sable Fabric Upholstered Step Up Queen-Size Platform Bed with Oversized Headboard, Deep Button Tufting, No Box Spring Required for Bedroom, Guest Room, Black",
+    "normalized_price": 1179.0,
+    "buy_url": "https://www.amazon.com/dp/B0D5XKY34K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xc9IvLYcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXML6PNJ",
+    "name": "First of a Kind Velvet Tufted Platform Storage Bed, Circle Bed with Button Tufting and Storage Compartments in Rails and Footboard, Queen Size (Grey)",
+    "normalized_price": 1350.0,
+    "buy_url": "https://www.amazon.com/dp/B0CXML6PNJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71OoB6v6kuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQJY5ZBX",
+    "name": "Multifunctional Queen Bed Frame, Modern Luxury Smart Bed with Massage Recliner on Right/Music Speaker/USB Port/Storage Drawers, Adjustable Leather Upholstered Headboard, Black",
+    "normalized_price": 1789.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQJY5ZBX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813OGiPOzFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BJ277NXB",
+    "name": "ESHINE 14\" Hybrid Mattress Queen(Medium Soft) + Adjustable Bed Frame - Luxury Gel Memory Foam, Upholstered Bed Frames with Massage, USB, Under Bed Night Light, Head and Foot Incline, Queen",
+    "normalized_price": 1019.99,
+    "buy_url": "https://www.amazon.com/dp/B0BJ277NXB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QdlQEBKVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDW6VJCS",
+    "name": "6pc Traditinal Gray Finish Luxury Upholstered Queen Size Panel Bed Set Arched Headboard Master Bedroom Furniture",
+    "normalized_price": 2499.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDW6VJCS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81418hM1LJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H12XJKJC",
+    "name": "First of a Kind Queen Size Stefania Glam Upholstered Platform Bed Frame in Gray - Plush Flannelette Fabric Deep Button Tufted Headboard Step Design - Luxury Bedroom Furniture Mattress Ready",
+    "normalized_price": 1118.76,
+    "buy_url": "https://www.amazon.com/dp/B0H12XJKJC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61kuGoLu1fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZ47Z913",
+    "name": "First of a Kind Leon Velvet Queen Bed Frame with TV Stand & Fireplace in Footboard, Luxury Upholstered Velvet Tufted Bed with Golden Legs, Tufted Beds, Bedframe with TV in Footboard, Black",
+    "normalized_price": 1409.0,
+    "buy_url": "https://www.amazon.com/dp/B0DZ47Z913",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61luNBJ75vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQ2LJWJJ",
+    "name": "Multifunctional Queen Size Bed Frame, Modern Luxury Smart Bed with Massage Recliner/Music Speaker/USB Port/Storage Drawers, Adjustable Leather Upholstered Headboard, White",
+    "normalized_price": 1789.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQ2LJWJJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81adUvq2HZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKJZXQ69",
+    "name": "First of a Kind Etherea Queen Bed - Mattress Ready Transitional Canopy Bed with Bluetooth Speakers, USB Ports - Button Tufted, Fully Upholstered Bed for Luxury Charm, Gray",
+    "normalized_price": 998.65,
+    "buy_url": "https://www.amazon.com/dp/B0FKJZXQ69",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61DZuKvvC0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZ78XJDF",
+    "name": "Queen Size Smart Bed, Multifunctional Leather Bed Frame with Massage Recliner/Upholstered Headboard/Music Speaker/USB Port/Storage Space, Modern Luxury Bed Frame(Beige)",
+    "normalized_price": 1399.6,
+    "buy_url": "https://www.amazon.com/dp/B0CZ78XJDF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LICzmeqNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09CLJ7QWK",
+    "name": "Meridian Furniture RevelNavy-Q Revel Collection Modern | Contemporary Navy Velvet Upholstered Bed with Deep Button Tufting, 85\" W x 98\" D x 60\" H, Navy, Queen",
+    "normalized_price": 1232.98,
+    "buy_url": "https://www.amazon.com/dp/B09CLJ7QWK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71avmN1JzhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09LDGNS69",
+    "name": "Meridian Furniture JonesBlack-Q Jones Collection Modern | Contemporary Upholstered Queen Bed, Black Velvet, Channel Tufting, Brushed Brass Frame, 66.5\" W x 86.5\" D x 79\" H, Black, Queen",
+    "normalized_price": 1148.98,
+    "buy_url": "https://www.amazon.com/dp/B09LDGNS69",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51e-7NCYmSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBLYT53T",
+    "name": "Velvet Canopy Bed Frame King - Upholstered Four Poster Bed Frame with Tufted Headboard and Footboard, Luxury Bed Frame with Wood Slats for Bedroom Furniture, Box Spring Required, Black",
+    "normalized_price": 1098.98,
+    "buy_url": "https://www.amazon.com/dp/B0FBLYT53T",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vYOd4e6BL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDYCMLZF",
+    "name": "5pc Traditinal Gray Finish Luxury Upholstered Queen Size Panel Bed Set Arched Headboard Bedroom Furniture",
+    "normalized_price": 1999.99,
+    "buy_url": "https://www.amazon.com/dp/B0DDYCMLZF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sUmXZ9DsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09VCLKDW8",
+    "name": "Meridian Furniture RoyalGreen-Q Royal Collection Modern | Contemporary Velvet Upholstered Queen Bed with Soft Green Velvet, Deep Elegant Tufting, Canopy, 70.5\" W x 89\" D x 87\" H, Green, Queen",
+    "normalized_price": 1026.51,
+    "buy_url": "https://www.amazon.com/dp/B09VCLKDW8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61FeWpIWzoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FN4CFXYJ",
+    "name": "Luxury Queen Size Upholstered Platform Bed with Oversized Padded Headboard, Solid Wood Frame, Adjustable Mattress Heights (6\u201312\u201d), Noise-Free, No Box Spring, 1000 lb Capacity, Beige",
+    "normalized_price": 939.99,
+    "buy_url": "https://www.amazon.com/dp/B0FN4CFXYJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813oCNS8v8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1HNMTM",
+    "name": "Tov Furniture Isla Taupe Textured Velvet King Bed",
+    "normalized_price": 864.09,
+    "buy_url": "https://www.amazon.com/dp/B0DP1HNMTM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61yU1bbz5-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GM1P3VZ6",
+    "name": "First of a Kind Miranda Gold Finish Traditional 5 Piece Queen Bedroom Set with Upholstered Tufted Headboard Ornate European Inspired Design Coordinated Furniture Collection",
+    "normalized_price": 2830.12,
+    "buy_url": "https://www.amazon.com/dp/B0GM1P3VZ6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vpsTj6IjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09CLK12SN",
+    "name": "Meridian Furniture RevelGrey-K Revel Collection Modern | Contemporary Grey Velvet Upholstered Bed with Deep Button Tufting, 101\" W x 98\" D x 60\" H, Grey, King",
+    "normalized_price": 1451.99,
+    "buy_url": "https://www.amazon.com/dp/B09CLK12SN",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71qo3rNKToL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9Z3GCFR",
+    "name": "Meridian Furniture RavaBrown-Q Rava Collection Modern | Contemporary Queen Bed with Ultra Luxe Brown 460 GSM Velvet, Piping, Solid Wood Inner Frame, 66.25\" W x 89.75\" D x 50.75\" H, Brown, Queen",
+    "normalized_price": 848.68,
+    "buy_url": "https://www.amazon.com/dp/B0F9Z3GCFR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61SRLUpyfpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZY8HWGX",
+    "name": "First of a Kind Queen Size Belleterre Glam Bed Frame in Silver - Velvet-Like Upholstery Tufted Headboard Mirrored Panels Crystal Acrylic Details - Luxury Bedroom Furniture",
+    "normalized_price": 908.6,
+    "buy_url": "https://www.amazon.com/dp/B0GZY8HWGX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61OCgnNVObL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G14435P8",
+    "name": "Modern Luxury Queen Size Genuine Leather Bed Set Upholstered Platform Bed Frame with Headboard and Storage Drawers No Box Spring Needed",
+    "normalized_price": 5073.0,
+    "buy_url": "https://www.amazon.com/dp/B0G14435P8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71Jn54JfHWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2YJFPN6",
+    "name": "Oscar Dark Grey Queen Bed",
+    "normalized_price": 814.35,
+    "buy_url": "https://www.amazon.com/dp/B0F2YJFPN6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71a4eQoZK4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZSP51NV",
+    "name": "First of a Kind Queen Size Lysandra Sleigh Bed Frame in Rustic Natural Beige - Upholstered Linen Like Solid Engineered Wood Button Tufted Headboard & Footboard - Foundation Required",
+    "normalized_price": 1611.56,
+    "buy_url": "https://www.amazon.com/dp/B0GZSP51NV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Ta96f+eLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GPK6H6P2",
+    "name": "24/7 Shop at Home Lalia Hammered Metal Upholstered Bed with Beige Fabric 64-inch Tall Camelback Headboard, Forged Steel Frame, Foundation Required, Queen, Matte Gray",
+    "normalized_price": 1646.81,
+    "buy_url": "https://www.amazon.com/dp/B0GPK6H6P2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/911aRUhDnfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKM4WF6P",
+    "name": "KEIKI Queen Size Velvet Upholstered Platform Bed Frame with Trapezoidal Headboard, Solid Pine Slats & Metal Frame \u2013 Black",
+    "normalized_price": 809.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKM4WF6P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91V2mtThS9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZYJ7X51",
+    "name": "First of a Kind Queen Size Esparanza Bed Frame in Brown Cherry Finish - Button Tufted Headboard Faux Wood Carved Details - Traditional Luxury Bedroom Furniture Solid Wood Design",
+    "normalized_price": 1278.98,
+    "buy_url": "https://www.amazon.com/dp/B0GZYJ7X51",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61VSgBE7ZJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09DDC65P3",
+    "name": "Tov Furniture Angela Velvet Bed in Full (Cream)",
+    "normalized_price": 849.0,
+    "buy_url": "https://www.amazon.com/dp/B09DDC65P3",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61nTrAu371L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F917443V",
+    "name": "Luxury Smart King Bed Frame, Multifunction Bed Frame Upholstered Platform with Massage Recliner/Bluetooth Speaker/USB Charging Station/Storage Drawers, Leather Headboard/Strong Wooden Slats, Grey",
+    "normalized_price": 1848.0,
+    "buy_url": "https://www.amazon.com/dp/B0F917443V",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/9122prvmnnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZLPW6TB",
+    "name": "First of a Kind Queen Size Upholstered Modern Bed Frame in Silver - LED Lighted Headboard Mirror Trim Crocodile Texture Tufted Panel - Solid Wood Support Glam Bedroom Furniture",
+    "normalized_price": 866.6,
+    "buy_url": "https://www.amazon.com/dp/B0GZLPW6TB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51XDL24O2KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJ3R4H8B",
+    "name": "Queen Size Luxury Upholstered Platform Bed Frame with Oversized Padded Headboard, Solid Wood Slat Support, Noise Free Design, No Box Spring Required, Adjustable Mattress Height Compatibility, Beige",
+    "normalized_price": 916.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJ3R4H8B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/710O5zfx4kL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX6SLQXF",
+    "name": "homary Modern Bedroom Furniture Set 2 Piece, White Boucle Queen Size Platform Bed Set & Bedroom Bench with Solid Rubber Wood Legs, Upholstered Headboard for Master Suite or Guest Room",
+    "normalized_price": 1999.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX6SLQXF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61nAq2XBpLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZS31S3B",
+    "name": "First of a Kind Queen Size Traditional Luxury Bed in Brown Cherry Espresso Finish - Leatherette Upholstered Solid Wood Veneer Padded Headboard Footboard - Faux Carved Detailing Bed Frame",
+    "normalized_price": 1132.25,
+    "buy_url": "https://www.amazon.com/dp/B0GZS31S3B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/615t0ijhT8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H26WRR68",
+    "name": "Luxury Modern Queen Bed Frame with Upholstered Two-Panel Headboard, Wooden Platform Bed with Under-Footboard Drawers, Faux Leather Trimmed Soft Silver Sheen, No Box Spring Needed",
+    "normalized_price": 909.0,
+    "buy_url": "https://www.amazon.com/dp/B0H26WRR68",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gVlSYz7ML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FTVN2ZSG",
+    "name": "Bed Frame with Fireplace and TV Stand - Teddy Fleece Wood Platform Bed with Vertical Stitching Design, Upholstered Sleigh Bed, Boucle Bedframe with Speakers and LED Light for Bedroom Furniture, Queen",
+    "normalized_price": 1399.99,
+    "buy_url": "https://www.amazon.com/dp/B0FTVN2ZSG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81T8VLzjjUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXMKZT9R",
+    "name": "First of a Kind Modern Velvet Tufted upholstered Platform Storage Bed, Bed with deep Button Tufting and Storage Compartments in Rails and Footboard (Cream, Queen)",
+    "normalized_price": 1199.0,
+    "buy_url": "https://www.amazon.com/dp/B0CXMKZT9R",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/4172BCMZk-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZRBF1ZJ",
+    "name": "Tool Free Assembly Solid Hardwood Deluxe Platform Bed Frame, Headboard, Footboard & Slats, Quality Crafted in Pennsylvania, USA by Mennonite Artisans, No Box Spring Needed- Queen, Aged Walnut",
+    "normalized_price": 845.49,
+    "buy_url": "https://www.amazon.com/dp/B0DZRBF1ZJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Af3l2aFhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZZYY6TP",
+    "name": "Queen Size Solid Wood Bed Frame, Deep Walnut Finish \u2013 Classic Modern Platform Bed with 64.2\" Tall Headboard, Pine Wood & MDF Construction for Stability, No Box Spring Needed",
+    "normalized_price": 850.96,
+    "buy_url": "https://www.amazon.com/dp/B0GZZYY6TP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Jjysfl2uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXH2113T",
+    "name": "First of a Kind Queen Traditional Bed Frame \u2013 CM7129 Dark Walnut Solid Wood Bed with Floral Carved Headboard & Antique Brass Accents",
+    "normalized_price": 931.08,
+    "buy_url": "https://www.amazon.com/dp/B0GXH2113T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61-r4doBp4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FNQNW4H9",
+    "name": "HULALA HOME Mid-Century Modern Solid Wood Queen Size Bed Frame, Low Profile Platform Bed with Tapered Legs for Bedroom, Walnut",
+    "normalized_price": 965.99,
+    "buy_url": "https://www.amazon.com/dp/B0FNQNW4H9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81VgfI+EHkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRJ38H7T",
+    "name": "Panthera Queen Bed Frame with 41in High Headboard Solid Wood Platform Bed, Art Deco Artisan Tall Headboard Wood Bed Compatible with All Mattress Types, No Box Spring Needed, Walnut",
+    "normalized_price": 899.0,
+    "buy_url": "https://www.amazon.com/dp/B0DRJ38H7T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91lRQlUcfLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYRZRZBJ",
+    "name": "Gazelle Queen Size, Acacia Wood Bedframe with Headboard, Art-Deco Inspired Design Platform Bed, Easy Setup, Zero Squeak & Compatible with All Mattresses - Walnut Finish",
+    "normalized_price": 1199.99,
+    "buy_url": "https://www.amazon.com/dp/B0GYRZRZBJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91-ptKCpKvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5W1CN46",
+    "name": "Premium Solid Wood Queen Size Bed Frame with Headboard,Walnut Finish, 600lbs Capacity, for Modern Bedroom,No Box Spring Needed, Fits All Mattresses",
+    "normalized_price": 1062.95,
+    "buy_url": "https://www.amazon.com/dp/B0H5W1CN46",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/6140KaXo0CL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DVYQ96CM",
+    "name": "Furniture of America Forma Mid-Century Modern Solid Wood Brown Bed Frame with LED Reading Lights on Headboard, Wooden Bedframe for Bedroom, Guest Room, No Box Spring Needed, Walnut, Queen",
+    "normalized_price": 1130.22,
+    "buy_url": "https://www.amazon.com/dp/B0DVYQ96CM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LcDqmbBIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GY9WGPZQ",
+    "name": "First of a Kind Queen Size Bed Frame Dark Walnut Finish - Solid Pinewood Construction Engineered Wood Support Panel Moulding Design - Durable Bedroom Furniture Foundation Required",
+    "normalized_price": 866.6,
+    "buy_url": "https://www.amazon.com/dp/B0GY9WGPZQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51WWbqZeGYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D59HGR87",
+    "name": "Bme Georgina Solid Wood Queen Bed Frame & Sideboards, Walnut, Handcrafted Geometric Headboard",
+    "normalized_price": 902.54,
+    "buy_url": "https://www.amazon.com/dp/B0D59HGR87",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61+Lv7cc2-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H29VX51Q",
+    "name": "Queen Bed Frame, Panel Bed, Antique Walnut Wood Bed Frame, Traditional Bedroom, Recessed Molding Headboard, Includes Footboard Rails and 4 Slats, Box Spring Required",
+    "normalized_price": 1229.99,
+    "buy_url": "https://www.amazon.com/dp/B0H29VX51Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OTnXeW9zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H69NXJY2",
+    "name": "Redfire Queen Size Solid Wood Platform Bed Frame, Tall Headboard Natural Walnut Bed Frame with Vertical Wood Grain, Sturdy Support Bed Base No Box Spring Needed, Heavy Duty Bedroom Furniture",
+    "normalized_price": 854.89,
+    "buy_url": "https://www.amazon.com/dp/B0H69NXJY2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71-Ksccx5+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1V6R5G9",
+    "name": "mopio Retrovie Mid-Century Modern Queen Bed Frame \u2013 Solid Wood Legs, LVL Slat System, No Box Spring Needed, Supports 661 lbs, Easy Assembly (Walnut, 4 Drawers)",
+    "normalized_price": 999.0,
+    "buy_url": "https://www.amazon.com/dp/B0H1V6R5G9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/611ylczexNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01LS22I1W",
+    "name": "Furniture of America Malierd Transitional Fluted Poster Bed, Queen, Dark Walnut",
+    "normalized_price": 941.58,
+    "buy_url": "https://www.amazon.com/dp/B01LS22I1W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71W9UgUf2dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV5FCRHJ",
+    "name": "HULALA HOME Bed Frame Queen Size with Headboard,Claus Solid Wood Platform Bed with USB Ports and Storage Space,No Box Spring Needed, Noise Free, Easy Assembly,Walnut",
+    "normalized_price": 959.9,
+    "buy_url": "https://www.amazon.com/dp/B0CV5FCRHJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZAcgAJzWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZSBN2GS",
+    "name": "First of a Kind California King Size Bianca Bed Frame in Dark Walnut - Solid Wood Construction Plank Style Headboard Footboard Veneer Engineered Wood Rustic Bedroom Furniture Foundation Required",
+    "normalized_price": 891.75,
+    "buy_url": "https://www.amazon.com/dp/B0GZSBN2GS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/518JKiXA8vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQJQJX97",
+    "name": "Starlight Canyon Home Eastern Queen Bed Frame, Solid Acacia Wood with American Walnut Finish, Low Profile King Platform Bed with Floating Nightstands and Headboard",
+    "normalized_price": 1351.49,
+    "buy_url": "https://www.amazon.com/dp/B0FQJQJX97",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41Iw-E-AmXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLPW9V8H",
+    "name": "Gazelle Bed Frame with Headboard Solid Wood Platform Bed, Queen Bed Frames, Optical Illusion Tall Headboard Wood Bed Compatible with All Mattress Types, No Box Spring Needed, Walnut",
+    "normalized_price": 899.0,
+    "buy_url": "https://www.amazon.com/dp/B0FLPW9V8H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81uK2feDdpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKT1Y1MK",
+    "name": "Queen Size Murphy Bed with 2 Storage Cabinet Shelves, Farmhouse Wood Hidden Foldable Wall Bed Frame, Space Saving Beds with USB Port, Murphy Bed Queen for Guest Room,Apartment,Bedroom, Walnut",
+    "normalized_price": 1189.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKT1Y1MK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/819ZwzLWf9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2754X8L",
+    "name": "Pemberly Row Queen Wooden Bed Frame, Dark Walnut Finish, Carved Victorian Style, Floral Accents, Camelback Headboard 52 in, Cherry Veneer, Solid Pine Wood, 62L x 80W x 68H in, Elegant Bedroom",
+    "normalized_price": 865.58,
+    "buy_url": "https://www.amazon.com/dp/B0H2754X8L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51Xuu+Pvd5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D373VGR8",
+    "name": "New Classic Furniture Stafford County Wood Queen Storage Bed, Walnut",
+    "normalized_price": 988.16,
+    "buy_url": "https://www.amazon.com/dp/B0D373VGR8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91PB3NqSxfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H29HC7RD",
+    "name": "Pemberly Row Queen Platform Bed, Walnut Brown Solid Wood Frame, Beige Boucle Winged Upholstered Headboard, Mattress-Ready Design, Mid-Century Modern Style Bedroom Furniture",
+    "normalized_price": 853.9,
+    "buy_url": "https://www.amazon.com/dp/B0H29HC7RD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41qnL6yHggL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP9FQSW3",
+    "name": "Transitional Queen Bed: Acacia/Walnut Solid Wood Bedroom Furniture, Parquet Design Bedframe, 86\" L x 65\" W, Modern Style for Bedroom.",
+    "normalized_price": 827.42,
+    "buy_url": "https://www.amazon.com/dp/B0FP9FQSW3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81evx24npPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1S7MRZM",
+    "name": "Rophefx Queen Murphy Bed Cabinet with 5-Tier Adjustable Storage Shelves, Wood Queen Wall Bed Cabinet Bedframe, Space Saving Beds, Hidden Bedframe, Foldable Platform Beds for Guest Room, Walnut Color",
+    "normalized_price": 899.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1S7MRZM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vHMbH6OgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQFK14LQ",
+    "name": "FLEXISPOT Hako G3 Queen Bed Frame and Mattress Set, Solid Acacia Wood Platform Bed with Storage Headboard & 10\" Cooling Gel Memory Foam Mattress, 1500 lbs, Medium Firm, Bamboo Cover, 10-Year Warranty",
+    "normalized_price": 849.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQFK14LQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812D1Udf1+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BRZW9KC8",
+    "name": "RORNS Gazelle Solid Wood Bed Frame with High Headboard, 800 lbs Capacity Signature Art Deco Wood Bed (Walnut, Queen)",
+    "normalized_price": 879.46,
+    "buy_url": "https://www.amazon.com/dp/B0BRZW9KC8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81L7i7sGtaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2HVBTYM",
+    "name": "Pemberly Row Contemporary Solid Wood Queen Bed, Brushed Walnut Finish, Rubberwood and Oak Veneer, Chevron Pattern, Slat Kit Included, Sturdy Bedroom Furniture, 69\" H x 68\" W x 90.5\" D",
+    "normalized_price": 903.13,
+    "buy_url": "https://www.amazon.com/dp/B0D2HVBTYM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/510qzGCRp1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GPXBD344",
+    "name": "Pine Solid Wood Queen Size Bed, Solid and Stable, NO Box Spring Needed, Dark Walnut Color",
+    "normalized_price": 1318.7,
+    "buy_url": "https://www.amazon.com/dp/B0GPXBD344",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Jjysfl2uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DY4KWQVJ",
+    "name": "Modus Furniture Platform Bed, Totes - English Walnuts, King (U.S. Standard)",
+    "normalized_price": 1799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DY4KWQVJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71W40vpGInL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CVZ7KCSH",
+    "name": "AFI, Nantucket King Platform Bed with Footboard & Storage Drawers, Light Toffee",
+    "normalized_price": 794.81,
+    "buy_url": "https://www.amazon.com/dp/B0CVZ7KCSH",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81k7f3BejeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLDZ31BS",
+    "name": "HomeStock Panel Bed - Walnut Finish - Solid Wood Bedroom Frame with Headboard Queen",
+    "normalized_price": 1099.9,
+    "buy_url": "https://www.amazon.com/dp/B0GLDZ31BS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71uDf2Hh6+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CMXVGWF1",
+    "name": "Crafters and Weavers Craftsman Mission Solid Wood Queen Panel Bed in Walnut",
+    "normalized_price": 1713.81,
+    "buy_url": "https://www.amazon.com/dp/B0CMXVGWF1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41LeD9u21XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLVWYYJ8",
+    "name": "Vintage Bed Frame Queen Size - Classic Sleigh Bed with Natural Linen Tufted Headboard, Traditional Solid Cherry Wood Antique Bed with Carved Pattern and Nailhead Trim for Bedroom Furniture, Walnut",
+    "normalized_price": 1249.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLVWYYJ8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91EgCWfambL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4G94BS3",
+    "name": "Pemberly Row Queen Bed Frame, Solid Black Walnut Wood, Spindle Headboard, Sturdy Post Legs, Contemporary Midcentury Style Bedroom Furniture",
+    "normalized_price": 2209.13,
+    "buy_url": "https://www.amazon.com/dp/B0G4G94BS3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61X7uNT8SIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZP2N363",
+    "name": "Queen Size Platform Bed Frame with Headboard & 55\" Solid Wood TV Stand for up to 60 Inch TV, Mid-Century Modern Fluted Acacia Wood, Storage Console, No Box Spring, Walnut",
+    "normalized_price": 881.83,
+    "buy_url": "https://www.amazon.com/dp/B0GZP2N363",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41USnhQa75L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPDK9N51",
+    "name": "Penau Queen Size Bed Frame, Transitional Acacia Parquet Design, Solid Wood with Walnut Finish, 86L x 65W x 54.25H Inches",
+    "normalized_price": 928.59,
+    "buy_url": "https://www.amazon.com/dp/B0DPDK9N51",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HWYQvUFGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07MDFL53V",
+    "name": "Coaster Home Furnishings \u2013 Winslow \u2013 Wood \u2013 Queen Platform Bed with Jagged Seam, Bow Tie Inlays, and Separated Headboard \u2013 Bedroom \u2013 Smokey Walnut and Coffee Bean - 223250Q",
+    "normalized_price": 1093.31,
+    "buy_url": "https://www.amazon.com/dp/B07MDFL53V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/811RLWJyb9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1B8WTF4",
+    "name": "Queen Size Murphy Bed with 2 Storage Cabinet, Farmhouse Wood Hidden Foldable Wall Bed Frame, Space Saving Beds with Shelves, Murphy Bed Queen for Guest Room,Apartment,Office,Bedroom,Walnut Color",
+    "normalized_price": 899.99,
+    "buy_url": "https://www.amazon.com/dp/B0G1B8WTF4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711H4t15T5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G35VVZ53",
+    "name": "FLEXISPOT Hako G2 Japanese Joinery Bed Frame, Solid Rubberwood Queen Platform Bed with Storage Headboard, IAS&SGS Certified, Japandi Minimalist Style, No Tools Assembly, 10-Year Warranty, Walnut",
+    "normalized_price": 626.99,
+    "buy_url": "https://www.amazon.com/dp/B0G35VVZ53",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HzO3jUQQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CGSVSZWK",
+    "name": "Jennifer Taylor Home Aspen Platform, Queen, Mink Beige Performance Velvet",
+    "normalized_price": 624.32,
+    "buy_url": "https://www.amazon.com/dp/B0CGSVSZWK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51u9megGyiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF1KGMZL",
+    "name": "CHITA Queen Size Bed Frame, Upholstered Platform Bed with Waterproof Headboard, Wooden Slats Support, Noise-Free, No Box Spring Needed, Easy Assembly, Cream",
+    "normalized_price": 699.99,
+    "buy_url": "https://www.amazon.com/dp/B0GF1KGMZL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZKXPsaEbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D423C69Y",
+    "name": "Venice Upholstered Platform Bed | Box Spring Not Required | (Black Boucle, Queen Bed Frame)",
+    "normalized_price": 606.3,
+    "buy_url": "https://www.amazon.com/dp/B0D423C69Y",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61ok+HvOv6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZN8S18W",
+    "name": "Acacia Elara Queen Platform Bed Frame \u2013 Mid-Century Modern Style, Carved Headboard, Solid Wood, Caramel Finish, No Box Spring, 800lbs Support, Easy Assembly with Tools Included",
+    "normalized_price": 672.35,
+    "buy_url": "https://www.amazon.com/dp/B0DZN8S18W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91k21YaqYoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTZ6WT6G",
+    "name": "Nectar Bamboo Platform Bed Frame & Headboard - Natural - Queen - Floating Center Support Legs - 12\u201d Height - Easy Tool Free Set Up - Contemporary - Sturdy Wooden Support Slats - Holds Up To 800 Pounds",
+    "normalized_price": 605.2,
+    "buy_url": "https://www.amazon.com/dp/B0DTZ6WT6G",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81UbcK3yKRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09CLVZ2LX",
+    "name": "BOWERY HILL Modern Queen Platform Bed, Velvet Upholstered, Light Blue Finish, Solid Wood and MDF Construction, Foam Padding, Gold-Tone Metal Legs, Glam Luxe Style for Bedroom Use",
+    "normalized_price": 658.16,
+    "buy_url": "https://www.amazon.com/dp/B09CLVZ2LX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/415b0FpYoBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1R87FXH",
+    "name": "KEIKI Queen Size Platform Bed Frame with Velvet Upholstered Headboard, Modern Bed Frame with LED Wall Lamps & Floating Nightstands, Heavy Duty Metal and Wood Support, No Box Spring Needed, Black",
+    "normalized_price": 639.0,
+    "buy_url": "https://www.amazon.com/dp/B0H1R87FXH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81L0aO837RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FY31QRNS",
+    "name": "MASARA Modern Platform Bed, Mid-Century Style with Tapered Legs, Solid Wood and Veneer Construction (Black, Queen)",
+    "normalized_price": 830.0,
+    "buy_url": "https://www.amazon.com/dp/B0FY31QRNS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/510MnOtwFiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CNKHVRYZ",
+    "name": "Liana Modern Style Upholstered Platform Bed with Soft Boucle Fabric and Solid Wood Legs - Box Spring Not Required - White Boucle, Queen Size",
+    "normalized_price": 637.24,
+    "buy_url": "https://www.amazon.com/dp/B0CNKHVRYZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71cqIUr7rVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2MXT9ND",
+    "name": "V\u00e4nt Upholstered Platform Bed, Queen, Weave Prestige",
+    "normalized_price": 819.0,
+    "buy_url": "https://www.amazon.com/dp/B0G2MXT9ND",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dNOOb2TwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKG7N3HC",
+    "name": "Armen Living Artemio Mid Century Modern Queen Platform Wood Bed Frame with Upholstered Fabric Headboard in Black Finish",
+    "normalized_price": 1039.91,
+    "buy_url": "https://www.amazon.com/dp/B0CKG7N3HC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xOEmI0XPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GY8SDQ6K",
+    "name": "Pemberly Row Upholstered Platform Queen Bed, Gray Boucle Fabric, Wood Legs, 42.7\" H x 66.5\" W x 86\" D, No Box Spring Needed, Modern Bedroom Furniture with Under-Bed Storage",
+    "normalized_price": 810.8,
+    "buy_url": "https://www.amazon.com/dp/B0GY8SDQ6K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/712wRV1kZvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP77YKZF",
+    "name": "Monte Rosa Platform Bed: Mid-Century Modern Queen Size Wood Frame with Upholstered Headboard - Gold-Tone Metal Legs & Slat Support System for Bedroom",
+    "normalized_price": 777.5,
+    "buy_url": "https://www.amazon.com/dp/B0FP77YKZF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81UJcp18i5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZK5YGT4",
+    "name": "Best Master Furniture Jalen Modern Velvet Upholstered Platform Bed Frame with Gold Stainless Steel Trim, Glam Contemporary Design (Beige, Queen (U.S. Standard))",
+    "normalized_price": 730.62,
+    "buy_url": "https://www.amazon.com/dp/B0BZK5YGT4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rlmVRLB4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRJ3DJDN",
+    "name": "Gazelle Signature Bed Frame with High Headboard Solid Wood Platform Bed, Queen Bed Frame, Art Deco Natural Wood Bed Compatible with All Mattress Types, Non-Slip and Noise-Free, Caramel",
+    "normalized_price": 849.46,
+    "buy_url": "https://www.amazon.com/dp/B0DRJ3DJDN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81zVIIqQ4hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FD3B969Q",
+    "name": "Light Luxury Modern Queen Size Platform Bed Ergonomic Upholstered Headboard with Heavy Duty Wooden Slat Support Noise-Free",
+    "normalized_price": 4900.0,
+    "buy_url": "https://www.amazon.com/dp/B0FD3B969Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XEsxNDmyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BVXT1G2W",
+    "name": "VANT Elevated Platform Bed - Burnished Brass - Queen Size - Velvet Platinum Grey - Easy Assembly Bed Frame - No Box Spring Needed - Sleek Modern Design for Any Bedroom",
+    "normalized_price": 999.0,
+    "buy_url": "https://www.amazon.com/dp/B0BVXT1G2W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61c0vEHkhRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09HRZRPP9",
+    "name": "Platform Bed Frame, Queen Size, Wood, Black, Modern Contemporary Urban, Bedroom Master Guest Suite",
+    "normalized_price": 659.0,
+    "buy_url": "https://www.amazon.com/dp/B09HRZRPP9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51u+M+-hGaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FS68GZKD",
+    "name": "Benzara Ressy Queen Platform Bed with LED, Channel Tufted Upholstery, White Wood",
+    "normalized_price": 810.81,
+    "buy_url": "https://www.amazon.com/dp/B0FS68GZKD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61MGpILBjCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GL8ZTTQ5",
+    "name": "SAFAVIEH Couture Collection \u2013 Barrymore Greige Oak & Taupe Reeded Wood Upholstered Queen Bed, Modern Platform Bed Frame with Textured Wood Detail (SFV2227A-Q)",
+    "normalized_price": 1185.7,
+    "buy_url": "https://www.amazon.com/dp/B0GL8ZTTQ5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71tmB+vmj7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCYY112X",
+    "name": "POVISON Queen Bed Frame with Upholstered Headboard, Mattress Foundation with Wooden Slats, Heavy Solid Wood Support, No Box Spring Needed, Easy Assembly, Classic Bed, Beige (NO Mattress)",
+    "normalized_price": 1399.0,
+    "buy_url": "https://www.amazon.com/dp/B0DCYY112X",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71vUFh5zW0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8KJRG8K",
+    "name": "MASARA Contemporary Black and Gold Platform Bed, Engineered Wood and Metal Frame, Multiple, Modern Bedroom Furniture (Queen (U.S. Standard))",
+    "normalized_price": 760.0,
+    "buy_url": "https://www.amazon.com/dp/B0G8KJRG8K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51uaI1BXrjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6DRR5PH",
+    "name": "MASARA Contemporary Black Platform Bed Frame, Solid Wood and Metal Construction, Queen/King/Cal King, 67\" High (Queen (U.S. Standard))",
+    "normalized_price": 1150.0,
+    "buy_url": "https://www.amazon.com/dp/B0G6DRR5PH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51g2Q9IccnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8KM22PW",
+    "name": "MASARA Contemporary White and Gold Platform Bed, Engineered Wood and Metal Frame, Multiple, Modern Bedroom Furniture (Queen (U.S. Standard))",
+    "normalized_price": 760.0,
+    "buy_url": "https://www.amazon.com/dp/B0G8KM22PW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51YDl-L9z4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PGGHQQG",
+    "name": "Modern Contemporary Urban Design Bedroom Platform Bed Frame, Wood, Natural Brown White",
+    "normalized_price": 1072.0,
+    "buy_url": "https://www.amazon.com/dp/B07PGGHQQG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/611yQCDT8xL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8KFCQ4H",
+    "name": "MASARA Contemporary Black Platform Bed, Gold Trim Accents, Engineered Wood Frame, Multiple Queen (U.S. Standard)",
+    "normalized_price": 800.0,
+    "buy_url": "https://www.amazon.com/dp/B0G8KFCQ4H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51HZhHdtb3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C3JYLTR8",
+    "name": "VANT Elevated Platform Bed - Brushed Nickel - Queen Size - Velvet Emerald Green - Easy Assembly Bed Frame - No Box Spring Needed - Sleek Modern Design for Any Bedroom",
+    "normalized_price": 999.0,
+    "buy_url": "https://www.amazon.com/dp/B0C3JYLTR8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41zmVqIgBPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DG5MLY2C",
+    "name": "Furniture of America Quanta Modern Wood Queen-Size Bed with Gold Accented Headboard, No Box Spring Required for Bedroom, Guest Room, Black",
+    "normalized_price": 1359.49,
+    "buy_url": "https://www.amazon.com/dp/B0DG5MLY2C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81OhkhsIyKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XVRCYKB",
+    "name": "Contemporary Modern Urban Designer Bedroom Platform Bed Frame Queen Size Brown Fabric Wood",
+    "normalized_price": 1087.0,
+    "buy_url": "https://www.amazon.com/dp/B07XVRCYKB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Ios2uW1tL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XVPG4ZF",
+    "name": "Contemporary Modern Urban Designer Bedroom Platform Bed Frame Queen Size Grey Gray Fabric Wood",
+    "normalized_price": 1283.0,
+    "buy_url": "https://www.amazon.com/dp/B07XVPG4ZF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/615IMDF7AyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01N2KBKTC",
+    "name": "Acme Chantelle Queen Bed in Rose Gold PU & Pearl White",
+    "normalized_price": 1110.73,
+    "buy_url": "https://www.amazon.com/dp/B01N2KBKTC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91IF3jDKwPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09LDGXGJT",
+    "name": "Meridian Furniture JonesGrey-Q Jones Collection Modern | Contemporary Upholstered Queen Bed, Grey Velvet, Channel Tufting, Brushed Brass Frame, 66.5\" W x 86.5\" D x 79\" H, Grey, Queen",
+    "normalized_price": 1259.82,
+    "buy_url": "https://www.amazon.com/dp/B09LDGXGJT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51u2qSBCr9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYRVS7ZY",
+    "name": "Gazelle Queen Size, Acacia Wood Bedframe with Headboard, Art-Deco Inspired Design Platform Bed, Easy Setup, Zero Squeak & Compatible with All Mattresses - Caramel Finish",
+    "normalized_price": 1199.99,
+    "buy_url": "https://www.amazon.com/dp/B0GYRVS7ZY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91xFMs6ijwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07XVRHPXF",
+    "name": "Contemporary Modern Urban Designer Bedroom Platform Bed Frame Queen Size Grey Gray Fabric Wood",
+    "normalized_price": 1129.0,
+    "buy_url": "https://www.amazon.com/dp/B07XVRHPXF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/612lGM1meNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DDR4Y7WP",
+    "name": "SAFAVIEH Couture Collection Beccarose Light Brown/Walnut Velvet Queen Size Bed",
+    "normalized_price": 1024.6,
+    "buy_url": "https://www.amazon.com/dp/B0DDR4Y7WP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61rgIxXfeAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087NJV4YR",
+    "name": "Meridian Furniture Dolce Collection Modern | Contemporary Velvet Upholstered Bed with Luxurious Channel Tufting and Gold Metal Trim/Legs, Queen, Cream",
+    "normalized_price": 1042.95,
+    "buy_url": "https://www.amazon.com/dp/B087NJV4YR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51ke66RfVML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW13ZNBZ",
+    "name": "SAFAVIEH Couture Collection - Giuliano Walnut Wood Frame Bed, Ivory Fabric Upholstered Headboard, Queen Size, No Box Spring Needed (SFV1804B-Q)",
+    "normalized_price": 1122.3,
+    "buy_url": "https://www.amazon.com/dp/B0FW13ZNBZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41ax+RfulVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DG5DP4RK",
+    "name": "Furniture of America Quanta Modern Wood Queen-Size Bed with Extended Panels Headboard and Gold-Painted Pattern, No Box Spring Required for Bedroom, Guest Room, Black",
+    "normalized_price": 1739.99,
+    "buy_url": "https://www.amazon.com/dp/B0DG5DP4RK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/814TGYCNKqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHPVQP9L",
+    "name": "BOWERY HILL Beige Velvet Queen Bed, 74\" W x 91.5\" D x 56\" H, Durable Eucalyptus Wood Frame, Art Deco Design, Ball-Shaped Legs, Upholstered Headboard, No Boxspring Required, Stylish Bedroom Furniture",
+    "normalized_price": 1101.48,
+    "buy_url": "https://www.amazon.com/dp/B0GHPVQP9L",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51Jn-L0jVEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYJNWQMP",
+    "name": "First of a Kind Contemporary Queen Bedroom Furniture Black Gold - Upholstered Bed Gold Trim Design Engineered Wood - Luxury Gold Painted Pattern Elegant Modern Frame",
+    "normalized_price": 1144.2,
+    "buy_url": "https://www.amazon.com/dp/B0GYJNWQMP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/517YecxxKfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW1BK7HC",
+    "name": "SAFAVIEH Couture Collection - Maci Bryn Natural Wood Herringbone Queen Bed, Modern Bedroom Furniture (DUP1009A-Q)",
+    "normalized_price": 1183.99,
+    "buy_url": "https://www.amazon.com/dp/B0FW1BK7HC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RHvjsu+mL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHQ16XPL",
+    "name": "BOWERY HILL Contemporary Velvet Queen Bed, Taupe Upholstery, Art Deco Design, Ball Shaped Legs, Solid Eucalyptus Wood Frame, 74\" W x 91.5\" D x 56\" H, No Boxspring Required, Stylish Bedroom Furniture",
+    "normalized_price": 1053.25,
+    "buy_url": "https://www.amazon.com/dp/B0GHQ16XPL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/515BSH27VNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H35HVNBJ",
+    "name": "roomfitters Queen Size Upholstered Platform Bed Frame, Vertical Channel Tufted Headboard, Mid Century Tapered Legs, Light Gray",
+    "normalized_price": 1028.99,
+    "buy_url": "https://www.amazon.com/dp/B0H35HVNBJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/619dZo7zrhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2KNH7G4",
+    "name": "Lumi Queen Bed- Classical Metal Scrollwork- Dark Cherry Brown and Gold",
+    "normalized_price": 1745.96,
+    "buy_url": "https://www.amazon.com/dp/B0D2KNH7G4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71UZyvD-D8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZYKH5TT",
+    "name": "First of a Kind Eastern King Size Belleterre Glam Bed Frame in Silver - Velvet-Like Upholstery Tufted Headboard Mirrored Panels Crystal Acrylic Details - Luxury Bedroom Furniture",
+    "normalized_price": 1012.16,
+    "buy_url": "https://www.amazon.com/dp/B0GZYKH5TT",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61OCgnNVObL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H58R7VKK",
+    "name": "Lexington Modern Queen Bed with Headboard in Beige",
+    "normalized_price": 1076.0,
+    "buy_url": "https://www.amazon.com/dp/B0H58R7VKK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71iy9nHwnpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5X8L173",
+    "name": "Pemberly Row Queen Platform Bed, Oversized Tufted Headboard, Black Flannelette Upholstery, Step-Up Design, Mattress-Ready Frame, Glamorous Bedroom Furniture",
+    "normalized_price": 1240.98,
+    "buy_url": "https://www.amazon.com/dp/B0H5X8L173",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51XGtjsMulL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5J9QM4H",
+    "name": "Queen Bed Frame, LED Bed Frame, Gray Wood Bed Frame with Tall Panel Headboard, Headboard and Footboard LED Accents, Slatted Base with Center Rail, Modern Bedroom",
+    "normalized_price": 1489.99,
+    "buy_url": "https://www.amazon.com/dp/B0H5J9QM4H",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81aRp93GQ8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1L4PQGX",
+    "name": "roomfitters Queen Size Upholstered Storage Bed Frame with Button Detailed Headboard, No Box Spring Needed, Gray",
+    "normalized_price": 1259.99,
+    "buy_url": "https://www.amazon.com/dp/B0H1L4PQGX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vhY-z+12L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H113NDY7",
+    "name": "Desire Queen Bed Frame with Upholstered LED Headboard, Marble-Patterned Footboard, Metallic Trim, Modern Bedroom Furniture, White",
+    "normalized_price": 1279.99,
+    "buy_url": "https://www.amazon.com/dp/B0H113NDY7",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71sT-2sR6LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B3MXX6VX",
+    "name": "MAKLAINE Contemporary Queen Bed, Solid Wood Frame, White Velvet Upholstery, Gold Metal Base, Channel Tufted Wing-Back Headboard, Gold Nailhead Accents, 82.5 x 88 x 63.5 Inches, Modern Bedroom",
+    "normalized_price": 1064.67,
+    "buy_url": "https://www.amazon.com/dp/B0B3MXX6VX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81TZAZsJA3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G5YJFD6Y",
+    "name": "Queen Upholstered Bed with LED Lights & Tufted Headboard: Modern Luxury Bedroom Furniture for Master Suite - Designer Tufted Fabric Frame with Honeycomb Light Panels for Adults & Home Use",
+    "normalized_price": 1579.23,
+    "buy_url": "https://www.amazon.com/dp/B0G5YJFD6Y",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61AVAND5K6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3RFPM35",
+    "name": "Trevello Modern Lacquered High Gloss Queen Bed Frame with Striking Gold Accent Cracks, Expansive Headboard with Optional Connected Ear Pieces, Contemporary Bedroom Centerpiece, (Black)",
+    "normalized_price": 1302.65,
+    "buy_url": "https://www.amazon.com/dp/B0G3RFPM35",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71NU2rZ5DnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHQSL5KY",
+    "name": "BOWERY HILL Contemporary Velvet Queen Bed, Camel Upholstery, Ball Shaped Legs, Solid Eucalyptus Wood Frame, Art Deco Style, No Boxspring Needed, 74\" W x 91.5\" D x 56\" H, Bedroom Furniture",
+    "normalized_price": 1042.95,
+    "buy_url": "https://www.amazon.com/dp/B0GHQSL5KY",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/5192n8K-DGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFPY6FZ3",
+    "name": "Modern Contemporary Velvet Upholstered Queen Size Platform Bed Frame, Metal Trim Accent Gold Finish, Beige",
+    "normalized_price": 1075.0,
+    "buy_url": "https://www.amazon.com/dp/B0GFPY6FZ3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61hByIURGmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFPRXGQJ",
+    "name": "Modern Contemporary Velvet Upholstered Queen Size Platform Bed Frame, Metal Trim Accent Gold Finish, Black",
+    "normalized_price": 1075.0,
+    "buy_url": "https://www.amazon.com/dp/B0GFPRXGQJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61f-177pGeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHJN53JB",
+    "name": "Full Size Easton Platform Bed Modern Solid Wood Frame No Box Spring Needed Minimalist Low Profile Bedroom Furniture Wooden Slat Support Urban Classic Style Durable Designer Home D\u00e9cor Piece",
+    "normalized_price": 1086.13,
+    "buy_url": "https://www.amazon.com/dp/B0FHJN53JB",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71v1gIm6oKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKLT1QBM",
+    "name": "MAKLAINE Modern Velvet Queen Bed, 55.5''H x 146''W x 86.5''D, Cream Fabric, Gold Steel Legs, Channel-Tufted Headboard with Removable Panels, Contemporary Design for Glamorous Bedroom",
+    "normalized_price": 1166.98,
+    "buy_url": "https://www.amazon.com/dp/B0CKLT1QBM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51z20os2pEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G87K817R",
+    "name": "Pemberly Row Set of 3 Gray Wood Upholstered Panel Queen Bed & 2 Nightstands",
+    "normalized_price": 1507.09,
+    "buy_url": "https://www.amazon.com/dp/B0G87K817R",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/519qMC0dZYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DLYYJ61T",
+    "name": "SAFAVIEH Couture Collection Jaylessa Black/Beige Queen Size Bed",
+    "normalized_price": 1054.99,
+    "buy_url": "https://www.amazon.com/dp/B0DLYYJ61T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71V6VIOgbqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFPWL6BP",
+    "name": "Modern Contemporary Velvet Upholstered Queen Size Platform Bed Frame, Metal Trim Accent Gold Finish, Dark Gray",
+    "normalized_price": 1075.0,
+    "buy_url": "https://www.amazon.com/dp/B0GFPWL6BP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61LCKCm8cXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRSMNCNB",
+    "name": "Queen Upholstered Bed with Faux Leather Straps: Modern Channel-Tufted Headboard & Mixed Material Design for Urban Designers - Bedroom Furniture with Metal Base & Peppercorn Finish",
+    "normalized_price": 1059.44,
+    "buy_url": "https://www.amazon.com/dp/B0FRSMNCNB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/7136YBeadmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H4Q1ZQ5C",
+    "name": "Pemberly Row Queen Platform Bed, White Metallic Finish, Faux Leather Headboard with Adjustable Height, LED Lighting, Mirrored Trim, Storage Footboard with 2 Drawers, Modern Bedroom Furniture",
+    "normalized_price": 1144.98,
+    "buy_url": "https://www.amazon.com/dp/B0H4Q1ZQ5C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41xMdgfbIXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPXGMZHL",
+    "name": "Handcrafted Luxury Canopy Bed Frame, Queen Size 4 Poster Wooden Bed with Intricate Blue Floral Design, Bohemian Elegant & Vintage Style Furniture for Bedroom D\u00e9cor",
+    "normalized_price": 5688.0,
+    "buy_url": "https://www.amazon.com/dp/B0FPXGMZHL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51pSCdC8mYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B2BVS7MJ",
+    "name": "Yumi Upholstered Velvet Low Profile Platform Bed with Button-Tufted Headboard and Storage Panel Doors, Hidden Storage Compartments, Modern Bed Frame with Wood Slats (Cream, Queen (U.S. Standard))",
+    "normalized_price": 992.41,
+    "buy_url": "https://www.amazon.com/dp/B0B2BVS7MJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71sM4MgGPkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08T6JDDB8",
+    "name": "Jaclyn Velvet Transitional Upholstered Bed Frame with 70\" Tall Straight Edge Headboard, Button Tufting and Nailhead Trim, Bedroom Furniture, (Grey, Queen (U.S. Standard))",
+    "normalized_price": 789.34,
+    "buy_url": "https://www.amazon.com/dp/B08T6JDDB8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91qbwQnZKlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B095PZSVH6",
+    "name": "Better Home Products Cosmopolitan Velvet Upholstered Platform Queen Bed in Black",
+    "normalized_price": 1074.11,
+    "buy_url": "https://www.amazon.com/dp/B095PZSVH6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LG2BFpHxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXMKRNPH",
+    "name": "First of a Kind Velvet Tufted Platform Storage Bed, Circle Bed with Button Tufting and Storage Compartments, Queen Size (Black)",
+    "normalized_price": 1350.0,
+    "buy_url": "https://www.amazon.com/dp/B0CXMKRNPH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71aQIyNZpZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXMK2Q2T",
+    "name": "First of a Kind Circle Velvet Tufted upholstered Platform Storage Bed, Circle Bed with Button Tufting and Storage Compartments in Rails and Footboard, Circle Bed Frame (Cream, Queen)",
+    "normalized_price": 1350.0,
+    "buy_url": "https://www.amazon.com/dp/B0CXMK2Q2T",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61xJzqQ1GHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0758RMXZP",
+    "name": "Meridian Furniture Porter Collection Modern | Contemporary Velvet Upholstered Bed with Deep Detailed Tufting and Chrome Canopy, Grey, Queen",
+    "normalized_price": 1086.93,
+    "buy_url": "https://www.amazon.com/dp/B0758RMXZP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61ervdsk+eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5Y89VWQ",
+    "name": "Furniture of America Sable Fabric Upholstered Step Up Queen-Size Platform Bed with Oversized Headboard, Deep Button Tufting, No Box Spring Required for Bedroom, Guest Room, Gray",
+    "normalized_price": 1200.0,
+    "buy_url": "https://www.amazon.com/dp/B0D5Y89VWQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71KdcdUsMTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08FFB2Y66",
+    "name": "Yumi Upholstered Velvet Low Profile Platform Bed with Button-Tufted Headboard and Storage Panel Doors, Hidden Storage Compartments, Modern Bed Frame with Wood Slats (Black, Queen (U.S. Standard))",
+    "normalized_price": 991.15,
+    "buy_url": "https://www.amazon.com/dp/B08FFB2Y66",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/618Z8006TXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08SVXCBDS",
+    "name": "Lexi Round Velvet Upholstered Circular Platform Bed Frame with 56\" Tall Tufted Wingback Headboard, Deep Button Tufting, Slat Support, Hidden Storage, Modern Glam Style (Black, Queen (U.S. Standard))",
+    "normalized_price": 1134.01,
+    "buy_url": "https://www.amazon.com/dp/B08SVXCBDS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Jferj5rML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1CX816W",
+    "name": "KEIKI Queen Size Bed Frame, Velvet Tufted Upholstered Platform Bed w/LED Vertical Velvet Wingback Headboard, Wooden Slats Support, No Box Spring Needed, Retro Blue",
+    "normalized_price": 729.21,
+    "buy_url": "https://www.amazon.com/dp/B0F1CX816W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81eC7BoE7zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7Y9HV29",
+    "name": "Tov Furniture Hella Forest Green Velvet Queen Bed",
+    "normalized_price": 1099.0,
+    "buy_url": "https://www.amazon.com/dp/B0F7Y9HV29",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71GEeMbPmWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1KTWLL",
+    "name": "Tov Furniture Isla Charcoal Textured Velvet Queen Bed",
+    "normalized_price": 799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DP1KTWLL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61E+cO5YWQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B59K7QRX",
+    "name": "Acme Gaiva Queen Bed with Storage in Gray Velvet",
+    "normalized_price": 984.67,
+    "buy_url": "https://www.amazon.com/dp/B0B59K7QRX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/814f1ltGqDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJRTVB2Q",
+    "name": "Benzara Beli Queen Size Canopy Bed, Tufted Design, Black Velvet Upholstery",
+    "normalized_price": 1128.12,
+    "buy_url": "https://www.amazon.com/dp/B0FJRTVB2Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61+WuNUvWVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXMKBJQQ",
+    "name": "First of a Kind Modern Velvet Tufted upholstered Platform Storage Bed, Bed with deep Button Tufting and Storage Compartments in Rails and Footboard (Black, Queen)",
+    "normalized_price": 1250.0,
+    "buy_url": "https://www.amazon.com/dp/B0CXMKBJQQ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/610cd4N3qJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H29CGTP5",
+    "name": "Pemberly Row Queen Bed, Beige Velvet Upholstery, Brown Wood Frame, Tufted Scalloped Headboard with LED Lights and Nailhead Trim, Low-Profile Footboard, Elegant Bun Legs, Modern Luxury Bedroom",
+    "normalized_price": 1078.21,
+    "buy_url": "https://www.amazon.com/dp/B0H29CGTP5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/518-RujUwgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0758V47DC",
+    "name": "Meridian Furniture Lexi Collection Modern | Contemporary Velvet Upholstered Bed with Deep Tufting, Polished Chrome Stainless Steel Frame and Legs, Queen, White",
+    "normalized_price": 690.74,
+    "buy_url": "https://www.amazon.com/dp/B0758V47DC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51qOCgh9WkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFYBPMYV",
+    "name": "Coaster Home Furnishings Melody Modern Classic 5-Piece Bedroom Set Velvet Upholstered Queen Size Wingback Bed Frame 66-inch Headboard Pacific Blue 223371Q-S5",
+    "normalized_price": 1254.55,
+    "buy_url": "https://www.amazon.com/dp/B0CFYBPMYV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71-jHNeiP1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087CC1KFN",
+    "name": "Modway Lana Platform, Pink, Queen",
+    "normalized_price": 623.08,
+    "buy_url": "https://www.amazon.com/dp/B087CC1KFN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71jh7lBhokL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D128MKWC",
+    "name": "King Size Bed Frame 57\" Tall Headboard with Button Tufted Wingback, Upholstered Platform Bed Frame Includes 2 Storage Drawers, Wooden Slats, Noise-Free, Beige",
+    "normalized_price": 699.99,
+    "buy_url": "https://www.amazon.com/dp/B0D128MKWC",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+8HwlHbJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B088S4BDZN",
+    "name": "Meridian Furniture CandaceCream-Q Candace Collection Modern | Contemporary Velvet Upholstered Queen Bed, Cream Velvet Fabric, Deep Channel Tufting, Acrylic Legs, 65\" W x 86\" D x 65\" H, Cream, Queen",
+    "normalized_price": 649.93,
+    "buy_url": "https://www.amazon.com/dp/B088S4BDZN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/5142aQLnqwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJ9PC29G",
+    "name": "Coaster Home Furnishings Kendall 4-piece Modern Bedroom Set Queen Size Upholstered Tufted Bed Frame Velvet Upholstery Nightstand Dresser and Mirror White 224401Q-S4",
+    "normalized_price": 884.38,
+    "buy_url": "https://www.amazon.com/dp/B0CJ9PC29G",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71uUdnOysDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4CKPZQD",
+    "name": "KEIKI King Size Velvet Bed Frame with LED Light Headboard, Wingback Upholstered Platform Bed High Off Ground with 2 Nightstands and Strong Wooden Slats, Blue",
+    "normalized_price": 615.99,
+    "buy_url": "https://www.amazon.com/dp/B0G4CKPZQD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91DjdrFZICL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKNL7Z1S",
+    "name": "Queen Size Bed Frame Upholstered Platform with Button Tufted Velvet Breathable Headboard Stainless Steel Legs, No Box Spring Needed, Easy Assembly, Cream White",
+    "normalized_price": 719.99,
+    "buy_url": "https://www.amazon.com/dp/B0GKNL7Z1S",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WQ0+4cg8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCZLVQYN",
+    "name": "Uphoria Rabbit Velvet Upholstered Bed Frame with 67\" Tall Headboard with LED Fireplace,Vertical Chanel Design, Modern Platform Bed Frame with Wood Slats (Gray, Queen (U.S. Standard))",
+    "normalized_price": 710.13,
+    "buy_url": "https://www.amazon.com/dp/B0FCZLVQYN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gUBRzFD7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BF619YVX",
+    "name": "Better Home Products Elizabeth 91 x 101 Velvet Round Storage Queen Bed in Gray",
+    "normalized_price": 1598.72,
+    "buy_url": "https://www.amazon.com/dp/B0BF619YVX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PYDilKBeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D91B74MS",
+    "name": "Multifunctional King Bed Frame, Modern Luxury Smart Upholstered Platform Bed with Massage Recliner/Music Speaker/USB Charging Station/Storage Drawers, Adjustable Headboard, Black",
+    "normalized_price": 1789.9,
+    "buy_url": "https://www.amazon.com/dp/B0D91B74MS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8195Ji2VNnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTTLWL83",
+    "name": "Universal Coalesce Oak Wood Framed Linen Upholstered King Panel Bed",
+    "normalized_price": 2165.0,
+    "buy_url": "https://www.amazon.com/dp/B0CTTLWL83",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51R420FlPyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FK2F792J",
+    "name": "Pemberly Row Traditional Upholstered King Bed, Crepe Beige Finish, Kiln-Dried Hardwood Frame, Button-Tufted Headboard and Footboard, Solid Wood Legs, Chesterfield Sleigh Style, Bedroom Furniture",
+    "normalized_price": 1599.0,
+    "buy_url": "https://www.amazon.com/dp/B0FK2F792J",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71NYG5XM0LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FPRD2GNW",
+    "name": "Woodpeckers Furniture And Mattress Jeffrey Canopy Velvet Upholstered Bed Frame (Dark Brown, King)",
+    "normalized_price": 1782.18,
+    "buy_url": "https://www.amazon.com/dp/B0FPRD2GNW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81VAiNQi10L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FRWBB18V",
+    "name": "6pc Contemporary Black Finish Luxury Upholstered King Size Panel Bed Set Arched Headboard Master Bedroom Furniture",
+    "normalized_price": 2699.99,
+    "buy_url": "https://www.amazon.com/dp/B0FRWBB18V",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xJUy4yCfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHVPX75W",
+    "name": "Signature Design by Ashley Maylee California King Upholstered Bed Frame, 83-Inch Tall Button-Tufted Headboard, Pewter Chenille Fabric & Dark Brown Finish, Grand Traditional Master Suite Setup",
+    "normalized_price": 1622.57,
+    "buy_url": "https://www.amazon.com/dp/B0FHVPX75W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71i46wbX3XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H12WY72N",
+    "name": "First of a Kind Eastern King Size Transitional Bedroom Bed Frame in Brown Cherry - Leatherette Solid Wood Veneer Engineered Wood Camel Back Headboard - Ornate Detailing Foundation Required",
+    "normalized_price": 1517.47,
+    "buy_url": "https://www.amazon.com/dp/B0H12WY72N",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61+byqVuTcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQJNH6G3",
+    "name": "Starlight Canyon Home Eastern King Luxury Bed Frame, Upholstered Frame in Beige Velvet with Brushed Brass Trim, Diamond Button Tufted Headboard, and Platform Support",
+    "normalized_price": 2117.16,
+    "buy_url": "https://www.amazon.com/dp/B0FQJNH6G3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51R+CUq2+qL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZSJZJG2",
+    "name": "First of a Kind Eastern King Size Lysandra Sleigh Bed Frame in Rustic Natural Beige - Upholstered Linen Like Solid Engineered Wood Button Tufted Headboard & Footboard - Foundation Required",
+    "normalized_price": 1810.74,
+    "buy_url": "https://www.amazon.com/dp/B0GZSJZJG2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Ta96f+eLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GN3QG82G",
+    "name": "Liberty Furniture Providence Park King Shelter Bed Frame - Brown Hickory Wood",
+    "normalized_price": 1659.99,
+    "buy_url": "https://www.amazon.com/dp/B0GN3QG82G",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81oTvYz77JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX7BB8HT",
+    "name": "MAKLAINE Makline Transitional Oak Wood King Panel Bed, Gray Oak Frame, Asbury Oyster Linen Upholstery, 77 x 82 in, Reversible Bed Rails, Hand-Finished, Luxury Bedroom Furniture",
+    "normalized_price": 1785.83,
+    "buy_url": "https://www.amazon.com/dp/B0DX7BB8HT",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/41kNjiqsS4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BF5XZPS9",
+    "name": "Better Home Products Elizabeth 107 x 101 Velvet Round Storage King Bed in Black",
+    "normalized_price": 1784.51,
+    "buy_url": "https://www.amazon.com/dp/B0BF5XZPS9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81sTsKT92vL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09VT7WBQD",
+    "name": "Roma King Size Traditional Upholstered Bed made with Wood in Dark Walnut",
+    "normalized_price": 1817.35,
+    "buy_url": "https://www.amazon.com/dp/B09VT7WBQD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/517Zh-lCCjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFY9R2T3",
+    "name": "Coaster Home Furnishings Melody Modern Classic 5-Piece Bedroom Set Velvet Upholstered Eastern King Size Wingback Bed Frame 66-inch Headboard Grey 223381KE-S5",
+    "normalized_price": 1994.59,
+    "buy_url": "https://www.amazon.com/dp/B0CFY9R2T3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711xt8Tf7gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5K7RWH4",
+    "name": "King Size Bed Frame, Upholstered Bed, LED Bed Frame with Beige Polyurethane Upholstery, Gold Accents, Rounded Edges, Box Spring Required, Bedroom",
+    "normalized_price": 1769.99,
+    "buy_url": "https://www.amazon.com/dp/B0H5K7RWH4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81d5I2oJS-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B087W677NS",
+    "name": "Meridian Furniture Luxus Collection Modern | Contemporary Round Shaped Velvet Upholstered Bed with Deep Button Tufting and Footboard Storage, King, Black",
+    "normalized_price": 1801.92,
+    "buy_url": "https://www.amazon.com/dp/B087W677NS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51mT+ngudUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYL9SJJP",
+    "name": "Furniture of America Byrne Traditional Wood Bed Frame with Upholstered Headboard, Ornate Moldings and Bracket Feet, Wooden Bedframe for Bedroom, Box Spring Required, King, Wire Brushed White",
+    "normalized_price": 1810.0,
+    "buy_url": "https://www.amazon.com/dp/B0DYL9SJJP",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/8184cZdMdpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G1BVY25J",
+    "name": "Modern Luxury King Size Genuine Leather Bed Upholstered Platform Bed Frame with Headboard and Storage Drawers No Box Spring Needed Easy Assembly",
+    "normalized_price": 4898.0,
+    "buy_url": "https://www.amazon.com/dp/B0G1BVY25J",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZY+qZlWTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GW918MH1",
+    "name": "Classical Canopy Bed Frame King - Vintage Four Poster Bed with Spiral-Carved Posts and Metal Scrollwork, Luxury Post Bed with Faux Leather Headboard and Nailhead, Box Spring Required, Weathered Gray",
+    "normalized_price": 1888.88,
+    "buy_url": "https://www.amazon.com/dp/B0GW918MH1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71FCh8iO53L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2NQ1RR8",
+    "name": "Furniture of America Premier Modern Boucle King Platform Bed with Vertical Channel Tufting and Oversized Headboard, Upholstered Bedframe for Bedroom, Guest Room, No Box Spring Needed, Black",
+    "normalized_price": 3492.47,
+    "buy_url": "https://www.amazon.com/dp/B0H2NQ1RR8",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/914VyKYQuaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTN9XKY3",
+    "name": "GOWE King Size Bed Frame | Luxury | Velvet Upholstered | Tufted Headboard/Footboard | Black Finish | for Master/Guest Bedroom | Easy Assembly | Sturdy Construction",
+    "normalized_price": 1674.0,
+    "buy_url": "https://www.amazon.com/dp/B0GTN9XKY3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81q4aPInDQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1SD61X6",
+    "name": "First of a Kind Yureya California King Bed Frame - Upholstered Platform Bed, Fireplace Ambience, Chrome Legs - Modern Bedroom Furniture, Black",
+    "normalized_price": 1531.6,
+    "buy_url": "https://www.amazon.com/dp/B0H1SD61X6",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lWf4Tz2jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H68GLPYP",
+    "name": "King Bed Frame, Upholstered Bed, LED Bed Frame, Camel Velvet Wingback Bed with Tufted Headboard, Low Footboard, Rubberwood Legs, Eastern King Size",
+    "normalized_price": 1509.99,
+    "buy_url": "https://www.amazon.com/dp/B0H68GLPYP",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810eM4twYmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5N9FYXF",
+    "name": "Upholstered King Bed Frame, Platform Bed, Beige Upholstered Bed, Tall Headboard, Scalloped Panels, Gold Base Accent, Support Slats, Modern Bedroom, No Box Spring Needed",
+    "normalized_price": 1619.99,
+    "buy_url": "https://www.amazon.com/dp/B0H5N9FYXF",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xeMktgLhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5NMQY24",
+    "name": "King Bed Frame, Upholstered Bed, Taupe Oak Panel Bed with Extra Tall Headboard, Cream Grid Tufting, Low Profile Footboard, Eastern King, 600 Pound Weight Capacity",
+    "normalized_price": 1589.99,
+    "buy_url": "https://www.amazon.com/dp/B0H5NMQY24",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81YMOl3CDzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GNT5LTHP",
+    "name": "Vintage Bed Frame California King - Classic Sleigh Bed with Faux Leather Tufted Headboard, Traditional Solid Cherry Wood Antique Bed with Carved Pattern and Block Legs for Bedroom Furniture, Cherry",
+    "normalized_price": 1699.99,
+    "buy_url": "https://www.amazon.com/dp/B0GNT5LTHP",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71UQpuRZ-oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073VM1FRL",
+    "name": "ACME Vendome California King Bed in Cherry",
+    "normalized_price": 3951.0,
+    "buy_url": "https://www.amazon.com/dp/B073VM1FRL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91PGkGs8QNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DX6FVH25",
+    "name": "homary 3 Pieces Bedroom Sets, King Size Upholstered Bed with 2 Leather Nightstands \u2013 Modern Bedroom Set with Wireless Charging & USB Ports, 2 Drawer Storage Nightstands",
+    "normalized_price": 2184.99,
+    "buy_url": "https://www.amazon.com/dp/B0DX6FVH25",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61HuGz9bVSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8BSFY8Q",
+    "name": "Light Luxury Master Bedroom Leather Bed Modern King Size Upholstered Platform Bed Frame No Box Spring Needed Noise Free",
+    "normalized_price": 3908.22,
+    "buy_url": "https://www.amazon.com/dp/B0F8BSFY8Q",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71bGc6SVtEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F63TZCQ7",
+    "name": "Bed Frame with Fireplace and TV Stand - Teddy Fleece Wood Platform Bed with Deep Channel Tufting, Upholstered Sleigh Bed, Boucle Bedframe with Speakers and LED Light for Bedroom Furniture, King",
+    "normalized_price": 1599.98,
+    "buy_url": "https://www.amazon.com/dp/B0F63TZCQ7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61dwtb7onAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYJVDDDJ",
+    "name": "First of a Kind Eastern King Size White Upholstered Bed Frame - Wing Back Headboard Diamond Tufted Design Crystal Style Button Accents - Solid Wood Luxury Bedroom Furniture",
+    "normalized_price": 1678.76,
+    "buy_url": "https://www.amazon.com/dp/B0GYJVDDDJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51scau8CbfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G57JFPXK",
+    "name": "Luxurious 1pc King Size Tufted Headboard Upholstered Storage Round Bed Black Footboard Storage Wooden Bedroom Furniture",
+    "normalized_price": 2066.06,
+    "buy_url": "https://www.amazon.com/dp/B0G57JFPXK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lDIA9EMUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H4ZFFDG8",
+    "name": "Lexington Modern Upholstered King Bed in Beige with Scalloped Headboard and Gold Base Accent",
+    "normalized_price": 1994.0,
+    "buy_url": "https://www.amazon.com/dp/B0H4ZFFDG8",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xeMktgLhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGFG7374",
+    "name": "Opulence Modern Style King Bed Made with in Pearl White",
+    "normalized_price": 2149.68,
+    "buy_url": "https://www.amazon.com/dp/B0FGFG7374",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81d7zbBvISL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FK3NXZQ2",
+    "name": "Desire King Bed with LED Headboard: Modern Upholstered Bed Frame with Marble-Patterned Storage Footboard & Metallic Trim - Solid Wood Construction for Bedroom Decor & Luxury Furniture",
+    "normalized_price": 1925.6,
+    "buy_url": "https://www.amazon.com/dp/B0FK3NXZQ2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71sT-2sR6LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GPXBNBK2",
+    "name": "King Size Upholstered Platform Bed with Special Shaped Velvet Headboard, Metal Solid Wood Frame,Beige,White",
+    "normalized_price": 2570.63,
+    "buy_url": "https://www.amazon.com/dp/B0GPXBNBK2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PDeuQ463L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5VFNH3J",
+    "name": "Premium Solid Wood King Size Bed Frame with Headboard,Walnut Finish, 600lbs Capacity, for Modern Bedroom,No Box Spring Needed, Fits All Mattresses",
+    "normalized_price": 1331.95,
+    "buy_url": "https://www.amazon.com/dp/B0H5VFNH3J",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51Oamokdi2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B076GQDQR1",
+    "name": "Rustic Platform Bed w Headboard - King / Traditional Platform Frame / Wood Platform Reclaimed Bed / Modern / Urban / Cottage Platform Bed",
+    "normalized_price": 1399.0,
+    "buy_url": "https://www.amazon.com/dp/B076GQDQR1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61JhA2UusTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJXYLTSC",
+    "name": "memomad Bali Queen Size Set: Storage Platform Bed with Drawers and Compartments + Storage Headboard with Doors, Solid Pine Wood Furniture with Underbed Storage, No Box Spring Needed, Caramel Brown",
+    "normalized_price": 1255.2,
+    "buy_url": "https://www.amazon.com/dp/B0CJXYLTSC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QAO8VoESL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZSK7HXN",
+    "name": "First of a Kind California King Size Traditional Luxury Bed in Brown Cherry Espresso Finish - Leatherette Upholstered Solid Wood Veneer Padded Headboard Footboard - Faux Carved Detailing Bed Frame",
+    "normalized_price": 1317.63,
+    "buy_url": "https://www.amazon.com/dp/B0GZSK7HXN",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/615t0ijhT8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJXYJXN7",
+    "name": "memomad Bali King Size Set: Storage Platform Bed with Drawers and Compartments + Storage Headboard with Doors, Solid Pine Wood Furniture with Underbed Storage, No Box Spring Needed, Caramel Brown",
+    "normalized_price": 1295.2,
+    "buy_url": "https://www.amazon.com/dp/B0CJXYJXN7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81gflyepz-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H62T21NJ",
+    "name": "2026 Premium Pure Mahogany Bed,Pure red Wooden Bed, Includes Bed Board and Wooden Support",
+    "normalized_price": 2899.99,
+    "buy_url": "https://www.amazon.com/dp/B0H62T21NJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81z7qrnjgtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H3V8WCPG",
+    "name": "Handmade Wooden Carved Queen Size Bed Frame, Solid Mango Wood Bohemian Bed with Natural Coastal Finish, Sunflower Design, Wood Slat Support Platform Bed for Bedroom, Queen Size 60x80 Inches",
+    "normalized_price": 5069.0,
+    "buy_url": "https://www.amazon.com/dp/B0H3V8WCPG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/718bEonrb5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYJSYSV3",
+    "name": "First of a Kind Eastern King Size Rustic Oak Bed Frame - Upholstered Panel Design Solid Wood Structure Premium Oak Veneer Finish - Durable Transitional Bedroom Furniture",
+    "normalized_price": 1211.59,
+    "buy_url": "https://www.amazon.com/dp/B0GYJSYSV3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51MRIwDYkML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06XRSR21W",
+    "name": "Modus Furniture Solid Wood Platform Bed, King, Ocean - Natural Sengon",
+    "normalized_price": 1699.0,
+    "buy_url": "https://www.amazon.com/dp/B06XRSR21W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91G80hC4FYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2652NWY",
+    "name": "Starlight Canyon Home California King Oak Wood Bed Frame, Solid Wood Boho Bed Frame with Rectangular Veneer Headboard and Durable Wood Slat Platform Support Design",
+    "normalized_price": 1435.51,
+    "buy_url": "https://www.amazon.com/dp/B0G2652NWY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51Hh6Z1SdGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06XRVLG7V",
+    "name": "Modus Furniture Solid Wood Platform Bed, Full, Ocean - Natural Sengon",
+    "normalized_price": 1249.0,
+    "buy_url": "https://www.amazon.com/dp/B06XRVLG7V",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91G80hC4FYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H12YSZN3",
+    "name": "First of a Kind California King Size Transitional Storage Bed Frame in Brown Cherry - Solid Veneer Wood Inlay Design Rail Drawers Footboard Drawers USB Power Lighting Mattress Ready Bedroom Furniture",
+    "normalized_price": 1278.98,
+    "buy_url": "https://www.amazon.com/dp/B0H12YSZN3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61uaDAmRKnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H136V387",
+    "name": "First of a Kind Queen Size Transitional Bedroom Bed Frame in Brown Cherry - Leatherette Solid Wood Veneer Engineered Wood Camel Back Headboard - Ornate Detailing Foundation Required",
+    "normalized_price": 1225.07,
+    "buy_url": "https://www.amazon.com/dp/B0H136V387",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61+byqVuTcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H132YNW2",
+    "name": "First of a Kind California King Size Transitional Bedroom Bed Frame in Brown Cherry - Leatherette Solid Wood Veneer Engineered Wood Camel Back Headboard - Ornate Detailing Foundation Required",
+    "normalized_price": 1517.47,
+    "buy_url": "https://www.amazon.com/dp/B0H132YNW2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61+byqVuTcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2NSCZFT",
+    "name": "Mega Solutions Murphybedz Tuscany Murphy Cabinet Chest Bed with Charging Station 6 Inch (Scandinavian Oak, Queen)",
+    "normalized_price": 1597.0,
+    "buy_url": "https://www.amazon.com/dp/B0H2NSCZFT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71QCrjj3-wL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BVFBG44X",
+    "name": "Modus Furniture Solid Wood Platform Bed, California King, Melbourne - Mineral",
+    "normalized_price": 1599.0,
+    "buy_url": "https://www.amazon.com/dp/B0BVFBG44X",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/815IQTh3J5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06XSRZ3H4",
+    "name": "Log Bunk Bed Frame, Twin XL Over Queen Size - Torched Finish, Rustic, Solid Cedar Wood, Adults, Kids, Amish Handcrafted in USA",
+    "normalized_price": 1299.0,
+    "buy_url": "https://www.amazon.com/dp/B06XSRZ3H4",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61yqJqmRJqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F63QTKQR",
+    "name": "Castellan King Bed 84\" Tall | Lazaro Collection | Hand Carved in Peru | Natural Wood Traditional Finish | Bed Only | Includes Delivery and Assembly",
+    "normalized_price": 4989.0,
+    "buy_url": "https://www.amazon.com/dp/B0F63QTKQR",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81cEif7X5ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5PSD155",
+    "name": "Handcrafted Personalized Rustic Wood Bed Frame - Solid Wood Frame Bed with Branch Canopy Headboard, Natural Wood Bed Frame Full Size",
+    "normalized_price": 5594.0,
+    "buy_url": "https://www.amazon.com/dp/B0H5PSD155",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81zgcC2BhdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY9H3MSD",
+    "name": "MAKLAINE Contemporary King Wooden Sleigh Bed, Cognac Brown Finish, 86W x 93D x 60H Inches, Sturdy Wood Frame, Box Spring Required, Elegant Bedroom Furniture",
+    "normalized_price": 2424.94,
+    "buy_url": "https://www.amazon.com/dp/B0CY9H3MSD",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51AL1XSt18L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZLQGP9K",
+    "name": "First of a Kind Eastern King Size Upholstered Bed Frame in Espresso Finish - Diamond Tufted Headboard Ornate Moldings Solid Pine Wood - Elegant Durable Support Bedroom Furniture Foundation Required",
+    "normalized_price": 1358.01,
+    "buy_url": "https://www.amazon.com/dp/B0GZLQGP9K",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51YuoMaCuaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B016CUG8B6",
+    "name": "Log Bunk Bed Frame, Queen Size - Torched Finish, Rustic, Solid Cedar Wood, Adults, Kids, Amish Handcrafted in USA",
+    "normalized_price": 1499.0,
+    "buy_url": "https://www.amazon.com/dp/B016CUG8B6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Ns6pWI1kL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZLRFZHZ",
+    "name": "First of a Kind Eastern King Size Panel Bed Frame in Dark Brown - Bombay Headboard Ornate Moldings Solid Wood Construction - Traditional Bedroom Furniture Elegant Durable Support Foundation Required",
+    "normalized_price": 1384.93,
+    "buy_url": "https://www.amazon.com/dp/B0GZLRFZHZ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51d-H07XMVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GGQPSZLM",
+    "name": "MERITLINE Queen Murphy Bed with Desk and Storage Cabinets,Solid Wood Vertical Farmhouse Murphy Wall Bed with Storage Bookcase Drawers and Cabinets for Adults,Space-Saving (Dark Brown,Queen)",
+    "normalized_price": 1239.99,
+    "buy_url": "https://www.amazon.com/dp/B0GGQPSZLM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qFLTUMVWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQYTXJH8",
+    "name": "Merax Farmhouse Multi-Functional Murphy Bed with Sofa, Desk & Storage Cabinet,Solid Wood Foldable Wall Bed with/w/USB Charging Station Space Saving/No Box Spring Needed/Queen, Gray +Beige",
+    "normalized_price": 1439.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQYTXJH8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813HzAUZwjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZSR8337",
+    "name": "First of a Kind Eastern King Size Transitional Bed Frame in Gray Finish - Solid Wood Veneer Footboard Storage Drawers & Hidden Storage USB Charging - Mattress Ready Bedroom Furniture",
+    "normalized_price": 1225.07,
+    "buy_url": "https://www.amazon.com/dp/B0GZSR8337",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61H7ZTum6dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9XZLFTN",
+    "name": "Contemporary Upholstered Bed Frame Sleek Design Sturdy Build Perfect for Bedroom Decor Comfort Focused (Full)",
+    "normalized_price": 1916.45,
+    "buy_url": "https://www.amazon.com/dp/B0F9XZLFTN",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71c2Vv3AG3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01BOB75JW",
+    "name": "24/7 Shop at Home Janeiro II Natural Tone Platform bed, No Box Spring Required, California king, Walnut",
+    "normalized_price": 1986.0,
+    "buy_url": "https://www.amazon.com/dp/B01BOB75JW",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61NkBIYjvcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BFG2M316",
+    "name": "Farmhouse Wood Bunk Bed Frame, Twin XL Over Twin XL Size - Torched Pine, Rustic, Heavy Duty, Adults, Kids, Amish Handcrafted in USA",
+    "normalized_price": 1799.0,
+    "buy_url": "https://www.amazon.com/dp/B0BFG2M316",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61gHvOwDZFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNZX888N",
+    "name": "Mega Solutions Murphybedz Tuscany Murphy Cabinet Chest Bed with Charging Station 6 Inch (Blonde Oak, Queen)",
+    "normalized_price": 1597.0,
+    "buy_url": "https://www.amazon.com/dp/B0BNZX888N",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71BlSp+RU2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1SZL9GZ",
+    "name": "NIGHT & DAY Furniture Murphy Cube Cabinet Bed (Rustic Brown w/Ranchero Hardware, Queen)",
+    "normalized_price": 1947.0,
+    "buy_url": "https://www.amazon.com/dp/B0D1SZL9GZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61DBjmMIdgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJY117BD",
+    "name": "memomad Bali Queen Size Slim Set: Storage Platform Bed with Drawers and Compartments + Wall Mounted Headboard, Solid Pine Wood Furniture with Underbed Storage, No Box Spring Needed, Caramel Brown",
+    "normalized_price": 1269.0,
+    "buy_url": "https://www.amazon.com/dp/B0CJY117BD",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lOGR4cU-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GDNQR7Q4",
+    "name": "HomeRoots 558193 Natural Wood Queen Size Bed Frame",
+    "normalized_price": 2667.68,
+    "buy_url": "https://www.amazon.com/dp/B0GDNQR7Q4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61KbYRkQ91L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H26YMHG3",
+    "name": "Pemberly Row Queen Platform Bed Frame, Fluted Panel Headboard, Solid Wood/Acacia/MDF Construction, Natural Brown Finish, Low Profile Design, 660 lb Capacity, Includes Slats, Ideal for Modern Bedrooms",
+    "normalized_price": 1892.12,
+    "buy_url": "https://www.amazon.com/dp/B0H26YMHG3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/512Oj7ZG+GL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQZ2R48R",
+    "name": "Merax Farmhouse Multi-Functional Murphy Bed with Sofa, Desk & Storage Cabinet,Solid Wood Foldable Wall Bed with/w/USB Charging Station Space Saving/No Box Spring Needed/Queen, Beige + Green",
+    "normalized_price": 1625.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQZ2R48R",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81wiy+UCGTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GNG1KWBS",
+    "name": "HOMORA Solid Birch DIY Wood Platform Bed Frame \u2013 Scandinavian Minimalist Low Floor Bed with Wooden Slats Support \u2013 Modern Natural Finish Bedroom Furniture Luxury Home Decor (80x78x11)",
+    "normalized_price": 1249.99,
+    "buy_url": "https://www.amazon.com/dp/B0GNG1KWBS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/411RRKi4AzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFG1R2XL",
+    "name": "Luxurious White Eastern King Platform Bed, Faux Leather Crystal Tufted Headboard, High Gloss Lacquer Finish Wood Bed Frame",
+    "normalized_price": 1500.0,
+    "buy_url": "https://www.amazon.com/dp/B0GFG1R2XL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/510P64MqWrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09J98MKGH",
+    "name": "Carved Arch DayBed, Medium Antique Finish Day Bed. The Sofa is Handcrafted from Solid Indian Mahogany Wood",
+    "normalized_price": 3185.0,
+    "buy_url": "https://www.amazon.com/dp/B09J98MKGH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PD0WAM8pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GH7PR718",
+    "name": "Mid-Century Modern King Bed Frame with Storage Drawers, Walnut Finish, Solid Wood Platform & LED Upholstered Headboard, Gold Legs, No Box Spring Needed",
+    "normalized_price": 1699.98,
+    "buy_url": "https://www.amazon.com/dp/B0GH7PR718",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/315YReAmreL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH2HBB5Q",
+    "name": "Modern Grey Full Size Bed Frame, Queen Bed Frame Ergonomic Upholstered Headboard Wooden Slats Support, Noise-Free",
+    "normalized_price": 5050.0,
+    "buy_url": "https://www.amazon.com/dp/B0FH2HBB5Q",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71JKYCzOCIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1JTS9R3",
+    "name": "First of a Kind Queen Size Glam Bedroom Furniture 5 Piece Set in Gray - Upholstered Platform Bed, Oversized Tufted Headboard, Step Up Design Dual Nightstands, Dresser, Mirror, Chest, Mattress Ready",
+    "normalized_price": 2398.12,
+    "buy_url": "https://www.amazon.com/dp/B0H1JTS9R3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61SEofLwY7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1K63BDT",
+    "name": "First of a Kind Queen Size Glam Bedroom Furniture 4 Piece Set in Gray - Upholstered Platform Bed, Oversized Tufted Headboard, Step Up Design Nightstand, Dresser, Mirror, Mattress Ready",
+    "normalized_price": 2223.86,
+    "buy_url": "https://www.amazon.com/dp/B0H1K63BDT",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61SEofLwY7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1DXBJS9",
+    "name": "First of a Kind Queen Size Contemporary Youth Bedroom Furniture 4 pc Set in Rose Gold - Tufted Upholstered Bed, Mirror Trim Crystal Acrylic Buttons, Bed, Dresser, Mirror & Nightstand",
+    "normalized_price": 2079.19,
+    "buy_url": "https://www.amazon.com/dp/B0H1DXBJS9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51vIdRilFaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1K54H97",
+    "name": "First of a Kind Queen Size Glam Bedroom Furniture 5 Piece Set in Gray - Upholstered Platform Bed, Oversized Tufted Headboard, Step Up Design Storage Chest, Dresser, Mirror, Nightstand, Mattress Ready",
+    "normalized_price": 2651.47,
+    "buy_url": "https://www.amazon.com/dp/B0H1K54H97",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61SEofLwY7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1F7HLYL",
+    "name": "First of a Kind Twin Size Contemporary Youth Bedroom Furniture 4 pc Set in Rose Gold - Tufted Upholstered Bed, Mirror Trim Crystal Acrylic Buttons, Bed, Dresser, Mirror & Nightstand",
+    "normalized_price": 2012.08,
+    "buy_url": "https://www.amazon.com/dp/B0H1F7HLYL",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51vIdRilFaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1DYSXLQ",
+    "name": "First of a Kind Full Size Contemporary Youth Bedroom Furniture 4 pc Set in Rose Gold - Tufted Upholstered Bed, Mirror Trim Crystal Acrylic Buttons, Bed, Dresser, Mirror & Nightstand",
+    "normalized_price": 2065.77,
+    "buy_url": "https://www.amazon.com/dp/B0H1DYSXLQ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51vIdRilFaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRVJ21H7",
+    "name": "Modern Luxury Twin Wood Platform Bed Frame Mattress Foundation with Wood Slat Support for Adults Guests Bedroom School (White) (Walnut)",
+    "normalized_price": 3275.85,
+    "buy_url": "https://www.amazon.com/dp/B0DRVJ21H7",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81MakdvBqkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FM46F57N",
+    "name": "Ragenardus Queen Bed Synthetic Leather Upholstered Headboard Vintage Oak Carved Wood Frame Elegant Bedroom Furniture Luxury Design Sturdy Construction Classic Style Timeless Comfort",
+    "normalized_price": 1940.78,
+    "buy_url": "https://www.amazon.com/dp/B0FM46F57N",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71LAVzhZd6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7MG8NND",
+    "name": "Contemporary Style 3pc Bed 2X Nightstand Set Plinth Base Leatherette and LED Headboard Dark Walnut Finish Luxury Bedroom Furniture",
+    "normalized_price": 1899.99,
+    "buy_url": "https://www.amazon.com/dp/B0G7MG8NND",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/715V4KIZA5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVPRX4D9",
+    "name": "Contemporary Style 3pc King Size Bed 2X Nightstand Set LED Headboard Dark Walnut Finish Luxury Bedroom Furniture",
+    "normalized_price": 1999.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVPRX4D9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ddSximFKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7LDPJ82",
+    "name": "Contemporary Style 6pc Queen Size Bed Set LED Leatherette Headboard Channel Tufted Marble Top Dark Walnut Finish Bedroom Furniture",
+    "normalized_price": 3499.99,
+    "buy_url": "https://www.amazon.com/dp/B0G7LDPJ82",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XnYodQFgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7LVVZCR",
+    "name": "Contemporary Style 4pc Queen Size Bed Set LED Leatherette Headboard Channel Tufted Marble Top Dark Walnut Finish Bedroom Furniture",
+    "normalized_price": 2549.99,
+    "buy_url": "https://www.amazon.com/dp/B0G7LVVZCR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XnYodQFgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVPQXP71",
+    "name": "Contemporary Style 4pc King Size Bed Set LED Leatherette Headboard Channel Tufted HB Dark Walnut Finish Bedroom Furniture",
+    "normalized_price": 2649.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVPQXP71",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71N9JlfHjSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVPWW6D1",
+    "name": "Contemporary Style 6pc Eastern King Size Bed Set LED Leatherette Headboard Channel Tufted Marble Top Dark Walnut Finish Bedroom Furniture",
+    "normalized_price": 3699.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVPWW6D1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XnYodQFgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H29FL28Q",
+    "name": "Pemberly Row Queen Platform Bed, Solid Wood and Engineered Wood Frame, Cherry Brown Finish, 2 Storage Drawers with Bar Handles, Panel Detailing, No Box Spring Needed, 89.25 x 69.25 x 64.5 in",
+    "normalized_price": 1821.65,
+    "buy_url": "https://www.amazon.com/dp/B0H29FL28Q",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51ForzwPWVL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

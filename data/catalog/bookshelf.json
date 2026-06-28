@@ -119,7 +119,7 @@
   {
     "product_id": "B0G4RDPMNK",
     "name": "BELLEZE 3 Tier Bookshelf with Arched Glass Door, Set of 3 Modern Display Bookcase Shelf with Storage and Adjustable Shelves, 97'' Wood Bookshelves for Living Room Office Entryway (Camel)",
-    "normalized_price": 721.99,
+    "normalized_price": 759.99,
     "buy_url": "https://www.amazon.com/dp/B0G4RDPMNK",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/7150ax4fZ2L._AC_UL320_.jpg",
@@ -4465,8 +4465,8 @@
   },
   {
     "product_id": "B0BZGGVLXJ",
-    "name": "Martin Furniture Traditional 8' Tall Wood Bookcase Wall with Ladder Office Bookcase Brown",
-    "normalized_price": 3018.55,
+    "name": "Traditional 8' Tall Wood Bookcase Wall With Ladder Office Bookcase Brown",
+    "normalized_price": 2778.79,
     "buy_url": "https://www.amazon.com/dp/B0BZGGVLXJ",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/617lAWe+q4L._AC_UL320_.jpg",
@@ -4484,7 +4484,7 @@
   {
     "product_id": "B0BZG5GSRD",
     "name": "Martin Furniture Traditional 8' Tall Wood Bookcase Office Storage Organizer Fully Assembled Brown",
-    "normalized_price": 1046.0,
+    "normalized_price": 950.43,
     "buy_url": "https://www.amazon.com/dp/B0BZG5GSRD",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/51qIyTc6ZoL._AC_UL320_.jpg",
@@ -6810,6 +6810,663 @@
     "buy_url": "https://www.amazon.com/dp/B0F62PJGKF",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81zdPHHlmoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BWPHX8J8",
+    "name": "HIHELO Book Case Chinese Style Chinese Style Bookcase Combination Cabinet Locker Office Study Bookshelf Personality Elegant Luxury Rack Bookshelves (Color : Brass)",
+    "normalized_price": 4065.7,
+    "buy_url": "https://www.amazon.com/dp/B0BWPHX8J8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/512HjDOPxEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW1F2LLV",
+    "name": "SAFAVIEH Couture Collection - Tristyna Walnut Wood 6-Shelf Bookcase with Sculpted Side Panels, Modern Oak Veneer Display (SFV4245A)",
+    "normalized_price": 871.24,
+    "buy_url": "https://www.amazon.com/dp/B0FW1F2LLV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71WjcqQyTIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F1WJ6PDT",
+    "name": "Pemberly Row Traditional 5-Stacks Wood Barrister Bookcase, Walnut Finish, 78\" H x 33\" W x 16\" D, Leaded Glass Top, Medium Brown Hand Rubbed Stain, Timeless Office Storage Solution",
+    "normalized_price": 1747.26,
+    "buy_url": "https://www.amazon.com/dp/B0F1WJ6PDT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51RhC06cTOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07JNGVFPS",
+    "name": "Crafters and Weavers Legacy 5 Stack Barrister Bookcase - Brown Walnut",
+    "normalized_price": 1439.03,
+    "buy_url": "https://www.amazon.com/dp/B07JNGVFPS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61PupJe7uFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL2VYNCK",
+    "name": "Manhattan Comfort Rivington 5-Shelf Bookshelf with Soft Close Glass Door, 79\" Tall Bookcase Handle-Free, Adjustable Shelves, Storage Cabinet for Living Room, Bedroom, or Office Set of 2 in Walnut",
+    "normalized_price": 1009.33,
+    "buy_url": "https://www.amazon.com/dp/B0FL2VYNCK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TXEjJzOJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRG7BRGJ",
+    "name": "SICOTAS Book Shelf Arched Cabinet Bookshelf Arch 84.2\" Tall Bookcase 5 Tier Large Bookshelves with Doors Storage Rattan Boho Wide Book Shelves Case for Living Room Kitchen Office Library",
+    "normalized_price": 855.09,
+    "buy_url": "https://www.amazon.com/dp/B0DRG7BRGJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81XD-IO8CwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLK8JMLG",
+    "name": "Mekminop Glass Display Case with Glass Doors and Led Lights, Combination Wood Display Cabinet with 19 Shelves, Modern Bookcase Set of 3, Walnut",
+    "normalized_price": 1082.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLK8JMLG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81s91afIH1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GD76BVBS",
+    "name": "YESWOOD Solid Wood Bookshelf with Glass Flip-Up Doors, Vintage Display Cabinet, Solid Rubber Wood Combination Bookcase for Home Office, Study Room 5 Tier",
+    "normalized_price": 899.99,
+    "buy_url": "https://www.amazon.com/dp/B0GD76BVBS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81qE1ZFBSVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FD53ML78",
+    "name": "Martin Furniture Contemporary 8' Tall Wood Bookcase, Storage Organizer, Display Shelf, Fully Assembled, Brown",
+    "normalized_price": 1247.69,
+    "buy_url": "https://www.amazon.com/dp/B0FD53ML78",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815rNmYjO6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C954M46R",
+    "name": "Martin Furniture 78\" H Arched Display Cabinet Bookcase in Light Brown",
+    "normalized_price": 1166.25,
+    "buy_url": "https://www.amazon.com/dp/B0C954M46R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51xgCe9nHnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2L3NCC2",
+    "name": "94\" Walnut File Cabinet with Sliding Door & LED, Large Wood Bookcase with Drawers, Modern Office Storage Cabinet & Shelving Unit for Executive Office, Home Office or Study",
+    "normalized_price": 1699.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2L3NCC2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81TTjPoTJTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B6QGYC9S",
+    "name": "Martin Furniture Avondale 120\" W Contemporary Wood Bookcase Wall with Ladder Storage Organizer Display, 5 Adjustable Shelves, Ringed Steel Frame, Fully Assembled, in Brown Finish",
+    "normalized_price": 2894.65,
+    "buy_url": "https://www.amazon.com/dp/B0B6QGYC9S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61JGlBygNRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B072V9J4ZL",
+    "name": "Martin Furniture Fully Assembled Aged Ebony Toulouse 6 Shelves Bookcase,",
+    "normalized_price": 1172.87,
+    "buy_url": "https://www.amazon.com/dp/B072V9J4ZL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71wjhV+108L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL2XSMTH",
+    "name": "Manhattan Comfort Rivington 79\" Inch Tall Modern Bookshelf with Soft Close Doors, Four Open Shelves and Two Adjustable Shelves, Bookcase Storage Cabinet for Living Room or Office, Set of 3 in Walnut",
+    "normalized_price": 1558.01,
+    "buy_url": "https://www.amazon.com/dp/B0FL2XSMTH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uVYgJK8DL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CDXQ3WXC",
+    "name": "Home Square 84\" Triple Wide Wood Bookcase in Chocolate - Set of 2",
+    "normalized_price": 1289.99,
+    "buy_url": "https://www.amazon.com/dp/B0CDXQ3WXC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51O2tAZ4ZJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DB8FG8XS",
+    "name": "Mission Craftsman Style Oak Barrister Bookcase - 3 Stack - Walnut",
+    "normalized_price": 1130.35,
+    "buy_url": "https://www.amazon.com/dp/B0DB8FG8XS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51ogtH9FfnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1L25DTW",
+    "name": "WAMPAT 6 in 1 71\" Arched Bookcase with Doors, Walnut",
+    "normalized_price": 1019.99,
+    "buy_url": "https://www.amazon.com/dp/B0H1L25DTW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Z-NSJ9E2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FP4P1PZ8",
+    "name": "Namesake Liberty Assembled Bookcase in Natural Walnut, Greenguard Gold Certified, Bookcase for Baby and Kids Room, Fully Assembled",
+    "normalized_price": 909.34,
+    "buy_url": "https://www.amazon.com/dp/B0FP4P1PZ8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71zszaDus4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FTP4QBWS",
+    "name": "SIMPLIHOME Harper TV Stand and Bookcases \u2013 72 inch Wide Solid Hardwood TV Cabinet and 24 inch Wide Solid Hardwood Bookcases in Walnut Brown, Transitional Entertainment Bundle for Living Room, Set of 3",
+    "normalized_price": 1022.8,
+    "buy_url": "https://www.amazon.com/dp/B0FTP4QBWS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61n4-VY6vZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07M688GST",
+    "name": "Beaumont Lane Mahogany Wood Triple Bookcase, Pure White Finish, 86.6\" H x 94.5\" W x 15.75\" D, 6 Doors Storage, Adjustable Shelving, Semi-Gloss Painted, Antique Brass Hardware, Elegant Home Office or",
+    "normalized_price": 3163.83,
+    "buy_url": "https://www.amazon.com/dp/B07M688GST",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61DufmRmZmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B011NP9DPI",
+    "name": "Martin Furniture Hartford Traditional Wood Bookcase with 2 Self-Closing Doors, Storage Cabinet, Fixed Shelf, 3 Adjustable Shelves, in Black Finish",
+    "normalized_price": 1024.1,
+    "buy_url": "https://www.amazon.com/dp/B011NP9DPI",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41PHkik+BQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZGKBSCP",
+    "name": "Traditional 8' Tall Wood Bookcase Wall With Ladder Office Storage Brown",
+    "normalized_price": 2116.04,
+    "buy_url": "https://www.amazon.com/dp/B0BZGKBSCP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61eWKnW0KmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00UTRN6VO",
+    "name": "Greenington Currant Bookshelf, Black Walnut",
+    "normalized_price": 1389.0,
+    "buy_url": "https://www.amazon.com/dp/B00UTRN6VO",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51FSgL3vmDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F639J1DW",
+    "name": "SICOTAS Book Shelf Arched Cabinet Bookshelf Arch 84.2\" Tall Bookcase 5 Tier Large Bookshelves with Doors Storage Rattan Boho Wide Book Shelves Case for Living Room Kitchen Office Bedroom Library",
+    "normalized_price": 1059.99,
+    "buy_url": "https://www.amazon.com/dp/B0F639J1DW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81g0URJGDRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BVG3XT74",
+    "name": "Parker House Huntington 32 in. Open Top Bookcase",
+    "normalized_price": 1035.34,
+    "buy_url": "https://www.amazon.com/dp/B0BVG3XT74",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81LYiPCTmpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7N15YSJ",
+    "name": "Stickley Saranac Etagere, Tall Bookcase, Solid Rustic Walnut, Sustainable Construction, Open Back, 3 Adjustable Shelves, Fixed Center Shelf, Sled Base, 35in W x 16in D x 69in H, Made in USA",
+    "normalized_price": 2824.0,
+    "buy_url": "https://www.amazon.com/dp/B0G7N15YSJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81HljkZBPrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPTBV7JG",
+    "name": "Mid-century Wood Modern Glass Door Bookcase Display Office Bookcase Brown",
+    "normalized_price": 1034.0,
+    "buy_url": "https://www.amazon.com/dp/B0CPTBV7JG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Fzxf7lbfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G348BBWN",
+    "name": "Vyre 70.8\" Tall Farmhouse Bookshelf with Glass Doors, Modular Bookcase with 6-Tier Adjustable Shelves, Large Storage Cabinet for Kitchen, Living Room, Set of 4, Brown",
+    "normalized_price": 1009.99,
+    "buy_url": "https://www.amazon.com/dp/B0G348BBWN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/911NCL3etWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTKM1BY2",
+    "name": "SIMPLIHOME Draper 22 inch Mid-Century Modern 6 Cubbie Bookcase with Drawer (Set of 2) in Teak Brown for the Living Room, Study Room and Office",
+    "normalized_price": 858.68,
+    "buy_url": "https://www.amazon.com/dp/B0DTKM1BY2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71tLStlxyuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXZJ61FB",
+    "name": "Homsee 80% Solid Wood Bookcase with Lights, 92.5\" Tall Arched Book Shelf with 4 Doors, Glass Display Cabinet with 3 Drawers, Modern Living Room Storage Cabinet, Beige, 52.6\" W",
+    "normalized_price": 879.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXZJ61FB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81gcRhvMOTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07D74VVG1",
+    "name": "Martin Furniture Open Bookcase, Weathered Dove",
+    "normalized_price": 817.28,
+    "buy_url": "https://www.amazon.com/dp/B07D74VVG1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51SU-22tP8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08937KXND",
+    "name": "Martin Furniture Toulouse 3 Bookcase Wall, Brown",
+    "normalized_price": 3094.82,
+    "buy_url": "https://www.amazon.com/dp/B08937KXND",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81VhAKFGn4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FN49K4N8",
+    "name": "Nathan James Iris Sideboard and Bookcase Set, Mid-Century Modern Solid Wood Storage Unit with Arched Doors, 2 Cabinets and 2 Bookshelves with Cabinet, Light Brown",
+    "normalized_price": 1739.96,
+    "buy_url": "https://www.amazon.com/dp/B0FN49K4N8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/818tclJPRML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW1N2QL1",
+    "name": "SAFAVIEH Couture Collection - Haylina Natural Wood 4-Shelf Bookcase with Cabinet Storage, Modern Oak Veneer Display & Organizer (SFV4237B)",
+    "normalized_price": 857.52,
+    "buy_url": "https://www.amazon.com/dp/B0FW1N2QL1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71uNE8-6olL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H18FCM73",
+    "name": "WAMPAT 71\" Tall Arched Bookshelf with Storage, 5 Tiers Bookcase with 2 Doors and Adjustable Shelves, Modern Farmhouse Arched Display Cabinet Wood Bookshelf for Living Room, Office (3PCS, Walnut)",
+    "normalized_price": 979.99,
+    "buy_url": "https://www.amazon.com/dp/B0H18FCM73",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81vkVg+BcVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G38JRMDJ",
+    "name": "Starlight Avondale 8-Foot Tall 3-Bookcase Wall with Ladder, 120\" W, 5 Adjustable Shelves, Ringed Steel Frame, Hand Applied Finish, Brown",
+    "normalized_price": 3101.06,
+    "buy_url": "https://www.amazon.com/dp/B0G38JRMDJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61smxuVCwXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09MV82MGP",
+    "name": "Farmhouse Reimagined Bookcase",
+    "normalized_price": 929.99,
+    "buy_url": "https://www.amazon.com/dp/B09MV82MGP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713tJLX4eNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBWVHKZ9",
+    "name": "Nathan James Jasper 3-Shelf Solid Wood Boho Bookshelf, Wall Mounted Bookshelf with Cabinet with Fluted Doors, Black Oak, Set of 3",
+    "normalized_price": 1049.97,
+    "buy_url": "https://www.amazon.com/dp/B0DBWVHKZ9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PqjAyPxuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2MB5WCN",
+    "name": "94\" Large Bookshelf with LED Lights & Sliding Door, Walnut File Cabinet with 3 Drawers, Enclosed Cabinet and Open Shelving for Home, Office, Study (94\" L x 16\" W x 79\" H)",
+    "normalized_price": 1699.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2MB5WCN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81vJlKJXsCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D7XTX2HJ",
+    "name": "Nathan James Theo Modern Bookcase with Rattan Cabinet in Matte Black and Light Oak Finish with Matte Black Metal Frame for Living Room, Home Office Storage, Set of 4",
+    "normalized_price": 981.99,
+    "buy_url": "https://www.amazon.com/dp/B0D7XTX2HJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815QrcgcMmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FL2SN2SH",
+    "name": "Manhattan Comfort Rivington 5-Tier Bookshelf with Adjustable Shelves, 79 inch Tall Modern Bookcase Storage Organizer, Decor Display for Living Room, Bedroom, or Home Office, Set of 2 in Black",
+    "normalized_price": 835.99,
+    "buy_url": "https://www.amazon.com/dp/B0FL2SN2SH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Vc2PLb07L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H3KKQ7BH",
+    "name": "Tree Branch Bookshelf, Handcrafted Natural Wood Wall Bookcase, Sculptural Floating Shelves for Living Room, Study and Home Library",
+    "normalized_price": 995.95,
+    "buy_url": "https://www.amazon.com/dp/B0H3KKQ7BH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71AMW9Tq5JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GMR79GGM",
+    "name": "Palace Imports Solid Wood Bookcase - 64\" Wide Wooden Bookshelf - 12-Shelf Mocha Bookcase, Modular Cabinets with Adjustable Shelves - 71.5\" Tall Bookcases for Living Room - 100% Eco-Friendly Wood",
+    "normalized_price": 679.99,
+    "buy_url": "https://www.amazon.com/dp/B0GMR79GGM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ddHuMHXzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2XJDYVY",
+    "name": "WAMPAT 4 PCS Modern 72\" Tall Bookshelf with Metal Base and Adjustable Shelves, Library Bookcase with Storage Cabinet and Open Book Shelfs, Wood Bookshelves for Home Office, Living Room, Mocha",
+    "normalized_price": 930.59,
+    "buy_url": "https://www.amazon.com/dp/B0G2XJDYVY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81kAQrMsK-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT9GWN4M",
+    "name": "Merax 3-Pieces White Bookcase Collection Display Cabinet 87\"x17\"x79\" Tall Bookshelf, Adjustable 5 Colors Ceiling Light, 5 Shelf MDF Bookcase for Living Room, Home Office, Studio",
+    "normalized_price": 720.41,
+    "buy_url": "https://www.amazon.com/dp/B0GT9GWN4M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81m0KITiN0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07TXG1FL6",
+    "name": "Wood Designs Bookshelf with Adjustable Shelves, 59-1/2\"H",
+    "normalized_price": 783.99,
+    "buy_url": "https://www.amazon.com/dp/B07TXG1FL6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71LGgZ06eRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW2F2GMF",
+    "name": "SAFAVIEH Couture Collection - Haylina Black Wood 4-Shelf Bookcase with Cabinet Storage, Modern Oak Veneer Display & Organizer (SFV4237A)",
+    "normalized_price": 857.52,
+    "buy_url": "https://www.amazon.com/dp/B0FW2F2GMF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81SsUYoklvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GMWQHBMF",
+    "name": "Bookshelf - Modern Bookcase with LED Ambient Light & Grey Premium Style, 4-Tier Tall Office Storage Cabinet Includes Open Storage Shelving & Hidden Handle for Study & Office (94IN)",
+    "normalized_price": 5299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GMWQHBMF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61eVP2NHzjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B017C5B1RG",
+    "name": "FOREST DESIGNS Mission Alder Bookcase w/Full Glass Doors Black Oak",
+    "normalized_price": 2413.0,
+    "buy_url": "https://www.amazon.com/dp/B017C5B1RG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6148cFJn7JL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZL4KP95",
+    "name": "Modern Geometric Solid Wood Bookshelf, Sculptural Triangle Bookcase, Contemporary Vertical Storage Shelf, Artistic Display Rack for Living Room Office",
+    "normalized_price": 1699.0,
+    "buy_url": "https://www.amazon.com/dp/B0GZL4KP95",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/31aqKJSD0lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GSXRPPSM",
+    "name": "Nathan James Benji Mid Century Wall Unit Bookcase, Decorative Floating 3-Tier Wood Shelf, Black Oak Set of 4",
+    "normalized_price": 712.45,
+    "buy_url": "https://www.amazon.com/dp/B0GSXRPPSM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81aPNdC4WFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCG6RC9W",
+    "name": "83.4\" Tall Black Bookshelf with LED Lighting, 2 Pieces Modern Wood Bookcase with Sliding Doors and Drawer,Storage Bookcase with Open Shelves for Living Room,Home Office (Black 2Set)",
+    "normalized_price": 724.99,
+    "buy_url": "https://www.amazon.com/dp/B0GCG6RC9W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81jYkXTBXvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DNK1K355",
+    "name": "Silver Book Shelf Set of 2, 71\" Tall 6-Tier Open Glass Bookcase, Modern Standing Bookshelf with Polished Stainless Steel Frame for Home Office, Living Room, Bedroom",
+    "normalized_price": 798.0,
+    "buy_url": "https://www.amazon.com/dp/B0DNK1K355",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81XhOJm5tEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQTQZSBN",
+    "name": "Vyre 70.8\" Tall Brown Bookshelf, Farmhouse Modular Bookcase with 6-Tier Adjustable Shelves, Large Storage Cabinet for Home Office, Living Room, Set of 3",
+    "normalized_price": 629.99,
+    "buy_url": "https://www.amazon.com/dp/B0FQTQZSBN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81llhPGr8iL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2QFTRZ2",
+    "name": "Multi-Tier Geometric Solid Wood Bookshelf, Sculptural Triangle Bookcase for Living Room",
+    "normalized_price": 1699.0,
+    "buy_url": "https://www.amazon.com/dp/B0H2QFTRZ2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/21z5LNqi0SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJ2SMQ5N",
+    "name": "WAMPAT Large Bookshelf 72\" Tall Bookcase with Glass Doors,Large Farmhouse Display Book Shelf with Adjustable Shelves and Storage Cabinet\uff0cLibrary Wood Bookshelves for Living Room, Office, Oak",
+    "normalized_price": 804.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJ2SMQ5N",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81QMT69xYiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS1FSRDR",
+    "name": "Wovenbyrd Book Shelf 70\" Tall Bookcase with Drawer, 7-Tier Arched Cabinet with Storage and Fluted Door, Mid-Century Modern Modular Arch Bookshelf for Office Living Room Bedroom Library (Walnut, 3)",
+    "normalized_price": 659.97,
+    "buy_url": "https://www.amazon.com/dp/B0GS1FSRDR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81HUCLIUHjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTTK9KJH",
+    "name": "5 Tier Bookshelf,69\" Black Bookshelf,Open Large Book Shelf with Adjustable Storage Shelves,Tall Bookcase Modern Bookshelf for Bedroom,Living Room, Home Office,Library",
+    "normalized_price": 658.88,
+    "buy_url": "https://www.amazon.com/dp/B0CTTK9KJH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81BpI5Do-7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQVVT3PD",
+    "name": "ivaniti 70.8\" Bookshelf with Glass Doors, Farmhouse Modular Bookcase with 6-Tier Adjustable Shelves, Large Storage Cabinet for Living Room & Home Office, Set of 4, Black",
+    "normalized_price": 1139.99,
+    "buy_url": "https://www.amazon.com/dp/B0FQVVT3PD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ztvDuJEuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXTXVQZF",
+    "name": "TUSY 71\" Tall Two-Tone LED Bookcase \u2013 Beechwood Grain, 5-Tier Display Cabinet with Glass Doors, Modern Bookshelf with Drawers, Freestanding Storage for Home Office, Living Room (White, ABBA)",
+    "normalized_price": 699.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXTXVQZF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71pIyWMVd+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF2V5TN2",
+    "name": "WAMPAT Set of 3 Oak Bookcase with Doors and Drawers, 5 Tier Bookshelf, 72'' Tall Book Case Shelf, Large Wood Bookcases Farmhouse Bookshelves for Living Room Bedroom Home Office Kitchen",
+    "normalized_price": 695.99,
+    "buy_url": "https://www.amazon.com/dp/B0GF2V5TN2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81xgvg6HWSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FR4QKDDF",
+    "name": "Vyre 70.8\" Tall Bookshelf with Doors, Farmhouse Modular Bookcase with 4-Tier Adjustable Shelves, Large Storage Cabinet for Home Office, Living Room, Black, Set of 4",
+    "normalized_price": 989.99,
+    "buy_url": "https://www.amazon.com/dp/B0FR4QKDDF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71hDs2Z3jRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVTHY5K4",
+    "name": "Modern Black Glass Door Bookcase Shelf Storage Cabinet with Combination Side and Luxury Design Premium Bookshelf and Bookcase for Home Office Organization",
+    "normalized_price": 2182.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVTHY5K4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51h0ayIEdXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G7JJ13HW",
+    "name": "Merax Tall Bookcase,Modern 5-Tier Decor Bookshelves with Adjustable Shelves,83.4\" Wooden Book Shelf with Storage and Open Display,White*2",
+    "normalized_price": 789.99,
+    "buy_url": "https://www.amazon.com/dp/B0G7JJ13HW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81PlJ8F2rIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GHYQPTFF",
+    "name": "WAMPAT 5 Tier Bookshelf 72\" Tall Bookcase with Barn Doors, Large Farmhouse Display Book Shelf with 3 Drawers and Storage Cabinet, 3-in-1 Library Wood Bookshelves for Living Room or Kitchen, White",
+    "normalized_price": 699.99,
+    "buy_url": "https://www.amazon.com/dp/B0GHYQPTFF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8110UVPtiOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B078X138LL",
+    "name": "BOWERY HILL Traditional Wood Bookcase, 4 Shelves, Distressed Black Finish, 78\" H x 40\" W x 14\" D, Adjustable Storage, Semi-Finished Back, Vintage Style Home or Office Bookshelf",
+    "normalized_price": 980.43,
+    "buy_url": "https://www.amazon.com/dp/B078X138LL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41vLIFuvnEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9NMTVLK",
+    "name": "80 Inch Modern Tall Wooden Vertical Bookshelf,Floor to Floor Open Storage Rack,Six Alternating Shelves,Suitable for Living Room,Office,Bedroom (brown-03)",
+    "normalized_price": 669.99,
+    "buy_url": "https://www.amazon.com/dp/B0F9NMTVLK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ro12prQ0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CH2D1YJ3",
+    "name": "DAVEE Modern & Contemporary Antique Wood 5-Tier Bookcase",
+    "normalized_price": 619.99,
+    "buy_url": "https://www.amazon.com/dp/B0CH2D1YJ3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91Jtea4drSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX9PK1BM",
+    "name": "Virubi 83.4\" Tall 2-Piece Bookshelf with Storage, Modern Wood Double Bookcase with LED, 2 Storage Bookcases with Open Shelves for Living Room,Home Office, Black",
+    "normalized_price": 929.99,
+    "buy_url": "https://www.amazon.com/dp/B0GX9PK1BM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/711BZydITqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G32JGH18",
+    "name": "Merax 83.4\" Tall Bookcase Modern 5-Tier Decor Bookshelf for Home Office | Wooden Book Shelf with Lightstrip Adjustable Shelves Storage and Open Display Living Room,White 2 Set",
+    "normalized_price": 799.99,
+    "buy_url": "https://www.amazon.com/dp/B0G32JGH18",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Jav37xQVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5K9CWK9",
+    "name": "Tree Bookshelf, Large Wood Tree-Shaped Bookcase with Rustic Branch Shelves, Decorative Storage Shelf for Living Room, Bedroom, Office",
+    "normalized_price": 980.95,
+    "buy_url": "https://www.amazon.com/dp/B0H5K9CWK9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71pYp2bQzDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW27CLT4",
+    "name": "SAFAVIEH Couture Collection - Zeus Black 4-Shelf Bookcase with Cabinet Storage, Modern Display & Organizer (SFV4219C)",
+    "normalized_price": 943.99,
+    "buy_url": "https://www.amazon.com/dp/B0FW27CLT4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71r4H95Lx5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2MS2J11",
+    "name": "Modern Rotating Bookshelf, Premium Wood Corner Bookcase with Adjustable Shelves, Stylish White Display Shelf for Home or Office (78.7in)",
+    "normalized_price": 1418.99,
+    "buy_url": "https://www.amazon.com/dp/B0F2MS2J11",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71bdLUu958L._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

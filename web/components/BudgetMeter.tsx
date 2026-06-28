@@ -11,12 +11,11 @@ export default function BudgetMeter({
   const pct = target > 0 ? Math.min((total / target) * 100, 100) : 0;
   const remaining = target - total;
 
-  // Threshold classes
   let fillClass = "budget-bar-fill";
   let remainingClass = "budget-remaining remaining-ok";
-  if (pct >= 100 || remaining < 0) {
-    fillClass += " budget-over";
-    remainingClass = "budget-remaining remaining-over";
+  if (remaining < 0) {
+    fillClass += " budget-near";
+    remainingClass = "budget-remaining remaining-near";
   } else if (pct >= 80) {
     fillClass += " budget-tight";
     remainingClass = "budget-remaining remaining-tight";
@@ -32,7 +31,9 @@ export default function BudgetMeter({
         <div className={fillClass} style={{ width: `${pct}%` }} />
       </div>
       <p className={remainingClass}>
-        ${Math.abs(remaining).toFixed(2)} {remaining >= 0 ? "remaining" : "over budget"}
+        {remaining >= 0
+          ? `$${remaining.toFixed(2)} remaining`
+          : `$${Math.abs(remaining).toFixed(2)} above target`}
       </p>
     </div>
   );

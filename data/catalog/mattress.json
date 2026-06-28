@@ -46,7 +46,7 @@
   {
     "product_id": "B0DCX574LS",
     "name": "Nectar Premier Hybrid 13\u201d Queen Mattress - Medium Firm - Memory Foam & Innerspring Coils - Cooling Upgrade - Back Pain Relief - Mattress in a Box - 365-Night Trial & Forever Warranty",
-    "normalized_price": 1199.0,
+    "normalized_price": 934.0,
     "buy_url": "https://www.amazon.com/dp/B0DCX574LS",
     "specs": {
       "bed_size": "queen"
@@ -574,7 +574,7 @@
   {
     "product_id": "B0F8C6S8YD",
     "name": "Awara Premier Luxury Hybrid Queen Mattress 12 Inch - Certified Organic Natural Latex - Sustainable New Zealand Wool - Fiberglass-Free - 365-Night Trial",
-    "normalized_price": 1199.0,
+    "normalized_price": 1019.0,
     "buy_url": "https://www.amazon.com/dp/B0F8C6S8YD",
     "specs": {
       "bed_size": "queen"
@@ -2686,7 +2686,7 @@
   {
     "product_id": "B0DJ22KYTL",
     "name": "Tuft & Needle Mint Hybrid Plush Queen Size Mattress in a Box, Cooling Adaptive Foam, Individually-Wrapped Coils, 100 Night Trial, Fiberglass Free, CertiPUR-US, 10-Year Limited Warranty, Queen Mattress",
-    "normalized_price": 1533.75,
+    "normalized_price": 1669.96,
     "buy_url": "https://www.amazon.com/dp/B0DJ22KYTL",
     "specs": {
       "bed_size": "queen"
@@ -3385,6 +3385,1909 @@
       "bed_size": "queen"
     },
     "image_url": "https://m.media-amazon.com/images/I/818UTmwWVBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G5YCQ8W4",
+    "name": "BedStory Queen Mattress, 14 inch Luxe Cooling Hybrid Mattress Plush Feel with Gel Memory Foam for Cool Luxury Sleep, 5-Zone Support for Pressure Relief, CertiPUR-US Certified, 365 Night Trial",
+    "normalized_price": 999.99,
+    "buy_url": "https://www.amazon.com/dp/B0G5YCQ8W4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81WHVrj8JKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DPXWSK34",
+    "name": "Kingsdown Prime Rosenberry 12\" Firm Queen Hybrid Mattress, Luxury Foam - Innerspring Coils, Edge-to-Edge Support, Handcrafted in the USA",
+    "normalized_price": 1046.96,
+    "buy_url": "https://www.amazon.com/dp/B0DPXWSK34",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vRLlUWHSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJG22WVH",
+    "name": "SlumberCool MAX Hybrid 3Z PRO PLUSH Firm 14\u201d Cooling Mattress \u2013 QUEEN GlacierTex MAX Cover, TheraGEL Mineral Memory Foam, Zoned Lumbar Support Coils, Luxury Firm Hybrid for Back & Stomach Hot Sleepers",
+    "normalized_price": 1499.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJG22WVH",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iXGpPP4pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F75751LR",
+    "name": "DreamCloud Luxe 14\" Queen Mattress - Luxury Hybrid Gel Memory Foam - 365 Night Trial - Back Pain Relief - Fiberglass Free - Forever Warranty - Mattress in a Box - CertiPUR-US Certified",
+    "normalized_price": 1189.0,
+    "buy_url": "https://www.amazon.com/dp/B0F75751LR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810LXWe2rJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9B6PPMW",
+    "name": "Beautyrest World Class Level Four Plush 13.5\" Hybrid Mattress - Queen Size - Durable Support, Pressure Relief, Cooling, Motion Separation; CertiPUR-US, 100 Night Sleep Trial and 10 Year Warranty",
+    "normalized_price": 1639.26,
+    "buy_url": "https://www.amazon.com/dp/B0F9B6PPMW",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/815d00JF5LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCXK8BP2",
+    "name": "Nectar Luxe Hybrid 14\u201d Queen Mattress - Medium Firm - Memory Foam & Innerspring Coils - Cooling Fibers - Back Pain Relief - Mattress in a Box - 365-Night Trial & Forever Warranty",
+    "normalized_price": 1174.0,
+    "buy_url": "https://www.amazon.com/dp/B0DCXK8BP2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91JmSOm5STL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNWDRVVP",
+    "name": "Brooklyn Bedding Titan 13\" Hybrid Luxe Mattress for Plus Size Sleepers, Queen",
+    "normalized_price": 1119.3,
+    "buy_url": "https://www.amazon.com/dp/B0BNWDRVVP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91A5gVJgu1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQHHMGTF",
+    "name": "Brooklyn Bedding Aurora Luxe 14 Inch Queen Hybrid Mattress | Firm Feel | Cloud Pillowtop Upgrade | CERTIPUR-US Certified Foam",
+    "normalized_price": 1585.5,
+    "buy_url": "https://www.amazon.com/dp/B0GQHHMGTF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QOT9lS6lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLJWFKKM",
+    "name": "Brooklyn Bedding Signature Hybrid Queen 13 Inch Mattress, Soft Feel, CERTIPUR-US Certified Foam",
+    "normalized_price": 1025.5,
+    "buy_url": "https://www.amazon.com/dp/B0GLJWFKKM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mYuToDBTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNW9YJHS",
+    "name": "Brooklyn Bedding Plank Firm Luxe 13\" Queen Hybrid Mattress|Breathable Materials",
+    "normalized_price": 1118.6,
+    "buy_url": "https://www.amazon.com/dp/B0BNW9YJHS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XdfJlqIaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHBHDRWM",
+    "name": "Serta Perfect Sleeper X - Knox 13.75\" Plush Quilted Hybrid Queen Mattress - 5 Support Zones and Cooling Tech for a Restorative Sleep - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 1199.0,
+    "buy_url": "https://www.amazon.com/dp/B0DHBHDRWM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91M3bEp+qkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01N6ZDQG9",
+    "name": "Leesa Sapira Hybrid 11\" Mattress, Queen Size, Premium Cooling Foam and Pocket Spring/CertiPUR-US Certified Foam / 120-Night Trial,White and Gray",
+    "normalized_price": 1489.0,
+    "buy_url": "https://www.amazon.com/dp/B01N6ZDQG9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81MMnSJddvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBTC9J99",
+    "name": "Sven & Son Hybrid Spring Mattress, CertiPUR-US Certified Foam, Fiberglass-Free, Made in the USA, 14 inch Medium Soft - Queen",
+    "normalized_price": 1219.95,
+    "buy_url": "https://www.amazon.com/dp/B0FBTC9J99",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mSvHE3wJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLJDQFM2",
+    "name": "Brooklyn Bedding Signature Hybrid Queen 14 Inch Mattress, Medium Feel, Cloud Pillowtop Upgrade, CERTIPUR-US Certified Foam",
+    "normalized_price": 1212.4,
+    "buy_url": "https://www.amazon.com/dp/B0GLJDQFM2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mYuToDBTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F79G41RF",
+    "name": "Leesa Sapira Chill Hybrid 14\" Mattress, Firm, Queen, Enhanced Cooling, CertiPUR-US Certified Foam, 120-Night Trial",
+    "normalized_price": 1679.0,
+    "buy_url": "https://www.amazon.com/dp/B0F79G41RF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91mhxOTBigL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK381RY9",
+    "name": "Brooklyn Bedding Titan 14.5\" Elite Plus Size Sleeper Queen Mattress|Enhanced Cooling |Medium Firm | Memory Foam Hybrid |120-Night Trial",
+    "normalized_price": 1678.6,
+    "buy_url": "https://www.amazon.com/dp/B0DK381RY9",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Z5t-g+u3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09ZJXC85W",
+    "name": "Leesa Original Hybrid 11\" Mattress, Queen, Premium Cooling Foam and Individually Wrapped Springs/CertiPUR-US Certified Foam /120-Night Trial",
+    "normalized_price": 1049.0,
+    "buy_url": "https://www.amazon.com/dp/B09ZJXC85W",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/919Bdhr0nwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLQ7SPJ6",
+    "name": "Brooklyn Bedding Signature Hybrid Olympic Queen 66\"x80\" 14 Inch Mattress, Soft Feel, Cloud Pillowtop Upgrade, CERTIPUR-US Certified Foam",
+    "normalized_price": 1039.2,
+    "buy_url": "https://www.amazon.com/dp/B0GLQ7SPJ6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81XyzlEzC-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRYXP85Y",
+    "name": "Serta Perfect Sleeper Pro - Edinburgh 15\" Plush Pillow Top Queen Latex Hybrid Mattress - 5 Support Zones and Cooling Tech for Premium Hybrid Comfort - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 2699.0,
+    "buy_url": "https://www.amazon.com/dp/B0DRYXP85Y",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mnmfFxiJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHBLH3QL",
+    "name": "Serta Perfect Sleeper X - Kendall 13\" Plush Queen Size Hybrid Mattress, 5 Support Zones and Cooling Tech for a Restorative Sleep, 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 1899.0,
+    "buy_url": "https://www.amazon.com/dp/B0DHBLH3QL",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812v8TAGgqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYHV9YWF",
+    "name": "Casper Sleep Snow Hybrid Mattress \u2013 Queen, Medium Feel Memory Foam with Snow Technology Cooling & Zoned Support \u2013 Motion Isolation \u2013 Made for All Sleep Styles \u2013 100-Night Trial \u2013 CertiPUR-US",
+    "normalized_price": 1900.0,
+    "buy_url": "https://www.amazon.com/dp/B0FYHV9YWF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71J-YEh4T3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BC1CR4Q5",
+    "name": "ESHINE Queen Adjustable Bed Frame - 14\u201c Luxury Gel Memory Foam Hybrid Mattress, 5 Minutes Installation, 609 Independent Pocket Springs, Massage, Medium Soft, 3000 Premium Series",
+    "normalized_price": 886.55,
+    "buy_url": "https://www.amazon.com/dp/B0BC1CR4Q5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91fPKXhU2zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSXHDQZG",
+    "name": "Nectar Ultra 15\u201c Queen Mattress - Medium Firm - Cooling Fibers & Temperature Regulating Material - Back Pain Relief - Zoned Ergonomic Support Layer - 365-Night Mattress Trial",
+    "normalized_price": 1529.0,
+    "buy_url": "https://www.amazon.com/dp/B0DSXHDQZG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91k51NSnV7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F74WX3Y5",
+    "name": "DreamCloud Luxe 14\" Queen Mattress - Memory Foam - 365 Night Trial - Back Pain Relief - Fiberglass Free - Forever Warranty - Mattress in a Box - CertiPUR-US\u00ae Certified",
+    "normalized_price": 1359.15,
+    "buy_url": "https://www.amazon.com/dp/B0F74WX3Y5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81lJQAXTHfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09BDDCBXG",
+    "name": "Signature Design by Ashley King Size Ultra Luxury 16 Inch Hyper Cool Euro Top Hybrid Mattress with Cooling Gel Memory Foam, Fiberglass Free, Mattress In A Box",
+    "normalized_price": 1138.18,
+    "buy_url": "https://www.amazon.com/dp/B09BDDCBXG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/811X3CSFIqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BJ277NXB",
+    "name": "ESHINE 14\" Hybrid Mattress Queen(Medium Soft) + Adjustable Bed Frame - Luxury Gel Memory Foam, Upholstered Bed Frames with Massage, USB, Under Bed Night Light, Head and Foot Incline, Queen",
+    "normalized_price": 1019.99,
+    "buy_url": "https://www.amazon.com/dp/B0BJ277NXB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QdlQEBKVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGJ21JGS",
+    "name": "Signature Design by Ashley Plush Luxe 2.0 15 Inch Breathable Gel Latex Memory Foam Hybrid Mattress with Edge Support for Cool Sleep and Pressure Relief, Queen, Fiberglass-Free, Mattress in A Box",
+    "normalized_price": 1137.72,
+    "buy_url": "https://www.amazon.com/dp/B0FGJ21JGS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71UHJBqBCEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B085H731HY",
+    "name": "Casper Sleep Original Hybrid King Mattress \u2013 Medium Feel with Zoned Support \u2013 Motion Isolation \u2013 Breathable, Cooling Memory Foam \u2013 100-Night Trial \u2013 CertiPUR-US",
+    "normalized_price": 1284.0,
+    "buy_url": "https://www.amazon.com/dp/B085H731HY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81YA17m6OBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS49FCNF",
+    "name": "Doctor's Choice\u00ae Hybrid Soft Queen Mattress",
+    "normalized_price": 1299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GS49FCNF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81zaC1+kjDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09FNC9P3D",
+    "name": "Kingsdown Cushion Firm Euro Pillow Top Hybrid Queen Mattress Cooling Gel Memory Foam Layer Multi-Layered Motion Isolation Cool Sleep Quilted Top Luxury Mattresses, 15-inch, Passions Engleson",
+    "normalized_price": 1336.99,
+    "buy_url": "https://www.amazon.com/dp/B09FNC9P3D",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ztNT5465L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08R37SZ8N",
+    "name": "Mielmoon & Elegance Hybrid Mattress Heavy Duty Support-Firm Premium Luxury Motion Isolation/White-Black Natural Latex/Back Pain Relief, Made in USA (Extra Firm,Queen)",
+    "normalized_price": 1000.0,
+    "buy_url": "https://www.amazon.com/dp/B08R37SZ8N",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91l5y4KjnBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS6FTBY5",
+    "name": "Doctor's Choice\u00ae Hybrid Medium Queen Mattress",
+    "normalized_price": 1199.99,
+    "buy_url": "https://www.amazon.com/dp/B0GS6FTBY5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Bpufr1cUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH8XWMZX",
+    "name": "Queen Mattress 12 Inch Ultra Plush \u2013 Softest Hybrid Gel Memory Foam & Coil \u2013 Cooling Pressure Relief \u2013 CertiPUR-US \u2013 Fiberglass-Free \u2013 Mattress in a Box \u2013 10-Year Warranty",
+    "normalized_price": 1261.78,
+    "buy_url": "https://www.amazon.com/dp/B0FH8XWMZX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71MYT-o9wZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09ZCSN6XB",
+    "name": "GhostBed 10 Inch Short Queen RV Mattress, Camper Mattress with Memory Foam and Hybrid Coils - Low Profile, Medium Feel, Made in The USA, Short Queen, Dimensions: 74\"x60\"x10\"",
+    "normalized_price": 1199.0,
+    "buy_url": "https://www.amazon.com/dp/B09ZCSN6XB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71bbjGoqSAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3WTWN5P",
+    "name": "Helix Midnight Mattress with GlacioTex Pillow Top, Queen",
+    "normalized_price": 1482.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3WTWN5P",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71UOcKL19HL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3CGRKD5",
+    "name": "GhostBed Signature Hybrid 12\u201d Queen Mattress \u2013 Cooling Memory Foam & Innerspring Hybrid Bed \u2013 Medium-Firm Comfort, Pressure Relief, Edge Support, CertiPUR-US Certified, Made in USA",
+    "normalized_price": 1399.0,
+    "buy_url": "https://www.amazon.com/dp/B0G3CGRKD5",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81v3NV0tTVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B085H9FBBP",
+    "name": "Casper Sleep Original Hybrid Queen Mattress \u2013 Medium Feel with Zoned Support \u2013 Motion Isolation \u2013 Breathable, Cooling Memory Foam \u2013 100-Night Trial \u2013 CertiPUR-US",
+    "normalized_price": 984.0,
+    "buy_url": "https://www.amazon.com/dp/B085H9FBBP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81YA17m6OBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCXHY632",
+    "name": "Nectar Premier 13\u201d Queen Mattress - Medium Firm - Contouring Memory Foam - Cooling Upgrade - Back Pain Relief - Mattress in a Box - 365-Night Trial & Forever Warranty",
+    "normalized_price": 792.0,
+    "buy_url": "https://www.amazon.com/dp/B0DCXHY632",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91MXzTIhS2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B085HGGMHG",
+    "name": "Casper Sleep Original Foam Queen Mattress \u2013 Medium Firm Feel with Zoned Support \u2013 Motion Isolation \u2013 Breathable, Cooling Memory Foam \u2013 100-Night Trial \u2013 CertiPUR-US",
+    "normalized_price": 884.0,
+    "buy_url": "https://www.amazon.com/dp/B085HGGMHG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81l6vMPLIRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09GXG53YS",
+    "name": "Purple Plus Queen Mattress - 11\" GelFlex Grid, Premium Comfort Foam, Better Than Memory Foam, Temperature Neutral, Responsive, Breathable, Pressure Relief, Made in USA",
+    "normalized_price": 1849.0,
+    "buy_url": "https://www.amazon.com/dp/B09GXG53YS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fY-e7-pyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FBT643LF",
+    "name": "Sven & Son Gel Memory Foam Mattress, Premium Materials, CertiPUR-US Certified Foam, Fiberglass-Free, Made in the USA, 12 inch Medium - Queen",
+    "normalized_price": 1169.95,
+    "buy_url": "https://www.amazon.com/dp/B0FBT643LF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71mSvHE3wJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F74X24QJ",
+    "name": "DreamCloud Premier 13\" Queen Mattress - Memory Foam - 365 Night Trial - Back Pain Relief - Fiberglass Free - Forever Warranty - Mattress in a Box - CertiPUR-US\u00ae Certified",
+    "normalized_price": 1019.15,
+    "buy_url": "https://www.amazon.com/dp/B0F74X24QJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81eO2+GiuvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D824RWMS",
+    "name": "Serta iComfort - Aspire 14\" Plush Queen Memory Foam Mattress - Pressure-Relieving, Cooling, and Supportive for a Restorative Sleep - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 1799.0,
+    "buy_url": "https://www.amazon.com/dp/B0D824RWMS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91u1qVDpJYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW6Q6ZN1",
+    "name": "Twinkle Star 10\" Queen Mattress in a Box \u2013 Medium Firm - Contouring Gel Memory Foam, CertiPUR-US Certified Foam, 4-Layer Comfort System for All Sleep Positions, Cooling Gel, Made in USA",
+    "normalized_price": 576.45,
+    "buy_url": "https://www.amazon.com/dp/B0FW6Q6ZN1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RR+fjekuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGHDZCRJ",
+    "name": "Signature Design by Ashley Firm Luxe 2.0 15 Inch Breathable Gel Latex Memory Foam Hybrid Mattress with Edge Support for Cool Sleep and Pressure Relief, Queen, Fiberglass-Free, Mattress in A Box",
+    "normalized_price": 842.0,
+    "buy_url": "https://www.amazon.com/dp/B0FGHDZCRJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71eJU54-hAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SJ2FXN",
+    "name": "Helix Midnight Luxe Mattress, Queen",
+    "normalized_price": 1874.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SJ2FXN",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gt9TYm4hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GMRRPBRZ",
+    "name": "Brooklyn Bedding CopperFlex Pro 14 Inch Queen Mattress | Hybrid Cooling Copper| Pressure Relief | CertiPUR-US Certified",
+    "normalized_price": 932.4,
+    "buy_url": "https://www.amazon.com/dp/B0GMRRPBRZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qSJAiHOxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP3FY68N",
+    "name": "DreamCloud Premier Rest 14\" Queen Mattress - Luxury Hybrid Memory Foam - 365 Night Trial - Premium Pressure-Relieving Layers - Forever Warranty - Mattress in a Box - Medium-Firm",
+    "normalized_price": 1163.78,
+    "buy_url": "https://www.amazon.com/dp/B0DP3FY68N",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dwLivlNIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H364RB3B",
+    "name": "Sweetnight CoolNest Pro 16 Inch King Mattress, King Size Memory Foam Mattress with 4-Stage Cooling System, Full-Depth Airflow, 7-Zone Support for Pressure Relief, CertiPUR-US Certified",
+    "normalized_price": 829.99,
+    "buy_url": "https://www.amazon.com/dp/B0H364RB3B",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81bqqWkXnhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV27LZD4",
+    "name": "TEMPUR-Adapt 2.0 Medium 11 inch Memory Foam Mattress, Queen",
+    "normalized_price": 2199.0,
+    "buy_url": "https://www.amazon.com/dp/B0CV27LZD4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LyyRaIduL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D82F68D8",
+    "name": "Serta iComfort - Elana 11.5\" Firm Queen Memory Foam Mattress - Pressure-Relieving, Cooling, and Supportive for a Restorative Sleep - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 899.0,
+    "buy_url": "https://www.amazon.com/dp/B0D82F68D8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/919w7iqfzBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJFX722K",
+    "name": "SlumberCool MAX Hybrid 3Z PRO Firm 14\u201d Cooling Mattress \u2013 Queen GlacierTex MAX Cover, TheraGEL Mineral Memory Foam, Zoned Lumbar Support Coils, Luxury Firm Hybrid for Back & Stomach Hot Sleepers",
+    "normalized_price": 1499.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJFX722K",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iXGpPP4pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DN22XSRG",
+    "name": "Lull Luxe Premium Hybrid Queen Mattress 15 Inch \u2013 7 Layer Memory Foam Queen Mattress with Cooling Gel Tech \u2013 Highest Density & Therapeutic Support for All Positions \u2013 365 Night Trial Mattress in a Box",
+    "normalized_price": 1619.1,
+    "buy_url": "https://www.amazon.com/dp/B0DN22XSRG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Gf2CjkUML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR1VP6JB",
+    "name": "Ottomanson Queen 13\" Luxury I Eurotop Mattress, Medium Firm Memory Foam Comfort - Made in USA - Premium Quilted Cover Mattress - Fiberglass-Free - Bed in a Box",
+    "normalized_price": 837.4,
+    "buy_url": "https://www.amazon.com/dp/B0GR1VP6JB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/911QPmZN8fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLNNYX6G",
+    "name": "GhostBed Signature 12 Inch Queen Mattress \u2013 Cooling Memory Foam Mattress \u2013 Medium Comfort, Pressure Relief, CertiPUR-US Certified, Made in USA",
+    "normalized_price": 1199.0,
+    "buy_url": "https://www.amazon.com/dp/B0GLNNYX6G",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81aCtwcQ2dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJG1XHLX",
+    "name": "SlumberCool MAX 3Z Plush Euro Top Cooling Hybrid Mattress \u2013 14\" QUEEN Gel Memory Foam & Zoned Lumbar Support Coils, GlacierTex MAX Cooling Cover, Plush Pressure Relief Mattress for Side & Hot Sleepers",
+    "normalized_price": 1199.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJG1XHLX",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BcNeNN1oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQH9KWBB",
+    "name": "Brooklyn Bedding Aurora Luxe 13 Inch Queen Hybrid Mattress | Medium Feel | CERTIPUR-US Certified Foam",
+    "normalized_price": 1399.3,
+    "buy_url": "https://www.amazon.com/dp/B0GQH9KWBB",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QOT9lS6lL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG7V658D",
+    "name": "Wolf Queen Mattress - 13-Inch Premium Plush Memory Foam Hybrid Mattress with 9 Layers, Individually Wrapped Coil, Cooling Design, 101-Night Trial, Provides The Right Level of Comfort and Support",
+    "normalized_price": 959.2,
+    "buy_url": "https://www.amazon.com/dp/B0CG7V658D",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71wJD8RezoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CLSCDZ81",
+    "name": "DreamCloud Premier 13\" Queen Mattress - Luxury Gel Memory Foam - 365 Night Trial - Premium Pressure-Relieving Layers - Forever Warranty - CertiPUR-US\u00ae Certified",
+    "normalized_price": 1058.98,
+    "buy_url": "https://www.amazon.com/dp/B0CLSCDZ81",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81GyS-NL1uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR1WNQ85",
+    "name": "Ottomanson Queen 12\" Firm Hybrid Mattress - Made in USA - Premium Support & Durability - Individually Pocketed Coils & CertiPUR-US Foam - Fiberglass-Free - Bed in a Box",
+    "normalized_price": 815.55,
+    "buy_url": "https://www.amazon.com/dp/B0GR1WNQ85",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Jj-quqgHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYHXRFP4",
+    "name": "Casper Sleep Snow Max Hybrid Mattress \u2013 Queen, Medium-Plush Memory Foam with Snow Technology Cooling & Zoned Support \u2013 Premium Comfort & Motion Isolation \u2013 100-Night Trial",
+    "normalized_price": 2880.0,
+    "buy_url": "https://www.amazon.com/dp/B0FYHXRFP4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71zUQ4Ycf6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHBLRZHV",
+    "name": "Serta Perfect Sleeper X - Prescott 14\" Medium Firm Hybrid Queen Mattress - 5 Support Zones and Cooling Tech for a Restorative Sleep - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 2099.0,
+    "buy_url": "https://www.amazon.com/dp/B0DHBLRZHV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Onc7c+wuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B071P9NPM7",
+    "name": "Pure Green Organic Latex Mattress - Medium Firmness - Cal King",
+    "normalized_price": 1799.0,
+    "buy_url": "https://www.amazon.com/dp/B071P9NPM7",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91mSLGuXfVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCX5CGDL",
+    "name": "Nectar Luxe 14\u201d King Mattress - Medium Firm - Contouring Memory Foam - Cooling Upgrade - Back Pain Relief - Responsive Support - Mattress in a Box - 365-Night Trial & Forever Warranty",
+    "normalized_price": 1274.0,
+    "buy_url": "https://www.amazon.com/dp/B0DCX5CGDL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91OyOrQDHTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CMDKNFJK",
+    "name": "Ethical Mattress CO 10\" Toxin-Free Hybrid Mattress, Made in the USA with Organic Cotton, Wool, Latex & Pocketed Coils (No Fiberglass or Polyfoams) Comfortable & Supportive Bed-in-Box - King Size",
+    "normalized_price": 1038.4,
+    "buy_url": "https://www.amazon.com/dp/B0CMDKNFJK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71jpqiIk7IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07PWH9HLJ",
+    "name": "Naturepedic Serenade Organic Mattress - Cushion Firm Queen Hybrid Mattress with Encased Coils for Comfort and Pressure Relieving Natural Latex - Naturally Cooling & Breathable",
+    "normalized_price": 1599.2,
+    "buy_url": "https://www.amazon.com/dp/B07PWH9HLJ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61zfLlkYNlL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FT46NYQ8",
+    "name": "DreamCloud Ultra 15\" Queen Mattress - Luxury Hybrid Gel Memory Foam - 365 Night Trial - Back Pain Relief - Fiberglass Free - Forever Warranty - Mattress in a Box - CertiPUR-US\u00ae Certified",
+    "normalized_price": 1699.0,
+    "buy_url": "https://www.amazon.com/dp/B0FT46NYQ8",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91gnAlZ9AvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCZMTF9Z",
+    "name": "All Natural Mattress (100% Organic Cotton, & Wool, Made in The USA) Non Toxic, Fiberglass Free Hybrid Pocket Coil and Plush Foam Bed in A Box Medium Soft - Queen, 13\"",
+    "normalized_price": 1197.6,
+    "buy_url": "https://www.amazon.com/dp/B0GCZMTF9Z",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711ZQI3A0EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CT3WN5Q3",
+    "name": "Naturepedic Pillow Top Organic Mattress - Queen Hybrid Mattress with Encased Coils for Comfort and Pressure Relieving Natural Latex - Naturally Cooling & Breathable",
+    "normalized_price": 2999.0,
+    "buy_url": "https://www.amazon.com/dp/B0CT3WN5Q3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61XhUS4xL7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01KPWG2F4",
+    "name": "Pure Green Organic Latex Mattress - Firm - Queen",
+    "normalized_price": 1299.0,
+    "buy_url": "https://www.amazon.com/dp/B01KPWG2F4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91mSLGuXfVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F8C5SDXG",
+    "name": "Awara Premier Luxury Hybrid King Mattress 12 Inch - Certified Organic Natural Latex - Sustainable New Zealand Wool - Fiberglass-Free - 365-Night Trial",
+    "normalized_price": 1359.0,
+    "buy_url": "https://www.amazon.com/dp/B0F8C5SDXG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71owq+HtnGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSWRQ6K4",
+    "name": "Nectar Ultra Hybrid 15\u201d Queen Mattress - Medium Firm - Cooling Fibers & Temperature Regulating Material - Back Pain Relief - Zoned Ergonomic Support Layer - 365-Night Mattress Trial",
+    "normalized_price": 1684.0,
+    "buy_url": "https://www.amazon.com/dp/B0DSWRQ6K4",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91igOWx2bJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHWMY539",
+    "name": "The Windsor Luxury EuroTop Mattress (Queen)",
+    "normalized_price": 1899.0,
+    "buy_url": "https://www.amazon.com/dp/B0CHWMY539",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61iLJav3CrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFQJCJM5",
+    "name": "Naturepedic Serenade Organic Luxury Mattress Full (Plush)",
+    "normalized_price": 1799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DFQJCJM5",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/610YNHU1OQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DFQL4ZWH",
+    "name": "Naturepedic Serenade Organic Luxury Mattress King (Plush)",
+    "normalized_price": 2799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DFQL4ZWH",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/610YNHU1OQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7LPB5GG",
+    "name": "Leesa Legend Chill, Queen Size/CertiPUR-US Certified Foam/with Organic Cotton Mattress Cover / 120-Night Trial,White",
+    "normalized_price": 2059.0,
+    "buy_url": "https://www.amazon.com/dp/B0F7LPB5GG",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91-ALBRdyAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3S2S478",
+    "name": "Helix Midnight Luxe with GlacioTex Cooling Mattress, Queen",
+    "normalized_price": 2061.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3S2S478",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gt9TYm4hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01KPWG11O",
+    "name": "Pure Green Organic Latex Mattress - Medium Firmness - Queen",
+    "normalized_price": 1299.0,
+    "buy_url": "https://www.amazon.com/dp/B01KPWG11O",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91mSLGuXfVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7B18GGP",
+    "name": "Leesa Sapira Chill Hybrid 14\" Mattress, Medium, Queen, Enhanced Cooling, CertiPUR-US Certified Foam, 120-Night Trial",
+    "normalized_price": 1679.0,
+    "buy_url": "https://www.amazon.com/dp/B0F7B18GGP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91mhxOTBigL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B076MGKDC1",
+    "name": "Happsy Organic Hybrid Mattress - Natural Latex Mattress - Medium Firm - Encased Coil Layers for Universal Comfort and Pressure Relieving - Bed-in-a-Box - California King",
+    "normalized_price": 1359.2,
+    "buy_url": "https://www.amazon.com/dp/B076MGKDC1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51qsdo4jhRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01DOI3YUC",
+    "name": "Naturepedic Chorus Organic Mattress - Medium Firm Mattress with Encased Coil Layers for Universal Comfort and Pressure Relieving - Queen",
+    "normalized_price": 2199.0,
+    "buy_url": "https://www.amazon.com/dp/B01DOI3YUC",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CsjMZnzLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0876HX533",
+    "name": "Purple Original The Mattress \u2013 Queen, 9.25\" GelFlex Grid, Better Than Memory Foam, Pressure Relief, Temperature Neutral, Breathable, Motion Isolation, Made in USA",
+    "normalized_price": 1449.0,
+    "buy_url": "https://www.amazon.com/dp/B0876HX533",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71f2Hi9PU7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1DFR7C3",
+    "name": "Happsy Organic Full Mattress - 10 Inch Plush Mattress with Encased Coils - Mattress in Box for Pressure Relief & Comfortable Sleep - Naturally Cooling & Breathable Latex",
+    "normalized_price": 1359.2,
+    "buy_url": "https://www.amazon.com/dp/B0D1DFR7C3",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81VXUl+lAVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09TX7J5F1",
+    "name": "NATURAL LIFE PALMPRING Cambay Queen Mattress - Organic Coconut Coir 6\u201d Extra Firm 1 Layer Comfortable Sleep Bed Dust Free",
+    "normalized_price": 2499.0,
+    "buy_url": "https://www.amazon.com/dp/B09TX7J5F1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xtTYIYGUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G782NK2B",
+    "name": "Sleepmax Ergonomic Queen Mattress 16 Inch Plush - Cooling Hybrid Mattress Pressure Relief & Spine Alignment - Recovery-Grade Deep Sleep Bed in a Box \u2013 365-Night Trial, Forever Warranty, Made in USA",
+    "normalized_price": 1299.99,
+    "buy_url": "https://www.amazon.com/dp/B0G782NK2B",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91bKr9wiq9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SDVQWR",
+    "name": "Helix Midnight Elite Mattress, Queen",
+    "normalized_price": 2799.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SDVQWR",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZUa7JJGtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9B9H6W1",
+    "name": "Beautyrest World Class Level Three Medium Pillow Top 15.75\" Mattress - Queen Size - Supportive, Pressure Relief, Cooling, Motion Separation; CertiPUR-US, 100 Night Sleep Trial and 10 Year Warranty",
+    "normalized_price": 1499.0,
+    "buy_url": "https://www.amazon.com/dp/B0F9B9H6W1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81okOkGhhoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4B57NNZ",
+    "name": "Beautyrest Black Series One 14.25\" Medium Queen Mattress - Breathable, Cooling, and Supportive - CertiPUR-US Certified, 100-Night Sleep Trial, and 10-Year Limited Warranty",
+    "normalized_price": 2499.0,
+    "buy_url": "https://www.amazon.com/dp/B0D4B57NNZ",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81djt5C-YEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B92W8FHM",
+    "name": "Essentia Tatami Organic Mattress (Queen) - Luxury Firm, GOTS/GOLS Certified, Organic Foam, Allergy Friendly and Vegan.",
+    "normalized_price": 3799.0,
+    "buy_url": "https://www.amazon.com/dp/B0B92W8FHM",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dtZ1H4y-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DLBT1913",
+    "name": "Nectar Split King Adjustable Base & 12\u201d Mattress (New Version) - Head & Foot Incline - Medium Firm Memory Foam - Cooling Top Layer - 3 Massage Settings - 365-Night Mattress Trial & Forever Warranty",
+    "normalized_price": 2332.0,
+    "buy_url": "https://www.amazon.com/dp/B0DLBT1913",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81A8KEZIq8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SMGNR3",
+    "name": "Helix Midnight Elite Mattress, King",
+    "normalized_price": 3324.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SMGNR3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZUa7JJGtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3S1LN5J",
+    "name": "Helix Twilight Luxe Mattress, King",
+    "normalized_price": 2249.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3S1LN5J",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rA4-Wv02L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SBVL9R",
+    "name": "Helix Dawn Luxe Mattress with GlacioTex Cooling, Cal King",
+    "normalized_price": 2436.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SBVL9R",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71jNLZJZNGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3S6HQPJ",
+    "name": "Helix Twilight Elite Mattress, King",
+    "normalized_price": 3324.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3S6HQPJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZUa7JJGtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08R37D8CX",
+    "name": "Mielmoon & Elegance Hybrid Mattress Heavy Duty Support-Firm Premium Luxury Motion Isolation/White-Black Natural Latex/Back Pain Relief, Made in USA (Extra Firm, King)",
+    "normalized_price": 2200.0,
+    "buy_url": "https://www.amazon.com/dp/B08R37D8CX",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91l5y4KjnBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4B6GP5K",
+    "name": "Beautyrest Black Series One 13.5\" Extra Firm King Mattress - Breathable, Cooling, and Supportive - CertiPUR-US Certified, 100-Night Sleep Trial, and 10-Year Limited Warranty",
+    "normalized_price": 2599.99,
+    "buy_url": "https://www.amazon.com/dp/B0D4B6GP5K",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ze8k-B7KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09GXBD856",
+    "name": "Purple Plus King Mattress - 11\" GelFlex Grid, Premium Comfort Foam, Better Than Memory Foam, Temperature Neutral, Responsive, Breathable, Pressure Relief, Made in USA",
+    "normalized_price": 2349.0,
+    "buy_url": "https://www.amazon.com/dp/B09GXBD856",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71fY-e7-pyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SPHT5T",
+    "name": "Helix Midnight Luxe Mattress, King",
+    "normalized_price": 2249.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SPHT5T",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71gt9TYm4hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRYWXQ89",
+    "name": "Serta Perfect Sleeper Pro - Valais 15\" Plush Pillow Top Latex Hybrid King Size Mattress- 5 Support Zones, Cooling Tech for Premium Hybrid Comfort - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 3799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DRYWXQ89",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818zEo04W1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9B96C2H",
+    "name": "Beautyrest World Class Level Four Plush Pillow Top 16.25\" Mattress - King Size - Supportive, Pressure Relief, Cooling, Motion Separation; CertiPUR-US, 100 Night Sleep Trial and 10 Year Warranty",
+    "normalized_price": 2599.0,
+    "buy_url": "https://www.amazon.com/dp/B0F9B96C2H",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81hHyubF5bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8RK5QSG",
+    "name": "Stearns & Foster Lux Estate Medium Pillow Top Mattress, King",
+    "normalized_price": 2999.99,
+    "buy_url": "https://www.amazon.com/dp/B0C8RK5QSG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91itL6yAkpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9B6PRK2",
+    "name": "Beautyrest World Class Level Four Plush 15.25\" Mattress - King Size - Durable Support, Pressure Relief, Cooling, Motion Separation; CertiPUR-US, 100 Night Sleep Trial and 10 Year Warranty",
+    "normalized_price": 2399.0,
+    "buy_url": "https://www.amazon.com/dp/B0F9B6PRK2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81aH516lgIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHBKML64",
+    "name": "Serta Perfect Sleeper X - Prescott 14\" Plush Hybrid King Mattress - 5 Support Zones and Cooling Tech for a Restorative Sleep - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 2799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DHBKML64",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91TfxpGggiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZY2KNBJ",
+    "name": "Bellagio Mattress 14 Inch - Soft Top - Cool Gel Memory Foam - Encased Coils for Spine Support - Luxury Hotel Mattress Only - King",
+    "normalized_price": 3495.0,
+    "buy_url": "https://www.amazon.com/dp/B0CZY2KNBJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/710lqg1DEJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJG3749W",
+    "name": "SlumberCool MAX 3Z Plush Euro Top Cooling Hybrid Mattress \u2013 14\" Split CALI King Gel Memory Foam & Zoned Lumbar Support Coils, GlacierTex MAX Cooling Cover, Pressure Relief for Side & Hot Sleepers",
+    "normalized_price": 2198.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJG3749W",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BcNeNN1oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SC653C",
+    "name": "Helix Dawn Luxe Mattress, King",
+    "normalized_price": 2249.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SC653C",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71jNLZJZNGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHBQTDCF",
+    "name": "Serta Perfect Sleeper X - Max 15\" Plush Pillow Top Quilted Hybrid King Mattress - 5 Support Zones and Cooling Tech for a Restorative Sleep - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 2599.0,
+    "buy_url": "https://www.amazon.com/dp/B0DHBQTDCF",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/914dAAnPBpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8RM5KKQ",
+    "name": "Stearns & Foster Lux Estate Firm Pillow Top Mattress, King",
+    "normalized_price": 2949.0,
+    "buy_url": "https://www.amazon.com/dp/B0C8RM5KKQ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91itL6yAkpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8RKDGJ5",
+    "name": "Stearns & Foster Lux Estate Soft Pillow Top Mattress, King",
+    "normalized_price": 2799.99,
+    "buy_url": "https://www.amazon.com/dp/B0C8RKDGJ5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91itL6yAkpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DVHPN4C2",
+    "name": "Nectar Ultra King Adjustable Base & 15\u201d Mattress - Head & Foot Incline - Medium Firm Memory Foam - Cooling Upgrade - 3 Massage Settings - 365-Night Mattress Trial",
+    "normalized_price": 3697.0,
+    "buy_url": "https://www.amazon.com/dp/B0DVHPN4C2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/818Z5BpFXnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHWMCJWJ",
+    "name": "The Windsor Luxury EuroTop Mattress (Cal King)",
+    "normalized_price": 2449.0,
+    "buy_url": "https://www.amazon.com/dp/B0CHWMCJWJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61iLJav3CrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXD91PK1",
+    "name": "MLILY ChiroPro 3.0 13\" Plush Cal King",
+    "normalized_price": 3199.0,
+    "buy_url": "https://www.amazon.com/dp/B0GXD91PK1",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71O2cLf-wvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX9V6NBL",
+    "name": "MLILY 12 Inch King Size Mattress, King Memory Foam Mattress, Firm, Bed in a Box, BioBreeze Cooling Foam, Pressure Relief, Fiberglass Free, Organic, CertiPUR-US Certified | WellFlex Firmer 1.0",
+    "normalized_price": 2499.0,
+    "buy_url": "https://www.amazon.com/dp/B0GX9V6NBL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HvrIK3V8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F7LQWYY5",
+    "name": "Leesa Legend Chill, King Size/CertiPUR-US Certified Foam/with Organic Cotton Mattress Cover / 120-Night Trial,White",
+    "normalized_price": 2379.0,
+    "buy_url": "https://www.amazon.com/dp/B0F7LQWYY5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91-ALBRdyAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4CG9FHB",
+    "name": "Beautyrest Black Series Four 17.25\" Plush Summit Pillow Top King Mattress - Breathable, Cooling, and Supportive - CertiPUR-US Certified, 100-Night Sleep Trial, and 10-Year Limited Warranty",
+    "normalized_price": 6599.0,
+    "buy_url": "https://www.amazon.com/dp/B0D4CG9FHB",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81j1vLo3Q+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4C23VNV",
+    "name": "Beautyrest Black Series Three 16.25\" Medium Pillow Top King Mattress - Breathable, Cooling, and Supportive - CertiPUR-US Certified, 100-Night Sleep Trial, and 10-Year Limited Warranty",
+    "normalized_price": 5199.0,
+    "buy_url": "https://www.amazon.com/dp/B0D4C23VNV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91lvsNsND8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJFXS8L6",
+    "name": "SlumberCool MAX Hybrid 3Z PRO Plush Firm 14\u201d Cooling Mattress \u2013 Split CALI King GlacierTex MAX Cover, TheraGEL Mineral Memory Foam, Zoned Lumbar Support Coils, Hybrid for Back & Stomach Hot Sleepers",
+    "normalized_price": 2598.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJFXS8L6",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iXGpPP4pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQ68MW1H",
+    "name": "Beautyrest Black Series Three Plush 14.5\" King Hybrid Mattress, Cooling Tech, Contouring Comfort, Individualized Support, CertiPUR-US, 100-Night Sleep Trial, 10-Year Limited Warranty",
+    "normalized_price": 4381.62,
+    "buy_url": "https://www.amazon.com/dp/B0DQ68MW1H",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81P5WnUljkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00WRNQ250",
+    "name": "Bed - 14\" Pillow Top Mattress with Pocket Coil Springs - King",
+    "normalized_price": 3860.0,
+    "buy_url": "https://www.amazon.com/dp/B00WRNQ250",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71peVHZNCXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GSGVXQB9",
+    "name": "IZONE Smart Mattress, Dual-Sided Adjustable, Plush to Firm, Personalized Lumbar Support for Couples, Compatible with Adjustable Bases, 100-Night Trial (16-Inch, King (U.S. Standard))",
+    "normalized_price": 3799.0,
+    "buy_url": "https://www.amazon.com/dp/B0GSGVXQB9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91cjHNcDJXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5NY56TQ",
+    "name": "Helix Plus Luxe Mattress, King",
+    "normalized_price": 2339.0,
+    "buy_url": "https://www.amazon.com/dp/B0D5NY56TQ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51V-zsc6ovL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8S1V1HL",
+    "name": "Stearns & Foster Lux Estate Medium Tight Top Mattress, King",
+    "normalized_price": 2849.0,
+    "buy_url": "https://www.amazon.com/dp/B0C8S1V1HL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81e24OfJRHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1KYYMLV",
+    "name": "MGM Grand Mattress 14 Inch - Pillow Top - Cool Gel Memory Foam - Encased Coils for Spine Support - Luxury Hotel Mattress & Low Profile Box Spring - King",
+    "normalized_price": 3495.0,
+    "buy_url": "https://www.amazon.com/dp/B0D1KYYMLV",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813bJvywRRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYLJB3KL",
+    "name": "Kimpton Hotel Mattress & Box Spring - King Mattress - Standard Profile - Plush Top - High Density Gel Foam - Coil Edge - King",
+    "normalized_price": 2495.0,
+    "buy_url": "https://www.amazon.com/dp/B0DYLJB3KL",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816G1kCnIyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09V484HHT",
+    "name": "NATURAL LIFE PALMPRING Kochi King Mattress - Organic Latex Coconut Coir 6\u201d Medium Firm 2 Layer Comfortable Sleep Bed Dust Free",
+    "normalized_price": 2999.0,
+    "buy_url": "https://www.amazon.com/dp/B09V484HHT",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xtTYIYGUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01EGQKOVS",
+    "name": "Westin Exclusive Heavenly Bed - 14\" Pocket Coil Mattress with Quilted Pillow Sewed on top - Mattress Only - King",
+    "normalized_price": 2845.0,
+    "buy_url": "https://www.amazon.com/dp/B01EGQKOVS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XOwE-mmFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCZKW57C",
+    "name": "All Natural Mattress (100% Organic Cotton, & Wool, Made in The USA) Non Toxic, Fiberglass Free Hybrid Pocket Coil and Plush Foam Bed in A Box Medium Soft - King, 13\"",
+    "normalized_price": 1597.6,
+    "buy_url": "https://www.amazon.com/dp/B0GCZKW57C",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/711ZQI3A0EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SMGF56",
+    "name": "Helix Twilight Luxe Mattress, Queen",
+    "normalized_price": 1874.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SMGF56",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71rA4-Wv02L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DN23FK3N",
+    "name": "Lull Luxe Premium 15 Inch King Size Mattress | 7 Layer King Size Memory Foam Mattress with Cooling Gel Tech | Highest Density & Therapeutic Support with Individually Wrapped Springs | 365 Night Trial",
+    "normalized_price": 1799.1,
+    "buy_url": "https://www.amazon.com/dp/B0DN23FK3N",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Gf2CjkUML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09TX58G65",
+    "name": "NATURAL LIFE PALMPRING Puri Queen Mattress - Organic Latex Coconut Coir 10\u201d Soft 4 Layered Comfortable Sleep Bed Dust Free",
+    "normalized_price": 3999.0,
+    "buy_url": "https://www.amazon.com/dp/B09TX58G65",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61FWYATsupL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09TX5SK24",
+    "name": "NATURAL LIFE PALMPRING Colva Queen Mattress - Organic Latex Coconut Coir 10\u201d Firm 4 Layered Comfortable Sleep Bed Dust Free",
+    "normalized_price": 3899.0,
+    "buy_url": "https://www.amazon.com/dp/B09TX5SK24",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61FWYATsupL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09V4MPCGK",
+    "name": "NATURAL LIFE PALMPRING Bally Wave Queen Mattress - Organic Latex Coconut Coir for Adjustable Bed 8\u201d Medium Firm 3 Layered Comfortable Sleep Bed Dust Free",
+    "normalized_price": 3399.0,
+    "buy_url": "https://www.amazon.com/dp/B09V4MPCGK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/515ndI293kL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B099YZHNWP",
+    "name": "NATURAL LIFE PALMPRING Cambay Queen Mattress - 100% Organic Coconut Coir 8\u201d Extra Firm 1 Layer Comfortable Sleep Bed Hypoallergenic Dust Free (Queen)",
+    "normalized_price": 2999.0,
+    "buy_url": "https://www.amazon.com/dp/B099YZHNWP",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81R883emluL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09TVHWS4V",
+    "name": "NATURAL LIFE PALMPRING Agra Queen Mattress - Organic Latex 8\u201d Very Plush Soft 1 Layer Comfortable Sleep Bed Dust Free",
+    "normalized_price": 3199.0,
+    "buy_url": "https://www.amazon.com/dp/B09TVHWS4V",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81R883emluL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B099Z3M9K2",
+    "name": "NATURAL LIFE PALMPRING Cambay Queen Mattress - 100% Organic Coconut Coir 6\u201d Extra Firm 1 Layer Comfortable Sleep Bed Hypoallergenic Dust Free (Queen)",
+    "normalized_price": 2499.0,
+    "buy_url": "https://www.amazon.com/dp/B099Z3M9K2",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81R883emluL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZPS7CLM",
+    "name": "Luxury Natural Latex Mattress Topper, 10cm Thick, Ultimate Comfort & Pressure Relief for Back, HIPS, Shoulders, King/Queen/Double/Twin Size, 200x220cm (79x87in)",
+    "normalized_price": 1605.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZPS7CLM",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61MOp00uN2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B92LC6N3",
+    "name": "Essentia Tatami Organic Mattress (TwinXL) - Luxury Firm, GOTS/GOLS Certified, Organic Foam, Allergy Friendly and Vegan.",
+    "normalized_price": 2999.0,
+    "buy_url": "https://www.amazon.com/dp/B0B92LC6N3",
+    "specs": {
+      "bed_size": "twinxl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dtZ1H4y-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SJ2GFF",
+    "name": "Helix Moonlight Luxe Mattress, Queen",
+    "normalized_price": 1874.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SJ2GFF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71d3G1Kee8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZ88XFN3",
+    "name": "GhostBed Adjustable Base + Signature 12 Inch Queen Mattress Bundle \u2013 Cooling Memory Foam Mattress and Electric Adjustable Bed Frame Power Base with Zero Gravity, Massage",
+    "normalized_price": 2498.0,
+    "buy_url": "https://www.amazon.com/dp/B0GZ88XFN3",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Dv4kqjODL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQW89F4C",
+    "name": "Sleepyhead First Edition Queen 11-Inch Mattress, Gel & Copper-Infused Cooling Memory Foam, Made in the USA",
+    "normalized_price": 1699.0,
+    "buy_url": "https://www.amazon.com/dp/B0GQW89F4C",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71v2cXOu-zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01N3CCOZ3",
+    "name": "Leesa Sapira Hybrid 11\" Mattress, King Size, Premium Cooling Foam and Individually Wrapped Spring/CertiPUR-US Certified Foam / 120-Night Trial, White and Gray",
+    "normalized_price": 1679.0,
+    "buy_url": "https://www.amazon.com/dp/B01N3CCOZ3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81MMnSJddvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DN24646R",
+    "name": "Lull Luxe Premium 15 Inch Full Size Hybrid Mattress \u2013 7 Layer Full Size Memory Foam Mattress with Cooling Gel Tech \u2013 Highest Density & Therapeutic Support for All Positions \u2013 365 Night Trial",
+    "normalized_price": 1529.1,
+    "buy_url": "https://www.amazon.com/dp/B0DN24646R",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Gf2CjkUML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYJ13HTV",
+    "name": "Casper Sleep Snow Max Hybrid Mattress \u2013 Queen, Medium-Plush Memory Foam with Snow Technology Cooling & Zoned Support \u2013 Premium Comfort & Motion Isolation \u2013 100-Night Trial",
+    "normalized_price": 3580.0,
+    "buy_url": "https://www.amazon.com/dp/B0FYJ13HTV",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71zUQ4Ycf6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DK3CB6FZ",
+    "name": "Brooklyn Bedding Titan 14.5\" Elite Plus Size Sleeper King Mattress|Enhanced Cooling |Medium Firm | Memory Foam Hybrid |120-Night Trial",
+    "normalized_price": 1912.4,
+    "buy_url": "https://www.amazon.com/dp/B0DK3CB6FZ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Z5t-g+u3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01NA052OG",
+    "name": "Leesa Sapira Hybrid 11\" Mattress, California King Size, Premium Cooling Foam and Individually Wrapped Spring/CertiPUR-US Certified Foam / 120-Night Trial",
+    "normalized_price": 1679.0,
+    "buy_url": "https://www.amazon.com/dp/B01NA052OG",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91g4nVZlcBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRYY1JZZ",
+    "name": "Serta Perfect Sleeper Pro - Kensington 13\" Medium Latex Hybrid Mattress, King Mattress - 5 Support Zones and Cooling Tech for Premium Hybrid Comfort - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 2799.0,
+    "buy_url": "https://www.amazon.com/dp/B0DRYY1JZZ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81dIDPwO0gL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYHYDW55",
+    "name": "Casper Sleep Snow Max Hybrid Mattress \u2013 Queen, Medium-Plush Memory Foam with Snow Technology Cooling & Zoned Support \u2013 Premium Comfort & Motion Isolation \u2013 100-Night Trial",
+    "normalized_price": 2355.0,
+    "buy_url": "https://www.amazon.com/dp/B0FYHYDW55",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71zUQ4Ycf6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9B46ZD5",
+    "name": "Beautyrest World Class Level Four Medium Apex Top 14\" Hybrid Mattress - King Size - Supportive, Pressure Relief, Cooling, Motion Separation; CertiPUR-US, 100 Night Sleep Trial and 10 Year Warranty",
+    "normalized_price": 2599.0,
+    "buy_url": "https://www.amazon.com/dp/B0F9B46ZD5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81IXsWcH15L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHBJVG9K",
+    "name": "Serta Perfect Sleeper X - Kendall 13\" Plush Twin XL Size Hybrid Mattress, 5 Support Zones and Cooling Tech for a Restorative Sleep, 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 1599.0,
+    "buy_url": "https://www.amazon.com/dp/B0DHBJVG9K",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812v8TAGgqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4C2ZXVK",
+    "name": "Beautyrest Black Series Three 16.5\" Firm Pillow Top King Mattress - Breathable, Cooling, and Supportive - CertiPUR-US Certified, 100-Night Sleep Trial, and 10-Year Limited Warranty",
+    "normalized_price": 3999.99,
+    "buy_url": "https://www.amazon.com/dp/B0D4C2ZXVK",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81PIcNn0IdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BW4MZTY4",
+    "name": "Kingsdown Passions Kelbrooke 16\" Plush Euro Pillow Top Hybrid Mattress King, Cool Gel Memory Foam Layer Motion Isolation Quilted Top Premium Mattress",
+    "normalized_price": 1708.91,
+    "buy_url": "https://www.amazon.com/dp/B0BW4MZTY4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81UIFAZ5WML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJFYZQT8",
+    "name": "SlumberCool MAX 3Z Plush Euro Top Cooling Hybrid Mattress \u2013 14\" King Gel Memory Foam & Zoned Lumbar Support Coils, GlacierTex MAX Cooling Cover, Plush Pressure Relief Mattress for Side & Hot Sleepers",
+    "normalized_price": 1599.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJFYZQT8",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81BcNeNN1oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2BLXF9M",
+    "name": "Serta Perfect Sleeper Port Huntington 14.5\" Plush Cal King Hybrid Mattress - 5 Support Zones, 4 in 1 Coils, and Cooling Tech for Premium Hybrid Comfort - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 1599.0,
+    "buy_url": "https://www.amazon.com/dp/B0H2BLXF9M",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81mN6nGJ0XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B092L3ZJ8S",
+    "name": "Leesa Legend Hybrid 12\" Mattress, King Size Luxury Dual Hybrid/CertiPUR-US Certified Foam/with Organic Cotton Mattress Cover / 120-Night Trial,White",
+    "normalized_price": 2099.0,
+    "buy_url": "https://www.amazon.com/dp/B092L3ZJ8S",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91STdTJOPWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJGH1K1C",
+    "name": "SlumberCool MAX Hybrid 3Z PRO Plush Firm 14\u201d Cooling Mattress \u2013 SPLITHEAD CALI King GlacierTex MAX Cover, TheraGEL Mineral Memory Foam, Zoned Lumbar Support Coils, for Back & Stomach Hot Sleepers",
+    "normalized_price": 2299.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJGH1K1C",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iXGpPP4pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4BXJ9GS",
+    "name": "Beautyrest Black Series Two 16.5\" Medium Pillow Top Queen Mattress - Breathable, Cooling, and Supportive - CertiPUR-US Certified, 100-Night Sleep Trial, and 10-Year Limited Warranty",
+    "normalized_price": 3699.0,
+    "buy_url": "https://www.amazon.com/dp/B0D4BXJ9GS",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81F4oT8BzKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GP1N7KHK",
+    "name": "Brooklyn Bedding ThermoBalance 14 Inch Medium Queen Mattress, Advanced Cooling Technology",
+    "normalized_price": 1772.4,
+    "buy_url": "https://www.amazon.com/dp/B0GP1N7KHK",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81n5wpgX4qL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2BMT7X3",
+    "name": "Serta Perfect Sleeper Port Huntington 14.5\" Firm King Hybrid Mattress - 5 Support Zones, 4 in 1 Coils, and Cooling Tech for Premium Hybrid Comfort - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 1599.0,
+    "buy_url": "https://www.amazon.com/dp/B0H2BMT7X3",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81QUj51pEzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DHBFL8F6",
+    "name": "Serta Perfect Sleeper X - Max 14.25\" Medium Quilted Hybrid Queen Mattress - 5 Support Zones and Cooling Tech for a Restorative Sleep - 100 Night Trial, CertiPUR-US Certified",
+    "normalized_price": 1999.0,
+    "buy_url": "https://www.amazon.com/dp/B0DHBFL8F6",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91wnh8B5xZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D54ZY7K1",
+    "name": "Helix Plus Core Mattress with GlacioTex Pillow Top, Queen",
+    "normalized_price": 1578.0,
+    "buy_url": "https://www.amazon.com/dp/B0D54ZY7K1",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51jPr7u8UuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQ6BVWF8",
+    "name": "Beautyrest Black Series Two Apex Top Medium 14.5\" King Hybrid Mattress, Cooling Tech, Contouring Comfort, Individualized Support, CertiPUR-US, 100-Night Sleep Trial, 10-Year Limited Warranty",
+    "normalized_price": 3325.0,
+    "buy_url": "https://www.amazon.com/dp/B0DQ6BVWF8",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81A0M0N2YqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3CXXLHJ",
+    "name": "GhostBed Signature Hybrid 12\u201d California King Mattress \u2013 Cooling Memory Foam & Innerspring Hybrid Bed \u2013 Medium-Firm Comfort, Pressure Relief, Edge Support, CertiPUR-US Certified, Made in USA",
+    "normalized_price": 1749.0,
+    "buy_url": "https://www.amazon.com/dp/B0G3CXXLHJ",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81v3NV0tTVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2DGWHC9",
+    "name": "BedStory King Size Mattress, 14 inch Cooling Luxe Hybrid Mattress with Gel Memory Foam for Cool Luxury Sleep, 5-Zone Support for Pressure Relief, CertiPUR-US Certified, 365 Night Trial",
+    "normalized_price": 1999.99,
+    "buy_url": "https://www.amazon.com/dp/B0H2DGWHC9",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ltvpdhsbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3SRFFJ2",
+    "name": "Helix Moonlight Luxe with GlacioTex Cooling Mattress, King",
+    "normalized_price": 2436.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3SRFFJ2",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71d3G1Kee8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07LCYC8G5",
+    "name": "Sven & Son Platinum Adjustable Bed Base Frame + 14 inch Hybrid Spring Matt (Medium Soft), Lumbar Support, Head-Pillow-Tilt, Massage, Under-Bed Lights, USB - King",
+    "normalized_price": 2994.95,
+    "buy_url": "https://www.amazon.com/dp/B07LCYC8G5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81TqOEpNgNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DLBXQFCJ",
+    "name": "Nectar Premier Full Adjustable Base & 13\u201d Hybrid Mattress (New) - Head & Foot Incline - Medium Firm Memory Foam & Coils - Cooling Upgrade - 3 Massage Settings - 365-Night Trial & Forever Warranty",
+    "normalized_price": 1778.15,
+    "buy_url": "https://www.amazon.com/dp/B0DLBXQFCJ",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810VWO+3fXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C2FFRJ19",
+    "name": "Brooklyn Bedding 14\" Sedona Elite Mattress, Queen",
+    "normalized_price": 1679.3,
+    "buy_url": "https://www.amazon.com/dp/B0C2FFRJ19",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81clbD5DyYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H29GR4L4",
+    "name": "ESHINE King Adjustable Bed Frame with 14 Inch Mattress, Memory Foam Hybrid Mattress, Phone Control, Wireless Remote, 5 Minutes Installation, Head and Foot Incline, 3100 Series, King",
+    "normalized_price": 1529.99,
+    "buy_url": "https://www.amazon.com/dp/B0H29GR4L4",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91VBESzijuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D3WVYKSS",
+    "name": "Helix Midnight Mattress with GlacioTex Pillow Top, King",
+    "normalized_price": 1788.0,
+    "buy_url": "https://www.amazon.com/dp/B0D3WVYKSS",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71UOcKL19HL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQ67RKSY",
+    "name": "Beautyrest Black Series Four Apex Top Plush 16\" King Hybrid Mattress, Cooling Tech, Contouring Comfort, Individualized Support, CertiPUR-US, 100-Night Sleep Trial, 10-Year Limited Warranty",
+    "normalized_price": 6599.0,
+    "buy_url": "https://www.amazon.com/dp/B0DQ67RKSY",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/814ukdiTrSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DQ6BL4GF",
+    "name": "Beautyrest Black Series Three Plush 14.5\" Twin XL Hybrid Mattress, Cooling Tech, Contouring Comfort, Individualized Support, CertiPUR-US, 100-Night Sleep Trial, 10-Year Limited Warranty",
+    "normalized_price": 2809.06,
+    "buy_url": "https://www.amazon.com/dp/B0DQ6BL4GF",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81P5WnUljkL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D4CD1FST",
+    "name": "Beautyrest Black Series Four 17.5\" Firm Summit Pillow Top King Mattress - Breathable, Cooling, and Supportive - CertiPUR-US Certified, 100-Night Sleep Trial, and 10-Year Limited Warranty",
+    "normalized_price": 5749.0,
+    "buy_url": "https://www.amazon.com/dp/B0D4CD1FST",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81GvZ2JsiHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQHMD6Y5",
+    "name": "Brooklyn Bedding Aurora Luxe 14 Inch RV King 72\"x80\" Hybrid Mattress | Firm Feel | Cloud Pillowtop Upgrade | CERTIPUR-US Certified Foam",
+    "normalized_price": 1959.3,
+    "buy_url": "https://www.amazon.com/dp/B0GQHMD6Y5",
+    "specs": {
+      "bed_size": "king"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71W6gplP-uL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

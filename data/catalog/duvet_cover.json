@@ -68,7 +68,7 @@
   {
     "product_id": "B07PCQKTCN",
     "name": "Bedsure White Duvet Cover Queen Size - 3 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 90x90 Inches with Zipper Closure & 2 Pillow Shams, Comforter Not Included",
-    "normalized_price": 26.99,
+    "normalized_price": 18.97,
     "buy_url": "https://www.amazon.com/dp/B07PCQKTCN",
     "specs": {
       "bed_size": "queen"
@@ -156,7 +156,7 @@
   {
     "product_id": "B096VJGR9P",
     "name": "BESTOUCH Duvet Cover Set 100% Washed Cotton Linen Feel Super Soft Comfortable Chic Lightweight 3 PCs Home Bedding Set Cornflower Blue Queen",
-    "normalized_price": 69.99,
+    "normalized_price": 59.49,
     "buy_url": "https://www.amazon.com/dp/B096VJGR9P",
     "specs": {
       "bed_size": "queen"
@@ -1580,7 +1580,7 @@
   {
     "product_id": "B07D1BBZBK",
     "name": "Brooklinen Luxury Sateen Duvet Cover - 100% Cotton, Full/Queen Size in White with Extra-Long Corner Ties and Button Closure | Best Luxury Sheets",
-    "normalized_price": 179.0,
+    "normalized_price": 127.54,
     "buy_url": "https://www.amazon.com/dp/B07D1BBZBK",
     "specs": {
       "bed_size": "full"
@@ -3188,6 +3188,622 @@
       "bed_size": "king"
     },
     "image_url": "https://m.media-amazon.com/images/I/71OjSjvgulL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV4KGTKD",
+    "name": "Duvet Cover Twin/Twin XL Size Set - Extra Soft Twin/Twin XL Duvet Cover 68\" x 90\" with 1 Pillow Sham for Women, Men, Kids & Teens - Comfy, Easy-Care & Fade Free with Zipper Closures and Ties (White)",
+    "normalized_price": 16.14,
+    "buy_url": "https://www.amazon.com/dp/B0CV4KGTKD",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xKfMJurIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXHKPZY",
+    "name": "Bedsure Duvet Cover Twin/Twin XL Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 2 Pieces, Includes 1 Duvet Cover (68\"x90\") & 1 Pillow Sham, NO Comforter, White",
+    "normalized_price": 16.99,
+    "buy_url": "https://www.amazon.com/dp/B08CXHKPZY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71HJPY-O5ZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09ZNVHK58",
+    "name": "Bedsure Duvet Cover Twin/Twin XL Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 2 Pieces, Includes 1 Duvet Cover (68\"x90\") & 1 Pillow Sham, NO Comforter, Blush Pink",
+    "normalized_price": 18.69,
+    "buy_url": "https://www.amazon.com/dp/B09ZNVHK58",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81UxNRBdHUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08W4BTMXV",
+    "name": "Bedsure Boho Twin Duvet Cover Size - Pink Breathable & Soft Boho Bedding, Machine Washable Comforter Cover for All Seasons, Includes 1 Duvet Cover 68\"x90\" with 1 Pillow Sham & Zipper Closure",
+    "normalized_price": 24.99,
+    "buy_url": "https://www.amazon.com/dp/B08W4BTMXV",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91wRRuZszpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSQT38V7",
+    "name": "Brooklinen Luxury Percale Duvet Cover \u2013 100% Cotton, Cool, Crisp, Extra-Long Corner Ties, Button Closure, Soft & Breathable \u2013 Machine Washable, Duvet Cover Full/Queen Bed Sizes (Sky)",
+    "normalized_price": 175.0,
+    "buy_url": "https://www.amazon.com/dp/B0DSQT38V7",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/718jHtMjUJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0891VCY86",
+    "name": "Bedsure Sage Green Duvet Cover Twin/Twin XL Size - 2 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 68\"x90\" with Zipper Closure & 1 Pillow Sham, No Comforter",
+    "normalized_price": 23.79,
+    "buy_url": "https://www.amazon.com/dp/B0891VCY86",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81z7m-xWhhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B7KP66X7",
+    "name": "Bare Home Duvet Cover - Extra Long Size Bedding Set - Premium 1800 Super Soft Collection - Lightweight, Cooling - Soft Breathable Duvet Cover (Twin/Twin XL, Stripe - Heathered Charcoal)",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0B7KP66X7",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91Zxz3JSSQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07P9R9LDF",
+    "name": "Bedsure Duvet Cover Twin/Twin XL Size - 2 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 68\"x90\" with Zipper Closure & 1 Pillow Sham, White, No Comforter",
+    "normalized_price": 21.84,
+    "buy_url": "https://www.amazon.com/dp/B07P9R9LDF",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813ZDOGvXKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BQHKDT2K",
+    "name": "Bedsure Duvet Cover Twin/Twin XL Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 2 Pieces, Includes 1 Duvet Cover (68\"x90\") & 1 Pillow Sham, NO Comforter, Navy Blue",
+    "normalized_price": 18.69,
+    "buy_url": "https://www.amazon.com/dp/B0BQHKDT2K",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ueo-fvDHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08356VNSY",
+    "name": "Amazon Basics Lightweight 2-Piece Microfiber Duvet Cover Set with Zipper Closure, Twin/Twin XL, Bright White",
+    "normalized_price": 13.32,
+    "buy_url": "https://www.amazon.com/dp/B08356VNSY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/718ntxGn4nL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLJPTHXV",
+    "name": "Soft Washed Duvet Cover Set Twin / Twin XL Size, Prewashed Microfiber Cotton-Like Bedding Set, Duvet Cover 68x90 with Button Closure & Pillow Sham for All Seasons,Comforter Not Included (Linen)",
+    "normalized_price": 11.99,
+    "buy_url": "https://www.amazon.com/dp/B0FLJPTHXV",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81hDeNlkHSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CWGP5Y7L",
+    "name": "California Design Den Twin XL/Twin Duvet Cover Only - Winner Good Housekeeping Best Bedding Awards 2025, Premium 400 Thread Count Sateen, 100% Cotton Duvet Cover, Button Closure & Corner Ties - White",
+    "normalized_price": 33.99,
+    "buy_url": "https://www.amazon.com/dp/B0CWGP5Y7L",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81qMhSMnQKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXQNGB2",
+    "name": "Bedsure Duvet Cover Twin/Twin XL Size - Soft Double Brushed Bedding Set for Kids & Adults, Zipper Closure, 2 Pieces, Includes 1 Duvet Cover (68\"x90\") & 1 Pillow Sham, NO Comforter, Cream White",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B08CXQNGB2",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817hLExS3wL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09NY92QSL",
+    "name": "Utopia Bedding Duvet Cover Twin Size - 2 Piece with Zipper Closure - 1 Comforter Cover 68X90 Inches & 1 Pillow Sham 20X26 Inches (White) Comforter Not Included",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B09NY92QSL",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81znTb3AbzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CX5JTJ24",
+    "name": "Utopia Bedding Duvet Cover Twin Size - 2 Piece with Zipper Closure - 1 Comforter Cover 68X90 Inches & 1 Pillow Sham 20X26 Inches (Lavender) Comforter Not Included",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0CX5JTJ24",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/814ON9jEurL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DXK8XSS1",
+    "name": "Nayoroom Gingham Duvet Cover Twin Size Blue White Plaid Checkered Comforter Cover 2 Pcs Soft Breathable Washed Microfiber Grid Farmhouse Bedding Set with Pillow Shams",
+    "normalized_price": 25.49,
+    "buy_url": "https://www.amazon.com/dp/B0DXK8XSS1",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61RADmH0nRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08J6XNWR2",
+    "name": "JELLYMONI Cotton Duvet Cover Twin Size - Blue Pinstriped Comforter Cover with Button 100% Washed Cotton 2PCS Breathable Soft Solid Bedding Set Duvet Cover 68\u00d790in & 1 Pillowcase (NO Comforter)",
+    "normalized_price": 37.39,
+    "buy_url": "https://www.amazon.com/dp/B08J6XNWR2",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91RRWsWptJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BYDYL1GW",
+    "name": "Utopia Bedding Duvet Cover Twin Size - 2 Piece with Zipper Closure - 1 Comforter Cover 68X90 Inches & 1 Pillow Sham 20X26 Inches (Navy) Comforter Not Included",
+    "normalized_price": 19.99,
+    "buy_url": "https://www.amazon.com/dp/B0BYDYL1GW",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+nGB3MlPL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07HMF7NPF",
+    "name": "Wake In Cloud - Cotton Duvet Cover Set, 100% Washed Cotton, Linen Like Textured, Breathable Durable Comfy Farmhouse Neutral Bedding Set, 3 Pieces, Denim Blue, Twin/Twin XL Size",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B07HMF7NPF",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81tWz9XIU4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSGDR8BQ",
+    "name": "Hearth & Harbor Twin Duvet Cover Set - 2 Piece Soft Prewashed Bedding Set Twin/Twin XL - Includes 1 Duvet Cover 68x90 inches with Zipper Closure and 1 Pillow Sham, Dark Grey, Comforter Not Included",
+    "normalized_price": 18.04,
+    "buy_url": "https://www.amazon.com/dp/B0DSGDR8BQ",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71nFxo94vvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07THQ6Q2Z",
+    "name": "Bedsure Duvet Cover Twin/Twin XL Size - Extra Soft Double Brushed Bedding Set with Zipper Closure, 2 Pieces, Includes 1 Duvet Cover (68\"x90\") & 1 Pillow Sham, Comforter Not Included, Olive Green",
+    "normalized_price": 18.69,
+    "buy_url": "https://www.amazon.com/dp/B07THQ6Q2Z",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-+2pfcqTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2HLK79W",
+    "name": "Mejoroom Blush Pink Twin Duvet Cover - Soft and Breathable Twin Bedding Sets with Zipper Closure, 2Pieces, 1 Duvet Cover (68x90) and 1 Pillow case(20x26)",
+    "normalized_price": 16.72,
+    "buy_url": "https://www.amazon.com/dp/B0D2HLK79W",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Qq-6XQIJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BBR4GZL8",
+    "name": "NEXHOME PRO Cotton Duvet Cover Twin Size Linen Look White Organic Natural 100% Washed Cotton Duvet Cover Set 2 Pieces Bedding Set with Zipper Closure and Corner Ties, Breathable(No Comforter)",
+    "normalized_price": 42.49,
+    "buy_url": "https://www.amazon.com/dp/B0BBR4GZL8",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/718l99Vcw-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01NB1RZD0",
+    "name": "Kotton Culture 3 Pc Twin XL/Twin Duvet Cover Set-100% Egyptian Cotton 600 Thread Count Ultra Soft Premium Durable Comforter Cover Zipper Closure & Corner Ties- (White, 68\" X 90\")",
+    "normalized_price": 42.74,
+    "buy_url": "https://www.amazon.com/dp/B01NB1RZD0",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71e2mggAqQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8JWHDXS",
+    "name": "THREAD SPREAD 100% Egyptian Cotton Twin XL/Twin Duvet Cover Set - Luxury 400 Series Glee Collection Duvet Cover Twin Size, Soft & Durable Hidden Zipper Closure & 7 Corner Ties (3 PC, Dark Grey)",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0G8JWHDXS",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/715qGseWkDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GK17S1DJ",
+    "name": "Twin Duvet Cover Set 2 Pieces, 100% Organic Viscose derived from Bamboo, Luxuriously Soft & Cooling, 1 Duvet Cover and 1 Pillowcase, 68\" x 90\"(Twin, White)",
+    "normalized_price": 46.19,
+    "buy_url": "https://www.amazon.com/dp/B0GK17S1DJ",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-uSlc4BBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV4HZBB8",
+    "name": "Duvet Cover Twin/Twin XL Size Set - Extra Soft Twin/Twin XL Duvet Cover 68\" x 90\" with 1 Pillow Sham for Women, Men, Kids & Teens - Comfy, Easy-Care & Fade Free w/Zipper Closures & Ties (Navy Blue)",
+    "normalized_price": 16.14,
+    "buy_url": "https://www.amazon.com/dp/B0CV4HZBB8",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/810Yscr9ymL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09Z1WB3MF",
+    "name": "Bedsure Twin/Twin XL Duvet Cover Kids - Gingham Reversible Buffalo Plaid Duvet Cover Set with Zipper Closure, 2 Pieces Blue Bedding Set with 8 Corner Ties and 1 Pillow Sham 20\"x26\"",
+    "normalized_price": 22.94,
+    "buy_url": "https://www.amazon.com/dp/B09Z1WB3MF",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91eyefcrHHL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXS47QG",
+    "name": "Bedsure Comforter Duvet Insert - Quilted Comforters Twin XL Size, All Season Duvet, GentleSoft Down Alternative Bedding, with 8 Tabs, Gifts for Women/Men, White, Twin XL 92 x 68 Inches",
+    "normalized_price": 37.79,
+    "buy_url": "https://www.amazon.com/dp/B08CXS47QG",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/813hOP9DbjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09TB2F9LD",
+    "name": "BESTOUCH Duvet Cover Set 100% Washed Cotton Linen Feel Super Soft Comfortable Chic Lightweight 2 PCs Home Bedding Set Solid Cornflower Blue Twin/Twin XL",
+    "normalized_price": 50.99,
+    "buy_url": "https://www.amazon.com/dp/B09TB2F9LD",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/815YXaoy1oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08KZKBM33",
+    "name": "JELLYMONI 100% Natural Cotton 2pcs Striped Duvet Cover Sets,White Duvet Cover with Khaki Stripes Pattern Printed Comforter Cover,with Zipper Closure & Corner Ties for Kids(Twin Size)",
+    "normalized_price": 36.54,
+    "buy_url": "https://www.amazon.com/dp/B08KZKBM33",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91HN5Zjqs5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV48T4HF",
+    "name": "Duvet Cover Queen Size Set - Extra Soft Queen Duvet Cover 90\" x 90\" with 2 Pillow Shams for Women, Men, Kids & Teens - Hotel Luxury w/Zipper Closures & Ties - Comfy, Cozy & Breathable (Beige Stripes)",
+    "normalized_price": 16.14,
+    "buy_url": "https://www.amazon.com/dp/B0CV48T4HF",
+    "specs": {
+      "bed_size": "queen"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81-ynxzopYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CXMBG29",
+    "name": "Bedsure Boho Twin Duvet Cover Size - White Breathable & Soft Boho Bedding, Machine Washable Comforter Cover for All Seasons, Includes 1 Duvet Cover 68\"x90\" with 1 Pillow Sham & Zipper Closure",
+    "normalized_price": 32.57,
+    "buy_url": "https://www.amazon.com/dp/B08CXMBG29",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81YdcRxSYwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09YM22C6Q",
+    "name": "Bedsure Duvet Cover Twin/Twin XL Size - 2 Pieces Prewashed Cotton-Like Extra Soft Bedding Set, Includes 1 Twin Duvet Cover 68x90 Inches with Zipper Closure & 1 Pillow Sham, Linen, No Comforter",
+    "normalized_price": 22.21,
+    "buy_url": "https://www.amazon.com/dp/B09YM22C6Q",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81+ka8pM5eL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F9YLYFXJ",
+    "name": "mixinni Vintage Blue & White Striped Duvet Cover Set - 3 Piece 100% Washed Cotton Twin XL Size Bedding | Minimalist Relaxed Style | Ultra Soft Breathable, with Zipper Closure & Corner Ties",
+    "normalized_price": 44.91,
+    "buy_url": "https://www.amazon.com/dp/B0F9YLYFXJ",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81Lnha1UoNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01M017JJV",
+    "name": "Kotton Culture 1 Pc Twin XL/Twin Duvet Cover Only-100% Egyptian Cotton 600 Thread Count Ultra Soft Premium Durable Comforter Cover Zipper Closure & Corner Ties - (White, 68\" X 90\")",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B01M017JJV",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71k3v2SXuxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08FRQ319D",
+    "name": "Bare Home 100% Organic Cotton Extra Long Duvet Cover Set - Crisp Percale Weave - Lightweight & Breathable - Cooling Duvet Cover Set (Twin/Twin XL, Bering Sea)",
+    "normalized_price": 59.49,
+    "buy_url": "https://www.amazon.com/dp/B08FRQ319D",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81fVRwC0WKL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNZYNDJ7",
+    "name": "Bedsure Twin/Twin XL Duvet Cover - Reversible Green Duvet Cover Set with Zipper Closure, 2 Pieces Cute Floral Patterned Bedding Set with 8 Corner Ties and 1 Pillow Sham",
+    "normalized_price": 18.8,
+    "buy_url": "https://www.amazon.com/dp/B0BNZYNDJ7",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91UC3efOOGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B019J22RBY",
+    "name": "Bare Home Bedding Duvet Cover Extra Long - Premium 1800 Super Soft Collection - Lightweight, Cooling Duvet Cover - Soft Breathable Bedding (Twin/Twin XL, White)",
+    "normalized_price": 27.97,
+    "buy_url": "https://www.amazon.com/dp/B019J22RBY",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ZzEZ16LjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07SJHJC91",
+    "name": "Brooklinen Luxury Sateen Duvet Cover - 100% Cotton, Twin/Twin XL Size in White with Extra-Long Corner Ties and Button Closure - Best Twin/Twin XL Duvet Covers",
+    "normalized_price": 118.15,
+    "buy_url": "https://www.amazon.com/dp/B07SJHJC91",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61IRIMJGdjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CZMQ29RH",
+    "name": "Bedsure Twin XL Comforter Set - White Comforter, Boho Tufted Distressed Vintage Bedding for Kids, 2 Pieces Farmhouse-Style Bed Set for All Seasons, Fluffy Soft Bedding with 1 Pillow Sham",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B0CZMQ29RH",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81vZV3NckeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BW3M42HN",
+    "name": "Brandream Kid's Duvet Cover Twin/Twin XL Size,100% Organic Cotton 2pcs Girl Bedding Duvet Cover Set, Ruffled Fringe Solid Color Soft Breathable with Zipper Closure & Corner Ties(White)",
+    "normalized_price": 47.92,
+    "buy_url": "https://www.amazon.com/dp/B0BW3M42HN",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/710KBiSzBcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTBZH7F3",
+    "name": "BOLL & BRANCH Signature Hemmed Duvet Set - Twin/Twin XL, Sageleaf - Luxury 100% Organic Cotton - 1 Duvet Cover, 2 Shams - Buttery Soft, Hidden Closures",
+    "normalized_price": 239.2,
+    "buy_url": "https://www.amazon.com/dp/B0DTBZH7F3",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61krcrfjHRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTBPNB1Z",
+    "name": "BOLL & BRANCH Signature Hemmed Duvet Set - Twin/Twin XL, Shore - Luxury 100% Organic Cotton - 1 Duvet Cover, 2 Shams - Buttery Soft, Hidden Closures",
+    "normalized_price": 239.2,
+    "buy_url": "https://www.amazon.com/dp/B0DTBPNB1Z",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/613cCOjfZxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D1KNW6CG",
+    "name": "BIOWEAVES 100% Organic Cotton Twin/Twin XL Duvet Cover Set, 2-Piece, 300 Thread Count Sateen Weave GOTS Certified Comforter Cover with Buttoned Closure and 1 Pillow Sham \u2013 Basil, 66x90 inches",
+    "normalized_price": 48.45,
+    "buy_url": "https://www.amazon.com/dp/B0D1KNW6CG",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51vKxkxmNDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07D1BWW7J",
+    "name": "Brooklinen Luxury Sateen Duvet Cover - 100% Cotton, Full/Queen Size in Cream with Extra-Long Corner Ties and Button Closure - Best Full/Queen Duvet Covers",
+    "normalized_price": 179.0,
+    "buy_url": "https://www.amazon.com/dp/B07D1BWW7J",
+    "specs": {
+      "bed_size": "full"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71iVL2HIKrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B089SMQNTC",
+    "name": "Bedsure Olive Green Duvet Cover Twin/Twin XL Size - 2 Pieces Prewashed Cotton-Like Polyester Extra Soft Bedding Set, Includes 1 Duvet Cover 68\"x90\" with Zipper Closure & 1 Pillow Sham, No Comforter",
+    "normalized_price": 23.46,
+    "buy_url": "https://www.amazon.com/dp/B089SMQNTC",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81i3IGYiQSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08FRQG31P",
+    "name": "Bare Home 100% Organic Cotton Sateen Duvet Cover Set - Extra Long Size - 400 Thread Count - Smooth Sateen Weave - Warm & Luxurious - Duvet Cover (Twin/Twin XL, Bering Sea)",
+    "normalized_price": 53.54,
+    "buy_url": "https://www.amazon.com/dp/B08FRQG31P",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/811p5E4O9hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09YMSQPF7",
+    "name": "Lush Decor Reyna Ruffle Cotton Duvet Cover Set 2 Piece Set Twin XL, White - Cute Teen Bedding Set - White Duvet - Ruffled Bedding - Coquette Dorm Decor",
+    "normalized_price": 69.99,
+    "buy_url": "https://www.amazon.com/dp/B09YMSQPF7",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71WDTR70GiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2HNS281",
+    "name": "Mejoroom White Twin Duvet Cover Set - Soft and Breathable Twin Bedding with Zipper Closure, 2Pieces, 1 Duvet Cover (68x90) and 1 Pillow case(20x26)",
+    "normalized_price": 16.79,
+    "buy_url": "https://www.amazon.com/dp/B0D2HNS281",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/610ZlDOVlQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJYBCBKQ",
+    "name": "Bedsure Twin Duvet Cover Only - Prewashed Cotton-Like Polyester Soft All Season Bedding, Includes 1 Duvet Cover Twin Size 68x90 Inches with Zipper Closure, White, (No Comforter)",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJYBCBKQ",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91JMiWbueYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B072394RV2",
+    "name": "Kotton Culture 1 Pc Twin XL/Twin Duvet Cover Only-100% Egyptian Cotton 600 Thread Count Ultra Soft Premium Durable Comforter Cover Zipper Closure & Corner Ties - (Taupe, 68\" X 90\")",
+    "normalized_price": 39.77,
+    "buy_url": "https://www.amazon.com/dp/B072394RV2",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71zcbkGP6fL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FTMPXCXS",
+    "name": "NEST and NOOKS 100% Cotton Duvet Cover | 400 Thread Count Sateen | Soft, Silky & Breathable Twin XL Bedding for Dorms, Hotel-Quality All-Season Comfort | Fits 39\" x 80\" x 13\" Mattress | Blue Jean Navy",
+    "normalized_price": 49.92,
+    "buy_url": "https://www.amazon.com/dp/B0FTMPXCXS",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61sCmrvol0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DWJZFBS1",
+    "name": "Utopia Bedding Duvet Cover Set with Pillowcases- 2 Pieces Bedding Duvet Cover with Zipper Closure - 1 Duvet Cover with 1 Pillow Sham - Soft Brushed Microfiber (Twin/Twin XL, Black)",
+    "normalized_price": 13.03,
+    "buy_url": "https://www.amazon.com/dp/B0DWJZFBS1",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81LgVT0StuL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09NY8ZYZL",
+    "name": "Utopia Bedding Duvet Cover Twin Size - 2 Piece with Zipper Closure - 1 Comforter Cover 68X90 Inches & 1 Pillow Sham 20X26 Inches (Grey) Comforter Not Included",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B09NY8ZYZL",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81ClbDCYJEL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BYDXPY1T",
+    "name": "Utopia Bedding Duvet Cover Twin Size - 2 Piece with Zipper Closure - 1 Comforter Cover 68X90 Inches & 1 Pillow Sham 20X26 Inches (Black) Comforter Not Included",
+    "normalized_price": 18.99,
+    "buy_url": "https://www.amazon.com/dp/B0BYDXPY1T",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yUNoP8SlL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

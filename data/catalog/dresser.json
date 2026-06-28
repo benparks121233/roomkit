@@ -3691,7 +3691,7 @@
   },
   {
     "product_id": "B0DK2FS2NY",
-    "name": "Signature Design by Ashley Cadmori Modern 6-Drawer Dresser with Safety Stop, White & Black",
+    "name": "Signature Design by Ashley Cadmori 6 Drawer Dresser, Black Dresser for Bedroom, Matte Black & Replicated White Marble Top, 64\" Wide, Engineered Wood Construction, Minor Assembly Required",
     "normalized_price": 651.99,
     "buy_url": "https://www.amazon.com/dp/B0DK2FS2NY",
     "specs": {},
@@ -4655,7 +4655,7 @@
   {
     "product_id": "B0D1S4JYK3",
     "name": "Signature Design by Ashley Lavinton Traditional Dresser with 7 Smooth-Gliding Drawers and Felt-Lined Top Drawer for Bedroom, Dark Brown, 60' W x 18.63' D x 37.5' H",
-    "normalized_price": 700.27,
+    "normalized_price": 899.99,
     "buy_url": "https://www.amazon.com/dp/B0D1S4JYK3",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81K+v-rnp1L._AC_UL320_.jpg",
@@ -4920,6 +4920,1140 @@
     "buy_url": "https://www.amazon.com/dp/B0GN92VFH8",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81WbdeS9hYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1S4G7V",
+    "name": "Coaster Home Furnishings - Gran Park - Wood - 6-Drawer Dresser with Brass Knobs, Felt-Lined Top, Rectangular Structure, Ball-Bearing Glides, Modern Classic Style - Bedroom - Dark Cocoa - 224933",
+    "normalized_price": 879.29,
+    "buy_url": "https://www.amazon.com/dp/B0DP1S4G7V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81DiQsh0GjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F3CP92QS",
+    "name": "Coaster Home Furnishings Maderia Transitional 70-inch 8-Drawer Bedroom Dresser Clothing Storage Cabinet Wide Chest of Drawers Organizer Unit Walnut 223323",
+    "normalized_price": 1019.32,
+    "buy_url": "https://www.amazon.com/dp/B0F3CP92QS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ApOfdAsmL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHVDPJ7M",
+    "name": "Signature Design by Ashley Maylee 6 Drawer Traditional Dresser with Mirror, Bedroom Chest of Drawers, Hardwood Solids, Oak & Ash Swirl Veneers, MDF Substrates, Cast Resin, Dark Brown",
+    "normalized_price": 1600.81,
+    "buy_url": "https://www.amazon.com/dp/B0FHVDPJ7M",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ALSpwpQGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYFXM9BD",
+    "name": "SAFAVIEH Couture - Octavian Rope Detail Dresser - Dark Walnut Oak - 6-Drawer Storage Chest - Fully Assembled - Ideal for Bedroom, Guest Room, 66\" W x 20\" D x 34\" H (SFV2234C)",
+    "normalized_price": 1126.99,
+    "buy_url": "https://www.amazon.com/dp/B0GYFXM9BD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81rJfxT-cJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX83ZZZB",
+    "name": "BOWERY HILL Contemporary 8-Drawer Dresser and Landscape Mirror, Espresso Finish, Mappa Burl and Birch Veneers, Hardwood Solids, Felt-Lined Top Drawers, Antique Brass Hardware, Bedroom Furniture Set",
+    "normalized_price": 1610.08,
+    "buy_url": "https://www.amazon.com/dp/B0GX83ZZZB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51AKhktCMqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073VRMJXG",
+    "name": "ACME Dresden Dresser/Server - - Gold Patina & Bone",
+    "normalized_price": 1331.04,
+    "buy_url": "https://www.amazon.com/dp/B073VRMJXG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61dBMco6pFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXHBV1PG",
+    "name": "Benzara Nitz 6 Drawer Wide Dresser, Espresso Brown Solid Wood, Rose Gold Handles",
+    "normalized_price": 1057.83,
+    "buy_url": "https://www.amazon.com/dp/B0FXHBV1PG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71uUxEaPbvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW1S69JP",
+    "name": "SAFAVIEH Couture Collection - Tessly Walnut Burl Veneer Chest, Modern Storage Cabinet with Shelf, Fully Assembled (SFV5549A)",
+    "normalized_price": 804.07,
+    "buy_url": "https://www.amazon.com/dp/B0FW1S69JP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71V93PiBf2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2YK65JP",
+    "name": "1pc Walnut Gold Capped Legs Five Drawers Tall Chest Wooden English Dovetail",
+    "normalized_price": 2314.6,
+    "buy_url": "https://www.amazon.com/dp/B0H2YK65JP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91eb3VQ5n+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJRNYPKB",
+    "name": "Evolur Loft Antilia Mid-Century Double Dresser in Walnut, 6 Spacious Drawers, Comes Fully Assembled, Included Anti-Tipping Kit, Wooden Nursery Furniture",
+    "normalized_price": 1001.06,
+    "buy_url": "https://www.amazon.com/dp/B0FJRNYPKB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/719LNhbHR+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYNS96T7",
+    "name": "1pc Contemporary Walnut Finish Gold-Capped Legs 6-Drawers Dresser Wooden English Dovetail Bedroom",
+    "normalized_price": 1486.0,
+    "buy_url": "https://www.amazon.com/dp/B0GYNS96T7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61+q8sX3RjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2YQK87B",
+    "name": "1pc Walnut Gold Capped Legs 6 Drawers Dresser Wooden English Dovetail Bedroom",
+    "normalized_price": 2498.8,
+    "buy_url": "https://www.amazon.com/dp/B0H2YQK87B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61+q8sX3RjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07M9TKXJ5",
+    "name": "Coaster Home Furnishings - Durango - Wood - 5-Drawer Chest with Gold Accents, Linear Handles and Floating Base - Contemporary - Bedroom - Smoked Peppercorn - 223265",
+    "normalized_price": 849.21,
+    "buy_url": "https://www.amazon.com/dp/B07M9TKXJ5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81lpoaw2JJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCY4GBPR",
+    "name": "Signature Design by Ashley Porter Traditional Bedroom Dresser with Mirror, 7-Drawer Storage, Pull-Out Tray, Veneers, Wood and Engineered Wood, 65.75\" W x 18.75\" D x 76.5\" H, Dark Brown",
+    "normalized_price": 1220.0,
+    "buy_url": "https://www.amazon.com/dp/B0FCY4GBPR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/710KBwUjKzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGHCS7CX",
+    "name": "Signature Design by Ashley Glarrison Chest of Drawers, Tall Wood Dresser for Bedroom, 5 Drawer Vertical Bedroom Storage, Poplar Solids and Pine Veneer, 58'' H, Chestnut Brown",
+    "normalized_price": 900.02,
+    "buy_url": "https://www.amazon.com/dp/B0FGHCS7CX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ziIPIspcL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXVHSTPQ",
+    "name": "1pc Walnut Gold Capped Legs 6 Drawers Dresser Wooden English Dovetail Bedroom",
+    "normalized_price": 2733.06,
+    "buy_url": "https://www.amazon.com/dp/B0GXVHSTPQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61+q8sX3RjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXVQK43Q",
+    "name": "1pc Walnut Gold Capped Legs Five Drawers Tall Chest Wooden English Dovetail",
+    "normalized_price": 2531.59,
+    "buy_url": "https://www.amazon.com/dp/B0GXVQK43Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91eb3VQ5n+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYNPDFSH",
+    "name": "1pc Contemporary Walnut Finish Gold-Capped Legs Five-Drawers Tall Chest Wooden English Dovetail",
+    "normalized_price": 1377.0,
+    "buy_url": "https://www.amazon.com/dp/B0GYNPDFSH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91eb3VQ5n+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXZ7WZ68",
+    "name": "Benzara Cona French Dresser, Marble Top, Royal Cherry Brown with Gold Accent",
+    "normalized_price": 1264.03,
+    "buy_url": "https://www.amazon.com/dp/B0GXZ7WZ68",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71io3bdZXRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FWZHLZDD",
+    "name": "Antique Walnut Dresser with Mirror and Drawers for Formal Bedroom Storage Traditional Unique Design Furniture",
+    "normalized_price": 997.94,
+    "buy_url": "https://www.amazon.com/dp/B0FWZHLZDD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41BHOmh0qML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6NZYD8X",
+    "name": "Stickley Saranac Dresser, Chest, Solid Rustic Walnut, Sustainable Construction, 6 Drawers, Finger Pulls, 64in W x 20in D x 32in H, Made in USA",
+    "normalized_price": 3533.0,
+    "buy_url": "https://www.amazon.com/dp/B0G6NZYD8X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81yysc99+9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H4ZHT662",
+    "name": "Dresser in Walnut Brown and Gold",
+    "normalized_price": 938.0,
+    "buy_url": "https://www.amazon.com/dp/B0H4ZHT662",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71g5cJQ5YQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09XY769P8",
+    "name": "ACME Furniture 6 Drawers Wood Dresser, Gold",
+    "normalized_price": 2179.81,
+    "buy_url": "https://www.amazon.com/dp/B09XY769P8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Sg5zdQGdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLPZ4GW1",
+    "name": "Pemberly Row 7-Drawer Gentleman's Chest, Solid Acacia and Hardwood, Driftwood and Sable Finish, Weathered Brass Hardware, Rustic Transitional Style Bedroom Storage, 51.5\" H x 62\" W x 19\" D",
+    "normalized_price": 1649.4,
+    "buy_url": "https://www.amazon.com/dp/B0GLPZ4GW1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61o-pAlWyeL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4S62MB8",
+    "name": "Antique Walnut Unique Design Dresser with Mirror and Drawers for Formal Bedroom Furniture Storage",
+    "normalized_price": 1042.0,
+    "buy_url": "https://www.amazon.com/dp/B0G4S62MB8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41BHOmh0qML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX3CWBTD",
+    "name": "Traditional Style 11-Drawer Dresser with Metal Handle Pulls Made with Wood in Dark Walnut",
+    "normalized_price": 1783.58,
+    "buy_url": "https://www.amazon.com/dp/B0GX3CWBTD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61p4Tqw+e9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FLYFBV6T",
+    "name": "Coaster Home Furnishings - Gran Park - Wood - 5-Drawer Chest with Brass Knobs, Felt-Lined Top and Metal Ball-Bearing Glides - Modern Classic - Bedroom - Dark Cocoa - 224935",
+    "normalized_price": 943.03,
+    "buy_url": "https://www.amazon.com/dp/B0FLYFBV6T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91Q9xbEPi4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXY2MSK3",
+    "name": "Limari Home Bosara Collection Modern Bedroom Dresser with 6 Soft Closing Drawers, Wenge, Gold",
+    "normalized_price": 1855.03,
+    "buy_url": "https://www.amazon.com/dp/B0CXY2MSK3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71pf3SAJW1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXB26SR5",
+    "name": "BOWERY HILL 6 Drawer Master Chest with Cabinet, 52 in W x 19 in D x 58 in H, Eucalyptus Veneers, Piano Brown Finish, Soft Brass Accents, Stepped Silhouette, Neo-Classic Combo Dresser for Master",
+    "normalized_price": 1845.0,
+    "buy_url": "https://www.amazon.com/dp/B0GXB26SR5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615oOtJe9pL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4VCXK92",
+    "name": "Modern Dresser with Natural Wood Finish, Six Drawers, Engineered Stone Top, Fully Extension Glide, Brass-Accented Hardware, Ample Storage for Bedroom Decor",
+    "normalized_price": 881.0,
+    "buy_url": "https://www.amazon.com/dp/B0G4VCXK92",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81kwgAz4xGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H29Y49Y7",
+    "name": "Pemberly Row 3-Drawer Solid Wood and Aluminum Chest, Brass Finish, Stain-Resistant Storage for Bedroom, Hallway Console or Accent Use, Aviation-Inspired Design with Rounded Corners and Smooth Drawer",
+    "normalized_price": 1692.02,
+    "buy_url": "https://www.amazon.com/dp/B0H29Y49Y7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61HzZHcdzqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D5XXGSS2",
+    "name": "Benjara Leon 56 Inch Tall Dresser Chest, 5 Drawer, Cabinet, Grooved, Brown and Gold",
+    "normalized_price": 985.36,
+    "buy_url": "https://www.amazon.com/dp/B0D5XXGSS2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71OJBpiON9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5W8WN1F",
+    "name": "Pemberly Row 6-Drawer Chest, 56\" H x 42\" W x 19\" D, Poplar Solids and Birch Veneers, Dark Brown Wood Finish, Brass Hardware, Felt-Lined Top Drawer, Full-Extension Glides, Bedroom Storage Furniture",
+    "normalized_price": 1115.97,
+    "buy_url": "https://www.amazon.com/dp/B0H5W8WN1F",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/614XyaKxyNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2LCFKFF",
+    "name": "Coaster Home Furnishings Winslow Farmhouse 64-inch 6-Drawer Bedroom Dresser with Mirror Bedroom Clothing Storage Cabinet Wide Chest of Drawers Organizer Unit Smokey Walnut 223253M",
+    "normalized_price": 1160.41,
+    "buy_url": "https://www.amazon.com/dp/B0D2LCFKFF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81xcP2zRRnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX7XJ4DM",
+    "name": "BOWERY HILL Contemporary 9-Drawer Bedroom Dresser, Willadeene Brown Finish, Pine Solids, Antique Brass Hardware, Tempered Glass Doors, Adjustable Shelf, Felt-Lined Drawers, Traditional Style",
+    "normalized_price": 1397.51,
+    "buy_url": "https://www.amazon.com/dp/B0GX7XJ4DM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Ye7gnZicL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJTV1S3C",
+    "name": "Formal Antique Walnut Dresser with Mirror and Drawers for Unique Bedroom Furniture Design",
+    "normalized_price": 1042.0,
+    "buy_url": "https://www.amazon.com/dp/B0GJTV1S3C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41BHOmh0qML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6GV8L51",
+    "name": "Signature Design by Ashley Rowanbeck Modern Seven-Drawer Dresser with Waterfall Edges, Nickel-Tone Hardware, Wood and Ash Veneer, Black Finish, 63.75' W",
+    "normalized_price": 767.79,
+    "buy_url": "https://www.amazon.com/dp/B0D6GV8L51",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61a6q0yjqwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYVF197R",
+    "name": "SICOTAS Dresser for Bedroom 107\" Wide 6 Drawer Dressers & Chests of Drawers for Closet Long Large Modern TV Stand Set for Clothes Storage Fluted Wide Clothes Closet for Hallway Entryway, White Alder",
+    "normalized_price": 778.99,
+    "buy_url": "https://www.amazon.com/dp/B0DYVF197R",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Puw2Ewo+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGJKY3LB",
+    "name": "SICOTAS Dresser for Bedroom - Tall Dressers & Chests of Drawers with 5 Drawers Large Modern Dresser for Closet Fluted Wide TV Stand Clothes Closet Storage for Bedroom Hallway Entryway, Grey Alder",
+    "normalized_price": 738.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGJKY3LB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/819g1Mf2N5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKBR83HR",
+    "name": "AMERLIFE 4 Piece Bedroom Dresser Set, Modern High Gloss UV Finish, 2 Nightstands, Chest of 5 Drawers & 6-Drawer Dresser, Electroplated Metal Handles, Bedroom Furniture Set, Grey",
+    "normalized_price": 639.99,
+    "buy_url": "https://www.amazon.com/dp/B0FKBR83HR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Wd5pIBKsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYNHFQRL",
+    "name": "Sophia Modern Style Crystal Tufted Upholstery 7-Drawer Dresser Finished with Velvet Fabric Made with Wood in Gray.(Includes Dresser-Mirror NOT Included) (NJ Inventory)",
+    "normalized_price": 1135.0,
+    "buy_url": "https://www.amazon.com/dp/B0GYNHFQRL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71lqvhlizbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSCLYCFK",
+    "name": "Signature Design by Ashley Ardenfield Traditional Nine-Drawer Dresser with Dovetail Construction, Top Drawers Felt Lined, Metal Hardware, Wood, Light Brown",
+    "normalized_price": 869.85,
+    "buy_url": "https://www.amazon.com/dp/B0DSCLYCFK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71omsIh4E4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C731L6S7",
+    "name": "Soho Baby Hanover Premium Soft Closing 5-Drawer Dresser Chest Dresser, Oak Gray",
+    "normalized_price": 732.43,
+    "buy_url": "https://www.amazon.com/dp/B0C731L6S7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81s1hGRMaaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B094RJR12G",
+    "name": "Coaster Home Furnishings - Antonella - Engineered Wood - 7-Drawer Upholstered Dresser with Modern Classic Style, Button-Tufted Details, Faux Crystal Accents - Bedroom - Ivory and Camel - 223523",
+    "normalized_price": 691.74,
+    "buy_url": "https://www.amazon.com/dp/B094RJR12G",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81TCsgQpAML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1VFQ7W",
+    "name": "Coaster Home Furnishings - Maderia - Wood - 5-Drawer Chest of Drawers with Curved Fingertip Pulls, Rounded Corners and Tapered Front Legs - Mid-Century Modern - Bedroom - Walnut - 223325",
+    "normalized_price": 821.09,
+    "buy_url": "https://www.amazon.com/dp/B0DP1VFQ7W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/812EjOghw-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GH7734CW",
+    "name": "Babyletto Hudson Modern 6-Drawer Assembled Double Dresser in Natural Walnut, Greenguard Gold Certified",
+    "normalized_price": 799.0,
+    "buy_url": "https://www.amazon.com/dp/B0GH7734CW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91UP6UYZQbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1R1394",
+    "name": "Coaster Home Furnishings - Cavelle - Wood - 6-Drawer Dresser with Mid-Century Modern Style, Gold Ball Knobs, Metal Extension Glides, Rounded Corners - Bedroom - Black - 223663",
+    "normalized_price": 631.88,
+    "buy_url": "https://www.amazon.com/dp/B0DP1R1394",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81X-BteizhL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00246C3H6",
+    "name": "Coaster Home Furnishings Jessica Contemporary 64-inch 6-Drawer Bedroom Dresser Clothing Storage Cabinet Wide Chest of Drawers Organizer Unit Cappuccino 200713",
+    "normalized_price": 675.53,
+    "buy_url": "https://www.amazon.com/dp/B00246C3H6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61AzMX37VSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B094RJ1DS9",
+    "name": "Coaster Home Furnishings Antonella Modern Classic Upholstered 5-Drawer Bedroom Chest of Drawers Chiffonier Clothing Storage Cabinet Bedroom Armoire Tall Dresser Organizer Unit Ivory and Camel 223525",
+    "normalized_price": 670.2,
+    "buy_url": "https://www.amazon.com/dp/B094RJ1DS9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91OPgTO+pGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D2L9ZY26",
+    "name": "Coaster Home Furnishings Antonella Modern Classic 61-inch 7-Drawer Bedroom Dresser with Mirror Bedroom Clothing Storage Cabinet Wide Chest of Drawers Organizer Unit Ivory and Camel 223523M",
+    "normalized_price": 908.56,
+    "buy_url": "https://www.amazon.com/dp/B0D2L9ZY26",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81BQZRFkj5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWDSD4Q1",
+    "name": "YANSNWO Modern Fluted Dresser and Nightstand Sets, Including 52\" W 8 Drawer Dresser, 44\" H 6 Drawer Dresser and Nightstands with Drawer & Charging Station, Bedroom Set for Home, White Alder",
+    "normalized_price": 649.99,
+    "buy_url": "https://www.amazon.com/dp/B0GWDSD4Q1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ZveMEOYJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GG39SSFD",
+    "name": "Stanley Furniture Dresser for Bedroom, 9 Drawer Bedroom Dresser, Wide Wood Dresser with Metal Glide Drawers, Long Horizontal Chest of Drawers for Bedroom, Oak Burl Veneer Finish Storage Cabinet",
+    "normalized_price": 1999.0,
+    "buy_url": "https://www.amazon.com/dp/B0GG39SSFD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81eAMrjXK0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G8ZG76F7",
+    "name": "WAMPAT 4-Piece Modern Bedroom Furniture Set, 94.5-Inch Dresser with 12 Drawers and 2 Nightstands with 2 Drawers, Stylish Bedroom Side Tables, Beige",
+    "normalized_price": 648.59,
+    "buy_url": "https://www.amazon.com/dp/B0G8ZG76F7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uJNbO1+LL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1R28G3",
+    "name": "Coaster Home Furnishings - Kenora - Wood - 6-Drawer Dresser with Chrome Bar Pulls, Metal Extension Glides, Recessed Base, Wood Grain Details, Transitional Style - Bedroom - Barley Brown - 224853",
+    "normalized_price": 773.92,
+    "buy_url": "https://www.amazon.com/dp/B0DP1R28G3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/813hbsE+IxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCXPYF6D",
+    "name": "Signature Design by Ashley Willowton 6-Drawer Dresser with Mirror, Engineered Wood Construction for Coastal Cottage Bedrooms, Whitewash, 61\" W",
+    "normalized_price": 829.0,
+    "buy_url": "https://www.amazon.com/dp/B0FCXPYF6D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71iK0oaCmZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FHV96C54",
+    "name": "Signature Design by Ashley Cielden French Country 6-Drawer Dresser and Mirror with Safety Stop, Light Brown",
+    "normalized_price": 828.99,
+    "buy_url": "https://www.amazon.com/dp/B0FHV96C54",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ebmPhCSxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1NN2F7",
+    "name": "Coaster Home Furnishings - Glenwood - Wood - 6-Drawer Dresser with Transitional Style, Felt-Lined Top Drawers, Rectangular Structure - Warm Brown - 225013",
+    "normalized_price": 869.63,
+    "buy_url": "https://www.amazon.com/dp/B0DP1NN2F7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71R-ykuO9bL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFVZ722X",
+    "name": "Coaster Home Furnishings - Evangeline - Wood - 6-Drawer Chest with Hexagonal-Shaped Knobs and Felt-Lined Drawer - Bedroom - Modern Classic - Silver Oak - 223395",
+    "normalized_price": 806.97,
+    "buy_url": "https://www.amazon.com/dp/B0CFVZ722X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81oSjDaSugL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKLCMCHC",
+    "name": "Solid Walnut Nightstand, 5 Drawer Bedside Table for Bedroom, Solid Wood nightstand with Drawers, Modern Night Stand for Living Room, Hallway, Closet(Black Walnut, 43\" H)",
+    "normalized_price": 635.69,
+    "buy_url": "https://www.amazon.com/dp/B0GKLCMCHC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51XE1DAl8PL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGH4VZJW",
+    "name": "Signature Design by Ashley Yingden 6 Drawer Dresser, 63\" W, Dark Brown, Hardwood Solids and Mango Wood Veneer, Smooth Gliding Storage for Bedroom",
+    "normalized_price": 1327.99,
+    "buy_url": "https://www.amazon.com/dp/B0FGH4VZJW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61xf7SfeQrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHLM8PFK",
+    "name": "Signature Design by Ashley Lanolee Traditional Dresser with Framed Drawer Fronts and Tapered Feet, 7 Drawers, Satin Nickel Knobs, Wood, 36\" High, Black",
+    "normalized_price": 713.76,
+    "buy_url": "https://www.amazon.com/dp/B0CHLM8PFK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61pp3l-MeaL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B079MJ8K7Y",
+    "name": "Rustic Dresser [6 Drawer] - Dovetail Drawers/Modern/Solid Wood/Amish Made in USA",
+    "normalized_price": 1399.0,
+    "buy_url": "https://www.amazon.com/dp/B079MJ8K7Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61VM-9+c+oL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1L93PSF",
+    "name": "homary Walk-in Closet Island Dresser with Jewelry Storage, Glass Top Closet Island with Valet Rack & Bench, 60\" Modern White Closet Organizer with Drawers & Shoe Storage",
+    "normalized_price": 1199.99,
+    "buy_url": "https://www.amazon.com/dp/B0H1L93PSF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81aTIdAK+BL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3L2MB74",
+    "name": "AMERLIFE 5-Piece Modern Bedroom Sets with Queen Size Upholstered Platform Bed Frame, 58\" Wingback Headboard, Spacious 6-Drawer Dresser, Tall Chest, and 2 Coordinated Nightstands, Black and Grey",
+    "normalized_price": 783.99,
+    "buy_url": "https://www.amazon.com/dp/B0G3L2MB74",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81q-ezQvNrL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFVXV97T",
+    "name": "Coaster Home Furnishings Woodmont Farmhouse 58-inch 8-Drawer Bedroom Dresser Clothing Storage Cabinet Wide Chest of Drawers Organizer Unit Rustic Golden Brown 222633",
+    "normalized_price": 605.16,
+    "buy_url": "https://www.amazon.com/dp/B0CFVXV97T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91B24wqj4ML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYNW21B1",
+    "name": "Contemporary 1pc Light Gray Brown Finish 5 Storage Drawer Chest Mirrored Accents Beautiful Solid Wood Wooden Bedroom Furniture",
+    "normalized_price": 1046.0,
+    "buy_url": "https://www.amazon.com/dp/B0GYNW21B1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713rUSbmiVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CND3XYWY",
+    "name": "Bme Millie Premium Solid Wood Sideboard Storage Cabinet with Storage, Pre-Assembled with 3 Drawers & 2 Doors, Adjustable Shelves",
+    "normalized_price": 643.62,
+    "buy_url": "https://www.amazon.com/dp/B0CND3XYWY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81MBvDM+utL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B095V4NTFB",
+    "name": "Coaster Home Furnishings - Barzini - Wood - 7-Drawer Dresser with Acrylic Panel, Crystal Hardware, Curved Handles, Turned Legs, Modern Classic Style - Bedroom - White - 205893",
+    "normalized_price": 639.97,
+    "buy_url": "https://www.amazon.com/dp/B095V4NTFB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71kcAsrSS8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DP1SRS8H",
+    "name": "Coaster Home Furnishings - Kailani - Wood - 9-Drawer Dresser with Antique Brass Hardware, Metal Extension Glides, Coastal Style - Bedroom - Beige Oak - 225043",
+    "normalized_price": 818.64,
+    "buy_url": "https://www.amazon.com/dp/B0DP1SRS8H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81EE9ITvksL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJ1R1B9Q",
+    "name": "dadada Soho 5-Drawer Dresser for Nursery and Bedroom - Modern Design, Large Storage, Baby-Safe Finish, Soft Close Drawers, Anti-Tip Safety, Sturdy Legs & Solid Wood Handles, 47\" Wide (White+Natural)",
+    "normalized_price": 719.0,
+    "buy_url": "https://www.amazon.com/dp/B0DJ1R1B9Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ysbFKIO0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTSFLCZC",
+    "name": "Coaster Home Furnishings Emberlyn Mid-Century Modern Wood 5-Drawer Bedroom Chest of Drawers Chiffonier Clothing Storage Cabinet Bedroom Armoire Tall Dresser Organizer Unit Brown 223065",
+    "normalized_price": 739.54,
+    "buy_url": "https://www.amazon.com/dp/B0CTSFLCZC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+wsrOpAzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGH3VZQS",
+    "name": "Signature Design by Ashley Kendamor Contemporary 5-Drawer Chest with Felt-Lined Top Drawer and Easy Glide for Bedroom, Dark Brown",
+    "normalized_price": 932.52,
+    "buy_url": "https://www.amazon.com/dp/B0FGH3VZQS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61uLFJ+ZT3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX9WGRGK",
+    "name": "AMERLIFE 4 Piece Bedroom Furniture Set, Upholstered Queen Size Bed Frame with 53\" Headboard & Wingback, 54\" 6-Drawer Dresser & Nightstand Set of 2, High Gloss, Modern, White",
+    "normalized_price": 639.99,
+    "buy_url": "https://www.amazon.com/dp/B0GX9WGRGK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61ZwZHo1AtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FV8KD37S",
+    "name": "Nathan James Iris 3 Drawer Dresser, Mid-Century Modern Solid Wood Dresser for Bedroom, Black Oak",
+    "normalized_price": 600.0,
+    "buy_url": "https://www.amazon.com/dp/B0FV8KD37S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815wQYj65hL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1H7878C",
+    "name": "Pemberly Row Brown Solid Acacia Wood 6-Drawer Dresser, Tree Slice Design, Natural Finish, Smooth-Gilding Hardware, Rustic Modern Bedroom Storage, Farmhouse Style Furniture",
+    "normalized_price": 1580.86,
+    "buy_url": "https://www.amazon.com/dp/B0H1H7878C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61WGikFn6RL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1HKJ92X",
+    "name": "Pemberly Row Brown Solid Acacia Wood 5-Drawer Chest, Tree Slice Front Detail, Vertical Storage Dresser, Warm Natural Finish, Space-Saving Tall Design for Bedroom or Compact Interiors",
+    "normalized_price": 1357.87,
+    "buy_url": "https://www.amazon.com/dp/B0H1HKJ92X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51iBWfW242L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H4LRNXBR",
+    "name": "CHUWELL Mid Century Modern 3 Piece Bedroom Dresser Set, Fluted Walnut Dresser Set with 63\" Wide 9 Drawer Large Dresser and Nightstands Set of 2, Chest of Drawers with Solid Wood Legs",
+    "normalized_price": 539.99,
+    "buy_url": "https://www.amazon.com/dp/B0H4LRNXBR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81HfLhaIXvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCN2JCSX",
+    "name": "Signature Design by Ashley Cielden Contemporary Chest of Drawers with Textured Cane Details and 5 Drawers, Bronze Knobs, Wood, 52.48\" High, Light Brown",
+    "normalized_price": 572.17,
+    "buy_url": "https://www.amazon.com/dp/B0DCN2JCSX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8191eLqxj0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWFRQVR6",
+    "name": "Grain Wood Furniture Loft 6-Drawer Dresser, Solid Wood with a Brushed Mocha Finish",
+    "normalized_price": 549.0,
+    "buy_url": "https://www.amazon.com/dp/B0GWFRQVR6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71KELI8c9EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CVS37L82",
+    "name": "New Classic Furniture Mariana Wood 5-Drawer Chest, Vintage Creme",
+    "normalized_price": 651.06,
+    "buy_url": "https://www.amazon.com/dp/B0CVS37L82",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71g6MoegJ9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GKMWZMSC",
+    "name": "Solid Oak Nightstand, 5 Drawer Bedside Table for Bedroom, Mid Century Night Stand, Modern Side Table for Living Room, Hallway, Closet(Walnut, 38\" H)",
+    "normalized_price": 759.99,
+    "buy_url": "https://www.amazon.com/dp/B0GKMWZMSC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71CDLx-7WzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00RO9QT1E",
+    "name": "Signature Design by Ashley Porter Traditional 7 Drawer Dresser, Dark Brown",
+    "normalized_price": 902.97,
+    "buy_url": "https://www.amazon.com/dp/B00RO9QT1E",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71WCEAD2TjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR8ZG1BN",
+    "name": "Veyron 6 Drawers Dresser for Bedroom, Acacia Wood, 54\u201d Wide with Soft-Close Glides, Mid Century Modern Dresser, Waterproof & Scratch Resistant, Spacious Storage, Easy Setup, Dark Walnut",
+    "normalized_price": 569.99,
+    "buy_url": "https://www.amazon.com/dp/B0GR8ZG1BN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Ml8VHvwiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTLGM7KK",
+    "name": "Modern Solid Wood Dresser with Drawers for Bedroom - Artistic Anthropomorphic Design, Multi-Tier Storage, Side Tray and Hooks, Wooden Chest (Right Hand on Hip)",
+    "normalized_price": 599.99,
+    "buy_url": "https://www.amazon.com/dp/B0GTLGM7KK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61ghw3opT5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07TB9CH82",
+    "name": "Camaflexi Mid-Century Solid Wood Dresser / 6 Drawers/Castanho Finish",
+    "normalized_price": 576.72,
+    "buy_url": "https://www.amazon.com/dp/B07TB9CH82",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Hnv0jIM9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DYKCP85V",
+    "name": "Meridian Furniture Windsor Natural Solid Wood Dresser",
+    "normalized_price": 1359.92,
+    "buy_url": "https://www.amazon.com/dp/B0DYKCP85V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81J6ViTGhFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6H21TLS",
+    "name": "Signature Design by Ashley Covetown Bedroom Dresser, 62-Inch Wide 7-Drawer Storage, Dark Brown, Quick and Easy Assembly, Hardwood Solids, Engineered Wood Veneer, and MDF Substrates",
+    "normalized_price": 519.99,
+    "buy_url": "https://www.amazon.com/dp/B0D6H21TLS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/612pEvgvsGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GJL36TCN",
+    "name": "FORTUNETEC 47\" Rattan 6 Drawer Dresser, Modern Farmhouse & Boho Wooden Chest of Drawers with Oak Wood Grain, Multifunctional Storage Bedroom Set for Bedroom, Living Room, Entryway & TV Stand",
+    "normalized_price": 500.99,
+    "buy_url": "https://www.amazon.com/dp/B0GJL36TCN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/910vNgrz21L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CKFHX3XW",
+    "name": "Moti Flagstaff 3-Drawer Solid Wood 32\" Nightstand in Stone Natural Finish",
+    "normalized_price": 771.14,
+    "buy_url": "https://www.amazon.com/dp/B0CKFHX3XW",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Srd0PbKML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT8RWTN7",
+    "name": "Janson Cappuccino 5-Drawer Dresser for Bedroom Classic Tall Chest with Ample Storage Durable Solid Wood Construction for Organized Living Spaces",
+    "normalized_price": 515.99,
+    "buy_url": "https://www.amazon.com/dp/B0GT8RWTN7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-syfYV17L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXB9MRND",
+    "name": "YESWOOD 100% Solid Wood Nightstand, 5 Drawer Walnut Side Table, Wooden Storage Organizer, French Vintage Nightstand for Bedroom, Living Room, Hallway, Closet (Walnut, 32.8\" W x 15.7\" D x 37.5\" H)",
+    "normalized_price": 565.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXB9MRND",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71d7-g+P1uL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07M9TKWSX",
+    "name": "Coaster Home Furnishings - Winslow - Engineered Wood - 6-Drawer Dresser with Farmhouse Style, Rectangular Structure, Floating Base and Finger-Tip Drawer Pulls - Bedroom - Smokey Walnut - 223253",
+    "normalized_price": 905.61,
+    "buy_url": "https://www.amazon.com/dp/B07M9TKWSX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81VlKwfgt5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GK36S93X",
+    "name": "Meridian Furniture Adagio Brown Solid Wood and Oak Veneer Dresser",
+    "normalized_price": 1291.79,
+    "buy_url": "https://www.amazon.com/dp/B0GK36S93X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81RSEBgDiXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWM4C4GJ",
+    "name": "Signature Design by Ashley Fenderport Bedroom Dresser with Mirror, Casual Cottage Storage, Engineered Wood with Replicated Oak Grain, Natural Brown Finish",
+    "normalized_price": 634.26,
+    "buy_url": "https://www.amazon.com/dp/B0GWM4C4GJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/713baGZW1zL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FX4Q85VH",
+    "name": "Signature Design by Ashley Greddinton Traditional 5-Drawer Chest with Wood Finish, Dark Brown",
+    "normalized_price": 1259.49,
+    "buy_url": "https://www.amazon.com/dp/B0FX4Q85VH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/612ANieMrRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DY3X7SDN",
+    "name": "Modus Furniture Solid Wood Dresser, 8-Drawer, Townsend - Java",
+    "normalized_price": 1249.0,
+    "buy_url": "https://www.amazon.com/dp/B0DY3X7SDN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81fitn0R1WL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DJ1RXQVJ",
+    "name": "dadada Austin 5-Drawer Dresser for Nursery and Bedroom - Modern Design, Large Storage, Baby-Safe Finish, Anti-Tip Safety, Solid Wood Feet, Durable Construction (White + Red Oak)",
+    "normalized_price": 455.0,
+    "buy_url": "https://www.amazon.com/dp/B0DJ1RXQVJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/714WlhO-0-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D25231TP",
+    "name": "Acme Flora Contemporary Wood Rectangular Chest with 5 Drawers in White",
+    "normalized_price": 508.09,
+    "buy_url": "https://www.amazon.com/dp/B0D25231TP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71YR21V2IQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GR84XVKJ",
+    "name": "Simple Contemporary Dresser with Rustic Oak Veneer and Solid Wood Construction, English Back Dovetail Drawers, Front Mirror Panel for Bedroom Furniture",
+    "normalized_price": 1134.0,
+    "buy_url": "https://www.amazon.com/dp/B0GR84XVKJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71pxMdZ1CDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVHQVP4S",
+    "name": "MAISONARIA 3-Piece Dresser Bedroom Set, 9 Drawer Dresser & 3 Drawer Dresser with Gold Handles, Fluted Wood Chest of Drawers for Bedroom, Living Room, Entryway, White",
+    "normalized_price": 404.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVHQVP4S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/8133TfI7JJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H367WP46",
+    "name": "Furniway 3 Piece Bedroom Set, 8 Drawer Dresser and 3-Drawer Nightstand Set of 2 with Gold Handles, Mid-Century Modern Wood Chest of Drawers Storage Cabinet for Bedroom, Walnut",
+    "normalized_price": 559.99,
+    "buy_url": "https://www.amazon.com/dp/B0H367WP46",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81n3HNPWfLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DCNDZ7N2",
+    "name": "Signature Design by Ashley Londer Casual 6-Drawer Dresser with Dovetail Construction, Felt Lined Top Drawers, Integrated Handholds, Black Finish, 63.25' W",
+    "normalized_price": 809.16,
+    "buy_url": "https://www.amazon.com/dp/B0DCNDZ7N2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61x0btmPobL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FV8KZGPX",
+    "name": "Nathan James Iris 3 Drawer Dresser, Mid-Century Modern Solid Wood Dresser for Bedroom, Raw Oak",
+    "normalized_price": 600.0,
+    "buy_url": "https://www.amazon.com/dp/B0FV8KZGPX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/819eY0pclML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CYTDT7V",
+    "name": "Evolur Stilnovo Mid Century Dresser, in Sugar Cane",
+    "normalized_price": 789.99,
+    "buy_url": "https://www.amazon.com/dp/B08CYTDT7V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81csmRY1qxL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH7GFVGD",
+    "name": "Meridian Furniture 859Brown-D Annalise Collection Mid-Century Modern Dresser with Rich Brown Finish, Walnut Veneer, Mix of Solid Wood and MDF, 70\" W x 20\" D x 32\" H, Brown",
+    "normalized_price": 1443.48,
+    "buy_url": "https://www.amazon.com/dp/B0FH7GFVGD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71lXfT3TDsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CQNY248H",
+    "name": "WAMPAT Dresser for Bedroom with 9 Drawers, Oak Kids Dressers with Wide Chest of Drawers, Mid Century Modern Wooden Closet Storage Organizer, Large Wood Dressers for Living Room, Nursery, Hallway",
+    "normalized_price": 568.99,
+    "buy_url": "https://www.amazon.com/dp/B0CQNY248H",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81tMdXsFdYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH7J5Q1Q",
+    "name": "Meridian Furniture 859Oak-D Annalise Collection Mid-Century Modern Dresser with Rich Natural Finish, Walnut Veneer, Mix of Solid Wood and MDF, 70\" W x 20\" D x 32\" H, Natural",
+    "normalized_price": 1462.54,
+    "buy_url": "https://www.amazon.com/dp/B0FH7J5Q1Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71X3V50nsYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FH7GP7CV",
+    "name": "Meridian Furniture 859Brown-CH Annalise Collection Mid-Century Modern Chest with Rich Brown Finish, Walnut Veneer, Mix of Solid Wood and MDF, 35.75\" W x 20\" D x 48\" H, Brown",
+    "normalized_price": 1192.53,
+    "buy_url": "https://www.amazon.com/dp/B0FH7GP7CV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81OzQhSL0wL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG5Y3NBG",
+    "name": "Coaster Home Furnishings Nathan Mid-Century Modern Wood 5-Drawer Bedroom Chest of Drawers Chiffonier Clothing Storage Cabinet Bedroom Armoire Tall Dresser Organizer Unit Grey 224605",
+    "normalized_price": 799.0,
+    "buy_url": "https://www.amazon.com/dp/B0CG5Y3NBG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81jLU5HeyTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXC7BBZ5",
+    "name": "Pemberly Row Solid Wood Dresser, Natural Finish, 6 Drawers, Cane Accents, Mid-Century Modern Style Bedroom Storage Furniture",
+    "normalized_price": 1548.81,
+    "buy_url": "https://www.amazon.com/dp/B0GXC7BBZ5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61hY-EHpD7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CTS3BQN8",
+    "name": "Coaster Home Furnishings Emberlyn Mid-Century Modern 64-inch 6-Drawer Bedroom Dresser Clothing Storage Cabinet Wide Chest of Drawers Organizer Unit Brown 223063",
+    "normalized_price": 895.68,
+    "buy_url": "https://www.amazon.com/dp/B0CTS3BQN8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71TNjyIlDqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6CT75TQ",
+    "name": "6 Drawer Dresser For Bedroom, 2 PCS 47 Inch Dresser for Closet with Walnut Frame, Modern Wood Chest of Drawers with Natural Texture & Pre-Embedded Slots For TV Stand, Living Room, Hallway, Office",
+    "normalized_price": 538.89,
+    "buy_url": "https://www.amazon.com/dp/B0G6CT75TQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/513cC29AEgL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZX77DNQ",
+    "name": "HULALA HOME 30\" Wide Large Nightstands Set of 2, 3 Drawers Mid Century Modern Dresser, Geometric Pattern Wood Bedside Table with Charging Station for Bedroom, Walnut",
+    "normalized_price": 619.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZX77DNQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81pn4DT02dL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXVQ2QX4",
+    "name": "Pemberly Row Mid-Century Modern 6-Drawer Dresser, 72\" Walnut Brown and Gold Finish, Manufactured Wood, Sculpted Vertical Fronts, Streamlined Profile, Bedroom Storage Furniture",
+    "normalized_price": 635.77,
+    "buy_url": "https://www.amazon.com/dp/B0GXVQ2QX4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51cay1lcG9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZWLZK11",
+    "name": "Pemberly Row Solid Wood 6-Drawer Dresser, 36\"H x 60\"W x 18\"D, Mid-Century Modern Design, Gray Finish, Felt-Lined Top Drawers, Durable English Dovetail Joints, Horizontal Bedroom Storage for Clothing",
+    "normalized_price": 736.52,
+    "buy_url": "https://www.amazon.com/dp/B0GZWLZK11",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/516jWbvaU3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GQWKKWT5",
+    "name": "Manhattan Comfort Clive 72\u201d Modern 6 Drawer Dresser, Wide Chest of Drawers with Sculpted Fluted Front & Accent Recessed Handles, Doubles as 70\u201d TV Stand, Walnut Brown and Gold",
+    "normalized_price": 709.99,
+    "buy_url": "https://www.amazon.com/dp/B0GQWKKWT5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71g5cJQ5YQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYN7ZZXY",
+    "name": "Classic Style Dresser of 6X Drawers Natural Oak Finish Wooden Bedroom Furniture 1pc, Mid-Century Modern Design",
+    "normalized_price": 857.0,
+    "buy_url": "https://www.amazon.com/dp/B0GYN7ZZXY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71htSzruecL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJR8PXR6",
+    "name": "Signature Design by Ashley Darcalli Retro 6 Drawer Dresser with Easy Glide and Safety Stop, Brown",
+    "normalized_price": 863.49,
+    "buy_url": "https://www.amazon.com/dp/B0FJR8PXR6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71umrhB+DCL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GH79XG47",
+    "name": "Babyletto Hudson Modern 3-Drawer Dresser in Natural Walnut, GREENGUARD Gold Certified",
+    "normalized_price": 599.0,
+    "buy_url": "https://www.amazon.com/dp/B0GH79XG47",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81EBYuKBZqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYNZDW6B",
+    "name": "Mid-Century Modern Design Natural Oak Finish Chest of 5 Drawers Nickel Tone Classic Style Bedroom Furniture 1pc",
+    "normalized_price": 759.0,
+    "buy_url": "https://www.amazon.com/dp/B0GYNZDW6B",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71cs46zftLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4TZ3GL7",
+    "name": "Mid Century Modern Walnut Dresser with 6 Drawers 32.2\" H x 47.2\" W x 17.7\" D",
+    "normalized_price": 1187.88,
+    "buy_url": "https://www.amazon.com/dp/B0G4TZ3GL7",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81YDiNtOrJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSCMB2FD",
+    "name": "Signature Design by Ashley Ardenfield Traditional 5-Drawer Chest with Felt-Lined Top Drawers, Light Brown",
+    "normalized_price": 934.81,
+    "buy_url": "https://www.amazon.com/dp/B0DSCMB2FD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81CvWe8wOFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZC8RGT6",
+    "name": "SICOTAS Large Dresser for Bedroom Set 2, Rattan Dressers with 4 Deep Drawers, Long Chest of Drawers for Closet, Farmhouse TV Stand (Reclaimed Caramel Oak, 4 Drawers (2 pcs))",
+    "normalized_price": 529.99,
+    "buy_url": "https://www.amazon.com/dp/B0DZC8RGT6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815T6m9vpqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08GGBWN4Z",
+    "name": "Alpine Furniture Gramercy 7 Drawer Solid Wood Mid Century Dresser",
+    "normalized_price": 881.14,
+    "buy_url": "https://www.amazon.com/dp/B08GGBWN4Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51R+SEF7dXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B082YP7TYB",
+    "name": "New Spec Monte Rosa Mid Century 5 Drawer Wood Chest in Walnut",
+    "normalized_price": 723.76,
+    "buy_url": "https://www.amazon.com/dp/B082YP7TYB",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51RRHRnOC-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GX9ZXT44",
+    "name": "Pemberly Row Mid-Century Modern Wide Chest of Drawers, 50.83\" H x 40.71\" W x 19.72\" D, Engineered Wood, Warm Brown Finish, 5 Gliding Drawers with Faux Linen Interiors, Retro-Inspired Bedroom Storage",
+    "normalized_price": 613.97,
+    "buy_url": "https://www.amazon.com/dp/B0GX9ZXT44",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61teIBYX8XL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]

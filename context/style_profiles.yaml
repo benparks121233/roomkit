@@ -69,8 +69,8 @@ profiles:
   - id: sports_den
     display_name: Sports Den
     keywords: [oversized, casual, comfortable, dark tones, masculine, bold, lounge, warm wood]
-    sourcing_terms: [sectional, reclining, recliner, microfiber, oversized, plush, overstuffed, deep seat, fabric, lounger, dark, brown, navy, wood, industrial, lounge, distressed, sports, pub, bar, game room, game day, den, casual, comfortable, big, cushion]
-    priority_terms: [sectional, reclining, recliner, microfiber, oversized, plush, overstuffed, deep seat, lounger, comfortable, casual]
+    sourcing_terms: [sectional, reclining, recliner, microfiber, oversized, plush, overstuffed, deep seat, fabric, lounger, dark, brown, navy, wood, industrial, lounge, distressed, sports, pub, bar, game room, game day, den, casual, comfortable, big, cushion, vintage sports, retro sports, stadium, pennant, sports memorabilia, trophy, sports bar]
+    priority_terms: [sectional, reclining, recliner, microfiber, oversized, plush, overstuffed, deep seat, lounger, comfortable, casual, sports, game room, game day, den, pub, bar]
     selection_feel: "Man-cave comfortable — choose the biggest, squishiest, most sink-into-it option. Oversized sectionals, reclining sofas, deep plush cushions. Casual and lived-in, never formal. Nothing that belongs in a study — no tufted Chesterfields, no velvet, no wingbacks. Think game-day couch you never want to leave."
     color_palette: [deep navy, charcoal, dark grey, brown, warm brass accent]
     mood: confident, relaxed, casual, man-cave

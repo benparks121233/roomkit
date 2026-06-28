@@ -636,6 +636,8 @@ class AmazonAdapter(SourcingAdapter):
             for kw in kw_lower:
                 if kw in name:
                     score += _PRIORITY_WEIGHT if kw in priority_set else 1
+            if score > 0 and max_price > 0 and p.normalized_price >= max_price * 0.5:
+                score += 2
             return score
 
         # --- Pool 2: interest-matched ---

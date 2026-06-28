@@ -5949,5 +5949,368 @@
     },
     "image_url": "https://m.media-amazon.com/images/I/71k6ErlXpoL._AC_UL320_.jpg",
     "source": "canopy"
+  },
+  {
+    "product_id": "B078P1QN7G",
+    "name": "Twin XL Size 3 Piece Sheet Set - Comfy Breathable & Cooling Sheets - Hotel Luxury Bed Sheets for Women & Men - Deep Pockets, Easy-Fit, Extra Soft & Wrinkle Free Sheets - White Oeko-Tex Bed Sheet Set",
+    "normalized_price": 16.09,
+    "buy_url": "https://www.amazon.com/dp/B078P1QN7G",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61Z6pzcCyML._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q7OAN50",
+    "name": "Amazon Basics Lightweight Breathable Brushed Microfiber 3-Piece Bed Sheet Set With 14-Inch Deep Pockets, Wrinkle Resistant, Twin XL, Dark Gray, Solid",
+    "normalized_price": 10.0,
+    "buy_url": "https://www.amazon.com/dp/B00Q7OAN50",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71ZxgS1cu+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B078P212J3",
+    "name": "Twin XL Size 3 Piece Sheet Set - Comfy Breathable & Cooling Sheets - Hotel Luxury Bed Sheets for Women & Men - Deep Pockets, Easy-Fit, Soft and Wrinkle Free Sheets - Navy Blue Oeko-Tex Bed Sheet Set",
+    "normalized_price": 19.59,
+    "buy_url": "https://www.amazon.com/dp/B078P212J3",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61sBKYtuuIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09F38BJRC",
+    "name": "Bedsure Twin XL Sheets Dorm Bedding - 3 Pieces Soft Extra Long Twin Sheets, Breathable & Cooling Bed Sheets Set, Oeko Tex, Easy Care Microfiber for Women, Men, Boys & Girls, Dark Grey",
+    "normalized_price": 17.12,
+    "buy_url": "https://www.amazon.com/dp/B09F38BJRC",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81CyI+aWMtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09ND7YV6P",
+    "name": "ROYALE LINENS 3 Piece Twin XL Sheets Set - Soft Brushed 1800 Microfiber - 1 Fitted, 1 Flat Sheet, 1 Pillow case - Wrinkle Free & Fade Resistant - Hotel Luxury Bed Sheets (Stripe White, Twin XL)",
+    "normalized_price": 9.99,
+    "buy_url": "https://www.amazon.com/dp/B09ND7YV6P",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816Lp3DbEwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0967SKJ7G",
+    "name": "LANE LINEN 100% Organic Cotton White Twin XL Sheets Set 3-Piece Pure Percale Soft Bedding Breathable Fits Mattress Upto 15\" Deep | GOTS Certified Organic Cotton Percale Twin XL Sheet Set - Naturally Cooling & Lightweight, Cool All Summer, Cozy All Winter",
+    "normalized_price": 26.98,
+    "buy_url": "https://www.amazon.com/dp/B0967SKJ7G",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71lS+bsPTJL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q7OAZ8K",
+    "name": "Amazon Basics Lightweight Super Soft Wrinkle-Free Breathable Brushed Microfiber 3-Piece Fitted Sheet Set with 14-Inch Deep Pockets, Twin XL, Navy Blue, Solid",
+    "normalized_price": 14.24,
+    "buy_url": "https://www.amazon.com/dp/B00Q7OAZ8K",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61I0wbY1FUL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXCYXP18",
+    "name": "HEVUMYI Twin-XL Comforter Set - 5-Piece All Season Bed in a Bag Twin-XL, Ultra Soft Bedding Set with Comforter, Flat Sheet, Fitted Sheet, Pillowcases, Pillow Shams, Dark Grey",
+    "normalized_price": 31.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXCYXP18",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/816UXElzggL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0154ASCCI",
+    "name": "Amazon Basics Ultra-Soft Breathable Wrinkle-Free Microfiber 3-Piece Bed Sheet Set with 14-Inch Deep Pockets, College Dorm-Friendly, Twin XL, Bright White",
+    "normalized_price": 15.99,
+    "buy_url": "https://www.amazon.com/dp/B0154ASCCI",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/5121sCwi8SL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B076V7MS44",
+    "name": "Comfort Spaces 100% Cotton Sheets Twin XL, Breathable, Naturally Cool Cotton Sheets, Soft Cotton Bed Sheets with 14\" Elastic Pocket Fits up to 16\" Mattress, All Seasons Sheet Set, Diamond Blue 3 Piece",
+    "normalized_price": 17.99,
+    "buy_url": "https://www.amazon.com/dp/B076V7MS44",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/812vIcmzHOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B072852X37",
+    "name": "1500 Supreme Collection Twin XL Sheet Sets Pale Pink - 3 Piece Bed Sheets and Pillowcase Set for Twin XL Mattress - Extra Soft, Elastic Corner Straps, Deep Pocket Sheets, Twin XL Pale Pink",
+    "normalized_price": 17.59,
+    "buy_url": "https://www.amazon.com/dp/B072852X37",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61xLAmy7KvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07M8RD22S",
+    "name": "Elegant Comfort Luxury 1500 Premium Hotel Quality Microfiber 4-Piece Sheet Set - Wrinkle Resistant, All Around Elastic Fitted Sheet, Deep Pocket up to 16\", Twin/Twin XL, Burgundy",
+    "normalized_price": 14.45,
+    "buy_url": "https://www.amazon.com/dp/B07M8RD22S",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71aWaTH2qtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09VT1L5JK",
+    "name": "Bedsure Twin XL Comforter Set Pink - Dorm Room Essentials for Girls, Extra Long Twin XL Bedding Set with Sheets, All Season Down Alternative Comforter with Sheets, Pillowcase & Sham",
+    "normalized_price": 39.99,
+    "buy_url": "https://www.amazon.com/dp/B09VT1L5JK",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/817bvqIu4OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B00Q5MSQQM",
+    "name": "Bare Home Comforter Set - Twin Extra Long Size - Ultra-Soft - Goose Down Alternative - Premium 1800 Series - All Season Warmth (Twin/Twin XL, Grey)",
+    "normalized_price": 39.97,
+    "buy_url": "https://www.amazon.com/dp/B00Q5MSQQM",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81RuMB66VNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CV749PRX",
+    "name": "Laura Ashley - Twin XL Size Sheet Set, Crisp Cotton Percale Bedding with Matching Pillowcase, Fully Elastic Fitted Sheet, Deep Pocket, Floral Bedroom Decor (Heirloom Ditzy Green)",
+    "normalized_price": 27.97,
+    "buy_url": "https://www.amazon.com/dp/B0CV749PRX",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81n-W3nRtDL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BZMWBCRH",
+    "name": "LANE LINEN 100% Cotton Sheets Set Twin XL Size - 450 Thread Count Premium Sateen Weave for Silky Smooth Feel - Very Breathable Cooling Sheets Set for Single Beds - Oeko Tex Certified - French Blue",
+    "normalized_price": 32.67,
+    "buy_url": "https://www.amazon.com/dp/B0BZMWBCRH",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/714hj+3wH+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09Y25HLGP",
+    "name": "SUPREME ELEGANCE 3Pc 100% Organic Cotton Twin XL Sheets Set, Snow White, Cooling Percale, Deep Pocket Fitted Sheet, Fits 14\" Mattresses, Breathable Bed Sheets & Pillowcases Set, Crisp Bedding",
+    "normalized_price": 25.44,
+    "buy_url": "https://www.amazon.com/dp/B09Y25HLGP",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71otJx4Fh5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FTFVVZBW",
+    "name": "100% Natural Cotton Bed Sheets | 500 TC Single-Ply Sateen Weave Twin XL Sheets | Soft, Breathable, Hypoallergenic Solid 3-Piece Bedding with Deep Pocket Fitted, Flat, Pillowcase | Sage",
+    "normalized_price": 26.59,
+    "buy_url": "https://www.amazon.com/dp/B0FTFVVZBW",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71NfMxWvpBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CG9KZZZ9",
+    "name": "Good Sleep Bedding Twin XL Sheets - 4 Pc Sheet Set, Soft, Durable, Extra Long, 16\" Deep Pocket - White",
+    "normalized_price": 50.39,
+    "buy_url": "https://www.amazon.com/dp/B0CG9KZZZ9",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61zrCUc5T4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZ6HRGSD",
+    "name": "FADFAY Twin XL Sheet Set 100% Cotton Sage Green Bed Sheets, French Country Red Rose Floral Pattern, Soft Cool Luxury Bedding, Shabby Vintage Style, 4 Pieces Deep Pocket Fitted Sheet, Twin Extra Long",
+    "normalized_price": 57.0,
+    "buy_url": "https://www.amazon.com/dp/B0DZ6HRGSD",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81iSjHPZDZL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07B378HY2",
+    "name": "Nautica - Twin XL Size Sheet Set, Crisp Cotton Percale Bedding with Matching Pillowcase, Fully Elastic Fitted Sheet, Deep Pocket, Nautical Room Decor, Breathable All-Season Comfort (Whale Stripe Blue)",
+    "normalized_price": 28.35,
+    "buy_url": "https://www.amazon.com/dp/B07B378HY2",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/91J5LhuHreL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09X1NRLK3",
+    "name": "California Design Den Natural 100% Cotton Sheets Twin XL Size Set - Soft Sateen Weave, Twin XL Sheet Sets with 12\" Pockets, Breathable and Durable Bedding for Dorm Rooms, College (White)",
+    "normalized_price": 27.19,
+    "buy_url": "https://www.amazon.com/dp/B09X1NRLK3",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81P+oe+9B0L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B06XRZ5STN",
+    "name": "California Design Den Soft 100% Cotton Twin XL Sheet Set, 400 Thread Count Good Housekeeping Award Winner, Silky Smooth Sateen Weave, Breathable and Durable Cotton Bedding Set - White",
+    "normalized_price": 46.99,
+    "buy_url": "https://www.amazon.com/dp/B06XRZ5STN",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71G+CKODHRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FTG4DB48",
+    "name": "100% Natural Cotton Bed Sheets | 500 TC Single-Ply Sateen Weave Twin XL Sheets | Soft, Breathable, Hypoallergenic Solid 3-Piece Bedding with Deep Pocket Fitted, Flat, Pillowcase | Blush",
+    "normalized_price": 34.99,
+    "buy_url": "https://www.amazon.com/dp/B0FTG4DB48",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81yDwnKH6yL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DZ6WV2M1",
+    "name": "SKY BEDDINGS 100% Cotton Twin XL Sheets Sets 3-Piece - 400 Thread Count Sateen Weave, Cooling, Hotel Luxury Deep Pockets Bed Sheet Set, Extra Long Twin Sheets for Dorm - Light Grey",
+    "normalized_price": 37.49,
+    "buy_url": "https://www.amazon.com/dp/B0DZ6WV2M1",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71I8EKYbV2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FCDDMVDH",
+    "name": "LANE LINEN XL Twin Sheets Twin XL 100% Egyptian Cotton Swiss Dot Sateen Weave Jacquard Oeko-Tex Certified Deep Pocket 3 Piece Soft Breathable Hotel Luxury Machine Washable - Taupe",
+    "normalized_price": 56.99,
+    "buy_url": "https://www.amazon.com/dp/B0FCDDMVDH",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71xJ+dp3TnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FTVL9FKL",
+    "name": "SKY BEDDINGS Twin XL Sheets Set - 100% Egyptian Cotton - 600 Thread Count Twin Extra Long Bed Sheets for Dorm - 15\" Deep Pocket - Soft, Cooling Sateen Weave 3 Piece XL Twin Sheets - Sage Green",
+    "normalized_price": 46.49,
+    "buy_url": "https://www.amazon.com/dp/B0FTVL9FKL",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81NZpyoc7+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07Z75BGMN",
+    "name": "Bare Home Hotel Luxury Twin XL Sheet Set, Extra Soft - 4 Piece Set - Deep Pockets - Easy Fit - Cooling & Breathable - Wrinkle, Fade, Stain Resistant - Includes 2 Pillowcases (Twin XL, Dark Blue)",
+    "normalized_price": 35.99,
+    "buy_url": "https://www.amazon.com/dp/B07Z75BGMN",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71XXZCkepyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DGLV2TD4",
+    "name": "SHEEX - Original Performance Sheets Set (Twin/Twin XL) Royal Plum - Cooling Sheets - Moisture Wicking - 1 Flat Cooling Sheet, 1 Fitted Cooling Sheet, 1 Pillow Cover - Wrinkle Free - Sleep Aid",
+    "normalized_price": 161.85,
+    "buy_url": "https://www.amazon.com/dp/B0DGLV2TD4",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/51pDC8Fv+8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CXQBHC8W",
+    "name": "Ivy Union Twin Extra Long Sheet Set - Ultra-Soft Cooling with Deep Pockets - Breathable, Easy-Fit - Hotel Luxury Bedding Sheets & Pillowcases (Twin XL, Light Grey)",
+    "normalized_price": 32.99,
+    "buy_url": "https://www.amazon.com/dp/B0CXQBHC8W",
+    "specs": {
+      "bed_size": "twin"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/71by4Ae+xFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08P1P652P",
+    "name": "Good Sleep Bedding 100% Egyptian Cotton Sheets Twin XL, 4 Piece, Silky Sateen Weave XL Twin Sheets For Dorm,Ultra-Soft & Durable Hotel Luxury, 16 Inch Deep Pocket Twin XL Cotton Sheet Sets - Dark Gray",
+    "normalized_price": 57.79,
+    "buy_url": "https://www.amazon.com/dp/B08P1P652P",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/61l7jTvzM4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09WGWV6KR",
+    "name": "1500 Supreme Kids Bed Sheet Collection - Fun Colorful and Comfortable Boys and Girls Toddler Sheet Sets - Deep Pocket Wrinkle Free Soft and Cozy Bedding - Twin XL, Neon Spaceships",
+    "normalized_price": 20.98,
+    "buy_url": "https://www.amazon.com/dp/B09WGWV6KR",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/81xtITbjj1L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0C8JFNRYB",
+    "name": "Utopia Bedding Twin XL Fitted Sheets - Bulk Pack of 2 Bottom Sheets - Soft Brushed Microfiber - Deep Pockets - Shrinkage & Fade Resistant - Easy Care (Twin XL, Grey)",
+    "normalized_price": 13.71,
+    "buy_url": "https://www.amazon.com/dp/B0C8JFNRYB",
+    "specs": {
+      "bed_size": "twin xl"
+    },
+    "image_url": "https://m.media-amazon.com/images/I/815ZkQedkFL._AC_UL320_.jpg",
+    "source": "canopy"
   }
 ]

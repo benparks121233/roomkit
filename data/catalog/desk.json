@@ -1028,7 +1028,7 @@
   {
     "product_id": "B0FZSZCQ4F",
     "name": "Solid Wood Desk 55 inches, Live Edge Wooden Home Office Computer Desk Modern Simple Design for Writing, Study, Dining, Gaming",
-    "normalized_price": 479.99,
+    "normalized_price": 379.98,
     "buy_url": "https://www.amazon.com/dp/B0FZSZCQ4F",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/815tR-c7oIL._AC_UL320_.jpg",
@@ -2342,7 +2342,7 @@
   {
     "product_id": "B0D66W8DJM",
     "name": "homary 59.1\" Solid Wood Executive Desk, Rustic Farmhouse Home Office Desk with X-Trestle Base, Compact Writing & Computer Table for Home Office or Study Room",
-    "normalized_price": 626.99,
+    "normalized_price": 659.99,
     "buy_url": "https://www.amazon.com/dp/B0D66W8DJM",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81CXRnX7GnL._AC_UL320_.jpg",
@@ -2531,7 +2531,7 @@
   {
     "product_id": "B0CQ26NNZ6",
     "name": "Solid Wood Desk 55 inches, Home Office Computer Desk Wooden Rustic Writing Desk Metal Modern Simple Design Executive Real Wood Desk(Rustic Brown)",
-    "normalized_price": 449.99,
+    "normalized_price": 378.46,
     "buy_url": "https://www.amazon.com/dp/B0CQ26NNZ6",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81vG+c4howL._AC_UL320_.jpg",
@@ -3165,6 +3165,942 @@
     "buy_url": "https://www.amazon.com/dp/B0FDKY891F",
     "specs": {},
     "image_url": "https://m.media-amazon.com/images/I/81UKRpHGe2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09BR4D3SS",
+    "name": "Allora Solid Wood Computer Desk for Home Office, 60\" Industrial Writing Desk for Small Space, Tall Modern Study Table for Bedroom, Simple Rustic Work Desk in Dark Walnut Brown",
+    "normalized_price": 633.59,
+    "buy_url": "https://www.amazon.com/dp/B09BR4D3SS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41OKhANPPQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DM4WL8Q2",
+    "name": "homary 70.9\" Industrial Style Desk, Office Writing Desk Walnut Desk Modern Computer Desk Home & Office Furniture",
+    "normalized_price": 799.99,
+    "buy_url": "https://www.amazon.com/dp/B0DM4WL8Q2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81m7dmmEJjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW124DJ9",
+    "name": "SAFAVIEH Couture Collection - Francesco Walnut Wood 4-Drawer Desk with Brass Accents, Modern Writing Table with Storage (SFV4239A)",
+    "normalized_price": 816.98,
+    "buy_url": "https://www.amazon.com/dp/B0FW124DJ9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61cu9gdYeXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CFKD3KG1",
+    "name": "CLoxks Computer Desk Multifunctional Wooden Desk Light Luxury Study Room Writing Workstation Desk with Leather Baffle 51\" Rugged PC Laptop Desk for Home Office Home Office Desk (Size : Black walnut)",
+    "normalized_price": 1758.99,
+    "buy_url": "https://www.amazon.com/dp/B0CFKD3KG1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615tN4X7gAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CHFX8G52",
+    "name": "SIMPLIHOME Lowry Desk - 54 Inch Wide Solid Walnut Veneer and Metal Writing Desk, Modern Industrial Home Office Computer Table for Workspace with 2 Drawers and Flip-Down Keyboard Tray",
+    "normalized_price": 669.96,
+    "buy_url": "https://www.amazon.com/dp/B0CHFX8G52",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61BqzYqSTqL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1R7SS5F",
+    "name": "100% Solid Wood Desk, Mid Century Modern Walnut Finish Home Office Computer Writing Desk with Drawers Perfect for Study & Living Room 55.11\" W",
+    "normalized_price": 734.99,
+    "buy_url": "https://www.amazon.com/dp/B0H1R7SS5F",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81+1SFOve4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZVQG2BZ",
+    "name": "Computer Desk Modern Light Luxury Wooden Desk Home Office Study Room Workstation eith Leather Memo Board and Drawer Creative 48\" Sturdy Working Writing Desk Home Office D,Black Walnut",
+    "normalized_price": 1615.08,
+    "buy_url": "https://www.amazon.com/dp/B0GZVQG2BZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615h3FI-obL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2T1PZ3X",
+    "name": "WERMO 51'' Small Wood Writing Desk and Makeup Vanity Desk with Storage and Sliding Doors - Narrow Computer and Work Table for Home Office, Modern Vanity, Brown Dressing Table for Bedroom (Walnut)",
+    "normalized_price": 690.0,
+    "buy_url": "https://www.amazon.com/dp/B0F2T1PZ3X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81ybFXCRvjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H3ZTPNZ8",
+    "name": "Black Walnut Desk, Mid-Century Modern Solid Wood Computer Writing Desk, Home Office Desk for Study Room Office Bedroom",
+    "normalized_price": 869.99,
+    "buy_url": "https://www.amazon.com/dp/B0H3ZTPNZ8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81KfbkXXhtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWQTQB6T",
+    "name": "Office Desk Modern Minimalist Luxury Solid Wood Desk Saddle Leather Walnut Study Bedroom Home Writing Office,160x60x75cm",
+    "normalized_price": 2128.8,
+    "buy_url": "https://www.amazon.com/dp/B0GWQTQB6T",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51exQpNd1aL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY16854C",
+    "name": "GLigeT Office Desk Modern Luxury Wooden Desk Home Office Study Room Workstation Leather Memo Board and Drawer Creative 48\" Sturdy Working Writing Desk Study Writing PC Desk (Size : Black Walnut)",
+    "normalized_price": 1623.16,
+    "buy_url": "https://www.amazon.com/dp/B0CY16854C",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615h3FI-obL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CY14DNWF",
+    "name": "GLigeT Office Desk Multifunctional Wooden Desk Luxury Study Room Writing Workstation Desk with Leather Baffle 51\" Rugged PC Laptop Desk for Home Office Study Writing PC Desk (Size : Black Walnut)",
+    "normalized_price": 1867.1,
+    "buy_url": "https://www.amazon.com/dp/B0CY14DNWF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615tN4X7gAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F93JCB84",
+    "name": "Simple Modern Minimalist Luxury Solid Wood Desk Saddle Leather Walnut Study Bedroom Home Writing Desk Office Desk Writing(160x60x75cm)",
+    "normalized_price": 3095.92,
+    "buy_url": "https://www.amazon.com/dp/B0F93JCB84",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51exQpNd1aL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FQNK54D5",
+    "name": "Computer Desk Modern Minimalist Luxury Solid Wood Desk Saddle Leather Walnut Study Bedroom Home Writing Office Work from Home(120x60x75cm)",
+    "normalized_price": 2951.93,
+    "buy_url": "https://www.amazon.com/dp/B0FQNK54D5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51exQpNd1aL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D9N1WPWR",
+    "name": "Pc Table Computer Desk Modern Luxury Wooden Desk Home Office Study Room Workstation Leather Memo Board and Drawer Creative 48\" Sturdy Working Writing Desk Office Desk(Black Walnut)",
+    "normalized_price": 1558.79,
+    "buy_url": "https://www.amazon.com/dp/B0D9N1WPWR",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615h3FI-obL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FW4YH311",
+    "name": "Office Table Multifunctional Wooden Desk Light Luxury Study Room Writing Workstation Desk with Leather Baffle 51\" Rugged Pc Laptop Desk for Home Office Standi,Black Walnut",
+    "normalized_price": 2581.3,
+    "buy_url": "https://www.amazon.com/dp/B0FW4YH311",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615tN4X7gAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07D3J41NT",
+    "name": "MAKLAINE Solid Wood Computer Desk for Home Office, 60\" Writing Desk for Small Space, Tall Modern Study Table for Bedroom, Simple Rustic Work Desk in Dark Walnut Brown",
+    "normalized_price": 726.82,
+    "buy_url": "https://www.amazon.com/dp/B07D3J41NT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41R-21y8KbL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWLWT8N1",
+    "name": "Modern Executive Office Desk, Home Office Table Includes Multi-Function Cable Box, Acrylic and Metal Legs, Computer Writing Desk with Soft-Close Drawers for Home Business (Walnut, 64in)",
+    "normalized_price": 2386.79,
+    "buy_url": "https://www.amazon.com/dp/B0GWLWT8N1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81KaptA3cyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDLCMH6Y",
+    "name": "SAFAVIEH Couture Collection Shelbie Medium Oak Brown & Black 1-Drawer Reeded Computer Table Office Writing Desk",
+    "normalized_price": 634.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDLCMH6Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71D8rw3p58L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CPWD4S6D",
+    "name": "Allora Contemporary Computer Desk, Solid Rubberwood, Walnut Brown Finish, 60 in Wide with Keyboard Tray, 2 Drawers, Mid-Century Style for Home Office, Living Room, Bedroom or Workspace",
+    "normalized_price": 759.17,
+    "buy_url": "https://www.amazon.com/dp/B0CPWD4S6D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41usntCLBGL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09KLH5B6P",
+    "name": "Home Office Computer Writing Desk Multifunctional Wooden Desk Light Luxury Study Room Writing Workstation Desk with Leather Baffle 51\" Rugged PC Laptop Desk for Home Office Computer Desk",
+    "normalized_price": 1931.15,
+    "buy_url": "https://www.amazon.com/dp/B09KLH5B6P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615tN4X7gAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09HHJ79ND",
+    "name": "Furniture of America Giffore Contemporary Wood Lift-top Writing Desk in Walnut",
+    "normalized_price": 656.95,
+    "buy_url": "https://www.amazon.com/dp/B09HHJ79ND",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51g+kfw7G-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07M71119P",
+    "name": "Lorell Fortress Series Walnut Top Teacher's Desk",
+    "normalized_price": 643.29,
+    "buy_url": "https://www.amazon.com/dp/B07M71119P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51EspZDZ6-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G6K1V3ZZ",
+    "name": "Computer Desk, Home Office Desk, Mid Century Modern Writing Desk with File Drawer for Study PC Desks 47\" W",
+    "normalized_price": 695.99,
+    "buy_url": "https://www.amazon.com/dp/B0G6K1V3ZZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81O2LyhR1XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5RJN6BP",
+    "name": "Wooden Writing Desk, Home Office Desk, Walnut Brown Desk with Gold Metal Legs, Modern Work Surface with Smooth Top for Picture Frames and Table Accents",
+    "normalized_price": 649.99,
+    "buy_url": "https://www.amazon.com/dp/B0H5RJN6BP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81banicVt4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09KKMXT6X",
+    "name": "Home Office Computer Writing Desk Modern Light Luxury Wooden Desk Home Office Study Room Workstation eith Leather Memo Board and Drawer Creative 48\" Sturdy Working Writing Desk Computer Desk",
+    "normalized_price": 1678.85,
+    "buy_url": "https://www.amazon.com/dp/B09KKMXT6X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/615h3FI-obL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H4SXDJZQ",
+    "name": "FLEXISPOT WoodiX 63 x 30 Inch Solid Wood Standing Desk, Premium Mid-Century Modern Executive Desk, Dual Motor Sit-Stand Workstation with Cable Management, 220 LBS, Walnut with Edges",
+    "normalized_price": 899.99,
+    "buy_url": "https://www.amazon.com/dp/B0H4SXDJZQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81VjxWMflVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H25RMYBS",
+    "name": "Modern Writing Desk High-end Solid Wood Desk Light Luxury Modern Simple Saddle Leather Home Study Bedroom Walnut Veneer Office Pc Table Storage(1.6 * 0.7 * 0.75m)",
+    "normalized_price": 4815.25,
+    "buy_url": "https://www.amazon.com/dp/B0H25RMYBS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51Ohl9ZyY6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B073TXVQLX",
+    "name": "Acme Versailles Executive Writing Desk in Cherry Oak",
+    "normalized_price": 896.59,
+    "buy_url": "https://www.amazon.com/dp/B073TXVQLX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/6174dZ9xliL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B076L4PFZS",
+    "name": "Hooker Furniture Archivist Solid Rubber Wood 4-Drawers Writing Desk in Pecan",
+    "normalized_price": 2239.0,
+    "buy_url": "https://www.amazon.com/dp/B076L4PFZS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51hcUrYGpFL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B07KQLFB8P",
+    "name": "Crafters and Weavers Legacy Leather Top Desk - Brown Walnut",
+    "normalized_price": 1186.16,
+    "buy_url": "https://www.amazon.com/dp/B07KQLFB8P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51atZbukNsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2D6MKK5",
+    "name": "Writing Desk, Wooden Desk, Walnut Brown Modern Desk with Gold Metal Legs, Home Office Work Surface for Writing, Picture Frames and Table Accents",
+    "normalized_price": 649.99,
+    "buy_url": "https://www.amazon.com/dp/B0H2D6MKK5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81banicVt4L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GFTPRP9X",
+    "name": "Lartis Dollicia Writing Desk (30\" H x 47\" W x 23.6\" D)",
+    "normalized_price": 620.0,
+    "buy_url": "https://www.amazon.com/dp/B0GFTPRP9X",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/817WR5LFdiL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H5CCS5LP",
+    "name": "FLEXISPOT Oak Executive Standing Desk with Drawer, 55 x 24 Inch Sit-Stand Workstation with Hidden Storage and Wireless Charging, Fluted Japandi Design & Walnut",
+    "normalized_price": 899.99,
+    "buy_url": "https://www.amazon.com/dp/B0H5CCS5LP",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Qyg6IExfL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BNBMM5T6",
+    "name": "Office Desks Modern Simple Solid Wood Desk, Walnut Computer Table, Household Living Room, Bedroom, Study, Writing Desk with Drawer, Easy to Assemble (Size : 100x52x75cm)",
+    "normalized_price": 1756.3,
+    "buy_url": "https://www.amazon.com/dp/B0BNBMM5T6",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51wDJIinw2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0BVNJ6PKJ",
+    "name": "Martin Furniture Traditional Wood Writing, Office, Storage Table, Brown Desk",
+    "normalized_price": 612.38,
+    "buy_url": "https://www.amazon.com/dp/B0BVNJ6PKJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uC7N56PpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09BR2BLVN",
+    "name": "Allora Solid Wood Computer Desk for Home Office, 60\" Mid Century Writing Desk for Small Space, Tall Modern Study Table for Bedroom, Simple Rustic Work Desk in Dark Walnut Brown",
+    "normalized_price": 707.91,
+    "buy_url": "https://www.amazon.com/dp/B09BR2BLVN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41z16v0x84L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GXKZ3ZLG",
+    "name": "79\" L Shaped Executive Desk with File Cabinet Drawers Outlet USB, Dual-Motor Adjustable-Height Modern Executive Desk with Privacy Panel for Boss Managers Office Home Natural Wood & Grey",
+    "normalized_price": 1299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GXKZ3ZLG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Idc5yV9IL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GV44Q8NJ",
+    "name": "ModernMate 71\" L-Shaped Electric Standing Desk with 5 Drawers, One-Piece Height Adjustable Executive Stand Up Desk, AC/USB & Privacy Panel, Home Office Workstation with Storage, Light Walnut",
+    "normalized_price": 899.99,
+    "buy_url": "https://www.amazon.com/dp/B0GV44Q8NJ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815kg+0hNdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GMQ1GYD8",
+    "name": "ModernMate 71'' Electric Standing Desk, 72.8'' Executive Office Desk Furniture Set with Hutch, Home Office Large One-Piece Desktop Privacy Panel, Charging Station, File Cabinet, Black Walnut",
+    "normalized_price": 1299.99,
+    "buy_url": "https://www.amazon.com/dp/B0GMQ1GYD8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81mCswTx01L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2XW6159",
+    "name": "Premium Sturdy Executive Desk with Lockable Drawer, Modern L Shaped CEO Desk with Solid Wood Countertop, Built-in Power Outlet, Privacy Panel for Home Business Offices.",
+    "normalized_price": 1799.99,
+    "buy_url": "https://www.amazon.com/dp/B0H2XW6159",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61zOGKFcOtL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DKJN5YZQ",
+    "name": "ModernMate 63\" Standing Desk with File Cabinet, Privacy Panel, AC/USB, 1.18\" Desktop, Executive L Shaped Height Adjustable Electric Stand Up Desk, Home Office Table with 3 Drawers, Black Walnut",
+    "normalized_price": 560.99,
+    "buy_url": "https://www.amazon.com/dp/B0DKJN5YZQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81RAPsW2YRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLYLKQ7W",
+    "name": "79\" L-Shaped Executive Desk with Drawers, Large Modern Office Desk with Storage Shelves, LED Lighting, Built-in Outlet & USB Ports \u2013 Home Office Desk (Smoked Oak & Cream White, Left Return)",
+    "normalized_price": 959.99,
+    "buy_url": "https://www.amazon.com/dp/B0GLYLKQ7W",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81LfI5of-NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DRD3Y6MS",
+    "name": "ModernMate 71\" Standing Desk with File Cabinet, AC/USB, 1.18\" Desktop, L Shaped Height Adjustable Desk, Electric Furniture Set with Multiple Functions for Home and Office, Black Walnut",
+    "normalized_price": 719.99,
+    "buy_url": "https://www.amazon.com/dp/B0DRD3Y6MS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/814FoQD0VQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G135XK4F",
+    "name": "70 Inches L Shaped Executive Standing Desk, Electric Height Adjustable Desk with File Cabinet, Computer Corner Table with AC/USB and Privacy Panel for Home and Office, Black Walnut",
+    "normalized_price": 769.99,
+    "buy_url": "https://www.amazon.com/dp/B0G135XK4F",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91gLO6cIWLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FMF3WRSD",
+    "name": "Lartis Office Desk, Very Easy to Assemble, Computer Desk, Home Telescopic Writing Desk, Modern Computer Desk with Retractable Cabinet Built-in LED Lights (Black Brown, 50 in)",
+    "normalized_price": 699.0,
+    "buy_url": "https://www.amazon.com/dp/B0FMF3WRSD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81mXoeND9XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F4KB7HVF",
+    "name": "ModernMate 71\" Electric Standing Executive Desk with Privacy Panel, Large One-Piece Height Adjustable Stand Up Desk, Power Outlet & Storage for Home Office, Black Walnut",
+    "normalized_price": 503.99,
+    "buy_url": "https://www.amazon.com/dp/B0F4KB7HVF",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Q5ZhqYKBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FGK2SVPX",
+    "name": "OfficeSimpli Modern L Shaped Executive Desk, 84x72x30 Inch - Made in USA \u2013 Ships Mostly Assembled\u2013Home Office Workstation & Business Furniture, Large CEO Desk Table with Cabinets & Lockable Drawers",
+    "normalized_price": 1897.0,
+    "buy_url": "https://www.amazon.com/dp/B0FGK2SVPX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/818V1HnigXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GV446SDD",
+    "name": "FLEXISPOT WoodiX 63 x 30 Inch Solid Wood Standing Desk, Premium Mid-Century Modern Executive Desk, Dual Motor Sit-Stand Workstation with Cable Management, 220 LBS, Walnut",
+    "normalized_price": 769.49,
+    "buy_url": "https://www.amazon.com/dp/B0GV446SDD",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81+sCqdnUpL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DSGD5DVN",
+    "name": "Convertible Desk, Simple Modern Home Office Desk with Storage, Folding Desk into Dining Table, Multiuse Dining Table and Gaming Desk, Work from Home Essentials (1 Unit)",
+    "normalized_price": 1124.22,
+    "buy_url": "https://www.amazon.com/dp/B0DSGD5DVN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81CkgUWBdQL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GW7BD4F9",
+    "name": "L Shaped Executive Desk with Drawers, Modern Large Wood Home Office Desk, Computer Desk with Storage for Boss Office Workstation",
+    "normalized_price": 1219.99,
+    "buy_url": "https://www.amazon.com/dp/B0GW7BD4F9",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Ui5TNk1XL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FYXMMZK8",
+    "name": "87\" Reversible L-Shaped Executive Desk with Drawers, Modern Large Office Desk with Open Shelves, Ventilated CPU Compartment, Built-in Outlet & USB Ports \u2013 Home Office Desk (87\"L x 69\"W x 30\"H)",
+    "normalized_price": 1399.99,
+    "buy_url": "https://www.amazon.com/dp/B0FYXMMZK8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71nHQ00H19L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZ3SSD62",
+    "name": "Executive Desk L Shaped Office Desk with Storage Cabinet, Large Wood Table with Drawers, Cable Grommet & Modesty Panel, Modern Home Office Furniture for Manager Workspace, Multiple Sizes",
+    "normalized_price": 1069.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZ3SSD62",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81fygZU1Z2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GYCJR2J3",
+    "name": "Executive L-Shaped Office Desk with Storage Shelves, Modern Executive Desk with Curved Edge, Large Workstation Desk for Home Office, Business Office Furniture",
+    "normalized_price": 599.99,
+    "buy_url": "https://www.amazon.com/dp/B0GYCJR2J3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71CRbN46b+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJLM2Z3S",
+    "name": "homary Modern 59.8\" Lift-Top Home Office Desk, Engineered Wood Fluted Desk with 2 Doors Ample Storage for Working, Study, Reading Room, White",
+    "normalized_price": 769.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJLM2Z3S",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91SBjhEqTNL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H2BP8JTN",
+    "name": "Premium Sturdy Executive Desk, Modern L-Shaped Home Office Workstation with Solid Wood Top, Lockable Drawers, Integrated Cable Box for Business Offices",
+    "normalized_price": 1799.99,
+    "buy_url": "https://www.amazon.com/dp/B0H2BP8JTN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61bj0Z3C2yL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GS8ZM2LZ",
+    "name": "Large Executive Desk 62.99\" or 70.87\", Modern Home Office Desk with 2 Drawers & Cable Management, Dual-Size Design Adapts to Any Layout\u200b for Home or Business (TH-X, Right)",
+    "normalized_price": 529.99,
+    "buy_url": "https://www.amazon.com/dp/B0GS8ZM2LZ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81DVNvrj-NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FFYGL4NG",
+    "name": "63 Inches L Shaped Standing Desk, Executive Standing Desk with Drawers and File Cabinet, AC/USB, 1.18\" Desktop, Multi-Sized Storage Cubby, Privacy Panel, Rattan Computer Desk, Natural Oak",
+    "normalized_price": 599.99,
+    "buy_url": "https://www.amazon.com/dp/B0FFYGL4NG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/818XZjz39jL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08CHHB352",
+    "name": "SIMPLIHOME Harper Desk - 60 Inch Wide Solid Wood Writing Desk in Light Golden Brown, Mid-Century Modern Home Office Computer Table for Study with 2 Drawers and Flip-Down Keyboard Tray",
+    "normalized_price": 567.99,
+    "buy_url": "https://www.amazon.com/dp/B08CHHB352",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71Fcgjxr2NL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GZKBT1HT",
+    "name": "Executive Desk with Storage Cabinet, Modern Office Desk with Side Credenza, Large Manager Desk Workstation for Home Office Business, Durable Wood Desk with Cable Management",
+    "normalized_price": 679.99,
+    "buy_url": "https://www.amazon.com/dp/B0GZKBT1HT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71J-Na+f-OL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FKGTBGF4",
+    "name": "78.7In Large Executive Office Desk - Adjustable Height Sit to Stand Oval Shaped Desk, Premium L-Shaped Workstation with File Cabinet, Luxury Modern Design for Boss, Managers & Home Office",
+    "normalized_price": 1899.0,
+    "buy_url": "https://www.amazon.com/dp/B0FKGTBGF4",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71h8BPYWV9L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DBSYQLQM",
+    "name": "Sunjoy Computer Desk, 60 Inch Milano Floating Pedestal Desk, Modern Home Office Desk Large Work Station with Charging Station and Four Drawers",
+    "normalized_price": 726.0,
+    "buy_url": "https://www.amazon.com/dp/B0DBSYQLQM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81RyoNs5EoL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0B6PG5Y72",
+    "name": "Leon 87\" Wood Office Furniture Set of 3pcs | Executive Right Side L Shaped Corner Desk & File Drawers w/Telescopic Rail | Coffee Table | Storage Cabinet w/Chrome Handles | Modern Home Workstation",
+    "normalized_price": 1399.0,
+    "buy_url": "https://www.amazon.com/dp/B0B6PG5Y72",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/912AOzVWIXL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDWM5VNN",
+    "name": "Retractable L-Shaped Executive Desk, Modern Office Desk with locking Drawers and File Cabinet, Large Computer Desk with Storage Shelves, Workstation for Home Office (Left Return, 70.86 - 78.7 IN)",
+    "normalized_price": 1044.05,
+    "buy_url": "https://www.amazon.com/dp/B0FDWM5VNN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81uQbIxJAwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTTHX26J",
+    "name": "Home Office Desk,minimalist design. Features a sintered stone top, a cabinet with LED lighting and Changhong glass, and a three-drawer storage unit. Sturdy, durable, and easy to assemble (black)",
+    "normalized_price": 799.0,
+    "buy_url": "https://www.amazon.com/dp/B0GTTHX26J",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71+lcf55BVL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G34XFVD2",
+    "name": "Modern Executive Office Desk with Storage Cabinet,L-Shaped Office Executive Desk with Sliding Power Cable Box & Lockable Drawer,Large Workstation for Home Office & Business (B-Left, L 180cm/70.8in)",
+    "normalized_price": 1359.0,
+    "buy_url": "https://www.amazon.com/dp/B0G34XFVD2",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71ubRhKOdnL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVYBGC9Q",
+    "name": "YESWOOD Rectangular Solid Wood Home Office Desk, Modern Dining Table, Writing Computer Desk for Sturdy, Dining Room, Living Room, Office Natural Wood Color 62.99\" W",
+    "normalized_price": 535.49,
+    "buy_url": "https://www.amazon.com/dp/B0GVYBGC9Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81j69Q6m0-L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6GHZD93",
+    "name": "homary 63\" Industrial Style Office Writing Desk, Walnut Desk Modern Computer Desk Home & Office Furniture Modern Computer Desk",
+    "normalized_price": 840.99,
+    "buy_url": "https://www.amazon.com/dp/B0D6GHZD93",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81m7dmmEJjL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GT4BX5NM",
+    "name": "79\" Reversible L-Shaped Executive Desk with Power Outlets & LED Lighting, Large Modern Office Desk with Drawers & Storage Shelves for Home Office, Corporate, School (79\" W x 63\" D x 30\" H)",
+    "normalized_price": 1449.99,
+    "buy_url": "https://www.amazon.com/dp/B0GT4BX5NM",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71uARvbvqRL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FDG7YB4Q",
+    "name": "SAINTCY 70.87In L Shaped Executive Standing Desk with Drawers, Large Modern Adjustable Heigh Home Office Desk w/Universal Charging Ports, Business Workstation, Black and Warm Oak",
+    "normalized_price": 1679.99,
+    "buy_url": "https://www.amazon.com/dp/B0FDG7YB4Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91nyTLtweLL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B01IQGKJ1O",
+    "name": "Pemberly Row L-Shape Executive Office Computer Desk, 66 in x 71.2 in, Harvest Cherry Finish, Manufactured Wood, Double Pedestal Base with Storage, Keyboard Shelf, File Drawers, Home Office Desk",
+    "normalized_price": 787.81,
+    "buy_url": "https://www.amazon.com/dp/B01IQGKJ1O",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/41WCMtKnTYL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FJFLS9WV",
+    "name": "63\" Reversible L-Shaped Executive Desk with Drawers, Modern Executive Office Desk with Storage Shelving, Built-in Outlets & USB Ports for Home Office, Corporate, School (Tobacco Wood)",
+    "normalized_price": 599.99,
+    "buy_url": "https://www.amazon.com/dp/B0FJFLS9WV",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/812PLoFvU2L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0H1Q747DL",
+    "name": "Walnut Solid Wood Desk, Mid-Century Modern Home Office Computer Desk with Drawers, Writing Table for Study, Bedroom & Workstation 31.49\" W",
+    "normalized_price": 539.99,
+    "buy_url": "https://www.amazon.com/dp/B0H1Q747DL",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81fC2dwXS+L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4BPHT2P",
+    "name": "ModernMate Furniture Set, 70.8'' Executive Standing Desk with 71'' Tall Bookcase, AC/USB, File Cabinet, Double-Sided Narrow Display Shelves, Home Office Wood Storage Furniture, Light Walnut",
+    "normalized_price": 645.99,
+    "buy_url": "https://www.amazon.com/dp/B0G4BPHT2P",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81Yzrf5LG8L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GF238J2D",
+    "name": "Electric Height Adjustable Executive Desk, Luxury L-Shaped Office Desk with Storage Cabinet & Charging Station, Solid Thickened Desktop, 86\" Modern CEO Workstation for Home Office & Corporate Office",
+    "normalized_price": 2199.99,
+    "buy_url": "https://www.amazon.com/dp/B0GF238J2D",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/918OdxLDjTL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F53QFDB1",
+    "name": "63 Inch L-Shaped Executive Desk Set of 4, Industrial Modern Wood Office Desk with 3 Drawers, Built-in Cable Management & Power Outlet, Real Wood Finish, Reversible Left/Right Return Home Workstation",
+    "normalized_price": 1996.0,
+    "buy_url": "https://www.amazon.com/dp/B0F53QFDB1",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81nIbriMwSL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GWL6S42F",
+    "name": "FLEXISPOT 60 x 30 Inch Oak Executive Standing Desk, Dual Motor Electric Height Adjustable Desk, Mid-Century Modern Sit-Stand Desk for Home Office and Writing, 222 LBS, Walnut",
+    "normalized_price": 617.48,
+    "buy_url": "https://www.amazon.com/dp/B0GWL6S42F",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91cUl68GKdL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVYWFNQQ",
+    "name": "Double-Tier Solid Wood Desk - 60-inch Scandinavian Modern Oval Home Office Writing Desk with Storage Drawers, Dressing Table for Bedroom, Natural Ash",
+    "normalized_price": 488.0,
+    "buy_url": "https://www.amazon.com/dp/B0GVYWFNQQ",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/61Q+wfaFKsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GLB1LNL5",
+    "name": "Jennifer Taylor Home JTH Luxe Dauphin 55\" 3-Drawer Wood Executive Desk, Natural Brown Wood",
+    "normalized_price": 917.32,
+    "buy_url": "https://www.amazon.com/dp/B0GLB1LNL5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51uQZDEgtIL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GW56QPKY",
+    "name": "62\" Solid Hardwood Executive Desk, Tuscan Brown Finish, Durable Office Desk with 5 Utility Drawers, 2 File Drawers, Smooth Glides, Compact Design for Home Office Use",
+    "normalized_price": 999.0,
+    "buy_url": "https://www.amazon.com/dp/B0GW56QPKY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51r1NfFKXWL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3VWVSTK",
+    "name": "HULALA HOME 60\" Modern Executive Desk with Storage, 3 Drawer Fluted Writing Desk with Solid Wood Legs, Home Office Desk with Charging Station, Walnut",
+    "normalized_price": 444.59,
+    "buy_url": "https://www.amazon.com/dp/B0G3VWVSTK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/711OUgAB+3L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DF1MFY5Z",
+    "name": "Standing Desk \u2013 Walnut Solid Wood Desk, Natural Live Edge, Adjustable Height Dual Motor, Sit Stand for Home Office (Black, W60 x D27)",
+    "normalized_price": 554.39,
+    "buy_url": "https://www.amazon.com/dp/B0DF1MFY5Z",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71YIj3RAecL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G3VMXKKY",
+    "name": "HULALA HOME 55 Inch Fluted Computer Desk with Charging Station, Writing Desk with 5 Drawers, Wood Home Office Desk with Solid Wood Legs, Walnut",
+    "normalized_price": 539.99,
+    "buy_url": "https://www.amazon.com/dp/B0G3VMXKKY",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81cnh3q2mAL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTN97281",
+    "name": "Double-Top Solid Wood Desk - 60-Inch Mid-Century Modern Writing Table with Drawers for Home Office, Study, and Creation, Rubberwood Computer Desk in Black Walnut",
+    "normalized_price": 443.0,
+    "buy_url": "https://www.amazon.com/dp/B0GTN97281",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/518NEE3vqsL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0DTRQWGXG",
+    "name": "Wood Computer Desk with Drawer - 48x27 Solid Wood Desk, Live Edge Walnut Desk, Sturdy Metal Legs - Scratch and Stain Resistant Finish - Premium Quality",
+    "normalized_price": 485.99,
+    "buy_url": "https://www.amazon.com/dp/B0DTRQWGXG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71wq8Oj2R7L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0CJTZSGNK",
+    "name": "55 Inch Solid Wood Computer Desk, Rustic Brown Home Office Desk with Metal Frame, Large Writing Desk for Study, Gaming, Workstation & Dining Room, Modern Farmhouse Design",
+    "normalized_price": 341.99,
+    "buy_url": "https://www.amazon.com/dp/B0CJTZSGNK",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71dnoqp2e5L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F2JDKT5Q",
+    "name": "Stylish Solid Wood Office Desk with Sturdy Metal Base - Durable Multi-Size Executive Computer & Dining Table - Perfect for Home Office & Work Environments (Brown, 78.74in)",
+    "normalized_price": 460.25,
+    "buy_url": "https://www.amazon.com/dp/B0F2JDKT5Q",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71aimcBK0qL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXLRZFPS",
+    "name": "YESWOOD Vintage Solid Wood Computer Desk, Office Desk with Storage Drawers, Writing Desk for Home Office, Study 47.24\" W",
+    "normalized_price": 351.99,
+    "buy_url": "https://www.amazon.com/dp/B0FXLRZFPS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/817qDGy64YL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GC52FQC3",
+    "name": "YESWOOD 100% Solid Wood Desk, Mid Century Modern Walnut Color Home Office Desk, Sturdy Computer Desk Writing Desk with 2 Drawers for Study Living Room 55.11\" W",
+    "normalized_price": 587.99,
+    "buy_url": "https://www.amazon.com/dp/B0GC52FQC3",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-YKyYAvwL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B09M78GR92",
+    "name": "BOWERY HILL Contemporary 3-Drawer Solid Wood Computer Desk, Writing Table in Natural and Black, 25\" D x 54\" W x 30\" H",
+    "normalized_price": 645.0,
+    "buy_url": "https://www.amazon.com/dp/B09M78GR92",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51h0V0zAA6L._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G2X7YQ6K",
+    "name": "63-Inch Solid Wood Executive Desk, Real Wooden Home Office Computer Desk, Farmhouse Writing Study Table Business Workstation for Home Office, Dark Brown",
+    "normalized_price": 441.99,
+    "buy_url": "https://www.amazon.com/dp/B0G2X7YQ6K",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81XZ9YJ45EL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GTNB5FYC",
+    "name": "Double-Top Solid Wood Desk - 60-Inch Mid-Century Modern Writing Table with Drawers for Home Office, Study, and Creation, Rubberwood Computer Desk in Honey Oak",
+    "normalized_price": 443.0,
+    "buy_url": "https://www.amazon.com/dp/B0GTNB5FYC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51g2Z7CLKyL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0G4539WWT",
+    "name": "SIMPLIHOME Hollander Desk - 60 Inch Wide Solid Wood Writing Desk in Dark Brown Walnut, Contemporary Home Office Computer Table for Workspace or Study with 2 Drawers and Flip-Down Keyboard Tray",
+    "normalized_price": 411.97,
+    "buy_url": "https://www.amazon.com/dp/B0G4539WWT",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81-ppZLTWOL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GVJ56DWH",
+    "name": "100% Solid Wood Desk 63\" Mid Century Modern Desk with 3 Drawers Large 2 Person Vintage Writing Desk Simple Wooden Table for Restaurants, Home, Offices",
+    "normalized_price": 429.99,
+    "buy_url": "https://www.amazon.com/dp/B0GVJ56DWH",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81oqSyy2huL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZ8MZ1MC",
+    "name": "100% Solid Wood Desk 63\" Mid Century Modern Desk with 3 Drawers Large 2 Person Vintage Writing Desk Simple Wooden Table for Restaurants, Home, Offices",
+    "normalized_price": 429.99,
+    "buy_url": "https://www.amazon.com/dp/B0FZ8MZ1MC",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81oqSyy2huL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FXX9498V",
+    "name": "FlexiSpot E6 Solid Wood 3-Stage Dual Motor 71 x 30 Electric Standing Desk, Holds 220 lbs, Adjustable Height w/ Memory Presets, Butcher Block Rubberwood Desktop & Black Frame, Ships in 2 Boxes",
+    "normalized_price": 429.99,
+    "buy_url": "https://www.amazon.com/dp/B0FXX9498V",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71n-oVsHsvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0D6GZWDS5",
+    "name": "Signature Design by Ashley Roanhowe Contemporary 68\" Home Office Desk with 6 Felt-Lined Drawers, USB Charging Ports and Cord Management, Dark Brown",
+    "normalized_price": 929.29,
+    "buy_url": "https://www.amazon.com/dp/B0D6GZWDS5",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71WAusepJBL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GM2JV4V8",
+    "name": "Jennifer Taylor Home JTH Luxe Dauphin Gold Accent 5-Drawer Wood Executive Desk, Natural Brown Ash Wood",
+    "normalized_price": 1148.99,
+    "buy_url": "https://www.amazon.com/dp/B0GM2JV4V8",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51tJWz7pDvL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GCK5HTPN",
+    "name": "Solid Wood Desk 63 Inches, Live Edge Wooden Home Office Computer Desk Metal Frame Modern Simple Design Executive Real Wood Desk for Writing Study Dining Gaming",
+    "normalized_price": 474.99,
+    "buy_url": "https://www.amazon.com/dp/B0GCK5HTPN",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/91ETgXvdANL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0GC66NB3Y",
+    "name": "YESWOOD Rectangular Solid Wood Home Office Desk, Modern Dining Table, Writing Computer Desk for Sturdy, Dining Room, Living Room, Office 62.99\" W",
+    "normalized_price": 559.99,
+    "buy_url": "https://www.amazon.com/dp/B0GC66NB3Y",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81XDaF2OywL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B010EAI4DA",
+    "name": "Sauder Edge Water Executive Desk, Chalked Chestnut, 65\" Home Office Desk with Storage",
+    "normalized_price": 352.73,
+    "buy_url": "https://www.amazon.com/dp/B010EAI4DA",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/71iB4SDMczL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B08HRKTSRS",
+    "name": "Coaster Home Furnishings - Hartshill - Wood - 72-Inch 7-Drawer Executive Desk with 2 Lockable File Cabinets, Removable Dividers, and Bronze Hardware - Home Office - Burnished Oak - 881281",
+    "normalized_price": 1292.01,
+    "buy_url": "https://www.amazon.com/dp/B08HRKTSRS",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/81tF7fvD6KL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0FZQBGQMX",
+    "name": "63 Inch Long Solid Wood Desk with Drawers - Mid Century Modern Office Desks, Executive Computer Desk for Two People, 2 Person Desk|Gaming Writing Study Table for 2 Monitors-Dark Walnut",
+    "normalized_price": 408.49,
+    "buy_url": "https://www.amazon.com/dp/B0FZQBGQMX",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/815zrUwhDzL._AC_UL320_.jpg",
+    "source": "canopy"
+  },
+  {
+    "product_id": "B0F6Y9XFQG",
+    "name": "Pemberly Row 60\" Wood Office Desk, Hand Carved Designs, Two-Tone Cherry and Walnut Finish, Rubber Wood and Burl Veneer, 3 Drawers, Curved Legs, Rectangular Executive Desk for Home or Office Use",
+    "normalized_price": 1332.99,
+    "buy_url": "https://www.amazon.com/dp/B0F6Y9XFQG",
+    "specs": {},
+    "image_url": "https://m.media-amazon.com/images/I/51ixndhUGYL._AC_UL320_.jpg",
     "source": "canopy"
   }
 ]
