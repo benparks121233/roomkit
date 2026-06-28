@@ -133,7 +133,8 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
                 .eq("user_id", user["user_id"])
                 .execute()
             )
-            if _count_resp.count and _count_resp.count >= 1:
+            _free_limit = int(os.environ.get("FREE_ROOM_LIMIT", "1"))
+            if _count_resp.count and _count_resp.count >= _free_limit:
                 raise HTTPException(
                     status_code=403,
                     detail="Free tier: 1 room limit. Upgrade for more.",

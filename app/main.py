@@ -68,17 +68,10 @@ def supabase_health() -> dict:
 
 @app.get("/health/redis")
 def redis_health() -> dict:
-    import os as _hos
     from services.redis_client import get_redis
-    env_present = "REDIS_URL" in _hos.environ
-    env_len = len(_hos.environ.get("REDIS_URL", ""))
     r = get_redis()
     if r is None:
-        return {
-            "status": "not_configured",
-            "env_present": env_present,
-            "env_value_len": env_len,
-        }
+        return {"status": "not_configured"}
     try:
         r.ping()
         return {"status": "ok"}
