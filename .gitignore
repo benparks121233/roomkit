@@ -16,6 +16,14 @@ npm-debug.log*
 # Env / secrets
 .env
 .env.local
+.env.staging
+
+# Generated artifacts
+data/renders/
+data/*.db
+
+# TypeScript build cache
+web/tsconfig.tsbuildinfo
 
 # OS
 .DS_Store

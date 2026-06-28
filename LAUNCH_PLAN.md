@@ -25,23 +25,29 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 
 | Phase | Description | Status |
 |---|---|---|
-| 1 | Browser verification | ✅ Done |
+| 1 | Browser verification | Folded into 11A |
 | 2 | Input validation + secrets audit | ✅ Done |
 | 3 | Persistent design storage | ✅ Done |
-| 4 | Viral share loop + add-all-to-cart | TODO |
+| 4 | Viral share loop + add-all-to-cart | PARTIAL (cart button + share component exist) |
 | 4B | Platform-adaptive visual layer | TODO |
 | 5A | Comprehensive bedroom audit | ✅ Done |
 | 5B | Living room build | ✅ Done |
-| 5C | Maintainability gate (magic-number docs + regression tests) | TODO |
-| 5D | Staging environment (Railway + Supabase staging) | TODO |
-| 6 | Foundation layer (auth, RLS, tiers, rates) | **Pre-deploy gate** |
-| 6F | Scaling architecture (workers, async, concurrency) | **Pre-deploy gate** |
-| 7 | Revenue activation (Stripe, render storage, compliance) | **Pre-deploy gate** |
-| 8 | Deploy + gate | TODO |
-| 9 | Hardening + AI-native instrumentation | Fast-follow |
-| 10A | Pre-launch full verification | **Pre-launch gate** |
-| 10B | Gated beta (50-100 invite-only users) | **Pre-launch gate** |
-| 11 | Multi-retailer expansion + scale | Post-launch |
+| 5C | Maintainability gate (magic-number docs + regression tests) | ✅ Done |
+| 5D | Staging environment (Railway + Supabase staging) | ✅ Done |
+| 6A | Supabase Auth (backend) | ✅ Done |
+| 6A | Supabase Auth (frontend — Next.js UI) | TODO |
+| 6B | Row-Level Security | ✅ Done (staging verified, public schema at Phase 9) |
+| 6C | Privacy, terms, age gate, deletion | TODO |
+| 6D | Rate limiting | ✅ Done |
+| 6E | Tier enforcement | TODO |
+| 6F | Scaling architecture (workers, async, concurrency) | TODO — **Pre-deploy gate** |
+| 7 | Revenue activation (Stripe, render storage, compliance) | TODO — **Pre-deploy gate** |
+| 8 | Frontend build-out (nav, account, My Designs, landing, robustness) | TODO |
+| 9 | Deploy + gate | TODO |
+| 10 | Hardening + AI-native instrumentation | TODO — Fast-follow |
+| 11A | Pre-launch full verification (absorbs Phase 1) | TODO — **Pre-launch gate** |
+| 11B | Gated beta (50-100 invite-only users) | TODO — **Pre-launch gate** |
+| 12 | Multi-retailer expansion + scale | TODO — Post-launch |
 
 ---
 
@@ -497,29 +503,34 @@ locally / private-beta, but NOTHING ships publicly until this phase delivers.
 model is structurally UNENFORCEABLE. No accounts = no "one free room" limit, no
 pack gating, no access wall. The model is DESIGNED in Phase 4, ENFORCED in Phase 6.
 
-### 6A — Supabase Auth (2-3 sessions)
+### 6A — Supabase Auth (backend) ✅
+- [x] Backend JWT verification on FastAPI endpoints that need identity.
+      ES256 via JWKS (asymmetric). `app/auth.py`.
+- [x] Read/write split: writes use service key (bypasses RLS, app sets user_id),
+      reads use anon key + user JWT (RLS enforced via `auth.uid()`).
+      `services/supabase_client.py:get_user_postgrest()`.
+- [x] Populate `user_id` on `designs`, `events`, `selections` tables.
+- [x] **Free-room enforcement:** Count designs where user_id = current user.
+      If count >= 1 (free tier), block new design generation. (TOCTOU race
+      accepted for beta — 6E adds DB-level unique partial index.)
+- [x] **Verification (staging, 2026-06-23):** Two test accounts, A owns design,
+      B cannot see it. GET → 404. Render → 404. No auth → 401.
+      RLS PROOF: direct PostgREST with B's JWT returns `[]`.
 - [ ] Add `@supabase/ssr` to Next.js for client-side auth (email/password + Google).
 - [ ] Auth middleware on protected Next.js pages.
-- [ ] Backend JWT verification on FastAPI endpoints that need identity.
-- [ ] Populate `user_id` on `designs` table (column already exists, nullable).
-      Add to `events`, `selections` tables.
 - [ ] Login/signup UI — clean, minimal.
-- [ ] **Free-room enforcement:** Count designs where user_id = current user.
-      If count >= 1 (free tier), block new design generation. Upgrade CTA.
-- [ ] **Verification:** Create two test accounts, confirm account A cannot see
-      account B's designs via API.
 
-### 6B — Row-Level Security (1-2 sessions, depends on 6A)
-- [ ] RLS already enabled on `designs` (Phase 3, default-deny). Add user-scoped
-      SELECT policy: `user_id = auth.uid()`.
-- [ ] Enable RLS on `events`, `selections` with same pattern.
-- [ ] Service-role key stays backend-only (for admin/tracking writes).
-- [ ] **Critical: `/renders/` StaticFiles path must be EXPLICITLY EXCLUDED from
-      any auth middleware.** This path serves OG images to social crawlers. If
-      blocked, every shared link loses its preview. Document as a permanent
-      exclusion.
-- [ ] **Verification:** Use Supabase anon key to attempt cross-user data access —
-      must fail. Actually test this, don't assume.
+### 6B — Row-Level Security ✅
+- [x] RLS + user-scoped SELECT policy on `staging.designs`: `user_id = auth.uid()`.
+- [x] RLS + user-scoped SELECT policy on `staging.events`: same pattern.
+- [x] RLS + user-scoped SELECT policy on `staging.selections`: same pattern.
+- [x] Service-role key backend-only (writes bypass RLS, app sets user_id).
+- [x] `/renders/` StaticFiles public — structurally excluded from auth
+      (FastAPI middleware, not dependency injection). Permanent exclusion.
+- [x] **Verification (staging, 2026-06-25):** Direct PostgREST with anon key +
+      JWT. A sees own rows on all 3 tables. B sees `[]` on all 3 tables.
+      `/renders/` returns 404 (no file) not 401 (no auth block).
+- [ ] Apply same RLS policies to `public` schema before prod deploy (Phase 9).
 
 ### 6C — Privacy, Terms, Age Gate, Data Deletion (1 session)
 - [ ] `/privacy` page — what's collected, how it's used, how to delete.
@@ -555,6 +566,17 @@ not 1000. This must land before public deploy.*
       (accurate for single-worker). With N workers, each counts independently,
       so "5/min per IP" becomes ~5×N/min. Switch to Redis backend when adding
       multi-worker. Same fix as the concurrency semaphore below.
+- [ ] **Deleted-user blocklist → shared store:** Account deletion blocks the
+      deleted user's JWT via an in-process `_deleted_users` set in `app/auth.py`.
+      At multi-instance, instance A deletes the user but instance B's set is
+      empty — the JWT passes through and can re-create data. The `sign_out` +
+      `delete_user` calls revoke refresh tokens server-side in GoTrue (proven
+      cross-instance), so the deleted user **cannot refresh** — worst case is
+      the ~1hr access-token window on the wrong instance, not indefinite. Fix:
+      move the blocklist to Redis (same store as rate-limit state + semaphore),
+      or add a DB user-existence check in `get_current_user`, or accept the
+      ~1hr window if the risk is tolerable at that scale. Same class of fix as
+      rate-limit state and the concurrency semaphore.
 - [ ] **Async render with client polling:** Render generation takes 15-25s.
       Move to background task, return `202 Accepted` with `run_id`, client
       polls `GET /design/{run_id}/render/status` until ready. Frees the
@@ -650,7 +672,90 @@ FTC + Associates compliant.
 
 ---
 
-## Phase 8 — Deploy + Gate
+## Phase 8 — Frontend Build-Out
+
+*The full production-quality product frontend. Built AFTER the backend foundation
+(auth, RLS, tiers, scaling, revenue) is complete, so every surface builds against
+FINAL contracts — no rework against changing APIs.*
+
+**Why its own late phase:** The robust frontend should front a FINISHED, secure,
+scaled product. Building it earlier means rebuilding against changing contracts
+(auth flow, async render polling from 6F, tier enforcement from 6E, Stripe
+checkout from 7A). Build it once, robustly, against final contracts.
+
+### Navigation & Shell
+- [ ] Persistent header/nav: logo, nav links, account menu. Logged-in vs
+      logged-out states (account menu vs login/signup CTA).
+- [ ] Footer: privacy, terms, about, affiliate disclosure links.
+- [ ] Consistent layout shell wrapping all pages (header + footer + content area).
+
+### Account & Auth Surfaces
+- [ ] Account/profile page: view email, manage account, account-deletion entry
+      point (deletion cascade logic lives in 6C — this is the UI surface).
+- [ ] Visible logout: surface the existing `signOut()` from AuthProvider into
+      the account menu.
+- [ ] "Logged in as [email]" indicator in header/nav.
+- [ ] Password reset/change flow (if not already covered by Supabase Auth UI).
+
+### Core Product Surfaces
+- [ ] **"My Designs" / history page:** Users see their saved user_id-stamped
+      rooms, revisit/re-open past designs. This is the payoff of the Phase 3
+      storage + Phase 6 auth work — users can come back to their rooms.
+- [ ] **Homepage / landing page:** Hero section (what it is, what you get),
+      how-it-works walkthrough (3-4 steps with visuals), example room renders
+      (social proof / quality signal), clear entry into room-type quiz options
+      (bedroom, living room), credibility markers, SEO content. This is the
+      front door for organic, social, and share traffic — it frames the product
+      before the user enters the funnel.
+- [ ] Quiz → design → result flow integrated into the site shell (currently
+      standalone — needs header/footer/nav wrapping and transition polish).
+
+### Admin Dashboard Auth (MANDATORY security fix)
+- [ ] **Admin dashboard privilege escalation:** Current admin page
+      (`web/app/admin/page.tsx`) hardcodes the admin secret in a `"use client"`
+      component — it ships in the browser bundle. Any logged-in beta user can
+      extract it from devtools and access all admin data (full funnel, every
+      user's selections, costs, business metrics). This is real privilege
+      escalation, not theoretical.
+- [ ] **Fix:** Move admin access behind a server-side Next.js API route
+      (`web/app/api/admin/route.ts`) that proxies to the backend `/admin/stats`
+      endpoint. The admin secret must live SERVER-SIDE only — never in a client
+      bundle, never via `NEXT_PUBLIC_*` env vars.
+- [ ] **Admin identity check:** The proxy route must authenticate via Supabase
+      session AND verify the user is an actual admin (allowlist of user IDs or an
+      `is_admin` flag in user metadata), not just "any logged-in user." A shared
+      secret alone is insufficient when every beta user has a valid session.
+- [ ] Current state (safe by accident): hardcoded secret doesn't match the real
+      backend secret, so the page is broken and nothing is exposed. Do NOT
+      quick-fix by updating the hardcoded value — that makes it worse.
+
+### Robustness / Production Quality
+- [ ] Loading, error, and empty states across all pages.
+- [ ] Mobile-responsive throughout (real device testing, not just preview).
+- [ ] Consistent design system / visual language (one cohesive product feel).
+- [ ] 404 and error pages.
+- [ ] Accessibility basics: semantic HTML, keyboard nav, color contrast, screen
+      reader labels (ties to legal-plan ADA/WCAG items).
+- [ ] Performance: render-polling UX (progress indicator during 15-25s render
+      generation — built against 6F's async `202 Accepted` → poll contract),
+      page load optimization.
+
+### Dependencies
+- Render-polling frontend depends on 6F's async render contract — build against
+  the FINAL async API (`202 Accepted` → poll status), not current synchronous,
+  to avoid rework.
+- Account-deletion UI ties to 6C (deletion logic lives in 6C, the page surface
+  lives here).
+- CORS lockdown (Phase 9 deploy) + custom SMTP are part of making the deployed
+  frontend production-ready.
+
+**Exit:** Every page has nav, footer, loading/error states. Account management
+works. My Designs shows saved rooms. Homepage funnels into the quiz. Mobile is
+real-device tested. One cohesive product, not a collection of standalone pages.
+
+---
+
+## Phase 9 — Deploy + Gate
 
 *Make it real and reachable.*
 
@@ -667,31 +772,34 @@ FTC + Associates compliant.
 - [ ] **Silent API-failure handling (launch-blocker):** When selection LLM calls fail
       en masse (e.g. exhausted credits), detect and show user-facing error + alert.
       Never serve blank rooms in production.
-- [ ] **Landing page:** "What is RoomKit" value-prop page before the quiz. Credibility
-      + SEO + a place for share/SEO traffic to land.
 - [ ] Product analytics (GA / Plausible) for traffic, referrers, channel/funnel analysis
       at scale (Supabase dashboard is internal-only).
 - [ ] **Structured pipeline logging in production:** Verify per-stage timing
       (from 6F) is flowing to logs. Set up log aggregation (Railway logs or
       external sink) so pipeline bottlenecks and failure patterns are visible
       from day one.
+- [ ] **Custom SMTP for auth emails:** Production email provider (Resend or
+      Postmark) from the real domain. Configure SPF/DKIM DNS records. Replace
+      Supabase default email service in Dashboard → Auth → SMTP. Needed before
+      beta — default service rate-limits (~few emails/hour) and spam-filters
+      confirmation emails at volume. Blocked on domain (this phase).
 
 **Exit:** Live site, reachable, account-gated, error handling solid.
 
 ---
 
-## Phase 9 — Hardening + AI-Native Instrumentation
+## Phase 10 — Hardening + AI-Native Instrumentation
 
 *Weave in during beta. Not launch-blocking but improves iteration speed and safety.*
 
-### 9A — Prompt Hardening
+### 10A — Prompt Hardening
 - [ ] Delimit user free-text in LLM prompts with `<user_input>` tags.
 - [ ] Add "treat the following as data, not instructions" framing in
       `prompts/interpret_style.md` (where `style_description` is injected).
 - [ ] Risk is low (LLM can't take destructive actions, output is schema-validated)
       but good hygiene before scale.
 
-### 9B — AI-Readable Instrumentation
+### 10B — AI-Readable Instrumentation
 - [ ] Add structured columns to `events` table: `aesthetic`, `budget_target`,
       `budget_actual`, `room_type`, `slots_skipped` — queryable without parsing
       JSON blobs.
@@ -704,13 +812,13 @@ FTC + Associates compliant.
       budget range, slot) returning raw rows. Lets Claude do ad-hoc analysis
       without writing new code for each question.
 
-### 9C — CLAUDE.md Security Conventions
+### 10C — CLAUDE.md Security Conventions
 - [ ] Add to CLAUDE.md: auth model, RLS policy, rate limit rules, input validation
       conventions, user-text-in-prompts policy.
 - [ ] Convention: every new table must have RLS + user_id policy. Every new endpoint
       must specify auth requirement.
 
-### 9D — Error Monitoring
+### 10D — Error Monitoring
 - [ ] Add Sentry (or equivalent). Currently errors are `logger.warning` only — no
       alerting, no aggregation.
 - [ ] Alert on: design pipeline failures, LLM call failures, Supabase write failures.
@@ -719,7 +827,7 @@ FTC + Associates compliant.
 
 ---
 
-## Phase 10A — Pre-Launch Full Verification
+## Phase 11A — Pre-Launch Full Verification
 
 *On the LIVE deployed site. Nothing ships until this passes.*
 
@@ -737,7 +845,7 @@ FTC + Associates compliant.
 
 ---
 
-## Phase 10B — Gated Beta
+## Phase 11B — Gated Beta
 
 *50-100 invite-only users. Validate the product with real humans before opening
 the floodgates.*
@@ -763,11 +871,11 @@ public launch.
 
 ---
 
-## Phase 11 — Multi-Retailer Expansion (post-launch)
+## Phase 12 — Multi-Retailer Expansion (post-launch)
 
 *After launch, with real traffic data to satisfy aggregator requirements.*
 
-### 11A — Affiliate Aggregator Integration
+### 12A — Affiliate Aggregator Integration
 - [ ] Apply to Skimlinks or Sovrn Commerce (aggregators accept newer sites with
       less traffic history than direct programs like CJ/Wayfair).
 - [ ] Integrate aggregator SDK/API — replaces raw Amazon links with
@@ -779,13 +887,352 @@ public launch.
       per-item rates. Volume and conversion matter more than commission %. Track
       revenue-per-click by retailer.
 
-### 11B — Scale
+### 12B — Scale
 - [ ] Cost-per-room optimization: cache LLM responses, reduce calls per design.
 - [ ] Per-user rate limits (not just IP) for logged-in users.
 - [ ] Throughput management as traffic grows.
 - [ ] Formal access-control matrix (admin roles, operator accounts, partner API keys).
 - [ ] DEFERRED: "Pro" subscription tier for realtors/STR hosts/designers. Only
       build if segment with validated WTP exists in usage data.
+
+---
+
+## Execution Roadmap (as of 2026-06-25)
+
+Exact order from current state to launch. Each step lists WHO does it
+(CLAUDE = programmatic, YOU = manual/judgment, BOTH = collaborative) and
+what PROVES it's done. One step at a time — don't start the next until
+the current one's proof criteria pass.
+
+```
+NOW → Step 1 → Step 2 → Step 3 → Step 4 → Step 5
+      ══════════════════════════════════════════════
+                SECURITY GATE CLEARED (Phase 6)
+      ══════════════════════════════════════════════
+    → Step 6 → Step 7 → Step 8 → Step 9 → Step 10
+      ══════════════════════════════════════════════
+               REVENUE ACTIVATION DONE (Phase 7)
+      ══════════════════════════════════════════════
+    → Step 11 → Step 12 → Step 13 → Step 14 → Step 15
+      ══════════════════════════════════════════════
+             FRONTEND + DEPLOY READY (Phase 8-9)
+      ══════════════════════════════════════════════
+```
+
+**Estimated: ~15-19 sessions to deploy, 2-4 weeks beta after.**
+
+---
+
+### Step 1 — 6B: RLS verification on events + selections (~30 min)
+
+**Who:** CLAUDE (you run any SQL handed to you)
+
+- [x] PostgREST query: A's JWT on A's events → rows, B's JWT → `[]`
+- [x] Same for `selections` table
+- [x] `/renders/` returns 200/404 with no auth header (crawler-safe, no 401)
+- [ ] Apply RLS policies to `public` schema (prod) — deferred to Phase 8 deploy
+
+**Proof:** Cross-user access fails on ALL THREE tables at database layer.
+
+---
+
+### Step 2 — 6A frontend: Next.js auth UI (2-3 sessions)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Install `@supabase/ssr`, create browser client
+- [ ] Auth middleware on protected pages
+- [ ] Login/signup page (email/password + Google OAuth)
+- [ ] Pass JWT from frontend to API calls
+- [ ] Verify locally with dev server
+
+YOU do:
+- [ ] Enable Google OAuth in Supabase dashboard (Settings → Auth → Providers)
+- [ ] Walk through: signup → email confirm → login → quiz → design (browser)
+- [ ] Test on actual phone (not responsive preview)
+- [ ] Confirm flow feels right (loading states, errors, redirects)
+
+**Proof:** Real user creates account and completes full pipeline with identity.
+
+---
+
+### Step 3 — 6C: Privacy, terms, age gate, deletion (1 session)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] `/privacy` page, `/terms` page
+- [ ] 13+ age gate checkbox on signup
+- [ ] "Delete my account" cascade (designs, events, selections)
+- [ ] Verify deletion programmatically (count queries post-delete)
+
+YOU do:
+- [ ] Review privacy/terms copy for accuracy
+- [ ] Delete a test account via UI, confirm it feels complete
+- [ ] Verify in Supabase dashboard all rows gone
+
+**Proof:** Legal pages live. Deletion cascade works across all tables.
+
+---
+
+### Step 4 — 6E: Tier enforcement (1-2 sessions)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Watermark toggle (render checks tier: free=watermarked, paid=clean)
+- [ ] Room-type gating (free=bedroom only, paid unlocks living room+)
+- [ ] Pack ledger table (`user_packs`, room count, decrement on create)
+- [ ] DB unique partial index for free-room (fixes TOCTOU race)
+- [ ] Unit tests + staging deploy
+
+YOU do:
+- [ ] Check watermark quality on staging render ("subtle, not cheapening")
+- [ ] Confirm free-tier bedroom render is still share-worthy
+
+**Proof:** Tier enforcement verified in tests. Watermark aesthetics approved.
+
+---
+
+### Step 5 — 6F: Scaling architecture (2-3 sessions) — PRE-DEPLOY HARD GATE
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Multi-worker uvicorn (`--workers 2-4`)
+- [ ] Redis backend for slowapi rate limiting
+- [ ] Deleted-user blocklist → Redis (currently process-local `_deleted_users` set)
+- [ ] Async render with client polling (202 → poll status)
+- [ ] Global Claude API concurrency semaphore (Redis)
+- [ ] Retry + backoff on LLM calls (3 retries, 1s/2s/4s)
+- [ ] Shared Anthropic client (connection pooling)
+- [ ] Structured pipeline logging (per-stage timing, per run_id)
+- [ ] Load test: 10 concurrent designs, no thread starvation
+
+YOU do:
+- [ ] Add Redis to Railway (plugin or external)
+- [ ] Run a design on staging, confirm render polling UX feels right
+
+**Proof:** Load test passes. Rate limits accurate across workers.
+
+**═══ PHASE 6 COMPLETE — SECURITY GATE CLEARED ═══**
+
+---
+
+### Step 6 — Phase 4: Viral share loop (1-2 sessions)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Finish share page (currently a stub)
+- [ ] `generateMetadata()` with dynamic OG tags (og:image → render URL)
+- [ ] Click-to-design-your-own CTA on shared view
+- [ ] Mobile share via `navigator.share()` (native share sheet)
+
+YOU do:
+- [ ] Click "Add All to Cart" → check Associates dashboard for attribution
+      **THIS IS THE REVENUE VALIDATION**
+- [ ] Share to Pinterest → verify OG unfurl, pin looks good
+- [ ] Share to X → verify card renders
+- [ ] Open shared link in incognito → works unauthenticated
+- [ ] Test full share flow on actual phone
+
+**Proof:** Share loop works. Affiliate tag carries through (Associates dash).
+
+---
+
+### Step 7 — Phase 4B: Platform-adaptive visual layer (1 session)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] `aspect` parameter on render endpoint (portrait/landscape)
+- [ ] Frontend sends aspect based on viewport
+- [ ] Fix hardcoded aspect ratio in InteractiveRoomRender.tsx
+- [ ] Mobile visual pass (44px touch targets, product card density, scroll)
+
+YOU do:
+- [ ] Render on phone → portrait fills screen
+- [ ] Render on desktop → landscape fills hero
+- [ ] Full mobile walkthrough: quiz → selection → render → products → share
+
+**Proof:** Both orientations correct. Mobile is thumb-friendly.
+
+---
+
+### Step 8 — Phase 7A: Stripe integration (1-2 sessions)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Stripe Checkout for pack purchase
+- [ ] Webhook for payment confirmation
+- [ ] Pack ledger increment on success
+- [ ] Upgrade CTA when free limit hit
+
+YOU do:
+- [ ] Create Stripe account, get test keys, set env vars on Railway
+- [ ] Complete test purchase through full Checkout flow
+- [ ] Verify: purchase → pack increment → design second room
+
+**Proof:** Payment → pack → new room access, end to end.
+
+---
+
+### Step 9 — Phase 7B: Render storage (1 session)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Supabase Storage public bucket
+- [ ] `render_url` column on designs table
+- [ ] Upload + store after generation
+- [ ] Migrate from local StaticFiles to storage URLs
+
+YOU do:
+- [ ] Redeploy staging, confirm old renders still accessible
+
+**Proof:** Renders survive redeployment. OG images resolve for crawlers.
+
+---
+
+### Step 10 — Phase 7C: FTC / Associates compliance (1 session) — PRE-LAUNCH BLOCKER
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Affiliate disclosure on every page with buy links
+- [ ] `rel="nofollow sponsored"` on all affiliate links
+- [ ] Price freshness compliance verification
+
+YOU do:
+- [ ] Verify disclosure visible without scrolling on result page
+- [ ] Review: are AI renders using product photos? (legal judgment)
+- [ ] Read Amazon Associates Operating Agreement, confirm compliance
+
+**Proof:** FTC disclosure present. Link attributes correct. Legal reviewed.
+
+**═══ PHASE 7 COMPLETE — REVENUE ACTIVATION DONE ═══**
+
+---
+
+### Step 11 — Phase 8: Frontend build-out (2-3 sessions)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Layout shell: persistent header/nav (logged-in vs logged-out), footer
+      (privacy/terms/about/affiliate links), wrapping all pages
+- [ ] Account page: view email, logout, deletion entry point (6C cascade)
+- [ ] "Logged in as [email]" indicator, visible logout in account menu
+- [ ] Password reset/change flow
+- [ ] "My Designs" / history page: list saved rooms, re-open past designs
+- [ ] Homepage / landing page: hero, how-it-works, example renders, quiz entry,
+      credibility, SEO
+- [ ] Integrate quiz → design → result flow into the site shell
+- [ ] Loading/error/empty states across all pages
+- [ ] 404 and error pages
+- [ ] Render-polling UX (progress indicator, built against 6F's async contract)
+- [ ] Accessibility basics (semantic HTML, keyboard nav, contrast, labels)
+
+YOU do:
+- [ ] Review homepage copy and visual direction
+- [ ] Full mobile walkthrough on actual phone (not responsive preview)
+- [ ] Verify "My Designs" shows your saved rooms, re-opening works
+- [ ] Confirm it feels like one cohesive product, not standalone pages
+
+**Proof:** Every page has nav + footer. My Designs works. Homepage funnels into
+quiz. Mobile real-device tested. Consistent visual language throughout.
+
+---
+
+### Step 12 — Phase 9: Deploy (1 session)
+
+**Who:** BOTH
+
+CLAUDE does:
+- [ ] Production Railway service
+- [ ] CORS locked to real domain
+- [ ] All env vars set, no localhost defaults
+- [ ] Silent API-failure handling
+- [ ] Pipeline logging flowing
+
+YOU do:
+- [ ] Buy domain
+- [ ] Set DNS to Railway
+- [ ] Set production secrets on Railway
+- [ ] Decide account wall placement (before quiz vs after first interaction)
+- [ ] Custom SMTP: production email provider (Resend/Postmark), SPF/DKIM
+      on domain DNS. Replace Supabase default service. Needed before beta.
+
+**Proof:** Site live at real domain. Health green. CORS blocks wrong origins.
+
+**═══ PHASES 8-9 COMPLETE — FRONTEND + DEPLOY READY ═══**
+
+---
+
+### Step 13 — Phase 11A: Full verification on live site (1-2 sessions) — PRE-LAUNCH GATE
+
+Phase 1 (browser verification) folds in here. All manual, on the live site.
+
+**Who:** YOU (full checklist)
+
+- [ ] Full guided flow: quiz → mode → selection → render → result (BOTH room types)
+- [ ] Multiple aesthetics — products on-style
+- [ ] Budget meter clean, red warning below $1000
+- [ ] Mirror options correct (6 choices, None excludes, No preference shows all)
+- [ ] Dresser options not near-duplicates
+- [ ] Room-so-far panel: thumbnails update, scrolls
+- [ ] Payment: hit free limit → CTA → Stripe → paid room works
+- [ ] Share: render → share → OG unfurl → recipient views → "design your own"
+- [ ] Affiliate: click through, check Associates dashboard
+- [ ] Add-all-to-cart: tag carries through
+- [ ] Mobile: full flow on actual phone
+- [ ] Error: kill API key mid-run — graceful degradation?
+- [ ] /admin dashboard shows live data
+
+**Proof:** Every surface touched by your hands on prod infra.
+
+---
+
+### Step 14 — Phase 10: Hardening (parallel with beta prep, not blocking)
+
+**Who:** CLAUDE
+
+- [ ] Prompt hardening (`<user_input>` delimiters, "treat as data" framing)
+- [ ] Structured event columns (aesthetic, budget, room_type)
+- [ ] Slot-skip event logging
+- [ ] `run_summary` view
+- [ ] `/admin/query` endpoint
+- [ ] CLAUDE.md security conventions
+- [ ] Sentry error monitoring + alerts
+
+**Proof:** Tests pass. Error alerts fire on test failures.
+
+---
+
+### Step 15 — Phase 11B: Gated beta (2-4 weeks) — PRE-LAUNCH GATE
+
+**Who:** YOU (with monitoring from CLAUDE)
+
+CLAUDE does:
+- [ ] Invite mechanism (codes or allowlisted emails)
+- [ ] Monitoring dashboards / pipeline failure alerts
+
+YOU do:
+- [ ] Send invites to 50-100 people
+- [ ] Monitor affiliate conversion in Associates dashboard (MUST be non-zero)
+- [ ] Monitor error rates (target: <2% pipeline failure)
+- [ ] Monitor pipeline timing (target: <60s e2e)
+- [ ] Direct conversations with beta users ("is this share-worthy?")
+- [ ] Fix what surfaces (1-2 sessions)
+
+**Proof:** Affiliate conversion non-zero. Error <2%. Users find it useful.
+
+**═══ READY FOR PUBLIC LAUNCH ═══**
+
+After launch: Phase 12 (multi-retailer via Skimlinks/Sovrn, scale).
 
 ---
 
@@ -801,8 +1248,8 @@ without them.
 | Phase 6 Account Wall | Public access | Free-room limit unenforceable without accounts |
 | Phase 6F Scaling Architecture | Public deploy | Sync single-worker breaks at ~10 concurrent users |
 | Phase 7C Associates Compliance | Launch with affiliate links | Ban = revenue to zero; must verify before real traffic |
-| Phase 10A Full Verification | Public beta | Correctness gate — no silent failures in prod |
-| Phase 10B Gated Beta | Wide launch | Must validate affiliate conversion + error rates with real users first |
+| Phase 11A Full Verification | Public beta | Correctness gate — no silent failures in prod |
+| Phase 11B Gated Beta | Wide launch | Must validate affiliate conversion + error rates with real users first |
 
 ---
 
@@ -834,16 +1281,20 @@ Phase 6   Foundation layer (auth, RLS, tiers, rates) ────┘
 Phase 7   Revenue activation (Stripe, render storage, compliance)
   ↓       ↑ requires auth from Phase 6
   ↓
-Phase 8   Deploy + gate
+Phase 8   Frontend build-out (nav, account, My Designs, landing, robustness)
+  ↓       ↑ builds against FINAL contracts from 6 + 7
+  ↓       ↑ async render (6F), tiers (6E), Stripe (7A)
+  ↓
+Phase 9   Deploy + gate
   ↓       ↑ requires Phase 6 + 6F (HARD GATE)
   ↓
-Phase 9   Hardening + instrumentation (parallel with 8)
+Phase 10  Hardening + instrumentation (parallel with 9)
   ↓
-Phase 10A Pre-launch verification (HARD GATE)
+Phase 11A Pre-launch verification (HARD GATE)
   ↓
-Phase 10B Gated beta — 50-100 invite-only users (HARD GATE)
+Phase 11B Gated beta — 50-100 invite-only users (HARD GATE)
   ↓
-Phase 11  Multi-retailer expansion + scale (POST-LAUNCH)
+Phase 12  Multi-retailer expansion + scale (POST-LAUNCH)
           ↑ Amazon-only at launch
           ↑ Add retailers via aggregator (Skimlinks/Sovrn)
 ```

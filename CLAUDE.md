@@ -132,7 +132,7 @@ No live affiliate calls in tests. Use fixtures in `data/fixtures/`.
 - Safe-center auto-generate defaults (rank 1-2 anchors)
 - Amazon catalog: 15,122+ products across 30 slots
 
-**Now entering launch-readiness track:** Phase 6 (auth + RLS + rate limiting) → Phase 7 (Stripe + render storage + compliance) → Phase 8 (deploy). Auth + rate limiting is the hard pre-deploy gate — $0.37/room is uncapped to the internet without it.
+**Now entering launch-readiness track:** Phase 6 (auth + RLS + rate limiting) → Phase 7 (Stripe + render storage + compliance) → Phase 8 (frontend build-out) → Phase 9 (deploy). Auth + rate limiting is the hard pre-deploy gate — $0.37/room is uncapped to the internet without it.
 
 ## Working in This Repo
 
