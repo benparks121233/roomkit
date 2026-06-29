@@ -839,6 +839,10 @@ real-device tested. One cohesive product, not a collection of standalone pages.
       Needed when sustained concurrent selections exceed ~3-4 (beyond beta
       scale). Changes the acquire/release contract — test against multi-worker
       staging when implemented.
+- [ ] **PostgREST schema cache reload after migrations:** After running any
+      migration that creates or alters functions/tables, run
+      `NOTIFY pgrst, 'reload schema';` in SQL Editor. Without this, PostgREST
+      serves stale schema and RPCs return 404. This bit us on staging (6E deploy).
 - [ ] **Custom SMTP for auth emails:** Production email provider (Resend or
       Postmark) from the real domain. Configure SPF/DKIM DNS records. Replace
       Supabase default email service in Dashboard → Auth → SMTP. Needed before
