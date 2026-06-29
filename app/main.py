@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import os  # noqa: E402
 from pathlib import Path  # noqa: E402
 
 from fastapi import FastAPI, Request  # noqa: E402
@@ -57,7 +58,7 @@ app.mount("/renders", StaticFiles(directory=str(_renders_dir)), name="renders")
 
 @app.get("/health")
 def health() -> dict:
-    return {"status": "ok"}
+    return {"status": "ok", "commit": os.environ.get("RAILWAY_GIT_COMMIT_SHA", "unknown")[:7]}
 
 
 @app.get("/health/supabase")
