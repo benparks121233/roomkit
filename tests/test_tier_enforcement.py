@@ -353,7 +353,7 @@ class TestWatermark:
 
         render_patch = patch(
             "services.render_service.render_room",
-            return_value="/tmp/render.jpg",
+            return_value=("/tmp/render.jpg", None),
         )
         with render_patch as mock_render, \
              patch("services.render_service.render_exists", return_value=False), \
@@ -374,7 +374,7 @@ class TestWatermark:
 
         render_patch = patch(
             "services.render_service.render_room",
-            return_value="/tmp/render.jpg",
+            return_value=("/tmp/render.jpg", None),
         )
         with render_patch as mock_render, \
              patch("services.render_service.render_exists", return_value=False), \

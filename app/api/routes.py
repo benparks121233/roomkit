@@ -729,7 +729,7 @@ def _render_worker(
             r.hset(f"render_job:{job_id}", "status", "rendering")
 
         _render_t = time.monotonic()
-        render_path = render_room(
+        render_result = render_room(
             run_id=run_id,
             room_type=room_type,
             style_name=style_name,
@@ -740,7 +740,7 @@ def _render_worker(
         )
         _render_ms = round((time.monotonic() - _render_t) * 1000, 1)
 
-        if render_path is None:
+        if render_result is None:
             if r:
                 r.hset(f"render_job:{job_id}", mapping={
                     "status": "failed",
@@ -748,6 +748,12 @@ def _render_worker(
                 })
             logger.info("Render failed for %s in %.1fms", run_id, _render_ms)
             return
+
+        _render_path, _storage_url = render_result
+
+        if _storage_url:
+            from services.render_storage import save_render_url
+            save_render_url(run_id, _storage_url)
 
         _render_quality = os.environ.get("RENDER_QUALITY", "medium")
         _render_cost = 0.10 if _render_quality == "medium" else 0.30
@@ -757,10 +763,11 @@ def _render_worker(
             "render_ms": _render_ms,
         }, api_cost=_render_cost, user_id=user_id)
 
+        _url = _storage_url or f"/renders/{run_id}.jpg"
         if r:
             r.hset(f"render_job:{job_id}", mapping={
                 "status": "complete",
-                "render_url": f"/renders/{run_id}.jpg",
+                "render_url": _url,
             })
     except Exception:
         logger.exception("Render worker failed for job %s (run %s)", job_id, run_id)
@@ -795,7 +802,8 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
 
     if render_exists(run_id):
         log_event(run_id, "render_generated", {"render_cost": 0.0, "cached": True}, api_cost=0.0, user_id=user["user_id"])
-        return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "status": "complete", "cached": True}
+        _cached_url = getattr(design, "render_url", None) or f"/renders/{run_id}.jpg"
+        return {"run_id": run_id, "render_url": _cached_url, "status": "complete", "cached": True}
 
     if design.finalized_at is None:
         raise HTTPException(status_code=400, detail="Design must be finalized before rendering")
@@ -833,7 +841,7 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         )
 
     # Fallback: no Redis → synchronous render (current behavior for local dev)
-    render_path = render_room(
+    render_result = render_room(
         run_id=run_id,
         room_type=design.room_type,
         style_name=design.style.style_name,
@@ -843,8 +851,14 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         watermark=_watermark,
     )
 
-    if render_path is None:
+    if render_result is None:
         raise HTTPException(status_code=500, detail="Room render generation failed")
+
+    _render_path, _storage_url = render_result
+
+    if _storage_url:
+        from services.render_storage import save_render_url
+        save_render_url(run_id, _storage_url)
 
     _render_quality = os.environ.get("RENDER_QUALITY", "medium")
     _render_cost = 0.10 if _render_quality == "medium" else 0.30
@@ -852,7 +866,8 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         "render_cost": _render_cost, "cached": False,
     }, api_cost=_render_cost, user_id=user["user_id"])
 
-    return {"run_id": run_id, "render_url": f"/renders/{run_id}.jpg", "status": "complete", "cached": False}
+    _url = _storage_url or f"/renders/{run_id}.jpg"
+    return {"run_id": run_id, "render_url": _url, "status": "complete", "cached": False}
 
 
 @router.get("/design/{run_id}/render/status")
@@ -863,7 +878,9 @@ async def render_status(request: Request, run_id: str, user: CurrentUser, job_id
     from services.render_service import render_exists
 
     if render_exists(run_id):
-        return {"status": "complete", "render_url": f"/renders/{run_id}.jpg"}
+        design = _get_design(run_id, user)
+        _cached_url = getattr(design, "render_url", None) or f"/renders/{run_id}.jpg"
+        return {"status": "complete", "render_url": _cached_url}
 
     if job_id is None:
         return {"status": "unknown"}

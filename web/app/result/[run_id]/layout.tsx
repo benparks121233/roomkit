@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+
+function storageRenderUrl(run_id: string): string | null {
+  if (!SUPABASE_URL) return null;
+  return `${SUPABASE_URL}/storage/v1/object/public/renders/${run_id}.jpg`;
+}
 
 export async function generateMetadata({
   params,
@@ -14,15 +19,14 @@ export async function generateMetadata({
   const description =
     "Design your own room in minutes — real products, on budget.";
 
-  // Check if a render exists (HEAD request to the static file path).
-  // Phase 7 note: switch to reading render_url from the design row
-  // once that column exists, avoiding this network round-trip.
   let ogImage = `${SITE_URL}/og-default.jpg`;
   try {
-    const renderUrl = `${API_BASE}/renders/${run_id}.jpg`;
-    const head = await fetch(renderUrl, { method: "HEAD" });
-    if (head.ok) {
-      ogImage = renderUrl;
+    const renderUrl = storageRenderUrl(run_id);
+    if (renderUrl) {
+      const head = await fetch(renderUrl, { method: "HEAD" });
+      if (head.ok) {
+        ogImage = renderUrl;
+      }
     }
   } catch {
     // Render check failed — use fallback. Non-blocking.

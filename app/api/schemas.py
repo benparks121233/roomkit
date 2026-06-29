@@ -87,6 +87,7 @@ class DesignResponse(BaseModel):
     finalized_at: str | None = None  # ISO timestamp; set once at finalize, never cleared
     user_id: str | None = None
     is_paid: bool = False
+    render_url: str | None = None
 
 
 # ---------------------------------------------------------------------------

@@ -19,7 +19,7 @@ class TestPipelineTiming:
         from app.main import app
         from fastapi.testclient import TestClient
 
-        _user = {"user_id": "timing-user-1", "email": "t@test.com", "token": "tok"}
+        _user = {"user_id": "00000000-0000-0000-0000-000000000003", "email": "t@test.com", "token": "tok"}
         app.dependency_overrides[get_current_user] = lambda: _user
 
         # Mock the entire pipeline to run fast
@@ -34,6 +34,7 @@ class TestPipelineTiming:
              patch("app.api.routes.log_selections"), \
              patch("services.concurrency.acquire_llm_slots", return_value=True), \
              patch("services.concurrency.release_llm_slots"), \
+             patch("services.supabase_client.get_client", return_value=None), \
              patch("services.design_store.save_design"):
 
             # Minimal mocks to get through the pipeline
@@ -118,7 +119,7 @@ class TestPipelineTiming:
         mock_redis = MagicMock()
 
         with patch("services.redis_client.get_redis", return_value=mock_redis), \
-             patch("services.render_service.render_room", return_value="/fake/path.jpg"), \
+             patch("services.render_service.render_room", return_value=("/fake/path.jpg", None)), \
              patch("app.api.routes.log_event") as mock_log:
 
             _render_worker(
@@ -129,7 +130,7 @@ class TestPipelineTiming:
                 mood="calm",
                 keywords=["wood"],
                 products={},
-                user_id="timing-user-1",
+                user_id="00000000-0000-0000-0000-000000000003",
             )
 
             render_calls = [

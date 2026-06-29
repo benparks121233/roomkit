@@ -217,26 +217,17 @@ def render_room(
     products: dict[str, list[dict]],
     *,
     watermark: bool = True,
-) -> str | None:
+) -> tuple[str, str | None] | None:
     """Generate a photorealistic room render from selected products.
 
-    Args:
-        run_id: Design run ID (used for caching).
-        room_type: "bedroom" or "living_room".
-        style_name: Style profile ID (e.g. "japandi", "warm_minimalist").
-        mood: Style mood string (e.g. "calm, grounded, uncluttered").
-        keywords: Style keywords list.
-        products: Dict of slot_id → list of {"name": str, "image_url": str}.
-                  Multi-select slots (wall_art, plants) may have multiple items.
-
     Returns:
-        Path to the saved render image, or None on failure.
+        (local_path, storage_url) on success. storage_url may be None if
+        upload failed (local file still valid). Returns None on failure.
     """
-    # Check cache first.
     render_path = get_render_path(run_id)
     if render_path.exists():
         logger.info("Render cache hit for %s", run_id)
-        return str(render_path)
+        return str(render_path), None
 
     # Download product images as references — iterate the caller's products dict
     # directly so the render is dynamic per user's actual selections.
@@ -350,7 +341,11 @@ def render_room(
 
         size_kb = render_path.stat().st_size // 1024
         logger.info("Render saved: %s (%d KB)", render_path, size_kb)
-        return str(render_path)
+
+        from services.render_storage import upload_render
+        storage_url = upload_render(run_id, render_path)
+
+        return str(render_path), storage_url
 
     except Exception:
         logger.exception("Room render failed for %s", run_id)

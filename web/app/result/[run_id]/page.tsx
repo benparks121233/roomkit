@@ -421,7 +421,10 @@ export default function ResultPage() {
 
     generateRender(runId)
       .then((renderResp) => {
-        setRenderUrl(`${API_BASE}${renderResp.render_url}`);
+        const url = renderResp.render_url.startsWith("http")
+          ? renderResp.render_url
+          : `${API_BASE}${renderResp.render_url}`;
+        setRenderUrl(url);
         if (runId) trackEvent(runId, "render_viewed");
       })
       .catch((err) => {
@@ -444,7 +447,10 @@ export default function ResultPage() {
     checkRenderStatus(runId, timeoutJobId)
       .then((status) => {
         if (status.status === "complete" && status.render_url) {
-          setRenderUrl(`${API_BASE}${status.render_url}`);
+          const url = status.render_url.startsWith("http")
+            ? status.render_url
+            : `${API_BASE}${status.render_url}`;
+          setRenderUrl(url);
           setRenderTimedOut(false);
           if (runId) trackEvent(runId, "render_viewed");
         } else if (status.status === "failed") {

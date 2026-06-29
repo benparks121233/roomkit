@@ -204,10 +204,11 @@ class TestRouteIntegration:
         from app.main import app
         from fastapi.testclient import TestClient
 
-        _user = {"user_id": "sem-user-1", "email": "s@test.com", "token": "tok"}
+        _user = {"user_id": "00000000-0000-0000-0000-000000000002", "email": "s@test.com", "token": "tok"}
         app.dependency_overrides[get_current_user] = lambda: _user
 
-        with patch("services.concurrency.acquire_llm_slots", return_value=False):
+        with patch("services.supabase_client.get_client", return_value=None), \
+             patch("services.concurrency.acquire_llm_slots", return_value=False):
             client = TestClient(app)
             resp = client.post("/design", json={
                 "room_type": "bedroom",

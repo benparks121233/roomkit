@@ -46,6 +46,8 @@ def save_design(response: DesignResponse, user_id: str | None = None) -> bool:
     if user_id:
         row["user_id"] = user_id
     row["is_paid"] = response.is_paid
+    if response.render_url:
+        row["render_url"] = response.render_url
 
     try:
         client.table("designs").upsert(row).execute()
@@ -192,4 +194,5 @@ def _row_to_response(row: dict) -> DesignResponse:
         finalized_at=row.get("finalized_at"),
         user_id=row.get("user_id"),
         is_paid=row.get("is_paid", False),
+        render_url=row.get("render_url"),
     )

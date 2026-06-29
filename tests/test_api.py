@@ -1,6 +1,7 @@
 # tests/test_api.py
 # Integration tests for the /design API endpoints.
 # All LLM calls are mocked — no live API calls.
+# Supabase client is mocked to None so tier routing is skipped (tested in test_tier_enforcement.py).
 
 from __future__ import annotations
 
@@ -10,11 +11,15 @@ from unittest.mock import patch
 import pytest
 from fastapi.testclient import TestClient
 
+# Disable Supabase for all tests in this file — tier enforcement is tested separately.
+_supabase_patch = patch("services.supabase_client.get_client", return_value=None)
+_supabase_patch.start()
+
 from app.api.routes import _designs
 from app.auth import get_current_user
 from app.main import app
 
-_TEST_USER = {"user_id": "test-user-aaa-111", "email": "test@example.com", "token": "fake"}
+_TEST_USER = {"user_id": "00000000-0000-0000-0000-000000000001", "email": "test@example.com", "token": "fake"}
 app.dependency_overrides[get_current_user] = lambda: _TEST_USER
 
 client = TestClient(app)

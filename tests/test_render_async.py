@@ -16,7 +16,7 @@ from app.api.schemas import DesignResponse, SlotResult, StyleResult
 from app.auth import get_current_user
 from app.main import app
 
-_USER = {"user_id": "render-user-1", "email": "r@test.com", "token": "tok"}
+_USER = {"user_id": "00000000-0000-0000-0000-000000000004", "email": "r@test.com", "token": "tok"}
 
 
 def _make_design(run_id: str, finalized: bool = True) -> DesignResponse:
@@ -84,7 +84,7 @@ class TestAsyncRender:
     """When Redis is available and no cache hit, return 202 with job_id."""
 
     @patch("services.render_service.render_exists", return_value=False)
-    @patch("services.render_service.render_room", return_value="/fake/path.jpg")
+    @patch("services.render_service.render_room", return_value=("/fake/path.jpg", None))
     def test_returns_202_with_job_id(self, _mock_render, _mock_exists):
         _designs["run-async"] = _make_design("run-async")
         mock_redis = MagicMock()
@@ -111,7 +111,7 @@ class TestSyncFallback:
     """When Redis is unavailable, fall back to synchronous render."""
 
     @patch("services.render_service.render_exists", return_value=False)
-    @patch("services.render_service.render_room", return_value="/fake/path.jpg")
+    @patch("services.render_service.render_room", return_value=("/fake/path.jpg", None))
     def test_sync_returns_200(self, _mock_render, _mock_exists):
         _designs["run-sync"] = _make_design("run-sync")
         with patch("services.redis_client.get_redis", return_value=None):
@@ -134,7 +134,7 @@ class TestSyncFallback:
 class TestRenderWorker:
     """Test the background _render_worker function directly."""
 
-    @patch("services.render_service.render_room", return_value="/fake/path.jpg")
+    @patch("services.render_service.render_room", return_value=("/fake/path.jpg", None))
     def test_updates_redis_to_complete(self, _mock_render):
         mock_redis = MagicMock()
         with patch("services.redis_client.get_redis", return_value=mock_redis):
