@@ -215,6 +215,8 @@ def render_room(
     mood: str,
     keywords: list[str],
     products: dict[str, list[dict]],
+    *,
+    watermark: bool = True,
 ) -> str | None:
     """Generate a photorealistic room render from selected products.
 
@@ -342,7 +344,8 @@ def render_room(
             style_name, ImageStat.Stat(img.convert("L")).mean[0], run_id,
         )
 
-        img = _apply_watermark(img)
+        if watermark:
+            img = _apply_watermark(img)
         img.save(render_path, "JPEG", quality=85, optimize=True)
 
         size_kb = render_path.stat().st_size // 1024

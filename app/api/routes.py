@@ -109,6 +109,22 @@ def _get_design(run_id: str, user: dict | None = None) -> DesignResponse:
 
 
 # ---------------------------------------------------------------------------
+# Tier helpers
+# ---------------------------------------------------------------------------
+
+def _re_credit_pack(user_id: str) -> None:
+    """Re-credit a pack room after clean pipeline failure."""
+    try:
+        from services.supabase_client import get_client
+        client = get_client()
+        if client:
+            client.rpc("re_credit_pack", {"p_user_id": user_id}).execute()
+            logger.info("Re-credited pack for user %s after pipeline failure", user_id)
+    except Exception:
+        logger.critical("Pack re-credit FAILED for user %s — manual fix required", user_id, exc_info=True)
+
+
+# ---------------------------------------------------------------------------
 # POST /design — run the full pipeline
 # ---------------------------------------------------------------------------
 
@@ -120,304 +136,343 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
     This makes real LLM calls (~17 total) and can take 60-90 seconds.
     Requires authentication — user_id is stamped on the design.
     """
-    # 0. Free-room enforcement: count user's existing designs.
-    # App-layer check. Race window is sub-second; blast radius is $0.27.
-    # 6E adds a DB-level unique partial index for airtight enforcement.
+    # 0. Tier determination: try paid path first, then free path.
     from services.supabase_client import get_client as _get_svc_client
     _svc = _get_svc_client()
+    _is_paid = False
+    _pack_decremented = False
+
     if _svc:
+        # Paid path: try atomic pack decrement.
         try:
-            _count_resp = (
-                _svc.table("designs")
-                .select("run_id", count="exact")
-                .eq("user_id", user["user_id"])
-                .execute()
-            )
-            _free_limit = int(os.environ.get("FREE_ROOM_LIMIT", "1"))
-            if _count_resp.count and _count_resp.count >= _free_limit:
+            _pack_resp = _svc.rpc("decrement_pack", {
+                "p_user_id": user["user_id"],
+            }).execute()
+            if _pack_resp.data is not None:
+                _is_paid = True
+                _pack_decremented = True
+        except Exception:
+            logger.warning("Pack decrement RPC failed — falling to free tier", exc_info=True)
+
+        if not _is_paid:
+            # Free path: room-type gate + fast-path count check.
+            if req.room_type and req.room_type != "bedroom":
                 raise HTTPException(
                     status_code=403,
-                    detail="Free tier: 1 room limit. Upgrade for more.",
+                    detail="Free tier: bedroom only. Upgrade for more room types.",
                 )
-        except HTTPException:
-            raise
-        except Exception:
-            logger.warning("Free-room count check failed — allowing request", exc_info=True)
+            try:
+                _count_resp = (
+                    _svc.table("designs")
+                    .select("run_id", count="exact")
+                    .eq("user_id", user["user_id"])
+                    .eq("is_paid", False)
+                    .execute()
+                )
+                _free_limit = int(os.environ.get("FREE_ROOM_LIMIT", "1"))
+                if _count_resp.count and _count_resp.count >= _free_limit:
+                    raise HTTPException(
+                        status_code=403,
+                        detail="Free tier: 1 room limit. Upgrade for more.",
+                    )
+            except HTTPException:
+                raise
+            except Exception:
+                logger.warning("Free-room count check failed — allowing request", exc_info=True)
 
     _start_time = time.monotonic()
     _timing: dict[str, float] = {}
 
-    # 1. Intake — validate and produce a RoomRequest.
-    _t = time.monotonic()
     try:
-        room_request = parse_intake(req.model_dump())
-    except ValueError as exc:
-        raise HTTPException(status_code=422, detail=str(exc))
-    _timing["intake_ms"] = round((time.monotonic() - _t) * 1000, 1)
+        # 1. Intake — validate and produce a RoomRequest.
+        _t = time.monotonic()
+        try:
+            room_request = parse_intake(req.model_dump())
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=str(exc))
+        _timing["intake_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
-    log_event(room_request.run_id, "design_started", {
-        "room_type": room_request.room_type or "bedroom",
-        "budget": req.budget,
-        "aesthetic": req.core_aesthetic or "",
-    }, user_id=user["user_id"])
+        log_event(room_request.run_id, "design_started", {
+            "room_type": room_request.room_type or "bedroom",
+            "budget": req.budget,
+            "aesthetic": req.core_aesthetic or "",
+        }, user_id=user["user_id"])
 
-    # 2. Style interpretation — real LLM call.
-    _t = time.monotonic()
-    style_profile = interpret_style(room_request)
-    _timing["style_ms"] = round((time.monotonic() - _t) * 1000, 1)
+        # 2. Style interpretation — real LLM call.
+        _t = time.monotonic()
+        style_profile = interpret_style(room_request)
+        _timing["style_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
-    # 3. Composition — real LLM call for weight proposal, deterministic budget math.
-    _t = time.monotonic()
-    slot_plan = plan_composition(room_request, style_profile)
-    _timing["composition_ms"] = round((time.monotonic() - _t) * 1000, 1)
+        # 3. Composition — real LLM call for weight proposal, deterministic budget math.
+        _t = time.monotonic()
+        slot_plan = plan_composition(room_request, style_profile)
+        _timing["composition_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
-    # 4. Composition gate — deterministic validation.
-    slot_plan, gate_error = validate_composition(slot_plan)
-    if gate_error:
-        # Return the response with is_feasible=False rather than a hard error,
-        # so the UI can show a meaningful message.
-        return _build_response(
+        # 4. Composition gate — deterministic validation.
+        slot_plan, gate_error = validate_composition(slot_plan)
+        if gate_error:
+            # Return the response with is_feasible=False rather than a hard error,
+            # so the UI can show a meaningful message.
+            return _build_response(
+                room_request.run_id,
+                room_request.room_type or "bedroom",
+                style_profile,
+                slot_plan,
+                slots_results=[],
+                gate_error=gate_error,
+            )
+
+        # 5. Sourcing + selection — parallel LLM calls for non-owned slots.
+        _t = time.monotonic()
+        adapter = AmazonAdapter()
+        slot_results: list[SlotResult] = []
+
+        # Decor single-item cap: no single decor item may exceed 50% of the
+        # total decor group budget. Prevents one expensive item eating the pool.
+        _DECOR_SLOTS = {"wall_art", "plants", "mirror", "throw_blanket"}
+        decor_total_budget = sum(
+            s.allocated_budget for s in slot_plan.slots
+            if s.slot_id in _DECOR_SLOTS and not s.owned
+        )
+        decor_item_cap = decor_total_budget * 0.50
+
+        # Owned slots don't need LLM calls — collect them immediately.
+        owned_results: list[SlotResult] = []
+        sourceable_slots: list[object] = []  # (slot, candidates) pairs
+
+        for slot in slot_plan.slots:
+            if slot.owned:
+                owned_results.append(SlotResult(
+                    slot_id=slot.slot_id,
+                    allocated_budget=slot.allocated_budget,
+                    owned=True,
+                    max_quantity=slot.max_quantity,
+                    product=None,
+                    null_reason="owned",
+                ))
+                continue
+
+            # Build spec hints and fetch candidates (local file reads, fast).
+            spec_hints: dict[str, str] = {}
+            if "bed_size" in slot.required_specs and room_request.bed_size:
+                spec_hints["bed_size"] = room_request.bed_size
+
+            # Fetch candidates up to 1.5x the slot budget so the user sees more
+            # variety. The LLM and UI will handle budget enforcement — items above
+            # the slot budget are shown but flagged if they'd blow the total.
+            # Duvet slots get 2.0x to widen the thin pool (insert is hidden inside
+            # the cover; both benefit from seeing more price range).
+            # For decor slots, cap at 50% of the total decor pool to prevent
+            # one expensive item eating the entire decor allocation.
+            _WIDE_SOURCING_SLOTS = {"duvet_insert", "duvet_cover"}
+            sourcing_mult = 2.0 if slot.slot_id in _WIDE_SOURCING_SLOTS else 1.5
+            max_price = slot.allocated_budget * sourcing_mult
+            if slot.slot_id in _DECOR_SLOTS and decor_item_cap > 0:
+                max_price = min(max_price, decor_item_cap)
+
+            # Use sourcing_terms (product-name-friendly) for adapter scoring,
+            # falling back to keywords if sourcing_terms not set.
+            sourcing_kw = style_profile.sourcing_terms or style_profile.keywords
+            candidates = adapter.fetch_candidates(
+                slot.slot_id,
+                sourcing_kw,
+                (0.0, max_price),
+                spec_hints,
+                interests=room_request.interests or None,
+                priority_terms=style_profile.priority_terms or None,
+            )
+            logger.info("Sourced %s: %d candidates (budget $%.2f)", slot.slot_id, len(candidates), slot.allocated_budget)
+
+            # Mirror type filter: if user selected a mirror type (e.g. "round",
+            # "full_length"), prefer candidates whose name matches that type.
+            # Synonyms cover common product-name vocabulary variations.
+            _MIRROR_SYNONYMS: dict[str, list[str]] = {
+                "round": ["round", "circular", "circle"],
+                "full_length": ["full length", "full-length", "standing", "floor"],
+                "rectangular": ["rectangular", "rectangle", "square"],
+                "wall": ["wall"],
+                "arched": ["arched", "arch"],
+            }
+            if slot.slot_id == "mirror" and room_request.mirror_type:
+                mtype = room_request.mirror_type.lower()
+                synonyms = _MIRROR_SYNONYMS.get(mtype, [mtype.replace("_", " ")])
+                typed = [
+                    c for c in candidates
+                    if any(syn in c.name.lower() for syn in synonyms)
+                ]
+                if typed:
+                    candidates = typed
+
+            # Screen size range filter: map user's bucket to inch ranges and
+            # keep only TVs whose screen_size spec falls within the range.
+            # Catalog stores screen_size as e.g. "55 inch"; we parse the number.
+            _SCREEN_SIZE_RANGES: dict[str, tuple[int, int]] = {
+                "small":  (32, 43),
+                "medium": (50, 55),
+                "large":  (65, 65),
+                "xl":     (75, 85),
+            }
+            if slot.slot_id == "tv" and room_request.screen_size:
+                size_range = _SCREEN_SIZE_RANGES.get(room_request.screen_size)
+                if size_range:
+                    lo, hi = size_range
+                    def _in_range(c: Product) -> bool:
+                        raw = c.specs.get("screen_size", "")
+                        m = re.match(r"(\d+)", raw)
+                        return lo <= int(m.group(1)) <= hi if m else False
+                    filtered = [c for c in candidates if _in_range(c)]
+                    if filtered:
+                        candidates = filtered
+
+            sourceable_slots.append((slot, candidates))
+
+        _timing["sourcing_ms"] = round((time.monotonic() - _t) * 1000, 1)
+
+        # Fire all selection LLM calls in parallel.
+        # Each call returns (ranked_products, fit_reasons, null_reason).
+        selection_results: dict[str, tuple[list, list, str | None]] = {}
+        _t = time.monotonic()
+
+        interests = room_request.interests
+
+        from services.concurrency import acquire_llm_slots, release_llm_slots
+        slot_count = len(sourceable_slots) or 1
+        if not acquire_llm_slots(slot_count):
+            raise HTTPException(status_code=503, detail="Server busy — too many concurrent design requests. Please retry in a moment.")
+
+        _timing["semaphore_wait_ms"] = round((time.monotonic() - _t) * 1000, 1)
+        _t_llm = time.monotonic()
+
+        try:
+            with ThreadPoolExecutor(max_workers=slot_count) as pool:
+                futures = {
+                    pool.submit(
+                        select_products, slot, style_profile, cands, interests,
+                        pick_count_for_slot(slot.slot_id),
+                    ): slot.slot_id
+                    for slot, cands in sourceable_slots
+                }
+                for future in as_completed(futures):
+                    sid = futures[future]
+                    selection_results[sid] = future.result()
+        finally:
+            release_llm_slots(slot_count)
+
+        _timing["selection_llm_ms"] = round((time.monotonic() - _t_llm) * 1000, 1)
+        _timing["selection_ms"] = round((time.monotonic() - _t) * 1000, 1)
+        logger.info(
+            "Selected %d slots in %.1fs (parallel)",
+            len(sourceable_slots),
+            _timing["selection_ms"] / 1000,
+        )
+
+        # Build SlotResults for sourceable slots.
+        sourceable_results: list[SlotResult] = []
+        for slot, _cands in sourceable_slots:
+            products, fit_reasons, null_reason = selection_results[slot.slot_id]
+            if products:
+                # Rank 1 = primary product, ranks 2+ = alternatives.
+                primary = products[0]
+                alts = [
+                    ProductResult(
+                        product_id=p.product_id,
+                        name=p.name,
+                        normalized_price=p.normalized_price,
+                        image_url=p.image_url,
+                        buy_url=p.buy_url,
+                        fit_reason=fit_reasons[i + 1],
+                    )
+                    for i, p in enumerate(products[1:])
+                ]
+                sourceable_results.append(SlotResult(
+                    slot_id=slot.slot_id,
+                    allocated_budget=slot.allocated_budget,
+                    owned=False,
+                    max_quantity=slot.max_quantity,
+                    product=ProductResult(
+                        product_id=primary.product_id,
+                        name=primary.name,
+                        normalized_price=primary.normalized_price,
+                        image_url=primary.image_url,
+                        buy_url=primary.buy_url,
+                        fit_reason=fit_reasons[0],
+                    ),
+                    alternatives=alts,
+                    null_reason=None,
+                ))
+            else:
+                sourceable_results.append(SlotResult(
+                    slot_id=slot.slot_id,
+                    allocated_budget=slot.allocated_budget,
+                    owned=False,
+                    max_quantity=slot.max_quantity,
+                    product=None,
+                    alternatives=[],
+                    null_reason=null_reason or "no_candidate",
+                ))
+
+        # Merge and sort by slot_id for deterministic output order.
+        slot_results = sorted(
+            owned_results + sourceable_results,
+            key=lambda s: s.slot_id,
+        )
+
+        # 6. Assemble response and store.
+        response = _build_response(
             room_request.run_id,
             room_request.room_type or "bedroom",
             style_profile,
             slot_plan,
-            slots_results=[],
-            gate_error=gate_error,
+            slots_results=slot_results,
         )
+        response.user_id = user["user_id"]
+        _designs[response.run_id] = response
 
-    # 5. Sourcing + selection — parallel LLM calls for non-owned slots.
-    _t = time.monotonic()
-    adapter = AmazonAdapter()
-    slot_results: list[SlotResult] = []
-
-    # Decor single-item cap: no single decor item may exceed 50% of the
-    # total decor group budget. Prevents one expensive item eating the pool.
-    _DECOR_SLOTS = {"wall_art", "plants", "mirror", "throw_blanket"}
-    decor_total_budget = sum(
-        s.allocated_budget for s in slot_plan.slots
-        if s.slot_id in _DECOR_SLOTS and not s.owned
-    )
-    decor_item_cap = decor_total_budget * 0.50
-
-    # Owned slots don't need LLM calls — collect them immediately.
-    owned_results: list[SlotResult] = []
-    sourceable_slots: list[object] = []  # (slot, candidates) pairs
-
-    for slot in slot_plan.slots:
-        if slot.owned:
-            owned_results.append(SlotResult(
-                slot_id=slot.slot_id,
-                allocated_budget=slot.allocated_budget,
-                owned=True,
-                max_quantity=slot.max_quantity,
-                product=None,
-                null_reason="owned",
-            ))
-            continue
-
-        # Build spec hints and fetch candidates (local file reads, fast).
-        spec_hints: dict[str, str] = {}
-        if "bed_size" in slot.required_specs and room_request.bed_size:
-            spec_hints["bed_size"] = room_request.bed_size
-
-        # Fetch candidates up to 1.5x the slot budget so the user sees more
-        # variety. The LLM and UI will handle budget enforcement — items above
-        # the slot budget are shown but flagged if they'd blow the total.
-        # Duvet slots get 2.0x to widen the thin pool (insert is hidden inside
-        # the cover; both benefit from seeing more price range).
-        # For decor slots, cap at 50% of the total decor pool to prevent
-        # one expensive item eating the entire decor allocation.
-        _WIDE_SOURCING_SLOTS = {"duvet_insert", "duvet_cover"}
-        sourcing_mult = 2.0 if slot.slot_id in _WIDE_SOURCING_SLOTS else 1.5
-        max_price = slot.allocated_budget * sourcing_mult
-        if slot.slot_id in _DECOR_SLOTS and decor_item_cap > 0:
-            max_price = min(max_price, decor_item_cap)
-
-        # Use sourcing_terms (product-name-friendly) for adapter scoring,
-        # falling back to keywords if sourcing_terms not set.
-        sourcing_kw = style_profile.sourcing_terms or style_profile.keywords
-        candidates = adapter.fetch_candidates(
-            slot.slot_id,
-            sourcing_kw,
-            (0.0, max_price),
-            spec_hints,
-            interests=room_request.interests or None,
-            priority_terms=style_profile.priority_terms or None,
-        )
-        logger.info("Sourced %s: %d candidates (budget $%.2f)", slot.slot_id, len(candidates), slot.allocated_budget)
-
-        # Mirror type filter: if user selected a mirror type (e.g. "round",
-        # "full_length"), prefer candidates whose name matches that type.
-        # Synonyms cover common product-name vocabulary variations.
-        _MIRROR_SYNONYMS: dict[str, list[str]] = {
-            "round": ["round", "circular", "circle"],
-            "full_length": ["full length", "full-length", "standing", "floor"],
-            "rectangular": ["rectangular", "rectangle", "square"],
-            "wall": ["wall"],
-            "arched": ["arched", "arch"],
-        }
-        if slot.slot_id == "mirror" and room_request.mirror_type:
-            mtype = room_request.mirror_type.lower()
-            synonyms = _MIRROR_SYNONYMS.get(mtype, [mtype.replace("_", " ")])
-            typed = [
-                c for c in candidates
-                if any(syn in c.name.lower() for syn in synonyms)
-            ]
-            if typed:
-                candidates = typed
-
-        # Screen size range filter: map user's bucket to inch ranges and
-        # keep only TVs whose screen_size spec falls within the range.
-        # Catalog stores screen_size as e.g. "55 inch"; we parse the number.
-        _SCREEN_SIZE_RANGES: dict[str, tuple[int, int]] = {
-            "small":  (32, 43),
-            "medium": (50, 55),
-            "large":  (65, 65),
-            "xl":     (75, 85),
-        }
-        if slot.slot_id == "tv" and room_request.screen_size:
-            size_range = _SCREEN_SIZE_RANGES.get(room_request.screen_size)
-            if size_range:
-                lo, hi = size_range
-                def _in_range(c: Product) -> bool:
-                    raw = c.specs.get("screen_size", "")
-                    m = re.match(r"(\d+)", raw)
-                    return lo <= int(m.group(1)) <= hi if m else False
-                filtered = [c for c in candidates if _in_range(c)]
-                if filtered:
-                    candidates = filtered
-
-        sourceable_slots.append((slot, candidates))
-
-    _timing["sourcing_ms"] = round((time.monotonic() - _t) * 1000, 1)
-
-    # Fire all selection LLM calls in parallel.
-    # Each call returns (ranked_products, fit_reasons, null_reason).
-    selection_results: dict[str, tuple[list, list, str | None]] = {}
-    _t = time.monotonic()
-
-    interests = room_request.interests
-
-    from services.concurrency import acquire_llm_slots, release_llm_slots
-    slot_count = len(sourceable_slots) or 1
-    if not acquire_llm_slots(slot_count):
-        raise HTTPException(status_code=503, detail="Server busy — too many concurrent design requests. Please retry in a moment.")
-
-    _timing["semaphore_wait_ms"] = round((time.monotonic() - _t) * 1000, 1)
-    _t_llm = time.monotonic()
-
-    try:
-        with ThreadPoolExecutor(max_workers=slot_count) as pool:
-            futures = {
-                pool.submit(
-                    select_products, slot, style_profile, cands, interests,
-                    pick_count_for_slot(slot.slot_id),
-                ): slot.slot_id
-                for slot, cands in sourceable_slots
-            }
-            for future in as_completed(futures):
-                sid = futures[future]
-                selection_results[sid] = future.result()
-    finally:
-        release_llm_slots(slot_count)
-
-    _timing["selection_llm_ms"] = round((time.monotonic() - _t_llm) * 1000, 1)
-    _timing["selection_ms"] = round((time.monotonic() - _t) * 1000, 1)
-    logger.info(
-        "Selected %d slots in %.1fs (parallel)",
-        len(sourceable_slots),
-        _timing["selection_ms"] / 1000,
-    )
-
-    # Build SlotResults for sourceable slots.
-    sourceable_results: list[SlotResult] = []
-    for slot, _cands in sourceable_slots:
-        products, fit_reasons, null_reason = selection_results[slot.slot_id]
-        if products:
-            # Rank 1 = primary product, ranks 2+ = alternatives.
-            primary = products[0]
-            alts = [
-                ProductResult(
-                    product_id=p.product_id,
-                    name=p.name,
-                    normalized_price=p.normalized_price,
-                    image_url=p.image_url,
-                    buy_url=p.buy_url,
-                    fit_reason=fit_reasons[i + 1],
-                )
-                for i, p in enumerate(products[1:])
-            ]
-            sourceable_results.append(SlotResult(
-                slot_id=slot.slot_id,
-                allocated_budget=slot.allocated_budget,
-                owned=False,
-                max_quantity=slot.max_quantity,
-                product=ProductResult(
-                    product_id=primary.product_id,
-                    name=primary.name,
-                    normalized_price=primary.normalized_price,
-                    image_url=primary.image_url,
-                    buy_url=primary.buy_url,
-                    fit_reason=fit_reasons[0],
-                ),
-                alternatives=alts,
-                null_reason=None,
-            ))
+        # Tier-aware save: paid uses normal upsert, free uses atomic claim RPC.
+        from services.design_store import save_design, save_free_design
+        if _is_paid:
+            response.is_paid = True
+            save_design(response, user_id=user["user_id"])
         else:
-            sourceable_results.append(SlotResult(
-                slot_id=slot.slot_id,
-                allocated_budget=slot.allocated_budget,
-                owned=False,
-                max_quantity=slot.max_quantity,
-                product=None,
-                alternatives=[],
-                null_reason=null_reason or "no_candidate",
-            ))
+            claimed = save_free_design(response, user_id=user["user_id"])
+            if not claimed:
+                raise HTTPException(
+                    status_code=403,
+                    detail="Free tier: 1 room limit. Upgrade for more.",
+                )
 
-    # Merge and sort by slot_id for deterministic output order.
-    slot_results = sorted(
-        owned_results + sourceable_results,
-        key=lambda s: s.slot_id,
-    )
+        # Track: design completed + selections.
+        _elapsed = time.monotonic() - _start_time
+        _timing["total_ms"] = round(_elapsed * 1000, 1)
 
-    # 6. Assemble response and store.
-    response = _build_response(
-        room_request.run_id,
-        room_request.room_type or "bedroom",
-        style_profile,
-        slot_plan,
-        slots_results=slot_results,
-    )
-    response.user_id = user["user_id"]
-    _designs[response.run_id] = response
+        # Estimate API cost: ~16 Haiku selection calls + 1 Sonnet style + 1 Sonnet composition.
+        _sel_count = len(sourceable_slots)
+        _est_cost = round(0.012 * _sel_count + 0.02, 4)  # ~$0.012/selection + ~$0.02 style+comp
 
-    # Persist to Supabase (write-through). Failure is logged but non-blocking.
-    from services.design_store import save_design
-    save_design(response, user_id=user["user_id"])
+        logger.info(
+            "Pipeline timing for %s: %s",
+            response.run_id,
+            " | ".join(f"{k}={v}" for k, v in _timing.items()),
+        )
 
-    # Track: design completed + selections.
-    _elapsed = time.monotonic() - _start_time
-    _timing["total_ms"] = round(_elapsed * 1000, 1)
+        log_event(response.run_id, "design_completed", {
+            "slot_count": len(slot_results),
+            "total_spent": response.total_spent,
+            "elapsed_s": round(_elapsed, 1),
+            "api_cost": _est_cost,
+            "timing": _timing,
+        }, api_cost=_est_cost, user_id=user["user_id"])
 
-    # Estimate API cost: ~16 Haiku selection calls + 1 Sonnet style + 1 Sonnet composition.
-    _sel_count = len(sourceable_slots)
-    _est_cost = round(0.012 * _sel_count + 0.02, 4)  # ~$0.012/selection + ~$0.02 style+comp
+        return response
 
-    logger.info(
-        "Pipeline timing for %s: %s",
-        response.run_id,
-        " | ".join(f"{k}={v}" for k, v in _timing.items()),
-    )
-
-    log_event(response.run_id, "design_completed", {
-        "slot_count": len(slot_results),
-        "total_spent": response.total_spent,
-        "elapsed_s": round(_elapsed, 1),
-        "api_cost": _est_cost,
-        "timing": _timing,
-    }, api_cost=_est_cost, user_id=user["user_id"])
-
-    return response
+    except HTTPException:
+        if _pack_decremented:
+            _re_credit_pack(user["user_id"])
+        raise
+    except Exception:
+        if _pack_decremented:
+            _re_credit_pack(user["user_id"])
+        raise
 
 
 # ---------------------------------------------------------------------------
@@ -645,6 +700,7 @@ def _render_worker(
     keywords: list[str],
     products: dict[str, list[dict]],
     user_id: str,
+    watermark: bool = True,
 ) -> None:
     """Background thread: wait for render semaphore slot, run render, update Redis.
 
@@ -680,6 +736,7 @@ def _render_worker(
             mood=mood,
             keywords=keywords,
             products=products,
+            watermark=watermark,
         )
         _render_ms = round((time.monotonic() - _render_t) * 1000, 1)
 
@@ -732,6 +789,7 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
     from services.render_service import render_room, render_exists
 
     design = _get_design(run_id, user)
+    _watermark = not getattr(design, "is_paid", False)
 
     log_event(run_id, "render_requested", user_id=user["user_id"])
 
@@ -762,7 +820,8 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         t = threading.Thread(
             target=_render_worker,
             args=(job_id, run_id, design.room_type, design.style.style_name,
-                  design.style.mood, design.style.keywords, products, user["user_id"]),
+                  design.style.mood, design.style.keywords, products, user["user_id"],
+                  _watermark),
             daemon=True,
         )
         t.start()
@@ -781,6 +840,7 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         mood=design.style.mood,
         keywords=design.style.keywords,
         products=products,
+        watermark=_watermark,
     )
 
     if render_path is None:

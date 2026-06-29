@@ -45,6 +45,7 @@ def save_design(response: DesignResponse, user_id: str | None = None) -> bool:
     }
     if user_id:
         row["user_id"] = user_id
+    row["is_paid"] = response.is_paid
 
     try:
         client.table("designs").upsert(row).execute()
@@ -140,6 +141,45 @@ def load_design_as_user(run_id: str, user_jwt: str) -> DesignResponse:
     return _row_to_response(resp.data)
 
 
+def save_free_design(response: DesignResponse, user_id: str) -> bool:
+    """Atomically claim and save a free-tier design via RPC.
+
+    Returns True if claimed, False if at limit.
+    Fail-open on Supabase error: the design row was NOT inserted (free slot
+    not consumed in DB), so the design is ephemeral in-memory only.
+    """
+    import os
+
+    from services.supabase_client import get_client
+
+    client = get_client()
+    if client is None:
+        logger.warning("design_store: Supabase not configured — free limit not enforced")
+        return True
+
+    free_limit = int(os.environ.get("FREE_ROOM_LIMIT", "1"))
+    try:
+        result = client.rpc("claim_and_save_free_design", {
+            "p_run_id": response.run_id,
+            "p_user_id": user_id,
+            "p_room_type": response.room_type,
+            "p_target_budget": float(response.target_budget),
+            "p_total_spent": float(response.total_spent),
+            "p_is_feasible": response.is_feasible,
+            "p_style": response.style.model_dump(),
+            "p_slots": [s.model_dump() for s in response.slots],
+            "p_finalized_at": response.finalized_at,
+            "p_free_limit": free_limit,
+        }).execute()
+        claimed = result.data
+        if not claimed:
+            logger.info("design_store: free design claim rejected for user %s (at limit)", user_id)
+        return bool(claimed)
+    except Exception:
+        logger.exception("design_store: free design claim RPC failed for %s", response.run_id)
+        return True
+
+
 def _row_to_response(row: dict) -> DesignResponse:
     return DesignResponse(
         run_id=row["run_id"],
@@ -151,4 +191,5 @@ def _row_to_response(row: dict) -> DesignResponse:
         slots=[SlotResult(**s) for s in row["slots"]],
         finalized_at=row.get("finalized_at"),
         user_id=row.get("user_id"),
+        is_paid=row.get("is_paid", False),
     )
