@@ -48,6 +48,30 @@ def _checkout_completed_event(session_id="cs_test_1", user_id=None, pack_size="5
     }
 
 
+def _stripe_object_event(session_id="cs_test_1", user_id=None, pack_size="5",
+                          amount=999, currency="usd"):
+    """Build the same event using real StripeObjects — catches .get()/dict() bugs."""
+    from stripe._stripe_object import StripeObject
+
+    meta = StripeObject()
+    meta["pack_size"] = pack_size
+
+    session = StripeObject()
+    session["id"] = session_id
+    session["client_reference_id"] = user_id or _USER["user_id"]
+    session["metadata"] = meta
+    session["amount_total"] = amount
+    session["currency"] = currency
+
+    data = StripeObject()
+    data["object"] = session
+
+    event = StripeObject()
+    event["type"] = "checkout.session.completed"
+    event["data"] = data
+    return event
+
+
 def _post_webhook(content=b'{}', sig="t=1,v1=ok"):
     return client.post(
         "/stripe/webhook",
@@ -264,3 +288,94 @@ class TestWebhookFailures:
     def test_webhook_secret_not_configured_returns_500(self):
         resp = _post_webhook()
         assert resp.status_code == 500
+
+
+# ---------------------------------------------------------------------------
+# StripeObject regression — real StripeObject instances, not plain dicts
+# ---------------------------------------------------------------------------
+
+class TestStripeObjectHandling:
+    """Verify handle_webhook_event works with real StripeObjects.
+
+    Catches the .get()/dict() crash pattern that plain-dict mocks miss.
+    """
+
+    @patch("services.stripe_service._STRIPE_WEBHOOK_SECRET", "whsec_test")
+    @patch("services.stripe_service.stripe.Webhook.construct_event")
+    @patch("services.supabase_client.get_client")
+    def test_stripe_object_event_credits(self, mock_supabase, mock_construct):
+        """construct_event returns a StripeObject tree — must not crash."""
+        mock_construct.return_value = _stripe_object_event("cs_obj_1")
+
+        mock_client = MagicMock()
+        mock_rpc_resp = MagicMock()
+        mock_rpc_resp.data = 5
+        mock_client.rpc.return_value.execute.return_value = mock_rpc_resp
+        mock_supabase.return_value = mock_client
+
+        resp = _post_webhook()
+        assert resp.status_code == 200
+        body = resp.json()
+        assert body["status"] == "credited"
+        assert body["pack_size"] == 5
+        assert body["rooms_remaining"] == 5
+
+        mock_client.rpc.assert_called_once_with("process_stripe_payment", {
+            "p_session_id": "cs_obj_1",
+            "p_user_id": _USER["user_id"],
+            "p_pack_size": 5,
+            "p_amount": 999,
+            "p_currency": "usd",
+        })
+
+    @patch("services.stripe_service._STRIPE_WEBHOOK_SECRET", "whsec_test")
+    @patch("services.stripe_service.stripe.Webhook.construct_event")
+    @patch("services.supabase_client.get_client")
+    def test_stripe_object_duplicate_skips(self, mock_supabase, mock_construct):
+        """StripeObject event with duplicate session → RPC returns null → 200 duplicate."""
+        mock_construct.return_value = _stripe_object_event("cs_obj_dup")
+
+        mock_client = MagicMock()
+        mock_rpc_resp = MagicMock()
+        mock_rpc_resp.data = None
+        mock_client.rpc.return_value.execute.return_value = mock_rpc_resp
+        mock_supabase.return_value = mock_client
+
+        resp = _post_webhook()
+        assert resp.status_code == 200
+        assert resp.json()["status"] == "duplicate"
+
+    @patch("services.stripe_service._STRIPE_WEBHOOK_SECRET", "whsec_test")
+    @patch("services.stripe_service.stripe.Webhook.construct_event")
+    def test_stripe_object_ignored_event(self, mock_construct):
+        """Non-checkout StripeObject event → 200 ignored, no crash."""
+        from stripe._stripe_object import StripeObject
+
+        event = StripeObject()
+        event["type"] = "payment_intent.created"
+        data = StripeObject()
+        data["object"] = StripeObject()
+        event["data"] = data
+
+        mock_construct.return_value = event
+
+        resp = _post_webhook()
+        assert resp.status_code == 200
+        assert resp.json()["status"] == "ignored"
+
+    @patch("services.stripe_service._STRIPE_WEBHOOK_SECRET", "whsec_test")
+    @patch("services.stripe_service.stripe.Webhook.construct_event")
+    def test_stripe_object_missing_user_id(self, mock_construct):
+        """StripeObject with null client_reference_id → error, not crash."""
+        mock_construct.return_value = _stripe_object_event(
+            "cs_obj_nouser", user_id=None
+        )
+        # Override client_reference_id to None after construction
+        from stripe._stripe_object import StripeObject
+        event = mock_construct.return_value
+        session = event["data"]["object"]
+        session["client_reference_id"] = None
+
+        resp = _post_webhook()
+        assert resp.status_code == 200
+        assert resp.json()["status"] == "error"

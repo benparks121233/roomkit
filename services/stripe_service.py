@@ -74,6 +74,8 @@ def handle_webhook_event(payload: bytes, sig_header: str) -> dict:
         logger.exception("stripe webhook: signature verification failed")
         return {"status": "bad_signature"}
 
+    event = event.to_dict() if hasattr(event, "to_dict") else event
+
     if event["type"] != "checkout.session.completed":
         logger.info("stripe webhook: ignoring event type %s", event["type"])
         return {"status": "ignored", "event_type": event["type"]}
