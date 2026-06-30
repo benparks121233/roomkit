@@ -18,6 +18,7 @@ from slowapi.errors import RateLimitExceeded  # noqa: E402
 from app.rate_limit import limiter  # noqa: E402
 from app.api.routes import router  # noqa: E402
 from app.api.admin import router as admin_router  # noqa: E402
+from app.api.stripe_routes import router as stripe_router  # noqa: E402
 
 app = FastAPI(title="RoomKit", version="0.1.0")
 app.state.limiter = limiter
@@ -49,6 +50,7 @@ app.add_middleware(
 
 app.include_router(router)
 app.include_router(admin_router)
+app.include_router(stripe_router)
 
 # Serve rendered room images as static files.
 _renders_dir = Path(__file__).parent.parent / "data" / "renders"
