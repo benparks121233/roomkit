@@ -701,6 +701,7 @@ def _render_worker(
     products: dict[str, list[dict]],
     user_id: str,
     watermark: bool = True,
+    is_paid: bool = False,
 ) -> None:
     """Background thread: wait for render semaphore slot, run render, update Redis.
 
@@ -737,6 +738,7 @@ def _render_worker(
             keywords=keywords,
             products=products,
             watermark=watermark,
+            is_paid=is_paid,
         )
         _render_ms = round((time.monotonic() - _render_t) * 1000, 1)
 
@@ -755,8 +757,8 @@ def _render_worker(
             from services.render_storage import save_render_url
             save_render_url(run_id, _storage_url)
 
-        _render_quality = os.environ.get("RENDER_QUALITY", "medium")
-        _render_cost = 0.10 if _render_quality == "medium" else 0.30
+        from services.render_service import RENDER_COST, _PAID_QUALITY, _FREE_QUALITY
+        _render_cost = RENDER_COST[_PAID_QUALITY if is_paid else _FREE_QUALITY]
         logger.info("Render completed for %s: render_ms=%.1f", run_id, _render_ms)
         log_event(run_id, "render_generated", {
             "render_cost": _render_cost, "cached": False,
@@ -796,7 +798,8 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
     from services.render_service import render_room, render_exists
 
     design = _get_design(run_id, user)
-    _watermark = not getattr(design, "is_paid", False)
+    _is_paid_design = getattr(design, "is_paid", False)
+    _watermark = not _is_paid_design
 
     log_event(run_id, "render_requested", user_id=user["user_id"])
 
@@ -829,7 +832,7 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
             target=_render_worker,
             args=(job_id, run_id, design.room_type, design.style.style_name,
                   design.style.mood, design.style.keywords, products, user["user_id"],
-                  _watermark),
+                  _watermark, _is_paid_design),
             daemon=True,
         )
         t.start()
@@ -849,6 +852,7 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         keywords=design.style.keywords,
         products=products,
         watermark=_watermark,
+        is_paid=_is_paid_design,
     )
 
     if render_result is None:
@@ -860,8 +864,8 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         from services.render_storage import save_render_url
         save_render_url(run_id, _storage_url)
 
-    _render_quality = os.environ.get("RENDER_QUALITY", "medium")
-    _render_cost = 0.10 if _render_quality == "medium" else 0.30
+    from services.render_service import RENDER_COST, _PAID_QUALITY, _FREE_QUALITY
+    _render_cost = RENDER_COST[_PAID_QUALITY if _is_paid_design else _FREE_QUALITY]
     log_event(run_id, "render_generated", {
         "render_cost": _render_cost, "cached": False,
     }, api_cost=_render_cost, user_id=user["user_id"])

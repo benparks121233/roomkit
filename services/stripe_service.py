@@ -26,9 +26,14 @@ def create_checkout_session(
 
     price = stripe.Price.retrieve(price_id, expand=["product"])
     product = price.product
-    pack_size = product.metadata.get("pack_size") if hasattr(product, "metadata") else None
+
+    product_meta = dict(product.metadata) if product and hasattr(product, "metadata") else {}
+    price_meta = dict(price.metadata) if hasattr(price, "metadata") else {}
+    pack_size = product_meta.get("pack_size") or price_meta.get("pack_size")
     if not pack_size:
-        pack_size = price.metadata.get("pack_size", "5")
+        raise RuntimeError(
+            f"pack_size not found in product or price metadata for {price_id}"
+        )
 
     session = stripe.checkout.Session.create(
         mode="payment",

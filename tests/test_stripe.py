@@ -86,6 +86,19 @@ class TestCheckout:
         assert create_call.kwargs["customer_email"] == _USER["email"]
         assert create_call.kwargs["metadata"]["pack_size"] == "5"
 
+    @patch("services.stripe_service._STRIPE_SECRET_KEY", "sk_test_xxx")
+    @patch("services.stripe_service.stripe")
+    def test_missing_pack_size_returns_500(self, mock_stripe):
+        """Price/Product with no pack_size metadata → clear error, not silent default."""
+        mock_price = MagicMock()
+        mock_price.metadata = {}
+        mock_price.product = MagicMock()
+        mock_price.product.metadata = {}
+        mock_stripe.Price.retrieve.return_value = mock_price
+
+        resp = client.post("/checkout", json={"price_id": "price_no_meta"})
+        assert resp.status_code == 500
+
     def test_no_price_id_returns_400(self):
         with patch.dict(os.environ, {"STRIPE_PRICE_ID": ""}, clear=False):
             resp = client.post("/checkout", json={})

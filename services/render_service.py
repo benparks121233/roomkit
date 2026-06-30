@@ -28,10 +28,12 @@ logger = logging.getLogger(__name__)
 _RENDERS_DIR = Path(__file__).parent.parent / "data" / "renders"
 _RENDERS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Render quality/size — tunable via env vars for cost control.
-# Defaults: 1536x1024 medium ($0.10) instead of high ($0.30).
+# Render size — tunable via env var.
 _RENDER_SIZE = os.environ.get("RENDER_SIZE", "1536x1024")
-_RENDER_QUALITY = os.environ.get("RENDER_QUALITY", "medium")
+# Quality is tier-based: free=medium ($0.063), paid=high ($0.25) at 1536x1024.
+_FREE_QUALITY = "medium"
+_PAID_QUALITY = "high"
+RENDER_COST = {"medium": 0.063, "high": 0.25}
 _RENDER_RETRY_MAX = 2
 _RENDER_RETRY_BACKOFF = 5.0
 
@@ -217,6 +219,7 @@ def render_room(
     products: dict[str, list[dict]],
     *,
     watermark: bool = True,
+    is_paid: bool = False,
 ) -> tuple[str, str | None] | None:
     """Generate a photorealistic room render from selected products.
 
@@ -300,12 +303,13 @@ def render_room(
         response = None
         for attempt in range(_RENDER_RETRY_MAX):
             try:
+                _quality = _PAID_QUALITY if is_paid else _FREE_QUALITY
                 response = _openai_client.images.edit(
                     model="gpt-image-1",
                     image=image_files,
                     prompt=prompt,
                     size=_RENDER_SIZE,
-                    quality=_RENDER_QUALITY,
+                    quality=_quality,
                     n=1,
                 )
                 break

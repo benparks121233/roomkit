@@ -364,9 +364,10 @@ class TestWatermark:
         assert resp.status_code == 200
         mock_render.assert_called_once()
         assert mock_render.call_args.kwargs.get("watermark") is True
+        assert mock_render.call_args.kwargs.get("is_paid") is False
 
     def test_paid_design_render_no_watermark(self):
-        """Paid design → watermark=False passed to render_room."""
+        """Paid design → watermark=False, is_paid=True passed to render_room."""
         app.dependency_overrides[get_current_user] = lambda: _PAID_USER
         _designs["wm-paid-001"] = _make_render_design(
             "wm-paid-001", is_paid=True,
@@ -385,6 +386,7 @@ class TestWatermark:
         assert resp.status_code == 200
         mock_render.assert_called_once()
         assert mock_render.call_args.kwargs.get("watermark") is False
+        assert mock_render.call_args.kwargs.get("is_paid") is True
 
 
 # ---------------------------------------------------------------------------
