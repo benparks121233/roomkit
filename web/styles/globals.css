@@ -2050,6 +2050,7 @@ h1, h2, h3 {
 .room-render-container {
   position: relative;
   width: 100%;
+  aspect-ratio: 1536 / 1024;
   overflow: hidden;
   border-radius: 16px;
   background: var(--color-surface-muted);

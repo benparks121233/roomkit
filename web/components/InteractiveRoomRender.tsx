@@ -30,6 +30,8 @@ export default function InteractiveRoomRender({ renderUrl }: Props) {
 
   // Image loaded
   const [loaded, setLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const retryCount = useRef(0);
 
   // Clamp translate so image doesn't fly off
   const clampTranslateFor = useCallback(
@@ -206,12 +208,46 @@ export default function InteractiveRoomRender({ renderUrl }: Props) {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={renderUrl}
+          src={imgError ? "" : renderUrl}
           alt="AI-generated room render"
           className="room-render-image"
-          onLoad={() => setLoaded(true)}
+          onLoad={() => { setLoaded(true); setImgError(false); retryCount.current = 0; }}
+          onError={() => {
+            console.error("[RoomRender] image failed to load:", renderUrl);
+            if (retryCount.current < 3) {
+              retryCount.current += 1;
+              setImgError(false);
+              setTimeout(() => {
+                setImgError(true);
+                setTimeout(() => setImgError(false), 50);
+              }, 1000 * retryCount.current);
+            } else {
+              setImgError(true);
+            }
+          }}
           draggable={false}
         />
+        {imgError && (
+          <div style={{
+            position: "absolute", inset: 0,
+            display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center",
+            color: "#78716C", fontSize: "0.9rem",
+          }}>
+            <p>Image failed to load</p>
+            <button
+              type="button"
+              onClick={() => { retryCount.current = 0; setImgError(false); }}
+              style={{
+                marginTop: 8, padding: "8px 16px",
+                border: "1.5px solid #E2DED6", borderRadius: 8,
+                background: "#FFF", cursor: "pointer", fontSize: "0.85rem",
+              }}
+            >
+              Retry
+            </button>
+          </div>
+        )}
 
       </div>
 

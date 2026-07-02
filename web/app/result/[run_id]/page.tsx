@@ -176,11 +176,17 @@ export default function ResultPage() {
       );
   }, [runId]);
 
-  // Reload seeding: if design is already finalized, restore selections from
-  // persisted selected_products and jump to complete (read-only).
+  // Reload seeding: if design is already finalized ON INITIAL LOAD, restore
+  // selections from persisted selected_products and jump to complete (read-only).
+  // Only runs once on the first design fetch — NOT on setDesign(updated) from
+  // persistFinalize, which would re-run this effect and cause a state cascade
+  // that can interfere with the render display.
   const reloadApplied = useRef(false);
+  const isInitialLoad = useRef(true);
   useEffect(() => {
     if (!design || reloadApplied.current) return;
+    if (!isInitialLoad.current) return;
+    isInitialLoad.current = false;
     if (design.finalized_at) {
       reloadApplied.current = true;
       const restored: Record<string, ProductResult[]> = {};
