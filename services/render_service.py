@@ -235,10 +235,20 @@ def render_room(
     # Download product images as references — iterate the caller's products dict
     # directly so the render is dynamic per user's actual selections.
     # Excluded/unselected slots simply aren't in the dict → not in the render.
+    #
+    # Skip duvet_insert when duvet_cover is present: the insert is inside the
+    # cover and never visible.  Its image/name would pollute the render with
+    # the insert's color (typically white) instead of the cover's.
+    _skip_slots = set()
+    if "duvet_cover" in products and "duvet_insert" in products:
+        _skip_slots.add("duvet_insert")
+
     image_files = []
     product_labels = []
     text_fallbacks = []
     for slot_id in products:
+        if slot_id in _skip_slots:
+            continue
         items = products[slot_id]
         for idx, product in enumerate(items):
             image_url = product.get("image_url", "")

@@ -425,10 +425,10 @@ def _build_selection_prompts(
         ),
         "quiet_luxury": (
             "white, off-white, ivory, cream, warm white — these MUST dominate "
-            "ranks 1-3 for sheets and comforter. Champagne and blush acceptable "
-            "at rank 4+. Grey is WRONG for this aesthetic — skip grey entirely. "
-            "Premium fabric is the star — sateen, silk, high-thread-count cotton. "
-            "Think: five-star hotel suite with crisp white bedding"
+            "ranks 1-3 for sheets, duvet_cover, and comforter. Champagne and blush "
+            "acceptable at rank 4+. Grey is WRONG for this aesthetic — skip grey "
+            "entirely. Premium fabric is the star — sateen, silk, high-thread-count "
+            "cotton. Think: five-star hotel suite with crisp white bedding"
         ),
         "sports_den": (
             "deep navy, charcoal, dark grey, brown, team colors welcome (red, "

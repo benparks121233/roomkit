@@ -23,7 +23,7 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 
 ## Phase Index
 
-*Updated 2026-06-28 — reconciled against actual codebase. 515 tests passing.*
+*Updated 2026-07-02 — 7A Stripe complete, 556 tests passing.*
 
 | Phase | Description | Status |
 |---|---|---|
@@ -43,7 +43,7 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 | 6D | Rate limiting | ✅ Done |
 | 6E | Tier enforcement | ✅ Done — atomic free-room claim (advisory lock RPC), pack ledger (decrement/re-credit), watermark toggle, TOCTOU proven on real Postgres (5 concurrent → 1 claim), 526 tests |
 | 6F | Scaling architecture (workers, async, concurrency) | ✅ Done — verified on staging (Redis shared state, async render, LLM semaphore cap=30, render semaphore cap=4, LLM resilience, pipeline timing, multi-worker, deleted-user blocklist 20/20) |
-| 7 | Revenue activation (Stripe, render storage, compliance) | 7B ✅ (render storage durable, verified on staging). 7A (Stripe) + 7C (compliance) TODO — **Pre-deploy gate** |
+| 7 | Revenue activation (Stripe, render storage, compliance) | 7A ✅ (Stripe end-to-end verified on staging). 7B ✅ (render storage durable, verified on staging). 7C (compliance) TODO — **Pre-deploy gate** |
 | 8 | Frontend build-out (nav, account, My Designs, landing, robustness) | PARTIAL (account page done; nav/footer/landing/My Designs/admin auth fix remain) |
 | 9 | Deploy + gate | TODO |
 | 10 | Hardening + AI-native instrumentation | TODO — Fast-follow |
@@ -663,16 +663,35 @@ Privacy/terms live. Account deletion works. Expensive endpoints rate-limited.
 
 *Requires auth (Phase 6) for payment identity and tier enforcement.*
 
-### 7A — Stripe Integration (Room Packs)
+### 7A — Stripe Integration (Room Packs) ✅
 
 **Model:** Packs of rooms. Each pack grants N additional room designs with
 hi-res watermark-free renders + access to new room types. Non-expiring. Pricing
 TBD in beta.
 
-- [ ] Stripe Checkout for pack purchase.
-- [ ] Pack ledger: increment room count on successful payment.
-- [ ] Upgrade CTA when free-room limit hit.
-- [ ] Webhook for payment confirmation (don't trust client-side redirect).
+- [x] Stripe Checkout for pack purchase (`POST /checkout`, authenticated).
+- [x] Pack ledger: atomic `process_stripe_payment` RPC (dedup INSERT + pack
+      credit UPSERT in one transaction — no orphan state on failure).
+- [x] Webhook for payment confirmation (`POST /stripe/webhook`, signature-verified).
+      `client_reference_id` = user mapping, `metadata.pack_size` from Price metadata.
+- [x] Tier-based render quality: free=medium ($0.063), paid=high ($0.25) at
+      1536x1024 via gpt-image-1, driven by `is_paid` flag on the design.
+- [x] Migration 004 staging-qualified (`staging.stripe_payments` table +
+      `staging.process_stripe_payment` RPC, explicit schema prefixes).
+- [x] 18 Stripe tests including 4 using real `stripe.StripeObject` instances.
+- [x] **Verified end-to-end on staging:** real test payment → Stripe webhook →
+      atomic credit → paid design → clean high-quality render (no watermark).
+- [ ] Upgrade CTA when free-room limit hit (Phase 8 frontend scope).
+
+**Bugs found + fixed via real testing (4 total):**
+1. StripeObject `.get()` crash ×3: Stripe SDK returns `StripeObject`, not plain
+   dicts. `.get()` triggers `__getattr__` (AttributeError), `dict()` triggers
+   `__getitem__(0)` (KeyError). Fixed with `to_dict()` conversion at event top +
+   `isinstance` fallback for metadata. Tests with real StripeObjects prevent regression.
+2. Schema mismatch: migration 004 ran in `public` but app uses
+   `SUPABASE_SCHEMA=staging` → PostgREST searched `staging.process_stripe_payment`,
+   found nothing (PGRST202). Fixed by re-creating table + RPC in `staging` schema
+   with explicit prefixes + dropping the public duplicates.
 
 ### 7B — Render Storage (Supabase Storage) ✅
 
@@ -956,7 +975,7 @@ public launch.
 
 ---
 
-## Execution Roadmap (updated 2026-06-28)
+## Execution Roadmap (updated 2026-07-02)
 
 Exact order from current state to launch. Each step lists WHO does it
 (CLAUDE = programmatic, YOU = manual/judgment, BOTH = collaborative) and
@@ -1101,22 +1120,28 @@ YOU do:
 
 ---
 
-### Step 8 — Phase 7A: Stripe integration (1-2 sessions)
+### Step 8 — Phase 7A: Stripe integration ✅ DONE
 
-**Who:** BOTH
+- [x] `POST /checkout` (authenticated) → Stripe Checkout Session → redirect URL
+- [x] `POST /stripe/webhook` (unauthenticated, signature-verified) → atomic credit
+- [x] `process_stripe_payment` RPC: dedup INSERT + pack UPSERT in one transaction
+- [x] Migration 004 staging-qualified (all objects in `staging` schema)
+- [x] Tier-based render quality: free=medium/$0.063, paid=high/$0.25 (gpt-image-1)
+- [x] 18 Stripe tests (including 4 with real `stripe.StripeObject` instances)
+- [x] Stripe account created, test keys + webhook configured on Railway
+- [x] End-to-end verified: test payment → webhook → credit → paid design → clean render
+- [ ] Upgrade CTA when free limit hit (deferred to Phase 8 frontend)
 
-CLAUDE does:
-- [ ] Stripe Checkout for pack purchase
-- [ ] Webhook for payment confirmation
-- [ ] Pack ledger increment on success
-- [ ] Upgrade CTA when free limit hit
+**Bugs found + fixed during real testing (4):**
+1. StripeObject `.get()` crash ×3 — Stripe SDK returns StripeObject, not dict.
+   Fixed with `to_dict()` at event top + real-StripeObject test coverage.
+2. Schema mismatch (PGRST202) — migration ran in `public` but app uses
+   `SUPABASE_SCHEMA=staging`. Fixed by rewriting migration with explicit
+   `staging.*` prefixes.
 
-YOU do:
-- [ ] Create Stripe account, get test keys, set env vars on Railway
-- [ ] Complete test purchase through full Checkout flow
-- [ ] Verify: purchase → pack increment → design second room
-
-**Proof:** Payment → pack → new room access, end to end.
+**Also fixed during 7A verification:**
+- Render flakiness: reload seeding effect + container height collapse → `isInitialLoad` guard + `aspect-ratio` CSS.
+- Bedding curation: duvet insert excluded from render prompt (invisible inside cover); quiet luxury palette updated for duvet_cover.
 
 ---
 
