@@ -2642,3 +2642,27 @@ h1, h2, h3 {
     max-width: 64px;
   }
 }
+
+/* ── Price freshness + affiliate disclosure (fine print) ── */
+.price-as-of {
+  font-size: 0.625rem;
+  color: #A8A29E;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.affiliate-disclosure {
+  font-size: 0.6875rem;
+  color: #A8A29E;
+  text-align: center;
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+
+.site-footer {
+  font-size: 0.6875rem;
+  color: #A8A29E;
+  text-align: center;
+  padding: 24px 16px 16px;
+  line-height: 1.4;
+}

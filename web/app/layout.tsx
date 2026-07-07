@@ -20,6 +20,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <AuthProvider>{children}</AuthProvider>
+        <footer className="site-footer">
+          As an Amazon Associate, RoomKit earns from qualifying purchases.
+        </footer>
       </body>
     </html>
   );

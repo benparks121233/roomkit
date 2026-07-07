@@ -42,6 +42,7 @@ export interface ProductResult {
   image_url: string;
   buy_url: string;
   fit_reason: string;
+  fetched_at?: string | null;
 }
 
 export interface SlotResult {

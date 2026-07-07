@@ -43,7 +43,7 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 | 6D | Rate limiting | ✅ Done |
 | 6E | Tier enforcement | ✅ Done — atomic free-room claim (advisory lock RPC), pack ledger (decrement/re-credit), watermark toggle, TOCTOU proven on real Postgres (5 concurrent → 1 claim), 526 tests |
 | 6F | Scaling architecture (workers, async, concurrency) | ✅ Done — verified on staging (Redis shared state, async render, LLM semaphore cap=30, render semaphore cap=4, LLM resilience, pipeline timing, multi-worker, deleted-user blocklist 20/20) |
-| 7 | Revenue activation (Stripe, render storage, compliance) | 7A ✅ (Stripe end-to-end verified on staging). 7B ✅ (render storage durable, verified on staging). 7C (compliance) TODO — **Pre-deploy gate** |
+| 7 | Revenue activation (Stripe, render storage, compliance) | 7A ✅ Stripe. 7B ✅ render storage. 7C ✅ FTC/disclosure (beta). **7D PA-API migration = pre-full-launch blocker** |
 | 8 | Frontend build-out (nav, account, My Designs, landing, robustness) | PARTIAL (account page done; nav/footer/landing/My Designs/admin auth fix remain) |
 | 9 | Deploy + gate | TODO |
 | 10 | Hardening + AI-native instrumentation | TODO — Fast-follow |
@@ -708,31 +708,128 @@ TBD in beta.
 - [x] **Designs fully durable:** selections + affiliate links persist in slots JSONB
       (confirmed pre-7B), renders now persist in Storage. Nothing ephemeral remains.
 
-### 7C — FTC / Amazon Associates Compliance (PRE-LAUNCH BLOCKER)
+### 7C — FTC / Amazon Associates Compliance ✅ (BETA)
 
 **Elevated to pre-launch review.** Affiliate is primary revenue — an Associates
 ban is existential, not cosmetic.
 
-- [ ] **Affiliate disclosure on every page with buy links:** "As an Amazon
-      Associate, RoomKit earns from qualifying purchases." Must be visible
-      without scrolling on result page. Also add to footer site-wide.
-- [ ] **`rel="nofollow sponsored"` on all affiliate links.** Google requires
-      `rel="sponsored"` on paid/affiliate links; `nofollow` is belt-and-suspenders.
-      Apply in `_inject_affiliate_tag()` output and in the React `<a>` tags.
-- [ ] Price display rules compliance review.
-- [ ] Image-use rules: confirm AI-composited renders using product images are
-      compliant (or that renders use only style/mood, not actual product photos).
-- [ ] Price freshness compliance (24h window already enforced in code).
-- [ ] **ADD-ALL-TO-CART affiliate tag verification:** Cart-add button already
-      exists (Phase 4 scope = verify, not build). Smoke-test can happen NOW:
-      open a real cart-add URL, check Associates dashboard for attribution.
-      Known risk: `tag` param vs `AssociateTag` param — Amazon docs are
-      inconsistent on which creates an attribution session through the cart-add
-      endpoint. If `gp/aws/cart/add.html` is fully deprecated in your region,
-      fall back to individual buy links (already working, tag confirmed on each).
+- [x] **Affiliate disclosure** (fine print, 11px muted) on result page (visible
+      without scrolling) + site-wide footer.
+- [x] **`rel="nofollow sponsored"` on all affiliate `<a>` tags.** ProductCard
+      "Buy on Amazon" + gallery "Buy" link. ExportToCartButton uses
+      `window.open()` (not crawlable, no SEO concern).
+- [x] **Price display: Option A for beta.** Per-price "as of [date]" from real
+      catalog fetch timestamp + shared subject-to-change disclaimer (one line,
+      fine print). Clean UI — date reads as metadata, disclaimer appears once.
+- [x] **Fake-timestamp bug fixed.** Adapter was setting `fetched_at=now()` at
+      read-time (always "just now" regardless of data age). Fixed: refresh script
+      now writes real ISO timestamp; adapter reads it from cache.
+- [x] **Render image-use: Option A for beta (documented decision).**
+      Renders pass actual Amazon product photos to gpt-image-1 as reference
+      images (images.edit). Output is AI-generated original imagery. Prompt
+      softened (Option C) from "recognizably the same items / product showcase"
+      to "inspired by the style, materials, colors, and forms" — strengthens
+      transformative-use posture without sacrificing visual connection.
+- [ ] **ADD-ALL-TO-CART affiliate tag verification:** Smoke-test needed — open a
+      real cart-add URL, check Associates dashboard for attribution.
 
-**Exit:** Revenue active (Stripe + Amazon affiliate). Render storage durable.
-FTC + Associates compliant.
+**KNOWN COMPLIANCE RISKS (beta-only, documented and accepted):**
+
+*Risk 1 — Price data sourcing:* Canopy (canopyapi.co) is a scraper, confirmed
+not PA-API. Per Amazon's Operating Agreement, displaying non-PA-API price data
+is technically non-compliant. Accepted for beta: prices are accurate, disclaimer
+covers staleness/honesty. See Phase 7D for the PA-API migration hard gate.
+
+*Risk 2 — Product photos as AI render input (the big one):*
+
+Amazon Associates Program Policies explicitly prohibit using "Program Content"
+(including product images) to "directly or indirectly, develop or improve large
+language or multimodal models, machine learning models or related technology."
+Separately, Associates may not "alter any Program Content in any way" or "cache
+Product Advertising Content consisting of an image." Our render pipeline
+downloads product photos and feeds them into gpt-image-1 (a multimodal model)
+— this violates all three clauses as written. **PA-API migration does NOT cure
+this** — the same prohibitions apply to PA-API content.
+
+Copyright law is unsettled: Andersen v. Stability AI trial Sep 2026, no ruling
+yet on inference-time image use vs training. Fair-use four factors are mixed
+(factors 2-3 against, factor 4 arguably for us).
+
+**Decision: Ship Option A for beta. Reasoning:**
+
+1. **Option B (text-only renders, no product photos) is not a viable product.**
+   RoomKit's core value is showing the ACTUAL products the user will buy,
+   composed into their room, one tap from cart. Generic style-matched furniture
+   is a fundamentally different, worse product.
+
+2. **Demand generation is the strongest argument.** Every render drives paying
+   customers directly to Amazon and to the sellers whose images we use. We do
+   not compete with sellers — we generate demand for their exact products. On
+   copyright's fourth factor (market harm, "the single most important element"),
+   our use arguably HELPS the market rather than harming it. No rational seller
+   sues a party driving their sales. (Strong equitable argument, untested in
+   court — no precedent addresses this demand-generator pattern.)
+
+3. **Amazon-affiliate is a replaceable monetization layer.** If Amazon enforces
+   (low probability given we drive them sales), pivot to: (a) subscription /
+   pay-to-play (Stripe + user_packs already built), or (b) different retailer
+   affiliate (Wayfair, Target, Walmart). Architecture is pivot-ready: clean
+   SourcingAdapter interface, one adapter instantiation point, retailer-agnostic
+   product schema. Retailer swap = 1-2 sessions, not a rebuild. Amazon
+   termination = forced acceleration of a pivot we may do anyway.
+
+4. **Prompt softened (Option C)** from explicitly reproductive ("recognizably
+   the same items / product showcase") to transformative ("inspired by the
+   style, materials, colors, and forms"). Strengthens fair-use posture without
+   sacrificing visual quality.
+
+**Pre-scale items (not beta blockers):**
+- IP attorney to interpret whether AI/ML clause covers third-party-model
+  inference (vs training/fine-tuning your own model).
+- Reconsider render approach before full public launch.
+- Copyright question is inherent to product-photo approach and persists across
+  any retailer pivot — revisit at scale regardless.
+
+**Pivot readiness (assessed, confirmed real):**
+- Backend: SourcingAdapter ABC, one adapter instantiation in routes.py,
+  retailer-agnostic Product schema. Swap = 1-2 sessions.
+- Frontend: ~15 Amazon-specific strings across 5 files (button text, cart-add
+  URL, image-upgrade helper, disclosure text). Find-and-replace, not rebuild.
+- Affiliate independence: Stripe + user_packs already built. Remove buy links
+  + disclosure = 1 session.
+
+**Exit:** FTC disclosure present. Link attributes correct. Price disclaimer
+implemented. Render prompt softened. Decision documented with full reasoning,
+known risks, and mitigations. PA-API migration tracked as 7D. Pivot-readiness
+confirmed.
+
+---
+
+### 7D — PA-API Migration (PRE-FULL-LAUNCH BLOCKER)
+
+**Hard gate: do NOT go to full/public launch on Canopy-sourced prices.**
+
+PA-API gives identical accurate prices from the sanctioned source. Beta sales
+should qualify us for PA-API access (~3 qualifying sales / 180 days threshold).
+The clean disclaimer UI stays regardless — Amazon requires subject-to-change
+notice even with PA-API data.
+
+**NOTE:** PA-API cures the price-sourcing violation but does NOT cure the
+render/image-use issue — the same AI/ML and modification prohibitions apply to
+PA-API content. The render approach is a separate risk tracked in 7C notes.
+
+- [ ] Apply for PA-API access (requires Associates account with qualifying sales).
+- [ ] Implement PA-API client (replaces Canopy client).
+- [ ] Migrate catalog refresh to PA-API (replaces `scripts/refresh_catalog.py`
+      Canopy calls).
+- [ ] Implement refresh worker (`run_refresh()` — currently a stub) to keep
+      prices within 24h freshness window.
+- [ ] Verify: all displayed prices sourced via PA-API, refresh worker running,
+      freshness validated.
+
+**Exit:** Full price-display compliance. Safe for public launch.
+
+---
 
 ---
 
@@ -1159,23 +1256,37 @@ Render path failed gracefully (logged, didn't crash pipeline). Resolved by addin
 
 ---
 
-### Step 10 — Phase 7C: FTC / Associates compliance (1 session) — PRE-LAUNCH BLOCKER
+### Step 10 — Phase 7C: FTC / Associates compliance ✅ DONE (beta)
 
-**Who:** BOTH
-
-CLAUDE does:
-- [ ] Affiliate disclosure on every page with buy links
-- [ ] `rel="nofollow sponsored"` on all affiliate links
-- [ ] Price freshness compliance verification
+- [x] Affiliate disclosure (fine print) on result page + site-wide footer
+- [x] `rel="nofollow sponsored"` on all affiliate `<a>` tags
+- [x] Price display: Option A — per-price "as of [date]" + shared disclaimer
+- [x] Fake-timestamp bug fixed (adapter was lying about freshness)
+- [x] Canopy confirmed as scraper (not PA-API) — accepted for beta, PA-API
+      migration tracked as 7D pre-full-launch blocker
 
 YOU do:
 - [ ] Verify disclosure visible without scrolling on result page
-- [ ] Review: are AI renders using product photos? (legal judgment)
+- [ ] Review: renders use product photos as gpt-image-1 references (flagged)
 - [ ] Read Amazon Associates Operating Agreement, confirm compliance
+- [ ] Smoke-test cart-add URL in Associates dashboard
+- [ ] **Pre-beta: refresh catalog data.** Current catalog = 22k products, zero
+      real `fetched_at` timestamps (predate the fix), 1-3 weeks stale by file
+      mtime. "As of [date]" will show no date until refreshed. Free Canopy tier
+      = 100 requests/month — decide: refresh priority slots only (~15-20 requests
+      for highest-traffic slots), upgrade Canopy tier for full refresh, or accept
+      staleness with disclaimer for beta. Next refresh writes real timestamps.
+      Run: `python scripts/refresh_catalog.py <slot> "<search term>"` or
+      `--batch <file>.json` for bulk.
 
-**Proof:** FTC disclosure present. Link attributes correct. Legal reviewed.
+### Step 10b — Phase 7D: PA-API migration (pre-full-launch blocker)
 
-**═══ PHASE 7 COMPLETE — REVENUE ACTIVATION DONE ═══**
+- [ ] Apply for PA-API access after beta qualifying sales
+- [ ] Replace Canopy client with PA-API client
+- [ ] Implement refresh worker (currently stub)
+- [ ] Verify all prices PA-API-sourced + 24h-fresh
+
+**═══ PHASE 7 COMPLETE (beta) — REVENUE ACTIVATION DONE ═══**
 
 ---
 

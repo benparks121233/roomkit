@@ -26,6 +26,7 @@ import json
 import re
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Ensure project root is on sys.path for imports.
@@ -127,6 +128,7 @@ def map_canopy_product(slot_id: str, raw: dict) -> dict:
         "specs": extract_specs(slot_id, title, bullets),
         "image_url": raw.get("mainImageUrl", ""),
         "source": "canopy",
+        "fetched_at": datetime.now(tz=timezone.utc).isoformat(),
     }
 
 

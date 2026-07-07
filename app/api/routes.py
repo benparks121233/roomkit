@@ -381,6 +381,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
                         image_url=p.image_url,
                         buy_url=p.buy_url,
                         fit_reason=fit_reasons[i + 1],
+                        fetched_at=p.fetched_at.isoformat() if p.fetched_at else None,
                     )
                     for i, p in enumerate(products[1:])
                 ]
@@ -396,6 +397,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
                         image_url=primary.image_url,
                         buy_url=primary.buy_url,
                         fit_reason=fit_reasons[0],
+                        fetched_at=primary.fetched_at.isoformat() if primary.fetched_at else None,
                     ),
                     alternatives=alts,
                     null_reason=None,

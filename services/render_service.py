@@ -461,7 +461,7 @@ def _build_render_prompt(
             + "\n".join(text_products)
         )
 
-    return f"""Compose ALL of these exact furniture and decor products into one cohesive photorealistic {room_type} photograph.
+    return f"""Compose a cohesive photorealistic {room_type} photograph inspired by the style, materials, colors, and forms of these reference products.
 
 STYLE: {style_desc}
 MOOD: {mood}
@@ -474,7 +474,7 @@ Reference image products:
 CRITICAL RULES:
 1. EVERY item listed above MUST appear in the render — do NOT omit any product. Wall art on the walls, ceiling light overhead, rug on the floor, etc. All must be visible.
 2. For multi-select items (e.g. wall_art_1, wall_art_2, wall_art_3): show ALL of them. Multiple wall art pieces form a gallery wall. Multiple plants are grouped together. Each must be recognizably distinct.
-3. The furniture must be RECOGNIZABLY the same items from the reference images — same shapes, materials, colors, and proportions. This is a product showcase.
+3. Each piece of furniture should reflect the style, material, color palette, and general form of its reference image — a viewer should recognize the aesthetic connection between the reference and the rendered item.
 4. The room must feel like a REAL, LIVED-IN space — natural and believable, not a sterile product display.
 5. Lighting: every piece of furniture MUST be visible and its materials legible — no product may disappear into shadow. For light aesthetics: bright natural light. For dark/moody aesthetics: keep the low-key ambient mood but ensure visibility — NOT a bright showroom, NOT near-black.
 6. The overall composition should match the {style_name} aesthetic perfectly.

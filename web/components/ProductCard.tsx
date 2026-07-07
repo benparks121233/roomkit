@@ -17,6 +17,16 @@ function upgradeAmazonImage(url: string): string {
   return url.replace(/\._AC_[A-Z]{2}\d+_\./, "._AC_SL800_.");
 }
 
+function formatPriceDate(iso: string | null | undefined): string | null {
+  if (!iso) return null;
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  } catch {
+    return null;
+  }
+}
+
 interface ProductCardProps {
   slot: SlotResult;
   /** The currently active product (may differ from slot.product after swaps). */
@@ -122,12 +132,17 @@ export default function ProductCard({
       <div className="card-body">
         <p className="card-slot">{slot.slot_id.replace(/_/g, " ")}</p>
         <p className="card-name">{product.name}</p>
-        <p className="card-price">${product.normalized_price.toFixed(2)}</p>
+        <p className="card-price">
+          ${product.normalized_price.toFixed(2)}
+          {formatPriceDate(product.fetched_at) && (
+            <span className="price-as-of">as of {formatPriceDate(product.fetched_at)}</span>
+          )}
+        </p>
         <p className="card-reason">{product.fit_reason}</p>
         <a
           href={product.buy_url}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer nofollow sponsored"
           className="buy-btn"
           onClick={() => onBuyClick?.(product, slot.slot_id)}
         >

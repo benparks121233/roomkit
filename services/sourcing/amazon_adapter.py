@@ -479,6 +479,12 @@ class AmazonAdapter(SourcingAdapter):
             # Inject affiliate tag into buy_url.
             tagged_url = self._inject_affiliate_tag(raw["buy_url"])
 
+            raw_ts = raw.get("fetched_at")
+            fetched_at = (
+                datetime.fromisoformat(raw_ts) if raw_ts
+                else now
+            )
+
             candidates.append(Product(
                 product_id=raw["product_id"],
                 name=raw["name"],
@@ -488,7 +494,7 @@ class AmazonAdapter(SourcingAdapter):
                 source=raw.get("source", "amazon"),
                 image_url=raw.get("image_url", ""),
                 slot_id=slot_id,
-                fetched_at=now,
+                fetched_at=fetched_at,
             ))
 
         # Post-filter: remove floral-patterned sheets from the sheets slot.

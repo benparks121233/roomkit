@@ -18,7 +18,7 @@
 #   "specs": {"bed_size": "queen"},        # extracted from title/bullets
 #   "image_url": "https://...",
 #   "source": "canopy",
-#   "fetched_at": "2026-06-09T..."
+#   "fetched_at": "2026-06-09T..."   # ISO-8601 UTC, written by refresh_catalog.py
 # }
 
 from __future__ import annotations

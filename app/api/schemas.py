@@ -52,6 +52,7 @@ class ProductResult(BaseModel):
     image_url: str
     buy_url: str
     fit_reason: str
+    fetched_at: str | None = None
 
 
 class SlotResult(BaseModel):

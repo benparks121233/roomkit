@@ -23,6 +23,15 @@ import InteractiveRoomRender from "@/components/InteractiveRoomRender";
 import Image from "next/image";
 import RoomSoFar from "@/components/RoomSoFar";
 
+function formatPriceDate(iso: string | null | undefined): string | null {
+  if (!iso) return null;
+  try {
+    return new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  } catch {
+    return null;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Taxonomy group ordering — mirrors slot_taxonomy.yaml
 // ---------------------------------------------------------------------------
@@ -848,6 +857,12 @@ export default function ResultPage() {
 
       <BudgetMeter total={totalSpent} target={design.target_budget} />
 
+      <p className="affiliate-disclosure">
+        As an Amazon Associate, RoomKit earns from qualifying purchases.
+        Prices and availability are accurate as of the date shown and are subject to change.
+        The price on Amazon at checkout applies.
+      </p>
+
       {/* Export all to Amazon cart */}
       <ExportToCartButton selections={selections} runId={runId} />
 
@@ -1052,11 +1067,16 @@ function GalleryItem({
         )}
       </div>
       <p className="gallery-item-name">{product.name}</p>
-      <p className="gallery-item-price">${product.normalized_price.toFixed(2)}</p>
+      <p className="gallery-item-price">
+        ${product.normalized_price.toFixed(2)}
+        {formatPriceDate(product.fetched_at) && (
+          <span className="price-as-of">as of {formatPriceDate(product.fetched_at)}</span>
+        )}
+      </p>
       <a
         href={product.buy_url}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener noreferrer nofollow sponsored"
         className="gallery-item-buy"
       >
         Buy
