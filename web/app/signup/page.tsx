@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseBrowserClient } from "@/lib/supabase";
 import { useAuth } from "@/components/AuthProvider";
@@ -15,10 +15,11 @@ export default function SignupPage() {
   const [confirmSent, setConfirmSent] = useState(false);
   const [ageConfirmed, setAgeConfirmed] = useState(false);
 
-  if (session) {
-    router.replace("/");
-    return null;
-  }
+  useEffect(() => {
+    if (session) router.replace("/");
+  }, [session, router]);
+
+  if (session) return null;
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();

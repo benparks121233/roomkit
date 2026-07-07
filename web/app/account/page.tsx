@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/AuthProvider";
 import { getSupabaseBrowserClient } from "@/lib/supabase";
@@ -13,10 +13,11 @@ export default function AccountPage() {
   const [deleting, setDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  if (!session) {
-    router.replace("/login");
-    return null;
-  }
+  useEffect(() => {
+    if (!session) router.replace("/login");
+  }, [session, router]);
+
+  if (!session) return null;
 
   const handleDelete = async () => {
     setError(null);

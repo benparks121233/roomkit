@@ -73,6 +73,7 @@ export interface DesignResponse {
   is_feasible: boolean;
   slots: SlotResult[];
   finalized_at: string | null; // ISO timestamp; set once at finalize
+  render_url: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -277,30 +278,40 @@ async function pollRenderStatus(
   const maxAttempts = 60;
   const intervalMs = 3_000;
 
+  console.log(`[POLL] start: job=${jobId}, max=${maxAttempts}×${intervalMs}ms`);
+
   for (let i = 0; i < maxAttempts; i++) {
     await new Promise((r) => setTimeout(r, intervalMs));
     try {
+      const controller = new AbortController();
+      const tid = setTimeout(() => controller.abort(), 10_000);
       const res = await fetch(
         `${API_BASE}/design/${runId}/render/status?job_id=${jobId}`,
-        { headers },
+        { headers, signal: controller.signal },
       );
-      if (!res.ok) continue;
+      clearTimeout(tid);
+      if (!res.ok) {
+        console.warn(`[POLL] #${i + 1} HTTP ${res.status}`);
+        continue;
+      }
       const data: RenderStatusResponse = await res.json();
+      console.log(`[POLL] #${i + 1} status=${data.status}`);
 
       if (data.status === "complete" && data.render_url) {
+        console.log(`[POLL] complete at attempt ${i + 1}, url=${data.render_url.slice(0, 60)}`);
         return { run_id: runId, render_url: data.render_url, cached: false };
       }
       if (data.status === "failed") {
         throw new RenderFailedError(data.error ?? "Render generation failed");
       }
-      // pending, rendering, unknown → keep polling
     } catch (e) {
       if (e instanceof RenderFailedError) throw e;
-      // Network blip, JSON parse error, etc. → keep polling
+      console.warn(`[POLL] #${i + 1} error:`, e);
       continue;
     }
   }
 
+  console.error(`[POLL] timeout after ${maxAttempts} attempts`);
   throw new RenderTimeoutError(runId, jobId);
 }
 

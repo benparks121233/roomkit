@@ -213,7 +213,6 @@ export default function InteractiveRoomRender({ renderUrl }: Props) {
           className="room-render-image"
           onLoad={() => { setLoaded(true); setImgError(false); retryCount.current = 0; }}
           onError={() => {
-            console.error("[RoomRender] image failed to load:", renderUrl);
             if (retryCount.current < 3) {
               retryCount.current += 1;
               setImgError(false);

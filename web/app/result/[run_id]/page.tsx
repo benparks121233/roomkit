@@ -144,7 +144,8 @@ export default function ResultPage() {
   // Finalized state — true once selections are frozen and persisted.
   const [isFinalized, setIsFinalized] = useState(false);
 
-  // AI render state
+  // AI render state — on re-mount, renderUrl is recovered from design.render_url
+  // (persisted in DB by the render endpoint).
   const [renderUrl, setRenderUrl] = useState<string | null>(null);
   const [renderLoading, setRenderLoading] = useState(false);
   const [renderFailed, setRenderFailed] = useState(false);
@@ -207,8 +208,25 @@ export default function ResultPage() {
       setSelections(restored);
       setIsFinalized(true);
       setPhase("complete");
+      if (design.render_url) {
+        const url = design.render_url.startsWith("http")
+          ? design.render_url
+          : `${API_BASE}${design.render_url}`;
+        setRenderUrl((prev) => prev ?? url);
+      }
     }
   }, [design]);
+
+  // Recover render URL if state was lost (e.g. component re-mount) but the
+  // design record already has the URL from a previous render generation.
+  const designRenderUrl = design?.render_url ?? null;
+  useEffect(() => {
+    if (!designRenderUrl) return;
+    const url = designRenderUrl.startsWith("http")
+      ? designRenderUrl
+      : `${API_BASE}${designRenderUrl}`;
+    setRenderUrl((prev) => prev ?? url);
+  }, [designRenderUrl]);
 
   // Auto mode: skip guided selection, fill all defaults, jump to complete
   const autoModeApplied = useRef(false);

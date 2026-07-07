@@ -755,9 +755,12 @@ def _render_worker(
 
         _render_path, _storage_url = render_result
 
+        _url = _storage_url or f"/renders/{run_id}.jpg"
         if _storage_url:
             from services.render_storage import save_render_url
             save_render_url(run_id, _storage_url)
+        if run_id in _designs:
+            _designs[run_id].render_url = _url
 
         from services.render_service import RENDER_COST, _PAID_QUALITY, _FREE_QUALITY
         _render_cost = RENDER_COST[_PAID_QUALITY if is_paid else _FREE_QUALITY]
@@ -767,7 +770,6 @@ def _render_worker(
             "render_ms": _render_ms,
         }, api_cost=_render_cost, user_id=user_id)
 
-        _url = _storage_url or f"/renders/{run_id}.jpg"
         if r:
             r.hset(f"render_job:{job_id}", mapping={
                 "status": "complete",
@@ -862,22 +864,23 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
 
     _render_path, _storage_url = render_result
 
+    _url = _storage_url or f"/renders/{run_id}.jpg"
     if _storage_url:
         from services.render_storage import save_render_url
         save_render_url(run_id, _storage_url)
+    if run_id in _designs:
+        _designs[run_id].render_url = _url
 
     from services.render_service import RENDER_COST, _PAID_QUALITY, _FREE_QUALITY
     _render_cost = RENDER_COST[_PAID_QUALITY if _is_paid_design else _FREE_QUALITY]
     log_event(run_id, "render_generated", {
         "render_cost": _render_cost, "cached": False,
     }, api_cost=_render_cost, user_id=user["user_id"])
-
-    _url = _storage_url or f"/renders/{run_id}.jpg"
     return {"run_id": run_id, "render_url": _url, "status": "complete", "cached": False}
 
 
 @router.get("/design/{run_id}/render/status")
-@limiter.limit("10/minute")
+@limiter.limit("30/minute")
 async def render_status(request: Request, run_id: str, user: CurrentUser, job_id: str | None = Query(None)) -> dict:
     """Poll render job status. Returns current state of an async render."""
     from services.redis_client import get_redis
