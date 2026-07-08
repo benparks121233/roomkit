@@ -153,6 +153,16 @@ export default function ResultPage() {
   const [timeoutJobId, setTimeoutJobId] = useState<string | null>(null);
   const [checkingAgain, setCheckingAgain] = useState(false);
 
+  // [VANISH] Diagnostic logging — track render state transitions
+  const mountId = useRef(Math.random().toString(36).slice(2, 8));
+  useEffect(() => {
+    console.log(`[VANISH] ResultPage MOUNT id=${mountId.current}`);
+    return () => console.log(`[VANISH] ResultPage UNMOUNT id=${mountId.current}`);
+  }, []);
+  useEffect(() => {
+    console.log(`[VANISH] state: renderUrl=${renderUrl ? "SET" : "null"} renderLoading=${renderLoading} renderFailed=${renderFailed} renderTimedOut=${renderTimedOut} phase=${phase}`);
+  }, [renderUrl, renderLoading, renderFailed, renderTimedOut, phase]);
+
   // Persist curated selections to server. Called at every path to phase="complete".
   const persistFinalize = useCallback(
     (finalSelections: Record<string, ProductResult[]>, finalSkipped: Set<string>) => {
@@ -448,28 +458,33 @@ export default function ResultPage() {
   // Render reads from persisted selected_products — no selections sent.
   const triggerRender = useCallback(() => {
     if (!runId || renderUrl || renderLoading) return;
+    console.log(`[VANISH] triggerRender called, runId=${runId}`);
     setRenderLoading(true);
     setRenderFailed(false);
     setRenderTimedOut(false);
 
     generateRender(runId)
       .then((renderResp) => {
+        console.log(`[VANISH] generateRender resolved, render_url=${renderResp.render_url}`);
         const url = renderResp.render_url.startsWith("http")
           ? renderResp.render_url
           : `${API_BASE}${renderResp.render_url}`;
+        console.log(`[VANISH] setting renderUrl=${url}`);
         setRenderUrl(url);
         if (runId) trackEvent(runId, "render_viewed");
       })
       .catch((err) => {
         if (err instanceof RenderTimeoutError) {
+          console.warn(`[VANISH] RenderTimeoutError, jobId=${err.jobId}`);
           setRenderTimedOut(true);
           setTimeoutJobId(err.jobId);
         } else {
-          console.error("Render generation failed:", err);
+          console.error(`[VANISH] generateRender FAILED:`, err);
           setRenderFailed(true);
         }
       })
       .finally(() => {
+        console.log(`[VANISH] triggerRender finally, setting renderLoading=false`);
         setRenderLoading(false);
       });
   }, [runId, renderUrl, renderLoading]);

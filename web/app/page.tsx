@@ -4,8 +4,9 @@
 
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { createDesign } from "@/lib/api";
+import { createDesign, FreeLimitError, startCheckout } from "@/lib/api";
 import type { DesignRequest } from "@/lib/api";
+import { useAuth } from "@/components/AuthProvider";
 import StyleQuiz from "@/components/StyleQuiz";
 import type { IntakeResult } from "@/components/StyleQuiz";
 
@@ -29,6 +30,7 @@ const LOADING_STAGES = [
 
 export default function IntakePage() {
   const router = useRouter();
+  const { session } = useAuth();
 
   const [loading, setLoading] = useState(false);
   const [stageIndex, setStageIndex] = useState(0);
@@ -36,6 +38,8 @@ export default function IntakePage() {
   const [error, setError] = useState<string | null>(null);
   const [pendingResult, setPendingResult] = useState<IntakeResult | null>(null);
   const [chosenMode, setChosenMode] = useState<"curated" | "auto" | null>(null);
+  const [hitFreeLimit, setHitFreeLimit] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const timersRef = useRef<NodeJS.Timeout[]>([]);
   const rafRef = useRef<number | null>(null);
@@ -101,6 +105,7 @@ export default function IntakePage() {
   // Mode chosen → API call
   async function handleModeChoice(mode: "curated" | "auto") {
     if (!pendingResult) return;
+    if (!session) return;
     setChosenMode(mode);
     setLoading(true);
     setError(null);
@@ -128,6 +133,12 @@ export default function IntakePage() {
       const suffix = mode === "auto" ? "?mode=auto" : "";
       router.push(`/result/${design.run_id}${suffix}`);
     } catch (err) {
+      if (err instanceof FreeLimitError) {
+        setHitFreeLimit(true);
+        setLoading(false);
+        stopLoading();
+        return;
+      }
       const msg = err instanceof Error ? err.message : "Something went wrong";
       if (msg.includes("aborted")) {
         setError("Request timed out. The server may be busy \u2014 try again.");
@@ -194,6 +205,196 @@ export default function IntakePage() {
                 );
               })}
             </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // --- Upgrade CTA (hit free limit) ---
+  if (hitFreeLimit) {
+    const handleUpgrade = async () => {
+      setCheckoutLoading(true);
+      setError(null);
+      try {
+        const url = await startCheckout();
+        window.location.href = url;
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Checkout failed");
+        setCheckoutLoading(false);
+      }
+    };
+
+    return (
+      <main className="intake-page">
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "80vh",
+          padding: "24px",
+          textAlign: "center",
+        }}>
+          <div style={{
+            fontSize: "2.5rem",
+            marginBottom: 16,
+          }}>
+            &#x2728;
+          </div>
+          <h2 style={{
+            fontSize: "1.3rem",
+            fontWeight: 600,
+            color: "#1C1917",
+            marginBottom: 8,
+          }}>
+            You&apos;ve used your free room
+          </h2>
+          <p style={{
+            fontSize: "0.9rem",
+            color: "#78716C",
+            marginBottom: 24,
+            maxWidth: 400,
+            lineHeight: 1.6,
+          }}>
+            Your first room design was on us. Upgrade to keep designing with full HD renders, all room types, and no watermarks.
+          </p>
+
+          <div style={{
+            background: "#FAFAF8",
+            border: "1.5px solid #E2DED6",
+            borderRadius: 12,
+            padding: "20px 28px",
+            marginBottom: 24,
+            maxWidth: 320,
+            width: "100%",
+          }}>
+            <div style={{ fontWeight: 600, fontSize: "1.1rem", color: "#1C1917", marginBottom: 8 }}>
+              Room Pack
+            </div>
+            <ul style={{
+              listStyle: "none",
+              padding: 0,
+              margin: "0 0 16px 0",
+              fontSize: "0.85rem",
+              color: "#57534E",
+              lineHeight: 1.8,
+              textAlign: "left",
+            }}>
+              <li>&#x2713; 5 room designs</li>
+              <li>&#x2713; All room types (bedroom, living room)</li>
+              <li>&#x2713; Full HD renders, no watermark</li>
+              <li>&#x2713; Rooms never expire</li>
+            </ul>
+            <div style={{ fontSize: "1.3rem", fontWeight: 700, color: "#1C1917" }}>
+              $4.99
+            </div>
+          </div>
+
+          {error && <p style={{ color: "#d32f2f", fontSize: "0.85rem", marginBottom: 12 }}>{error}</p>}
+
+          <button
+            type="button"
+            onClick={handleUpgrade}
+            disabled={checkoutLoading}
+            style={{
+              padding: "12px 48px",
+              borderRadius: 10,
+              border: "none",
+              background: "#1C1917",
+              color: "#FFF",
+              fontSize: "0.95rem",
+              fontWeight: 600,
+              cursor: checkoutLoading ? "not-allowed" : "pointer",
+              opacity: checkoutLoading ? 0.6 : 1,
+            }}
+          >
+            {checkoutLoading ? "Redirecting to checkout..." : "Upgrade now"}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => { setHitFreeLimit(false); setPendingResult(null); setChosenMode(null); }}
+            style={{
+              marginTop: 12,
+              background: "none",
+              border: "none",
+              color: "#78716C",
+              fontSize: "0.85rem",
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+          >
+            Back to home
+          </button>
+        </div>
+      </main>
+    );
+  }
+
+  // --- Auth wall (after quiz, before generation) ---
+  if (pendingResult && !loading && !session) {
+    return (
+      <main className="intake-page">
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "80vh",
+          padding: "24px",
+          textAlign: "center",
+        }}>
+          <h2 style={{
+            fontSize: "1.3rem",
+            fontWeight: 600,
+            color: "#1C1917",
+            marginBottom: 8,
+          }}>
+            Create an account to design your room
+          </h2>
+          <p style={{
+            fontSize: "0.85rem",
+            color: "#78716C",
+            marginBottom: 28,
+            maxWidth: 380,
+            lineHeight: 1.5,
+          }}>
+            Your style picks are saved. Sign up in seconds, then we&apos;ll generate your personalized room.
+          </p>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+            <a
+              href="/signup"
+              style={{
+                padding: "12px 36px",
+                borderRadius: 10,
+                border: "none",
+                background: "#1C1917",
+                color: "#FFF",
+                fontSize: "0.95rem",
+                fontWeight: 600,
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+            >
+              Sign up
+            </a>
+            <a
+              href="/login"
+              style={{
+                padding: "12px 36px",
+                borderRadius: 10,
+                border: "1.5px solid #E2DED6",
+                background: "#FFF",
+                color: "#1C1917",
+                fontSize: "0.95rem",
+                fontWeight: 600,
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+            >
+              Log in
+            </a>
           </div>
         </div>
       </main>

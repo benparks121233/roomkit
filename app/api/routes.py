@@ -159,7 +159,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             if req.room_type and req.room_type != "bedroom":
                 raise HTTPException(
                     status_code=403,
-                    detail="Free tier: bedroom only. Upgrade for more room types.",
+                    detail={"code": "free_limit", "message": "Free tier: bedroom only. Upgrade for all room types."},
                 )
             try:
                 _count_resp = (
@@ -173,7 +173,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
                 if _count_resp.count and _count_resp.count >= _free_limit:
                     raise HTTPException(
                         status_code=403,
-                        detail="Free tier: 1 room limit. Upgrade for more.",
+                        detail={"code": "free_limit", "message": "Free tier: 1 room limit. Upgrade for more."},
                     )
             except HTTPException:
                 raise
@@ -440,7 +440,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             if not claimed:
                 raise HTTPException(
                     status_code=403,
-                    detail="Free tier: 1 room limit. Upgrade for more.",
+                    detail={"code": "free_limit", "message": "Free tier: 1 room limit. Upgrade for more."},
                 )
 
         # Track: design completed + selections.
@@ -848,6 +848,8 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         )
 
     # Fallback: no Redis → synchronous render (current behavior for local dev)
+    import time as _time
+    _t0 = _time.monotonic()
     render_result = render_room(
         run_id=run_id,
         room_type=design.room_type,
@@ -858,8 +860,10 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         watermark=_watermark,
         is_paid=_is_paid_design,
     )
+    _route_ms = int((_time.monotonic() - _t0) * 1000)
 
     if render_result is None:
+        logger.error("route_render_ms=%d FAILED run=%s", _route_ms, run_id)
         raise HTTPException(status_code=500, detail="Room render generation failed")
 
     _render_path, _storage_url = render_result
@@ -876,6 +880,7 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
     log_event(run_id, "render_generated", {
         "render_cost": _render_cost, "cached": False,
     }, api_cost=_render_cost, user_id=user["user_id"])
+    logger.info("route_render_ms=%d run=%s url=%s", _route_ms, run_id, _url)
     return {"run_id": run_id, "render_url": _url, "status": "complete", "cached": False}
 
 

@@ -109,6 +109,13 @@ export interface QuizOutput {
  * POST /design — runs the full pipeline (~17 LLM calls, 60-90s).
  * Timeout set to 120s to match backend reality.
  */
+export class FreeLimitError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "FreeLimitError";
+  }
+}
+
 export async function createDesign(request: DesignRequest): Promise<DesignResponse> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 120_000);
@@ -124,7 +131,12 @@ export async function createDesign(request: DesignRequest): Promise<DesignRespon
 
     if (!res.ok) {
       const body = await res.json().catch(() => null);
-      throw new Error(body?.detail ?? `API error ${res.status}`);
+      const detail = body?.detail;
+      if (res.status === 403 && typeof detail === "object" && detail?.code === "free_limit") {
+        throw new FreeLimitError(detail.message);
+      }
+      const msg = typeof detail === "string" ? detail : detail?.message ?? `API error ${res.status}`;
+      throw new Error(msg);
     }
 
     return (await res.json()) as DesignResponse;
@@ -427,6 +439,39 @@ export function trackEvent(
       }),
     )
     .catch(() => {});
+}
+
+// ---------------------------------------------------------------------------
+// Checkout + pack balance
+// ---------------------------------------------------------------------------
+
+export async function startCheckout(): Promise<string> {
+  const headers = await authHeaders();
+  const res = await fetch(`${API_BASE}/checkout`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({}),
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.detail ?? `Checkout failed (${res.status})`);
+  }
+  const data = await res.json();
+  return data.url;
+}
+
+export interface PackBalance {
+  rooms_remaining: number;
+  has_pack: boolean;
+}
+
+export async function getPackBalance(): Promise<PackBalance> {
+  const headers = await authHeaders();
+  const res = await fetch(`${API_BASE}/pack/balance`, { headers });
+  if (!res.ok) {
+    return { rooms_remaining: 0, has_pack: false };
+  }
+  return (await res.json()) as PackBalance;
 }
 
 export { API_BASE };

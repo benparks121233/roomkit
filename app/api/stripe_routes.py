@@ -53,6 +53,26 @@ async def create_checkout(req: CheckoutRequest, user: CurrentUser) -> CheckoutRe
     return CheckoutResponse(url=url)
 
 
+@router.get("/pack/balance")
+async def pack_balance(user: CurrentUser) -> dict:
+    """Return the user's remaining room pack balance."""
+    from services.supabase_client import get_client
+    client = get_client()
+    if client is None:
+        return {"rooms_remaining": 0, "has_pack": False}
+
+    try:
+        resp = client.table("user_packs").select("rooms_remaining").eq(
+            "user_id", user["user_id"]
+        ).maybe_single().execute()
+        if resp.data:
+            return {"rooms_remaining": resp.data["rooms_remaining"], "has_pack": True}
+        return {"rooms_remaining": 0, "has_pack": False}
+    except Exception:
+        logger.exception("pack_balance: failed for %s", user["user_id"])
+        return {"rooms_remaining": 0, "has_pack": False}
+
+
 @router.post("/stripe/webhook")
 async def stripe_webhook(request: Request):
     raw_body = await request.body()

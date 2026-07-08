@@ -311,6 +311,7 @@ def render_room(
         )
 
         response = None
+        t_api_start = time.monotonic()
         for attempt in range(_RENDER_RETRY_MAX):
             try:
                 _quality = _PAID_QUALITY if is_paid else _FREE_QUALITY
@@ -330,6 +331,8 @@ def render_room(
                 wait = _RENDER_RETRY_BACKOFF * (2 ** attempt)
                 logger.warning("Render API error (attempt %d), retrying in %.0fs: %s", attempt + 1, wait, api_exc)
                 time.sleep(wait)
+        api_ms = int((time.monotonic() - t_api_start) * 1000)
+        logger.info("render_ms=%d (OpenAI API) run=%s quality=%s", api_ms, run_id, _quality)
 
         if response is None:
             logger.error("Render returned no response for %s", run_id)
@@ -357,7 +360,11 @@ def render_room(
         logger.info("Render saved: %s (%d KB)", render_path, size_kb)
 
         from services.render_storage import upload_render
+        t_upload_start = time.monotonic()
         storage_url = upload_render(run_id, render_path)
+        upload_ms = int((time.monotonic() - t_upload_start) * 1000)
+        total_ms = int((time.monotonic() - t_api_start) * 1000)
+        logger.info("upload_ms=%d total_ms=%d run=%s", upload_ms, total_ms, run_id)
 
         return str(render_path), storage_url
 

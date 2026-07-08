@@ -9,6 +9,16 @@ interface Props {
 type ZoomMode = "idle" | "marquee";
 
 export default function InteractiveRoomRender({ renderUrl }: Props) {
+  // [VANISH IRR] Diagnostic logging
+  const irrId = useRef(Math.random().toString(36).slice(2, 8));
+  useEffect(() => {
+    console.log(`[VANISH IRR] MOUNT id=${irrId.current} url=${renderUrl}`);
+    return () => console.log(`[VANISH IRR] UNMOUNT id=${irrId.current}`);
+  }, []);
+  useEffect(() => {
+    console.log(`[VANISH IRR] renderUrl changed: ${renderUrl}`);
+  }, [renderUrl]);
+
   // Zoom/pan state
   const [scale, setScale] = useState(1);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
@@ -28,10 +38,16 @@ export default function InteractiveRoomRender({ renderUrl }: Props) {
   // Fullscreen
   const [fullscreen, setFullscreen] = useState(false);
 
-  // Image loaded
+  // Image loaded — retry with cache-busting on failure (storage propagation race)
   const [loaded, setLoaded] = useState(false);
-  const [imgError, setImgError] = useState(false);
+  const [imgFailed, setImgFailed] = useState(false);
+  const [retrySuffix, setRetrySuffix] = useState("");
   const retryCount = useRef(0);
+  const retryTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => { if (retryTimer.current) clearTimeout(retryTimer.current); };
+  }, []);
 
   // Clamp translate so image doesn't fly off
   const clampTranslateFor = useCallback(
@@ -208,25 +224,36 @@ export default function InteractiveRoomRender({ renderUrl }: Props) {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={imgError ? "" : renderUrl}
+          src={imgFailed ? "" : `${renderUrl}${retrySuffix}`}
           alt="AI-generated room render"
           className="room-render-image"
-          onLoad={() => { setLoaded(true); setImgError(false); retryCount.current = 0; }}
+          onLoad={() => {
+            console.log(`[VANISH IRR] img onLoad fired, retry=${retryCount.current}, url=${renderUrl}${retrySuffix}`);
+            setLoaded(true);
+            setImgFailed(false);
+            retryCount.current = 0;
+          }}
           onError={() => {
-            if (retryCount.current < 3) {
-              retryCount.current += 1;
-              setImgError(false);
-              setTimeout(() => {
-                setImgError(true);
-                setTimeout(() => setImgError(false), 50);
-              }, 1000 * retryCount.current);
+            console.warn(`[VANISH IRR] img onError fired, retry=${retryCount.current}/6, url=${renderUrl}${retrySuffix}`);
+            if (retryCount.current < 6) {
+              const attempt = retryCount.current + 1;
+              retryCount.current = attempt;
+              const delays = [1000, 2000, 3000, 3000, 3000, 3000];
+              const delay = delays[attempt - 1] ?? 3000;
+              console.log(`[VANISH IRR] scheduling retry #${attempt} in ${delay}ms`);
+              retryTimer.current = setTimeout(() => {
+                const bust = `${renderUrl.includes("?") ? "&" : "?"}cb=${Date.now()}`;
+                console.log(`[VANISH IRR] retry #${attempt} firing, bust=${bust}`);
+                setRetrySuffix(bust);
+              }, delay);
             } else {
-              setImgError(true);
+              console.error(`[VANISH IRR] img FAILED after 6 retries, url=${renderUrl}`);
+              setImgFailed(true);
             }
           }}
           draggable={false}
         />
-        {imgError && (
+        {imgFailed && (
           <div style={{
             position: "absolute", inset: 0,
             display: "flex", flexDirection: "column",
@@ -236,7 +263,11 @@ export default function InteractiveRoomRender({ renderUrl }: Props) {
             <p>Image failed to load</p>
             <button
               type="button"
-              onClick={() => { retryCount.current = 0; setImgError(false); }}
+              onClick={() => {
+                retryCount.current = 0;
+                setImgFailed(false);
+                setRetrySuffix(`${renderUrl.includes("?") ? "&" : "?"}cb=${Date.now()}`);
+              }}
               style={{
                 marginTop: 8, padding: "8px 16px",
                 border: "1.5px solid #E2DED6", borderRadius: 8,

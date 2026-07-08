@@ -6,7 +6,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import logging  # noqa: E402
 import os  # noqa: E402
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    datefmt="%H:%M:%S",
+)
 from pathlib import Path  # noqa: E402
 
 from fastapi import FastAPI, Request  # noqa: E402
