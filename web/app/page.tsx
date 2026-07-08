@@ -97,6 +97,29 @@ export default function IntakePage() {
     }
   }
 
+  // Restore stashed quiz state after Stripe checkout round-trip
+  const restoredRef = useRef(false);
+  useEffect(() => {
+    console.log("[RESTORE] Effect running — restoredRef:", restoredRef.current, "session:", !!session);
+    if (restoredRef.current || !session) return;
+    const raw = sessionStorage.getItem("rk_pending");
+    console.log("[RESTORE] sessionStorage rk_pending:", raw ? raw.slice(0, 80) + "..." : "NULL");
+    if (!raw) return;
+    restoredRef.current = true;
+    sessionStorage.removeItem("rk_pending");
+    try {
+      const { result, mode } = JSON.parse(raw);
+      console.log("[RESTORE] Parsed — mode:", mode, "roomType:", result?.roomType, "budget:", result?.budget);
+      if (result && mode) {
+        setPendingResult(result);
+        setChosenMode(mode);
+        console.log("[RESTORE] State set — should show mode choice screen");
+      }
+    } catch (e) {
+      console.error("[RESTORE] Parse failed:", e);
+    }
+  }, [session]);
+
   // Wizard completion → show mode choice
   function handleComplete(result: IntakeResult) {
     setPendingResult(result);
@@ -217,7 +240,16 @@ export default function IntakePage() {
       setCheckoutLoading(true);
       setError(null);
       try {
+        if (pendingResult && chosenMode) {
+          const payload = { result: pendingResult, mode: chosenMode };
+          sessionStorage.setItem("rk_pending", JSON.stringify(payload));
+          console.log("[STASH] Written to sessionStorage:", { mode: chosenMode, roomType: pendingResult.roomType, keyCount: Object.keys(pendingResult).length });
+          console.log("[STASH] Verify read-back:", sessionStorage.getItem("rk_pending")?.slice(0, 80));
+        } else {
+          console.warn("[STASH] NOT written — pendingResult:", !!pendingResult, "chosenMode:", chosenMode);
+        }
         const url = await startCheckout();
+        console.log("[STASH] Redirecting to Stripe:", url.slice(0, 60));
         window.location.href = url;
       } catch (err) {
         setError(err instanceof Error ? err.message : "Checkout failed");

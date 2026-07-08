@@ -10,6 +10,12 @@ export default function PurchaseSuccessPage() {
   const { session } = useAuth();
   const [rooms, setRooms] = useState<number | null>(null);
   const [polling, setPolling] = useState(true);
+  const [hasPendingDesign] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const val = sessionStorage.getItem("rk_pending");
+    console.log("[SUCCESS] sessionStorage rk_pending on mount:", val ? val.slice(0, 80) + "..." : "NULL");
+    return val !== null;
+  });
 
   useEffect(() => {
     if (!session) return;
@@ -73,9 +79,16 @@ export default function PurchaseSuccessPage() {
             Processing your payment...
           </p>
         ) : rooms !== null ? (
-          <p style={styles.subtitle}>
-            Your {rooms} rooms are ready. Start designing!
-          </p>
+          <>
+            <p style={styles.subtitle}>
+              Your {rooms} rooms are ready.
+            </p>
+            {hasPendingDesign && (
+              <p style={{ ...styles.subtitle, marginBottom: 8, fontWeight: 500, color: "#1C1917" }}>
+                Your room design is still saved &mdash; pick up right where you left off.
+              </p>
+            )}
+          </>
         ) : (
           <p style={styles.subtitle}>
             Payment received! Your rooms should appear shortly.
@@ -87,7 +100,7 @@ export default function PurchaseSuccessPage() {
           href="/"
           style={styles.button}
         >
-          Design a room
+          {hasPendingDesign ? "Continue designing" : "Design a room"}
         </a>
 
         <p style={styles.note}>
