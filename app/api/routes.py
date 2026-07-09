@@ -538,6 +538,7 @@ async def list_designs(user: CurrentUser) -> list[dict]:
             client.table("designs")
             .select("run_id, room_type, style, target_budget, render_url, is_paid, created_at")
             .eq("user_id", user["user_id"])
+            .not_.is_("finalized_at", "null")
             .order("created_at", desc=True)
             .execute()
         )
