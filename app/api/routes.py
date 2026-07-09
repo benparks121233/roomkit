@@ -521,6 +521,45 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
 
 
 # ---------------------------------------------------------------------------
+# GET /designs — list all designs for the authenticated user
+# ---------------------------------------------------------------------------
+
+@router.get("/designs")
+async def list_designs(user: CurrentUser) -> list[dict]:
+    """List summary of all designs for the authenticated user."""
+    from services.supabase_client import get_client
+
+    client = get_client()
+    if client is None:
+        raise HTTPException(503, "Storage temporarily unavailable")
+
+    try:
+        resp = (
+            client.table("designs")
+            .select("run_id, room_type, style, target_budget, render_url, is_paid, created_at")
+            .eq("user_id", user["user_id"])
+            .order("created_at", desc=True)
+            .execute()
+        )
+    except Exception:
+        logger.exception("list_designs: query failed for %s", user["user_id"])
+        raise HTTPException(503, "Storage temporarily unavailable")
+
+    return [
+        {
+            "run_id": row["run_id"],
+            "room_type": row["room_type"],
+            "style_name": row.get("style", {}).get("style_name", "unknown"),
+            "target_budget": row["target_budget"],
+            "render_url": row.get("render_url"),
+            "is_paid": row.get("is_paid", False),
+            "created_at": row.get("created_at"),
+        }
+        for row in (resp.data or [])
+    ]
+
+
+# ---------------------------------------------------------------------------
 # GET /design/{run_id} — retrieve a saved board
 # ---------------------------------------------------------------------------
 

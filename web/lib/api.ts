@@ -474,4 +474,21 @@ export async function getPackBalance(): Promise<PackBalance> {
   return (await res.json()) as PackBalance;
 }
 
+export interface DesignSummary {
+  run_id: string;
+  room_type: string;
+  style_name: string;
+  target_budget: number;
+  render_url: string | null;
+  is_paid: boolean;
+  created_at: string;
+}
+
+export async function getMyDesigns(): Promise<DesignSummary[]> {
+  const headers = await authHeaders();
+  const res = await fetch(`${API_BASE}/designs`, { headers });
+  if (!res.ok) throw new Error("Failed to load designs");
+  return (await res.json()) as DesignSummary[];
+}
+
 export { API_BASE };
