@@ -147,21 +147,27 @@ def _apply_diversity_rules(
     # Price spread: ensure we have items across a range.
     # If all items cluster in the top 60% of the budget, pull in a cheaper
     # option from the original ranked list that we may have skipped.
+    # On high-allocation slots the mid-range IS the affordable option,
+    # so backfill is skipped to avoid injecting low-quality items.
+    from services.budget_thresholds import BACKFILL_FURNITURE_CAP, BACKFILL_DECOR_CAP
     is_decor = slot_id in _DECOR_SLOTS
-    cheap_threshold = allocated_budget * (0.15 if is_decor else 0.40)
-    if len(filtered) >= 3:
-        has_affordable = any(p.normalized_price <= cheap_threshold for p in filtered)
-        if not has_affordable:
-            included_ids = {p.product_id for p in filtered}
-            for product, reason in zip(products, fit_reasons):
-                if product.product_id in included_ids:
-                    continue
-                if product.normalized_price <= cheap_threshold:
-                    brand = _extract_brand(product.name)
-                    if not brand or brand_count.get(brand, 0) < 2:
-                        filtered.append(product)
-                        filtered_reasons.append(reason)
-                        break
+    backfill_cap = BACKFILL_DECOR_CAP if is_decor else BACKFILL_FURNITURE_CAP
+
+    if allocated_budget < backfill_cap:
+        cheap_threshold = allocated_budget * (0.15 if is_decor else 0.40)
+        if len(filtered) >= 3:
+            has_affordable = any(p.normalized_price <= cheap_threshold for p in filtered)
+            if not has_affordable:
+                included_ids = {p.product_id for p in filtered}
+                for product, reason in zip(products, fit_reasons):
+                    if product.product_id in included_ids:
+                        continue
+                    if product.normalized_price <= cheap_threshold:
+                        brand = _extract_brand(product.name)
+                        if not brand or brand_count.get(brand, 0) < 2:
+                            filtered.append(product)
+                            filtered_reasons.append(reason)
+                            break
 
     return filtered, filtered_reasons
 

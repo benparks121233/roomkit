@@ -2326,15 +2326,22 @@ h1, h2, h3 {
   height: 100%;
   background: var(--color-accent);
   border-radius: 2px;
-  animation: renderProgress 20s ease-out forwards;
 }
 
-@keyframes renderProgress {
-  0% { width: 0%; }
-  30% { width: 40%; }
-  60% { width: 70%; }
-  80% { width: 85%; }
-  100% { width: 95%; }
+.render-failed-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  min-height: 200px;
+}
+
+.render-failed-banner p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: center;
 }
 
 @keyframes renderPhaseFadeIn {

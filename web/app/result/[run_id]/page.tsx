@@ -153,16 +153,6 @@ export default function ResultPage() {
   const [timeoutJobId, setTimeoutJobId] = useState<string | null>(null);
   const [checkingAgain, setCheckingAgain] = useState(false);
 
-  // [VANISH] Diagnostic logging — track render state transitions
-  const mountId = useRef(Math.random().toString(36).slice(2, 8));
-  useEffect(() => {
-    console.log(`[VANISH] ResultPage MOUNT id=${mountId.current}`);
-    return () => console.log(`[VANISH] ResultPage UNMOUNT id=${mountId.current}`);
-  }, []);
-  useEffect(() => {
-    console.log(`[VANISH] state: renderUrl=${renderUrl ? "SET" : "null"} renderLoading=${renderLoading} renderFailed=${renderFailed} renderTimedOut=${renderTimedOut} phase=${phase}`);
-  }, [renderUrl, renderLoading, renderFailed, renderTimedOut, phase]);
-
   // Persist curated selections to server. Called at every path to phase="complete".
   const persistFinalize = useCallback(
     (finalSelections: Record<string, ProductResult[]>, finalSkipped: Set<string>) => {
@@ -454,40 +444,44 @@ export default function ResultPage() {
   }, [phase, runId, selections]);
 
   // On-demand render — only generate when the user explicitly requests it.
-  // This avoids paying ~$0.10-0.30 per render for users who bail before viewing.
-  // Render reads from persisted selected_products — no selections sent.
+  // Generation counter prevents stale poll callbacks from clobbering a retry.
+  const renderGenRef = useRef(0);
+
   const triggerRender = useCallback(() => {
-    if (!runId || renderUrl || renderLoading) return;
-    console.log(`[VANISH] triggerRender called, runId=${runId}`);
+    if (!runId || renderUrl) return;
+    const gen = ++renderGenRef.current;
     setRenderLoading(true);
     setRenderFailed(false);
     setRenderTimedOut(false);
 
     generateRender(runId)
       .then((renderResp) => {
-        console.log(`[VANISH] generateRender resolved, render_url=${renderResp.render_url}`);
+        if (renderGenRef.current !== gen) return;
         const url = renderResp.render_url.startsWith("http")
           ? renderResp.render_url
           : `${API_BASE}${renderResp.render_url}`;
-        console.log(`[VANISH] setting renderUrl=${url}`);
         setRenderUrl(url);
         if (runId) trackEvent(runId, "render_viewed");
       })
       .catch((err) => {
+        if (renderGenRef.current !== gen) return;
         if (err instanceof RenderTimeoutError) {
-          console.warn(`[VANISH] RenderTimeoutError, jobId=${err.jobId}`);
           setRenderTimedOut(true);
           setTimeoutJobId(err.jobId);
         } else {
-          console.error(`[VANISH] generateRender FAILED:`, err);
           setRenderFailed(true);
         }
       })
       .finally(() => {
-        console.log(`[VANISH] triggerRender finally, setting renderLoading=false`);
+        if (renderGenRef.current !== gen) return;
         setRenderLoading(false);
       });
-  }, [runId, renderUrl, renderLoading]);
+  }, [runId, renderUrl]);
+
+  const handleRenderStall = useCallback(() => {
+    setRenderLoading(false);
+    setRenderFailed(true);
+  }, []);
 
   const handleCheckAgain = useCallback(() => {
     if (!runId || !timeoutJobId) return;
@@ -860,7 +854,20 @@ export default function ResultPage() {
       )}
 
       {renderLoading && !renderUrl && !renderFailed && !renderTimedOut && (
-        <RenderLoadingScreen />
+        <RenderLoadingScreen onStall={handleRenderStall} />
+      )}
+
+      {renderFailed && !renderUrl && (
+        <div className="render-failed-banner">
+          <p>Render is taking longer than expected.</p>
+          <button
+            type="button"
+            className="render-cta-btn"
+            onClick={triggerRender}
+          >
+            Retry render
+          </button>
+        </div>
       )}
 
       {renderTimedOut && !renderUrl && (
@@ -1123,22 +1130,51 @@ function GalleryItem({
 // ---------------------------------------------------------------------------
 
 const RENDER_PHASES = [
-  { title: "Designing your space...", sub: "Analyzing your style selections", delay: 0 },
-  { title: "Placing your furniture...", sub: "Arranging each piece in the room", delay: 5000 },
-  { title: "Setting the mood...", sub: "Matching lighting and textures to your aesthetic", delay: 12000 },
-  { title: "Adding the finishing touches...", sub: "Wall art, plants, and decor details", delay: 22000 },
-  { title: "Almost there...", sub: "Polishing your photorealistic room render", delay: 35000 },
+  { title: "Designing your space...", sub: "Analyzing your style selections", at: 0 },
+  { title: "Placing your furniture...", sub: "Arranging each piece in the room", at: 8000 },
+  { title: "Setting the mood...", sub: "Matching lighting and textures to your aesthetic", at: 18000 },
+  { title: "Adding the finishing touches...", sub: "Wall art, plants, and decor details", at: 30000 },
+  { title: "Polishing your render...", sub: "Fine-tuning lighting and textures", at: 42000 },
+  { title: "Almost there...", sub: "Your photorealistic room render is nearly ready", at: 55000 },
 ];
 
-function RenderLoadingScreen() {
+const RENDER_TOTAL_MS = 65000;
+const RENDER_CEILING_MS = 90000;
+
+function RenderLoadingScreen({ onStall }: { onStall: () => void }) {
   const [phaseIdx, setPhaseIdx] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const startRef = useRef(performance.now());
+  const rafRef = useRef<number | null>(null);
+  const stallRef = useRef(false);
 
   useEffect(() => {
     const timers = RENDER_PHASES.slice(1).map((p, i) =>
-      setTimeout(() => setPhaseIdx(i + 1), p.delay),
+      setTimeout(() => setPhaseIdx(i + 1), p.at),
     );
-    return () => timers.forEach(clearTimeout);
-  }, []);
+
+    const ceiling = setTimeout(() => {
+      if (!stallRef.current) {
+        stallRef.current = true;
+        onStall();
+      }
+    }, RENDER_CEILING_MS);
+
+    function tick() {
+      const elapsed = performance.now() - startRef.current;
+      const raw = Math.min(elapsed / RENDER_TOTAL_MS, 1);
+      const eased = 1 - Math.pow(1 - raw, 3);
+      setProgress(eased * 0.95);
+      rafRef.current = requestAnimationFrame(tick);
+    }
+    rafRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(ceiling);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [onStall]);
 
   const phase = RENDER_PHASES[phaseIdx];
 
@@ -1155,7 +1191,7 @@ function RenderLoadingScreen() {
         {phase.sub}
       </p>
       <div className="render-loading-bar">
-        <div className="render-loading-bar-fill" />
+        <div className="render-loading-bar-fill" style={{ width: `${progress * 100}%`, transition: "none" }} />
       </div>
     </div>
   );

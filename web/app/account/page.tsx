@@ -7,17 +7,24 @@ import { getSupabaseBrowserClient } from "@/lib/supabase";
 
 export default function AccountPage() {
   const router = useRouter();
-  const { session, signOut } = useAuth();
+  const { session, loading, signOut } = useAuth();
   const [showConfirm, setShowConfirm] = useState(false);
   const [confirmText, setConfirmText] = useState("");
   const [deleting, setDeleting] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!session) router.replace("/login");
-  }, [session, router]);
+    if (!loading && !session && !signingOut) router.replace("/login");
+  }, [loading, session, signingOut, router]);
 
-  if (!session) return null;
+  const handleSignOut = async () => {
+    setSigningOut(true);
+    await signOut();
+    router.replace("/");
+  };
+
+  if (loading || !session) return null;
 
   const handleDelete = async () => {
     setError(null);
@@ -72,6 +79,14 @@ export default function AccountPage() {
           <span style={styles.fieldLabel}>Email</span>
           <span style={styles.fieldValue}>{session.user.email}</span>
         </div>
+
+        <button
+          onClick={handleSignOut}
+          disabled={signingOut}
+          style={signingOut ? { ...styles.signOutButton, ...styles.buttonDisabled } : styles.signOutButton}
+        >
+          {signingOut ? "Signing out..." : "Sign out"}
+        </button>
 
         <hr style={styles.divider} />
 
@@ -174,6 +189,19 @@ const styles: Record<string, React.CSSProperties> = {
     border: "none",
     borderTop: "1px solid #eee",
     margin: "28px 0",
+  },
+  signOutButton: {
+    width: "100%",
+    padding: "10px 20px",
+    borderRadius: 8,
+    border: "1px solid #ddd",
+    background: "#fff",
+    color: "#1a1a1a",
+    fontSize: "0.9rem",
+    fontFamily: "'DM Sans', sans-serif",
+    fontWeight: 600,
+    cursor: "pointer",
+    marginTop: 20,
   },
   deleteButton: {
     padding: "10px 20px",

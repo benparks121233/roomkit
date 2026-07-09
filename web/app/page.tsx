@@ -97,31 +97,52 @@ export default function IntakePage() {
     }
   }
 
-  // Restore stashed quiz state after Stripe checkout round-trip
+  // Quiz stash: localStorage with 30-min TTL (survives cross-tab email confirmation).
+  // Stripe stash (rk_pending): stays on sessionStorage (same-tab redirect).
+  const QUIZ_STASH_KEY = "rk_quiz_pending";
+  const QUIZ_STASH_TTL_MS = 30 * 60 * 1000;
+
+  const showAuthWall = !!pendingResult && !loading && !session;
+  useEffect(() => {
+    if (!showAuthWall || !pendingResult) return;
+    localStorage.setItem(QUIZ_STASH_KEY, JSON.stringify({ answers: pendingResult, ts: Date.now() }));
+  }, [showAuthWall, pendingResult]);
+
+  // Restore stashed state after auth round-trips.
+  // rk_pending (Stripe, sessionStorage) wins — it has result + mode.
+  // rk_quiz_pending (localStorage) only has result; discarded if older than TTL.
   const restoredRef = useRef(false);
   useEffect(() => {
-    console.log("[RESTORE] Effect running — restoredRef:", restoredRef.current, "session:", !!session);
     if (restoredRef.current || !session) return;
-    const raw = sessionStorage.getItem("rk_pending");
-    console.log("[RESTORE] sessionStorage rk_pending:", raw ? raw.slice(0, 80) + "..." : "NULL");
-    if (!raw) return;
-    restoredRef.current = true;
-    sessionStorage.removeItem("rk_pending");
-    try {
-      const { result, mode } = JSON.parse(raw);
-      console.log("[RESTORE] Parsed — mode:", mode, "roomType:", result?.roomType, "budget:", result?.budget);
-      if (result && mode) {
-        setPendingResult(result);
-        setChosenMode(mode);
-        console.log("[RESTORE] State set — should show mode choice screen");
-      }
-    } catch (e) {
-      console.error("[RESTORE] Parse failed:", e);
+
+    const stripePending = sessionStorage.getItem("rk_pending");
+    const quizRaw = localStorage.getItem(QUIZ_STASH_KEY);
+
+    if (stripePending) {
+      restoredRef.current = true;
+      sessionStorage.removeItem("rk_pending");
+      localStorage.removeItem(QUIZ_STASH_KEY);
+      try {
+        const { result, mode } = JSON.parse(stripePending);
+        if (result && mode) {
+          setPendingResult(result);
+          setChosenMode(mode);
+        }
+      } catch { /* ignore corrupt data */ }
+    } else if (quizRaw) {
+      restoredRef.current = true;
+      localStorage.removeItem(QUIZ_STASH_KEY);
+      try {
+        const { answers, ts } = JSON.parse(quizRaw);
+        if (answers && answers.roomType && Date.now() - ts < QUIZ_STASH_TTL_MS) {
+          setPendingResult(answers);
+        }
+      } catch { /* ignore corrupt data */ }
     }
   }, [session]);
 
-  // Wizard completion → show mode choice
   function handleComplete(result: IntakeResult) {
+    localStorage.removeItem(QUIZ_STASH_KEY);
     setPendingResult(result);
   }
 

@@ -44,6 +44,8 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
   const signOut = async () => {
     const supabase = getSupabaseBrowserClient();
     await supabase.auth.signOut();
+    sessionStorage.removeItem("rk_pending");
+    localStorage.removeItem("rk_quiz_pending");
     setSession(null);
   };
 

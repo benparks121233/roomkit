@@ -224,7 +224,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
 
         # 5. Sourcing + selection — parallel LLM calls for non-owned slots.
         _t = time.monotonic()
-        adapter = AmazonAdapter()
+        adapter = AmazonAdapter(total_budget=room_request.budget)
         slot_results: list[SlotResult] = []
 
         # Decor single-item cap: no single decor item may exceed 50% of the
@@ -273,14 +273,35 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             # Use sourcing_terms (product-name-friendly) for adapter scoring,
             # falling back to keywords if sourcing_terms not set.
             sourcing_kw = style_profile.sourcing_terms or style_profile.keywords
+
+            # On high budgets, set a price floor to exclude bottom-quality
+            # candidates. Falls back to no floor if too few candidates remain.
+            from services.budget_thresholds import (
+                HIGH_BUDGET_THRESHOLD, PRICE_FLOOR_FRACTION,
+                PRICE_FLOOR_MIN_CANDIDATES,
+            )
+            price_min = 0.0
+            if room_request.budget >= HIGH_BUDGET_THRESHOLD:
+                price_min = slot.allocated_budget * PRICE_FLOOR_FRACTION
+
             candidates = adapter.fetch_candidates(
                 slot.slot_id,
                 sourcing_kw,
-                (0.0, max_price),
+                (price_min, max_price),
                 spec_hints,
                 interests=room_request.interests or None,
                 priority_terms=style_profile.priority_terms or None,
             )
+
+            if price_min > 0 and len(candidates) < PRICE_FLOOR_MIN_CANDIDATES:
+                candidates = adapter.fetch_candidates(
+                    slot.slot_id,
+                    sourcing_kw,
+                    (0.0, max_price),
+                    spec_hints,
+                    interests=room_request.interests or None,
+                    priority_terms=style_profile.priority_terms or None,
+                )
             logger.info("Sourced %s: %d candidates (budget $%.2f)", slot.slot_id, len(candidates), slot.allocated_budget)
 
             # Mirror type filter: if user selected a mirror type (e.g. "round",
@@ -365,6 +386,28 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             len(sourceable_slots),
             _timing["selection_ms"] / 1000,
         )
+
+        # Log per-slot selection outcomes for post-hoc debugging.
+        _selection_outcomes = []
+        for slot, cands in sourceable_slots:
+            products, fit_reasons, null_reason = selection_results[slot.slot_id]
+            stretch_count = sum(1 for r in fit_reasons if r.startswith("Premium option"))
+            _selection_outcomes.append({
+                "slot": slot.slot_id,
+                "candidates": len(cands),
+                "requested": pick_count_for_slot(slot.slot_id),
+                "returned": len(products) - stretch_count,
+                "stretch": stretch_count,
+                "total": len(products),
+                "null_reason": null_reason,
+                "rank1_price": round(products[0].normalized_price, 2) if products else None,
+                "alloc": round(slot.allocated_budget, 2),
+            })
+        log_event(room_request.run_id, "selection_outcomes", {
+            "aesthetic": style_profile.style_name,
+            "budget": room_request.budget,
+            "slots": _selection_outcomes,
+        }, user_id=user["user_id"])
 
         # Build SlotResults for sourceable slots.
         sourceable_results: list[SlotResult] = []

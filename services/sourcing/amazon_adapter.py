@@ -404,12 +404,14 @@ class AmazonAdapter(SourcingAdapter):
         self,
         fixtures_dir: Path | None = None,
         catalog_dir: Path | None = None,
+        total_budget: float = 0,
     ) -> None:
         self._fixtures_dir = fixtures_dir or _FIXTURES_DIR
         self._catalog_dir = catalog_dir or _CATALOG_DIR
         self._affiliate_tag = os.environ.get(
             "AMAZON_AFFILIATE_TAG", _DEFAULT_AFFILIATE_TAG
         )
+        self._total_budget = total_budget
 
     def fetch_candidates(
         self,
@@ -539,6 +541,7 @@ class AmazonAdapter(SourcingAdapter):
         return self._build_shortlist(
             candidates, style_keywords, max_price, slot_interests, slot_id,
             priority_terms=priority_terms,
+            total_budget=self._total_budget,
         )
 
     # ------------------------------------------------------------------
@@ -586,6 +589,12 @@ class AmazonAdapter(SourcingAdapter):
     # These skip style Pool 1 entirely and rely on price-spread only.
     _AESTHETIC_AGNOSTIC_SLOTS = {"mattress", "duvet_insert"}
 
+    # Slot-specific terms injected into Pool 1 scoring at 1x weight.
+    # Activatable per-slot when a specific aesthetic has thin coverage.
+    # Currently empty: all aesthetics have 137-416 style-matched mirrors
+    # (Pool 1 only needs 40), so no boost is needed.
+    _SLOT_BOOST_TERMS: dict[str, list[str]] = {}
+
     @staticmethod
     def _build_shortlist(
         candidates: list[Product],
@@ -594,6 +603,7 @@ class AmazonAdapter(SourcingAdapter):
         interests: list[str] | None,
         slot_id: str = "",
         priority_terms: list[str] | None = None,
+        total_budget: float = 0,
     ) -> list[Product]:
         """Build a capped shortlist blending style, interests, and price spread.
 
@@ -629,7 +639,11 @@ class AmazonAdapter(SourcingAdapter):
             return True
 
         # --- Pool 1: style-relevant ---
-        kw_lower = [k.lower() for k in style_keywords]
+        # Inject slot-specific boost terms at 1x weight to ensure minimum
+        # coverage for aesthetics with sparse keyword matches.
+        boost = AmazonAdapter._SLOT_BOOST_TERMS.get(slot_id, [])
+        all_keywords = list(style_keywords) + [b for b in boost if b not in style_keywords]
+        kw_lower = [k.lower() for k in all_keywords]
         # Aesthetic-differentiating terms ("farmhouse", "rattan") score 3x vs
         # generic terms ("wood", "brown").  Without this, all aesthetics converge
         # to the same bland shortlist.  3x was the minimum that reliably separated them.
@@ -739,7 +753,10 @@ class AmazonAdapter(SourcingAdapter):
         # --- Pool 3: price-spread (fill remaining budget with price diversity) ---
         remaining = _MAX_CANDIDATES - len(result)
         if remaining > 0 and candidates:
-            # Split into 3 price terciles, sample evenly.
+            from services.budget_thresholds import HIGH_BUDGET_THRESHOLD
+            # Split into 3 price terciles. On high budgets, weight toward
+            # upper terciles (1:2:3) so quality-appropriate items dominate.
+            # On modest budgets, sample equally to preserve budget flexibility.
             by_price = sorted(candidates, key=lambda p: p.normalized_price)
             n = len(by_price)
             tercile_size = max(1, n // 3)
@@ -748,14 +765,20 @@ class AmazonAdapter(SourcingAdapter):
                 by_price[tercile_size:2 * tercile_size],
                 by_price[2 * tercile_size:],
             ]
-            per_tercile = max(1, remaining // 3)
 
-            for tercile in terciles:
-                # Within each tercile, shuffle style-relevant items for variety.
+            is_high_budget = total_budget >= HIGH_BUDGET_THRESHOLD
+            if is_high_budget:
+                weights = [1, 2, 3]
+                total_w = sum(weights)
+                per_tercile_counts = [max(1, remaining * w // total_w) for w in weights]
+            else:
+                per_tercile_counts = [max(1, remaining // 3)] * 3
+
+            for tercile, cap in zip(terciles, per_tercile_counts):
                 tercile_shuffled = _shuffle_within_tiers(tercile, style_score)
                 added = 0
                 for p in tercile_shuffled:
-                    if added >= per_tercile:
+                    if added >= cap:
                         break
                     if _add(p):
                         added += 1

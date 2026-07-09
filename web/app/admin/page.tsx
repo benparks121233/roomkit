@@ -1,9 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-const ADMIN_SECRET = "roomkit-internal-2024";
+import { useAuth } from "@/components/AuthProvider";
 
 interface Summary {
   total_runs: number;
@@ -51,13 +49,18 @@ interface AdminData {
 }
 
 export default function AdminPage() {
+  const { session, loading: authLoading } = useAuth();
   const [data, setData] = useState<AdminData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   const fetchData = useCallback(async () => {
+    if (!session) return;
     try {
-      const res = await fetch(`${API_BASE}/admin/stats?secret=${ADMIN_SECRET}`);
+      const res = await fetch("/api/admin", {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      });
+      if (res.status === 403) throw new Error("Not authorized");
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
       setData(await res.json());
       setError(null);
@@ -66,9 +69,13 @@ export default function AdminPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [session]);
 
-  useEffect(() => { fetchData(); }, [fetchData]);
+  useEffect(() => {
+    if (authLoading) return;
+    if (!session) { setError("Sign in required"); setLoading(false); return; }
+    fetchData();
+  }, [session, authLoading, fetchData]);
 
   if (loading) return <div style={styles.page}><p style={styles.muted}>Loading dashboard...</p></div>;
   if (error) return <div style={styles.page}><p style={styles.error}>Error: {error}</p></div>;
