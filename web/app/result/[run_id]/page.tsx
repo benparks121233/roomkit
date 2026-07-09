@@ -509,7 +509,7 @@ export default function ResultPage() {
     return (
       <main className="result-page">
         <div className="result-sticky-header">
-          <a href="/" className="result-wordmark">RoomKit</a>
+          <a href="/" className="result-back-link" aria-label="Back to home">&#8592; New design</a>
         </div>
         <div className="error-banner">{error}</div>
       </main>
@@ -521,7 +521,7 @@ export default function ResultPage() {
     return (
       <main className="result-page">
         <div className="result-sticky-header">
-          <a href="/" className="result-wordmark">RoomKit</a>
+          <a href="/" className="result-back-link" aria-label="Back to home">&#8592; New design</a>
         </div>
         <div className="build-loading">
           <div className="build-loading-inner">
@@ -544,7 +544,7 @@ export default function ResultPage() {
     return (
       <main className="result-page">
         <div className="result-sticky-header">
-          <a href="/" className="result-wordmark">RoomKit</a>
+          <a href="/" className="result-back-link" aria-label="Back to home">&#8592; New design</a>
           <button
             type="button"
             className="skip-to-results-btn"
@@ -816,8 +816,7 @@ export default function ResultPage() {
   return (
     <main className="result-page">
       <div className="result-sticky-header">
-        <a href="/" className="result-wordmark">RoomKit</a>
-        <a href="/" className="new-design-btn">+ New design</a>
+        <a href="/" className="result-back-link" aria-label="Back to home">&#8592; New design</a>
       </div>
 
       <div className="result-hero">

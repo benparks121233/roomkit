@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import AuthProvider from "@/components/AuthProvider";
+import SiteShell from "@/components/SiteShell";
 
 export const metadata: Metadata = {
   title: "RoomKit",
@@ -19,10 +20,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <AuthProvider>{children}</AuthProvider>
-        <footer className="site-footer">
-          As an Amazon Associate, RoomKit earns from qualifying purchases.
-        </footer>
+        <AuthProvider>
+          <SiteShell>{children}</SiteShell>
+        </AuthProvider>
       </body>
     </html>
   );

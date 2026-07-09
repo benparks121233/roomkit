@@ -174,6 +174,7 @@ export default function IntakePage() {
     try {
       const design = await createDesign(req);
       stopLoading();
+      window.dispatchEvent(new Event("roomkit:pack-changed"));
       const suffix = mode === "auto" ? "?mode=auto" : "";
       router.push(`/result/${design.run_id}${suffix}`);
     } catch (err) {
@@ -562,7 +563,6 @@ export default function IntakePage() {
   return (
     <main className="intake-page">
       <div className="intake-header">
-        <h1>RoomKit</h1>
         <p className="subtitle">AI-designed rooms. On budget. Shoppable.</p>
       </div>
 

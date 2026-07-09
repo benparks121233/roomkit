@@ -42,6 +42,7 @@ export default function PurchaseSuccessPage() {
           if (balance.has_pack && balance.rooms_remaining > (initialBalance ?? 0)) {
             setRooms(balance.rooms_remaining);
             setPolling(false);
+            window.dispatchEvent(new Event("roomkit:pack-changed"));
             return;
           }
         } catch {

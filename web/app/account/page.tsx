@@ -73,6 +73,7 @@ export default function AccountPage() {
   return (
     <main style={styles.container}>
       <div style={styles.card}>
+        <a href="/" style={styles.backLink}>&#8592; Back</a>
         <h1 style={styles.title}>Account</h1>
 
         <div style={styles.field}>
@@ -140,7 +141,6 @@ export default function AccountPage() {
           details on what data we store and how deletion works.
         </p>
 
-        <a href="/" style={styles.backLink}>Back to RoomKit</a>
       </div>
     </main>
   );
@@ -289,10 +289,9 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 600,
   },
   backLink: {
-    display: "block",
-    textAlign: "center",
-    marginTop: 24,
-    color: "#888",
+    display: "inline-block",
+    marginBottom: 16,
+    color: "#78716C",
     fontSize: "0.85rem",
     textDecoration: "none",
   },
