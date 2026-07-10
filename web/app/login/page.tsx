@@ -94,6 +94,10 @@ function LoginForm() {
           Continue with Google
         </button>
 
+        <p style={styles.forgot}>
+          <a href="/forgot-password" style={styles.link}>Forgot password?</a>
+        </p>
+
         <p style={styles.footer}>
           Don&apos;t have an account?{" "}
           <a href="/signup" style={styles.link}>Sign up</a>
@@ -189,11 +193,17 @@ const styles: Record<string, React.CSSProperties> = {
     cursor: "pointer",
     color: "#333",
   },
+  forgot: {
+    textAlign: "center",
+    fontSize: "0.85rem",
+    marginTop: 16,
+    marginBottom: 0,
+  },
   footer: {
     textAlign: "center",
     color: "#666",
     fontSize: "0.85rem",
-    marginTop: 20,
+    marginTop: 12,
     marginBottom: 0,
   },
   link: {
