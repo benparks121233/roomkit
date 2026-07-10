@@ -71,37 +71,37 @@ export default function AccountPage() {
   };
 
   return (
-    <main style={styles.container}>
-      <div style={styles.card}>
-        <a href="/" style={styles.backLink}>&#8592; Back</a>
-        <h1 style={styles.title}>Account</h1>
+    <main className="auth-container">
+      <div className="auth-card" style={{ maxWidth: 440 }}>
+        <a href="/" className="account-back-link">&#8592; Back</a>
+        <h1 className="account-title">Account</h1>
 
-        <div style={styles.field}>
-          <span style={styles.fieldLabel}>Email</span>
-          <span style={styles.fieldValue}>{session.user.email}</span>
+        <div className="account-field">
+          <span className="account-field-label">Email</span>
+          <span className="account-field-value">{session.user.email}</span>
         </div>
 
         <button
           onClick={handleSignOut}
           disabled={signingOut}
-          style={signingOut ? { ...styles.signOutButton, ...styles.buttonDisabled } : styles.signOutButton}
+          className="account-signout-btn"
         >
           {signingOut ? "Signing out..." : "Sign out"}
         </button>
 
-        <hr style={styles.divider} />
+        <hr className="account-divider" />
 
         {!showConfirm ? (
-          <button onClick={() => setShowConfirm(true)} style={styles.deleteButton}>
+          <button onClick={() => setShowConfirm(true)} className="account-delete-btn">
             Delete my account
           </button>
         ) : (
-          <div style={styles.confirmSection}>
-            <p style={styles.warning}>
+          <div className="account-confirm-section">
+            <p className="account-warning">
               This will permanently delete your account, all saved designs, renders, and analytics data.
               This action cannot be undone.
             </p>
-            <label style={styles.confirmLabel}>
+            <label className="account-confirm-label">
               Type <strong>DELETE</strong> to confirm:
             </label>
             <input
@@ -109,23 +109,20 @@ export default function AccountPage() {
               value={confirmText}
               onChange={(e) => setConfirmText(e.target.value)}
               placeholder="DELETE"
-              style={styles.input}
+              className="auth-input"
               autoFocus
             />
-            <div style={styles.confirmButtons}>
+            <div className="account-confirm-buttons">
               <button
                 onClick={handleDelete}
                 disabled={confirmText !== "DELETE" || deleting}
-                style={{
-                  ...styles.confirmDelete,
-                  ...(confirmText !== "DELETE" || deleting ? styles.buttonDisabled : {}),
-                }}
+                className="account-confirm-delete"
               >
                 {deleting ? "Deleting..." : "Permanently delete"}
               </button>
               <button
                 onClick={() => { setShowConfirm(false); setConfirmText(""); setError(null); }}
-                style={styles.cancelButton}
+                className="account-cancel-btn"
                 disabled={deleting}
               >
                 Cancel
@@ -134,10 +131,10 @@ export default function AccountPage() {
           </div>
         )}
 
-        {error && <p style={styles.error}>{error}</p>}
+        {error && <p className="auth-error" style={{ marginTop: 16 }}>{error}</p>}
 
-        <p style={styles.privacyLink}>
-          See our <a href="/privacy" style={styles.link}>Privacy Policy</a> for
+        <p className="account-privacy-link">
+          See our <a href="/privacy" className="auth-link">Privacy Policy</a> for
           details on what data we store and how deletion works.
         </p>
 
@@ -145,154 +142,3 @@ export default function AccountPage() {
     </main>
   );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-  container: {
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    background: "#f8f7f4",
-    fontFamily: "'DM Sans', sans-serif",
-  },
-  card: {
-    background: "#fff",
-    borderRadius: 12,
-    padding: "2.5rem 2rem",
-    width: "100%",
-    maxWidth: 440,
-    boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-  },
-  title: {
-    fontFamily: "'DM Serif Display', serif",
-    fontSize: "1.8rem",
-    margin: 0,
-    color: "#1a1a1a",
-    marginBottom: 24,
-  },
-  field: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 4,
-  },
-  fieldLabel: {
-    fontSize: "0.8rem",
-    color: "#888",
-    textTransform: "uppercase" as const,
-    letterSpacing: "0.05em",
-  },
-  fieldValue: {
-    fontSize: "1rem",
-    color: "#1a1a1a",
-  },
-  divider: {
-    border: "none",
-    borderTop: "1px solid #eee",
-    margin: "28px 0",
-  },
-  signOutButton: {
-    width: "100%",
-    padding: "10px 20px",
-    borderRadius: 8,
-    border: "1px solid #ddd",
-    background: "#fff",
-    color: "#1a1a1a",
-    fontSize: "0.9rem",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 600,
-    cursor: "pointer",
-    marginTop: 20,
-  },
-  deleteButton: {
-    padding: "10px 20px",
-    borderRadius: 8,
-    border: "1px solid #d32f2f",
-    background: "#fff",
-    color: "#d32f2f",
-    fontSize: "0.9rem",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 600,
-    cursor: "pointer",
-  },
-  confirmSection: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 12,
-  },
-  warning: {
-    fontSize: "0.9rem",
-    color: "#d32f2f",
-    margin: 0,
-    lineHeight: 1.5,
-  },
-  confirmLabel: {
-    fontSize: "0.85rem",
-    color: "#444",
-  },
-  input: {
-    padding: "10px 14px",
-    borderRadius: 8,
-    border: "1px solid #ddd",
-    fontSize: "0.95rem",
-    fontFamily: "'DM Sans', sans-serif",
-    outline: "none",
-  },
-  confirmButtons: {
-    display: "flex",
-    gap: 10,
-    marginTop: 4,
-  },
-  confirmDelete: {
-    flex: 1,
-    padding: "10px",
-    borderRadius: 8,
-    border: "none",
-    background: "#d32f2f",
-    color: "#fff",
-    fontSize: "0.9rem",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 600,
-    cursor: "pointer",
-  },
-  cancelButton: {
-    flex: 1,
-    padding: "10px",
-    borderRadius: 8,
-    border: "1px solid #ddd",
-    background: "#fff",
-    color: "#666",
-    fontSize: "0.9rem",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 500,
-    cursor: "pointer",
-  },
-  buttonDisabled: {
-    opacity: 0.45,
-    cursor: "not-allowed",
-  },
-  error: {
-    color: "#d32f2f",
-    fontSize: "0.85rem",
-    marginTop: 16,
-    marginBottom: 0,
-  },
-  privacyLink: {
-    textAlign: "center",
-    color: "#999",
-    fontSize: "0.8rem",
-    marginTop: 20,
-    marginBottom: 0,
-    lineHeight: 1.5,
-  },
-  link: {
-    color: "#1a1a1a",
-    fontWeight: 600,
-  },
-  backLink: {
-    display: "inline-block",
-    marginBottom: 16,
-    color: "#78716C",
-    fontSize: "0.85rem",
-    textDecoration: "none",
-  },
-};

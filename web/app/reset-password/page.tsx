@@ -18,13 +18,13 @@ export default function ResetPasswordPage() {
 
   if (!session) {
     return (
-      <main style={styles.container}>
-        <div style={styles.card}>
-          <h1 style={styles.title}>Session expired</h1>
-          <p style={styles.subtitle}>
+      <main className="auth-container">
+        <div className="auth-card">
+          <h1 className="auth-title">Session expired</h1>
+          <p className="auth-subtitle">
             This reset link has expired or was already used. Request a new one.
           </p>
-          <a href="/forgot-password" style={{ ...styles.button, textAlign: "center" as const, display: "block", textDecoration: "none" }}>
+          <a href="/forgot-password" className="auth-btn auth-btn--link">
             Request new link
           </a>
         </div>
@@ -34,11 +34,11 @@ export default function ResetPasswordPage() {
 
   if (done) {
     return (
-      <main style={styles.container}>
-        <div style={styles.card}>
-          <h1 style={styles.title}>Password updated</h1>
-          <p style={styles.subtitle}>Your password has been reset. You&apos;re now signed in.</p>
-          <a href="/" style={{ ...styles.button, textAlign: "center" as const, display: "block", textDecoration: "none" }}>
+      <main className="auth-container">
+        <div className="auth-card">
+          <h1 className="auth-title">Password updated</h1>
+          <p className="auth-subtitle">Your password has been reset. You&apos;re now signed in.</p>
+          <a href="/" className="auth-btn auth-btn--link">
             Start designing
           </a>
         </div>
@@ -76,12 +76,12 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <main style={styles.container}>
-      <div style={styles.card}>
-        <h1 style={styles.title}>Set new password</h1>
-        <p style={styles.subtitle}>Enter your new password below.</p>
+    <main className="auth-container">
+      <div className="auth-card">
+        <h1 className="auth-title">Set new password</h1>
+        <p className="auth-subtitle">Enter your new password below.</p>
 
-        <form onSubmit={handleSubmit} style={styles.form}>
+        <form onSubmit={handleSubmit} className="auth-form">
           <input
             type="password"
             placeholder="New password (min 6 characters)"
@@ -89,7 +89,7 @@ export default function ResetPasswordPage() {
             onChange={(e) => setPassword(e.target.value)}
             required
             minLength={6}
-            style={styles.input}
+            className="auth-input"
           />
           <input
             type="password"
@@ -98,93 +98,18 @@ export default function ResetPasswordPage() {
             onChange={(e) => setConfirm(e.target.value)}
             required
             minLength={6}
-            style={styles.input}
+            className="auth-input"
           />
-          {error && <p style={styles.error}>{error}</p>}
-          <button type="submit" disabled={loading} style={styles.button}>
+          {error && <p className="auth-error">{error}</p>}
+          <button type="submit" disabled={loading} className="auth-btn">
             {loading ? "Updating..." : "Update password"}
           </button>
         </form>
 
-        <p style={styles.footer}>
-          <a href="/login" style={styles.link}>Back to sign in</a>
+        <p className="auth-footer">
+          <a href="/login" className="auth-link">Back to sign in</a>
         </p>
       </div>
     </main>
   );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-  container: {
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    background: "#f8f7f4",
-    fontFamily: "'DM Sans', sans-serif",
-  },
-  card: {
-    background: "#fff",
-    borderRadius: 12,
-    padding: "2.5rem 2rem",
-    width: "100%",
-    maxWidth: 400,
-    boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-  },
-  title: {
-    fontFamily: "'DM Serif Display', serif",
-    fontSize: "1.8rem",
-    textAlign: "center" as const,
-    margin: 0,
-    color: "#1a1a1a",
-  },
-  subtitle: {
-    textAlign: "center" as const,
-    color: "#666",
-    fontSize: "0.95rem",
-    marginTop: 8,
-    marginBottom: 24,
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column" as const,
-    gap: 12,
-  },
-  input: {
-    padding: "12px 14px",
-    borderRadius: 8,
-    border: "1px solid #ddd",
-    fontSize: "0.95rem",
-    fontFamily: "'DM Sans', sans-serif",
-    outline: "none",
-  },
-  button: {
-    padding: "12px",
-    borderRadius: 8,
-    border: "none",
-    background: "#1a1a1a",
-    color: "#fff",
-    fontSize: "0.95rem",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 600,
-    cursor: "pointer",
-    marginTop: 4,
-  },
-  error: {
-    color: "#d32f2f",
-    fontSize: "0.85rem",
-    margin: 0,
-  },
-  footer: {
-    textAlign: "center" as const,
-    color: "#666",
-    fontSize: "0.85rem",
-    marginTop: 20,
-    marginBottom: 0,
-  },
-  link: {
-    color: "#1a1a1a",
-    fontWeight: 600,
-    textDecoration: "none",
-  },
-};

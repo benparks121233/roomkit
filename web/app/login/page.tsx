@@ -54,23 +54,23 @@ function LoginForm() {
   };
 
   return (
-    <main style={styles.container}>
-      <div style={styles.card}>
-        <h1 style={styles.title}>RoomKit</h1>
-        <p style={styles.subtitle}>Sign in to design your room</p>
+    <main className="auth-container">
+      <div className="auth-card">
+        <h1 className="auth-title">RoomKit</h1>
+        <p className="auth-subtitle">Sign in to design your room</p>
 
         {existingAccount && (
-          <p style={styles.info}>An account with that email already exists. Sign in below.</p>
+          <p className="auth-info">An account with that email already exists. Sign in below.</p>
         )}
 
-        <form onSubmit={handleLogin} style={styles.form}>
+        <form onSubmit={handleLogin} className="auth-form">
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            style={styles.input}
+            className="auth-input"
           />
           <input
             type="password"
@@ -78,147 +78,31 @@ function LoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={styles.input}
+            className="auth-input"
           />
-          {error && <p style={styles.error}>{error}</p>}
-          <button type="submit" disabled={loading} style={styles.button}>
+          {error && <p className="auth-error">{error}</p>}
+          <button type="submit" disabled={loading} className="auth-btn">
             {loading ? "Signing in..." : "Sign in"}
           </button>
         </form>
 
-        <div style={styles.divider}>
-          <span style={styles.dividerText}>or</span>
+        <div className="auth-divider">
+          <span className="auth-divider-text">or</span>
         </div>
 
-        <button onClick={handleGoogleLogin} style={styles.googleButton}>
+        <button onClick={handleGoogleLogin} className="auth-google-btn">
           Continue with Google
         </button>
 
-        <p style={styles.forgot}>
-          <a href="/forgot-password" style={styles.link}>Forgot password?</a>
+        <p className="auth-footer" style={{ marginTop: 16 }}>
+          <a href="/forgot-password" className="auth-link">Forgot password?</a>
         </p>
 
-        <p style={styles.footer}>
+        <p className="auth-footer" style={{ marginTop: 12 }}>
           Don&apos;t have an account?{" "}
-          <a href="/signup" style={styles.link}>Sign up</a>
+          <a href="/signup" className="auth-link">Sign up</a>
         </p>
       </div>
     </main>
   );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-  container: {
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    background: "#f8f7f4",
-    fontFamily: "'DM Sans', sans-serif",
-  },
-  card: {
-    background: "#fff",
-    borderRadius: 12,
-    padding: "2.5rem 2rem",
-    width: "100%",
-    maxWidth: 400,
-    boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-  },
-  title: {
-    fontFamily: "'DM Serif Display', serif",
-    fontSize: "1.8rem",
-    textAlign: "center",
-    margin: 0,
-    color: "#1a1a1a",
-  },
-  subtitle: {
-    textAlign: "center",
-    color: "#666",
-    fontSize: "0.95rem",
-    marginTop: 8,
-    marginBottom: 24,
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 12,
-  },
-  input: {
-    padding: "12px 14px",
-    borderRadius: 8,
-    border: "1px solid #ddd",
-    fontSize: "0.95rem",
-    fontFamily: "'DM Sans', sans-serif",
-    outline: "none",
-  },
-  button: {
-    padding: "12px",
-    borderRadius: 8,
-    border: "none",
-    background: "#1a1a1a",
-    color: "#fff",
-    fontSize: "0.95rem",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 600,
-    cursor: "pointer",
-    marginTop: 4,
-  },
-  error: {
-    color: "#d32f2f",
-    fontSize: "0.85rem",
-    margin: 0,
-  },
-  divider: {
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-    margin: "20px 0",
-  },
-  dividerText: {
-    color: "#999",
-    fontSize: "0.85rem",
-    flex: 1,
-    textAlign: "center",
-    position: "relative",
-  },
-  googleButton: {
-    width: "100%",
-    padding: "12px",
-    borderRadius: 8,
-    border: "1px solid #ddd",
-    background: "#fff",
-    fontSize: "0.95rem",
-    fontFamily: "'DM Sans', sans-serif",
-    fontWeight: 500,
-    cursor: "pointer",
-    color: "#333",
-  },
-  forgot: {
-    textAlign: "center",
-    fontSize: "0.85rem",
-    marginTop: 16,
-    marginBottom: 0,
-  },
-  footer: {
-    textAlign: "center",
-    color: "#666",
-    fontSize: "0.85rem",
-    marginTop: 12,
-    marginBottom: 0,
-  },
-  link: {
-    color: "#1a1a1a",
-    fontWeight: 600,
-    textDecoration: "none",
-  },
-  info: {
-    background: "#f0f4ff",
-    border: "1px solid #d0d8f0",
-    borderRadius: 8,
-    padding: "10px 14px",
-    fontSize: "0.85rem",
-    color: "#334",
-    marginBottom: 16,
-    textAlign: "center",
-  },
-};
