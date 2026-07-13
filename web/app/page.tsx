@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 const SHOWCASE = [
-  { src: "/renders/showcase_japandi_lr.jpg",        label: "Japandi",       room: "Living Room" },
-  { src: "/renders/showcase_city_modern_br.jpg",     label: "City Modern",   room: "Bedroom" },
-  { src: "/renders/showcase_dark_academia_br.jpg",   label: "Dark Academia", room: "Bedroom" },
+  { src: "/renders/showcase_coastal_br.jpg",         label: "Coastal",       room: "Bedroom" },
+  { src: "/renders/showcase_dark_academia_lr.jpg",   label: "Dark Academia", room: "Living Room" },
   { src: "/renders/showcase_quiet_luxury_br.jpg",    label: "Quiet Luxury",  room: "Bedroom" },
+  { src: "/renders/showcase_cottagecore_lr.jpg",     label: "Cottagecore",   room: "Living Room" },
 ];
 
 const SWITCHER_AESTHETICS: { key: string; label: string; vibe: string; story: string }[] = [
