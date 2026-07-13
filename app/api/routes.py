@@ -896,7 +896,18 @@ async def generate_render(request: Request, run_id: str, user: CurrentUser, body
         return {"run_id": run_id, "render_url": _cached_url, "status": "complete", "cached": True}
 
     if design.finalized_at is None:
-        raise HTTPException(status_code=400, detail="Design must be finalized before rendering")
+        # Stale cache: another worker may have finalized this design.
+        # Re-check Supabase before rejecting.
+        from services.design_store import DesignStoreError, load_design_as_user
+        try:
+            fresh = load_design_as_user(run_id, user["token"]) if user.get("token") else None
+        except (DesignStoreError, KeyError):
+            fresh = None
+        if fresh and fresh.finalized_at is not None:
+            design = fresh
+            _designs[run_id] = design
+        else:
+            raise HTTPException(status_code=400, detail="Design must be finalized before rendering")
 
     products: dict[str, list[dict]] = {}
     for slot in design.slots:
