@@ -68,7 +68,7 @@ export default function MyDesignsPage() {
       {!loading && !error && designs.length === 0 && (
         <div className="designs-empty">
           <p className="designs-empty-text">No designs yet</p>
-          <a href="/" className="designs-empty-cta">Design your first room</a>
+          <a href="/design" className="designs-empty-cta">Design your first room</a>
         </div>
       )}
 

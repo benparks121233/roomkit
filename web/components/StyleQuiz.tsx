@@ -818,11 +818,12 @@ function SelectCard({
 
 interface Props {
   onComplete: (result: IntakeResult) => void;
+  initialRoomType?: string;
 }
 
-export default function StyleQuiz({ onComplete }: Props) {
+export default function StyleQuiz({ onComplete, initialRoomType }: Props) {
   // Setup state
-  const [roomType, setRoomType] = useState("bedroom");
+  const [roomType, setRoomType] = useState(initialRoomType || "bedroom");
   const [bedSize, setBedSize] = useState("queen");
   const [budget, setBudget] = useState(2500);
   const [budgetText, setBudgetText] = useState("2,500");
@@ -857,7 +858,7 @@ export default function StyleQuiz({ onComplete }: Props) {
   const [interestTags, setInterestTags] = useState<Record<string, string[]>>({});
   const [freeText, setFreeText] = useState("");
 
-  const [stepIndex, setStepIndex] = useState(0);
+  const [stepIndex, setStepIndex] = useState(initialRoomType ? 1 : 0);
 
   // Build step list — scope gates preferences, density after preferences.
   function getSteps(): QuizStepDef[] {
