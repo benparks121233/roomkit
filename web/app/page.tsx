@@ -125,7 +125,7 @@ export default function LandingPage() {
             </div>
             <div className="landing-room-card-body">
               <h3 className="landing-room-card-title">Design a bedroom</h3>
-              <p className="landing-room-card-desc">13 aesthetics, full room</p>
+              <p className="landing-room-card-desc">12 aesthetics, full room</p>
             </div>
           </a>
           <a href="/design?room=living_room" className="landing-room-card">
@@ -140,7 +140,7 @@ export default function LandingPage() {
             </div>
             <div className="landing-room-card-body">
               <h3 className="landing-room-card-title">Design a living room</h3>
-              <p className="landing-room-card-desc">13 aesthetics, full room</p>
+              <p className="landing-room-card-desc">12 aesthetics, full room</p>
             </div>
           </a>
         </div>

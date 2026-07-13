@@ -36,7 +36,7 @@ export default function DesignPreviewPage() {
             </div>
             <div style={tokens.heroCardBody}>
               <h3 style={tokens.heroCardTitle}>Design a bedroom</h3>
-              <p style={tokens.heroCardDesc}>13 aesthetics, full room</p>
+              <p style={tokens.heroCardDesc}>12 aesthetics, full room</p>
             </div>
           </div>
           <div style={tokens.heroCard}>
@@ -49,7 +49,7 @@ export default function DesignPreviewPage() {
             </div>
             <div style={tokens.heroCardBody}>
               <h3 style={tokens.heroCardTitle}>Design a living room</h3>
-              <p style={tokens.heroCardDesc}>13 aesthetics, full room</p>
+              <p style={tokens.heroCardDesc}>12 aesthetics, full room</p>
             </div>
           </div>
         </div>
