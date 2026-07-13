@@ -1,13 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { getSupabaseBrowserClient } from "@/lib/supabase";
 import { useAuth } from "@/components/AuthProvider";
 
 export default function SignupPage() {
+  return <Suspense><SignupForm /></Suspense>;
+}
+
+function SignupForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { session } = useAuth();
+  const redirectTo = searchParams.get("redirect") || "/";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -16,7 +22,7 @@ export default function SignupPage() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
 
   useEffect(() => {
-    if (session) router.replace("/");
+    if (session) router.replace(redirectTo);
   }, [session, router]);
 
   if (session) return null;
@@ -40,7 +46,7 @@ export default function SignupPage() {
     }
 
     if (data.user && data.user.identities && data.user.identities.length === 0) {
-      router.replace("/login?msg=exists");
+      router.replace(redirectTo !== "/" ? `/login?msg=exists&redirect=${encodeURIComponent(redirectTo)}` : "/login?msg=exists");
       return;
     }
 

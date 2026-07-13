@@ -22,9 +22,10 @@ function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const existingAccount = searchParams.get("msg") === "exists";
+  const redirectTo = searchParams.get("redirect") || "/";
 
   if (session) {
-    router.replace("/");
+    router.replace(redirectTo);
     return null;
   }
 
@@ -42,14 +43,16 @@ function LoginForm() {
       return;
     }
 
-    router.replace("/");
+    router.replace(redirectTo);
   };
 
   const handleGoogleLogin = async () => {
     const supabase = getSupabaseBrowserClient();
+    const callbackUrl = new URL("/auth/callback", window.location.origin);
+    if (redirectTo !== "/") callbackUrl.searchParams.set("redirect", redirectTo);
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { redirectTo: callbackUrl.toString() },
     });
   };
 
@@ -100,7 +103,7 @@ function LoginForm() {
 
         <p className="auth-footer" style={{ marginTop: 12 }}>
           Don&apos;t have an account?{" "}
-          <a href="/signup" className="auth-link">Sign up</a>
+          <a href={redirectTo !== "/" ? `/signup?redirect=${encodeURIComponent(redirectTo)}` : "/signup"} className="auth-link">Sign up</a>
         </p>
       </div>
     </main>
