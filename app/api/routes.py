@@ -567,7 +567,19 @@ async def list_designs(user: CurrentUser) -> list[dict]:
 @router.get("/design/{run_id}", response_model=DesignResponse)
 async def get_design(run_id: str, user: CurrentUser) -> DesignResponse:
     """Re-fetch a previously generated design board. Auth-required, user-scoped."""
-    return _get_design(run_id, user)
+    design = _get_design(run_id, user)
+    # Stale cache: another worker may have finalized this design.
+    # Without this, the result page shows empty products and $0 spent.
+    if design.finalized_at is None:
+        from services.design_store import DesignStoreError, load_design_as_user
+        try:
+            fresh = load_design_as_user(run_id, user["token"]) if user.get("token") else None
+        except (DesignStoreError, KeyError):
+            fresh = None
+        if fresh and fresh.finalized_at is not None:
+            design = fresh
+            _designs[run_id] = design
+    return design
 
 
 # ---------------------------------------------------------------------------
