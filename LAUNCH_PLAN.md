@@ -23,7 +23,7 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 
 ## Phase Index
 
-*Updated 2026-07-13 — Phase 8 near-complete (quiz reskin, free tier messaging, login redirect done).*
+*Updated 2026-07-13 — Phase 9 deployed. Site live at roomkit.studio. Stripe verification pending.*
 
 | Phase | Description | Status |
 |---|---|---|
@@ -939,61 +939,41 @@ These are confirmed facts and tracked debt from Phase 8 work sessions:
 
 *Make it real and reachable.*
 
-- [ ] Buy domain.
-- [ ] Deploy to production host (TBD — not decided yet).
-- [ ] Production CORS locked to real domain.
-- [ ] Production env vars set (all secrets via host config, not git).
-      **REQUIRED production env vars (localhost defaults silently break):**
-      - `NEXT_PUBLIC_SITE_URL` — public frontend URL (OG fallback images point here)
-      - `NEXT_PUBLIC_API_URL` — public backend URL (render URLs, design API)
-      - `CORS_ORIGINS` — lock to real domain
-- [ ] **Account wall:** Users must create account to access product. Gate at
-      entry (before quiz) or after first interaction (TBD — test which converts).
-- [ ] **Silent API-failure handling (launch-blocker):** When selection LLM calls fail
-      en masse (e.g. exhausted credits), detect and show user-facing error + alert.
-      Never serve blank rooms in production.
-- [ ] Product analytics (GA / Plausible) for traffic, referrers, channel/funnel analysis
-      at scale (Supabase dashboard is internal-only).
+- [x] **Domain:** `roomkit.studio` purchased (Squarespace). Root and www both
+      resolve to the live site.
+- [x] **Deploy:** Railway — two services. Backend (uvicorn, port 8080) +
+      Frontend (Next.js, port 8080). Auto-deploy from `main` branch.
+- [x] **Production CORS:** `CORS_ORIGINS` set to `https://www.roomkit.studio,
+      https://roomkit.studio,http://localhost:3000`.
+- [x] **Production env vars:** All secrets via Railway config. Frontend has 4
+      vars (NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SUPABASE_URL,
+      NEXT_PUBLIC_SUPABASE_ANON_KEY, NEXT_PUBLIC_SITE_URL). Backend has full set.
+- [x] **Account wall:** Auth required before quiz. Free tier = 1 bedroom.
+- [x] **Silent API-failure handling:** Mass selection failure guard in routes.py.
+      If <1/3 of sourceable slots filled, rejects design with 502 + user-facing
+      message, re-credits pack if paid. Double re-credit bug found and fixed.
+- [x] **Custom SMTP:** Resend configured with SPF/DKIM on roomkit.studio.
+      Supabase custom SMTP enabled. Emails deliver from noreply@roomkit.studio.
+- [x] **Google OAuth:** Configured in Google Cloud + Supabase. Auth callback
+      fixed to use NEXT_PUBLIC_SITE_URL instead of request origin (Railway
+      proxy was resolving to localhost:8080).
+- [x] **Supabase auth URLs:** Site URL set to https://www.roomkit.studio.
+      Redirect URLs include www.roomkit.studio/** and roomkit.studio/**.
+- [x] **Stripe live mode (IN REVIEW):** Live keys deployed (STRIPE_SECRET_KEY,
+      STRIPE_PRICE_ID, STRIPE_WEBHOOK_SECRET). Live webhook on
+      checkout.session.completed. Card payments enabled. Business verification
+      submitted — payments paused until approved (2-7 business days).
+- [x] **URL audit complete — no hardcoded URLs.** All env-var driven.
+- [ ] Product analytics (GA / Plausible) for traffic, referrers, channel/funnel
+      analysis at scale (Supabase dashboard is internal-only).
 - [ ] **Structured pipeline logging in production:** Verify per-stage timing
       (from 6F) is flowing to logs. Set up log aggregation (Railway logs or
       external sink) so pipeline bottlenecks and failure patterns are visible
       from day one.
-- [ ] **Incremental semaphore slot release (scaling fix):** The concurrency
-      semaphore currently holds all ~15 slots all-or-nothing for the entire
-      selection phase (~15s), releasing only when the slowest LLM call finishes
-      — even though individual calls finish in 2-5s. This wastes slot capacity
-      and serializes designs under high concurrency. Fix: release each slot's
-      permit as its `select_products()` call returns, so a design's held-slot
-      count drops as faster calls complete, letting queued designs fit sooner.
-      Needed when sustained concurrent selections exceed ~3-4 (beyond beta
-      scale). Changes the acquire/release contract — test against multi-worker
-      staging when implemented.
-- [ ] **PostgREST schema cache reload after migrations:** After running any
-      migration that creates or alters functions/tables, run
-      `NOTIFY pgrst, 'reload schema';` in SQL Editor. Without this, PostgREST
-      serves stale schema and RPCs return 404. This bit us on staging (6E deploy).
-- [ ] **Custom SMTP for auth emails (BETA BLOCKER):** Production email provider
-      (Resend or Postmark) from the real domain. Configure SPF/DKIM DNS records.
-      Replace Supabase default email service in Dashboard → Auth → SMTP. Default
-      rate-limits at ~3-4 emails/hour — multiple beta signups = silent failures.
-      Blocked on domain (this phase).
-- [ ] **Stripe live mode (BETA BLOCKER for paid tier):** Switch from test/sandbox
-      to live Stripe keys. Requires:
-      (a) Stripe business verification (2-7 business days — START IMMEDIATELY)
-      (b) Create live-mode price, set `STRIPE_PRICE_ID`
-      (c) Swap `STRIPE_SECRET_KEY` from `sk_test_*` to `sk_live_*`
-      (d) Create production webhook endpoint, set `STRIPE_WEBHOOK_SECRET`
-      (e) Verify payment flow with real card
-      All keys are env-var driven — no code changes, just config.
-- [ ] **URL audit complete — no hardcoded URLs.** Every URL uses env vars with
-      localhost fallbacks. Deploy env var checklist:
-      **Frontend:** `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_SITE_URL`
-      **Backend:** `CORS_ORIGINS`, `NEXT_PUBLIC_SITE_URL` (Stripe redirects),
-      `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID`, `STRIPE_WEBHOOK_SECRET`
-      Supabase vars unchanged (same project). Redis set by Railway automatically.
-- [x] **Silent API-failure handling:** Mass selection failure guard in routes.py.
-      If <1/3 of sourceable slots filled, rejects design with 502 + user-facing
-      message, re-credits pack if paid. Prevents blank rooms from reaching users.
+- [ ] **Incremental semaphore slot release (scaling fix):** Post-beta. Needed
+      when sustained concurrent selections exceed ~3-4.
+- [ ] **PostgREST schema cache reload after migrations:** Run
+      `NOTIFY pgrst, 'reload schema';` in SQL Editor after any migration.
 
 **Exit:** Live site, reachable, account-gated, error handling solid.
 
