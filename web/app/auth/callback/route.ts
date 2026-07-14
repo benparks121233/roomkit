@@ -3,9 +3,10 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
 export async function GET(request: Request) {
-  const { searchParams, origin } = new URL(request.url);
-  const code = searchParams.get("code");
-  const next = searchParams.get("redirect") ?? searchParams.get("next") ?? "/";
+  const url = new URL(request.url);
+  const code = url.searchParams.get("code");
+  const next = url.searchParams.get("redirect") ?? url.searchParams.get("next") ?? "/";
+  const origin = process.env.NEXT_PUBLIC_SITE_URL || url.origin;
 
   if (code) {
     const cookieStore = cookies();
