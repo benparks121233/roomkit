@@ -65,7 +65,7 @@ async def pack_balance(user: CurrentUser) -> dict:
         resp = client.table("user_packs").select("rooms_remaining").eq(
             "user_id", user["user_id"]
         ).maybe_single().execute()
-        if resp.data:
+        if resp and resp.data:
             return {"rooms_remaining": resp.data["rooms_remaining"], "has_pack": True}
         return {"rooms_remaining": 0, "has_pack": False}
     except Exception:
