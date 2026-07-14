@@ -1094,6 +1094,7 @@ export default function StyleQuiz({ onComplete, initialRoomType }: Props) {
   function handleNext() {
     if (stepIndex < totalSteps - 1) {
       setStepIndex(stepIndex + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       // Final step — assemble and submit
       const description = assembleDescription(
@@ -1172,7 +1173,10 @@ export default function StyleQuiz({ onComplete, initialRoomType }: Props) {
   }
 
   function handleBack() {
-    if (stepIndex > 0) setStepIndex(stepIndex - 1);
+    if (stepIndex > 0) {
+      setStepIndex(stepIndex - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 
   // --- Render ---

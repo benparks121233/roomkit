@@ -67,7 +67,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
                 <a href="/designs" className="site-nav-link">My Designs</a>
                 {showPill && (
                   <span className={`pack-pill ${pack.rooms_remaining === 0 ? "pack-pill--empty" : ""}`}>
-                    {pack.rooms_remaining} {pack.rooms_remaining === 1 ? "room" : "rooms"}
+                    {pack.rooms_remaining} {pack.rooms_remaining === 1 ? "room" : "rooms"} left
                   </span>
                 )}
                 <div className="account-menu-wrapper">
