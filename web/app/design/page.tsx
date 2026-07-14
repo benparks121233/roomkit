@@ -347,7 +347,7 @@ function IntakeForm() {
             }}>
               <li>&#x2713; 5 room designs</li>
               <li>&#x2713; All room types (bedroom, living room)</li>
-              <li>&#x2713; Full HD renders, no watermark</li>
+              <li>&#x2713; HD renders, no watermark</li>
               <li>&#x2713; Rooms never expire</li>
             </ul>
             <div style={{ fontSize: "1.3rem", fontWeight: 700, color: "#1C1917" }}>
@@ -424,11 +424,11 @@ function IntakeForm() {
             maxWidth: 380,
             lineHeight: 1.5,
           }}>
-            Your style picks are saved. Sign up in seconds, then we&apos;ll generate your personalized room.
+            Your first design is free &mdash; no credit card required. Sign up in seconds and we&apos;ll generate your personalized room.
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             <a
-              href="/signup"
+              href="/signup?redirect=/design"
               style={{
                 padding: "12px 36px",
                 borderRadius: 10,
@@ -444,7 +444,7 @@ function IntakeForm() {
               Sign up
             </a>
             <a
-              href="/login"
+              href="/login?redirect=/design"
               style={{
                 padding: "12px 36px",
                 borderRadius: 10,
@@ -498,9 +498,10 @@ function IntakeForm() {
 
           {error && <div className="error-banner" style={{ marginBottom: 20 }}>{error}</div>}
 
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+          <div className="mode-choice-row" style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
             <button
               type="button"
+              className="mode-choice-card"
               onClick={() => setChosenMode("curated")}
               style={{
                 padding: "20px 28px",
@@ -523,6 +524,7 @@ function IntakeForm() {
 
             <button
               type="button"
+              className="mode-choice-card"
               onClick={() => setChosenMode("auto")}
               style={{
                 padding: "20px 28px",
@@ -564,6 +566,14 @@ function IntakeForm() {
           >
             Continue
           </button>
+
+          <p style={{
+            marginTop: 16,
+            fontSize: "0.75rem",
+            color: "#A8A29E",
+          }}>
+            Your first room is free &mdash; no credit card needed.
+          </p>
         </div>
       </main>
     );

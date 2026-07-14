@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import threading
 import time
@@ -10,6 +11,27 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 os.environ.setdefault("TESTING", "1")
+
+_MOCK_STYLE = json.dumps({
+    "style_name": "warm_minimalist",
+    "keywords": ["natural wood", "linen", "warm tones"],
+    "color_palette": ["#FAF3E0", "#D4C5A9"],
+    "mood": "calm, grounded",
+    "confidence": 0.90,
+    "fallback": False,
+})
+
+_MOCK_COMPOSITION = json.dumps({
+    "slot_weights": {
+        "bed_frame": 0.18, "mattress": 0.14, "sheets": 0.032,
+        "comforter": 0.032, "pillows": 0.016, "nightstand": 0.075,
+        "dresser": 0.075, "ceiling_light": 0.048, "table_lamp": 0.042,
+        "floor_lamp": 0.030, "wall_art": 0.040, "plants": 0.030,
+        "mirror": 0.030, "rug": 0.104, "curtains": 0.069,
+        "throw_blanket": 0.058,
+    },
+    "rationale": "Mock composition for tests.",
+})
 
 
 # ---------------------------------------------------------------------------
@@ -208,6 +230,8 @@ class TestRouteIntegration:
         app.dependency_overrides[get_current_user] = lambda: _user
 
         with patch("services.supabase_client.get_client", return_value=None), \
+             patch("services.style_service._call_llm", return_value=_MOCK_STYLE), \
+             patch("services.composition_service._call_composition_llm", return_value=_MOCK_COMPOSITION), \
              patch("services.concurrency.acquire_llm_slots", return_value=False):
             client = TestClient(app)
             resp = client.post("/design", json={

@@ -108,6 +108,7 @@ export default function LandingPage() {
           You pick the vibe. We fill the room — real furniture, real prices, one click to buy any piece. Your style, your budget, nothing fake.
         </p>
         <a href="/design" className="landing-cta">Design my room</a>
+        <p className="landing-hero-free">Your first room is free &mdash; no credit card needed.</p>
       </section>
 
       {/* ── Room type cards ── */}

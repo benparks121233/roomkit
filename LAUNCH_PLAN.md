@@ -23,7 +23,7 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 
 ## Phase Index
 
-*Updated 2026-07-02 — 7A Stripe complete, 556 tests passing.*
+*Updated 2026-07-13 — Phase 8 near-complete (quiz reskin, free tier messaging, login redirect done).*
 
 | Phase | Description | Status |
 |---|---|---|
@@ -44,7 +44,7 @@ Phase 6 insertion) but structurally unenforceable until accounts exist.
 | 6E | Tier enforcement | ✅ Done — atomic free-room claim (advisory lock RPC), pack ledger (decrement/re-credit), watermark toggle, TOCTOU proven on real Postgres (5 concurrent → 1 claim), 526 tests |
 | 6F | Scaling architecture (workers, async, concurrency) | ✅ Done — verified on staging (Redis shared state, async render, LLM semaphore cap=30, render semaphore cap=4, LLM resilience, pipeline timing, multi-worker, deleted-user blocklist 20/20) |
 | 7 | Revenue activation (Stripe, render storage, compliance) | 7A ✅ Stripe. 7B ✅ render storage. 7C ✅ FTC/disclosure (beta). **7D PA-API migration = pre-full-launch blocker** |
-| 8 | Frontend build-out (nav, account, My Designs, landing, robustness) | PARTIAL (account page done; nav/footer/landing/My Designs/admin auth fix remain) |
+| 8 | Frontend build-out (nav, account, My Designs, landing, robustness) | NEAR-COMPLETE — shell, nav, footer, landing, My Designs, admin auth, quiz reskin, free tier messaging, login redirect all done. Remaining: 404/error pages, mobile responsiveness, accessibility, loading/error states |
 | 9 | Deploy + gate | TODO |
 | 10 | Hardening + AI-native instrumentation | TODO — Fast-follow |
 | 11A | Pre-launch full verification (absorbs Phase 1) | TODO — **Pre-launch gate** |
@@ -845,56 +845,47 @@ scaled product. Building it earlier means rebuilding against changing contracts
 checkout from 7A). Build it once, robustly, against final contracts.
 
 ### Navigation & Shell
-- [ ] Persistent header/nav: logo, nav links, account menu. Logged-in vs
+- [x] Persistent header/nav: logo, nav links, account menu. Logged-in vs
       logged-out states (account menu vs login/signup CTA).
-- [ ] Footer: privacy, terms, about, affiliate disclosure links.
-- [ ] Consistent layout shell wrapping all pages (header + footer + content area).
+- [x] Footer: privacy, terms, affiliate disclosure links.
+- [x] Consistent layout shell wrapping all pages (header + footer + content area).
 
 ### Account & Auth Surfaces
-- [ ] Account/profile page: view email, manage account, account-deletion entry
+- [x] Account/profile page: view email, manage account, account-deletion entry
       point (deletion cascade logic lives in 6C — this is the UI surface).
-- [ ] Visible logout: surface the existing `signOut()` from AuthProvider into
+- [x] Visible logout: surface the existing `signOut()` from AuthProvider into
       the account menu.
-- [ ] "Logged in as [email]" indicator in header/nav.
-- [ ] Password reset/change flow (if not already covered by Supabase Auth UI).
+- [x] "Logged in as [email]" indicator in header/nav.
+- [x] Password reset/change flow (Supabase Auth handles via forgot-password page).
 
 ### Core Product Surfaces
-- [ ] **"My Designs" / history page:** Users see their saved user_id-stamped
-      rooms, revisit/re-open past designs. This is the payoff of the Phase 3
-      storage + Phase 6 auth work — users can come back to their rooms.
-- [ ] **Homepage / landing page:** Hero section (what it is, what you get),
-      how-it-works walkthrough (3-4 steps with visuals), example room renders
-      (social proof / quality signal), clear entry into room-type quiz options
-      (bedroom, living room), credibility markers, SEO content. This is the
-      front door for organic, social, and share traffic — it frames the product
-      before the user enters the funnel.
-- [ ] Quiz → design → result flow integrated into the site shell (currently
-      standalone — needs header/footer/nav wrapping and transition polish).
+- [x] **"My Designs" / history page:** Users see their saved user_id-stamped
+      rooms, revisit/re-open past designs.
+- [x] **Homepage / landing page:** Hero, how-it-works, showcase renders, room
+      cards, aesthetic switcher, free-tier messaging.
+- [x] Quiz → design → result flow integrated into the site shell with header/
+      footer/nav wrapping.
+- [x] **Quiz reskin:** Full design-language alignment — deepened tokens (radii,
+      shadows, hover lift, surface-warm, confident typography) match landing page.
+- [x] **Free tier messaging:** "Your first room is free" on landing hero, auth
+      wall, and mode choice screen.
+- [x] **Login redirect:** Auth wall preserves quiz state through login/signup
+      round-trip via `?redirect=/design` + localStorage stash.
+- [x] **TV budget gate:** canAdvance blocks until budget warning resolved.
 
 ### Admin Dashboard Auth (MANDATORY security fix)
-- [ ] **Admin dashboard privilege escalation:** Current admin page
-      (`web/app/admin/page.tsx`) hardcodes the admin secret in a `"use client"`
-      component — it ships in the browser bundle. Any logged-in beta user can
-      extract it from devtools and access all admin data (full funnel, every
-      user's selections, costs, business metrics). This is real privilege
-      escalation, not theoretical.
-- [ ] **Fix:** Move admin access behind a server-side Next.js API route
-      (`web/app/api/admin/route.ts`) that proxies to the backend `/admin/stats`
-      endpoint. The admin secret must live SERVER-SIDE only — never in a client
-      bundle, never via `NEXT_PUBLIC_*` env vars.
-- [ ] **Admin identity check:** The proxy route must authenticate via Supabase
-      session AND verify the user is an actual admin (allowlist of user IDs or an
-      `is_admin` flag in user metadata), not just "any logged-in user." A shared
-      secret alone is insufficient when every beta user has a valid session.
-- [ ] Current state (safe by accident): hardcoded secret doesn't match the real
-      backend secret, so the page is broken and nothing is exposed. Do NOT
-      quick-fix by updating the hardcoded value — that makes it worse.
+- [x] **Fixed:** Server-side proxy with JWT + admin allowlist. Secret rotated,
+      never in client bundle.
 
 ### Robustness / Production Quality
-- [ ] Loading, error, and empty states across all pages.
+- [x] Loading, error, and empty states across all pages (My Designs empty/loading,
+      result page error/loading, purchase pages migrated to design tokens, error
+      banner consistent, 404/error pages styled).
 - [ ] Mobile-responsive throughout (real device testing, not just preview).
-- [ ] Consistent design system / visual language (one cohesive product feel).
-- [ ] 404 and error pages.
+- [x] Consistent design system / visual language (quiz reskin was last holdout —
+      all surfaces now on deepened token system).
+- [x] 404 and error pages (custom `not-found.tsx` + `error.tsx`, design-language
+      styled, nav/footer via SiteShell).
 - [ ] Accessibility basics: semantic HTML, keyboard nav, color contrast, screen
       reader labels (ties to legal-plan ADA/WCAG items).
 - [ ] Performance: render-polling UX (progress indicator during 15-25s render
@@ -913,6 +904,34 @@ checkout from 7A). Build it once, robustly, against final contracts.
 **Exit:** Every page has nav, footer, loading/error states. Account management
 works. My Designs shows saved rooms. Homepage funnels into the quiz. Mobile is
 real-device tested. One cohesive product, not a collection of standalone pages.
+
+### Carried Items (verified, not lost)
+
+These are confirmed facts and tracked debt from Phase 8 work sessions:
+
+- **Billable unit confirmed:** Pack decrements at GENERATION (`routes.py:148`
+  via `decrement_pack` RPC), render is free. Pricing/CTA copy is accurate —
+  says "5 room designs" (not renders), "Full HD renders" listed as included
+  feature. No copy fix needed.
+- **Render flakiness FIXED (band-aid):** Cross-worker stale `_designs` dict
+  cache. Re-check patches on render endpoint + GET /design endpoint (commits
+  `0db2ead`, `400ed64`). All 6 `_get_design` callers audited — only render and
+  GET were vulnerable (now fixed). **This is a band-aid — two re-checks in
+  place. A third occurrence means do the real fix: Redis-backed design cache
+  (Redis already deployed for render jobs).** Track as pre-scale tech debt.
+- **Supabase email rate limit (~3-4/hr default) — BETA BLOCKER.** Password
+  reset + signup confirmation emails silently fail under default Supabase
+  email service rate limits. Multiple beta users hitting signup/reset in one
+  hour = silent failures. Custom SMTP (Phase 9) is not optional polish — it
+  blocks a real beta. Needs domain first (SPF/DKIM).
+- **Showcase images are POST-3A/3B/3C quality.** Generated Jul 13 against
+  Railway staging with budget-quality fixes deployed (commit `6546a8e`, Jul 9).
+  Budgets included $1500+ designs that trigger the fixes. No swap needed.
+- **Pre-existing test failures FIXED:** All 3 broken tests repaired (556/556
+  passing). `test_free_user_living_room_rejected` + `test_free_user_at_limit_rejected`:
+  tests called `.lower()` on dict detail — fixed to access `detail["message"]`.
+  `test_503_when_semaphore_full`: missing LLM mocks caused real API call — added
+  style/composition mocks so test reaches semaphore check.
 
 ---
 
@@ -953,11 +972,28 @@ real-device tested. One cohesive product, not a collection of standalone pages.
       migration that creates or alters functions/tables, run
       `NOTIFY pgrst, 'reload schema';` in SQL Editor. Without this, PostgREST
       serves stale schema and RPCs return 404. This bit us on staging (6E deploy).
-- [ ] **Custom SMTP for auth emails:** Production email provider (Resend or
-      Postmark) from the real domain. Configure SPF/DKIM DNS records. Replace
-      Supabase default email service in Dashboard → Auth → SMTP. Needed before
-      beta — default service rate-limits (~few emails/hour) and spam-filters
-      confirmation emails at volume. Blocked on domain (this phase).
+- [ ] **Custom SMTP for auth emails (BETA BLOCKER):** Production email provider
+      (Resend or Postmark) from the real domain. Configure SPF/DKIM DNS records.
+      Replace Supabase default email service in Dashboard → Auth → SMTP. Default
+      rate-limits at ~3-4 emails/hour — multiple beta signups = silent failures.
+      Blocked on domain (this phase).
+- [ ] **Stripe live mode (BETA BLOCKER for paid tier):** Switch from test/sandbox
+      to live Stripe keys. Requires:
+      (a) Stripe business verification (2-7 business days — START IMMEDIATELY)
+      (b) Create live-mode price, set `STRIPE_PRICE_ID`
+      (c) Swap `STRIPE_SECRET_KEY` from `sk_test_*` to `sk_live_*`
+      (d) Create production webhook endpoint, set `STRIPE_WEBHOOK_SECRET`
+      (e) Verify payment flow with real card
+      All keys are env-var driven — no code changes, just config.
+- [ ] **URL audit complete — no hardcoded URLs.** Every URL uses env vars with
+      localhost fallbacks. Deploy env var checklist:
+      **Frontend:** `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_SITE_URL`
+      **Backend:** `CORS_ORIGINS`, `NEXT_PUBLIC_SITE_URL` (Stripe redirects),
+      `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID`, `STRIPE_WEBHOOK_SECRET`
+      Supabase vars unchanged (same project). Redis set by Railway automatically.
+- [x] **Silent API-failure handling:** Mass selection failure guard in routes.py.
+      If <1/3 of sourceable slots filled, rejects design with 502 + user-facing
+      message, re-credits pack if paid. Prevents blank rooms from reaching users.
 
 **Exit:** Live site, reachable, account-gated, error handling solid.
 

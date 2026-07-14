@@ -56,9 +56,11 @@ function SignupForm() {
 
   const handleGoogleSignup = async () => {
     const supabase = getSupabaseBrowserClient();
+    const callbackUrl = new URL("/auth/callback", window.location.origin);
+    if (redirectTo !== "/") callbackUrl.searchParams.set("redirect", redirectTo);
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { redirectTo: callbackUrl.toString() },
     });
   };
 
@@ -144,7 +146,7 @@ function SignupForm() {
 
         <p className="auth-footer">
           Already have an account?{" "}
-          <a href="/login" className="auth-link">Sign in</a>
+          <a href={redirectTo !== "/" ? `/login?redirect=${encodeURIComponent(redirectTo)}` : "/login"} className="auth-link">Sign in</a>
         </p>
       </div>
     </main>

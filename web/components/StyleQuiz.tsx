@@ -1072,7 +1072,12 @@ export default function StyleQuiz({ onComplete, initialRoomType }: Props) {
       case "desk_pref": return deskPref !== "";
       case "mirror_pref": return mirrorPref !== "";
       case "entertainment_pref": return entertainmentPref !== "";
-      case "screen_size": return screenSize !== "";
+      case "screen_size": {
+        if (screenSize === "") return false;
+        const minBudget = ({ small: 750, medium: 1500, large: 2000, xl: 3000 } as Record<string, number>)[screenSize];
+        if (minBudget && budget < minBudget && !tvPriority) return false;
+        return true;
+      }
       case "tv_placement": return tvPlacement !== "";
       case "bookshelf_pref": return bookshelfPref !== "";
       case "seating_pref": return seatingPref !== "";

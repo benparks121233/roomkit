@@ -186,7 +186,7 @@ class TestFreeTier:
             resp = client.post("/design", json={**_DESIGN_REQ, "room_type": "living_room"})
 
         assert resp.status_code == 403
-        assert "bedroom only" in resp.json()["detail"].lower()
+        assert "bedroom only" in resp.json()["detail"]["message"].lower()
 
     def test_free_user_at_limit_rejected(self):
         """Free user already has 1 free design — 403."""
@@ -198,7 +198,7 @@ class TestFreeTier:
             resp = client.post("/design", json=_DESIGN_REQ)
 
         assert resp.status_code == 403
-        assert "1 room limit" in resp.json()["detail"].lower()
+        assert "1 room limit" in resp.json()["detail"]["message"].lower()
 
     @_patch_llms
     def test_free_limit_ignores_paid_designs(self, _s, _c, _sel):

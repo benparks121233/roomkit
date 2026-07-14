@@ -462,6 +462,25 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             key=lambda s: s.slot_id,
         )
 
+        # Guard: if most sourceable slots returned no product, something is
+        # systemically wrong (e.g. Anthropic credits exhausted, API outage).
+        # Reject rather than serving a blank room.
+        _filled = sum(1 for s in sourceable_results if s.product is not None)
+        _total_sourceable = len(sourceable_results)
+        if _total_sourceable > 0 and _filled < max(1, _total_sourceable // 3):
+            _llm_errors = sum(1 for s in sourceable_results if s.null_reason == "llm_error")
+            logger.error(
+                "Mass selection failure: %d/%d slots filled (%d llm_error). Rejecting design %s.",
+                _filled, _total_sourceable, _llm_errors, room_request.run_id,
+            )
+            if _is_paid and _pack_decremented:
+                _re_credit_pack(user["user_id"])
+                _pack_decremented = False
+            raise HTTPException(
+                status_code=502,
+                detail="Our AI service is temporarily unavailable. Your room credit was not used. Please try again in a few minutes.",
+            )
+
         # 6. Assemble response and store.
         response = _build_response(
             room_request.run_id,
