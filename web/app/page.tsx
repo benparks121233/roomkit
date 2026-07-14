@@ -105,7 +105,7 @@ export default function LandingPage() {
           Your room, actually designed.
         </h1>
         <p className="landing-hero-subtitle">
-          Take a style quiz. Get a full room of real furniture that looks good together, fits your budget, and you can buy any piece in one tap.
+          Tell us your style and budget. We'll put together a full room of real furniture you can buy in one tap.
         </p>
         <a href="/design" className="landing-cta">Design my room</a>
         <p className="landing-hero-free">Your first room is free. No credit card needed.</p>
