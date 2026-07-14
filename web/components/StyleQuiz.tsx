@@ -13,7 +13,7 @@
 //
 // Assembles a QuizOutput + intake fields; page.tsx builds the DesignRequest.
 
-import Image from "next/image";
+
 import { useState } from "react";
 
 // ---------------------------------------------------------------------------
@@ -690,11 +690,9 @@ function QuizImageCard({
     >
       <div className="quiz-card-visual">
         {hasImage ? (
-          <Image
+          <img
             src={`${imagePrefix}${option.image}`}
             alt={option.label}
-            width={280}
-            height={180}
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             onError={() => setImgFailed(true)}
           />
@@ -799,11 +797,9 @@ function SelectCard({
       <span className="quiz-select-card-label">{option.label}</span>
       {option.image && imagePrefix && (
         <div className="quiz-select-card-image">
-          <Image
+          <img
             src={`${imagePrefix}${option.image}`}
             alt={option.label}
-            width={320}
-            height={200}
             style={{ objectFit: "cover", width: "100%", height: "100%", borderRadius: "6px" }}
           />
         </div>
@@ -1199,11 +1195,9 @@ export default function StyleQuiz({ onComplete, initialRoomType }: Props) {
         <div className="bridge-preview">
           {coreImg && (
             <div className="bridge-image">
-              <Image
+              <img
                 src={coreImg}
                 alt={coreOpt?.label ?? "Your aesthetic"}
-                width={400}
-                height={400}
                 style={{ objectFit: "cover", width: "100%", height: "100%", borderRadius: "10px" }}
               />
             </div>
