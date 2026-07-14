@@ -17,7 +17,7 @@ export async function generateMetadata({
 
   const title = "Look at the new room I designed with RoomKit!";
   const description =
-    "Design your own room in minutes — real products, on budget.";
+    "Design your own room in minutes. Real products, on budget.";
 
   let ogImage = `${SITE_URL}/og-default.jpg`;
   try {

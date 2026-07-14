@@ -424,7 +424,7 @@ function IntakeForm() {
             maxWidth: 380,
             lineHeight: 1.5,
           }}>
-            Your first design is free &mdash; no credit card required. Sign up in seconds and we&apos;ll generate your personalized room.
+            Your first design is free, no credit card required. Sign up in seconds and we&apos;ll generate your room.
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             <a
@@ -542,7 +542,7 @@ function IntakeForm() {
                 Generate for me
               </div>
               <div style={{ fontSize: "0.8rem", opacity: chosenMode === "auto" ? 0.7 : 0.55, lineHeight: 1.4 }}>
-                AI picks everything — see the full room instantly
+                RoomKit picks everything based on your style
               </div>
             </button>
           </div>
@@ -572,7 +572,7 @@ function IntakeForm() {
             fontSize: "0.75rem",
             color: "#A8A29E",
           }}>
-            Your first room is free &mdash; no credit card needed.
+            Your first room is free. No credit card needed.
           </p>
         </div>
       </main>

@@ -15,73 +15,73 @@ const SWITCHER_AESTHETICS: { key: string; label: string; vibe: string; story: st
     key: "cottagecore",
     label: "Cottagecore",
     vibe: "Soft + vintage",
-    story: "You wake up slow. Sun through linen curtains, a mug of tea already cooling on the nightstand. The wool throw is half on the floor because you actually slept under it. The room smells like dried flowers and old books and you have absolutely nowhere to be.",
+    story: "Sunday morning. Sun through linen curtains, tea on the nightstand. The wool throw is half on the floor because you actually used it. Everything in here is soft and a little worn and you wouldn't change a single thing.",
   },
   {
     key: "dark_academia",
     label: "Dark Academia",
     vibe: "Moody + scholarly",
-    story: "It's 1am and you're in the zone. The desk lamp throws a warm circle across your notebook. Velvet sheets, a green banker's lamp, the faint smell of leather binding. You could be in a flat above a bookshop in Edinburgh. The world outside doesn't exist right now.",
+    story: "It's late and you're in the zone. Desk lamp on, everything else off. The room feels like a library you're not supposed to be in after hours. Dark wood, warm leather, green glass. You could stay here all night and honestly you probably will.",
   },
   {
     key: "japandi",
     label: "Japandi",
     vibe: "Calm + minimal",
-    story: "You take a breath and the room gives you space for it. Light oak, clean lines, nothing fighting for your attention. The linen duvet is still warm. Your coffee is on a side table that has nothing else on it. This is what Monday morning is supposed to feel like.",
+    story: "Light oak, clean lines, nothing competing for your attention. The coffee is on a side table that has nothing else on it. Everything in this room earns its spot and the empty space is the whole point.",
   },
   {
     key: "coastal",
     label: "Coastal",
     vibe: "Breezy + light",
-    story: "The window is cracked and you can almost hear the waves. White sheets kicked sideways, a woven basket in the corner, the kind of light that makes everything look golden. You're on your second day of vacation except you live here. Every morning is the first morning.",
+    story: "White sheets, cracked window, that golden hour light that makes everything look warm. Woven textures, weathered wood, the kind of room that makes a Tuesday morning feel like vacation. You live here but it never stops feeling like you just arrived.",
   },
   {
     key: "industrial",
     label: "Industrial",
     vibe: "Raw + rugged",
-    story: "Exposed brick, black steel, the hum of the city outside. The leather armchair has your shape worn into it. You built this room the way you'd build a motorcycle — nothing extra, everything functional, and it looks better with every scratch.",
+    story: "Exposed brick, black steel, concrete where other people would put drywall. The leather chair has your shape worn into it. Nothing in here is decorative. Everything just works, and it all looks better the more you use it.",
   },
   {
     key: "quiet_luxury",
     label: "Quiet Luxury",
     vibe: "Polished + serene",
-    story: "You run your hand across the bedding and it's cashmere. The marble nightstand catches the morning light. Nothing in this room is trendy, nothing is loud, and nothing cost less than it should have. People walk in and just get quiet. That's the point.",
+    story: "Cashmere bedding, marble surfaces, nothing loud. The room doesn't try to impress you. It just feels expensive in the way that good things do when they're not trying to prove anything. People walk in and get quiet.",
   },
   {
     key: "city_modern",
     label: "City Modern",
     vibe: "Sleek + urban",
-    story: "32nd floor, floor-to-ceiling glass, the skyline doing its thing. Everything in here is sharp — matte black frames, white sheets pulled tight, geometric lines. You get dressed in this room and you walk out feeling like you own the building.",
+    story: "High floor, big windows, the city doing its thing below. Matte black frames, white sheets pulled tight, clean geometric lines. You get ready in this room and walk out feeling like the main character.",
   },
   {
     key: "ski_lodge",
     label: "Ski Lodge",
     vibe: "Cozy + alpine",
-    story: "Your legs are still burning from the last run. You're under a plaid duvet with timber beams overhead and you can hear the fire downstairs. The flannel is warm, the wool is heavy, and you're not moving from this spot until someone brings you hot chocolate.",
+    story: "Timber beams overhead, plaid duvet pulled up, the kind of heavy wool blanket that pins you to the bed. It's cold outside and warm in here and you're not going anywhere. The whole room feels like the last hour of a ski day.",
   },
   {
     key: "jungle_oasis",
     label: "Jungle Oasis",
     vibe: "Lush + tropical",
-    story: "The monstera is taller than you now. Rattan creaks when you sit down, the air feels thicker, greener. There's a trailing pothos above the headboard that you haven't killed yet and it feels like a personal victory. This room doesn't have a vibe — it has an ecosystem.",
+    story: "Plants everywhere and somehow they're all alive. Rattan, terracotta, woven textures that make the whole room feel warmer. The light comes through leaves before it hits the floor. Walking in here after a long day genuinely changes your mood.",
   },
   {
     key: "gamer_den",
     label: "Gamer Den",
     vibe: "Dark + techy",
-    story: "Blackout curtains, ambient glow, three monitors and a chair that cost more than the bed. It's 2am and you just hit your stride. The only light is the one you chose. Nobody's knocking. The world is exactly the size of this room and that's perfect.",
+    story: "Blackout curtains, ambient glow, the chair costs more than the bed and that's on purpose. It's late and you just hit your stride. The only light is the one you chose. The whole world is the size of this room right now.",
   },
   {
     key: "sports_den",
     label: "Sports Den",
     vibe: "Dark + loungey",
-    story: "Game day. The leather couch has seen a hundred Sundays. The TV is too big and that's the whole idea. There's a cooler within arm's reach and the remote hasn't moved since Tuesday. This room was built around one activity and it does that activity flawlessly.",
+    story: "Game day. The leather couch has seen a hundred Sundays. The TV is too big and that's the whole point. Everything you need is within arm's reach. This room was built for one thing and it does that thing perfectly.",
   },
   {
     key: "poster_maximalist",
     label: "Poster Maximalist",
     vibe: "Eclectic + expressive",
-    story: "Every wall is a timeline of the things you love. That concert you'll never forget. The movie poster your roommate tried to throw away. A vintage print from a flea market you found at 7am on a Saturday. People walk in and spend twenty minutes just reading the walls.",
+    story: "Every wall tells on you. The concert poster, the vintage find from that flea market, the print your roommate tried to throw out. Nothing matches and that's what makes it yours. People come over and spend the first twenty minutes just looking around.",
   },
 ];
 
@@ -102,13 +102,13 @@ export default function LandingPage() {
       {/* ── Hero ── */}
       <section className="landing-hero">
         <h1 className="landing-hero-title">
-          Design your dream room.
+          Your room, actually designed.
         </h1>
         <p className="landing-hero-subtitle">
-          You pick the vibe. We fill the room — real furniture, real prices, one click to buy any piece. Your style, your budget, nothing fake.
+          Take a style quiz. Get a full room of real furniture that looks good together, fits your budget, and you can buy any piece in one tap.
         </p>
         <a href="/design" className="landing-cta">Design my room</a>
-        <p className="landing-hero-free">Your first room is free &mdash; no credit card needed.</p>
+        <p className="landing-hero-free">Your first room is free. No credit card needed.</p>
       </section>
 
       {/* ── Room type cards ── */}
@@ -180,9 +180,9 @@ export default function LandingPage() {
             </div>
             <div className="landing-hiw-content">
               <span className="landing-hiw-number">1</span>
-              <h3 className="landing-hiw-title">Tell us your style</h3>
+              <h3 className="landing-hiw-title">Take the quiz</h3>
               <p className="landing-hiw-desc">
-                A quick visual quiz — pick aesthetics, moods, materials, colors. No measurements, no Pinterest boards, no design degree. Just tap what feels right. Two minutes and we know your taste better than your roommate does.
+                Pick aesthetics, moods, materials, colors. No Pinterest boards, no design degree. Just tap what looks good to you. Takes about two minutes.
               </p>
             </div>
           </div>
@@ -210,9 +210,9 @@ export default function LandingPage() {
             </div>
             <div className="landing-hiw-content">
               <span className="landing-hiw-number">2</span>
-              <h3 className="landing-hiw-title">We build the room</h3>
+              <h3 className="landing-hiw-title">We put the room together</h3>
               <p className="landing-hiw-desc">
-                AI pulls from thousands of real products, matches them to your style, and assembles a complete room that actually works together. Every piece fits, every color coordinates, and nothing blows the budget. Then we render it so you can see the whole thing.
+                We pull from thousands of real products and build a complete room around your taste. Everything coordinates, everything fits the budget, and you get a render of the whole thing so you can see it before you buy anything.
               </p>
             </div>
           </div>
@@ -250,9 +250,9 @@ export default function LandingPage() {
             </div>
             <div className="landing-hiw-content">
               <span className="landing-hiw-number">3</span>
-              <h3 className="landing-hiw-title">Shop every piece</h3>
+              <h3 className="landing-hiw-title">Buy what you want</h3>
               <p className="landing-hiw-desc">
-                Your room is a shopping list. Every item has a live link and a real price. Don&#39;t love the rug? Swap it. Want to splurge on the desk? Go for it. Buy one piece or buy them all — the room is the menu, you choose what to order.
+                Every piece has a real price and a link to buy it. Don&#39;t love the rug? Swap it. Want to go big on the desk? Do it. Buy one piece or furnish the whole room.
               </p>
             </div>
           </div>
