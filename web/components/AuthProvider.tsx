@@ -36,6 +36,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
+      console.log("[AUTH] onAuthStateChange:", event, session?.user?.email);
       setSession(session);
       if (event === "SIGNED_IN" && session?.user?.created_at) {
         const ageMs = Date.now() - new Date(session.user.created_at).getTime();
