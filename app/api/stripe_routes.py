@@ -30,8 +30,8 @@ async def create_checkout(req: CheckoutRequest, user: CurrentUser) -> CheckoutRe
         raise HTTPException(400, "No price_id provided and STRIPE_PRICE_ID not configured")
 
     site_url = os.environ.get("NEXT_PUBLIC_SITE_URL", "http://localhost:3000")
-    success_url = req.success_url or f"{site_url}/purchase/success"
-    cancel_url = req.cancel_url or f"{site_url}/purchase/cancel"
+    success_url = f"{site_url}/purchase/success"
+    cancel_url = f"{site_url}/purchase/cancel"
 
     try:
         from services.stripe_service import create_checkout_session

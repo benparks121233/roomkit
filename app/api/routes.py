@@ -73,8 +73,8 @@ def _get_design(run_id: str, user: dict | None = None) -> DesignResponse:
     # 1. Fast path: in-memory cache
     if run_id in _designs:
         cached = _designs[run_id]
-        if user and hasattr(cached, "user_id") and cached.user_id:
-            if cached.user_id != user["user_id"]:
+        if user:
+            if not getattr(cached, "user_id", None) or cached.user_id != user["user_id"]:
                 raise HTTPException(status_code=404, detail=f"Design {run_id} not found")
         return cached
 
@@ -546,9 +546,9 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
 @router.get("/designs")
 async def list_designs(user: CurrentUser) -> list[dict]:
     """List summary of all designs for the authenticated user."""
-    from services.supabase_client import get_client
+    from services.supabase_client import get_user_postgrest
 
-    client = get_client()
+    client = get_user_postgrest(user.get("token", ""))
     if client is None:
         raise HTTPException(503, "Storage temporarily unavailable")
 
@@ -556,7 +556,6 @@ async def list_designs(user: CurrentUser) -> list[dict]:
         resp = (
             client.table("designs")
             .select("run_id, room_type, style, target_budget, render_url, is_paid, created_at")
-            .eq("user_id", user["user_id"])
             .not_.is_("finalized_at", "null")
             .order("created_at", desc=True)
             .execute()
@@ -838,9 +837,12 @@ def _render_worker(
         acquired = acquire_render_slot()
         if not acquired:
             logger.error(
-                "Render semaphore 600s timeout for job %s (run %s) — proceeding without slot",
+                "Render semaphore full for job %s (run %s) — rejecting",
                 job_id, run_id,
             )
+            if r:
+                r.hset(f"render_job:{job_id}", mapping={"status": "failed", "error": "Server busy — too many renders in progress. Please try again."})
+            raise HTTPException(503, "Too many renders in progress — please try again in a moment")
 
         if r:
             r.hset(f"render_job:{job_id}", "status", "rendering")

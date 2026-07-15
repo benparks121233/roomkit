@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // API calls from the frontend go to the FastAPI backend.
-  // In production: set NEXT_PUBLIC_API_URL to the Railway web service URL.
-  // In development: FastAPI runs at localhost:8000.
   images: {
     remotePatterns: [
       {
@@ -11,6 +8,19 @@ const nextConfig = {
         pathname: "/images/**",
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+    ];
   },
 };
 

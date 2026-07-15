@@ -305,7 +305,7 @@ class TestReCredit:
 # Watermark toggle
 # ---------------------------------------------------------------------------
 
-def _make_render_design(run_id: str, is_paid: bool):
+def _make_render_design(run_id: str, is_paid: bool, user_id: str | None = None):
     """Build a minimal finalized design for render tests."""
     from app.api.schemas import (
         DesignResponse,
@@ -333,6 +333,7 @@ def _make_render_design(run_id: str, is_paid: bool):
         )],
         finalized_at="2026-01-01T00:00:00Z",
         is_paid=is_paid,
+        user_id=user_id,
     )
 
 
@@ -348,7 +349,7 @@ class TestWatermark:
         """Free design → watermark=True passed to render_room."""
         app.dependency_overrides[get_current_user] = lambda: _FREE_USER
         _designs["wm-free-001"] = _make_render_design(
-            "wm-free-001", is_paid=False,
+            "wm-free-001", is_paid=False, user_id=_FREE_USER["user_id"],
         )
 
         render_patch = patch(
@@ -370,7 +371,7 @@ class TestWatermark:
         """Paid design → watermark=False, is_paid=True passed to render_room."""
         app.dependency_overrides[get_current_user] = lambda: _PAID_USER
         _designs["wm-paid-001"] = _make_render_design(
-            "wm-paid-001", is_paid=True,
+            "wm-paid-001", is_paid=True, user_id=_PAID_USER["user_id"],
         )
 
         render_patch = patch(
