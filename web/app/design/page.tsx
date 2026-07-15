@@ -353,6 +353,9 @@ function IntakeForm() {
             <div style={{ fontSize: "1.3rem", fontWeight: 700, color: "#1C1917" }}>
               $4.99
             </div>
+            <p style={{ fontSize: "0.75rem", color: "#A8A29E", marginTop: 8, marginBottom: 0 }}>
+              All sales are final. Credits restored for technical failures.
+            </p>
           </div>
 
           {error && <p style={{ color: "#d32f2f", fontSize: "0.85rem", marginBottom: 12 }}>{error}</p>}

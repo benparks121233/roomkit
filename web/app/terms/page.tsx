@@ -59,6 +59,29 @@ export default function TermsPage() {
           </p>
         </Section>
 
+        <Section title="Purchases and Payments">
+          <p style={styles.paragraph}>
+            RoomKit offers room design packs for purchase. A pack gives you a
+            set number of room designs at the price displayed at checkout.
+            Rooms in your pack never expire. Pricing may change, but any pack
+            you&apos;ve already purchased is honored at the price you paid.
+            Payments are processed by Stripe. We do not store your payment
+            card information.
+          </p>
+          <p style={styles.paragraph}>
+            <strong>Refunds:</strong> Purchases are generally non-refundable.
+            If you change your mind after buying a pack, the sale is final.
+            However, if a design fails to generate due to a technical issue on
+            our end, we will automatically restore the room credit to your
+            pack. If you receive a design that is unusable due to a technical
+            defect (broken render, missing products, system error), contact us
+            and we will either restore the credit or issue a refund at our
+            discretion. This does not apply to designs you simply don&apos;t
+            like &mdash; style is subjective, and all generated designs use
+            real products within your stated budget.
+          </p>
+        </Section>
+
         <Section title="Products and Pricing">
           <p style={styles.paragraph}>
             RoomKit displays products from third-party retailers. Product
@@ -114,13 +137,42 @@ export default function TermsPage() {
             </li>
             <li style={styles.li}>
               AI-generated recommendations and renders are approximations, not
-              professional advice.
+              professional advice. Renders are visual representations only and
+              may not reflect exact product colors, dimensions, or proportions.
+              Do not rely on renders for measurements, room planning, or
+              purchasing decisions without verifying product details on the
+              retailer&apos;s site.
             </li>
             <li style={styles.li}>
               We are not responsible for purchasing decisions you make based on
               RoomKit&apos;s recommendations.
             </li>
           </ul>
+        </Section>
+
+        <Section title="Limitation of Liability">
+          <p style={styles.paragraph}>
+            To the maximum extent permitted by law, RoomKit&apos;s total
+            liability to you for any claims arising from your use of the
+            service shall not exceed the amount you have paid to RoomKit in the
+            twelve (12) months preceding the claim. RoomKit is not liable for
+            any indirect, incidental, consequential, or punitive damages,
+            including lost profits, lost data, or costs of substitute
+            services, even if we have been advised of the possibility of such
+            damages.
+          </p>
+        </Section>
+
+        <Section title="Indemnification">
+          <p style={styles.paragraph}>
+            You agree to indemnify and hold harmless RoomKit and its
+            operators from any claims, damages, losses, or expenses
+            (including reasonable legal fees) arising from your use of the
+            service, your violation of these terms, or your purchase of
+            products through links on RoomKit. Product purchases are
+            transactions between you and the retailer &mdash; RoomKit is not a
+            party to those transactions.
+          </p>
         </Section>
 
         <Section title="Account Termination">
@@ -152,7 +204,7 @@ export default function TermsPage() {
         <Section title="Contact">
           <p style={styles.paragraph}>
             Questions about these terms? Email{" "}
-            <strong>[PLACEHOLDER: legal@yourdomain.com]</strong>.
+            <strong>legal@roomkit.studio</strong>.
           </p>
         </Section>
 

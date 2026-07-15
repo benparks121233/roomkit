@@ -98,6 +98,12 @@ export default function PrivacyPage() {
               in these requests.
             </li>
             <li style={styles.li}>
+              <strong>Stripe:</strong> Processes payments. When you purchase a
+              room pack, Stripe receives your payment method and billing
+              information. We do not receive or store your card number. Stripe&apos;s
+              privacy policy governs their handling of your payment data.
+            </li>
+            <li style={styles.li}>
               <strong>Supabase:</strong> Hosts our database and authentication.
               Supabase is the data processor; RoomKit is the data controller.
               Supabase&apos;s privacy policy applies to their infrastructure.
@@ -168,7 +174,7 @@ export default function PrivacyPage() {
         <Section title="Contact">
           <p style={styles.paragraph}>
             For privacy questions or data deletion requests, email{" "}
-            <strong>[PLACEHOLDER: privacy@yourdomain.com]</strong>.
+            <strong>privacy@roomkit.studio</strong>.
           </p>
         </Section>
 

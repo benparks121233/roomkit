@@ -444,9 +444,9 @@ class TestValidateSelections:
                 {"slot_id": "bed_frame", "selected_product_ids": [bed["product"]["product_id"]]},
             ],
         })
-        assert resp.status_code == 200
+        assert resp.status_code == 200, f"validate-selections returned {resp.status_code}: {resp.text}"
         data = resp.json()
-        assert data["valid"] is True
+        assert data["valid"] is True, f"Expected valid=True but got: {json.dumps(data, indent=2)}"
 
     @_patch_llms
     def test_tampered_product_id_rejected(self, _s, _c, _sel):
