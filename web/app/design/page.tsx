@@ -161,10 +161,8 @@ function IntakeForm() {
   }
 
   useEffect(() => {
-    console.log("[QUIZ_TRACK] session:", !!session, "pendingResult:", !!pendingResult, "fresh:", quizFreshRef.current, "tracked:", quizTrackedRef.current);
     if (session && pendingResult && quizFreshRef.current && !quizTrackedRef.current) {
       quizTrackedRef.current = true;
-      console.log("[QUIZ_TRACK] Firing quiz_completed");
       trackEvent("", "quiz_completed", {
         roomType: pendingResult.roomType,
         budget: pendingResult.budget,

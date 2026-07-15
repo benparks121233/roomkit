@@ -127,11 +127,9 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Depends on:** P1-11 (LLC decision)
 
 ### P0-11. Signup + quiz completion tracking
-**Status:** NOT DONE — backend path verified (curl /track → rows land), frontend wiring UNVERIFIED (no browser test). Two suspected bugs under investigation.
-**Why:** No event fires when a user completes signup or finishes the quiz. Top-of-funnel conversion during beta is unmeasurable — and unrecoverable after beta ends. These 50 users' first-touch events are the only ones you'll get.
-**Fix:** Added `signup_completed` and `quiz_completed` to `_ALLOWED_CLIENT_EVENTS`. Wired `trackEvent` in AuthProvider (signup) and design page (quiz). Backend accepts and stores both events. Frontend execution unverified — needs browser walkthrough.
-**Owner:** CODE
-**Ref:** `app/api/routes.py:1275` (allowed events), `web/components/AuthProvider.tsx:38-46` (signup), `web/app/design/page.tsx:164-173` (quiz)
+**Status:** WON'T DO
+**Why:** Redundant. `auth.users` already has `created_at` and `email_confirmed_at` for every signup — no event needed. Quiz→design drop-off is derivable from the `designs` table at 50-user beta scale. The events that matter already land: `pack_purchased` (7), `export_cart_clicked` (5), `design_completed` (62). Code for `signup_completed` and `quiz_completed` trackEvent calls is deployed but unverified — left in place (compiles, harmless).
+**Owner:** N/A
 
 ### P0-12. Log real API usage per design (replaces cost formula)
 **Status:** NOT DONE
@@ -452,12 +450,11 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 - [x] P0-08 — /click endpoint no-op or deleted (500 eliminated) — d24c0b8
 - [ ] P0-09 — Amazon 180-day deadline known (application date found, deadline calculated)
 - [ ] P0-10 — Legal page placeholders filled (sole prop or LLC)
-- [ ] P0-11 — Signup + quiz tracking live (beta funnel measurable)
 - [ ] P0-12 — API usage logging live (beta cost measurable)
 - [ ] P0-13 — Google OAuth terms notice (terms must bind all signups or liability cap/indemnification/refund policy are void)
 - [ ] P0-14 — Stash else-branch proceeds to checkout on failure (reachability UNVERIFIED, unguarded payment path)
 
-**Status: 2 of 13 hard gates done.**
+**Status: 2 of 12 hard gates done.**
 
 **Recommended additions from P1 (your call):**
 - [ ] P1-05 — Kill switch (ability to disable /design without a deploy — if the pipeline breaks during beta, you're stuck until you push a fix)
@@ -485,7 +482,7 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 8. ~~Refresh worker no-op (P0-07)~~ — DONE (d24c0b8)
 9. ~~/click endpoint: delete or no-op (P0-08)~~ — DONE (d24c0b8)
 10. Legal placeholders fill (P0-10) — ~15 minutes, sole prop or LLC name depending on #5
-11. Signup + quiz tracking (P0-11) — code deployed, frontend UNVERIFIED
+11. ~~Signup + quiz tracking (P0-11)~~ — WON'T DO (redundant with auth.users + designs table)
 12. API usage logging (P0-12) — ~2 hours, 4 call sites + event schema
 13. Beta onboarding mechanism (P0-04a) — ~2 hours allowlist / ~4 hours invite codes
 14. Kill switch (P1-05) — MAINTENANCE_MODE env var
