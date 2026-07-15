@@ -50,13 +50,11 @@ function SignupForm() {
       return;
     }
 
-    localStorage.setItem("rk_signup_pending", "email");
     setConfirmSent(true);
     setLoading(false);
   };
 
   const handleGoogleSignup = async () => {
-    localStorage.setItem("rk_signup_pending", "google");
     const supabase = getSupabaseBrowserClient();
     const callbackUrl = new URL("/auth/callback", window.location.origin);
     if (redirectTo !== "/") callbackUrl.searchParams.set("redirect", redirectTo);

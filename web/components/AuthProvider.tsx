@@ -35,12 +35,12 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = supabase.auth.onAuthStateChange((event, session) => {
       setSession(session);
-      if (session && typeof window !== "undefined") {
-        const method = localStorage.getItem("rk_signup_pending");
-        if (method) {
-          localStorage.removeItem("rk_signup_pending");
+      if (event === "SIGNED_IN" && session?.user?.created_at) {
+        const ageMs = Date.now() - new Date(session.user.created_at).getTime();
+        if (ageMs < 5 * 60 * 1000) {
+          const method = session.user.app_metadata?.provider ?? "unknown";
           trackEvent("", "signup_completed", { method });
         }
       }
