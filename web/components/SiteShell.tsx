@@ -59,7 +59,9 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
     <>
       <nav className="site-nav" role="navigation">
         <div className="site-nav-inner">
-          <a href="/" className="site-nav-wordmark">roomkit</a>
+          <a href="/" className="site-nav-wordmark">
+            <img src="/roomkit_logo_full.png" alt="roomkit" className="site-nav-logo" />
+          </a>
 
           <div className="site-nav-right">
             {loading ? null : session ? (
