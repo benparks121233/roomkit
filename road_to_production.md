@@ -2,7 +2,7 @@
 
 Single source of truth for everything between "code works" and "50 beta users can use it safely." Every item has a priority, a file:line reference where applicable, and an owner (YOU = manual step, CODE = implementable).
 
-**RULE: Update this file after every completed step — mark done with commit ref + date. Never let it go stale.**
+**STATUS UPDATES:** This file is updated in the same commit as any code change that touches a tracked item. A pre-commit hook (`.githooks/pre-commit`) warns if files under `app/`, `services/`, `web/`, or `migrations/` are staged without `road_to_production.md`. The hook warns but does not block. After a fresh clone, run `git config core.hooksPath .githooks` to activate it.
 
 **ID stability:** Item IDs use the format `P0-01`, `P1-07`, etc. IDs are permanent — when an item changes priority, it keeps its old ID so external references don't break. Do not reference bare numbers in commit messages or external notes; always use the full ID.
 
@@ -98,18 +98,18 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Owner:** CODE
 
 ### P0-07. Refresh worker crashes every 6 hours
-**Status:** STUB — CRASHES ON SCHEDULE
-**Why:** `services/refresh_worker.py:18` raises `NotImplementedError("Stage 11")`. Railway's cron service executes this every 6h and crashes every time. This isn't just "stale prices" — it's a crashing service in production logs.
-**Fix (minimum for beta):** Replace the `raise` with a no-op that logs "refresh worker: not yet implemented" and returns cleanly. This does NOT fix price freshness (P1-04) — the no-op just stops the crash loop.
+**Status:** DONE (d24c0b8, 2026-07-15)
+**Why:** `services/refresh_worker.py:18` was raising `NotImplementedError("Stage 11")`. Railway's cron service executed this every 6h and crashed every time.
+**Fix applied:** Replaced the `raise` with a no-op that logs "refresh worker: not yet implemented" and returns cleanly. This does NOT fix price freshness (P1-04) — the no-op just stops the crash loop.
 **Owner:** CODE
-**Ref:** `services/refresh_worker.py:18`
+**Ref:** `services/refresh_worker.py:19-20`
 
 ### P0-08. /click endpoint throws unhandled 500
-**Status:** STUB — ORPHAN
-**Why:** `app/api/routes.py:1254-1256` raises `NotImplementedError("Stage 10")`. However, nothing in the frontend calls `/click` — all client-side tracking uses `/track` (via `trackEvent()` in `web/lib/api.ts:428-441`), which is live and working. `buy_link_clicked` is already in `_ALLOWED_CLIENT_EVENTS` (`routes.py:1274`). This endpoint is an orphan stub.
-**Fix:** Either delete the endpoint or replace the `raise` with a no-op. It is not blocking anything.
+**Status:** DONE (d24c0b8, 2026-07-15)
+**Why:** `app/api/routes.py:1254-1256` was raising `NotImplementedError("Stage 10")`. Nothing in the frontend calls `/click` — all client-side tracking uses `/track`. This was an orphan stub.
+**Fix applied:** Replaced the `raise` with `return {"status": "ok"}`. Also added `stash_failed` to `_ALLOWED_CLIENT_EVENTS` and wired `trackEvent("stash_failed")` in the design page stash else-branch. Follow-up: migration `007_events_nullable_run_id.sql` created to make `events.run_id` nullable. **Must be run in Supabase SQL Editor before switching frontend from empty-string to null.** Until then, stash_failed events land with `run_id = ''` (orphan row, invisible to RLS reads, but queryable via service key).
 **Owner:** CODE
-**Ref:** `app/api/routes.py:1254-1256`
+**Ref:** `app/api/routes.py:1255,1268`
 
 ### P0-09. Amazon Associates 180-day deadline
 **Status:** UNKNOWN — application date not recorded
@@ -148,6 +148,16 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Owner:** CODE
 **Estimate:** ~15 minutes
 **Ref:** `web/app/signup/page.tsx:133`
+
+### P0-14. Stash else-branch proceeds to checkout on failure
+**Status:** NOT DONE — AWAITING DECISION
+**Why:** In `handleUpgrade` (`web/app/design/page.tsx:271-289`), the else branch (stash fails) fires `trackEvent("stash_failed")` but still calls `startCheckout()`. If the user pays $4.99 and returns from Stripe, their quiz answers are gone. They still have 5 room credits (pack is added by Stripe webhook, not decremented here), so no money is lost — but the UX is bad: user paid expecting to pick up where they left off, finds a blank quiz instead.
+**Reachability:** UNVERIFIED. Code read suggests both `pendingResult` and `chosenMode` are always set before `hitFreeLimit` becomes true, but this analysis has not been validated by production data. The `stash_failed` tracking signal exists to verify — once migration 007 is run and the event can land, a period with zero `stash_failed` rows would confirm unreachability. Until then, treat as reachable.
+**Refund policy gap:** The refund clause (`terms/page.tsx:72-81`) covers "design fails to generate due to a technical issue" — automatic credit restore. It does NOT cover "quiz answers lost before generation." No credit is consumed in this scenario so the refund path never triggers.
+**Fix options:** (a) Bail with an error message if stash fails — don't redirect to Stripe. (b) Block is defensive; accept unreachability and add a regression test. Owner decides.
+**Owner:** CODE (after decision)
+**Ref:** `web/app/design/page.tsx:275-283`, `web/app/purchase/success/page.tsx:13-17,92-93`
+**Depends on:** stash_failed event fix (migration 007 must be run first for the tracking signal to land with NULL run_id)
 
 ---
 
@@ -356,11 +366,11 @@ These were found and FIXED in the security audit:
 Items beta users will notice. Ranked by impact.
 
 ### C-01. console.log debug lines in production
-**Status:** NOT DONE
-**Why:** 4 `console.log("[STASH]...")` debug statements fire in the upgrade flow. Beta users who open dev tools see debug noise.
-**Fix:** Delete the 4 lines.
+**Status:** DONE (d24c0b8, 2026-07-15)
+**Why:** 4 `console.log("[STASH]...")` debug statements were firing in the upgrade flow. Beta users who opened dev tools saw debug noise.
+**Fix applied:** Deleted the 4 debug lines. The console.warn in the else branch was preserved as a proper `trackEvent("stash_failed")` signal.
 **Owner:** CODE
-**Ref:** `web/app/design/page.tsx:278-284`
+**Ref:** `web/app/design/page.tsx`
 **Severity:** JANKY — 1 minute fix
 
 ### C-02. Terms/Privacy pages off-brand + no nav
@@ -438,19 +448,22 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 - [ ] P0-04a — Beta onboarding mechanism (gate exists in code)
 - [ ] P0-04b — Beta invite list composition (named list of ~50 users)
 - [ ] P0-06 — robots.txt (admin/preview/auth not indexed)
-- [ ] P0-07 — Refresh worker no-op (crash loop stopped)
-- [ ] P0-08 — /click endpoint no-op or deleted (500 eliminated)
+- [x] P0-07 — Refresh worker no-op (crash loop stopped) — d24c0b8
+- [x] P0-08 — /click endpoint no-op or deleted (500 eliminated) — d24c0b8
 - [ ] P0-09 — Amazon 180-day deadline known (application date found, deadline calculated)
 - [ ] P0-10 — Legal page placeholders filled (sole prop or LLC)
 - [ ] P0-11 — Signup + quiz tracking live (beta funnel measurable)
 - [ ] P0-12 — API usage logging live (beta cost measurable)
 - [ ] P0-13 — Google OAuth terms notice (terms must bind all signups or liability cap/indemnification/refund policy are void)
+- [ ] P0-14 — Stash else-branch proceeds to checkout on failure (reachability UNVERIFIED, unguarded payment path)
+
+**Status: 2 of 13 hard gates done.**
 
 **Recommended additions from P1 (your call):**
 - [ ] P1-05 — Kill switch (ability to disable /design without a deploy — if the pipeline breaks during beta, you're stuck until you push a fix)
 
 **Explicitly NOT gated:**
-- P0-03 — Already VERIFIED
+- P0-03 — Already VERIFIED (not a gate — already passed)
 - P0-05 — Support channel resolves automatically once P0-01 lands
 - P1-01 (Sentry), P1-15 (JWT), P1-11 (LLC) — useful pre-beta but not gates
 - All cosmetic items — polish, not safety
@@ -463,14 +476,14 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 1. Email forwarding (P0-01) — 5 minutes, DNS TXT record
 2. Cost alerts (P0-02) — 10 minutes, dashboard settings
 3. Find Amazon Associates application date (P0-09) — check email/dashboard
-4. Delete console.log debug lines (C-01) — 1 minute
+4. ~~Delete console.log debug lines (C-01)~~ — DONE (d24c0b8)
 5. LLC filing (P1-11) — $150 standard (1-3 days) or $250 expedited (24h, business days only). If filed today (Wed): entity exists Thu, P0-10 uses real LLC name. If filed weekend: entity exists Tue.
 6. Start thinking about invite list composition (P0-04b) — who are the 50 people?
 
 **Then (pre-beta week — code changes):**
 7. robots.txt (P0-06) — 5 minutes
-8. Refresh worker no-op (P0-07) — 5 minutes, stop the crash loop
-9. /click endpoint: delete or no-op (P0-08) — 5 minutes, orphan stub
+8. ~~Refresh worker no-op (P0-07)~~ — DONE (d24c0b8)
+9. ~~/click endpoint: delete or no-op (P0-08)~~ — DONE (d24c0b8)
 10. Legal placeholders fill (P0-10) — ~15 minutes, sole prop or LLC name depending on #5
 11. Signup + quiz tracking (P0-11) — 30 minutes, add 2 events + 2 trackEvent calls
 12. API usage logging (P0-12) — ~2 hours, 4 call sites + event schema

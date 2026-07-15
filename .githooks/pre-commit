@@ -1,0 +1,22 @@
+#!/bin/sh
+# Warn if code changes are staged without road_to_production.md.
+# Does NOT block the commit — just prints a warning.
+
+staged=$(git diff --cached --name-only)
+
+has_code=false
+has_road=false
+
+for f in $staged; do
+  case "$f" in
+    app/*|services/*|web/*|migrations/*) has_code=true ;;
+    road_to_production.md) has_road=true ;;
+  esac
+done
+
+if [ "$has_code" = true ] && [ "$has_road" = false ]; then
+  echo ""
+  echo "⚠  Code changes staged without road_to_production.md."
+  echo "   If this commit touches a tracked item, stage road_to_production.md too."
+  echo ""
+fi
