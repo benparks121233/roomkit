@@ -51,20 +51,22 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 ## P0 — BLOCKING BETA
 
 ### P0-01. Inbound email forwarding
-**Status:** NOT DONE
-**Why:** Terms (`web/app/terms/page.tsx:206`) and Privacy (`web/app/privacy/page.tsx:176`) publicly name `legal@roomkit.studio` and `privacy@roomkit.studio` for contact/data-deletion requests. Resend is outbound-only SMTP — these addresses receive nothing. A privacy policy that names a dead email for data-deletion requests is a legal liability.
-**Fix:** Set up ImprovMX (free tier) or Cloudflare Email Routing to forward `legal@` and `privacy@` to `ben14parks@gmail.com`. Takes 5 minutes + DNS TXT record.
+**Status:** IN PROGRESS — rules configured, mail still bouncing
+**Why:** Terms (`web/app/terms/page.tsx:206`) and Privacy (`web/app/privacy/page.tsx:176`) publicly name `legal@roomkit.studio` and `privacy@roomkit.studio` for contact/data-deletion requests.
+**Current state:** Squarespace forwarding rules set (legal@ and privacy@ → ben14parks@gmail.com), DNS MX points to Mailgun correctly. Mail bounces "550 Relaying denied" — Squarespace hasn't provisioned rules to Mailgun's relay yet. Waiting on propagation. If still bouncing in a few hours → Squarespace support ticket.
+**DNS note:** Resend DNS is correct and live (resend._domainkey on root, SPF include:amazonses.com, bounce MX on send.roomkit.studio). Root SPF lists Mailgun (Squarespace forwarding) and doesn't conflict — Resend never uses root as return-path. Email rate limit is NOT a beta blocker.
+**Owner:** YOU — BLOCKING BETA until a test email actually lands
+
+### P0-02. Cost caps on Anthropic + OpenAI
+**Status:** DONE (2026-07-16)
+**What:** Auto-reload/auto-recharge OFF on both Anthropic and OpenAI. Account balance is a HARD ceiling — API stops when balance hits zero, no surprise invoice possible.
+**Nuance:** This closes free-tier denial-of-wallet as a CATASTROPHIC risk (no unbounded bill) but NOT as an AVAILABILITY risk — someone burning credits still takes the product down for real users until balance is topped up and noticed. The per-IP cap + X-Forwarded-For fix (P1-02, coupled — both or neither) remains the real fix.
+**Current balance:** Anthropic $6.38 ≈ 24 designs at ~$0.26/design. Beta is 100 users. Must top up before beta — that's when auto-reload decision gets real again.
 **Owner:** YOU
 
-### P0-02. Cost alerting on Anthropic + OpenAI
-**Status:** NOT DONE
-**Why:** At ~$0.38/design (estimated), a viral spike or abuse loop burns real money with zero notification. No spending caps exist on either provider dashboard.
-**Fix:** Set hard monthly spending limits in both Anthropic and OpenAI dashboards. Set alert thresholds at $20/day and $200/month for beta.
-**Owner:** YOU (dashboard settings)
-
-### P0-03. Affiliate tag smoke-test
-**Status:** VERIFIED (2026-07-15)
-**Why:** Clicks confirmed in the Amazon Associates dashboard. The `tag=roomkitai-20` parameter creates attribution sessions.
+### P0-03. Affiliate attribution verification
+**Status:** VERIFIED (2026-07-16) — full purchase chain proven
+**Evidence:** Real product link → click registered in Associates dashboard → purchase completed → sale tracked correctly. No commission paid (expected: self-purchases are explicitly disqualified). Tag, link format, and click-to-purchase chain all work. Affiliate mechanism is PROVEN, not hypothetical. Untested remainder: whether a stranger's purchase actually pays out — no reason it wouldn't given tracking registered.
 **Owner:** YOU
 
 ### P0-04a. Beta onboarding mechanism
@@ -79,10 +81,11 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Note:** The mechanism can be built before the invite list is finalized — invite codes don't require known emails. But email allowlist does, so P0-04b's outcome determines whether option (a) is viable.
 
 ### P0-04b. Beta invite list composition
-**Status:** UNSOLVED
-**Why:** Amazon excludes purchases by friends, relatives, and associates from qualifying sales. If the invite list is seeded from my personal network, beta can succeed on every metric and still produce zero qualifying sales before the 180-day deadline. Need a named source of ~50 non-personal-network users.
+**Status:** PLANNED — Reddit launch, explicitly last
+**Channel:** Organic Reddit post → roomkit.studio. Affiliate links stay on registered site, no compliance issue. Not recruiting strangers until everything else is verified — no point burning the one Reddit launch on an unproven product.
+**Why Reddit:** Amazon excludes purchases by friends, relatives, and associates from qualifying sales. Reddit produces real strangers whose purchases count toward the 3-sale qualifying requirement (P0-09, 150 days remaining).
 **Owner:** YOU
-**Depends on:** P0-09 (must know the deadline before knowing how urgent this is)
+**Depends on:** All other gates done first
 
 ### P0-05. Customer support channel
 **Status:** NOT DONE
@@ -112,9 +115,9 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Ref:** `app/api/routes.py:1255,1268`
 
 ### P0-09. Amazon Associates 180-day deadline
-**Status:** UNKNOWN — application date not recorded
-**Why:** Amazon closes Associates accounts that haven't referred 3 qualifying sales within 180 days of application. Self-purchases and purchases by friends, relatives, or associates are excluded and don't count. Application date is UNKNOWN.
-**Fix:** (1) Find or estimate application date. (2) Calculate deadline. (3) Plan beta invite list composition — if the list is seeded from your personal network, those buyers may all be filtered as "associates" and none will count toward the 3-sale requirement.
+**Status:** DONE (2026-07-16) — 150 days remaining
+**Deadline:** ~December 2026 (150 days from today). Comfortable runway.
+**Key constraint:** Self-purchase does NOT count toward the 3 qualifying sales. Need 3 real strangers. Reddit launch is the mechanism.
 **Owner:** YOU
 **Blocks:** P0-04b (beta invite list composition)
 
@@ -345,11 +348,11 @@ These were found and FIXED in the security audit:
 | Area | Status | Detail |
 |---|---|---|
 | Affiliate tag | COMPLIANT | Injected into all buy_urls + cart URL |
-| Affiliate attribution | VERIFIED | Smoke-test passed — clicks confirmed in Associates dashboard (P0-03) |
+| Affiliate attribution | PROVEN | Full purchase chain verified: click → sale tracked in dashboard. Self-purchase disqualified as expected. Stranger payout untested but no reason it wouldn't work. (P0-03) |
 | Price display | NON-COMPLIANT | No `fetched_at` timestamps, no date shown. Tracked as P1-04 |
 | Affiliate disclosure | COMPLIANT | FTC-adequate in Terms |
 | Add-all-to-cart | COMPLIANT | Uses official Amazon cart-add URL. Smoke-tested (P0-03) |
-| 180-day qualifying sales | UNKNOWN | 3 sales required within 180 days or account closes. Tracked as P0-09 |
+| 180-day qualifying sales | 150 DAYS LEFT | 3 stranger sales required. Self-purchase confirmed disqualified. Reddit launch is the mechanism. (P0-09) |
 | Commission rate | UNVERIFIED | Assumed 4% — needs Table 1 of Commission Income Statement |
 | Canopy data source | AT RISK | Not PA-API. Tracked as P1-07 |
 | AI renders with product images | AT RISK | Gray area. Tracked as P1-08 |
@@ -442,19 +445,19 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 
 **Hard gates (all P0, non-negotiable):**
 - [ ] P0-01 — Inbound email forwarding (legal@ and privacy@ receive mail)
-- [ ] P0-02 — Cost alerting (spending caps set on Anthropic + OpenAI)
+- [x] P0-02 — Cost caps (auto-reload OFF, hard ceiling) — 2026-07-16
 - [ ] P0-04a — Beta onboarding mechanism (gate exists in code)
 - [ ] P0-04b — Beta invite list composition (named list of ~50 users)
 - [ ] P0-06 — robots.txt (admin/preview/auth not indexed)
 - [x] P0-07 — Refresh worker no-op (crash loop stopped) — d24c0b8
 - [x] P0-08 — /click endpoint no-op or deleted (500 eliminated) — d24c0b8
-- [ ] P0-09 — Amazon 180-day deadline known (application date found, deadline calculated)
+- [x] P0-09 — Amazon 180-day deadline known (150 days remaining) — 2026-07-16
 - [ ] P0-10 — Legal page placeholders filled (sole prop or LLC)
 - [ ] P0-12 — API usage logging live (beta cost measurable)
 - [ ] P0-13 — Google OAuth terms notice (terms must bind all signups or liability cap/indemnification/refund policy are void)
 - [ ] P0-14 — Stash else-branch proceeds to checkout on failure (reachability UNVERIFIED, unguarded payment path)
 
-**Status: 2 of 12 hard gates done.**
+**Status: 4 of 12 hard gates done.**
 
 **Recommended additions from P1 (your call):**
 - [ ] P1-05 — Kill switch (ability to disable /design without a deploy — if the pipeline breaks during beta, you're stuck until you push a fix)
