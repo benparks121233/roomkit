@@ -4,7 +4,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { createDesign, FreeLimitError, startCheckout } from "@/lib/api";
+import { createDesign, FreeLimitError, startCheckout, trackEvent } from "@/lib/api";
 import type { DesignRequest } from "@/lib/api";
 import { useAuth } from "@/components/AuthProvider";
 import StyleQuiz from "@/components/StyleQuiz";
@@ -275,13 +275,13 @@ function IntakeForm() {
         if (pendingResult && chosenMode) {
           const payload = { result: pendingResult, mode: chosenMode };
           sessionStorage.setItem("rk_pending", JSON.stringify(payload));
-          console.log("[STASH] Written to sessionStorage:", { mode: chosenMode, roomType: pendingResult.roomType, keyCount: Object.keys(pendingResult).length });
-          console.log("[STASH] Verify read-back:", sessionStorage.getItem("rk_pending")?.slice(0, 80));
         } else {
-          console.warn("[STASH] NOT written — pendingResult:", !!pendingResult, "chosenMode:", chosenMode);
+          trackEvent("", "stash_failed", {
+            hasPendingResult: !!pendingResult,
+            hasChosenMode: !!chosenMode,
+          });
         }
         const url = await startCheckout();
-        console.log("[STASH] Redirecting to Stripe:", url.slice(0, 60));
         window.location.href = url;
       } catch (err) {
         setError(err instanceof Error ? err.message : "Checkout failed");

@@ -10,12 +10,14 @@
 
 
 def run_refresh() -> None:
+    # TODO: implement price/link re-validation (P1-04)
     # 1. Acquire advisory lock (fail fast if already held).
     # 2. Fetch active designs with snapshots older than freshness_hours.
     # 3. For each stale snapshot: check link liveness + current price.
     # 4. Update freshness timestamp; flip dead links to link_dead status.
     # 5. Release lock.
-    raise NotImplementedError("Stage 11")
+    import logging
+    logging.getLogger(__name__).info("refresh_worker: not yet implemented — no-op")
 
 
 if __name__ == "__main__":

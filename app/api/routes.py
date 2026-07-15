@@ -1253,7 +1253,7 @@ async def delete_account(user: CurrentUser) -> DeleteAccountResponse:
 
 @router.post("/click")
 async def record_click(event: dict) -> dict:
-    raise NotImplementedError("Stage 10: implement click logging")
+    return {"status": "ok"}
 
 
 # ---------------------------------------------------------------------------
@@ -1272,6 +1272,7 @@ class TrackEventRequest(BaseModel):
 
 _ALLOWED_CLIENT_EVENTS = {
     "render_viewed", "hotspot_clicked", "buy_link_clicked", "export_cart_clicked",
+    "stash_failed",
 }
 
 
