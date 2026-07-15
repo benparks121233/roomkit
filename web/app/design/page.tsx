@@ -121,6 +121,8 @@ function IntakeForm() {
   // Restore stashed state after auth round-trips.
   // rk_pending (Stripe, sessionStorage) wins — it has result + mode.
   // rk_quiz_pending (localStorage) only has result; discarded if older than TTL.
+  const quizFreshRef = useRef(false);
+  const quizTrackedRef = useRef(false);
   const restoredRef = useRef(false);
   useEffect(() => {
     if (restoredRef.current || !session) return;
@@ -146,6 +148,7 @@ function IntakeForm() {
         const { answers, ts } = JSON.parse(quizRaw);
         if (answers && answers.roomType && Date.now() - ts < QUIZ_STASH_TTL_MS) {
           setPendingResult(answers);
+          quizFreshRef.current = true;
         }
       } catch { /* ignore corrupt data */ }
     }
@@ -154,7 +157,19 @@ function IntakeForm() {
   function handleComplete(result: IntakeResult) {
     localStorage.removeItem(QUIZ_STASH_KEY);
     setPendingResult(result);
+    quizFreshRef.current = true;
   }
+
+  useEffect(() => {
+    if (session && pendingResult && quizFreshRef.current && !quizTrackedRef.current) {
+      quizTrackedRef.current = true;
+      trackEvent("", "quiz_completed", {
+        roomType: pendingResult.roomType,
+        budget: pendingResult.budget,
+        aesthetic: pendingResult.quiz.style.core,
+      });
+    }
+  }, [session, pendingResult]);
 
   // Mode chosen → API call
   async function handleModeChoice(mode: "curated" | "auto") {

@@ -70,7 +70,7 @@ def _log_event_sync(
             row["user_id"] = user_id
         client.table("events").insert(row).execute()
     except Exception:
-        logger.warning("Failed to log event %s for %s", event_type, run_id, exc_info=True)
+        logger.error("Failed to log event %s for %s", event_type, run_id, exc_info=True)
 
 
 # ---------------------------------------------------------------------------
@@ -137,4 +137,4 @@ def _log_selections_sync(
             client.table("selections").insert(rows).execute()
             logger.info("Logged %d selections for run %s", len(rows), run_id)
     except Exception:
-        logger.warning("Failed to log selections for %s", run_id, exc_info=True)
+        logger.error("Failed to log selections for %s", run_id, exc_info=True)

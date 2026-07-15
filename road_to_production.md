@@ -107,7 +107,7 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 ### P0-08. /click endpoint throws unhandled 500
 **Status:** DONE (d24c0b8, 2026-07-15)
 **Why:** `app/api/routes.py:1254-1256` was raising `NotImplementedError("Stage 10")`. Nothing in the frontend calls `/click` — all client-side tracking uses `/track`. This was an orphan stub.
-**Fix applied:** Replaced the `raise` with `return {"status": "ok"}`. Also added `stash_failed` to `_ALLOWED_CLIENT_EVENTS` and wired `trackEvent("stash_failed")` in the design page stash else-branch. Follow-up: migration `007_events_nullable_run_id.sql` created to make `events.run_id` nullable. **Must be run in Supabase SQL Editor before switching frontend from empty-string to null.** Until then, stash_failed events land with `run_id = ''` (orphan row, invisible to RLS reads, but queryable via service key).
+**Fix applied:** Replaced the `raise` with `return {"status": "ok"}`. Also added `stash_failed` to `_ALLOWED_CLIENT_EVENTS` and wired `trackEvent("stash_failed")` in the design page stash else-branch. Events land with `run_id = ''` (orphan row, invisible to RLS reads, queryable via service key). This is acceptable — the event is a diagnostic signal, not user-facing data.
 **Owner:** CODE
 **Ref:** `app/api/routes.py:1255,1268`
 
@@ -157,7 +157,7 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Fix options:** (a) Bail with an error message if stash fails — don't redirect to Stripe. (b) Block is defensive; accept unreachability and add a regression test. Owner decides.
 **Owner:** CODE (after decision)
 **Ref:** `web/app/design/page.tsx:275-283`, `web/app/purchase/success/page.tsx:13-17,92-93`
-**Depends on:** stash_failed event fix (migration 007 must be run first for the tracking signal to land with NULL run_id)
+**Depends on:** stash_failed event already lands with `run_id = ''` (d24c0b8). No migration needed — signal is live once code is pushed.
 
 ---
 

@@ -1272,7 +1272,7 @@ class TrackEventRequest(BaseModel):
 
 _ALLOWED_CLIENT_EVENTS = {
     "render_viewed", "hotspot_clicked", "buy_link_clicked", "export_cart_clicked",
-    "stash_failed",
+    "stash_failed", "signup_completed", "quiz_completed",
 }
 
 

@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { Session } from "@supabase/supabase-js";
 import { getSupabaseBrowserClient } from "@/lib/supabase";
+import { trackEvent } from "@/lib/api";
 
 interface AuthContextValue {
   session: Session | null;
@@ -36,6 +37,13 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
+      if (session && typeof window !== "undefined") {
+        const method = localStorage.getItem("rk_signup_pending");
+        if (method) {
+          localStorage.removeItem("rk_signup_pending");
+          trackEvent("", "signup_completed", { method });
+        }
+      }
     });
 
     return () => subscription.unsubscribe();
