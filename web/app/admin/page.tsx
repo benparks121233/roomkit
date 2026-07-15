@@ -38,6 +38,44 @@ interface RecentRun {
   budget: number;
   events: string[];
   cost: number;
+  room_type: string;
+  is_paid: boolean;
+}
+
+interface Users {
+  total_signups: number;
+  users_with_designs: number;
+  users_with_packs: number;
+  signup_to_design_pct: number;
+  design_to_purchase_pct: number;
+}
+
+interface Revenue {
+  total_packs_purchased: number;
+  total_revenue: number;
+  packs_remaining: number;
+}
+
+interface RoomBreakdown {
+  room_type: string;
+  total: number;
+  paid: number;
+  free: number;
+  avg_budget: number;
+  avg_spent: number;
+}
+
+interface CostTracking {
+  total_api_cost: number;
+  cost_by_room_type: Record<string, number>;
+  avg_cost_per_design: number;
+}
+
+interface Engagement {
+  render_rate: number;
+  finalization_rate: number;
+  cart_export_rate: number;
+  buy_link_click_rate: number;
 }
 
 interface AdminData {
@@ -46,6 +84,11 @@ interface AdminData {
   top_aesthetics: TopAesthetic[];
   top_products_by_slot: Record<string, TopProduct[]>;
   recent_runs: RecentRun[];
+  users: Users;
+  revenue: Revenue;
+  room_breakdown: RoomBreakdown[];
+  cost_tracking: CostTracking;
+  engagement: Engagement;
 }
 
 export default function AdminPage() {
@@ -81,7 +124,7 @@ export default function AdminPage() {
   if (error) return <div style={styles.page}><p style={styles.error}>Error: {error}</p></div>;
   if (!data) return null;
 
-  const { summary, funnel, top_aesthetics, top_products_by_slot, recent_runs } = data;
+  const { summary, funnel, top_aesthetics, top_products_by_slot, recent_runs, users, revenue, room_breakdown, cost_tracking, engagement } = data;
 
   // Funnel: compute drop-off percentages
   const funnelWithPct = funnel.map((step, i) => {
@@ -107,6 +150,96 @@ export default function AdminPage() {
         <StatCard label="Avg Cost/Run" value={`$${summary.avg_cost_per_run.toFixed(3)}`} />
         <StatCard label="Total Cost" value={`$${summary.total_cost.toFixed(2)}`} />
       </div>
+
+      {/* Users & Revenue side-by-side */}
+      <div style={styles.twoCol}>
+        <section style={styles.section}>
+          <h2 style={styles.h2}>Users</h2>
+          <div style={styles.cardRowCompact}>
+            <StatCard label="Total Signups" value={users.total_signups} />
+            <StatCard label="With Designs" value={users.users_with_designs} />
+            <StatCard label="With Packs" value={users.users_with_packs} />
+          </div>
+          <div style={{ ...styles.cardRowCompact, marginTop: 8 }}>
+            <StatCard label="Signup→Design" value={`${users.signup_to_design_pct.toFixed(1)}%`} />
+            <StatCard label="Design→Purchase" value={`${users.design_to_purchase_pct.toFixed(1)}%`} />
+          </div>
+        </section>
+        <section style={styles.section}>
+          <h2 style={styles.h2}>Revenue</h2>
+          <div style={styles.cardRowCompact}>
+            <StatCard label="Packs Sold" value={revenue.total_packs_purchased} />
+            <StatCard label="Revenue" value={`$${revenue.total_revenue.toFixed(2)}`} />
+            <StatCard label="Packs Remaining" value={revenue.packs_remaining} />
+          </div>
+        </section>
+      </div>
+
+      {/* Room Breakdown */}
+      <section style={styles.section}>
+        <h2 style={styles.h2}>Room Breakdown</h2>
+        <table style={styles.table}>
+          <thead>
+            <tr>
+              <th style={styles.th}>Room Type</th>
+              <th style={styles.thNum}>Total Designs</th>
+              <th style={styles.thNum}>Paid</th>
+              <th style={styles.thNum}>Free</th>
+              <th style={styles.thNum}>Avg Budget</th>
+              <th style={styles.thNum}>Avg Spent</th>
+            </tr>
+          </thead>
+          <tbody>
+            {room_breakdown.map((rb) => (
+              <tr key={rb.room_type}>
+                <td style={styles.td}>{capitalize(rb.room_type)}</td>
+                <td style={styles.tdNum}>{rb.total}</td>
+                <td style={styles.tdNum}>{rb.paid}</td>
+                <td style={styles.tdNum}>{rb.free}</td>
+                <td style={styles.tdNum}>${rb.avg_budget.toFixed(0)}</td>
+                <td style={styles.tdNum}>${rb.avg_spent.toFixed(0)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {/* Cost Tracking */}
+      <section style={styles.section}>
+        <h2 style={styles.h2}>Cost Tracking</h2>
+        <div style={{ ...styles.cardRowCompact, marginBottom: 16 }}>
+          <StatCard label="Total API Cost" value={`$${cost_tracking.total_api_cost.toFixed(2)}`} />
+          <StatCard label="Avg Cost/Design" value={`$${cost_tracking.avg_cost_per_design.toFixed(3)}`} />
+        </div>
+        <h3 style={styles.h3}>Cost by Room Type</h3>
+        <table style={styles.table}>
+          <thead>
+            <tr>
+              <th style={styles.th}>Room Type</th>
+              <th style={styles.thNum}>Total Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(cost_tracking.cost_by_room_type).sort().map(([rt, cost]) => (
+              <tr key={rt}>
+                <td style={styles.td}>{capitalize(rt)}</td>
+                <td style={styles.tdNum}>${cost.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {/* Engagement */}
+      <section style={styles.section}>
+        <h2 style={styles.h2}>Engagement</h2>
+        <div style={styles.cardRow}>
+          <StatCard label="Render Rate" value={`${engagement.render_rate.toFixed(1)}%`} />
+          <StatCard label="Finalization Rate" value={`${engagement.finalization_rate.toFixed(1)}%`} />
+          <StatCard label="Cart Export Rate" value={`${engagement.cart_export_rate.toFixed(1)}%`} />
+          <StatCard label="Buy Link Click Rate" value={`${engagement.buy_link_click_rate.toFixed(1)}%`} />
+        </div>
+      </section>
 
       {/* Funnel */}
       <section style={styles.section}>
@@ -198,9 +331,11 @@ export default function AdminPage() {
             <tr>
               <th style={styles.th}>Run ID</th>
               <th style={styles.th}>Time</th>
+              <th style={styles.th}>Room</th>
               <th style={styles.th}>Aesthetic</th>
               <th style={styles.thNum}>Budget</th>
               <th style={styles.thNum}>Cost</th>
+              <th style={styles.th}>Paid</th>
               <th style={styles.th}>Events</th>
             </tr>
           </thead>
@@ -213,9 +348,15 @@ export default function AdminPage() {
                 <td style={styles.td}>
                   <span style={{ fontSize: "0.8rem" }}>{formatTime(run.created_at)}</span>
                 </td>
+                <td style={styles.td}>{capitalize(run.room_type)}</td>
                 <td style={styles.td}>{run.aesthetic.replace(/_/g, " ")}</td>
                 <td style={styles.tdNum}>${run.budget}</td>
                 <td style={styles.tdNum}>${run.cost.toFixed(3)}</td>
+                <td style={styles.td}>
+                  <span style={run.is_paid ? styles.paidBadge : styles.freeBadge}>
+                    {run.is_paid ? "Paid" : "Free"}
+                  </span>
+                </td>
                 <td style={styles.td}>
                   <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
                     {run.events.map((evt) => (
@@ -243,6 +384,11 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
 
 function formatStep(step: string): string {
   return step.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function capitalize(s: string): string {
+  if (!s) return "";
+  return s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 function formatTime(iso: string): string {
@@ -291,6 +437,17 @@ const styles: Record<string, React.CSSProperties> = {
     gap: 12,
     marginBottom: 32,
   },
+  cardRowCompact: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+    gap: 8,
+  },
+  twoCol: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: 20,
+    marginBottom: 20,
+  },
   statCard: {
     background: "#FFF",
     border: "1px solid #E7E5E4",
@@ -319,5 +476,23 @@ const styles: Record<string, React.CSSProperties> = {
     background: "#F5F5F4",
     borderRadius: 4,
     color: "#78716C",
+  },
+  paidBadge: {
+    display: "inline-block",
+    padding: "2px 8px",
+    fontSize: "0.7rem",
+    background: "#DCFCE7",
+    borderRadius: 4,
+    color: "#166534",
+    fontWeight: 600,
+  },
+  freeBadge: {
+    display: "inline-block",
+    padding: "2px 8px",
+    fontSize: "0.7rem",
+    background: "#F5F5F4",
+    borderRadius: 4,
+    color: "#78716C",
+    fontWeight: 500,
   },
 };
