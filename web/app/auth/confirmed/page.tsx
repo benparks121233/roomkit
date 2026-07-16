@@ -7,7 +7,7 @@ export default function ConfirmedPage() {
         <div style={{ fontSize: "2rem", marginBottom: 12 }}>&#x2705;</div>
         <h1 className="auth-title">Email confirmed</h1>
         <p className="auth-subtitle">
-          You&apos;re all set. Go back to the tab where you were designing and sign in to continue.
+          You&apos;re all set. Go back to the tab where you were designing to continue.
         </p>
       </div>
     </main>

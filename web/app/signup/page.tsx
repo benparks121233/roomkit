@@ -90,11 +90,8 @@ function SignupForm() {
           <h1 className="auth-title">Check your email</h1>
           <p className="auth-subtitle">
             We sent a confirmation link to <strong>{email}</strong>.
-            Click it to activate your account, then come back here to sign in.
+            Click it to activate your account, then come back to this tab to continue.
           </p>
-          <a href={redirectTo !== "/" ? `/login?redirect=${encodeURIComponent(redirectTo)}` : "/login"} className="auth-btn auth-btn--link">
-            Go to sign in
-          </a>
         </div>
       </main>
     );

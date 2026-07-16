@@ -165,11 +165,13 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             _user_email = user.get("email", "").lower()
             if _user_email:
                 try:
+                    from datetime import datetime, timezone
+                    _now_iso = datetime.now(timezone.utc).isoformat()
                     _cd_resp = (
                         _svc.table("deleted_emails")
                         .select("cooldown_until")
                         .eq("email", _user_email)
-                        .gte("cooldown_until", "now()")
+                        .gte("cooldown_until", _now_iso)
                         .execute()
                     )
                     if _cd_resp.data:
@@ -1186,8 +1188,14 @@ async def delete_account(user: CurrentUser) -> DeleteAccountResponse:
     user_email = user.get("email", "")
     if user_email:
         try:
+            from datetime import datetime, timedelta, timezone
+            _now = datetime.now(timezone.utc)
             client.table("deleted_emails").upsert(
-                {"email": user_email.lower()},
+                {
+                    "email": user_email.lower(),
+                    "deleted_at": _now.isoformat(),
+                    "cooldown_until": (_now + timedelta(days=30)).isoformat(),
+                },
                 on_conflict="email",
             ).execute()
         except Exception as exc:
