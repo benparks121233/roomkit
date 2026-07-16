@@ -7,8 +7,8 @@ export default function TermsPage() {
 
         <p style={styles.paragraph}>
           RoomKit is operated by{" "}
-          <strong>[PLACEHOLDER: Your Legal Entity Name]</strong>, based in{" "}
-          <strong>[PLACEHOLDER: State]</strong>. By creating an account or using
+          <strong>the operator of RoomKit</strong>, based in{" "}
+          <strong>Illinois</strong>. By creating an account or using
           RoomKit, you agree to these terms.
         </p>
 
@@ -196,8 +196,8 @@ export default function TermsPage() {
         <Section title="Governing Law">
           <p style={styles.paragraph}>
             These terms are governed by the laws of the state of{" "}
-            <strong>[PLACEHOLDER: State]</strong>. Any disputes will be resolved
-            in the courts of <strong>[PLACEHOLDER: State/County]</strong>.
+            <strong>Illinois</strong>. Any disputes will be resolved
+            in the courts of <strong>Cook County, Illinois</strong>.
           </p>
         </Section>
 

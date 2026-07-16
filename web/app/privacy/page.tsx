@@ -7,8 +7,8 @@ export default function PrivacyPage() {
 
         <p style={styles.paragraph}>
           RoomKit (&quot;we,&quot; &quot;us&quot;) is operated by{" "}
-          <strong>[PLACEHOLDER: Your Legal Entity Name]</strong>, based in{" "}
-          <strong>[PLACEHOLDER: State]</strong>. This policy describes what data
+          <strong>the operator of RoomKit</strong>, based in{" "}
+          <strong>Illinois</strong>. This policy describes what data
           we collect, why, and how you can control it.
         </p>
 

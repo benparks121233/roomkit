@@ -69,25 +69,18 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Owner:** YOU
 
 ### P0-04a. Beta onboarding mechanism
-**Status:** NOT DONE
-**Why:** Currently anyone can sign up at `/signup`. Need a gate so only invited users can generate designs.
-**Fix (options):**
-  - (a) Allowlist: check email against a list in Supabase before allowing design generation (simplest — but requires known emails, so mechanism choice depends on whether P0-04b produces emails or not)
-  - (b) Invite codes: require a code at signup that maps to a batch (works without knowing emails in advance)
-  - (c) Manual: just send 50 people the URL and rely on obscurity (bad but fast)
-**Owner:** CODE (a or b) / YOU (c)
-**Estimate:** ~2 hours for allowlist, ~4 hours for invite codes
-**Note:** The mechanism can be built before the invite list is finalized — invite codes don't require known emails. But email allowlist does, so P0-04b's outcome determines whether option (a) is viable.
+**Status:** WON'T DO — launching ungated
+**Why:** Open Reddit launch maximizes momentum and qualifying Amazon sales. Cost caps (P0-02) bound the downside — product goes down, no surprise bill. Deletion cooldown prevents free-tier abuse loop.
+**Owner:** N/A
 
 ### P0-04b. Beta invite list composition
-**Status:** PLANNED — Reddit launch, explicitly last
-**Channel:** Organic Reddit post → roomkit.studio. Affiliate links stay on registered site, no compliance issue. Not recruiting strangers until everything else is verified — no point burning the one Reddit launch on an unproven product.
+**Status:** WON'T DO — launching ungated via Reddit
+**Channel:** Organic Reddit post → roomkit.studio. Open signup, no invite list needed.
 **Why Reddit:** Amazon excludes purchases by friends, relatives, and associates from qualifying sales. Reddit produces real strangers whose purchases count toward the 3-sale qualifying requirement (P0-09, 150 days remaining).
 **Owner:** YOU
-**Depends on:** All other gates done first
 
 ### P0-05. Customer support channel
-**Status:** NOT DONE
+**Status:** DONE (2026-07-16) — resolves via P0-01
 **Why:** Beta users who hit issues have no way to reach you. Contact emails are dead (see P0-01). No in-app feedback mechanism.
 **Fix:** Once email forwarding works (P0-01), the contact emails become the support channel. Optionally add a simple feedback form or link to a Google Form from the account page.
 **Owner:** YOU + CODE
@@ -121,12 +114,10 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Blocks:** P0-04b (beta invite list composition)
 
 ### P0-10. Legal page placeholders visible to users
-**Status:** NOT DONE
-**Why:** Terms (`web/app/terms/page.tsx:10-11`) and Privacy (`web/app/privacy/page.tsx:10-11`) show `[PLACEHOLDER: Your Legal Entity Name]` and `[PLACEHOLDER: State]` in bold. Terms also has `[PLACEHOLDER: State]` and `[PLACEHOLDER: State/County]` for governing law (`web/app/terms/page.tsx:199-200`). Beta users reading the terms see unfinished legal text.
-**Fix:** Fill in once LLC is filed. If launching beta before LLC: use "Ben Parks, sole proprietor" and "Illinois" as interim values.
-**Owner:** YOU (decision) + CODE (fill in)
-**Estimate:** ~15 minutes CODE (find-and-replace 4 placeholders across 2 files)
-**Depends on:** P1-11 (LLC decision)
+**Status:** DONE (2026-07-16)
+**Why:** Terms (`web/app/terms/page.tsx:10-11`) and Privacy (`web/app/privacy/page.tsx:10-11`) showed `[PLACEHOLDER]` text in bold.
+**Fix applied:** Entity name → "the operator of RoomKit", state → "Illinois", county → "Cook County, Illinois". LLC deferred to post-beta — update entity name when filed.
+**Owner:** CODE
 
 ### P0-11. Signup + quiz completion tracking
 **Status:** WON'T DO
@@ -480,19 +471,19 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 **Hard gates (all P0, non-negotiable):**
 - [x] P0-01 — Inbound email forwarding (legal@ and privacy@ receive mail) — 2026-07-16
 - [x] P0-02 — Cost caps (auto-reload OFF, hard ceiling) — 2026-07-16
-- [ ] P0-04a — Beta onboarding mechanism (gate exists in code)
-- [ ] P0-04b — Beta invite list composition (named list of ~50 users)
+- ~~P0-04a~~ — WON'T DO (launching ungated)
+- ~~P0-04b~~ — WON'T DO (launching ungated via Reddit)
 - [x] P0-06 — robots.txt (admin/preview/auth not indexed) — 2026-07-16
 - [x] P0-07 — Refresh worker no-op (crash loop stopped) — d24c0b8
 - [x] P0-08 — /click endpoint no-op or deleted (500 eliminated) — d24c0b8
 - [x] P0-09 — Amazon 180-day deadline known (150 days remaining) — 2026-07-16
-- [ ] P0-10 — Legal page placeholders filled (sole prop or LLC)
+- [x] P0-10 — Legal page placeholders filled ("the operator of RoomKit", Illinois) — 2026-07-16
 - [ ] P0-12 — API usage logging live (beta cost measurable)
 - [x] P0-13 — Google OAuth terms notice (terms bind all signups) — 2026-07-16
 - [x] P0-14 — Stash else-branch bails on failure (defensive, unreachable but guarded) — 2026-07-16
 - [x] P0-15 — Signup loses quiz state (cross-browser email confirmation) — 2026-07-16
 
-**Status: 9 of 13 hard gates done.**
+**Status: 10 of 11 active hard gates done. 1 remaining: P0-12 (API usage logging).**
 
 **Recommended additions from P1 (your call):**
 - [ ] P1-05 — Kill switch (ability to disable /design without a deploy — if the pipeline breaks during beta, you're stuck until you push a fix)
