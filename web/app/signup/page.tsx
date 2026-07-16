@@ -155,9 +155,10 @@ function SignupForm() {
         </button>
 
         <p className="auth-legal">
-          By signing up, you agree to our{" "}
+          By signing up you agree to our{" "}
           <a href="/terms" className="auth-link">Terms of Service</a> and{" "}
           <a href="/privacy" className="auth-link">Privacy Policy</a>.
+          This applies to all sign-up methods.
         </p>
 
         <p className="auth-footer">

@@ -51,11 +51,10 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 ## P0 — BLOCKING BETA
 
 ### P0-01. Inbound email forwarding
-**Status:** IN PROGRESS — rules configured, mail still bouncing
+**Status:** DONE (2026-07-16)
 **Why:** Terms (`web/app/terms/page.tsx:206`) and Privacy (`web/app/privacy/page.tsx:176`) publicly name `legal@roomkit.studio` and `privacy@roomkit.studio` for contact/data-deletion requests.
-**Current state:** Squarespace forwarding rules set (legal@ and privacy@ → ben14parks@gmail.com), DNS MX points to Mailgun correctly. Mail bounces "550 Relaying denied" — Squarespace hasn't provisioned rules to Mailgun's relay yet. Waiting on propagation. If still bouncing in a few hours → Squarespace support ticket.
-**DNS note:** Resend DNS is correct and live (resend._domainkey on root, SPF include:amazonses.com, bounce MX on send.roomkit.studio). Root SPF lists Mailgun (Squarespace forwarding) and doesn't conflict — Resend never uses root as return-path. Email rate limit is NOT a beta blocker.
-**Owner:** YOU — BLOCKING BETA until a test email actually lands
+**Resolution:** Squarespace forwarding rules deliver to ben14parks@gmail.com. Mail lands in spam — Gmail filter needed ("Never send to spam" for legal@/privacy@ forwarded mail). DNS MX, SPF, and DKIM all correct.
+**Owner:** YOU
 
 ### P0-02. Cost caps on Anthropic + OpenAI
 **Status:** DONE (2026-07-16)
@@ -95,9 +94,9 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Depends on:** P0-01
 
 ### P0-06. robots.txt
-**Status:** NOT DONE
+**Status:** DONE (2026-07-16)
 **Why:** No crawl directives. Google will index `/admin`, `/preview`, auth pages, and any other route.
-**Fix:** Add `web/app/robots.ts` (Next.js convention) disallowing `/admin`, `/preview`, `/auth`, `/reset-password`, `/forgot-password`.
+**Fix applied:** Added `web/app/robots.ts` (Next.js convention) disallowing `/admin`, `/preview`, `/auth`, `/reset-password`, `/forgot-password`, `/account`.
 **Owner:** CODE
 
 ### P0-07. Refresh worker crashes every 6 hours
@@ -143,12 +142,11 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Ref:** `services/style_service.py:156-157`, `services/composition_service.py:649-650`, `services/selection_service.py:330-331`, `services/render_service.py:319`
 
 ### P0-13. Google OAuth signup doesn't show terms notice
-**Status:** NOT DONE
+**Status:** DONE (2026-07-16)
 **Why:** Email signup shows a terms checkbox, but "Continue with Google" bypasses it. Users who sign up via Google are never shown the terms. If the terms don't bind them, the liability cap, indemnification, and refund policy from the legal audit are void for every Google signup.
-**Fix:** Add "By continuing, you agree to our Terms and Privacy Policy" text (with links) near the Google button on the signup page.
+**Fix applied:** Terms notice ("By signing up you agree to our Terms of Service and Privacy Policy. This applies to all sign-up methods.") is displayed below the Google button on the signup page.
 **Owner:** CODE
-**Estimate:** ~15 minutes
-**Ref:** `web/app/signup/page.tsx:133`
+**Ref:** `web/app/signup/page.tsx:157-161`
 
 ### P0-14. Stash else-branch proceeds to checkout on failure
 **Status:** DONE — 2026-07-16
@@ -480,21 +478,21 @@ P1 items scheduled pre-beta. Listed only — not resolved. Will decide after P0-
 Invites do not go out until every item below is DONE. This is the proposed gate — approve, modify, or reject.
 
 **Hard gates (all P0, non-negotiable):**
-- [ ] P0-01 — Inbound email forwarding (legal@ and privacy@ receive mail)
+- [x] P0-01 — Inbound email forwarding (legal@ and privacy@ receive mail) — 2026-07-16
 - [x] P0-02 — Cost caps (auto-reload OFF, hard ceiling) — 2026-07-16
 - [ ] P0-04a — Beta onboarding mechanism (gate exists in code)
 - [ ] P0-04b — Beta invite list composition (named list of ~50 users)
-- [ ] P0-06 — robots.txt (admin/preview/auth not indexed)
+- [x] P0-06 — robots.txt (admin/preview/auth not indexed) — 2026-07-16
 - [x] P0-07 — Refresh worker no-op (crash loop stopped) — d24c0b8
 - [x] P0-08 — /click endpoint no-op or deleted (500 eliminated) — d24c0b8
 - [x] P0-09 — Amazon 180-day deadline known (150 days remaining) — 2026-07-16
 - [ ] P0-10 — Legal page placeholders filled (sole prop or LLC)
 - [ ] P0-12 — API usage logging live (beta cost measurable)
-- [ ] P0-13 — Google OAuth terms notice (terms must bind all signups or liability cap/indemnification/refund policy are void)
+- [x] P0-13 — Google OAuth terms notice (terms bind all signups) — 2026-07-16
 - [x] P0-14 — Stash else-branch bails on failure (defensive, unreachable but guarded) — 2026-07-16
 - [x] P0-15 — Signup loses quiz state (cross-browser email confirmation) — 2026-07-16
 
-**Status: 6 of 13 hard gates done.**
+**Status: 9 of 13 hard gates done.**
 
 **Recommended additions from P1 (your call):**
 - [ ] P1-05 — Kill switch (ability to disable /design without a deploy — if the pipeline breaks during beta, you're stuck until you push a fix)
