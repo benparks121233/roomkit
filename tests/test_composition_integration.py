@@ -46,8 +46,10 @@ def _make_request(budget: float = 1500.0, room_type: str = "bedroom") -> RoomReq
     )
 
 
-def _style_llm_response() -> str:
-    """Simulate a clean style service LLM response."""
+_MOCK_USAGE = {"input_tokens": 0, "output_tokens": 0}
+
+
+def _style_llm_response() -> tuple[str, dict]:
     return json.dumps({
         "style_name": "warm_minimalist",
         "keywords": ["natural wood", "linen"],
@@ -55,18 +57,16 @@ def _style_llm_response() -> str:
         "mood": "calm, grounded",
         "confidence": 0.9,
         "fallback": False,
-    })
+    }), _MOCK_USAGE
 
 
-def _composition_llm_response() -> str:
-    """Simulate a clean composition LLM response with v2 item IDs."""
+def _composition_llm_response() -> tuple[str, dict]:
     weights = _BEDROOM_PRESET.flatten_weights()
-    # Use a subset of items to simulate LLM output (required items).
     return json.dumps({
         "slot_weights": {sid: w for sid, w in weights.items()
                          if sid in BEDROOM_REQUIRED},
         "rationale": "Prioritized bed_frame for warm_minimalist anchoring.",
-    })
+    }), _MOCK_USAGE
 
 
 _STYLE_LLM = "services.style_service._call_llm"
@@ -82,8 +82,8 @@ def test_normal_request_passes_all_gates():
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
          patch(_COMP_LLM, return_value=_composition_llm_response()):
         request = _make_request(budget=1500.0)
-        style = interpret_style(request)
-        plan = plan_composition(request, style)
+        style, _su = interpret_style(request)
+        plan, _cu = plan_composition(request, style)
         plan, reason = validate_composition(plan)
 
     # Gate passed — no failure reason.
@@ -113,7 +113,7 @@ def test_normal_request_style_profile_is_used():
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
          patch(_COMP_LLM, return_value=_composition_llm_response()) as mock_comp:
         request = _make_request()
-        style = interpret_style(request)
+        style, _su = interpret_style(request)
         plan_composition(request, style)
 
     # The composition LLM was called (we can't inspect the prompt content
@@ -130,8 +130,8 @@ def test_sub_floor_budget_caught_by_feasibility_gate():
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
          patch(_COMP_LLM, return_value=_composition_llm_response()):
         request = _make_request(budget=100.0)
-        style = interpret_style(request)
-        plan = plan_composition(request, style)
+        style, _su = interpret_style(request)
+        plan, _cu = plan_composition(request, style)
         plan, reason = validate_composition(plan)
 
     assert plan.is_feasible is False
@@ -144,8 +144,8 @@ def test_sub_floor_budget_carries_minimum_viable_budget():
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
          patch(_COMP_LLM, return_value=_composition_llm_response()):
         request = _make_request(budget=100.0)
-        style = interpret_style(request)
-        plan = plan_composition(request, style)
+        style, _su = interpret_style(request)
+        plan, _cu = plan_composition(request, style)
 
     assert plan.minimum_viable_budget is not None
     assert plan.minimum_viable_budget == pytest.approx(500.0, abs=1.0)
@@ -156,8 +156,8 @@ def test_sub_floor_budget_total_allocated_is_zero():
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
          patch(_COMP_LLM, return_value=_composition_llm_response()):
         request = _make_request(budget=100.0)
-        style = interpret_style(request)
-        plan = plan_composition(request, style)
+        style, _su = interpret_style(request)
+        plan, _cu = plan_composition(request, style)
 
     assert plan.total_allocated == pytest.approx(0.0)
 
@@ -177,8 +177,8 @@ def test_living_room_passes_all_gates():
     with patch(_STYLE_LLM, return_value=_style_llm_response()), \
          patch(_COMP_LLM, return_value=living_response):
         request = _make_request(budget=2000.0, room_type="living_room")
-        style = interpret_style(request)
-        plan = plan_composition(request, style)
+        style, _su = interpret_style(request)
+        plan, _cu = plan_composition(request, style)
         plan, reason = validate_composition(plan)
 
     assert reason is None

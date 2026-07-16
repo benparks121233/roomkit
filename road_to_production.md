@@ -125,12 +125,11 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Owner:** N/A
 
 ### P0-12. Log real API usage per design (replaces cost formula)
-**Status:** NOT DONE
-**Why:** Current api_cost in design_completed events is a formula estimate (`0.012 * selection_count + 0.02`), not metered. Every cost figure in this document is ESTIMATED — UNMEASURED. Beta is the only real cost data we'll get. If this lands after beta, beta cost is unrecoverable.
-**Fix:** Log `usage.input_tokens` and `usage.output_tokens` from every Anthropic/OpenAI API response into events. Replace the formula with real metered cost. Then: pull actual per-model spend from Anthropic Console / OpenAI usage for the last 30 days, divide by design_completed count (62 as of 2026-07-14), and update all cost figures in this file.
+**Status:** DONE (2026-07-16)
+**Why:** Current api_cost in design_completed events was a formula estimate, not metered.
+**Fix applied:** All three `_call_*_llm` functions now return `(text, usage_dict)` with real `input_tokens`/`output_tokens` from the Anthropic API response. `design_completed` events log: `input_tokens`, `output_tokens`, `selection_calls`, plus per-service breakdowns (`style_tokens`, `composition_tokens`, `selection_tokens`). The formula estimate is removed. Render cost is fixed by quality tier (no token usage to log).
 **Owner:** CODE
-**Estimate:** ~2 hours (4 call sites to instrument, event schema addition, update api_cost formula)
-**Ref:** `services/style_service.py:156-157`, `services/composition_service.py:649-650`, `services/selection_service.py:330-331`, `services/render_service.py:319`
+**Ref:** `services/style_service.py`, `services/composition_service.py`, `services/selection_service.py`, `app/api/routes.py`
 
 ### P0-13. Google OAuth signup doesn't show terms notice
 **Status:** DONE (2026-07-16)
@@ -478,12 +477,12 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 - [x] P0-08 — /click endpoint no-op or deleted (500 eliminated) — d24c0b8
 - [x] P0-09 — Amazon 180-day deadline known (150 days remaining) — 2026-07-16
 - [x] P0-10 — Legal page placeholders filled ("the operator of RoomKit", Illinois) — 2026-07-16
-- [ ] P0-12 — API usage logging live (beta cost measurable)
+- [x] P0-12 — API usage logging live (real token counts per design) — 2026-07-16
 - [x] P0-13 — Google OAuth terms notice (terms bind all signups) — 2026-07-16
 - [x] P0-14 — Stash else-branch bails on failure (defensive, unreachable but guarded) — 2026-07-16
 - [x] P0-15 — Signup loses quiz state (cross-browser email confirmation) — 2026-07-16
 
-**Status: 10 of 11 active hard gates done. 1 remaining: P0-12 (API usage logging).**
+**Status: 11 of 11 active hard gates done. All P0 gates cleared.**
 
 **Recommended additions from P1 (your call):**
 - [ ] P1-05 — Kill switch (ability to disable /design without a deploy — if the pipeline breaks during beta, you're stuck until you push a fix)

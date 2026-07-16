@@ -226,12 +226,12 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
 
         # 2. Style interpretation — real LLM call.
         _t = time.monotonic()
-        style_profile = interpret_style(room_request)
+        style_profile, _style_usage = interpret_style(room_request)
         _timing["style_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
         # 3. Composition — real LLM call for weight proposal, deterministic budget math.
         _t = time.monotonic()
-        slot_plan = plan_composition(room_request, style_profile)
+        slot_plan, _comp_usage = plan_composition(room_request, style_profile)
         _timing["composition_ms"] = round((time.monotonic() - _t) * 1000, 1)
 
         # 4. Composition gate — deterministic validation.
@@ -414,9 +414,12 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
         )
 
         # Log per-slot selection outcomes for post-hoc debugging.
+        _selection_usage = {"input_tokens": 0, "output_tokens": 0}
         _selection_outcomes = []
         for slot, cands in sourceable_slots:
-            products, fit_reasons, null_reason = selection_results[slot.slot_id]
+            products, fit_reasons, null_reason, _slot_usage = selection_results[slot.slot_id]
+            _selection_usage["input_tokens"] += _slot_usage.get("input_tokens", 0)
+            _selection_usage["output_tokens"] += _slot_usage.get("output_tokens", 0)
             stretch_count = sum(1 for r in fit_reasons if r.startswith("Premium option"))
             _selection_outcomes.append({
                 "slot": slot.slot_id,
@@ -438,7 +441,7 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
         # Build SlotResults for sourceable slots.
         sourceable_results: list[SlotResult] = []
         for slot, _cands in sourceable_slots:
-            products, fit_reasons, null_reason = selection_results[slot.slot_id]
+            products, fit_reasons, null_reason, _ = selection_results[slot.slot_id]
             if products:
                 # Rank 1 = primary product, ranks 2+ = alternatives.
                 primary = products[0]
@@ -535,9 +538,9 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
         _elapsed = time.monotonic() - _start_time
         _timing["total_ms"] = round(_elapsed * 1000, 1)
 
-        # Estimate API cost: ~16 Haiku selection calls + 1 Sonnet style + 1 Sonnet composition.
         _sel_count = len(sourceable_slots)
-        _est_cost = round(0.012 * _sel_count + 0.02, 4)  # ~$0.012/selection + ~$0.02 style+comp
+        _total_input = _style_usage.get("input_tokens", 0) + _comp_usage.get("input_tokens", 0) + _selection_usage["input_tokens"]
+        _total_output = _style_usage.get("output_tokens", 0) + _comp_usage.get("output_tokens", 0) + _selection_usage["output_tokens"]
 
         logger.info(
             "Pipeline timing for %s: %s",
@@ -549,9 +552,14 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             "slot_count": len(slot_results),
             "total_spent": response.total_spent,
             "elapsed_s": round(_elapsed, 1),
-            "api_cost": _est_cost,
+            "input_tokens": _total_input,
+            "output_tokens": _total_output,
+            "selection_calls": _sel_count,
+            "style_tokens": _style_usage,
+            "composition_tokens": _comp_usage,
+            "selection_tokens": {"input_tokens": _selection_usage["input_tokens"], "output_tokens": _selection_usage["output_tokens"]},
             "timing": _timing,
-        }, api_cost=_est_cost, user_id=user["user_id"])
+        }, user_id=user["user_id"])
 
         return response
 

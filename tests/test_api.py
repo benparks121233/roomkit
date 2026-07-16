@@ -61,7 +61,10 @@ MOCK_COMPOSITION_RESPONSE = json.dumps({
 })
 
 
-def _mock_selection_llm(_system: str, user_message: str) -> str:
+_MOCK_USAGE = {"input_tokens": 100, "output_tokens": 50}
+
+
+def _mock_selection_llm(_system: str, user_message: str) -> tuple[str, dict]:
     """Parse the candidates JSON from the prompt and pick the first one."""
     marker = "Candidates:\n"
     try:
@@ -74,7 +77,7 @@ def _mock_selection_llm(_system: str, user_message: str) -> str:
                 "fit_reason": "Best style match",
                 "confidence": 0.88,
                 "null_reason": None,
-            })
+            }), _MOCK_USAGE
     except (ValueError, json.JSONDecodeError, KeyError, IndexError):
         pass
     return json.dumps({
@@ -82,7 +85,7 @@ def _mock_selection_llm(_system: str, user_message: str) -> str:
         "fit_reason": "",
         "confidence": 0.0,
         "null_reason": "no_candidate",
-    })
+    }), _MOCK_USAGE
 
 
 # ---------------------------------------------------------------------------
@@ -109,11 +112,11 @@ def _patch_llms(fn):
     )(fn)
     fn = patch(
         "services.composition_service._call_composition_llm",
-        return_value=MOCK_COMPOSITION_RESPONSE,
+        return_value=(MOCK_COMPOSITION_RESPONSE, _MOCK_USAGE),
     )(fn)
     fn = patch(
         "services.style_service._call_llm",
-        return_value=MOCK_STYLE_RESPONSE,
+        return_value=(MOCK_STYLE_RESPONSE, _MOCK_USAGE),
     )(fn)
     return fn
 

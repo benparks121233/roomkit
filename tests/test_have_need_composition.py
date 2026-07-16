@@ -233,13 +233,14 @@ def test_plan_composition_threads_already_have():
     # Own most slots so the plan is feasible at $600.
     owned = sorted(BEDROOM_REQUIRED)[:6]
     request = _make_request(budget=600.0, already_have=owned)
-    with patch(_COMP_LLM, return_value=weights_json):
+    _mock_usage = {"input_tokens": 0, "output_tokens": 0}
+    with patch(_COMP_LLM, return_value=(weights_json, _mock_usage)):
         from schemas.style_profile import StyleProfile
         style = StyleProfile(
             style_name="warm_minimalist", keywords=["wood"], color_palette=["#FFF"],
             mood="calm", confidence=0.9, fallback=False,
         )
-        plan = plan_composition(request, style)
+        plan, _usage = plan_composition(request, style)
 
     assert plan.is_feasible is True
     owned_ids = {s.slot_id for s in plan.slots if s.owned}
@@ -255,14 +256,15 @@ def test_plan_composition_threads_must_have():
         "slot_weights": {**_bedroom_weights(), "dresser": 0.08},
         "rationale": "test",
     })
+    _mock_usage = {"input_tokens": 0, "output_tokens": 0}
     request = _make_request(budget=1500.0, must_have=["dresser"])
-    with patch(_COMP_LLM, return_value=weights_json):
+    with patch(_COMP_LLM, return_value=(weights_json, _mock_usage)):
         from schemas.style_profile import StyleProfile
         style = StyleProfile(
             style_name="warm_minimalist", keywords=["wood"], color_palette=["#FFF"],
             mood="calm", confidence=0.9, fallback=False,
         )
-        plan = plan_composition(request, style)
+        plan, _usage = plan_composition(request, style)
 
     slot_ids = {s.slot_id for s in plan.slots}
     assert "dresser" in slot_ids

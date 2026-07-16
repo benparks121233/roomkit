@@ -51,12 +51,13 @@ class TestPipelineTiming:
             mock_style_profile.sourcing_terms = ["wood"]
             mock_style_profile.keywords = ["wood"]
             mock_style_profile.priority_terms = []
-            mock_style.return_value = mock_style_profile
+            _mock_usage = {"input_tokens": 0, "output_tokens": 0}
+            mock_style.return_value = (mock_style_profile, _mock_usage)
 
             # Empty slot plan (no slots to source/select)
             mock_slot_plan = MagicMock()
             mock_slot_plan.slots = []
-            mock_comp.return_value = mock_slot_plan
+            mock_comp.return_value = (mock_slot_plan, _mock_usage)
             mock_gate.return_value = (mock_slot_plan, None)
 
             mock_response = MagicMock()

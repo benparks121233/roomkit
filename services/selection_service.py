@@ -178,7 +178,7 @@ def select_products(
     candidates: list[Product],
     interests: list[str] | None = None,
     pick_count: int = _DEFAULT_PICK_COUNT,
-) -> tuple[list[Product], list[str], str | None]:
+) -> tuple[list[Product], list[str], str | None, dict]:
     """Rank the top products for a slot from the candidate list.
 
     Args:
@@ -190,20 +190,22 @@ def select_products(
         pick_count:     Maximum number of ranked picks to request.
 
     Returns:
-        (products, fit_reasons, null_reason) where:
+        (products, fit_reasons, null_reason, usage) where:
           - products:    Ranked list of Products (rank 1 first). May be empty.
           - fit_reasons: Parallel list of fit_reason strings, same length as products.
           - null_reason: Set only when products is empty ("no_candidate",
                          "no_spec_match", "llm_error", "owned_slot").
+          - usage:       dict with input_tokens/output_tokens (zero if no LLM call).
     """
+    _no_usage = {"input_tokens": 0, "output_tokens": 0}
     # Owned slots are never sourced or selected.
     if slot.owned:
-        return [], [], "owned_slot"
+        return [], [], "owned_slot", _no_usage
 
     # Empty candidate list.
     if not candidates:
         logger.warning("Slot %s: 0 candidates from sourcing", slot.slot_id)
-        return [], [], "no_candidate"
+        return [], [], "no_candidate", _no_usage
 
     # Filter candidates by slot's required specs and price band.
     # The LLM sees candidates up to 1.15x allocation (per-slot stretch — a budget
@@ -221,8 +223,8 @@ def select_products(
     )
     if not within_budget:
         if not spec_valid:
-            return [], [], "no_spec_match"
-        return [], [], "no_candidate"
+            return [], [], "no_spec_match", _no_usage
+        return [], [], "no_candidate", _no_usage
     valid = within_budget
 
     # Shuffle candidates before sending to LLM — prevents position bias
@@ -240,12 +242,13 @@ def select_products(
         pick_count=pick_count,
     )
 
+    _sel_usage = _no_usage
     try:
-        raw = _call_selection_llm(system_prompt, user_message)
+        raw, _sel_usage = _call_selection_llm(system_prompt, user_message)
         products, fit_reasons, null_reason = _parse_ranked_selection(raw, valid)
     except Exception:
         logger.exception("Selection LLM call failed for slot %s", slot.slot_id)
-        return [], [], "llm_error"
+        return [], [], "llm_error", _sel_usage
 
     pre_diversity = len(products)
 
@@ -255,7 +258,7 @@ def select_products(
             products, fit_reasons, slot.allocated_budget, slot.slot_id,
         )
         if not products:
-            return [], [], "llm_error"
+            return [], [], "llm_error", _sel_usage
 
     # Append stretch-pool items (1.0x-1.5x budget) as lower-ranked alternatives
     # so the user sees premium options, but the LLM's top pick is always within budget.
@@ -271,7 +274,7 @@ def select_products(
         slot.slot_id, len(valid), pre_diversity, len(products), pick_count, len(stretch_pool),
     )
 
-    return products, fit_reasons, null_reason
+    return products, fit_reasons, null_reason, _sel_usage
 
 
 def select_product(
@@ -288,7 +291,7 @@ def select_product(
         (None, "no_spec_match") — no candidate satisfies required specs/price.
         (None, "llm_error")     — LLM returned unparseable or invalid response.
     """
-    products, fit_reasons, null_reason = select_products(
+    products, fit_reasons, null_reason, _usage = select_products(
         slot, style_profile, candidates, interests, pick_count=_DEFAULT_PICK_COUNT,
     )
     if not products:
@@ -317,11 +320,11 @@ def _is_retryable(exc: Exception) -> bool:
     return False
 
 
-def _call_selection_llm(system_prompt: str, user_message: str) -> str:
+def _call_selection_llm(system_prompt: str, user_message: str) -> tuple[str, dict]:
     """Send a request to the Anthropic API.  Isolated for test patching.
 
-    Retries up to ``_RETRY_MAX`` times on 429 (rate-limit), 529
-    (overloaded), and timeout with exponential backoff.
+    Returns (text, usage_dict). Retries up to ``_RETRY_MAX`` times on
+    429 (rate-limit), 529 (overloaded), and timeout with exponential backoff.
     """
     client = _get_anthropic_client()
     for attempt in range(_RETRY_MAX):
@@ -333,7 +336,11 @@ def _call_selection_llm(system_prompt: str, user_message: str) -> str:
                 system=system_prompt,
                 messages=[{"role": "user", "content": user_message}],
             )
-            return message.content[0].text
+            usage = {
+                "input_tokens": getattr(message.usage, "input_tokens", 0),
+                "output_tokens": getattr(message.usage, "output_tokens", 0),
+            }
+            return message.content[0].text, usage
         except Exception as exc:
             if not _is_retryable(exc) or attempt == _RETRY_MAX - 1:
                 raise

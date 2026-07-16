@@ -524,8 +524,10 @@ _DENSITY_DROP: dict[str, set[str]] = {
 def plan_composition(
     room_request: RoomRequest,
     style_profile: StyleProfile,
-) -> SlotPlan:
+) -> tuple["SlotPlan", dict]:
     """Map a RoomRequest + StyleProfile to a SlotPlan via LLM.
+
+    Returns (SlotPlan, usage_dict). usage_dict has input_tokens/output_tokens.
 
     The LLM proposes slot budget *weights* only.  All dollar math, feasibility
     checks, optional-dropping, and budget clamping live in fit_slots_to_budget().
@@ -555,8 +557,9 @@ def plan_composition(
         room_preset, target_budget, style_profile, taxonomy,
     )
 
+    _comp_usage = {"input_tokens": 0, "output_tokens": 0}
     try:
-        raw = _call_composition_llm(system_prompt, user_message)
+        raw, _comp_usage = _call_composition_llm(system_prompt, user_message)
         weights = _parse_weight_proposal(raw, room_preset, taxonomy)
     except Exception:
         weights = _taxonomy_default_weights(room_preset, taxonomy)
@@ -612,7 +615,7 @@ def plan_composition(
         already_have=already_have,
         must_have=must_have,
         floor_overrides=floor_overrides,
-    )
+    ), _comp_usage
 
 
 # ---------------------------------------------------------------------------
@@ -636,8 +639,8 @@ def _is_retryable(exc: Exception) -> bool:
     return False
 
 
-def _call_composition_llm(system_prompt: str, user_message: str) -> str:
-    """Send a request to the Anthropic API and return the raw text.
+def _call_composition_llm(system_prompt: str, user_message: str) -> tuple[str, dict]:
+    """Send a request to the Anthropic API and return (text, usage_dict).
 
     Retries up to ``_RETRY_MAX`` times on 429 (rate-limit), 529
     (overloaded), and timeout with exponential backoff.
@@ -651,7 +654,11 @@ def _call_composition_llm(system_prompt: str, user_message: str) -> str:
                 system=system_prompt,
                 messages=[{"role": "user", "content": user_message}],
             )
-            return message.content[0].text
+            usage = {
+                "input_tokens": getattr(message.usage, "input_tokens", 0),
+                "output_tokens": getattr(message.usage, "output_tokens", 0),
+            }
+            return message.content[0].text, usage
         except Exception as exc:
             if not _is_retryable(exc) or attempt == _RETRY_MAX - 1:
                 raise

@@ -49,8 +49,11 @@ _anthropic_client: anthropic.Anthropic | None = None
 # Public API
 # ---------------------------------------------------------------------------
 
-def interpret_style(room_request: RoomRequest) -> StyleProfile:
+def interpret_style(room_request: RoomRequest) -> tuple[StyleProfile, dict]:
     """Map a RoomRequest to a validated StyleProfile.
+
+    Returns (StyleProfile, usage_dict). usage_dict has input_tokens/output_tokens
+    (zero on deterministic path).
 
     When the request includes a core_aesthetic (from the quiz's direct
     selection), that profile id is used DETERMINISTICALLY — the LLM is
@@ -62,6 +65,7 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
 
     This function never raises; callers always receive a StyleProfile.
     """
+    _no_usage = {"input_tokens": 0, "output_tokens": 0}
     profiles_config = load_style_profiles()
     valid_ids = {p.id for p in profiles_config.profiles}
     profile_map = {p.id: p for p in profiles_config.profiles}
@@ -72,9 +76,6 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
         config_profile = profile_map[locked_id]
         logger.info("Style locked to %r (deterministic path)", locked_id)
 
-        # Use the profile's canonical keywords/mood/palette, enhanced with
-        # the user's style_description for richer context — but style_name
-        # is NEVER overridden.
         return StyleProfile(
             style_name=locked_id,
             keywords=config_profile.keywords,
@@ -85,12 +86,12 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
             mood=config_profile.mood,
             confidence=1.0,
             fallback=False,
-        )
+        ), _no_usage
 
     # --- LLM interpretation path (no core_aesthetic) ---
     logger.info("Style via LLM (core_aesthetic=%r)", room_request.core_aesthetic)
     system_prompt, user_message = _build_prompts(room_request, profiles_config)
-    raw = _call_llm(system_prompt, user_message)
+    raw, usage = _call_llm(system_prompt, user_message)
 
     try:
         data = _extract_json(raw)
@@ -98,7 +99,7 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
 
         # Unknown style_name: LLM hallucinated a profile not in the catalogue.
         if profile.style_name not in valid_ids:
-            return _make_fallback(profiles_config)
+            return _make_fallback(profiles_config), usage
 
         # Low confidence: ensure the flag is set even if the LLM forgot to.
         if profile.confidence < _LOW_CONFIDENCE_THRESHOLD and not profile.fallback:
@@ -114,12 +115,10 @@ def interpret_style(room_request: RoomRequest) -> StyleProfile:
                 "selection_feel": cfg.selection_feel,
             })
 
-        return profile
+        return profile, usage
 
     except Exception:
-        # JSON parse error, Pydantic validation failure, or any other
-        # exception → graceful fallback so LLM errors never surface as 500s.
-        return _make_fallback(profiles_config)
+        return _make_fallback(profiles_config), usage
 
 
 # ---------------------------------------------------------------------------
@@ -143,8 +142,8 @@ def _is_retryable(exc: Exception) -> bool:
     return False
 
 
-def _call_llm(system_prompt: str, user_message: str) -> str:
-    """Send a request to the Anthropic API and return the raw text.
+def _call_llm(system_prompt: str, user_message: str) -> tuple[str, dict]:
+    """Send a request to the Anthropic API and return (text, usage_dict).
 
     Retries up to ``_RETRY_MAX`` times on 429 (rate-limit), 529
     (overloaded), and timeout with exponential backoff.
@@ -158,7 +157,11 @@ def _call_llm(system_prompt: str, user_message: str) -> str:
                 system=system_prompt,
                 messages=[{"role": "user", "content": user_message}],
             )
-            return message.content[0].text
+            usage = {
+                "input_tokens": getattr(message.usage, "input_tokens", 0),
+                "output_tokens": getattr(message.usage, "output_tokens", 0),
+            }
+            return message.content[0].text, usage
         except Exception as exc:
             if not _is_retryable(exc) or attempt == _RETRY_MAX - 1:
                 raise

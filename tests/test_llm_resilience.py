@@ -23,13 +23,15 @@ class TestStyleRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
         mock_client.messages.create.return_value = mock_msg
 
         with patch("services.style_service._get_anthropic_client", return_value=mock_client):
             from services.style_service import _call_llm
-            result = _call_llm("sys", "usr")
+            text, usage = _call_llm("sys", "usr")
 
-        assert result == "ok"
+        assert text == "ok"
+        assert usage["input_tokens"] == 10
         assert mock_client.messages.create.call_count == 1
 
     def test_retries_on_rate_limit(self):
@@ -37,6 +39,7 @@ class TestStyleRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="retry-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         rate_err = anthropic.RateLimitError(
             message="rate limited",
@@ -48,9 +51,9 @@ class TestStyleRetry:
         with patch("services.style_service._get_anthropic_client", return_value=mock_client), \
              patch("services.style_service.time.sleep") as mock_sleep:
             from services.style_service import _call_llm
-            result = _call_llm("sys", "usr")
+            text, usage = _call_llm("sys", "usr")
 
-        assert result == "retry-ok"
+        assert text == "retry-ok"
         assert mock_client.messages.create.call_count == 2
         mock_sleep.assert_called_once()
         assert mock_sleep.call_args[0][0] == 1.0  # first backoff
@@ -78,6 +81,7 @@ class TestStyleRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="529-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         err_529 = anthropic.InternalServerError(
             message="overloaded",
@@ -89,9 +93,9 @@ class TestStyleRetry:
         with patch("services.style_service._get_anthropic_client", return_value=mock_client), \
              patch("services.style_service.time.sleep") as mock_sleep:
             from services.style_service import _call_llm
-            result = _call_llm("sys", "usr")
+            text, usage = _call_llm("sys", "usr")
 
-        assert result == "529-ok"
+        assert text == "529-ok"
         assert mock_client.messages.create.call_count == 2
         mock_sleep.assert_called_once()
 
@@ -100,6 +104,7 @@ class TestStyleRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="timeout-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         timeout_err = anthropic.APITimeoutError(request=MagicMock())
         mock_client.messages.create.side_effect = [timeout_err, mock_msg]
@@ -107,9 +112,9 @@ class TestStyleRetry:
         with patch("services.style_service._get_anthropic_client", return_value=mock_client), \
              patch("services.style_service.time.sleep") as mock_sleep:
             from services.style_service import _call_llm
-            result = _call_llm("sys", "usr")
+            text, usage = _call_llm("sys", "usr")
 
-        assert result == "timeout-ok"
+        assert text == "timeout-ok"
         assert mock_client.messages.create.call_count == 2
 
     def test_non_retryable_error_not_retried(self):
@@ -159,13 +164,15 @@ class TestCompositionRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="comp-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
         mock_client.messages.create.return_value = mock_msg
 
         with patch("services.composition_service._get_anthropic_client", return_value=mock_client):
             from services.composition_service import _call_composition_llm
-            result = _call_composition_llm("sys", "usr")
+            text, usage = _call_composition_llm("sys", "usr")
 
-        assert result == "comp-ok"
+        assert text == "comp-ok"
+        assert usage["input_tokens"] == 10
         assert mock_client.messages.create.call_count == 1
 
     def test_retries_on_rate_limit(self):
@@ -173,6 +180,7 @@ class TestCompositionRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="comp-retry-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         rate_err = anthropic.RateLimitError(
             message="rate limited",
@@ -184,9 +192,9 @@ class TestCompositionRetry:
         with patch("services.composition_service._get_anthropic_client", return_value=mock_client), \
              patch("services.composition_service.time.sleep") as mock_sleep:
             from services.composition_service import _call_composition_llm
-            result = _call_composition_llm("sys", "usr")
+            text, usage = _call_composition_llm("sys", "usr")
 
-        assert result == "comp-retry-ok"
+        assert text == "comp-retry-ok"
         assert mock_client.messages.create.call_count == 2
         mock_sleep.assert_called_once()
 
@@ -213,6 +221,7 @@ class TestCompositionRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="529-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         err_529 = anthropic.InternalServerError(
             message="overloaded",
@@ -224,9 +233,9 @@ class TestCompositionRetry:
         with patch("services.composition_service._get_anthropic_client", return_value=mock_client), \
              patch("services.composition_service.time.sleep"):
             from services.composition_service import _call_composition_llm
-            result = _call_composition_llm("sys", "usr")
+            text, usage = _call_composition_llm("sys", "usr")
 
-        assert result == "529-ok"
+        assert text == "529-ok"
         assert mock_client.messages.create.call_count == 2
 
     def test_retries_on_timeout(self):
@@ -234,6 +243,7 @@ class TestCompositionRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="timeout-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         timeout_err = anthropic.APITimeoutError(request=MagicMock())
         mock_client.messages.create.side_effect = [timeout_err, mock_msg]
@@ -241,9 +251,9 @@ class TestCompositionRetry:
         with patch("services.composition_service._get_anthropic_client", return_value=mock_client), \
              patch("services.composition_service.time.sleep"):
             from services.composition_service import _call_composition_llm
-            result = _call_composition_llm("sys", "usr")
+            text, usage = _call_composition_llm("sys", "usr")
 
-        assert result == "timeout-ok"
+        assert text == "timeout-ok"
         assert mock_client.messages.create.call_count == 2
 
 
@@ -278,6 +288,7 @@ class TestSelectionRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="sel-529-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         err_529 = anthropic.InternalServerError(
             message="overloaded",
@@ -289,9 +300,9 @@ class TestSelectionRetry:
         with patch("services.selection_service._get_anthropic_client", return_value=mock_client), \
              patch("services.selection_service.time.sleep"):
             from services.selection_service import _call_selection_llm
-            result = _call_selection_llm("sys", "usr")
+            text, usage = _call_selection_llm("sys", "usr")
 
-        assert result == "sel-529-ok"
+        assert text == "sel-529-ok"
         assert mock_client.messages.create.call_count == 2
 
     def test_retries_on_timeout(self):
@@ -299,6 +310,7 @@ class TestSelectionRetry:
         mock_client = MagicMock()
         mock_msg = MagicMock()
         mock_msg.content = [MagicMock(text="sel-timeout-ok")]
+        mock_msg.usage = MagicMock(input_tokens=10, output_tokens=5)
 
         timeout_err = anthropic.APITimeoutError(request=MagicMock())
         mock_client.messages.create.side_effect = [timeout_err, mock_msg]
@@ -306,9 +318,9 @@ class TestSelectionRetry:
         with patch("services.selection_service._get_anthropic_client", return_value=mock_client), \
              patch("services.selection_service.time.sleep"):
             from services.selection_service import _call_selection_llm
-            result = _call_selection_llm("sys", "usr")
+            text, usage = _call_selection_llm("sys", "usr")
 
-        assert result == "sel-timeout-ok"
+        assert text == "sel-timeout-ok"
         assert mock_client.messages.create.call_count == 2
 
     def test_non_retryable_error_not_retried(self):

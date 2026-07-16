@@ -77,14 +77,16 @@ def _make_product(
     )
 
 
-def _llm_response(product_id: str | None, reason: str | None = None) -> str:
-    """Simulate a valid LLM JSON response."""
+_MOCK_USAGE = {"input_tokens": 0, "output_tokens": 0}
+
+
+def _llm_response(product_id: str | None, reason: str | None = None) -> tuple[str, dict]:
     return json.dumps({
         "product_id": product_id,
         "fit_reason": "Best warmth and texture match" if product_id else "",
         "confidence": 0.85 if product_id else 0.0,
         "null_reason": reason,
-    })
+    }), _MOCK_USAGE
 
 
 # ---------------------------------------------------------------------------
@@ -224,7 +226,7 @@ def test_spec_double_check_still_passes_valid_candidates():
 def test_unparseable_llm_response_returns_llm_error():
     """Garbage LLM output → (None, 'llm_error')."""
     candidates = [_make_product("LT-001")]
-    with patch(_PATCH_TARGET, return_value="totally not json!!!"):
+    with patch(_PATCH_TARGET, return_value=("totally not json!!!", _MOCK_USAGE)):
         product, reason = select_product(_make_slot(), _make_style(), candidates)
 
     assert product is None
@@ -234,8 +236,9 @@ def test_unparseable_llm_response_returns_llm_error():
 def test_code_fenced_json_is_parsed():
     """LLM wrapping response in ```json fence still works."""
     candidates = [_make_product("LT-001")]
-    fenced = f"```json\n{_llm_response('LT-001')}\n```"
-    with patch(_PATCH_TARGET, return_value=fenced):
+    raw_json, _ = _llm_response('LT-001')
+    fenced = f"```json\n{raw_json}\n```"
+    with patch(_PATCH_TARGET, return_value=(fenced, _MOCK_USAGE)):
         product, _ = select_product(_make_slot(), _make_style(), candidates)
 
     assert product is not None

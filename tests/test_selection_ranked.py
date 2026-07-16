@@ -22,6 +22,7 @@ from schemas.style_profile import StyleProfile
 from services.selection_service import select_product, select_products
 
 _PATCH_TARGET = "services.selection_service._call_selection_llm"
+_MOCK_USAGE = {"input_tokens": 0, "output_tokens": 0}
 
 
 # ---------------------------------------------------------------------------
@@ -104,8 +105,8 @@ def test_ranked_response_returns_multiple_products():
         ("LT-003", "Good runner-up"),
         ("LT-001", "Budget option"),
     ])
-    with patch(_PATCH_TARGET, return_value=response):
-        products, reasons, null_reason = select_products(
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, reasons, null_reason, _usage = select_products(
             _make_slot(), _make_style(), candidates,
         )
 
@@ -125,8 +126,8 @@ def test_ranked_response_preserves_order():
         _make_product("C", "C", 30),
     ]
     response = _ranked_response([("C", "r1"), ("A", "r2"), ("B", "r3")])
-    with patch(_PATCH_TARGET, return_value=response):
-        products, _, _ = select_products(_make_slot(), _make_style(), candidates)
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, _, _, _usage = select_products(_make_slot(), _make_style(), candidates)
 
     assert [p.product_id for p in products] == ["C", "A", "B"]
 
@@ -146,8 +147,8 @@ def test_hallucinated_ids_skipped_in_ranked():
         ("FAKE-999", "Hallucinated"),
         ("LT-001", "Fallback"),
     ])
-    with patch(_PATCH_TARGET, return_value=response):
-        products, reasons, null_reason = select_products(
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, reasons, null_reason, _usage = select_products(
             _make_slot(), _make_style(), candidates,
         )
 
@@ -160,8 +161,8 @@ def test_hallucinated_ids_skipped_in_ranked():
 def test_all_hallucinated_ids_returns_llm_error():
     candidates = [_make_product("LT-001")]
     response = _ranked_response([("FAKE-1", "x"), ("FAKE-2", "y")])
-    with patch(_PATCH_TARGET, return_value=response):
-        products, _, null_reason = select_products(
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, _, null_reason, _usage = select_products(
             _make_slot(), _make_style(), candidates,
         )
 
@@ -183,8 +184,8 @@ def test_duplicate_ids_deduplicated():
         ("LT-001", "Duplicate"),
         ("LT-002", "Second"),
     ])
-    with patch(_PATCH_TARGET, return_value=response):
-        products, _, _ = select_products(
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, _, _, _usage = select_products(
             _make_slot(), _make_style(), candidates,
         )
 
@@ -205,8 +206,8 @@ def test_over_budget_candidates_excluded_before_llm():
         _make_product("LT-002", "Expensive", 55.99),  # Over budget but within 1.5x
     ]
     response = _ranked_response([("LT-001", "Only option")])
-    with patch(_PATCH_TARGET, return_value=response):
-        products, _, _ = select_products(slot, _make_style(), candidates)
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, _, _, _usage = select_products(slot, _make_style(), candidates)
 
     # LT-001 must be the LLM's rank-1 pick (within budget).
     assert products[0].product_id == "LT-001"
@@ -226,8 +227,8 @@ def test_empty_ranked_picks_with_null_reason():
         "ranked_picks": [],
         "null_reason": "no_spec_match",
     })
-    with patch(_PATCH_TARGET, return_value=response):
-        products, _, null_reason = select_products(
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, _, null_reason, _usage = select_products(
             _make_slot(), _make_style(), candidates,
         )
 
@@ -247,8 +248,8 @@ def test_legacy_single_pick_format():
         "confidence": 0.9,
         "null_reason": None,
     })
-    with patch(_PATCH_TARGET, return_value=response):
-        products, reasons, null_reason = select_products(
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
+        products, reasons, null_reason, _usage = select_products(
             _make_slot(), _make_style(), candidates,
         )
 
@@ -271,7 +272,7 @@ def test_select_product_returns_rank1_from_ranked():
         ("LT-002", "Best style match"),
         ("LT-001", "Runner-up"),
     ])
-    with patch(_PATCH_TARGET, return_value=response):
+    with patch(_PATCH_TARGET, return_value=(response, _MOCK_USAGE)):
         product, reason = select_product(
             _make_slot(), _make_style(), candidates,
         )
@@ -289,8 +290,8 @@ def test_code_fenced_ranked_response():
     candidates = [_make_product("LT-001")]
     body = _ranked_response([("LT-001", "Match")])
     fenced = f"```json\n{body}\n```"
-    with patch(_PATCH_TARGET, return_value=fenced):
-        products, _, null_reason = select_products(
+    with patch(_PATCH_TARGET, return_value=(fenced, _MOCK_USAGE)):
+        products, _, null_reason, _usage = select_products(
             _make_slot(), _make_style(), candidates,
         )
 
@@ -305,7 +306,7 @@ def test_code_fenced_ranked_response():
 
 def test_owned_slot_returns_empty():
     slot = _make_slot(owned=True)
-    products, _, null_reason = select_products(
+    products, _, null_reason, _usage = select_products(
         slot, _make_style(), [_make_product()],
     )
     assert len(products) == 0
@@ -313,7 +314,7 @@ def test_owned_slot_returns_empty():
 
 
 def test_empty_candidates_returns_empty():
-    products, _, null_reason = select_products(
+    products, _, null_reason, _usage = select_products(
         _make_slot(), _make_style(), [],
     )
     assert len(products) == 0

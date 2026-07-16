@@ -46,6 +46,9 @@ def _make_request(
     )
 
 
+_MOCK_USAGE = {"input_tokens": 0, "output_tokens": 0}
+
+
 def _llm_json(
     style_name: str = "warm_minimalist",
     keywords: list[str] | None = None,
@@ -53,8 +56,7 @@ def _llm_json(
     mood: str = "calm, grounded",
     confidence: float = 0.9,
     fallback: bool = False,
-) -> str:
-    """Return a JSON string that simulates a valid LLM response."""
+) -> tuple[str, dict]:
     return json.dumps({
         "style_name": style_name,
         "keywords": keywords or ["natural wood", "linen"],
@@ -62,7 +64,7 @@ def _llm_json(
         "mood": mood,
         "confidence": confidence,
         "fallback": fallback,
-    })
+    }), _MOCK_USAGE
 
 
 # ---------------------------------------------------------------------------
@@ -75,7 +77,7 @@ def test_clean_high_confidence_match_returns_correct_profile():
         confidence=0.92,
         fallback=False,
     )):
-        result = interpret_style(_make_request(style_description="light wood and linen"))
+        result, _usage = interpret_style(_make_request(style_description="light wood and linen"))
 
     assert isinstance(result, StyleProfile)
     assert result.style_name == "warm_minimalist"
@@ -91,7 +93,7 @@ def test_result_carries_llm_keywords_and_palette():
         mood="sharp, metropolitan",
         confidence=0.85,
     )):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert result.style_name == "city_modern"
     assert "sleek" in result.keywords
@@ -104,7 +106,7 @@ def test_living_room_request_accepted():
         style_name="coastal",
         confidence=0.88,
     )):
-        result = interpret_style(_make_request(room_type="living_room"))
+        result, _usage = interpret_style(_make_request(room_type="living_room"))
 
     assert result.style_name == "coastal"
     assert result.fallback is False
@@ -116,7 +118,7 @@ def test_qa_answers_do_not_break_prompt_rendering():
         style_name="dark_academia",
         confidence=0.78,
     )):
-        result = interpret_style(_make_request(
+        result, _usage = interpret_style(_make_request(
             qa_answers={"vibe": "rich and layered", "priority": "textiles"},
         ))
 
@@ -134,7 +136,7 @@ def test_low_confidence_sets_fallback_flag():
         confidence=0.42,
         fallback=False,  # LLM forgot; service must enforce
     )):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert result.fallback is True
     assert result.confidence == pytest.approx(0.42)
@@ -148,7 +150,7 @@ def test_low_confidence_already_flagged_by_llm_is_preserved():
         confidence=0.35,
         fallback=True,
     )):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert result.fallback is True
     assert result.confidence == pytest.approx(0.35)
@@ -156,8 +158,8 @@ def test_low_confidence_already_flagged_by_llm_is_preserved():
 
 def test_malformed_json_returns_warm_minimalist_fallback():
     """LLM returns prose / invalid JSON → warm_minimalist fallback, fallback=True."""
-    with patch("services.style_service._call_llm", return_value="Sorry, I cannot help."):
-        result = interpret_style(_make_request())
+    with patch("services.style_service._call_llm", return_value=("Sorry, I cannot help.", _MOCK_USAGE)):
+        result, _usage = interpret_style(_make_request())
 
     assert isinstance(result, StyleProfile)
     assert result.style_name == "warm_minimalist"
@@ -172,15 +174,15 @@ def test_unknown_style_name_returns_warm_minimalist_fallback():
         confidence=0.95,
         fallback=False,
     )):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert result.style_name == "warm_minimalist"
     assert result.fallback is True
 
 
 def test_empty_json_object_returns_fallback():
-    with patch("services.style_service._call_llm", return_value="{}"):
-        result = interpret_style(_make_request())
+    with patch("services.style_service._call_llm", return_value=("{}", _MOCK_USAGE)):
+        result, _usage = interpret_style(_make_request())
 
     assert result.fallback is True
     assert result.style_name == "warm_minimalist"
@@ -192,7 +194,7 @@ def test_empty_json_object_returns_fallback():
 
 def test_result_is_always_a_style_profile_instance():
     with patch("services.style_service._call_llm", return_value=_llm_json()):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert isinstance(result, StyleProfile)
     assert isinstance(result.keywords, list)
@@ -206,7 +208,7 @@ def test_confidence_clamped_above_one():
     with patch("services.style_service._call_llm", return_value=_llm_json(
         confidence=1.8,
     )):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert result.confidence == pytest.approx(1.0)
 
@@ -218,16 +220,17 @@ def test_confidence_clamped_below_zero():
         confidence=-0.5,
         fallback=True,
     )):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert result.confidence == pytest.approx(0.0)
 
 
 def test_json_in_code_fence_is_parsed_correctly():
     """LLM wraps JSON in ```json ... ``` fence → still produces a valid profile."""
-    fenced = "```json\n" + _llm_json(style_name="coastal", confidence=0.80) + "\n```"
-    with patch("services.style_service._call_llm", return_value=fenced):
-        result = interpret_style(_make_request(room_type="living_room"))
+    raw_json, _ = _llm_json(style_name="coastal", confidence=0.80)
+    fenced = "```json\n" + raw_json + "\n```"
+    with patch("services.style_service._call_llm", return_value=(fenced, _MOCK_USAGE)):
+        result, _usage = interpret_style(_make_request(room_type="living_room"))
 
     assert result.style_name == "coastal"
     assert result.fallback is False
@@ -255,7 +258,7 @@ def test_all_catalogue_profiles_accepted(profile_id: str):
         confidence=0.80,
         fallback=False,
     )):
-        result = interpret_style(_make_request())
+        result, _usage = interpret_style(_make_request())
 
     assert result.style_name == profile_id
     assert result.fallback is False

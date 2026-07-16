@@ -62,8 +62,11 @@ def _make_style() -> StyleProfile:
     )
 
 
-def _llm_weights_json(weights: dict[str, float], rationale: str = "balanced") -> str:
-    return json.dumps({"slot_weights": weights, "rationale": rationale})
+_MOCK_USAGE = {"input_tokens": 0, "output_tokens": 0}
+
+
+def _llm_weights_json(weights: dict[str, float], rationale: str = "balanced") -> tuple[str, dict]:
+    return json.dumps({"slot_weights": weights, "rationale": rationale}), _MOCK_USAGE
 
 
 def _bedroom_required_weights() -> dict[str, float]:
@@ -82,7 +85,7 @@ def test_normal_proposal_produces_valid_plan():
     """Clean weights produce a feasible plan within budget."""
     weights = _bedroom_required_weights()
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(_make_request(), _make_style())
+        plan, _usage = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     assert plan.total_allocated <= 1500.0
@@ -94,7 +97,7 @@ def test_normal_proposal_produces_valid_plan():
 def test_normal_proposal_threads_run_id():
     weights = _bedroom_required_weights()
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(_make_request(run_id="abc-123"), _make_style())
+        plan, _usage = plan_composition(_make_request(run_id="abc-123"), _make_style())
 
     assert plan.run_id == "abc-123"
 
@@ -102,7 +105,7 @@ def test_normal_proposal_threads_run_id():
 def test_normal_proposal_threads_target_budget():
     weights = _bedroom_required_weights()
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(_make_request(budget=2000.0), _make_style())
+        plan, _usage = plan_composition(_make_request(budget=2000.0), _make_style())
 
     assert plan.target_budget == pytest.approx(2000.0)
     assert plan.total_allocated <= 2000.0
@@ -116,7 +119,7 @@ def test_overweight_sum_3_still_within_budget():
     """Weights summing to 3.0 are normalized; total never exceeds budget."""
     weights = {sid: 0.50 for sid in BEDROOM_REQUIRED}
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(_make_request(budget=1000.0), _make_style())
+        plan, _usage = plan_composition(_make_request(budget=1000.0), _make_style())
 
     assert plan.is_feasible is True
     assert plan.total_allocated <= 1000.0
@@ -132,7 +135,7 @@ def test_hallucinated_slot_id_is_dropped():
     weights = dict(_bedroom_required_weights())
     weights["magic_chair"] = 0.15  # not in taxonomy
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(_make_request(), _make_style())
+        plan, _usage = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
@@ -151,7 +154,7 @@ def test_missing_required_slot_is_injected():
     omitted = sorted(BEDROOM_REQUIRED)[0]
     del weights[omitted]
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(_make_request(), _make_style())
+        plan, _usage = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
@@ -165,8 +168,8 @@ def test_missing_required_slot_is_injected():
 
 def test_unparseable_response_falls_back_to_taxonomy_defaults():
     """Garbage LLM output → taxonomy default weights, still a valid plan."""
-    with patch(_PATCH_TARGET, return_value="I'm not JSON at all, sorry!"):
-        plan = plan_composition(_make_request(), _make_style())
+    with patch(_PATCH_TARGET, return_value=("I'm not JSON at all, sorry!", _MOCK_USAGE)):
+        plan, _usage = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
@@ -177,8 +180,8 @@ def test_unparseable_response_falls_back_to_taxonomy_defaults():
 
 def test_empty_json_object_falls_back():
     """An empty JSON object (no slot_weights key) → taxonomy defaults."""
-    with patch(_PATCH_TARGET, return_value="{}"):
-        plan = plan_composition(_make_request(), _make_style())
+    with patch(_PATCH_TARGET, return_value=("{}", _MOCK_USAGE)):
+        plan, _usage = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
@@ -189,9 +192,10 @@ def test_empty_json_object_falls_back():
 def test_code_fenced_json_is_parsed():
     """LLM wrapping response in ```json ... ``` is handled."""
     weights = _bedroom_required_weights()
-    fenced = f"```json\n{_llm_weights_json(weights)}\n```"
-    with patch(_PATCH_TARGET, return_value=fenced):
-        plan = plan_composition(_make_request(), _make_style())
+    raw_json, _ = _llm_weights_json(weights)
+    fenced = f"```json\n{raw_json}\n```"
+    with patch(_PATCH_TARGET, return_value=(fenced, _MOCK_USAGE)):
+        plan, _usage = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
@@ -207,7 +211,7 @@ def test_all_garbage_weights_fall_back():
     """If every proposed weight is invalid, taxonomy defaults are used."""
     weights = {"bed_frame": -1.0, "mattress": 0, "rug": "banana"}
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(_make_request(), _make_style())
+        plan, _usage = plan_composition(_make_request(), _make_style())
 
     assert plan.is_feasible is True
     slot_ids = {s.slot_id for s in plan.slots}
@@ -224,7 +228,7 @@ def test_living_room_preset_works():
     lr_weights = _LIVING_PRESET.flatten_weights()
     weights = {sid: lr_weights[sid] for sid in LIVING_ROOM_REQUIRED}
     with patch(_PATCH_TARGET, return_value=_llm_weights_json(weights)):
-        plan = plan_composition(
+        plan, _usage = plan_composition(
             _make_request(room_type="living_room"), _make_style(),
         )
 

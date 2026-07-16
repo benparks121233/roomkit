@@ -230,8 +230,8 @@ class TestRouteIntegration:
         app.dependency_overrides[get_current_user] = lambda: _user
 
         with patch("services.supabase_client.get_client", return_value=None), \
-             patch("services.style_service._call_llm", return_value=_MOCK_STYLE), \
-             patch("services.composition_service._call_composition_llm", return_value=_MOCK_COMPOSITION), \
+             patch("services.style_service._call_llm", return_value=(_MOCK_STYLE, {"input_tokens": 0, "output_tokens": 0})), \
+             patch("services.composition_service._call_composition_llm", return_value=(_MOCK_COMPOSITION, {"input_tokens": 0, "output_tokens": 0})), \
              patch("services.concurrency.acquire_llm_slots", return_value=False):
             client = TestClient(app)
             resp = client.post("/design", json={
