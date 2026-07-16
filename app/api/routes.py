@@ -155,12 +155,32 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
             logger.warning("Pack decrement RPC failed — falling to free tier", exc_info=True)
 
         if not _is_paid:
-            # Free path: room-type gate + fast-path count check.
+            # Free path: room-type gate + deletion cooldown + fast-path count check.
             if req.room_type and req.room_type != "bedroom":
                 raise HTTPException(
                     status_code=403,
                     detail={"code": "free_limit", "message": "Free tier: bedroom only. Upgrade for all room types."},
                 )
+            # Deletion cooldown: block free rooms for re-registered emails
+            _user_email = user.get("email", "").lower()
+            if _user_email:
+                try:
+                    _cd_resp = (
+                        _svc.table("deleted_emails")
+                        .select("cooldown_until")
+                        .eq("email", _user_email)
+                        .gte("cooldown_until", "now()")
+                        .execute()
+                    )
+                    if _cd_resp.data:
+                        raise HTTPException(
+                            status_code=403,
+                            detail={"code": "free_limit", "message": "Free tier: 1 room limit. Upgrade for more."},
+                        )
+                except HTTPException:
+                    raise
+                except Exception:
+                    logger.warning("Deletion cooldown check failed — allowing request", exc_info=True)
             try:
                 _count_resp = (
                     _svc.table("designs")
@@ -1161,6 +1181,17 @@ async def delete_account(user: CurrentUser) -> DeleteAccountResponse:
             failed_step="query_run_ids",
             message="Account deletion failed and could not complete. No data was removed. Please try again or contact support.",
         )
+
+    # Step 1b: Record email for deletion cooldown (before auth delete wipes it)
+    user_email = user.get("email", "")
+    if user_email:
+        try:
+            client.table("deleted_emails").upsert(
+                {"email": user_email.lower()},
+                on_conflict="email",
+            ).execute()
+        except Exception as exc:
+            logger.warning("delete_account: failed to record deleted email for %s: %s", user_id, exc)
 
     # Step 2: Revoke sessions + delete auth user (PII — email, password hash, metadata)
     try:

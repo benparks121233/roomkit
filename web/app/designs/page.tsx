@@ -11,14 +11,12 @@ const AESTHETIC_LABELS: Record<string, Record<string, string>> = {
     coastal: "Coastal", industrial: "Industrial", quiet_luxury: "Quiet Luxury",
     sports_den: "Sports Den", city_modern: "City Modern", ski_lodge: "Ski Lodge",
     jungle_oasis: "Jungle Oasis", gamer_den: "Gamer Den", poster_maximalist: "Poster Maximalist",
-    warm_minimalist: "Warm Minimalist",
   },
   living_room: {
     cottagecore: "Country Parlor", dark_academia: "Library Lounge", japandi: "Still Room",
     coastal: "Shore House", industrial: "Warehouse Loft", quiet_luxury: "The Salon",
     sports_den: "The Den", city_modern: "High Rise", ski_lodge: "Fireside",
     jungle_oasis: "Greenhouse", gamer_den: "Command Center", poster_maximalist: "The Gallery",
-    warm_minimalist: "Warm Minimalist",
   },
 };
 

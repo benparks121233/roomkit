@@ -140,7 +140,25 @@ def _mock_svc_client(
     # Also support .upsert() for paid-path save_design
     table_mock.upsert.return_value.execute.return_value = None
 
-    mock.table.return_value = table_mock
+    # deleted_emails: always return empty (no cooldown) in tests
+    deleted_emails_mock = MagicMock()
+    deleted_emails_resp = MagicMock()
+    deleted_emails_resp.data = []
+    deleted_emails_chain = MagicMock()
+    deleted_emails_chain.gte.return_value = deleted_emails_chain
+    deleted_emails_chain.eq.return_value = deleted_emails_chain
+    deleted_emails_chain.execute.return_value = deleted_emails_resp
+    deleted_emails_mock.select.return_value = deleted_emails_chain
+
+    _orig_table_rv = table_mock
+
+    def _table(name):
+        if name == "deleted_emails":
+            return deleted_emails_mock
+        return _orig_table_rv
+
+    mock.table.side_effect = _table
+    mock.table.return_value = _orig_table_rv
 
     return mock
 
@@ -438,6 +456,25 @@ class TestTOCTOU:
         table_mock = MagicMock()
         table_mock.select.return_value = select_mock
         table_mock.upsert.return_value.execute.return_value = None
+
+        # deleted_emails cooldown check must return empty data
+        de_resp = MagicMock()
+        de_resp.data = []
+        de_chain = MagicMock()
+        de_chain.gte.return_value = de_chain
+        de_chain.eq.return_value = de_chain
+        de_chain.execute.return_value = de_resp
+        de_select = MagicMock()
+        de_select.eq.return_value = de_chain
+        de_table = MagicMock()
+        de_table.select.return_value = de_select
+
+        def _table(name):
+            if name == "deleted_emails":
+                return de_table
+            return table_mock
+
+        mock_client.table.side_effect = _table
         mock_client.table.return_value = table_mock
 
         results = []

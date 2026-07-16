@@ -9,16 +9,6 @@ interface Props {
 type ZoomMode = "idle" | "marquee";
 
 export default function InteractiveRoomRender({ renderUrl }: Props) {
-  // [VANISH IRR] Diagnostic logging
-  const irrId = useRef(Math.random().toString(36).slice(2, 8));
-  useEffect(() => {
-    console.log(`[VANISH IRR] MOUNT id=${irrId.current} url=${renderUrl}`);
-    return () => console.log(`[VANISH IRR] UNMOUNT id=${irrId.current}`);
-  }, []);
-  useEffect(() => {
-    console.log(`[VANISH IRR] renderUrl changed: ${renderUrl}`);
-  }, [renderUrl]);
-
   // Zoom/pan state
   const [scale, setScale] = useState(1);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
@@ -228,26 +218,21 @@ export default function InteractiveRoomRender({ renderUrl }: Props) {
           alt="AI-generated room render"
           className="room-render-image"
           onLoad={() => {
-            console.log(`[VANISH IRR] img onLoad fired, retry=${retryCount.current}, url=${renderUrl}${retrySuffix}`);
             setLoaded(true);
             setImgFailed(false);
             retryCount.current = 0;
           }}
           onError={() => {
-            console.warn(`[VANISH IRR] img onError fired, retry=${retryCount.current}/6, url=${renderUrl}${retrySuffix}`);
             if (retryCount.current < 6) {
               const attempt = retryCount.current + 1;
               retryCount.current = attempt;
               const delays = [1000, 2000, 3000, 3000, 3000, 3000];
               const delay = delays[attempt - 1] ?? 3000;
-              console.log(`[VANISH IRR] scheduling retry #${attempt} in ${delay}ms`);
               retryTimer.current = setTimeout(() => {
                 const bust = `${renderUrl.includes("?") ? "&" : "?"}cb=${Date.now()}`;
-                console.log(`[VANISH IRR] retry #${attempt} firing, bust=${bust}`);
                 setRetrySuffix(bust);
               }, delay);
             } else {
-              console.error(`[VANISH IRR] img FAILED after 6 retries, url=${renderUrl}`);
               setImgFailed(true);
             }
           }}

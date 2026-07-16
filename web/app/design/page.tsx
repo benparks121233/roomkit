@@ -5,6 +5,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { createDesign, FreeLimitError, startCheckout, trackEvent } from "@/lib/api";
+import { getSupabaseBrowserClient } from "@/lib/supabase";
 import type { DesignRequest } from "@/lib/api";
 import { useAuth } from "@/components/AuthProvider";
 import StyleQuiz from "@/components/StyleQuiz";
@@ -151,6 +152,17 @@ function IntakeForm() {
           quizFreshRef.current = true;
         }
       } catch { /* ignore corrupt data */ }
+    } else if (session.user?.user_metadata?.quiz_stash) {
+      restoredRef.current = true;
+      try {
+        const answers = session.user.user_metadata.quiz_stash as IntakeResult;
+        if (answers && answers.roomType) {
+          setPendingResult(answers);
+          quizFreshRef.current = true;
+          const supabase = getSupabaseBrowserClient();
+          supabase.auth.updateUser({ data: { quiz_stash: null } });
+        }
+      } catch { /* ignore corrupt data */ }
     }
   }, [session]);
 
@@ -295,6 +307,9 @@ function IntakeForm() {
             hasPendingResult: !!pendingResult,
             hasChosenMode: !!chosenMode,
           });
+          setError("Something went wrong — please retake the quiz and try again.");
+          setCheckoutLoading(false);
+          return;
         }
         const url = await startCheckout();
         window.location.href = url;
@@ -393,6 +408,19 @@ function IntakeForm() {
           >
             {checkoutLoading ? "Redirecting to checkout..." : "Upgrade now"}
           </button>
+
+          <a
+            href="/designs"
+            style={{
+              marginTop: 16,
+              color: "#1C1917",
+              fontSize: "0.85rem",
+              fontWeight: 500,
+              textDecoration: "underline",
+            }}
+          >
+            View your existing design
+          </a>
 
           <button
             type="button"

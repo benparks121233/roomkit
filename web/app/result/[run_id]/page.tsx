@@ -49,14 +49,12 @@ const AESTHETIC_LABELS: Record<string, Record<string, string>> = {
     coastal: "Coastal", industrial: "Industrial", quiet_luxury: "Quiet Luxury",
     sports_den: "Sports Den", city_modern: "City Modern", ski_lodge: "Ski Lodge",
     jungle_oasis: "Jungle Oasis", gamer_den: "Gamer Den", poster_maximalist: "Poster Maximalist",
-    warm_minimalist: "Warm Minimalist",
   },
   living_room: {
     cottagecore: "Country Parlor", dark_academia: "Library Lounge", japandi: "Still Room",
     coastal: "Shore House", industrial: "Warehouse Loft", quiet_luxury: "The Salon",
     sports_den: "The Den", city_modern: "High Rise", ski_lodge: "Fireside",
     jungle_oasis: "Greenhouse", gamer_den: "Command Center", poster_maximalist: "The Gallery",
-    warm_minimalist: "Warm Minimalist",
   },
 };
 
@@ -898,7 +896,7 @@ export default function ResultPage() {
 
       <p className="affiliate-disclosure">
         As an Amazon Associate, RoomKit earns from qualifying purchases.
-        Prices and availability are accurate as of the date shown and are subject to change.
+        Prices and availability are subject to change.
         The price on Amazon at checkout applies.
       </p>
 
@@ -934,6 +932,11 @@ export default function ResultPage() {
                       slot={slot}
                       selected={slotSelections}
                       allChoices={allChoices}
+                      onBuyClick={(product) => {
+                        if (runId) trackEvent(runId, "buy_link_clicked", {
+                          slot_id: slot.slot_id, product_id: product.product_id, price: product.normalized_price,
+                        });
+                      }}
                       onRemove={isFinalized ? undefined : (pid) => {
                         setSelections((prev) => ({
                           ...prev,
@@ -985,6 +988,12 @@ export default function ResultPage() {
           </section>
         );
       })}
+
+      {/* Bottom cart CTA — visible after scrolling through all products */}
+      <ExportToCartButton selections={selections} runId={runId} />
+
+      {/* Sticky mobile cart bar */}
+      <StickyCartBar selections={selections} runId={runId} />
     </main>
   );
 }
@@ -997,12 +1006,14 @@ function MultiSelectGallery({
   slot,
   selected,
   allChoices,
+  onBuyClick,
   onRemove,
   onAdd,
 }: {
   slot: SlotResult;
   selected: ProductResult[];
   allChoices: ProductResult[];
+  onBuyClick?: (product: ProductResult) => void;
   onRemove?: (productId: string) => void;
   onAdd?: (product: ProductResult) => void;
 }) {
@@ -1033,6 +1044,7 @@ function MultiSelectGallery({
           <GalleryItem
             key={product.product_id}
             product={product}
+            onBuyClick={onBuyClick ? () => onBuyClick(product) : undefined}
             onRemove={onRemove ? () => onRemove(product.product_id) : undefined}
           />
         ))}
@@ -1070,9 +1082,11 @@ function MultiSelectGallery({
 
 function GalleryItem({
   product,
+  onBuyClick,
   onRemove,
 }: {
   product: ProductResult;
+  onBuyClick?: () => void;
   onRemove?: () => void;
 }) {
   const [imgErr, setImgErr] = useState(false);
@@ -1117,6 +1131,7 @@ function GalleryItem({
         target="_blank"
         rel="noopener noreferrer nofollow sponsored"
         className="gallery-item-buy"
+        onClick={() => onBuyClick?.()}
       >
         Buy
       </a>
@@ -1236,6 +1251,42 @@ function ExportToCartButton({
         onClick={handleExport}
       >
         Add all {allProducts.length} items to Amazon cart — ${total.toFixed(0)}
+      </button>
+    </div>
+  );
+}
+
+function StickyCartBar({
+  selections,
+  runId,
+}: {
+  selections: Record<string, ProductResult[]>;
+  runId: string | null;
+}) {
+  const allProducts = Object.values(selections).flat();
+  if (allProducts.length === 0) return null;
+
+  const total = allProducts.reduce((s, p) => s + p.normalized_price, 0);
+
+  const handleExport = () => {
+    const params = new URLSearchParams();
+    allProducts.forEach((product, i) => {
+      const idx = i + 1;
+      params.set(`ASIN.${idx}`, product.product_id);
+      params.set(`Quantity.${idx}`, "1");
+    });
+    params.set("tag", "roomkitai-20");
+    const url = `https://www.amazon.com/gp/aws/cart/add.html?${params.toString()}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    if (runId) trackEvent(runId, "export_cart_clicked", {
+      product_count: allProducts.length, total_price: total,
+    });
+  };
+
+  return (
+    <div className="sticky-cart-bar">
+      <button type="button" className="sticky-cart-btn" onClick={handleExport}>
+        Add all to cart — ${total.toFixed(0)}
       </button>
     </div>
   );

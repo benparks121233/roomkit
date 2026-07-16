@@ -16,7 +16,7 @@ Affiliate revenue is the business. Packs ($4.99/5 rooms) are the abuse gate, not
 |---|---|---|
 | Commission rate | **UNVERIFIED — assumed 4%** | Needs Table 1 of Amazon Commission Income Statement. All figures below are downstream of this number. |
 | Revenue per converting user | $60–120 (at 4% on $1,500–3,000 rooms) | UNVERIFIED — downstream of commission rate |
-| Amazon cookie window | 24h to cart + ~89 days to checkout | Verified (Amazon Associates docs) |
+| Amazon cookie window | 24h to cart + ~89 days to checkout | Verified (Amazon Associates docs). Extension applies to ANY item added to cart within 24h of ANY affiliate-tagged click. Cart button's advantage is volume (17+ items attributed in one action), not a different window. |
 | Cost per design (free tier) | ~$0.36 | **ESTIMATED — UNMEASURED** (see P0-12) |
 | Cost per design (paid tier) | ~$0.56 | **ESTIMATED — UNMEASURED** (see P0-12) |
 | Pack price | $4.99 / 5 rooms = $1.00/room | Exact |
@@ -151,14 +151,28 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Ref:** `web/app/signup/page.tsx:133`
 
 ### P0-14. Stash else-branch proceeds to checkout on failure
-**Status:** NOT DONE — AWAITING DECISION
-**Why:** In `handleUpgrade` (`web/app/design/page.tsx:271-289`), the else branch (stash fails) fires `trackEvent("stash_failed")` but still calls `startCheckout()`. If the user pays $4.99 and returns from Stripe, their quiz answers are gone. They still have 5 room credits (pack is added by Stripe webhook, not decremented here), so no money is lost — but the UX is bad: user paid expecting to pick up where they left off, finds a blank quiz instead.
-**Reachability:** UNVERIFIED. Code read suggests both `pendingResult` and `chosenMode` are always set before `hitFreeLimit` becomes true, but this analysis has not been validated by production data. The `stash_failed` tracking signal exists to verify — once migration 007 is run and the event can land, a period with zero `stash_failed` rows would confirm unreachability. Until then, treat as reachable.
-**Refund policy gap:** The refund clause (`terms/page.tsx:72-81`) covers "design fails to generate due to a technical issue" — automatic credit restore. It does NOT cover "quiz answers lost before generation." No credit is consumed in this scenario so the refund path never triggers.
-**Fix options:** (a) Bail with an error message if stash fails — don't redirect to Stripe. (b) Block is defensive; accept unreachability and add a regression test. Owner decides.
-**Owner:** CODE (after decision)
-**Ref:** `web/app/design/page.tsx:275-283`, `web/app/purchase/success/page.tsx:13-17,92-93`
-**Depends on:** stash_failed event already lands with `run_id = ''` (d24c0b8). No migration needed — signal is live once code is pushed.
+**Status:** DONE — 2026-07-16
+**Why:** In `handleUpgrade`, the else branch (stash fails) fired `trackEvent("stash_failed")` but still called `startCheckout()`. If the user paid $4.99 and returned from Stripe, their quiz answers would be gone.
+**Reachability (full re-examination):** NOT reachable through normal code paths. `handleModeChoice` sets both `pendingResult` (verified non-null at line 188) and `chosenMode` (line 190) BEFORE the async `createDesign` call. During the await, the loading view renders (hiding the quiz), so `handleComplete` can't fire. No other code path nullifies `pendingResult` or `chosenMode` while the component stays mounted. The `FreeLimitError` catch (line 218-222) sets `hitFreeLimit` after both values are established. P0-15 proved that client-side state loss across NAVIGATION boundaries is a real production hazard, but P0-14's state lives entirely within React state of a single mounted component — it never crosses a navigation boundary. Different mechanism, different risk.
+**Fix:** Option (a) — bail with error message if stash fails, don't redirect to Stripe. Defensive: the else branch now shows "Something went wrong — please retake the quiz and try again" and returns without calling `startCheckout()`. Also added "View your existing design" link to the free-limit CTA.
+**Owner:** CODE (done)
+**Ref:** `web/app/design/page.tsx:305-309`
+
+### P0-15. Signup loses quiz state (cross-browser email confirmation)
+**Status:** DONE — 2026-07-16
+**Why:** Email signup confirmation can open in a different browser (Gmail webview, different default browser), losing the localStorage quiz stash. Compounded by missing `emailRedirectTo` — even same-browser users landed on `/` instead of `/design` after confirmation. Every new beta user hits this on their first design.
+**Root causes (two):**
+1. `signUp()` had no `emailRedirectTo` — Supabase used default site URL, redirecting confirmed users to `/` instead of `/design` (`web/app/signup/page.tsx:39`)
+2. Quiz stash was localStorage-only — cross-browser email confirmation loses it entirely (`web/app/design/page.tsx:118`)
+**Fix:**
+1. Signup page reads quiz stash from localStorage and saves it in Supabase user metadata (`quiz_stash` field) during `signUp()` — survives any browser, any delay
+2. `emailRedirectTo` set to `/auth/callback?redirect=/design` — confirmed users land on `/design`
+3. Design page restore effect checks user metadata as lowest-priority fallback (after Stripe sessionStorage and localStorage)
+4. After restoring from metadata, `quiz_stash` is cleared via `updateUser()`
+**Free room burn:** `createDesign` only fires from `handleModeChoice` which requires both `pendingResult` and `session`. Lost stash means no `pendingResult` → no generation → free room NOT consumed silently. But the user experience forces a quiz retake, which consumes the free room on an unintended design. The fix preserves the original quiz answers so the free room generates the intended design.
+**Supabase config required:** `emailRedirectTo` URL must be in Supabase Auth → URL Configuration → Redirect URLs allowlist. Add: `https://www.roomkit.studio/auth/callback` (may already be listed for Google OAuth).
+**Owner:** CODE (done) + YOU (verify Supabase redirect allowlist)
+**Ref:** `web/app/signup/page.tsx:27-35,49-59`, `web/app/design/page.tsx:155-166`
 
 ---
 
@@ -186,12 +200,12 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 
 ### P1-04. Price freshness
 **Status:** NOT DONE
-**Why:** Catalog products in `data/catalog/*.json` have no `fetched_at` timestamps. The snapshot service refresh is a stub. Prices shown to users have no date attribution. Acceptable risk at ~100 invite-only beta users — Amazon is unlikely to review a closed beta. Becomes blocking at public launch or at PA-API application (P1-07), whichever comes first — applying for PA-API invites Amazon to review the site, and undated prices are what they'd find.
+**Why:** Catalog products in `data/catalog/*.json` have no `fetched_at` timestamps. The snapshot service refresh is a stub. Prices shown to users have no date attribution. Amazon reviews the site after 3 qualifying sales (mid-beta) — undated prices are what they'd find. Must be clean before sales start landing.
 **Fix:** (1) Populate `fetched_at` on all catalog entries. (2) Display the freshness date on every price. (3) Implement the real refresh worker (not the no-op from P0-07) to re-validate prices on a schedule.
 **Owner:** CODE
 **Ref:** `services/snapshot_service.py`, `context/freshness_policies.yaml`, `data/catalog/*.json`
 **Depends on:** P0-07 real implementation (the no-op minimum fix does NOT populate fetched_at)
-**Blocks:** P1-07 (PA-API application — do not apply until prices are dated)
+**Blocks:** P1-07 (site must be clean before Amazon reviews it after 3 qualifying sales)
 
 ### P1-05. Kill switch for design generation
 **Status:** NOT DONE
@@ -205,17 +219,24 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Fix:** Add migration 006: `ALTER TABLE ... ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES auth.users(id)` to events and selections.
 **Owner:** CODE (migration file only)
 
-### P1-07. PA-API migration (Amazon compliance)
+### P1-07. Creators API migration (Amazon compliance)
 **Status:** NOT DONE
-**Why:** Currently using Canopy (third-party) for product data. Amazon could view this as unauthorized. PA-API access requires ~10 qualifying sales. Applying for PA-API invites Amazon to review the site — price freshness (P1-04) must be clean before applying.
-**Fix:** Generate 10 qualifying sales through beta, then apply for PA-API access and migrate the sourcing adapter.
+**Why:** PA-API was deprecated May 15, 2026. The replacement is **Creators API** (OAuth 2.0, new credentials from Associates Central). Creators API returns prices, images, availability, and product details — functional parity with PA-API ([source](https://velantio.com/blog/amazon-creators-api-replacing-pa-api-5): response structure mirrors PA-API 5.0, lowerCamelCase keys, same 10-ASIN-per-call cap). Currently using Canopy (third-party) for product data — by the letter of the OA, this is unauthorized data sourcing. Beta necessarily runs on Canopy because the Associates program itself requires 3 qualifying sales before account approval, and Creators API requires 10 qualifying sales in the past 30 days (rolling). The 10/30 threshold is satisfied-by-scale — at the user volume where this migration matters, the sales rate sustains itself.
+**Correct dependency chain:** Beta (on Canopy) → 3 qualifying sales → Associates account approved (Amazon reviews site at this point — [documented](https://affiliate-program.amazon.com/help/node/topic/G8TW5AE9XL2VX9VM): "our Associates team will check your application once you've driven qualified sales") → sustain 10 sales/30 days → Creators API eligible → migrate sourcing adapter → scale.
+**Site review timing:** Amazon reviews all registered sites after 3 qualifying sales, not at API application time. The site must be clean (price freshness P1-04, legal pages P0-10, disclosure) by mid-beta when sales start landing — not before beta.
+**Fix:** Drive qualifying sales through beta. Once at 10/30 days sustained, apply for Creators API and migrate the sourcing adapter.
 **Owner:** YOU (sales) + CODE (adapter swap)
-**Depends on:** P1-04 (price freshness must be compliant before application invites Amazon review)
+**Depends on:** P1-04 (price freshness — must be clean before Amazon reviews the site after 3 qualifying sales)
 
 ### P1-08. AI render + Amazon product imagery risk
-**Status:** AT RISK — no fix, just awareness
-**Why:** `render_service.py:272` downloads Amazon product images to compose AI renders. The render contains AI-recomposed versions of Amazon products. Amazon's Operating Agreement prohibits modifying Product Advertising Content. This is a gray area — we're not displaying their images directly, but creating new imagery informed by their products.
-**Mitigation:** Renders are labeled as AI visualizations, not product photos. Risk is low at beta scale, increases with virality. Fallback: text-only render prompts (describe products instead of feeding photos).
+**Status:** AT RISK — defensible, not clean
+**What happens:** `render_service.py:272` downloads Amazon product images into in-memory `BytesIO` buffers (never saved to disk), sends them as reference inputs to OpenAI `images.edit`, which generates a completely new composite room image. No Amazon pixel appears in the output. Downloaded images are garbage collected after the API call (~30 seconds in memory).
+**The question:** Is feeding product photos to an AI generator that produces a new composite image "modification of Program Content" (prohibited), or creation of a new work that isn't Program Content at all?
+**Best case for us:** No Amazon pixel survives into the output — it's a novel creative work. Analogous to a designer looking at product photos for reference and painting an original scene. The OA's display requirements govern showing Amazon content AS Amazon content; the render isn't that. Amazon's economic interest is aligned (renders drive purchases). In-memory transient processing for ~30 seconds with no persistence infrastructure is closer to "viewing" than "caching."
+**Best case against us:** Program Content includes product images. Downloading and feeding them to a generative model that reproduces their appearance is derivative use beyond what's authorized. "Modification" doesn't require pixel-level inclusion — the output is substantially derived from copyrighted inputs. In-memory download is still programmatic retrieval.
+**Verdict:** Defensible but not clean. No precedent exists for AI-generated imagery from affiliate product photos. Amazon has no economic incentive to enforce against a tool that drives purchases.
+**Risk by scale:** Beta (50 users) = zero. 10K users = low. Viral renders with recognizable products = medium.
+**Fallback:** Text-only render prompts (describe products by name instead of feeding photos). Already implemented for mattress slot (`render_service.py:263-264`). Switching all slots to text-only is a one-line change per slot, eliminates the risk entirely, and does not affect the product board or buy links.
 **Ref:** `services/render_service.py:254-283`
 
 ### P1-09. Accessibility basics
@@ -264,6 +285,18 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Fix:** Replace lines 88-92 with generic `raise HTTPException(401, "Authentication failed")`. Log the real error server-side.
 **Owner:** CODE
 **Ref:** `app/auth.py:88-92`
+
+### P1-16. Validator stubs: spec_rules.py + price_link_rules.py
+**Status:** STUB ONLY — never called
+**Why:** Four validator functions exist as `NotImplementedError("Stage 8")` stubs: `validate_specs` (spec_rules.py), `validate_price_freshness`, `validate_link_live`, `validate_affiliate_tag` (all in price_link_rules.py). None are imported or called anywhere in the pipeline. The CLAUDE.md constraint says "spec enforcement, link validation, and affiliate tagging must live in validators/" — the files exist but the logic doesn't run. Budget validators (budget_rules.py) and composition validators (composition_rules.py) ARE real and called.
+**Practical impact by stub:**
+  - **Link liveness** — dead Amazon URLs served without detection. Spot-checked 200 random catalog URLs (2026-07-15): 0 dead (0.0%). Catalog is healthy TODAY but Amazon listings die constantly. Not a beta blocker at current dead rate, becomes one at scale or with catalog age.
+  - **Spec enforcement** — no runtime check that products have required specs. TV screen_size coverage is 100% (128/128 TVs), and the sourcing filter (`routes.py:340-346`) excludes specless TVs. The TV budget gate (composition) is allocation math that doesn't touch product specs. So the TV flow degrades gracefully on missing specs: specless TVs are filtered out at sourcing; only if ALL matching TVs lack specs does the fallback pass everything through. Not a beta blocker with current catalog.
+  - **Affiliate tag** — adapter injection is the single code path, verified across 2,864 stored URLs. No safety net if a second sourcing path is added.
+  - **Price freshness** — known, tracked as P1-04.
+**Fix:** Implement the four functions and wire them into the pipeline post-selection. Not a beta blocker given current catalog health (0% dead links, 100% TV spec coverage), but a gap in deterministic enforcement that worsens with catalog age.
+**Owner:** CODE
+**Ref:** `validators/spec_rules.py:8-11`, `validators/price_link_rules.py:8-23`
 
 ---
 
@@ -347,18 +380,21 @@ These were found and FIXED in the security audit:
 
 | Area | Status | Detail |
 |---|---|---|
-| Affiliate tag | COMPLIANT | Injected into all buy_urls + cart URL |
+| Affiliate tag | COMPLIANT | Injected into all buy_urls + cart URL. Verified across 2,864 stored URLs — 0 missing. Single injection point (`amazon_adapter.py:482`), no safety-net validator (P1-16 stub). |
 | Affiliate attribution | PROVEN | Full purchase chain verified: click → sale tracked in dashboard. Self-purchase disqualified as expected. Stranger payout untested but no reason it wouldn't work. (P0-03) |
-| Price display | NON-COMPLIANT | No `fetched_at` timestamps, no date shown. Tracked as P1-04 |
-| Affiliate disclosure | COMPLIANT | FTC-adequate in Terms |
-| Add-all-to-cart | COMPLIANT | Uses official Amazon cart-add URL. Smoke-tested (P0-03) |
+| Link cloaking | COMPLIANT | All buy_urls are direct `amazon.com/dp/ASIN?tag=...` links. No redirect endpoint, no proxy. |
+| Price display | NON-COMPLIANT | No `fetched_at` timestamps, no date shown. Disclosure text FIXED (removed "as of the date shown" claim since no date is shown). Tracked as P1-04. |
+| Affiliate disclosure | COMPLIANT | Amazon's required language on result page (`line 899-902`): "As an Amazon Associate, RoomKit earns from qualifying purchases." Also in Terms. Disclosure is on the page where links appear, not buried. |
+| Add-all-to-cart | AT RISK (low) | Uses `amazon.com/gp/aws/cart/add.html` — legacy endpoint, not officially documented, but universally used by affiliates and not explicitly prohibited. If deprecated, individual buy links still work. |
+| Product images | SPLIT | Product cards: loaded directly from Amazon CDN (`m.media-amazon.com`), URL rewritten only for resolution — COMPLIANT. AI renders: product images downloaded and fed to AI image generator — AT RISK per P1-08 (modifying Product Advertising Content). |
 | 180-day qualifying sales | 150 DAYS LEFT | 3 stranger sales required. Self-purchase confirmed disqualified. Reddit launch is the mechanism. (P0-09) |
 | Commission rate | UNVERIFIED | Assumed 4% — needs Table 1 of Commission Income Statement |
-| Canopy data source | AT RISK | Not PA-API. Tracked as P1-07 |
-| AI renders with product images | AT RISK | Gray area. Tracked as P1-08 |
+| Canopy data source | AT RISK (high) | Not Creators API (PA-API successor). Canopy is a commercial intermediary, not an Amazon-authorized feed. By the letter of the OA, this IS unauthorized data sourcing. Beta necessarily runs on Canopy — Creators API requires 10 qualifying sales in past 30 days (rolling). Tracked as P1-07. |
+| AI renders with product images | AT RISK — defensible | Product images downloaded transiently (~30s in memory, never to disk), fed to AI generator that creates a novel composite. No Amazon pixel in output. Defensible as creation, not modification. Known fallback: text-only prompts. Tracked as P1-08. |
 | Mobile app | NOT YET APPLICABLE | Hard gate before any app work |
 | UGC shared renders | AT RISK | Increases with scale. Monitor |
-| AI/ML clause | SCOPED | Applies to PA-API + training/fine-tuning, not third-party inference. Current Canopy sourcing sidesteps API-specific restrictions but not content-level clauses |
+| AI/ML clause | SCOPED | Applies to Creators API (PA-API successor) + training/fine-tuning, not third-party inference. Current Canopy sourcing sidesteps API-specific restrictions but not content-level clauses |
+| Catalog link health | HEALTHY (2026-07-15) | Spot-checked 200 random URLs: 0 dead (0.0%). No link-liveness validator (P1-16 stub). Decays with catalog age. |
 
 ---
 
@@ -455,9 +491,10 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 - [ ] P0-10 — Legal page placeholders filled (sole prop or LLC)
 - [ ] P0-12 — API usage logging live (beta cost measurable)
 - [ ] P0-13 — Google OAuth terms notice (terms must bind all signups or liability cap/indemnification/refund policy are void)
-- [ ] P0-14 — Stash else-branch proceeds to checkout on failure (reachability UNVERIFIED, unguarded payment path)
+- [x] P0-14 — Stash else-branch bails on failure (defensive, unreachable but guarded) — 2026-07-16
+- [x] P0-15 — Signup loses quiz state (cross-browser email confirmation) — 2026-07-16
 
-**Status: 4 of 12 hard gates done.**
+**Status: 6 of 13 hard gates done.**
 
 **Recommended additions from P1 (your call):**
 - [ ] P1-05 — Kill switch (ability to disable /design without a deploy — if the pipeline breaks during beta, you're stuck until you push a fix)
@@ -499,11 +536,13 @@ Invites do not go out until every item below is DONE. This is the proposed gate 
 20. Terms/Privacy design token fix + SiteShell wrap (C-02) — 1 hour
 21. Account page pack balance (C-05) — 1 hour
 
+**Must land early beta (before 3 qualifying sales trigger Amazon site review):**
+- Price freshness (P1-04) — site must be clean when Amazon reviews after 3 qualifying sales
+
 **Can follow beta launch:**
 - Free-tier denial-of-wallet hardening (P1-02)
 - Uptime monitoring (P1-03)
-- Price freshness (P1-04) — must complete before PA-API application (P1-07)
-- PA-API migration (P1-07) — blocked by P1-04
+- Creators API migration (P1-07) — requires sustaining 10 sales/30 days, then adapter swap
 - Hotspot overlay UI + tracking (P1-14) — component doesn't exist yet
 - Accessibility (P1-09)
 - All P2 items

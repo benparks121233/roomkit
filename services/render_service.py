@@ -490,5 +490,6 @@ CRITICAL RULES:
 9. The MATTRESS sits naturally on top of the bed frame at its real thickness (described in the mattress text label). The bed_frame reference image is the SOLE source for the bed's frame, headboard, and structure.
 10. When a DUVET COVER is present, it is the DOMINANT visual element of the bed surface. Its color, texture, and pattern from the reference image MUST be faithfully reproduced — the bedding should look like THAT specific product, not generic white sheets. The duvet cover defines what the bed looks like.
 11. When a DESK is present, stage it with subtle lifestyle props — a laptop or open notebook, a coffee mug, a small plant or pen holder. The desk should look used, not empty.
+12. When a TV is present, render the SCREEN as completely BLACK (powered off). Do NOT show any on-screen content, images, or reflections on the TV screen — a clean, solid black rectangle.
 
 Professional interior design magazine photograph. Photorealistic. No text, no watermarks, no logos."""

@@ -21,6 +21,19 @@ function SignupForm() {
   const [confirmSent, setConfirmSent] = useState(false);
   const [ageConfirmed, setAgeConfirmed] = useState(false);
 
+  // Read quiz stash from localStorage (written by design page auth wall).
+  // Saved into user metadata during signUp so it survives cross-browser email confirmation.
+  const [quizStash, setQuizStash] = useState<Record<string, unknown> | null>(null);
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("rk_quiz_pending");
+      if (raw) {
+        const { answers } = JSON.parse(raw);
+        if (answers?.roomType) setQuizStash(answers);
+      }
+    } catch { /* ignore corrupt data */ }
+  }, []);
+
   useEffect(() => {
     if (session) router.replace(redirectTo);
   }, [session, router]);
@@ -36,7 +49,13 @@ function SignupForm() {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { age_confirmed: true } },
+      options: {
+        data: {
+          age_confirmed: true,
+          ...(quizStash ? { quiz_stash: quizStash } : {}),
+        },
+        emailRedirectTo: `${window.location.origin}/auth/confirmed`,
+      },
     });
 
     if (error) {
@@ -73,7 +92,7 @@ function SignupForm() {
             We sent a confirmation link to <strong>{email}</strong>.
             Click it to activate your account, then come back here to sign in.
           </p>
-          <a href="/login" className="auth-btn auth-btn--link">
+          <a href={redirectTo !== "/" ? `/login?redirect=${encodeURIComponent(redirectTo)}` : "/login"} className="auth-btn auth-btn--link">
             Go to sign in
           </a>
         </div>
