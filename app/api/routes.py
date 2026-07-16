@@ -182,7 +182,11 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
                 except HTTPException:
                     raise
                 except Exception:
-                    logger.warning("Deletion cooldown check failed — allowing request", exc_info=True)
+                    logger.exception("Deletion cooldown check failed — BLOCKING request as safety fallback")
+                    raise HTTPException(
+                        status_code=403,
+                        detail={"code": "free_limit", "message": "Free tier: 1 room limit. Upgrade for more."},
+                    )
             try:
                 _count_resp = (
                     _svc.table("designs")
@@ -1293,6 +1297,34 @@ async def delete_account(user: CurrentUser) -> DeleteAccountResponse:
 @router.post("/click")
 async def record_click(event: dict) -> dict:
     return {"status": "ok"}
+
+
+@router.get("/debug/cooldown/{email}")
+async def debug_cooldown(email: str) -> dict:
+    from services.supabase_client import get_client as _get_svc_client
+    _svc = _get_svc_client()
+    if not _svc:
+        return {"error": "no client"}
+    try:
+        all_rows = _svc.table("deleted_emails").select("*").execute()
+        filtered = _svc.table("deleted_emails").select("*").eq("email", email.lower()).execute()
+        from datetime import datetime, timezone
+        _now_iso = datetime.now(timezone.utc).isoformat()
+        with_gte = (
+            _svc.table("deleted_emails")
+            .select("*")
+            .eq("email", email.lower())
+            .gte("cooldown_until", _now_iso)
+            .execute()
+        )
+        return {
+            "all_rows": all_rows.data,
+            "filtered_by_email": filtered.data,
+            "with_gte_filter": with_gte.data,
+            "now_iso": _now_iso,
+        }
+    except Exception as exc:
+        return {"error": str(exc)}
 
 
 # ---------------------------------------------------------------------------
