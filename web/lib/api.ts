@@ -158,6 +158,20 @@ export async function getDesign(runId: string): Promise<DesignResponse> {
   return (await res.json()) as DesignResponse;
 }
 
+/**
+ * GET /design/{run_id}/public — fetch a publicly featured design (no auth).
+ */
+export async function getPublicDesign(runId: string): Promise<DesignResponse> {
+  const res = await fetch(`${API_BASE}/design/${runId}/public`, {
+    headers: { "Content-Type": "application/json" },
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.detail ?? `API error ${res.status}`);
+  }
+  return (await res.json()) as DesignResponse;
+}
+
 // ---------------------------------------------------------------------------
 // Selection validation (multi-select pool spend check)
 // ---------------------------------------------------------------------------

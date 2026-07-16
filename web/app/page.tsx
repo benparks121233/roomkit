@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const SHOWCASE = [
-  { src: "/renders/showcase_coastal_br.jpg",         label: "Coastal",       room: "Bedroom" },
-  { src: "/renders/showcase_dark_academia_lr.jpg",   label: "Dark Academia", room: "Living Room" },
-  { src: "/renders/showcase_quiet_luxury_br.jpg",    label: "Quiet Luxury",  room: "Bedroom" },
-  { src: "/renders/showcase_cottagecore_lr.jpg",     label: "Cottagecore",   room: "Living Room" },
+const SHOWCASE: { src: string; label: string; room: string; runId?: string }[] = [
+  { src: "/renders/showcase_coastal_br.jpg",         label: "Coastal",       room: "Bedroom",      runId: "cc750fed-b4ce-4b4a-955c-1dbc9e2d8d4e" },
+  { src: "/renders/showcase_dark_academia_lr.jpg",   label: "Dark Academia", room: "Living Room",   runId: "09dbe35c-0489-418b-b80d-4738819c29a2" },
+  { src: "/renders/showcase_quiet_luxury_br.jpg",    label: "Quiet Luxury",  room: "Bedroom",      runId: "3149a655-a02b-4a08-92a5-67ae2cee7494" },
+  { src: "/renders/showcase_cottagecore_lr.jpg",     label: "Cottagecore",   room: "Living Room",   runId: "be73872b-05d6-4a84-a2f7-f96a9a09c384" },
 ];
 
 const SWITCHER_AESTHETICS: { key: string; label: string; vibe: string; story: string }[] = [
@@ -263,23 +263,34 @@ export default function LandingPage() {
       <section className="landing-section">
         <h2 className="landing-section-title">Rooms made with RoomKit</h2>
         <div className="landing-showcase">
-          {SHOWCASE.map((s) => (
-            <div key={s.src} className="landing-showcase-card">
-              <div className="landing-showcase-image">
-                <Image
-                  src={s.src}
-                  alt={`${s.label} ${s.room}`}
-                  width={480}
-                  height={320}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
+          {SHOWCASE.map((s) => {
+            const inner = (
+              <>
+                <div className="landing-showcase-image">
+                  <Image
+                    src={s.src}
+                    alt={`${s.label} ${s.room}`}
+                    width={480}
+                    height={320}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                </div>
+                <div className="landing-showcase-info">
+                  <span className="landing-showcase-label">{s.label}</span>
+                  <span className="landing-showcase-room">{s.room}</span>
+                </div>
+              </>
+            );
+            return s.runId ? (
+              <a key={s.src} href={`/room/${s.runId}`} className="landing-showcase-card" style={{ textDecoration: "none", color: "inherit" }}>
+                {inner}
+              </a>
+            ) : (
+              <div key={s.src} className="landing-showcase-card">
+                {inner}
               </div>
-              <div className="landing-showcase-info">
-                <span className="landing-showcase-label">{s.label}</span>
-                <span className="landing-showcase-room">{s.room}</span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

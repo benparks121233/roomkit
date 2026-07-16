@@ -182,6 +182,36 @@ def save_free_design(response: DesignResponse, user_id: str) -> bool:
         return True
 
 
+def load_featured_design(run_id: str) -> DesignResponse:
+    """Load a design that is explicitly marked as featured (public).
+
+    Uses SERVICE KEY but ONLY returns designs with is_featured=TRUE.
+    This is a positive allowlist — unfeatured designs return KeyError.
+    """
+    from services.supabase_client import get_client
+
+    client = get_client()
+    if client is None:
+        raise DesignStoreError("Supabase not configured")
+
+    try:
+        resp = (
+            client.table("designs")
+            .select("*")
+            .eq("run_id", run_id)
+            .eq("is_featured", True)
+            .maybe_single()
+            .execute()
+        )
+    except Exception as exc:
+        raise DesignStoreError(f"Supabase query failed: {exc}") from exc
+
+    if resp is None or resp.data is None:
+        raise KeyError(run_id)
+
+    return _row_to_response(resp.data)
+
+
 def _row_to_response(row: dict) -> DesignResponse:
     return DesignResponse(
         run_id=row["run_id"],

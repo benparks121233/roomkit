@@ -635,6 +635,34 @@ async def get_design(run_id: str, user: CurrentUser) -> DesignResponse:
 
 
 # ---------------------------------------------------------------------------
+# GET /design/{run_id}/public — publicly featured design (no auth)
+# ---------------------------------------------------------------------------
+
+@router.get("/design/{run_id}/public", response_model=DesignResponse)
+async def get_public_design(run_id: str) -> DesignResponse:
+    """Fetch a publicly featured design. No auth required.
+
+    Only returns designs explicitly marked is_featured=TRUE in the database.
+    All other designs return 404 — positive allowlist, not opt-out.
+    """
+    from services.design_store import DesignStoreError, load_featured_design
+
+    try:
+        design = load_featured_design(run_id)
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Design not found")
+    except DesignStoreError as exc:
+        logger.warning("get_public_design: storage error for %s: %s", run_id, exc)
+        raise HTTPException(
+            status_code=503,
+            detail="Storage temporarily unavailable — please retry",
+        )
+
+    design.user_id = None
+    return design
+
+
+# ---------------------------------------------------------------------------
 # POST /design/{run_id}/validate-selections — multi-select pool check
 # ---------------------------------------------------------------------------
 
