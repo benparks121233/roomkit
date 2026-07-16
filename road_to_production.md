@@ -14,13 +14,13 @@ Affiliate revenue is the business. Packs ($4.99/5 rooms) are the abuse gate, not
 
 | Metric | Value | Confidence |
 |---|---|---|
-| Commission rate | **UNVERIFIED — assumed 4%** | Needs Table 1 of Amazon Commission Income Statement. All figures below are downstream of this number. |
-| Revenue per converting user | $60–120 (at 4% on $1,500–3,000 rooms) | UNVERIFIED — downstream of commission rate |
+| Commission rate | **3.00% (Furniture, Home, Home Improvement) / 2.00% (Televisions)** | VERIFIED — Table 1 of Amazon Commission Income Statement (https://affiliate-program.amazon.com/help/node/topic/GRXPHT8U84RAYDXZ). Previously assumed 4%, was wrong. |
+| Revenue per converting user | $45–90 (at 3% on $1,500–3,000 rooms) | VERIFIED — downstream of confirmed 3% rate. 25% lower than prior 4% assumption. |
 | Amazon cookie window | 24h to cart + ~89 days to checkout | Verified (Amazon Associates docs). Extension applies to ANY item added to cart within 24h of ANY affiliate-tagged click. Cart button's advantage is volume (17+ items attributed in one action), not a different window. |
 | Cost per design (free tier) | ~$0.36 | **ESTIMATED — UNMEASURED** (see P0-12) |
 | Cost per design (paid tier) | ~$0.56 | **ESTIMATED — UNMEASURED** (see P0-12) |
 | Pack price | $4.99 / 5 rooms = $1.00/room | Exact |
-| Break-even | ~$9.50 attributed sale (at assumed 4%) | UNVERIFIED — downstream of commission rate |
+| Break-even | ~$12.67 attributed sale (at 3%) | VERIFIED — downstream of confirmed 3% rate. |
 
 Beta goal: 50 users, prove attribution works (affiliate tag → Amazon commission), get qualitative feedback on design quality. Revenue in beta is a signal, not a target.
 
@@ -196,10 +196,11 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Blocks:** P1-07 (site must be clean before Amazon reviews it after 3 qualifying sales)
 
 ### P1-05. Kill switch for design generation
-**Status:** NOT DONE
-**Why:** If the pipeline starts burning money or producing garbage, there's no way to disable design generation without a code deploy. A maintenance mode env var that returns 503 on `/design` would suffice.
-**Fix:** Add `MAINTENANCE_MODE` env var check at the top of the design endpoint. Set in Railway dashboard to disable instantly.
+**Status:** DONE (2026-07-16)
+**Why:** If the pipeline starts burning money or producing garbage, there's no way to disable design generation without a code deploy.
+**Fix applied:** `MAINTENANCE_MODE=1` env var check at the top of `create_design`. Returns 503 with user-friendly message. Set in Railway dashboard to disable instantly, unset to re-enable.
 **Owner:** CODE
+**Ref:** `app/api/routes.py:139-142`
 
 ### P1-06. user_id column migration for schema reproducibility
 **Status:** VERIFIED WORKING — migration file needed (2026-07-14)
@@ -268,11 +269,11 @@ All figures below are formula-derived, not metered. Real per-model spend should 
 **Ref:** `web/lib/api.ts:379-421` (positions), `web/app/result/[run_id]/page.tsx` (no hotspot component exists)
 
 ### P1-15. JWT error verbosity
-**Status:** KNOWN ISSUE
-**Why:** `app/auth.py:90` returns `f"Invalid token: {e}"` and line 92 returns `f"Token verification failed: {e}"` — these forward raw exception messages to the client, leaking JWT validation internals (algorithm, claim names, key details) that help attackers craft better attacks.
-**Fix:** Replace lines 88-92 with generic `raise HTTPException(401, "Authentication failed")`. Log the real error server-side.
+**Status:** DONE (2026-07-16)
+**Why:** `app/auth.py:90` returned `f"Invalid token: {e}"` — forwarding raw exception messages to the client, leaking JWT validation internals.
+**Fix applied:** Both error paths now return generic `"Authentication failed"`. Real error logged server-side via `logger.warning`.
 **Owner:** CODE
-**Ref:** `app/auth.py:88-92`
+**Ref:** `app/auth.py:89-92`
 
 ### P1-16. Validator stubs: spec_rules.py + price_link_rules.py
 **Status:** STUB ONLY — never called
@@ -376,7 +377,7 @@ These were found and FIXED in the security audit:
 | Add-all-to-cart | AT RISK (low) | Uses `amazon.com/gp/aws/cart/add.html` — legacy endpoint, not officially documented, but universally used by affiliates and not explicitly prohibited. If deprecated, individual buy links still work. |
 | Product images | SPLIT | Product cards: loaded directly from Amazon CDN (`m.media-amazon.com`), URL rewritten only for resolution — COMPLIANT. AI renders: product images downloaded and fed to AI image generator — AT RISK per P1-08 (modifying Product Advertising Content). |
 | 180-day qualifying sales | 150 DAYS LEFT | 3 stranger sales required. Self-purchase confirmed disqualified. Reddit launch is the mechanism. (P0-09) |
-| Commission rate | UNVERIFIED | Assumed 4% — needs Table 1 of Commission Income Statement |
+| Commission rate | VERIFIED — 3%/2% | 3.00% for Furniture/Home/Home Improvement, 2.00% for Televisions. Previously assumed 4%. |
 | Canopy data source | AT RISK (high) | Not Creators API (PA-API successor). Canopy is a commercial intermediary, not an Amazon-authorized feed. By the letter of the OA, this IS unauthorized data sourcing. Beta necessarily runs on Canopy — Creators API requires 10 qualifying sales in past 30 days (rolling). Tracked as P1-07. |
 | AI renders with product images | AT RISK — defensible | Product images downloaded transiently (~30s in memory, never to disk), fed to AI generator that creates a novel composite. No Amazon pixel in output. Defensible as creation, not modification. Known fallback: text-only prompts. Tracked as P1-08. |
 | Mobile app | NOT YET APPLICABLE | Hard gate before any app work |

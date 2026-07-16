@@ -136,6 +136,11 @@ async def create_design(request: Request, req: DesignRequest, user: CurrentUser)
     This makes real LLM calls (~17 total) and can take 60-90 seconds.
     Requires authentication — user_id is stamped on the design.
     """
+    if os.environ.get("MAINTENANCE_MODE") == "1":
+        raise HTTPException(
+            status_code=503,
+            detail="RoomKit is temporarily down for maintenance. Please try again shortly.",
+        )
     # 0. Tier determination: try paid path first, then free path.
     from services.supabase_client import get_client as _get_svc_client
     _svc = _get_svc_client()

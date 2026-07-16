@@ -87,9 +87,11 @@ def get_current_user(request: Request) -> dict:
     except jwt.ExpiredSignatureError:
         raise HTTPException(401, "Token expired")
     except jwt.InvalidTokenError as e:
-        raise HTTPException(401, f"Invalid token: {e}")
+        logger.warning("JWT validation failed: %s", e)
+        raise HTTPException(401, "Authentication failed")
     except Exception as e:
-        raise HTTPException(401, f"Token verification failed: {e}")
+        logger.warning("JWT verification error: %s", e)
+        raise HTTPException(401, "Authentication failed")
 
     user_id = payload.get("sub")
     if not user_id:
